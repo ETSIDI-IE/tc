@@ -1,0 +1,9 @@
+* Teoría de Circuitos
+
+Este repositorio recoge parte del material docente que empleo en las asignaturas de Teoría de Circuitos impartidas en los grados de la [[http://www.etsidi.upm.es/][ETSIDI]] - [[http://www.upm.es/][UPM]].
+
+Estas asignaturas cubren el contenido de la Teoría de Circuitos en tres bloques diferenciados:
+- La asignatura *Teoría de Circuitos* es una introducción amplia incluida en todos los Grados impartidos en la ETSIDI. Expone los teoremas generales y métodos de análisis más importantes, estudiando los circuitos de corriente continua, corriente alterna monofásica y trifásica, e incluye una introducción breve al análisis del régimen transitorio.
+- La asignatura *Teoría de Circuitos II*, incluida sólo en el Grado de Ingeniería Eléctrica, intensifica lo expuesto en *Teoría de Circuitos*, ampliando el estudio de generadores, técnicas de análisis, y sistemas polifásicos, e introduciendo los acoplamientos magnéticos y transformadores.
+- La asignatura *Teoría de Circuitos III*, incluida sólo en el Grado de Ingeniería Eléctrica, expone el estudio del régimen transitorio, el análisis en frecuencia de circuitos, el análisis en variables de estado, cuadripolos, y una introducción a los componentes no lineales.  
+
