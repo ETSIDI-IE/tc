@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[domain = 0:9, samples = 1000]
+  % \draw[very thin,color=gray] (-0.1,-1.1) grid (10,1.1);
+  \draw[->] (-0.2,0) -- (10.1,0) node[below] {$t$};
+  \draw[->] (0,-1.2) -- (0,3.1);% node[above] {$f(t)$};
+
+  \draw[color=red] plot[id=sin10] function{3*sin(3*x)};
+  \draw[thick, color=black] plot[id=sin0] function{3*sin(x)};
+\end{tikzpicture}
+
+\end{document}
+
+

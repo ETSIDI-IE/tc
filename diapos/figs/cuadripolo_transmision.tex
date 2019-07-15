@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents]
+  % Cuadripolo
+  \draw[fill=lightgray] (2,-1) rectangle (6,4) node[midway]{Red Lineal};
+  \draw (0,3)to [short, *-*, i^=$\mathbf{I}_1$] (2,3)
+  (2,0) to [short, *-*, i^=$\mathbf{I}_1$] (0,0);
+  \draw (2,3) to [open, v=$\mathbf{V}_1$] (2,0);
+  \draw (6,3) to [short, *-*, i_=$\mathbf{I'}_2$] (8,3)
+  (8,0) to [short, *-*, i_=$\mathbf{I'}_2$] (6,0);
+  \draw (6,3) to [open, v^=$\mathbf{V}_2$] (6,0);
+\end{circuitikz}
+\end{document}

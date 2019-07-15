@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, european resistors]
+  % Cuadripolos
+  \draw[fill=lightgray] (3,-1) node [above right] {$Q_1$} rectangle (8,5);
+  \draw[fill=lightgray] (9,-1) node [above right] {$Q_1$} rectangle (14,5);
+  % Entrada
+  \draw (0,4) to[sV, l=$\mathbf{E}_g$, -] (0,0)
+  (0,4) to [R, -*, l=$\mathbf{Z}_g$] (3,4)
+  (3,0) to [short, *-] (0,0);
+  % Interconexión
+  \draw (10,4) to [short, -*] (8,4)
+  (8,0) to [short, *-] (10,0);
+  % Interior del cuadripolo 1
+  \draw (3, 4) to [R, *-*, l = $R$] (8, 4);
+  \draw (3.5, 4) to [C, *-*, l=$X_C$] (3.5, 0);
+  \draw (7.5, 4) to [C, *-*, l_=$X_C$] (7.5, 0);
+  \draw (3, 0) to [short, *-*] (8,0);
+  % Interior del cuadripolo 2
+  \draw (9, 4) to [R, *-*, l = $R$] (14, 4);
+  \draw (9.5, 4) to [C, *-*, l=$X_C$] (9.5, 0);
+  \draw (13.5, 4) to [C, *-*, l_=$X_C$] (13.5, 0);
+  \draw (9, 0) to [short, *-*] (14,0);
+  % Impedancia de carga
+  \draw (14,4) to [short, -*] (15,4)
+  to [R, l_=$\mathbf{Z}_L$, -] (15,0)
+  to [short, *-] (14,0);
+\end{circuitikz}
+\end{document}

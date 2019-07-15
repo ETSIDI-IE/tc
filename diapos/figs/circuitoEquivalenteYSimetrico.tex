@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american, european resistors]
+  % Entrada
+  \draw (0,4) to[open, v_=$\mathbf{V}_1$, *-*] (0,0)
+  (0,4) to [short, i = $\mathbf{I}_1$] (1,4)
+  to [R, *-*, l^= $\mathbf{y_{11}} + \mathbf{y_{12}}$] (1,0)
+  (1,4) to [short] (3,4)
+  to [R, l_=$-\mathbf{y_{12}}$] (5,4);
+  % Salida
+  \draw (8,4) to [short, *-, i_=$\mathbf{I}_2$] (7,4)
+  to [R, *-*, l_= $\mathbf{y_{11}} + \mathbf{y_{12}}$, ] (7,0)
+  (7,4) to [short] (5,4)
+  (8,4) to [open, v^=$\mathbf{V}_2$, -] (8,0);
+  % Nodo común
+  \draw (0,0) to [short, *-*] (8,0);
+\end{circuitikz}
+\end{document}

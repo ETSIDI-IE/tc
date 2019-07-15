@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw (0,0) to[short,-*] ++(1,0) coordinate(left)
+  to[R, l_=$R_B$] ++(2,0)
+  to[L, l_=$L_B$,*-*] ++(2,0) coordinate(right)
+  to[short] ++(1,0)
+  node[fit={($(left)+(0,.25)$)($(right)-(0,.45)$)},draw, dashed, label={Bobina Real},inner sep=10pt] {};
+\end{circuitikz}
+\end{document}

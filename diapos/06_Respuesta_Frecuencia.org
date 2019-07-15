@@ -1,0 +1,688 @@
+#+TITLE: Respuesta en Frecuencia
+#+SUBTITLE: Teoría de Circuitos III
+#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+DATE: Noviembre 2018
+#+STARTUP: beamer
+#+STARTUP: indent
+#+SETUPFILE: config.org
+#+OPTIONS: H:2
+
+* Introducción
+** Introducción
+
+*** Respuesta en Frecuencia
+La respuesta en frecuencia de un circuito es la variación del comportamiento del circuito a los cambios de la frecuencia de alimentación.
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+- Hasta ahora hemos analizado circuitos alimentados por generadores con frecuencia constante.
+- El análisis de la *respuesta en frecuencia* consiste en variar la frecuencia de alimentación y estudiar la respuesta.
+- Este análisis se realiza en *régimen permanente* con señales sinusoidales.
+
+
+* Función de Transferencia
+** Función de Transferencia
+#+BEGIN_EXPORT latex
+\[
+  \laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{Y}}{\laplace{X}}
+\]
+#+END_EXPORT
+
+[[file:figs/TransferFunction.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/sinX.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/sinY.pdf]]
+
+** Funciones de Transferencia
+- Ganancia de Tensión
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} =\frac{\laplace{V_o}}{\laplace{V_i}}
+\]
+#+END_EXPORT
+- Ganancia de Corriente
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} =\frac{\laplace{I_o}}{\laplace{I_i}}
+\]
+#+END_EXPORT
+- Impedancia de Transferencia
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} =\frac{\laplace{V_o}}{\laplace{I_i}}
+\]
+#+END_EXPORT
+- Admitancia de Transferencia
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} =\frac{\laplace{I_o}}{\laplace{V_i}}
+\]
+#+END_EXPORT
+
+** Polos y Ceros
+*** División de Polinomios 
+#+BEGIN_EXPORT latex
+\[
+  \laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{N}}{\laplace{D}} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)} 
+\]
+#+END_EXPORT
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/Ejemplo_PoleZero.pdf]]
+** La función de transferencia es un fasor
+
+- Evaluamos la función de transferencia en el eje imaginario:
+#+BEGIN_EXPORT latex
+\[
+\laplace{H}\rvert_{\slp = j\omega} = \fasor{H} 
+\]
+#+END_EXPORT
+- Dado que estamos en régimen permanente sinusoidal es *un fasor con módulo y ángulo*:
+#+BEGIN_EXPORT latex
+\[
+\fasor{H} = H\phase{\phi}
+\]
+#+END_EXPORT
+
+- Tanto el módulo como el ángulo *varían con la frecuencia*:
+
+#+BEGIN_EXPORT latex
+\[
+\fasor{H} \Rightarrow
+\begin{cases} 
+  |\fasor{H}|\\
+  \phi(\omega)
+\end{cases}
+\]
+#+END_EXPORT
+
+
+** Interpretación Geométrica
+
+Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número complejo que conecta un cero/polo con el eje imaginario.
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:BEAMER_opt: [t]
+:END:
+#+BEGIN_EXPORT latex
+\[
+\fasor{H} = \frac{j\omega - \mathbf{z_1}}{(j\omega - \mathbf{p_1}) \cdot (j\omega - \mathbf{p_2})}
+\]
+#+END_EXPORT
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:BEAMER_opt: [t]
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:figs/InterpretacionGeometrica.pdf]]
+
+** Interpretación Geométrica: cero simple
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = K \cdot (j\omega - \mathbf{z_1})
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/CeroGeometrica.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/CeroGeometricaPlot.pdf]]
+
+** Interpretación Geométrica: polo simple
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{K}{j\omega - \mathbf{p_1}}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/PoloGeometrica.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:figs/PoloGeometricaPlot.pdf]]
+
+** Ejercicios Recomendados
+- AS: Ejemplo 14.2.
+- Exámenes:
+  - Feb 2004 (a), Jun 2013 (a)
+  - Sep 2007 (a), Feb 2005 (a), Feb 2010 (a)
+  - Nov 2014 (a), Sep 2005 (a), Sep 2006 (a).
+* Diagrama de Bode
+
+** Introducción
+
+- Un diagrama de Bode representa de forma *aproximada* la magnitud y la fase de la función de transferencia.
+- Son *gráficos semilogarítmicos*:
+  - Magnitud en *decibelios* frente al logaritmo de la frecuencia/pulsación.
+  - Fase en radianes/grados frente al logaritmo de la frecuencia/pulsación.
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/Bode.pdf]]
+
+** Repaso de logaritmos
+
+*** Propiedades
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \log {P_1 \cdot P_2} &= \log P_1 + \log P_2\\
+  \log \frac{P_1}{P_2} &= \log P_1 - \log P_2\\
+  \log P^n &= n \cdot \log P
+\end{align*}
+#+END_EXPORT
+
+*** Valores útiles
+#+BEGIN_EXPORT latex
+\[
+\begin{array}{ll}
+  \log 1 = 0 & \log 2 = 0.30103\\
+  \log 10 = 1 & \log \frac{1}{2} = -0.30103
+\end{array}
+\]
+#+END_EXPORT
+
+** Decibelio
+
+El *decibelio* ($\si{\decibel}$) se emplea para medir la ganancia de potencia o la ratio de dos niveles de potencia:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
+\]
+#+END_EXPORT
+
+[[file:figs/Red_Ganancia.pdf]]
+
+
+** Decibelio
+
+Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/corriente:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
+\]
+#+END_EXPORT
+
+[[file:figs/Red_Ganancia.pdf]]
+
+** Valores importantes
+
+- Ganancia unidad
+
+#+BEGIN_EXPORT latex
+\[
+  G = 1 \Rightarrow
+  \left\{
+  \begin{array}{c}
+    P_1 = P_2\\
+    \\
+    V_1 = V_2
+  \end{array}
+  \right\}
+  \Rightarrow
+  \left\{
+  \begin{array}{c}
+    G_{dB} = 10 \log \frac{P_2}{P1} = \SI{0}{\decibel}\\
+    \\
+    G_{dB} = 20 \log \frac{V_2}{V1} = \SI{0}{\decibel}
+  \end{array}
+  \right\}
+\]
+#+END_EXPORT
+
+- Potencia Mitad
+
+#+BEGIN_EXPORT latex
+\[
+  P_2 = \frac{P_1}{2} \Rightarrow
+  \left\{
+  \begin{array}{c}
+    G = \frac{1}{2}\\
+    \\
+    V_2 = \frac{V_1}{\sqrt{2}}
+  \end{array}
+  \right\}
+  \Rightarrow
+  \left\{
+  \begin{array}{c}
+    G_{dB} = 10 \log \frac{P_2}{P1} = -\SI{3}{\decibel}\\
+    \\
+    G_{dB} = 20 \log \frac{V_2}{V_1} = -\SI{3}{\decibel}
+  \end{array}
+  \right\}
+\]
+#+END_EXPORT
+
+** Construcción del Diagrama de Bode
+- Reescribimos $\laplace{H}$ de forma normalizada 
+#+BEGIN_EXPORT latex
+\[
+  \laplace{H}\rvert_{\slp =j\omega} = K \frac{(1 + \slp/\omega_{z1}) \cdot (1 + \slp/\omega_{z2}) \ldots (1 + \slp/\omega_{zm})}{(1 + \slp/\omega_{p1}) \cdot (1 + \slp/\omega_{p2}) \ldots (1 + \slp/\omega_{pn})} 
+\]
+#+END_EXPORT
+- Módulo
+#+BEGIN_EXPORT latex
+\[
+  |\fasor{H}| = K \frac{|1 + j\omega/\omega_{z1}| \cdot |1 + j\omega/\omega_{z2}| \ldots |1 + j\omega/\omega_{zm}|}{|1 + j\omega/\omega_{p1}| \cdot |1 + j\omega/\omega_{p2}| \ldots |1 + j\omega/\omega_{pn}|} 
+\]
+#+END_EXPORT
+
+- Ángulo
+#+BEGIN_EXPORT latex
+\begin{align*}
+\phi(\omega) &= \atan(\omega/\omega_{z1}) + \atan(\omega/\omega_{z2}) + \ldots + \atan(\omega/\omega_{zm}) - \\
+&- \left(\atan(\omega/\omega_{p1}) + \atan(\omega/\omega_{p2}) + \ldots + \atan(\omega/\omega_{pn})\right) 
+\end{align*}
+#+END_EXPORT
+
+** Construcción del Diagrama de Bode
+
+- Al aplicar logaritmos a la expresión de la amplitud *los productos se convierten en sumas*.
+- La estrategia de construcción consiste en analizar la *contribución de cada cero/polo por separado* y *sumar* para obtener el resultado global.
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/Bode.pdf]]
+
+** Construcción del Diagrama de Bode
+*** Posibilidades
+  - Término constante: $K$
+  - Cero/Polo en el origen: $j\omega$
+  - Cero/Polo simple: $1 + j\omega/\omega_c$
+  - Cero/Polo múltiple (/raíces reales repetidas/): $(1 + j\omega/\omega_c)^N$
+  - Cero/Polo cuadrático (/raíces complejas conjugadas/): $1 - (\omega/\omega_0)^2 + j2\zeta\omega/\omega_0$
+
+** Término Constante
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = K \Rightarrow
+  \begin{cases}
+    |\fasor{H}| = 20 \log |K|\\
+    \phi(\omega) = 
+    \begin{cases}
+      \ang{0} \quad si \quad K > 0\\
+      \ang{180} \quad si \quad K < 0\\
+    \end{cases}
+  \end{cases}
+\]
+#+END_EXPORT
+
+[[file:figs/BodeConstante.pdf]]
+
+** Cero en el origen[fn:1]
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = j\omega \Rightarrow
+  \begin{cases}
+    |\fasor{H}| = 20 \log \omega\\
+    \phi(\omega) = \ang{90}
+  \end{cases}
+\]
+#+END_EXPORT
+
+
+
+[[file:figs/BodeCeroOrigen.pdf]]
+
+Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
+
+** Polo en el origen
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{1}{j\omega} \Rightarrow
+  \begin{cases}
+    |\fasor{H}| = - 20 \log \omega\\
+    \phi(\omega) = - \ang{90}
+  \end{cases}
+\]
+#+END_EXPORT
+
+[[file:figs/BodePoloOrigen.pdf]]
+
+** Cero simple
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = 1 + j\frac{\omega}{\omega_z} \Rightarrow
+  \begin{cases}
+    |\fasor{H}| =  20 \log \sqrt{1 + \left(\frac{\omega}{\omega_z}\right)^2}\\
+    \phi(\omega) = \atan(\frac{\omega}{\omega_z}) 
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  |\fasor{H}| = 
+  \begin{cases}
+  20 \log 1 = 0, \quad \omega \to 0\\
+  20 \log \frac{\omega}{\omega_z}, \quad \omega \gg \omega_z\\
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  \phi(\omega) = 
+  \begin{cases}
+    \ang{0},\quad \omega \leq 0.1\omega_z\\
+    \ang{45}, \quad \omega = \omega_z\\
+    \ang{90}, \quad \omega \geq 10\omega_z\\
+  \end{cases}
+\]
+#+END_EXPORT
+
+[[file:figs/BodeCeroSimple.pdf]]
+
+** Polo simple
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{1}{1 + j\frac{\omega}{\omega_p}} \Rightarrow
+  \begin{cases}
+    |\fasor{H}| =  - 20 \log \sqrt{1 + \left(\frac{\omega}{\omega_p}\right)^2}\\
+    \phi(\omega) = - \atan(\frac{\omega}{\omega_p}) 
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  |\fasor{H}| = 
+  \begin{cases}
+  - 20 \log 1 = 0, \quad \omega \to 0\\
+  - 20 \log \frac{\omega}{\omega_p}, \quad \omega \gg \omega_p\\
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  \phi(\omega) = 
+  \begin{cases}
+    \ang{0},\quad \omega \leq 0.1\omega_p\\
+    - \ang{45}, \quad \omega = \omega_p\\
+    - \ang{90}, \quad \omega \geq 10 \omega_p
+  \end{cases}
+\]
+#+END_EXPORT
+
+
+[[file:figs/BodePoloSimple.pdf]]
+
+** Cero cuadrático
+Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, con $\alpha < \omega_0$. Usando $\zeta = \alpha/\omega_0 < 1$ y normalizando:
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = 1 + j 2 \zeta \frac{\omega}{\omega_0} - \left(\frac{\omega}{\omega_0}\right)^2 
+\]
+#+END_EXPORT
+
+
+#+BEGIN_EXPORT latex
+\[
+  |\fasor{H}| = 
+  \begin{cases}
+  20 \log 1 = 0, \quad \omega \to 0\\
+  40 \log (\omega/\omega_0), \quad \omega \gg \omega_0\\
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  \phi(\omega) = \atan \frac{2\zeta\omega/\omega_0}{1 - \omega^2/\omega_0^2}
+  \begin{cases}
+    \ang{0},\quad \omega \leq 0.1\omega_0\\
+    \ang{90}, \quad \omega = \omega_0\\
+    \ang{180}, \quad \omega \geq 10 \omega_0
+  \end{cases}
+\]
+#+END_EXPORT
+
+
+[[file:figs/BodeCeroCuadratico.pdf]]
+
+
+** Polo cuadrático
+
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{1}{1 + j 2 \zeta \frac{\omega}{\omega_0} - \left(\frac{\omega}{\omega_0}\right)^2} 
+\]
+#+END_EXPORT
+
+
+#+BEGIN_EXPORT latex
+\[
+  |\fasor{H}| = 
+  \begin{cases}
+  - 20 \log 1 = 0, \quad \omega \to 0\\
+  - 40 \log (\omega/\omega_0), \quad \omega \gg \omega_0\\
+  \end{cases}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+  \phi(\omega) = - \atan \frac{2\zeta\omega/\omega_0}{1 - \omega^2/\omega_0^2}
+  \begin{cases}
+    \ang{0},\quad \omega \leq 0.1\omega_0\\
+    - \ang{90}, \quad \omega = \omega_0\\
+    - \ang{180}, \quad \omega \geq 10 \omega_0
+  \end{cases}
+\]
+#+END_EXPORT
+
+
+
+[[file:figs/BodePoloCuadratico.pdf]]
+
+** Ejercicios Recomendados
+- AS: ejemplos 14.3, 14.4, 14.5, 14.6.
+- Exámenes:
+  - Feb 2004 (b), Jun 2013 (b)
+  - Sep 2007 (b), Feb 2005 (b), Feb 2010 (b)
+  - Nov 2014 (b), Sep 2005 (b), Sep 2006 (b).
+* Filtros
+** Filtro Paso Bajo
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  |H(0)| &= 1\\
+  |H(\omega_c)| &= 1/\sqrt{2}\\
+  |H(\infty)| &= 0
+\end{align*}
+#+END_EXPORT
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.7
+    :END:
+[[file:figs/Filtro_PasoBajo.pdf]]
+
+** Filtro Paso Alto
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  |H(0)| &= 0\\
+  |H(\omega_c)| &= 1/\sqrt{2}\\
+  |H(\infty)| &= 1
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.7
+    :END:
+[[file:figs/Filtro_PasoAlto.pdf]]
+
+** Filtro Paso Banda
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  |H(\omega < \omega_1)| &= 0\\
+  |H(\omega_1 < \omega < \omega_2)| &= 1\\
+  |H(\omega > \omega_2)| &= 0
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.7
+    :END:
+
+[[file:figs/Filtro_PasoBanda.pdf]]
+
+** Filtro Banda Eliminada
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  |H(\omega < \omega_1)| &= 1\\
+  |H(\omega_1 < \omega < \omega_2)| &= 0\\
+  |H(\omega > \omega_2)| &= 1
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.7
+    :END:
+[[file:figs/Filtro_BandaEliminada.pdf]]
+
+** Ejemplo: circuito RC
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/filtroRC.pdf]]
+
+# #+BEGIN_EXPORT latex
+# \[
+# \laplace{H} = \frac{\laplace{U_c}}{\laplace{E_g}} = \frac{1/\slp C}{R + 1/\slp C} 
+# \]
+
+# \[
+# \slp = j\omega
+# \]
+# #+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/Hw_RC.pdf]]
+
+*** :B_ignoreheading:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} = \frac{\laplace{U_c}}{\laplace{E_g}} \Rightarrow |\fasor{H}| = \frac{1}{\sqrt{1 + (\omega/\omega_c)^2}} 
+\]
+#+END_EXPORT
+
+** Ejemplo: circuito RL
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/filtroRL.pdf]]
+
+# #+BEGIN_EXPORT latex
+# \[
+# \laplace{H} = \frac{\laplace{U_L}}{\laplace{E_g}} = \frac{\slp L}{R + \slp L} 
+# \]
+
+# \[
+# \slp = j\omega
+# \]
+# #+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+[[file:figs/Hw_RL.pdf]]
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} = \frac{\laplace{U_L}}{\laplace{E_g}} \Rightarrow |\fasor{H}| = \frac{\omega/\omega_c}{\sqrt{1 + (\omega/\omega_c)^2}} 
+\]
+#+END_EXPORT
+
+** Circuitos para practicar
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{\fasor{U_R}}{\fasor{E_g}}
+\]
+#+END_EXPORT
+[[file:figs/filtroCR.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+BEGIN_EXPORT latex
+\[
+  \fasor{H} = \frac{\fasor{U_R}}{\fasor{E_g}}
+\]
+#+END_EXPORT
+[[file:figs/filtroLR.pdf]]
+
+* Footnotes
+
+[fn:1] *Atención*: el origen $\omega = 0$ no se representa en una escala logarítmica.

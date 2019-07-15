@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors, americanvoltages]{circuitikzgit}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}
+  %% Primer devanado
+  \node (A) at (0, 5) [label = $A_1$]{};
+  \node (B) at (0, 0) [label = below:$B_1$]{};
+  \node (Ag) at (-1, 5) {};
+  \node (Bg) at (-1, 0) {};
+  \node (Ab) at (2, 5) {};
+  \node (Bb) at (2, 0) {};
+  \node (Az2) at (4, 5) {};
+  \node (Bz2) at (4, 0) {};
+  \node (Az3) at (6, 5) {};
+  \node (Bz3) at (6, 0) {};
+  \draw
+  (A) to[open, v^= $V_1$] (B)
+  (A) to[short] (Ag)
+  (B) to[short] (Bg)
+  (Ag) to [sV, l_= $\epsilon_g$] (Bg)
+  (A) to[short, *-*, i = $I_1$] (Ab)
+  (B) to[short, *-*] (Bb)
+  (Ab) to[L, l = $L_1$] (Bb)
+  (Ab) to[short] (Az2)
+  (Bb) to[short] (Bz2)
+  (Az2) to [european resistor, l = $a^2_{12} Z_2$] (Bz2)
+  (Az2) to[short, *-*] (Az3)
+  (Bz2) to[short, *-*] (Bz3)
+  (Az3) to [european resistor, l = $a^2_{23} Z_3$] (Bz3);
+\end{circuitikz}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, european resistors]
+  % Cuadripolo
+  \draw[fill=lightgray] (0,-1) node [above right] {$Q$} rectangle (5,6);
+  % Interior del cuadripolo
+  \draw (0.5, 4) to [short] (0.5,5)
+  to [L, -, l = $X_L$] (4.5, 5)
+  to [short] (4.5,4);
+  \draw (0, 4) to [american resistor, *-*, l = $R$] (5, 4);
+  \draw (0.5, 4) to [C, *-*, l=$X_C$] (0.5, 0);
+  \draw (4.5, 4) to [C, *-*, l_=$X_C$] (4.5, 0);
+  \draw (0, 0) to [short, *-*] (5,0);
+  % Cuadripolo L
+  \draw[fill=lightgray] (6,7) rectangle (11,4) node [above left] {$Q_L$};
+  \draw (6.5,6.5) to [L, *-*, l_=$X_L$] (10.5,6.5);
+  \draw (6.5,4.5) to [short, *-*] (10.5,4.5);
+  % Cuadripolo RC
+  \draw[fill=lightgray] (5.5,2.5) rectangle (11.5,-2.5) node [above left] {$Q_{RC}$};
+  \draw (6, 2) to [american resistor, *-*, l_= $R$] (11, 2);
+  \draw (6.5, 2) to [C, *-*, l=$X_C$] (6.5, -2);
+  \draw (10.5, 2) to [C, *-*, l_=$X_C$] (10.5, -2);
+  \draw (6, -2) to [short, *-*] (11,-2);
+  \end{circuitikz}
+\end{document}

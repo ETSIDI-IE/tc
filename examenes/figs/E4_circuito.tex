@@ -1,0 +1,17 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw (0, 2) to [short, *-*, i = $i_1(t)$] (1, 2)
+  to [R, *-*, l = $R$] (4, 2)
+  to [short, -*, i = $i_2(t)$] (5, 2);
+  \draw (4, 2) to [C, *-*, l_=$C$] (4, 0);
+  \draw (1, 2) to [C, *-*, l=$C$] (1, 0);
+  \draw (0, 0) to [short, *-*] (5,0);
+  \draw (0, 2) to [open, v=$v_1(t)$] (0, 0);
+  \draw (5, 2) to [open, v^=$v_2(t)$] (5, 0);
+  \end{circuitikz}
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw (0,4) to[short,-*] ++(1,0) coordinate(left)
+  to[L, l_=$L_p$] ++(0,-4)
+  (left) to[short,-*] ++(2,0)
+  to[R, l_=$R_p$,-*] ++(0,-4) coordinate(right)
+  to[short, -*] ++(-2,0)
+  to[short, -] (0,0);
+\end{circuitikz}
+\end{document}

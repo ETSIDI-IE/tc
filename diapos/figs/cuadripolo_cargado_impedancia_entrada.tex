@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents, european resistors]
+  % Cuadripolo
+  \draw[fill=lightgray] (2,-1) rectangle (5,5) node[midway]{Red Lineal};
+  % Entrada
+  \draw (0,4) to [short, *-*, i^=$\mathbf{I}_1$] (2,4)
+  (2,0) to [short, *-*, i^=$\mathbf{I}_1$] (0,0)
+  (2,4) to [open, v=$\mathbf{V}_1$] (2,0);
+  % Salida
+  \draw (7,4) to [short, -*, i_=$\mathbf{I}_2$] (5,4)
+  (5,4) to [open, v^=$\mathbf{V}_2$] (5,0)
+  (7,0) to [R, l_=$\mathbf{Z}_L$, -] (7,4)
+  (5,0) to [short, *-, i_=$\mathbf{I}_2$] (7,0);
+  % Flecha impedancia
+  \draw[->, dashed] (.3,-.7) -- node[midway, left] {$\mathbf{Z}_i$} (.3,1.3) -- (2,1.3);
+\end{circuitikz}
+\end{document}

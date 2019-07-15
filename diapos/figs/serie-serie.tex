@@ -1,0 +1,39 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+\tikzset{
+  partial ellipse/.style args={#1:#2:#3}{
+    insert path={+ (#1:#3) arc (#1:#2:#3)}
+  }
+}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents]
+  % Cuadripolo A
+  \draw[fill=lightgray] (2,-1) rectangle (6,5) node[midway]{$C_A$};
+  \draw (0,4)to [short, *-*, i^=$\mathbf{I}_{1A}$] (2,4)
+  (2,0) to [short, *-*, i^=$\mathbf{I}_{1'A}$] (0,0);
+  \draw (2,4) to [open, v=$\mathbf{V}_{1A}$] (2,0);
+  \draw (8,4) to [short, *-*, i_=$\mathbf{I}_{2A}$] (6,4)
+  (6,0) to [short, *-*, i_=$\mathbf{I}_{2'A}$] (8,0);
+  \draw (6,4) to [open, v^=$\mathbf{V}_{2A}$] (6,0);
+  % Cuadripolo B
+  \draw[fill=lightgray] (2,-9) rectangle (6,-3) node[midway]{$C_B$};
+  \draw (0,-4)to [short, *-*, i^=$\mathbf{I}_{1B}$] (2,-4)
+  (2,-8) to [short, *-*, i^=$\mathbf{I}_{1'B}$] (0,-8);
+  \draw (2,-4) to [open, v=$\mathbf{V}_{1B}$] (2,-8);
+  \draw (8,-4) to [short, *-*, i_=$\mathbf{I}_{2B}$] (6,-4)
+  (6,-8) to [short, *-*, i_=$\mathbf{I}_{2'B}$] (8,-8);
+  \draw (6,-4) to [open, v^=$\mathbf{V}_{2B}$] (6,-8);
+  % Conexión
+  \draw (0,0) to [short, -] (0,-4);
+  \draw (8,0) to [short, -] (8,-4);
+  \draw (-1,4) to [short, i=$\mathbf{I}_1$] (0,4);
+  \draw (9,4) to [short, i=$\mathbf{I}_2$] (8,4);
+  \draw (0,-8) to [short, i=$\mathbf{I}_1$] (-1,-8);
+  \draw (8,-8) to [short, i=$\mathbf{I}_2$] (9,-8);
+  \draw (-1,4) to [open, v_=$\mathbf{V}_1$] (-1,-8);
+  \draw (9,4) to [open, v^=$\mathbf{V}_2$] (9,-8); 
+\end{circuitikz}
+\end{document}

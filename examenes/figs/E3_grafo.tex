@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage[straightvoltages]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw [very thick]%
+  (0,4) to [short, v= $E_g$, *-*] (0,0)
+  (3,4) node[above]{A} to [short, *-*] (6,4)
+  to [short, l_= $C$, v^=$v_{C}$] (6,0) node[below right] {B}
+  to [short, *-*] (3,0) node[below] {C}
+  (3,2) node[left] {D} to [short, l= $R_2$, v_=$v_{R2}$, *-*] (3,0)
+  to [short, *-*] (0,0);
+  \draw [dashed]%
+  (0,4) to [short, l_= $R_1$, i = $i_{R1}$, *-*] (3,4)
+  (3,4) to[short, l= $L$, i_=$i_L$, *-*] (3,2);
+\end{circuitikz}
+\end{document}

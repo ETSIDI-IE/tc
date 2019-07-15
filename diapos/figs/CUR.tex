@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[domain = -.9:.9, samples = 1000, font = \small]
+  \draw[->] (-1,0) -- (1,0) node[above]{$Q_0 \cdot \epsilon$};
+  \draw[->] (0,-0.2) -- (0,5.1) node[left] {$|Z(x)|$};
+
+  \draw[dashed] (-0.1,0) node[below left] {$-1/2$} --(-0.1, 5*0.707);
+  \draw[dashed] (0.1,0) node[below right] {$1/2$} --(0.1, 5*0.707);
+  
+ \draw[color=black] plot[id=exacta] function{5/sqrt(1 + 25*x**2 *((2+x)/(1+x))**2);} node[above right, font=\tiny] {Exacta};
+ \draw[color=red] plot[id=cur] function{5/sqrt(1+4*25*x**2)} node[right, font=\tiny] {CUR};
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{mathpazo}
+
+\usepackage[american]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \tikzstyle{every node}=[font=\Large]
+  \draw
+  (-1,0) node[left]{$B$} to [short, *-] (0,0)
+  (-1,4) node[left]{$A$} to [short, *-] (0,4) 
+  to [R, l = $R_1$, -*] (4,4)
+  to [R, l=$R_6$] (8,4)
+  (0,0) to [short] (4,0)
+  to [R, l=$R_2$] (4,4)
+  (4,0) to [R, l=$R_{34}$, *-] (6,0)
+  (8,0) to [V, l=$I_{g1} R_{34}$] (6,0)
+  (8,4) to [R, l_= $R_5$, *-] (8,2)
+  to [V, l=$I_{g1} R_5$] (8,0);
+\end{circuitikz}
+
+\end{document}

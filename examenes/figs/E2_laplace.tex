@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw
+  (0,6) to [V, *-*, l_=$E_g/s$] (0,0)
+  (0, 6) to [R, l_=$R_L$] (3,6)
+  to [L, -*, l_=$sL$, i>_=$I_L(s)$] (5,6)
+  to [short, *-*] (7,6)
+  to [R, l^=$R$, i>^=$I_R(s)$] (7,0)
+  (5, 6) to [C, l^=$1/sC$] (5,3)
+  to [V, l^=$E_g/s$] (5, 0)
+  (5, 6) to [open, v=$U_C(s)$] (5,0)
+  (0, 0) to [short, -*] (5,0)
+  to [short, -*] (7, 0);
+
+  \draw[thin, <-, >=triangle 45, color = blue] (2.5,3) node{$I_a(s)$}  ++(-60:1) arc (-60:170:1);
+  \draw[thin, <-, >=triangle 45, color = blue] (6,3)node{$I_b(s)$}  ++(-60:.75) arc (-60:170:.75);
+
+\end{circuitikz}
+\end{document}

@@ -1,0 +1,14 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw
+  (0,4) to [sV, l_=$e_g(t)$] (0,0)
+  to [short, *-*] (4,0)
+  (0,4) to [L, *-*,l_=$L$] (4,4)
+  to [R, l_=$R$, v^=$v_R(t)$] (4,0);
+\end{circuitikz}
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors]{circuitikz}
+
+\newcommand{\equal}{=} %% Necesario para proteger el signo * en tikz
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents]
+  % Cuadripolo
+  \draw[fill=lightgray] (2,-1) rectangle (6,5) node[midway]{Red Lineal};
+  % Entrada
+  \draw (0,4) to[V, l_=$\mathbf{V}_1$, -] (0,0)
+  (0,4) to [short, -*, i^=$\mathbf{I}_1$] (2,4)
+  (2,0) to [short, *-, i^=$\mathbf{I}_1$] (0,0)
+  (2,4) to [open, v=$\mathbf{V}_1$] (2,0);
+  % Salida
+  \draw (8,4) to [short, -*, i_=$\mathbf{I}_2 \equal 0$] (6,4)
+  (6,4) to [open, v^=$\mathbf{V}_2$] (6,0)
+  (8,4) to [open, *-*] (8,0)
+  (6,0) to [short, *-] (8,0);
+\end{circuitikz}
+
+\end{document}

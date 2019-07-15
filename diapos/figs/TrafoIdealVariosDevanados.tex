@@ -1,0 +1,46 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors, americanvoltages]{circuitikzgit}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}
+  %% Primer devanado
+  \node (A1) at (0, 5) [label = $A_1$]{};
+  \node (B1) at (0, 0) [label = below:$B_1$]{};
+  \node (A1b) at (2, 5) {};
+  \node (B1b) at (2, 0) {};
+  \draw
+  (A1) to[open, v = $V_1$] (B1)
+  (A1) to[short, *-, i = $I_1$] (A1b)
+  (B1) to[short, *-] (B1b)
+  (A1b) to[L, name = L1] (B1b)
+  ([xshift=-3]L1.south west) node[circ]{}
+  ([yshift=6]A1b) node[]{$a_{12}:1$}
+  ([yshift=-5]B1b) node[]{$a_{13}:1$};
+  %% Segundo devanado
+  \node (A2) at (4.5, 6) [label = $A_2$]{};
+  \node (B2) at (4.5, 2.7) [label = $B_2$]{};
+  \node (A2b) at (2.5, 6) {};
+  \node (B2b) at (2.5, 2.7) {};
+  \draw
+  (A2) to[open, v^= $V_2$] (B2)
+  (A2) to[short, *-, i = $I_2$] (A2b)
+  (B2) to[short, *-] (B2b)
+  (A2b) to[L, name = L2] (B2b)
+  ([xshift=3]L2.north west) node[circ]{};
+  %% Tercer devanado
+  \node (A3) at (4.5, 2.3) [label = below:$A_3$]{};
+  \node (B3) at (4.5, -1) [label = $B_3$]{};
+  \node (A3b) at (2.5, 2.3) {};
+  \node (B3b) at (2.5, -1) {};
+  \draw
+  (A3) to[open, v^= $V_3$] (B3)
+  (A3) to[short, *-, i = $I_3$] (A3b)
+  (B3) to[short, *-] (B3b)
+  (A3b) to[L, name = L3] (B3b)
+  ([xshift=3]L3.north west) node[circ]{};
+\end{circuitikz}
+\end{document}

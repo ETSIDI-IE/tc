@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage[americaninductors]{circuitikz}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw (0,0) to[short,-*] ++(1,0) coordinate(down)
+  to[R, l_=$R_B$] ++(0,2)
+  to[L, l_=$L_B$,*-*] ++(0,2) coordinate(up)
+  to[short] ++(-1,0)
+  node[fit={($(down)+(-.25,0)$)($(up)+(.5,0)$)},draw, dashed,inner sep=10pt] {};
+\end{circuitikz}
+\end{document}

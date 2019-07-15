@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\begin{document}
+
+
+\begin{tikzpicture}
+  \draw[->] (-5,0) -- (2,0) node[below] {$\sigma$};
+  \draw[->] (0,-1) -- (0,6.5) node[above] {$j\omega$};
+
+  \node[cross out, ultra thick, color = black, draw, inner sep=4pt] at (-4,0) {};
+  \node[below left, font = \Large] at (-4, 0) {$p_1$};
+  \draw[->,ultra thick, color=red] (-4,0) -- node[midway, sloped, above right] {$|j\omega_1 - p_1|$} (0,2) node[right, font = \large] {$\omega_1$};
+  \draw[->,ultra thick, color=blue!50!black] (-4,0) -- node[midway, sloped, above right] {$|j\omega_p - p_1|$} (0,4) node[right, font = \Large] {$\omega_p$};
+  \draw[->,ultra thick, color=green!50!black] (-4,0) -- node[midway, sloped, above right] {$|j\omega_2 - p_1|$} (0,6) node[right, font = \large] {$\omega_2$};
+
+\end{tikzpicture}
+
+\end{document}

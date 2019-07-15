@@ -1,0 +1,39 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, european resistors]{circuitikz}
+
+\begin{document}
+
+\tikzset{
+  partial ellipse/.style args={#1:#2:#3}{
+    insert path={+ (#1:#3) arc (#1:#2:#3)}
+  }
+}
+
+\begin{circuitikz}
+  \tikzstyle{every node}=[font=\Large]
+  \draw
+  (0,0) to[I, -*, l = $I_g$] (0,4)
+  to [R, i = $i_1$, l = $Z_1$, -*] (4,4)
+  to [R, i = $i_2$, l_=$Z_2$] (8,4)
+  (0,4) to [short,  i = $i_0$] (0,6)
+  to [sV= $\alpha i_4$] (8,6)
+  to [short] (8,4)
+  (0,0) to [short] (4,0)
+  to [R, l=$Z_4$, i<=$i_4$] (4,4)
+  (4,0) to [short] (8,0)
+  (8,4) to [sV = $\epsilon_g$, *-] (8,2)
+  to [R, l=$Z_3$] (8,0)
+  (8,0) to[short, -*, i = $i_3$] (4,0) to[short] (0,0);
+  %% Corrientes de malla
+  \draw[red,-latex] (4,5) node{$\overline{I}_a$} [partial ellipse=300:40:1cm and .45cm];
+  \draw[red,-latex] (2,2) node{$\overline{I}_b$} [partial ellipse=300:40:1cm and .45cm];
+  \draw[red,-latex] (6,2) node{$\overline{I}_c$} [partial ellipse=300:40:1cm and .45cm];
+
+\end{circuitikz}
+
+\end{document}

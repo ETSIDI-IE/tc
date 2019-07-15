@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors, americanvoltages]{circuitikzgit}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw
+  (-1,3) node[] (A') {}
+  (0,3) node[] (A) {}
+  (-1,0) node[] (B') {}
+  (0,0) node[] (B) {}
+  (2,1.5) node[] (C') {}
+  (0,1.5) node[] (C) {}
+  (2,0) node[] (D') {}
+  (0,0) node[] (D) {};
+  \draw
+  (A') to[short, *-, i=$I_1$] (A)
+  (A) to[L, l_= $N_1$, name = L] (B)
+  (B') to[short, *-] (B)
+  (C') to[short, *-, i =$I_2$] (C)
+  (D') to[short, *-] (D);
+  \draw
+  (A') to[open, v = $V_1$] (B')
+  (C') to[open, v^ = $V_2$] (D');
+  \draw
+  ([xshift = -2]L.south west) node[circ] {}
+  ([yshift = -3, xshift = 2]L.north) node[circ] {}
+  ([xshift = 5]L.north west) node[right] {$a:1$}
+  ([xshift = 5]L.north east) node[] {$N_2$};
+\end{circuitikz}
+\end{document}
