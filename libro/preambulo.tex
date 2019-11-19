@@ -86,13 +86,10 @@ backend=bibtex, doi=true, url=true]{biblatex}
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Energía Solar Fotovoltaica},    % title
+    pdftitle={Análisis de Circuitos Eléctricos Lineales},    % title
     pdfauthor={Oscar Perpiñán Lamigueiro},     % author
-    pdfsubject={Energia Solar Fotovoltaica},   % subject of the document
     pdfcreator={AucTeX/Emacs},   % creator of the document
     pdfproducer={LaTeX}, % producer of the document
-    pdfkeywords={radiación solar, energía solar fotovoltaica, energías
-    renovables}, % list of keywords
     pdfnewwindow=true,      % links in new window
     pdfborder={0 0 0},
     colorlinks=true,       % false: boxed links; true: colored links
@@ -105,10 +102,6 @@ backend=bibtex, doi=true, url=true]{biblatex}
 
 \DeclareSIUnit\kWh{kWh}
 \DeclareSIUnit\Wh{Wh}
-\DeclareSIUnit\Wp{Wp}
-\DeclareSIUnit\kWp{kWp}
-\DeclareSIUnit\amperehour{Ah}
-\DeclareSIUnit\celula{celula}
 
 %\spanishdecimal{.} %Para que no lo sustituya automáticamente por comas
 \addto\captionsspanish{%
@@ -117,25 +110,6 @@ backend=bibtex, doi=true, url=true]{biblatex}
 
 \renewcommand\nomname{Nomenclatura}
 \def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
-
-
-%\@addtoreset{equation}{section}
-%\renewcommand{\theequation}{\thesection.\arabic{equation}}
-%\numberwithin{equation}{section}
-%\@addtoreset{table}{section}
-%\renewcommand{\thetable}{\thesection.\arabic{table}}
-%\numberwithin{table}{section}
-%\@addtoreset{figure}{section}
-%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
-%\numberwithin{figure}{section}
-
-
-%\declarebtxcommands{spanish}{%
- % \def\btxphdthesis#1{\protect\foreignlanguage{spanish}{Tesis Doctoral}}%
-%}
-%\setbibliographyfont{lastname}{\scshape}%Pone los autores en Small Caps
-
-
 
 %Configuración de MEMOIR
 %%Pone la fecha en SMALL CAPS y hacia la derecha
@@ -201,23 +175,3 @@ backend=bibtex, doi=true, url=true]{biblatex}
 
 
 \renewcommand{\textfloatsep}{10pt}%Espacio entre el flotante y el texto
-
-%backgroung image
-\usepackage{eso-pic} 
-
-%http://stackoverflow.com/questions/240097/how-to-create-a-background-image-on-titlepage-with-latex
-\newcommand\BackgroundPic{
-  \put(350,-150){
-    \parbox[b][0.5\paperheight]{0.5\paperwidth}{%
-      \includegraphics[scale=0.5]{../figs/johnny_automatic_old_sun}%
-}}}
-
-\newcommand\BackgroundPicLight{
-  \put(350,-150){
-    \parbox[b][0.5\paperheight]{0.5\paperwidth}{%
- %     \vfill 
-%\centering
-      \includegraphics[scale=0.5]{../figs/johnny_automatic_old_sun_light}%
-%\vfill
-}}}
-

@@ -1,6 +1,0 @@
-#+LANGUAGE:  es
-#+OPTIONS:   num:t toc:nil \n:nil ':t @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+OPTIONS:   H:6
-#+LaTeX_CLASS: memoir-book_with_parts
-#+LaTeX_HEADER: \input{preambulo.tex}

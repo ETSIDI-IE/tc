@@ -1,77 +1,60 @@
-% Created 2019-11-15 vie 14:00
-% Intended LaTeX compiler: pdflatex
 \documentclass[a4paper]{memoir}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{grffile}
-\usepackage{longtable}
-\usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage[normalem]{ulem}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{capt-of}
-\usepackage{hyperref}
-\usepackage{color}
-\usepackage{listings}
+
 \input{preambulo.tex}
-\author{Oscar Perpiñán Lamigueiro}
-\date{Noviembre 2019}
-\title{Análisis de Circuitos Eléctricos Lineales}
-\hypersetup{
- pdfauthor={Oscar Perpiñán Lamigueiro},
- pdftitle={Análisis de Circuitos Eléctricos Lineales},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
- pdflang={Spanish}}
+
 \begin{document}
 
-\maketitle
+\begin{titlingpage}
+
+  \title{Análisis de Circuitos Eléctricos Lineales}
+  \author{Oscar Perpiñán Lamigueiro}
+  
+  \date{Noviembre 2019}
+
+  \maketitle
+
+\end{titlingpage}
+
 \frontmatter
 
 \cleardoublepage
 
-\setcounter{tocdepth}{1}
+% \include{Licencia}
+
 \tableofcontents
 
-\mainmatter
-\chapter{Introducción}
-\label{sec:org0b61e69}
-\label{sec:intro}
+\printnomenclature{}
 
-\begin{itemize}
-\item Análisis vs. diseño (o síntesis)
-\item Qué es un circuito eléctrico
-\item Sistemas lineales como aproximación de la realidad.
-\item Simplificación de Maxwell: aplicación a circuitos cortos (en términos de longitud de onda), parámetros concentrados.
-\end{itemize}
+\cleardoublepage{}
+
+\mainmatter
+
+\include{introduccion}
+
+
 \part{Conceptos Básicos}
-\label{sec:orgca76cb1}
 \label{part:conceptos-basicos}
 
-\chapter{Variables}
-\label{sec:org1f54978}
+\include{variables}
+\include{elementos}
+\include{kirchhoff}
+\include{metodos}
 
-\chapter{Elementos de un circuito lineal}
-\label{sec:org8aa5830}
-\chapter{Leyes de Kirchhoff}
-\label{sec:org1072ca5}
-\chapter{Métodos de Análisis}
-\label{sec:org771e368}
-\label{sec:metodos-analisis}
+
+
 \part{Corriente Alterna Sinusoidal}
-\label{sec:orgc109175}
 \label{part:corriente-alterna}
-\chapter{Cálculo Fasorial}
-\label{sec:org9ead4bc}
-\label{sec:calculo-fasorial}
-\chapter{Sistemas Monofásicos}
-\label{sec:org18e3040}
-\label{sec:sistemas-monofasicos}
-\chapter{Sistemas Trifásicos}
-\label{sec:org658ff2d}
-\label{sec:sistemas-trifasicos}
+\include{fasorial}
+\include{monofasica}
+\include{trifasica}
+
+\backmatter
+
+\printbibliography
+
+
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
