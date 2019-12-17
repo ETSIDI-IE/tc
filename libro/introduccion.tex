@@ -1,14 +1,24 @@
 \chapter{Introducción}
 \label{cha:intro}
+Este libro está dedicado al \textbf{análisis} de \textbf{circuitos eléctricos} \textbf{lineales} de \textbf{parámetros concentrados}. Todos los términos de esta declaración de intenciones merecen ser descritos con detalle:
 
 \begin{itemize}
-\item Análisis vs. diseño (o síntesis)
-\item Qué es un circuito eléctrico
-\item Sistemas lineales como aproximación de la realidad.
-\item Simplificación de Maxwell: aplicación a circuitos cortos (en términos de longitud de onda), parámetros concentrados.
+  
+\item Un \textbf{circuito eléctrico} es un conjunto de componentes eléctricos interconectados mediante conductores que crean un camino cerrado por el que puede circular corriente eléctrica. Como se estudiará en el capítulo \ref{cha:elementos-circuito-lineal}, dedicado a los componentes eléctricos, un circuito eléctrico puede incluir elementos activos (generadores), que entregan potencia al circuito, o elementos pasivos (receptores), que consumen o transforman la potencia que circula.
+  
+\item El \textbf{análisis} de un circuito eléctrico existente persigue determinar sus condiciones de funcionamiento. Este objetivo se alcanza definiendo las ecuaciones correspondientes al circuito en cuestión, y obteniendo los valores de determinadas variables importantes a partir de dichas ecuaciones. Debe distinguirse esta labor de la del \textbf{diseño} de un circuito eléctrico, en la que el objetivo es definir el circuito eléctrico, es decir, determinar los componentes necesarios y su interconexión, para obtener unas condiciones de funcionamiento. 
+
+\item Todos los circuitos eléctricos que se estudian en este libro se comportan como \textbf{sistemas lineales}. Satisfacen, por tanto, las dos propiedades de linealidad:
+  \begin{itemize}
+  \item $f(x + y) = f(x) + f(y)$: La respuesta $f$ a la suma de dos entradas $x$ e $y$ es igual a la suma de la respuesta individual a cada una de las entradas.
+  \item $f(k \cdot x) = k \cdot f(x)$: la respuesta a una entrada que está multiplicada por un factor de escala $k$ es igual a multiplicar por este factor a la respuesta a la entrada.
+  \end{itemize}
+  Estas propiedades simplifican el tratamiento de los circuitos, y permiten aplicar técnicas de resolución de ecuaciones lineales. Sin embargo, debe tenerse en cuenta que la linealidad es una aproximación de la realidad que no puede aplicarse de manera indiscriminada a cualquier componente y en cualquier condición. En particular, los dispositivos electrónicos como diodos o transistores tienen un comportamiento marcadamente no lineal, de forma que los circuitos que los contienen no pueden analizarse directamente con las técnicas que aquí se exponen sin realizar previamente aproximaciones de su funcionamiento.
+\item Los circuitos eléctricos reales ocupan espacio, las máquinas generadoras y los receptores tienen grandes dimensiones, y los cables conductores se extienden a lo largo de longitudes variopintas. Sin embargo, el análisis de circuitos no toma en consideración las propiedades espaciales de los circuitos ni de sus componentes, sino que los confina a elementos puntuales con un modelo de \textbf{parámetros concentrados}. De esta forma, un conductor real de $\SI{100}{\meter}$ se representará habitualmente como un conductor ideal con una resistencia en su punto medio. Este tratamiento es una simplificación de las ecuaciones del electromagnetismo de Maxwell, y es aplicable únicamente cuando las dimensiones del circuito real son inferiores a la longitud de onda de la señal que circula por el circuito. Por ejemplo, a la frecuencia de $\SI{50}{\hertz}$, habitual en sistemas eléctricos industriales, la longitud de onda de la señal es de $\SI{6000}{\kilo\meter}$. Sin embargo, a la frecuencia de $\SI{2.6}{\giga\hertz}$, característica de la telefonía 4G, la longitud de onda se reduce a $\SI{11.5}{\centi\meter}$. 
 \end{itemize}
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "TC"
+%%% ispell-local-dictionary: "castellano"
 %%% End:
