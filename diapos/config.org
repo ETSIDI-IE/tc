@@ -1,15 +1,16 @@
 #+LANGUAGE:  es
 #+OPTIONS:   num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+STARTUP: beamer
 #+LaTeX_CLASS: beamer
 #+LATEX_CLASS_OPTIONS: [xcolor={usenames,svgnames,dvipsnames}]
-#+BEAMER_THEME: Goettingen [hideothersubsections]
+#+BEAMER_THEME: Boadilla
 #+BEAMER_COLOR_THEME: rose
 #+BEAMER_FONT_THEME: serif
 #+LATEX_HEADER: \usepackage{mathpazo}
 #+LATEX_HEADER_EXTRA: \setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
 #+LATEX_HEADER: \usepackage{gensymb}
 #+LATEX_HEADER: \usepackage{amsmath}
-#+LATEX_HEADER: \usepackage{esdiff}
+#+LATEX_HEADER: \usepackage{diffcoeff}
 #+LATEX_HEADER: \usepackage{steinmetz}
 #+LATEX_HEADER: \bibliographystyle{plain}
 #+LATEX_HEADER: \AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}

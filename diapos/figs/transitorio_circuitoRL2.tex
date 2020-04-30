@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \draw
+  (0, 0) node[cute spdt down arrow, xscale = -1] (Sw) {}
+  (Sw.out 1) to [short] ++(-2,0)
+  to [V, v = $u(t)$] ++(0, -2) coordinate (A)
+  (Sw.in) to [R, i>^= $i(t)$, v = $u_R(t)$] ++(3,0)
+  to [L, v = $u_L(t)$] ++(2,0)
+  |- (A)
+  (Sw.out 2) to[short] (Sw.out 2|-A);
+\end{circuitikz}
+
+\end{document}

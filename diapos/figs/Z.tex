@@ -1,0 +1,13 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw
+  (0, 0) to [american resistor, *-, l = $R$] (2,0)
+  to [european resistor, *-*, l = $jX$] (4,0);
+\end{circuitikz}
+
+\end{document}

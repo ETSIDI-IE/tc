@@ -25,11 +25,11 @@
 ** Circuito básico
 - En $t < 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
 - En $t = 0$ la fuente se desconecta (la bobina se descarga en la resistencia)
-[[file:figs/RL.pdf]]
+[[file:figs/transitorio_circuitoRL.pdf]]
 
 ** Respuesta natural
 
-file:figs/RL.pdf
+file:figs/transitorio_circuitoRL.pdf
 
 *** Ecuaciones
 #+BEGIN_EXPORT latex
@@ -164,10 +164,10 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 ** Circuito básico
 - En $t <0$ la fuente alimenta el circuito RC (el condensador se carga).
 - En $t = 0$ se desconecta la fuente (el condensador comienza a descargarse en la resistencia).
-[[file:figs/RC.pdf]]
+[[file:figs/transitorio_circuitoRC.pdf]]
 
 ** Respuesta natural
-[[file:figs/RC.pdf]]
+[[file:figs/transitorio_circuitoRC.pdf]]
 
 *** Ecuaciones
 #+BEGIN_EXPORT latex

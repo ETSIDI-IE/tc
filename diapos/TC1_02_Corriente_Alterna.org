@@ -1,0 +1,1083 @@
+#+TITLE: Corriente alterna sinusoidal
+#+DATE: 2019-2020
+#+SETUPFILE: config.org
+#+OPTIONS: H:2
+
+* Conceptos Fundamentales
+   
+** Onda sinusoidal
+
+[[file:figs/sin.pdf]]
+
+
+\[
+y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
+\]
+
+- $Y_{o}$ valor máximo de la onda.
+
+- $\omega=\frac{2\cdot\pi}{T}$: pulsación (radianes/segundo)
+
+- T: periodo de la onda (segundos)
+
+- $f=\frac{\omega}{2\cdot\pi}=\frac{1}{T}$: frecuencia (Hz)
+
+  
+** Fase
+
+[[file:figs/desfase.pdf]]
+
+
+\[
+y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
+\]
+
+- $\theta$: fase (radianes o grados)
+
+  - Es el argumento de la onda para t=0
+
+  - Tomando una onda como referencia, si la fase es 0º, se dice que
+    están en fase con la onda de referencia.
+
+  - Si la fase es positiva, se dice que la onda adelanta
+    respecto a la referencia.
+
+
+** Señales en Cuadratura
+
+[[file:figs/cuadratura.pdf]]
+
+- Cuando el desfase entre dos señales es de 90º ($\theta_I - \theta_U = \pi/2$), se dice que están en cuadratura.
+- El paso por cero de una señal coincide con el paso por el máximo/mínimo de la otra señal.
+
+
+** Valor medio y valor eficaz
+
+*** Valor medio
+#+BEGIN_EXPORT latex
+\[
+Y_m=\frac{1}{T}\int_{0}^{T}y(t)
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega\cdot+\theta)\, dt=0
+\]
+#+END_EXPORT
+*** Valor eficaz
+
+#+BEGIN_EXPORT latex
+\[
+Y = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)}
+\]
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\frac{Y_{o}}{\sqrt{2}}}
+\]
+#+END_EXPORT
+* Cálculo Fasorial
+
+** Representación fasorial
+- Un fasor es un *número complejo* que representa una señal sinusoidal para simplificar cálculos.
+- El *módulo* del fasor es el *valor eficaz*. El *argumento* es la *fase*.
+- Descartamos pulsación: No se puede emplear cuando hay frecuencias diferentes en un mismo circuito.
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+\overline{Y} &= Y\cdot e^{j\theta}\\
+\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sin(\theta))\\
+\overline{Y} &= Y\phase{\theta}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/fasor.pdf]]
+
+** Tensión y corriente en notación fasorial
+
+[[file:figs/ondasTensionCorriente.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U} &= U\phase{\theta_U}\\
+  \overline{I} &= I\phase{\theta_I}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/fasorTensionCorriente.pdf]]
+
+
+** Impedancia: relación entre fasores de tensión y corriente
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U} &= \overline{Z} \cdot \overline{I}\\                 
+  \overline{Z} &= \frac{\overline{U}}{\overline{I}}
+\end{align*}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+\boxed{\overline{Z} = \frac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
+    \begin{cases}
+      Z = \frac{U}{I}\\
+      \theta = \theta_U - \theta_I
+    \end{cases}}
+\]
+#+END_EXPORT
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/fasorTensionCorriente.pdf]]
+
+
+*** Convenio de origen de fases
+ #+BEGIN_EXPORT latex
+ \[
+\theta_U=0 \Rightarrow \begin{cases}
+       Z = \frac{U}{I}\\
+       \theta = -\theta_I
+     \end{cases}
+ \]
+ #+END_EXPORT
+
+
+
+** Impedancia Genérica
+#+BEGIN_EXPORT latex
+\[
+\overline{Z} = R + j X
+\]
+#+END_EXPORT
+
+[[file:figs/fasorImpedancia.pdf]]
+
+** Circuito Resistivo
+Un circuito resistivo no desfasa (*tensión y corriente en fase*).
+
+[[file:figs/resistivo.pdf]]
+
+    #+begin_export latex
+\[
+    i(t) = I_o \cdot \sin(\omega t + \theta)
+\]
+    #+end_export
+#+BEGIN_EXPORT latex
+\begin{align*}
+  u(t) &= R \cdot i(t)=\\
+       &= R I_o \cdot \sin(\omega t + \theta) =\\
+       &= U_o \cdot \sin(\omega t + \theta)\\
+\end{align*}
+ #+END_EXPORT
+
+** Circuito Resistivo
+Un circuito resistivo no desfasa (*tensión y corriente en fase*).
+
+[[file:figs/resistivo.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\[
+\overline{Z}_R = R = R \phase{0}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.35
+    :END:
+[[file:figs/fasorResistencia_VI.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.35
+    :END:
+[[file:figs/fasorResistencia.pdf]]
+
+
+
+** Circuito Inductivo puro                                            :BMCOL:
+Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/inductivoPuro.pdf]]
+
+    #+begin_export latex
+\[
+    i(t) = I_o \cdot \sin(\omega t + \theta)
+\]
+    #+end_export
+#+BEGIN_EXPORT latex
+\begin{align*}
+  u(t) &= L \cdot \frac{d i(t)}{dt} =\\
+       &= {\color{blue}{L \omega I_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{+\pi/2}}) =\\
+       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{+\pi/2}})\\
+\end{align*}
+ #+END_EXPORT
+
+
+** Circuito Inductivo puro                                            :BMCOL:
+Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
+
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/inductivoPuro.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+
+#+BEGIN_EXPORT latex
+\[
+\overline{Z}_L = j\omega L = \omega L \phase{\ang{90}}
+\]
+#+END_EXPORT
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+[[file:figs/fasorInductancia_VI.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:figs/fasorInductancia.pdf]]
+
+
+** Circuito Capacitivo puro
+Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
+
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/capacitivoPuro.pdf]]
+
+    #+begin_export latex
+\[
+    i(t) = I_o \cdot \sin(\omega t + \theta)
+\]
+    #+end_export
+#+BEGIN_EXPORT latex
+\begin{align*}
+  u(t) &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
+       &= {\color{blue}{\frac{1}{\omega C} I_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{-\pi/2}}) =\\
+       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{-\pi/2}})\\
+\end{align*}
+ #+END_EXPORT
+
+
+** Circuito Capacitivo puro
+Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
+
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/capacitivoPuro.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+BEGIN_EXPORT latex
+\[
+\overline{Z}_C = \frac{1}{j\omega C} = \frac{1}{\omega C}\phase{\ang{-90}}
+\]
+#+END_EXPORT
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+[[file:figs/fasorCondensador_VI.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:figs/fasorCondensador.pdf]]
+
+** Circuito RL (inductivo con pérdidas)
+#+ATTR_LATEX: :height 0.25\textheight
+[[file:figs/inductivo.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+[[file:figs/RL.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/fasorInductanciaReal_VI.pdf]]
+
+** Circuito RL (inductivo con pérdidas)
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RL.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U}_R &= R \overline{I}\\
+  \overline{U}_L &= j\omega L \overline{I}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+    #+begin_export latex
+    \begin{align*}
+      \overline{U} &= \overline{U}_R + \overline{U}_L =\\
+		   &=(R + j\omega L) \overline{I}
+    \end{align*}
+    #+end_export
+** Circuito RL (inductivo con pérdidas)
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RL.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+#+BEGIN_EXPORT latex
+\[
+\overline{Z} = R + j\omega L \Rightarrow \boxed{\theta > 0}
+\]
+\[
+  |Z| = \sqrt{R^2 + (\omega L)^2}
+\]
+\[
+  \theta = \atan{\frac{\omega L}{R}}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+[[file:figs/fasorInductanciaReal.pdf]]
+
+
+** Circuito RC (capacitivo con pérdidas)
+#+ATTR_LATEX: :height 0.25\textheight
+[[file:figs/capacitivo.pdf]]
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+[[file:figs/RC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/fasorCondensadorReal_VI.pdf]]
+
+
+** Circuito RC (capacitivo con pérdidas)
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U}_R &= R \overline{I}\\
+  \overline{U}_C &= -j \frac{1}{\omega C} \overline{I}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+
+    #+begin_export latex
+\begin{align*}
+  \overline{U} &= \overline{U}_R + \overline{U}_C =\\
+               &= (R - j \frac{1}{\omega C}) \overline{I} 
+\end{align*}
+    #+end_export
+** Circuito RC (capacitivo con pérdidas)
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+
+#+BEGIN_EXPORT latex
+\[
+\overline{Z} = R - \frac{j}{\omega C} \Rightarrow \boxed{\theta < 0}
+\]
+
+\[
+  |Z| = \sqrt{R^2 + \frac{1}{(\omega C)^2}}
+\]
+
+\[
+  \theta = - \atan{\frac{1}{\omega R C}}
+\]
+
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/fasorCondensadorReal.pdf]]
+
+
+** Circuito RLC serie
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RLC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U}_R &= R \overline{I}\\
+  \overline{U}_L &= j\omega L \overline{I}\\
+  \overline{U}_C &= -j \frac{1}{\omega C} \overline{I}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{U} &= \overline{U}_R + \overline{U}_L + \overline{U}_C =\\
+               &= \left(R + j(\omega L - \frac{1}{\omega C})\right) \overline{I} 
+\end{align*}
+#+END_EXPORT
+
+** Circuito RLC serie
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:figs/RLC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+
+#+BEGIN_EXPORT latex
+\[
+\overline{Z} = R + j(\omega L - \frac{1}{\omega C})
+\]
+\[
+  |Z| = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}
+\]
+\[
+  \theta = \atan{\frac{\omega L - \frac{1}{\omega C}}{R}}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+- $\theta > 0 \Rightarrow \omega L > \frac{1}{\omega C}$: inductivo
+- $\theta < 0 \Rightarrow \omega L < \frac{1}{\omega C}$: capacitivo
+- $\theta = 0 \Rightarrow \omega L = \frac{1}{\omega C}$: resistivo (resonancia)
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+#+begin_export latex
+\[
+\boxed{u(t) = Z \cdot I_o \sin(\omega t + \theta_I + \theta)}
+\]
+
+#+end_export
+
+** Circuito RLC paralelo
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/RLCparalelo.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{I}_R &= 1/R \cdot \overline{U}\\
+  \overline{I}_L &= -j \frac{1}{\omega L} \cdot \overline{U}\\
+  \overline{I}_C &= j \omega C \cdot \overline{U}
+\end{align*}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.55
+    :END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{I} &= \overline{I}_R + \overline{I}_L + \overline{I}_C =\\
+               &= \left(\frac{1}{R} + j(\omega C - \frac{1}{\omega L})\right) \overline{U} 
+\end{align*}
+#+END_EXPORT
+
+** Circuito RLC paralelo
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/RLCparalelo.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+
+#+BEGIN_EXPORT latex
+\[
+\overline{Y} = \frac{\overline{I}}{\overline{U}} = 1/R + j(\omega C - \frac{1}{\omega L})
+\]
+\[
+  |Y| = \sqrt{1/R^2 + (\omega C - \frac{1}{\omega L})^2}
+\]
+\[
+  \theta_Y = \atan\left(R \cdot (\omega C - \frac{1}{\omega L})\right)
+\]
+#+END_EXPORT
+
+
+** Impedancia y Admitancia
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    #+ATTR_LATEX: :height 0.1\textheight
+    [[file:figs/Z.pdf]]
+    #+begin_export latex
+    \[
+      \overline{U} = \overline{Z} \cdot \overline{I}
+    \]
+    \[
+      \overline{Z} = R + j X
+    \]
+    #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:figs/Y.pdf]]
+    #+begin_export latex
+    \[
+      \overline{I} = \overline{Y} \cdot \overline{U}
+    \]
+    \[
+      \overline{Y} = G + j B
+    \]
+    #+end_export
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    #+begin_export latex
+    \[
+    \boxed{
+      \overline{Y} = \frac{1}{\overline{Z}} \rightarrow \left\{%
+	\begin{array}{l}
+	  |Y| = \frac{1}{|Z|}\\
+	  \theta_Y = -\theta_Z = -\theta\\
+	  \end{array}\right.
+	  }
+    \]
+    #+end_export
+
+** Impedancia y Admitancia
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    #+ATTR_LATEX: :height 0.1\textheight
+    [[file:figs/Z.pdf]]
+
+    #+begin_export latex
+    \[
+      \overline{Z} = \frac{1}{G + j B} \rightarrow \left\{%
+	  \begin{array}{l}
+	    R = \frac{G}{G^2 + B^2}\\
+	    X = - j \frac{B}{G^2 + B^2}\\
+	  \end{array}\right.        
+    \]
+    #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:figs/Y.pdf]]
+
+    #+begin_export latex
+    \[
+      \overline{Y} = \frac{1}{R + j X} \rightarrow \left\{%
+	  \begin{array}{l}
+	    G = \frac{R}{R^2 + X^2}\\
+	    B = - j \frac{X}{R^2 + X^2}\\
+	  \end{array}\right.        
+    \]
+    #+end_export
+* Potencia
+** Expresión general
+Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente está retrasada respecto de la tensión (/circuito en retraso/).
+   #+begin_export latex
+   \begin{align*}
+     u(t) &= U_o \cos \omega t\\
+     i(t) &= I_o \cos (\omega t {\color{red}-} \theta)\\
+     p(t) &= u(t) \cdot i(t)
+   \end{align*}
+   #+end_export
+** Expresión general
+
+   #+begin_export latex
+   \begin{align*}
+     p(t) &= U_o I_o \cdot \cos(\omega t) \cdot \cos(\omega t - \theta) =\\
+	  &= \frac{1}{2} \cdot U_o I_o \cdot \left(\cos(2\omega t - \theta) + \cos(\theta)\right)\\
+	  &= U I \cdot \left( \cos(2\omega t - \theta) + \cos(\theta)\right) =\\
+	  &= U I \cdot \left(\cos(2\omega t)\cos(\theta) + \sin(2\omega t)\sin(\theta) +  \cos(\theta)\right)
+   \end{align*}
+   #+end_export
+
+   #+begin_export latex
+   \begin{equation*}
+     \boxed{p(t) = U I \cos(\theta) + U I \cos(\theta) \cos(2\omega t) + U I \sin(\theta) \sin(2\omega t)}
+   \end{equation*}
+   #+end_export
+** Expresión general
+
+   #+begin_export latex
+   \begin{equation*}
+     p(t) = {\color{blue}U I \cos(\theta)} + {\color{blue}U I \cos(\theta)} \cos(2\omega t) + {\color{red}U I \sin(\theta)} \sin(2\omega t)
+   \end{equation*}
+   #+end_export
+
+   #+begin_export latex
+   \[
+     \color{blue}P = UI\cos\theta \quad%
+     \color{red}Q = UI\sin\theta
+   \]
+  
+   #+end_export
+
+   #+begin_export latex
+   \begin{equation*}
+     \boxed{p(t) = {\color{blue}P} \cdot (1 + \cos(2\omega t)) + {\color{red}Q} \cdot \sin(2\omega t)}
+   \end{equation*}
+      #+end_export
+
+
+** Circuito Resistivo
+   #+begin_export latex
+   \[
+     P = UI\cos\theta \quad%
+     {\color{gray}Q = UI\sin\theta}
+   \]
+   
+   \begin{equation*}
+p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
+\end{equation*}
+      #+end_export
+-----
+   #+begin_export latex
+   \[
+     \theta = 0 \rightarrow%
+     \left\{% 
+       \begin{array}{l}
+	 P = UI = U^2/R = I^2 R\\
+	 Q = 0\\
+       \end{array}
+       \right.
+     \]
+  
+     \[
+       p(t) = P \cdot (1 + \cos(2 \omega t))
+     \]
+  
+   #+end_export
+
+** Circuito Resistivo
+
+[[file:figs/resistivoPotencia.pdf]]
+
+- Fluctúa al doble de frecuencia.
+- Es siempre positiva.
+
+** Circuito Inductivo puro
+   #+begin_export latex
+   \[
+     {\color{gray}P = UI\cos\theta} \quad%
+     Q = UI\sin\theta
+   \]
+   
+   \begin{equation*}
+p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
+\end{equation*}
+      #+end_export
+-----
+
+   #+begin_export latex
+   \[
+     \theta = \pi/2 \rightarrow%
+     \left\{% 
+       \begin{array}{l}
+	 P = 0\\
+	 Q = UI = \frac{U^2}{\omega L} = I^2 \omega L\\
+       \end{array}
+       \right.
+     \]
+
+   \[
+     p(t) = Q \cdot \sin(2 \omega t)
+   \]
+   #+end_export
+
+** Circuito Inductivo puro
+
+[[file:figs/inductivoPuroPotencia.pdf]]
+
+- Fluctúa al doble de frecuencia.
+- Pasa por los ceros de tensión y corriente.
+- Su valor medio es nulo.
+
+** Circuito Capacitivo puro
+   #+begin_export latex
+   \[
+     {\color{gray}P = UI\cos\theta} \quad%
+     Q = UI\sin\theta
+   \]
+   
+   \begin{equation*}
+p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
+\end{equation*}
+      #+end_export
+-----
+
+   #+begin_export latex
+   \[
+     \theta = -\pi/2 \rightarrow%
+     \left\{% 
+       \begin{array}{l}
+	 P = 0\\
+	 Q = UI = -U^2 \omega C = - \frac{I^2}{\omega C}\\
+       \end{array}
+       \right.
+     \]
+   \[
+     p(t) = Q \cdot \sin(2 \omega t)
+   \]
+   #+end_export
+
+** Circuito Capacitivo puro
+
+[[file:figs/capacitivoPuroPotencia.pdf]]
+
+- Fluctúa al doble de frecuencia.
+- Pasa por los ceros de tensión y corriente.
+- Su valor medio es nulo.
+
+** Circuito Inductivo con pérdidas
+
+[[file:figs/inductivoPotencia.pdf]]
+
+#+begin_export latex
+\[
+     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sin(2\omega t)
+\]
+#+end_export
+
+#+begin_center
+Valor medio positivo, $P = U I \cos \theta$
+#+end_center
+
+
+** Circuito Capacitivo con pérdidas
+
+[[file:figs/capacitivoPotencia.pdf]]
+
+#+begin_export latex
+\[
+     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sin(2\omega t)
+\]
+#+end_export
+
+#+begin_center
+Valor medio positivo, $P = U I \cos \theta$
+#+end_center
+
+** Triángulo de Potencias
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+- Potencia Activa [$W$]
+#+BEGIN_EXPORT latex
+\[  
+\boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
+\]
+#+END_EXPORT
+
+- Potencia Reactiva [$VA_r$]
+#+BEGIN_EXPORT latex
+\[
+\boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
+\]
+#+END_EXPORT
+
+- Potencia Aparente [$VA$]
+#+BEGIN_EXPORT latex
+\[
+\boxed{\overline{S} = P + jQ = \overline{U} \cdot \overline{I}^*}
+\]
+
+{\footnotesize\begin{align*}
+  \overline{U} &= U\phase{0}\\
+  \overline{I} &= I\phase{-\theta}\\
+                \overline{U} \overline{I}^* &= U\phase{0} \cdot I\phase{\theta} = UI\phase{\theta}\\
+                &= U I (\cos\theta + j \sin\theta) = \\
+                &= P + j Q
+\end{align*}}
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+[[file:~/github/esf/figs/trianguloPotencias.pdf]]
+
+#+begin_export latex
+\[
+|S| = U \cdot I
+\]
+\[
+\theta_S = \theta_Z = \theta
+\]
+\[
+f.d.p. \equiv \cos(\theta)
+\]
+#+end_export
+** Potencia de elementos: Resistencia
+
+#+BEGIN_EXPORT latex
+\[
+\theta = 0 \Rightarrow 
+\begin{cases}
+  P_R = R I^2\\
+  Q_R = 0\\
+  S_R = P_R
+\end{cases}
+\]
+#+END_EXPORT
+
+- Consume potencia activa
+- No consume potencia reactiva
+
+** Potencia de elementos: Inductancia
+
+#+BEGIN_EXPORT latex
+\[
+\theta = \pi/2 \Rightarrow 
+\begin{cases}
+  P_L = 0\\
+  Q_L = \omega L I^2\\
+  \overline{S}_L = \omega L I^2 \phase{\pi/2}
+\end{cases}
+\]
+#+END_EXPORT
+
+- No consume potencia activa
+- Consume potencia reactiva ($Q > 0$)
+
+** Potencia de elementos: Condensador
+#+BEGIN_EXPORT latex
+\[
+\theta = - \pi/2 \Rightarrow 
+\begin{cases}
+  P_L = 0\\
+  Q_C = - \omega C U^2\\
+  \overline{S}_C = \omega C U^2 \phase{-\pi/2}
+\end{cases}
+\]
+#+END_EXPORT
+
+- No consume potencia activa
+- Genera potencia reactiva ($Q < 0$)
+
+** Teorema de Boucherot
+- En un circuito con múltiples elementos, la potencia aparente total es la suma de las potencias aparentes individuales.
+#+BEGIN_EXPORT latex
+\begin{align*}
+  \overline{S} &= \sum_{i = 1}^{n} \overline{S}_i\\
+  P + jQ &= \sum^n_{i = 1} (P_i + jQ_i)
+\end{align*}
+#+END_EXPORT
+
+- La potencia activa (reactiva) total es la suma de las potencias activas (reactivas) individuales.
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+P &= \sum_{i = 1}^n P_i\\
+Q &= \sum_{i = 1}^n Q_i
+\end{align*}
+#+END_EXPORT
+
+** Medida de potencia
+#+ATTR_LATEX: :height 0.7\textheight
+ [[file:figs/vatimetro.pdf]]
+
+*Vatímetro*: equipo de medida de 4 terminales (1 par para tensión, 1 par para corriente)
+
+** Medida de potencia
+#+ATTR_LATEX: :height 0.5\textheight
+ [[file:figs/vatimetro_Z.pdf]]
+
+
+Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
+    #+begin_export latex
+    \[
+      \boxed{W = |V| |I| \cos(\theta_V - \theta_I) = P_Z}
+    \]
+    #+end_export
+
+* Compensación de reactiva
+
+** Factor de potencia
+ El factor de potencia, $\cos(\theta)$, representa la aportación de potencia activa dentro de la potencia aparente.
+ #+BEGIN_EXPORT latex
+ \[
+ P = S \cos \theta
+ \]
+ #+END_EXPORT
+
+ Sean dos sistemas con *misma tensión y potencia activa*, y factores de potencia $\cos \theta_2 < \cos \theta_1$ ($Q_2 > Q_1$)
+
+ #+ATTR_LATEX: :height 0.5\textheight
+ [[file:figs/Fasores_CompensacionReactiva.pdf]]
+
+** Potencia Aparente
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/Fasores_CompensacionReactiva.pdf]]
+
+
+El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar la misma potencia activa.
+#+BEGIN_EXPORT latex
+\[
+  \left(\frac{P}{\cos \theta_1} = S_1 \right) < \left( S_2 = \frac{P}{\cos \theta_2}\right) 
+\]
+#+END_EXPORT
+
+** Sección de Conductores
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/Fasores_CompensacionReactiva.pdf]]
+
+El sistema 2 requiere *mayor sección* de cable para transportar la misma potencia activa.
+#+BEGIN_EXPORT latex
+\[
+  \left(\frac{P}{U \cos \theta_1} = I_1 \right) < \left( I_2 = \frac{P}{U \cos \theta_2}\right) 
+\]
+#+END_EXPORT
+
+** Generación Local de Reactiva
+
+-  Comúnmente, el factor de potencia es *inductivo* (máquinas eléctricas
+   industriales).
+
+-  La red debe suministrar potencia reactiva inductiva (influye en secciones de líneas y tamaños de generadores)
+
+-  Es necesario mejorar *localmente* el factor de potencia. Solución
+  común: utilizar *bancos de condensadores* como suministradores de
+  potencia reactiva.
+
+** Compensación de Reactiva con Condensadores
+
+Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de potencia $\cos\theta$. Se desea *mejorar el factor de potencia* a $\cos \theta' > \cos \theta$.
+
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:figs/Circuito_CompensacionReactiva.pdf]]
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+  P' &= P_z\\
+  Q' &= Q_c + Q_z \quad (Q' < Q_z)\\
+  \overline{I}' &= \overline{I}_c + \overline{I_z} \quad (I' < I_z)\\
+\end{align*}
+#+END_EXPORT
+
+** Cálculo de la Capacidad
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/Circuito_CompensacionReactiva.pdf]]
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+Q_z &= P_z \tan \theta\\
+Q'&= P_z \tan \theta'\\
+|Q_c| &= Q_z - Q' = P_z (\tan \theta - \tan \theta')
+\end{align*}
+\[
+|Q_c| = \omega C U^2 \rightarrow \boxed{C = \frac{P_z (\tan \theta - \tan \theta')}{\omega U^2}}
+\]
+#+END_EXPORT
+
+
+

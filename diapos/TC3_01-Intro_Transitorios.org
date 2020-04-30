@@ -66,7 +66,7 @@ LC s^2 + RC s + 1 = 0
   - Respuesta *forzada* o particular (determinada por las fuentes existentes, $t = \infty$).
 #+BEGIN_EXPORT latex
 \[
- f(t) = f_n(t) + f_\infty(t) 
+ \boxed{f(t) = f_n(t) + f_\infty(t) }
  \]
 #+END_EXPORT
 - Las constantes de integración de la respuesta natural se determinan con las condiciones iniciales del circuito.
@@ -117,13 +117,13 @@ u(t) = \frac{1}{C} \int^t_{-\infty}i(t) \mathrm{d}t
 \]
 #+END_EXPORT
 
-- La tensión en una condensador no puede variar de forma abrupta (implica corriente infinita).
+- La tensión en un condensador no puede variar de forma abrupta (implica corriente infinita).
 #+BEGIN_EXPORT latex
 \[
 u_C(0^-) = u_C(0^+)
 \]
 #+END_EXPORT
-** Circuitos Equivalentes
+** Circuitos Equivalentes en $t = 0^+$
 - Sustituir fuentes de tensión $u_g(t)$ por $u_g(0^+)$.
 - Sustituir fuentes de corriente $i_g(t)$ por $i_g(0^+)$.
 - Sustituir bobinas por fuentes de corriente $i_L(0^+)$.
@@ -133,7 +133,7 @@ u_C(0^-) = u_C(0^+)
 
 ** Ejemplo
 
-*** (Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito, pasa a la posición (2)
+*** (Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito y pasa a la posición (2) en $t = 0$.
 [[file:figs/ejemplo_condiciones_iniciales.pdf]]
 
 * Funciones importantes

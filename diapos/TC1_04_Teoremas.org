@@ -1,0 +1,371 @@
+#+TITLE: Teoremas Generales
+#+DATE: 2019-2020
+#+SETUPFILE: config.org
+#+OPTIONS: H:2
+
+* Generadores
+
+** Generadores de Tensión y Corriente
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.6\textheight
+ [[file:figs/FuenteTensionIdeal.pdf]]
+ Un *generador de tensión ideal* impone la tensión a la salida (/la corriente depende del circuito/)
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.6\textheight
+ [[file:figs/FuenteCorrienteIdeal.pdf]]
+ Un *generador de corriente ideal* impone la corriente a la salida (/la tensión depende del circuito/)
+
+** Generador Real
+Los generadores reales tienen pérdidas que se modelan con una resistencia/impedancia en *serie* (generador de tensión) o en *paralelo* (generador de corriente)
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteTensionReal.pdf
+#+begin_export latex
+\[
+  u_{AB}(t) = \epsilon_g(t) - Z_{\epsilon_g} \cdot i(t)
+\]
+#+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteCorrienteReal.pdf
+#+begin_export latex
+\[
+  i(t) = i_g(t) - \frac{u_{AB}(t)}{Z_{I_g}}
+\]
+#+end_export
+
+** Equivalencia de fuentes
+Sólo es posible establecer equivalencia entre *fuentes reales*.
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteTensionReal.pdf
+#+begin_export latex
+\[
+  u_{AB}(t) = \epsilon_g(t) - Z_{\epsilon_g} \cdot i(t)
+\]
+#+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+begin_export latex
+    \begin{align*}
+      Z_g &= Z_{\epsilon_g} = Z_{I_g}\\
+      \epsilon_g(t) &= Z_g \cdot i_g(t)\\
+      i_g(t) &= \frac{\epsilon_g(t)}{Z_g}
+    \end{align*}
+    #+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteCorrienteReal.pdf
+#+begin_export latex
+\[
+  i(t) = i_g(t) - \frac{u_{AB}(t)}{Z_{I_g}}
+\]
+#+end_export
+
+** Generadores de Tensión dependientes ...
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+ATTR_LATEX: :height 0.7\textheight
+  [[file:figs/FuenteTensionDependienteTension.pdf]]
+... de Tensión
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+ATTR_LATEX: :height 0.7\textheight
+  [[file:figs/FuenteTensionDependienteCorriente.pdf]]
+... de Corriente
+** Generadores de Corriente dependientes ...
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+   #+ATTR_LATEX: :height 0.7\textheight
+ [[file:figs/FuenteCorrienteDependienteTension.pdf]]
+... de Tensión
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+ATTR_LATEX: :height 0.7\textheight
+ [[file:figs/FuenteCorrienteDependienteCorriente.pdf]]
+... de Corriente
+
+* Circuitos Lineales
+
+** Elementos lineales
+
+- Un circuito eléctrico es lineal si los elementos pasivos y activos que incluye son lineales.
+- Un *elemento pasivo* es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: *resistencias, condensadores y bobinas*.
+- Una *fuente dependiente* es lineal si su salida (tensión o corriente) tiene una relación lineal con la magnitud del circuito de la que depende.
+- Un circuito lineal tiene dos propiedades:
+  - Homogeneidad o *proporcionalidad*.
+  - Aditividad o *superposición*.
+
+** Homogeneidad o Proporcionalidad
+Sea $y(t)$ la respuesta de un *circuito lineal* a una excitación $x(t)$. 
+
+Si la excitación es multiplicada por una *constante*, $K \cdot x(t)$, la respuesta del circuito será modificada por la misma constante, $K \cdot y(t)$.
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/proporcionalidad.pdf]]
+
+** Análisis de un circuito mediante proporcionalidad
+
+*** ¿Qué excitación debo aplicar a un circuito para obtener una determinada respuesta?
+ - Aplicamos una excitación de valor unidad.
+ - Resolvemos el circuito, obteniendo la respuesta del circuito a la excitación unidad.
+ - Hallamos la constante de proporcionalidad entre la respuesta obtenida y la respuesta deseada.
+ - La excitación que se debe aplicar es esta constante de proporcionalidad (puede ser un número complejo).
+
+** Análisis de un circuito mediante proporcionalidad
+
+*** ¿Qué respuesta proporciona un circuito ante una determinada excitación?
+ - Suponemos una respuesta de valor unidad.
+ - Resolvemos el circuito a la inversa, obteniendo la excitación que provoca la respuesta unidad.
+ - Hallamos la constante de proporcionalidad entre la excitación obtenida y la excitación deseada.
+ - La respuesta que entrega el circuito es esta constante de proporcionalidad (puede ser un número complejo).
+
+** Aditividad o Superposición
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+La respuesta de un *circuito lineal* a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado
+
+#+begin_export latex
+\[
+y(t) = \sum_i y_i(t)
+\]
+#+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:figs/superposicion.pdf]]
+
+** Análisis de un circuito mediante superposición
+*** Procedimiento
+ 1. Se apagan todas las fuentes *independientes* del circuito menos una.
+    - Las fuentes de tensión se sustituyen por un cortocircuito ($U = 0$).
+    - Las fuentes de corriente se sustituyen por un circuito abierto ($I = 0$).
+    - Las fuentes *dependientes* *no* se modifican.
+ 2. Se analiza el circuito, obteniendo la respuesta individual a la fuente que permanece activa.
+ 3. Se repite este procedimiento para cada una de las fuentes *independientes* del circuito.
+ 4. La respuesta total del circuito es la suma de las respuestas individuales.
+
+** Análisis de un circuito mediante superposición
+
+*** Observaciones
+- *Siempre* hay que aplicar este método cuando en un circuito conviven fuentes de *diferente frecuencia* (o fuentes de corriente continua y corriente alterna).
+- En el caso de fuentes de corriente alterna *sinusoidal*, la respuesta debe expresarse en el *dominio del tiempo*. *No* se pueden *sumar* los *fasores* que corresponden a *frecuencias diferentes*.
+- En el primer paso del procedimiento, se pueden agrupar las fuentes que funcionan a la misma frecuencia y calcular la respuesta del circuito en esa frecuencia.
+
+** Principio de superposición y Potencia
+
+- El principio de superposición aplica a tensiones y corrientes, pero *no* a potencias. Supongamos $i(t) = i_1(t) + i_2(t)$:
+#+begin_export latex
+\begin{align*}
+  p(t) &= R \cdot i^2(t) =\\
+       &= R \cdot (i_1(t) + i_2(t))^2 =\\
+       &=R \cdot (i_1^2(t) + i_2^2(t) + 2\cdot i_1(t) \cdot i_2(t))\\
+  p(t) &\neq p_1(t) + p_2(t)
+\end{align*}
+#+end_export
+- Se pueden sumar las potencias *medias* de cada circuito cuando las señales que intervienen son ortogonales en un periodo[fn:1]: sinusoidales con diferente frecuencia, una sinusoide con una continua, ...
+
+
+
+* Teorema de Thévenin/Norton
+
+** Thévenin
+
+Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de tensión* (generador de Thévenin, $\epsilon_{th}$) en *serie* con una impedancia (impedancia de Thévenin, $Z_{th}$).
+
+[[file:figs/EquivalenteThevenin.pdf]]
+
+** Norton
+Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de corriente* (generador de Norton, $I_N$) en *paralelo* con una impedancia (impedancia de Norton, $Z_N$).
+
+[[file:figs/EquivalenteNorton.pdf]]
+
+** Cálculo del equivalente de Thévenin
+
+[[file:figs/EquivalenteThevenin.pdf]]
+
+- Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{\epsilon_{th} = U_{oc}}
+\]
+#+END_EXPORT
+- Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{Z_{th} = \frac{\epsilon_{th}}{I_{sc}} = \frac{U_{oc}}{I_{sc}}}
+\]
+#+END_EXPORT
+
+** Cálculo del equivalente de Norton
+
+[[file:figs/EquivalenteNorton.pdf]]
+
+- Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{I_N = I_{sc}}
+\]
+#+END_EXPORT
+- Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{Z_N = \frac{U_{oc}}{I_N} = \frac{U_{oc}}{I_{sc}}}
+\]
+#+END_EXPORT
+
+** Cálculo de Thévenin/Norton
+
+*** Observaciones
+- Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
+- Cálculo de la impedancia:
+  - Si el circuito *no* contiene fuentes dependientes, se puede realizar *apagando* todos los *generadores* y obteniendo la impedancia equivalente.
+  - Si el circuito contiene fuentes dependientes, es necesario conectar un *generador de prueba* a la salida del circuito y obtener la relación entre la tensión y corriente de este generador.
+
+* Teorema de máxima transferencia de potencia
+
+** Planteamiento
+Sea el circuito lineal de la figura. ¿Qué impedancia $Z_L$ hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
+
+[[file:figs/EquivalenteThevenin.pdf]]
+
+Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
+
+
+
+** Ecuaciones
+Calculamos la potencia activa en la impedancia de carga $Z_L$:
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+ [[file:figs/EquivalenteThevenin0.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+   #+begin_export latex
+   \begin{align*}
+     \overline{Z}_{th} &= R_{th} + jX_{th}\\
+     \overline{Z}_L &= R_L + jX_L\\
+     P_L &= I^2 \cdot R_L\\
+   \end{align*}
+   #+end_export
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+ #+begin_export latex
+ \[
+   \overline{I} = \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L} \rightarrow P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
+ \]
+ #+end_export
+
+
+Las condiciones de máximo son: 
+#+begin_export latex
+\[
+  \boxed{%
+    \diffp{P_L}{X_L} = 0 \quad%
+    \diffp{P_L}{R_L} = 0%
+  }
+\]
+
+ #+end_export
+
+** Reactancia
+A partir de la expresión de potencia en la carga...
+   #+begin_export latex
+   \[
+     P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
+   \]
+   #+end_export
+calculamos la derivada parcial respecto de la reactancia:
+   #+begin_export latex
+   \[
+     \diffp{P_L}{X_L} = \epsilon^2_{th} \cdot R_L \cdot \left[\frac{-1}{\left((R_L + R_{th})^2 + (X_L + X_{th})^2\right)^2} \cdot 2 \cdot (X_L + X_{th})\right]
+   \]
+   #+end_export
+Aplicamos la condición de máximo y obtenemos un resultado parcial:
+   #+begin_export latex
+   \[
+      \diffp{P_L}{X_L} = 0 \Rightarrow \boxed{X_L = - X_{th}}
+   \]
+   #+end_export
+
+** Resistencia
+Simplificamos la expresión de la potencia teniendo en cuenta el resultado anterior ($X_L = - X_{th}$):
+   #+begin_export latex
+   \[
+     P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L
+   \]
+   #+end_export
+Calculamos la derivada parcial respecto de la resistencia:
+   #+begin_export latex
+   \begin{align*}
+     \diffp{P_L}{R_L} &= \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]\\
+		      &= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}
+   \end{align*}
+   #+end_export
+Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
+   #+begin_export latex
+   \[
+      \diffp{P_L}{R_L} = 0 \Rightarrow \boxed{R_L = R_{th}}
+   \]
+   #+end_export
+
+** Impedancia de carga
+
+Dado un circuito lineal (del que podemos calcular su generador equivalente de Thévenin) ...
+[[file:figs/EquivalenteThevenin.pdf]]
+
+... la impedancia de carga que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
+
+#+begin_export latex
+\[
+  \boxed{\overline{Z}_L = \overline{Z}_{th}^*}
+\]
+#+end_export
+
+* Footnotes
+
+[fn:1] \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\] 

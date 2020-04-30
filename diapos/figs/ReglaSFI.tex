@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw (0,0) coordinate (N);
+  \draw (0:1) coordinate (X);
+  \draw (90:2) coordinate (Y);
+  \draw[->] (N) -- (X) node[below, midway] {$-30^\circ$};
+  \draw[->] (N) -- (Y) node[left, midway] {$-120^\circ$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usetikzlibrary{arrows, calc}
+
+\begin{document}
+
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em, align=center]
+
+\begin{tikzpicture}[node distance = 2.5cm, auto,>=latex']
+    \node [int] (a) at (0, 0) {Circuito \\ Lineal};
+    \node (b1) [above left of=a, coordinate] {};
+    \node (b2) [left of=a, coordinate] {};
+    \node (b3) [below left of=a, coordinate] {};
+    \node [coordinate] (c) [right of=a]{};
+    \path[->] (b1) edge node {$x_1(t)$} (a);
+    \path[->] (b2) edge node {$x_2(t)$} (a);
+    \path[->] (b3) edge node {$x_3(t)$} (a);
+    \path[->] (a) edge node[align=left] {$y(t)$} (c);
+    %%
+    \node [int] (a1) at ($(a) + (0, -2.4)$) {Circuito \\ Lineal};
+    \node (b1i) [left of=a1, coordinate] {};
+    \node [coordinate] (c1) [right of=a1]{};
+    \path[->] (b1i) edge node {$x_1(t)$} (a1);
+    \path[->] (a1) edge node[align=left] {$y_1(t)$} (c1);
+    %%
+    \node [int] (a2) at ($(a1) + (0, -1.3)$) {Circuito \\ Lineal};
+    \node (b2i) [left of=a2, coordinate] {};
+    \node [coordinate] (c2) [right of=a2]{};
+    \path[->] (b2i) edge node {$x_2(t)$} (a2);
+    \path[->] (a2) edge node[align=left] {$y_2(t)$} (c2);
+    %%
+    \node [int] (a3) at ($(a2) + (0, -1.3)$) {Circuito \\ Lineal};
+    \node (b3i) [left of=a3, coordinate] {};
+    \node [coordinate] (c3) [right of=a3]{};
+    \path[->] (b3i) edge node {$x_3(t)$} (a3);
+    \path[->] (a3) edge node[align=left] {$y_3(t)$} (c3);
+\end{tikzpicture}
+
+
+
+\end{document}

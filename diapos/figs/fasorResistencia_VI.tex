@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+
+\begin{tikzpicture}
+  \draw[->, thin, color=gray] (-0.2,0) -- (2.5,0) node[above] {$\Re$};
+  \draw[->, thin, color=gray] (0,-0.2) -- (0,2.5) node[left] {$\Im$};
+
+  \draw [->, thin, color=blue!70](1,0)  arc[radius = 1, start angle= 0, end angle= 45] node [pos=0.5, right] {$\theta$};
+  \draw[->, >=stealth, thick, color = black] (0, 0) -- (45:2) node[above] {$\overline{U}$};
+  \draw[->, >=stealth, thick, color = red] (0, 0) -- (45:1) node[above] {$\overline{I}$};
+\end{tikzpicture}
+
+\end{document}
+
+

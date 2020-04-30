@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usetikzlibrary{arrows, calc}
+
+\begin{document}
+
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em, align=center]
+
+\begin{tikzpicture}[node distance = 2.5cm, auto,>=latex']
+    \node [int] (a) at (0, 0) {Circuito \\ Lineal};
+    \node (b) [left of=a, coordinate] {a};
+    \node [coordinate] (c) [right of=a]{};
+    \path[->] (b) edge node {$x(t)$} (a);
+    \path[->] (a) edge node {$y(t)$} (c);
+    %%
+    \node [int] (a2) at ($(a) + (0, -2)$) {Circuito \\ Lineal};
+    \node (b2) [left of=a2, coordinate] {a};
+    \node [coordinate] (c2) [right of=a2]{};
+    \path[->] (b2) edge node {$K \cdot x(t)$} (a2);
+    \path[->] (a2) edge node {$K \cdot y(t)$} (c2);
+\end{tikzpicture}
+
+
+
+\end{document}
