@@ -148,7 +148,7 @@ Ecuación Característica
 *** Condiciones Iniciales
 Analizando circuito para $t < 0$ ... 
 file:figs/transitorio_circuitoRL_t0-.pdf
-...obtenemos  $i(0^-) = I_0$ 
+...obtenemos  $i(0^-) = I_0 = \frac{U_0}{R}$ 
 
 *** Condiciones Iniciales
 Por otra parte, para $t > 0$:
@@ -175,22 +175,31 @@ Por tanto, la respuesta natural es:
 
 
 *** Constante de tiempo
-- $\tau = \frac{L}{R}$ es la constante de tiempo (unidades [s]).
-- Ratio entre almacenamiento ($L$) y disipación ($R$).
 
 #+BEGIN_EXPORT latex
 \[
-  i(t) = I_0 e^{-t/\tau}  
+  \boxed{i(t) = I_0 e^{-t/\tau}}
 \]
 #+END_EXPORT
 
-[[file:figs/RespuestaNatural_RL.pdf]]
-
-*** Constante de tiempo
+- $\tau = \frac{L}{R}$ es la constante de tiempo (unidades [s]).
+- Ratio entre almacenamiento ($L$) y disipación ($R$).
 - Valores altos de $\tau$ implican decrecimiento lento.
 - La respuesta natural "desaparece" tras $\simeq 5\tau$.
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:figs/constante_tiempo.pdf]]
+
+*** Balance Energético
+
+La energía acumulada en la bobina en $t < 0$ se disipa en la resistencia en $t > 0$
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+  W_R &= \int_0^\infty R i^2(t)  \mathrm{d}t =\\
+  &= \int_0^\infty R (I_0 e^{-t/\tau})^2  \mathrm{d}t = \\
+  &= \frac{1}{2} L I_0^2 = W_L  
+\end{align*}
+#+END_EXPORT
 
 *** Respuesta forzada
 Cambiemos el funcionamiento del interruptor: en $t > 0$ la fuente alimenta el circuito RL.
@@ -255,17 +264,18 @@ La solución completa es:
 [[file:figs/RespuestaCompleta_RL.pdf]]
 
 
-*** Respuesta completa
-
-- $i(0^+)$: corriente en la bobina, condiciones iniciales ($i(0^-) = i(0^+)$).
-- $i_\infty(t)$: corriente en la bobina en régimen permanente para $t > 0$.
-- $i_\infty(0^+)$: corriente en la bobina en régimen permanente particularizada en $t = 0$.
+*** Expresión general de la respuesta completa
 
 #+BEGIN_EXPORT latex
 \[
-i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
+\boxed{i(t) = \left[i(0^+) - i_\infty(0^+)\right] e^{-t/\tau} + i_\infty(t)}
 \]
 #+END_EXPORT
+
+- $i(0^+)$: corriente en la bobina, condiciones iniciales, $i(0^-) = i(0^+)$.
+- $i_\infty(t)$: corriente en la bobina en régimen permanente para $t > 0$.
+- $i_\infty(0^+)$: corriente en la bobina en régimen permanente particularizada en $t = 0$.
+
 
 ** Circuito RC paralelo
 
@@ -275,9 +285,10 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 [[file:figs/transitorio_circuitoRC.pdf]]
 
 *** Respuesta natural
-[[file:figs/transitorio_circuitoRC.pdf]]
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/transitorio_circuitoRC_t0+.pdf]]
 
-**** Ecuaciones
+Ecuaciones
 #+BEGIN_EXPORT latex
 \begin{align*}
   i_R(t) + i_C(t) &= 0\\
@@ -285,25 +296,17 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 \end{align*}
 #+END_EXPORT
 
-*** Respuesta natural
-**** Solución Genérica
+Solución Genérica
 #+BEGIN_EXPORT latex
 \[
   u(t) = A e^{st}
 \]
 #+END_EXPORT
 
-**** Ecuación Característica
+Respuesta natural
 #+BEGIN_EXPORT latex
 \[
-  s + \frac{G}{C} = 0 \Rightarrow s = -\frac{G}{C}
-\]
-#+END_EXPORT
-
-**** Condiciones Iniciales
-#+BEGIN_EXPORT latex
-\[
-  u(t) = U_0 e^{-G/C t}
+  \boxed{u(t) = U_0 e^{-G/C t}}
 \]
 #+END_EXPORT
 
@@ -315,7 +318,7 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 
 #+BEGIN_EXPORT latex
 \[
-  u(t) = U_0 e^{-t/\tau}  
+  \boxed{u(t) = U_0 e^{-t/\tau}  }
 \]
 #+END_EXPORT
 
@@ -323,7 +326,6 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 
 *** Balance Energético
 
-**** 
 La energía acumulada en el condensador en $t < 0$ se disipa en la resistencia (conductancia) en $t > 0$
 
 #+BEGIN_EXPORT latex
@@ -332,23 +334,33 @@ La energía acumulada en el condensador en $t < 0$ se disipa en la resistencia (
 \]
 #+END_EXPORT
 
-*** Respuesta completa
-
-- $u(0^+)$: tensión en el condensador, condiciones iniciales ($u(0^-) = u(0^+)$).
-- $u_\infty(t)$: tensión en el condensador en régimen permanente para $t > 0$.
-- $u_\infty(0^+)$: tensión en el condensador en régimen permanente particularizada en $t = 0$.
+*** Expresión general de la respuesta completa
 
 #+BEGIN_EXPORT latex
 \[
-u(t) = \left(u(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)
+\boxed{u(t) = \left[u(0^+) - u_\infty(0^+)\right] e^{-t/\tau} + u_\infty(t)}
 \]
 #+END_EXPORT
 
-**** Ejemplo
-Suponiendo que el condensador está inicialmente descargado, $u(0^-) = 0 \Rightarrow u(0^+) = 0$
+- $u(0^+)$: tensión en el condensador, condiciones iniciales, $u(0^-) = u(0^+)$.
+- $u_\infty(t)$: tensión en el condensador en régimen permanente para $t > 0$.
+- $u_\infty(0^+)$: tensión en el condensador en régimen permanente particularizada en $t = 0$.
+
+*** Ejemplo con respuesta forzada
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/transitorio_circuitoRC2.pdf]]
+
+#+BEGIN_EXPORT latex
+\[
+\boxed{u(t) = \left[u(0^+) - u_\infty(0^+)\right] e^{-t/\tau} + u_\infty(t)}
+\]
+#+END_EXPORT
+
+Suponiendo que el condensador está inicialmente descargado:
 #+BEGIN_EXPORT latex
 \begin{align*}
-  A &= 0 - I_0/G\\
+  u(0^+) &= u(0^-) = 0\\
+  u_\infty(0^+) &= I_0/G\\
   u(t) &= \frac{I_0}{G}(1 - e^{-\frac{t}{\tau}})  
 \end{align*}
 #+END_EXPORT
@@ -369,7 +381,7 @@ Suponiendo que el condensador está inicialmente descargado, $u(0^-) = 0 \Righta
   - Calcular el equivalente de Thevenin (Norton) visto por el elemento de acumulación.
   - La constante de tiempo de la respuesta natural es $\tau = \frac{L}{R_{th}}$ o $\tau = \frac{C}{G_{th}}$.
   - Calcular las variables $i_L(t)$ o $u_c(t)$ en régimen permanente, obteniendo $i_\infty(t)$ o $u_\infty(t)$.
-  - Obtener respuesta completa:
+- Obtener respuesta completa:
 #+BEGIN_EXPORT latex
 \begin{align*}
 i_L(t) &= \left(i_L(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)\\
@@ -402,7 +414,7 @@ Ejemplo 7.13
   - Sin fuentes: *respuesta natural* (la energía acumulada en $t < 0$ se redistribuye).
   - Con fuentes: *respuesta forzada* (determinada por la forma de onda de las fuentes).
 
-** Circuito RLC serie
+** COMMENT Circuito RLC serie
 *** Circuito básico
 
 [[file:figs/RLC_serie.pdf]]
@@ -558,7 +570,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 
 - *Sobretensión* o *Sobrecorriente*: porcentaje del valor máximo respecto del régimen permanente.
 
-** Circuito RLC paralelo
+** COMMENT Circuito RLC paralelo
 *** Circuito básico
 
 [[file:figs/RLC_paralelo.pdf]]
@@ -673,7 +685,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 #+END_EXPORT
 
 
-** Respuesta Completa
+** COMMENT Respuesta Completa
 *** Condiciones Iniciales
 **** Dos constantes a determinar
 Son necesarias dos tipos de condiciones iniciales:
