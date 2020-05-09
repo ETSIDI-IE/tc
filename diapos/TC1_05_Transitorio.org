@@ -29,7 +29,7 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
 
 ** Condiciones iniciales
 *** Respuesta completa de una red lineal
-- La respuesta completa de una red lineal a un cambio tiene dos componentes:
+La respuesta completa de una red lineal a un cambio tiene dos componentes:
   - Respuesta *natural* o propia (sin fuentes, determinada únicamente por la configuración del circuito)
   - Respuesta *forzada* o particular (determinada por las fuentes existentes, $t = \infty$).
 #+BEGIN_EXPORT latex
@@ -37,16 +37,15 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
  \boxed{f(t) = f_n(t) + f_\infty(t) }
  \]
 #+END_EXPORT
-- Las constantes de integración de la respuesta natural se determinan con las condiciones iniciales del circuito.
 
 *** Condiciones iniciales
-- *Condiciones Iniciales*: estado del circuito en el instante temporal en el que se produce el cambio (p.ej. apertura de interruptor).
-- Este instante temporal se representa habitualmente con $t = 0$. 
-**** $t = 0^+$ y $t = 0^-$
-- El estado previo a la conmutación es $t = 0^-$ 
-  - La topología del circuito es la anterior al cambio.
-- El estado posterior a la conmutación es $t = 0^+$.
-  - La topología del circuito es la posterior al cambio.
+- Las *condiciones iniciales* son el estado del circuito en el instante temporal en el que se produce el cambio. 
+
+- Determinan las constantes de integración de la respuesta natural.
+
+- El instante del cambio se representa habitualmente con $t = 0$:
+  - $t = 0^-$: la topología del circuito es la anterior al cambio.
+  - $t = 0^+$: la topología del circuito es la posterior al cambio.
 *** Resistencia
 #+BEGIN_EXPORT latex
 \[
@@ -97,7 +96,8 @@ La tensión en un condensador no puede variar de forma abrupta (implica corrient
 
 *** Ejemplo
 
-**** (Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la posición (2) en $t = 0$
+El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la posición (2) en $t = 0$:
+
 [[file:figs/ejemplo_condiciones_iniciales.pdf]]
 
 
