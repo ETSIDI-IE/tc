@@ -10,7 +10,7 @@
 * Conceptos Fundamentales
 
 ** ¿Qué es el régimen transitorio?
-*** Permanente y Estacionario
+*** Permanente y Transitorio
 
 **** Régimen permanente o estacionario
 Las tensiones y corrientes de un circuito son constantes (continua) o periódicas (alterna) (circuito estabilizado)
