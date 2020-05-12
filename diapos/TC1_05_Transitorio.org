@@ -570,6 +570,68 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 
 - *Sobretensión*: porcentaje del valor máximo respecto del régimen permanente.
 
+
+*** Condiciones Iniciales
+**** Dos constantes a determinar
+Son necesarias dos tipos de condiciones iniciales:
+
+#+BEGIN_EXPORT latex
+\begin{align*}
+  i_L(0^+) &= i_L(0^-)\\
+  u_L(t) = L \cdot \diff{i_L(t)}{t} \longrightarrow   \diff{i_L(t)}{t}{t = 0^+} &= \frac{1}{L} u_L(0^+)
+\end{align*}
+#+END_EXPORT
+
+**** Derivadas en el origen
+Para obtener valores de las derivadas en el origen hay que resolver el circuito en $t = 0^+$ empleando las condiciones de continuidad.
+
+*** Derivadas en $t = 0^+$
+#+ATTR_LATEX: :height 0.35\textheight
+[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
+
+#+BEGIN_EXPORT latex
+\[
+  \diff{i_L(t)}{t}{t = 0^+} = \frac{1}{L} u_L(0^+)
+\]
+\begin{align*}
+  u_L(0^+) &= -u_R(0^+) - u_c(0^+)\\
+  u_R(0^+) &= R i_L(0^+)
+\end{align*}
+\[
+\boxed{\diff{i_L(t)}{t}{t = 0^+} = - \frac{1}{L}\left(R i_L(0^+) + u_c(0^+)\right)}
+\]
+#+END_EXPORT
+
+*** Respuesta Completa
+
+Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzada (si existe).
+#+BEGIN_EXPORT latex
+\begin{align*}
+  i_L(0^+) &= i_n(0^+) + i_{\infty}(0^+)\\
+  \diff{i_L}{t}{t = 0^+} &= \diff{i_n}{t}{t = 0^+} + \diff{i_{\infty}}{t}{t = 0^+}  
+\end{align*}
+#+END_EXPORT
+
+*** Ejemplo de Respuesta Completa
+
+Circuito RLC serie sobreamortiguado con generador de tensión DC funcionando en $t > 0$. 
+
+**** Respuesta Completa
+#+BEGIN_EXPORT latex
+\[
+  i_L(t) = I_{\infty} + A_1 e^{s_1 t} + A_2 e^{s_2 t}
+\]
+#+END_EXPORT
+
+**** Condiciones Iniciales
+#+BEGIN_EXPORT latex
+\begin{align*}
+i_L(0^+) &= I_\infty + A_1 + A_2\\
+\diff{i_L(t)}{t}{t = 0^+} &= 0 + A_1 s_1 + A_2 s_2
+\end{align*}
+#+END_EXPORT
+
+
 ** Circuito RLC paralelo
 *** Circuito básico
 
@@ -688,53 +750,20 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 #+END_EXPORT
 
 
-** Respuesta Completa
 *** Condiciones Iniciales
 **** Dos constantes a determinar
 Son necesarias dos tipos de condiciones iniciales:
 
-*****                                                             :BMCOL:
-     :PROPERTIES:
-     :BEAMER_col: .5
-     :END:
+
 #+BEGIN_EXPORT latex
 \begin{align*}
   u_C(0^+) &= u_C(0^-)\\
-  \diff*{u_c}{t}{t = 0^+} &= \frac{1}{C} i_C(0^+)\\
-\end{align*}
-#+END_EXPORT
-
-*****                                                             :BMCOL:
-     :PROPERTIES:
-     :BEAMER_col: .5
-     :END:
-#+BEGIN_EXPORT latex
-\begin{align*}
-  i_L(0^+) &= i_L(0^-)\\
-  \diff*{i_L}{t}{t = 0^+} &= \frac{1}{L}u_L(0^+)\\
+  i_c(t) = C \cdot \diff{u_c(t)}{t} \longrightarrow \diff{u_c(t)}{t}{t = 0^+} &= \frac{1}{C}i_C(0^+)
 \end{align*}
 #+END_EXPORT
 
 **** Derivadas en el origen
 Para obtener valores de las derivadas en el origen hay que resolver el circuito en $t = 0^+$ empleando las condiciones de continuidad.
-
-*** Derivadas en $t = 0^+$: ejemplo RLC serie
-
-#+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
-
-#+BEGIN_EXPORT latex
-\[
-  u_L(t) = L \cdot \diff{i_L(t)}{t} \longrightarrow   \diff{i_L(t)}{t}{t = 0^+} = \frac{1}{L} u_L(0^+)
-\]
-\begin{align*}
-  u_L(0^+) &= -u_R(0^+) - u_c(0^+)\\
-  u_R(0^+) &= R i_L(0^+)
-\end{align*}
-\[
-\boxed{\diff{i_L(t)}{t}{t = 0^+} = - \frac{1}{L}\left(R i_L(0^+) + u_c(0^+)\right)}
-\]
-#+END_EXPORT
 
 *** Derivadas en $t = 0^+$: ejemplo RLC paralelo
 
@@ -743,7 +772,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 
 #+BEGIN_EXPORT latex
 \[
-  i_c(t) = C \cdot \diff{u_c(t)}{t} \longrightarrow \diff{u_c(t)}{t}{t = 0^+} = \frac{1}{C}i_C(0^+)
+  \diff{u_c(t)}{t}{t = 0^+} = \frac{1}{C}i_C(0^+)
 \]
 
 \begin{align*}
@@ -761,12 +790,12 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzada (si existe).
 #+BEGIN_EXPORT latex
 \begin{align*}
-  f(0^+) &= f_n(0^+) + f_{\infty}(0^+)\\
-  \diff*{f}{t}{t = 0^+} &= \diff*{f_n}{t}{t = 0^+} + \diff*{f_{\infty}}{t}{t = 0^+}  
+  u_C(0^+) &= u_n(0^+) + u_{\infty}(0^+)\\
+  \diff{u_C(t)}{t}{t = 0^+} &= \diff{u_n(t)}{t}{t = 0^+} + \diff{u_{\infty}(t)}{t}{t = 0^+}  
 \end{align*}
 #+END_EXPORT
 
-*** Ejemplo
+*** Ejemplo de Respuesta Completa
 
 Circuito RLC paralelo sobreamortiguado con generador de corriente DC funcionando en $t > 0$. 
 
@@ -781,7 +810,7 @@ Circuito RLC paralelo sobreamortiguado con generador de corriente DC funcionando
 #+BEGIN_EXPORT latex
 \begin{align*}
 u_c(0^+) &= U_\infty + A_1 + A_2\\
-\diff*{u_C}{t}{t = 0^+} &= 0 + A_1 s_1 + A_2 s_2
+\diff{u_C(t)}{t}{t = 0^+} &= 0 + A_1 s_1 + A_2 s_2
 \end{align*}
 #+END_EXPORT
 
