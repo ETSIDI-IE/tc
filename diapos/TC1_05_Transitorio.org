@@ -688,7 +688,7 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 #+END_EXPORT
 
 
-** COMMENT Respuesta Completa
+** Respuesta Completa
 *** Condiciones Iniciales
 **** Dos constantes a determinar
 Son necesarias dos tipos de condiciones iniciales:
@@ -720,27 +720,39 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 
 *** Derivadas en $t = 0^+$: ejemplo RLC serie
 
-[[file:figs/RLC_serie.pdf]]
+#+ATTR_LATEX: :height 0.35\textheight
+[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
+\[
+  u_L(t) = L \cdot \diff{i_L(t)}{t} \longrightarrow   \diff{i_L(t)}{t}{t = 0^+} = \frac{1}{L} u_L(0^+)
+\]
 \begin{align*}
-  \diff*{i_L}{t}{t = 0^+} &= \frac{1}{L} u_L(0^+) = - \frac{1}{L}\left(R i_L(0^+) + u_c(0^+)\right)\\
   u_L(0^+) &= -u_R(0^+) - u_c(0^+)\\
   u_R(0^+) &= R i_L(0^+)
 \end{align*}
+\[
+\boxed{\diff{i_L(t)}{t}{t = 0^+} = - \frac{1}{L}\left(R i_L(0^+) + u_c(0^+)\right)}
+\]
 #+END_EXPORT
 
 *** Derivadas en $t = 0^+$: ejemplo RLC paralelo
 
-#+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/RLC_paralelo0.pdf]]
+#+ATTR_LATEX: :height 0.35\textheight
+[[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
+\[
+  i_c(t) = C \cdot \diff{u_c(t)}{t} \longrightarrow \diff{u_c(t)}{t}{t = 0^+} = \frac{1}{C}i_C(0^+)
+\]
+
 \begin{align*}
-  \diff*{u_c}{t}{t = 0^+} &= \frac{1}{C}i_C(0^+) = - \frac{1}{C} \left( \frac{1}{R} u_C(0^+) +  i_L(0^+)\right)\\
   i_C(0^+) &= -i_R(0^+) - i_L(0^+)\\
   i_R(0^+) &= \frac{1}{R} u_C(0^+)
 \end{align*}
+\[
+  \boxed{\diff{u_c(t)}{t}{t = 0^+} = - \frac{1}{C} \left( \frac{1}{R} u_C(0^+) +  i_L(0^+)\right)}
+\]
 #+END_EXPORT
 
 
