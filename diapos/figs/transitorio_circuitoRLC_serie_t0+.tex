@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \draw
+  (0, 0) node[cute spdt down, xscale = -1] (Sw) {}
+  (Sw.out 1) to [short] ++(-2,0)
+  to [V, v = $U_0$] ++(0, -3) coordinate (A)
+  (Sw.in) to [R, l = R, i>^= $i(t)$, v = $u_R(t)$] ++(3,0)
+  to [L, l = L, v = $u_L(t)$] ++(2,0) coordinate (B)
+  to [C, l_= C, v^= $u_C(t)$] (B|-A)
+  to [short] (A)
+  (Sw.out 2) to[short] (Sw.out 2|-A);
+\end{circuitikz}
+
+\end{document}

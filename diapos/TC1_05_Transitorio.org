@@ -60,7 +60,7 @@ No acumula energía: sigue los cambios de forma instantánea.
 \[
 u(t) = L \diff{i_L(t)}{t}
 \leftrightarrow
-i_L(t) = \frac{1}{L} \int^t_{-\infty}u(t) \mathrm{d}t
+i_L(t) = \frac{1}{L} \int^t_{-\infty}u(t') \mathrm{d}t'
 \]
 #+END_EXPORT
 
@@ -76,7 +76,7 @@ La corriente en una bobina no puede variar de forma abrupta (implica tensión in
 \[
 i(t) = C \diff{u_C(t)}{t}
 \leftrightarrow
-u(t) = \frac{1}{C} \int^t_{-\infty}i(t) \mathrm{d}t
+u(t) = \frac{1}{C} \int^t_{-\infty}i(t') \mathrm{d}t'
 \]
 #+END_EXPORT
 
@@ -390,18 +390,6 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 #+END_EXPORT
 
 
-* COMMENT Ejercicios Recomendados
-
-** Ejercicios
-
-*** FM
-Ejemplos de aplicación 4.2, 4.3, 4.4, y 4.7
-*** HKD
-Ejemplo 8.4, 8.6, 8.10
-*** AS
-Ejemplo 7.13
-
-
 * Circuitos de Segundo Orden
 *** Introducción
 - Circuitos que tienen *dos elementos de acumulación* que intercambian energía, y parte resistiva que disipa energía.
@@ -414,10 +402,15 @@ Ejemplo 7.13
   - Sin fuentes: *respuesta natural* (la energía acumulada en $t < 0$ se redistribuye).
   - Con fuentes: *respuesta forzada* (determinada por la forma de onda de las fuentes).
 
-** COMMENT Circuito RLC serie
+** Circuito RLC serie
 *** Circuito básico
 
-[[file:figs/RLC_serie.pdf]]
+[[file:figs/transitorio_circuitoRLC_serie.pdf]]
+
+
+*** Respuesta natural (t > 0)
+
+[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -425,18 +418,25 @@ Ejemplo 7.13
 \]
 #+END_EXPORT
 
-*** Ecuación diferencial (respuesta natural)
-
-[[file:figs/RLC_serie.pdf]]
-
 #+BEGIN_EXPORT latex
-\begin{align*}
-  L\diff[2]{i}{t} + R\diff{i}{t} + \frac{1}{C} i &= 0\\
-  \diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i &= 0\\
-\end{align*}
+\[
+  L\diff[2]{i}{t} + R\diff{i}{t} + \frac{1}{C} i = 0 \Rightarrow
+  \boxed{\diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0}
+\]
 #+END_EXPORT
 
 *** Solución
+
+**** Ecuación diferencial
+
+#+BEGIN_EXPORT latex
+\[
+\diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0
+\]
+\[
+    i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+\]
+#+END_EXPORT
 
 **** Ecuación característica
 
@@ -444,28 +444,32 @@ Ejemplo 7.13
 \[
 s^2 + \frac{R}{L} s + \frac{1}{LC} = 0  
 \]
-#+END_EXPORT
-
-**** Solución
-#+BEGIN_EXPORT latex
 \[
   s_{1,2} = -\frac{R}{2L} \pm \sqrt{\left(\frac{R}{2L}\right)^2 - \frac{1}{LC}}
 \]
 #+END_EXPORT
 
 
-*** Solución con parámetros
-**** Ecuación característica
+*** Parámetros
 
 *****                                                             :BMCOL:
      :PROPERTIES:
      :BEAMER_col: .5
      :END:
 #+BEGIN_EXPORT latex
+\begin{align*}
+  s^2 + \frac{R}{L} s + \frac{1}{LC} &= 0\\
+  s^2 + 2\alpha s + \omega_0^2 &= 0  
+\end{align*}
+
 \[
-s^2 + 2\alpha s + \omega_0^2 = 0  
+  s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
+\]
+\[
+  i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 #+END_EXPORT
+
 *****                                                             :BMCOL:
      :PROPERTIES:
      :BEAMER_col: .5
@@ -474,32 +478,34 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \begin{align*}
   \alpha &= \frac{R}{2L}\\
   \omega_0 &= \frac{1}{\sqrt{LC}}\\
+  \omega_d &= \sqrt{\omega_0^2 - \alpha^2}\\
   \xi &= \frac{\alpha}{\omega_0}
 \end{align*}
 #+END_EXPORT
-
-**** Solución
-
-#+BEGIN_EXPORT latex
-\[
-  s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
-\]
-
-\[
-  i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
-\]
-#+END_EXPORT
-
+*****                                                   :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+#+beamer: \vspace{1cm}
+- $\alpha$: coeficiente de amortiguamiento exponencial
+- $\omega_0$: pulsación natural no amortiguada
+- $\omega_d$: pulsación natural amortiguada 
+- $\xi$: factor de amortiguamiento
 *** Posibles soluciones
-**** $\alpha > \omega$, $\xi > 1$
+
+\[
+  \boxed{s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}}
+\]
+
+**** $\alpha > \omega_0$, $\xi > 1$
 - $s_{1,2}$: dos soluciones reales (negativas) distintas
 - Circuito *sobreamortiguado*.
 
-**** $\alpha = \omega$, $\xi = 1$
+**** $\alpha = \omega_0$, $\xi = 1$
 - $s_{1,2}$: solución real doble.
 - Circuito con *amortiguamiento crítico*.
 
-**** $\alpha < \omega$, $\xi < 1$
+**** $\alpha < \omega_0$, $\xi < 1$
 - $s_{1,2}$: dos soluciones complejas conjugadas
 - Circuito *subamortiguado*.
 
@@ -521,7 +527,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 *** Circuito Sobreamortiguado ($\alpha > \omega_0$)
 #+BEGIN_EXPORT latex
 \[
-  i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+  \boxed{i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}}
 \]
 #+END_EXPORT
 
@@ -530,7 +536,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 *** Amortiguamiento Crítico ($\alpha = \omega_0$)
 #+BEGIN_EXPORT latex
 \[
-  i_n(t) = (A_1 + A_2 t) e^{s t} 
+  \boxed{i_n(t) = (A_1 + A_2 t) e^{s t} }
 \]
 #+END_EXPORT
 
@@ -540,50 +546,46 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 *** Circuito Subamortiguado ($\alpha < \omega$)
 #+BEGIN_EXPORT latex
 \[
-  i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}
+  \boxed{i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}}
 \]
 #+END_EXPORT
 
 [[file:figs/Subamortiguado_AS.pdf]]
 
-#+BEGIN_EXPORT latex
-\[
-\omega_d = \sqrt{\omega_0^2 - \alpha^2}
-\]
-#+END_EXPORT
-
-*** Comparación
-
-[[file:figs/DampingRatio.pdf]]
-
 *** Valores Importantes
 
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:figs/RespuestaEscalon_SegundoOrden.png]]
-
-*** Valores Importantes
 
 - *Tiempo de Subida*: tiempo para subir de 10% al 90% del valor en régimen permanente.
 
 - *Tiempo de Establecimiento*: tiempo para que la diferencia entre la respuesta y el régimen permanente permanezca dentro de una banda del 1%.
 
+*** Valores Importantes
+
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:figs/RespuestaEscalon_SegundoOrden.png]]
+
 - *Valor máximo* y *Tiempo del Valor Máximo*.
 
-- *Sobretensión* o *Sobrecorriente*: porcentaje del valor máximo respecto del régimen permanente.
+- *Sobretensión*: porcentaje del valor máximo respecto del régimen permanente.
 
-** COMMENT Circuito RLC paralelo
+** Circuito RLC paralelo
 *** Circuito básico
 
-[[file:figs/RLC_paralelo.pdf]]
+
+[[file:figs/transitorio_circuitoRLC_paralelo.pdf]]
+
+*** Respuesta natural (t > 0)
+
+
+[[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
-  Gu(t) + C\diff{u(t)}{t} + \frac{1}{L}\int_{-\infty}^t u(t') \mathrm{d}t' = i_s(t)
+  Gu(t) + C\diff{u(t)}{t} + \frac{1}{L}\int_{-\infty}^t u(t') \mathrm{d}t' = 0
 \]
 #+END_EXPORT
-
-*** Ecuación diferencial (respuesta natural)
-
-[[file:figs/RLC_paralelo0.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -592,6 +594,15 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 #+END_EXPORT
 
 *** Solución
+**** Ecuación diferencial
+#+BEGIN_EXPORT latex
+\[
+  \diff[2]{u}{t} + \frac{G}{C} \diff{u}{t} + \frac{1}{LC} u = 0
+\]
+\[
+  u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+\]
+#+END_EXPORT
 
 **** Ecuación característica
 
@@ -599,17 +610,13 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \[
 s^2 + \frac{G}{C} s + \frac{1}{LC} = 0  
 \]
-#+END_EXPORT
-
-**** Solución
-#+BEGIN_EXPORT latex
 \[
   s_{1,2} = -\frac{G}{2C} \pm \sqrt{\left(\frac{G}{2C}\right)^2 - \frac{1}{LC}}
 \]
 #+END_EXPORT
 
 
-*** Solución con parámetros
+*** Parámetros
 **** Ecuación característica
 
 *****                                                             :BMCOL:
@@ -617,8 +624,17 @@ s^2 + \frac{G}{C} s + \frac{1}{LC} = 0
      :BEAMER_col: .5
      :END:
 #+BEGIN_EXPORT latex
+\begin{align*}
+s^2 + \frac{G}{C} s + \frac{1}{LC} &= 0\\
+s^2 + 2\alpha s + \omega_0^2 &= 0  
+\end{align*}
+
 \[
-s^2 + 2\alpha s + \omega_0^2 = 0  
+  s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
+\]
+
+\[
+  u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 #+END_EXPORT
 *****                                                             :BMCOL:
@@ -629,23 +645,10 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \begin{align*}
   \alpha &= \frac{G}{2C}\\
   \omega_0 &= \frac{1}{\sqrt{LC}}\\
+  \omega_d &= \sqrt{\omega_0^2 - \alpha^2}\\
   \xi &= \frac{\alpha}{\omega_0}
 \end{align*}
 #+END_EXPORT
-
-**** Solución
-
-#+BEGIN_EXPORT latex
-\[
-  s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}
-\]
-
-\[
-  u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
-\]
-#+END_EXPORT
-
-
 
 *** Tipos de Respuesta
 - Tipo de respuesta determinado por relación entre $G$ y $L$, $C$ (disipación y almacenamiento).
@@ -667,20 +670,20 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 - Circuito Sobreamortiguado ($\alpha > \omega_0$)
 #+BEGIN_EXPORT latex
 \[
-  u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+  \boxed{u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}}
 \]
 #+END_EXPORT
 -  Amortiguamiento Crítico ($\alpha = \omega_0$)
 #+BEGIN_EXPORT latex
 \[
-  u_n(t) = (A_1 + A_2 t) e^{s t} 
+  \boxed{u_n(t) = (A_1 + A_2 t) e^{s t} }
 \]
 #+END_EXPORT
 
 - Circuito Subamortiguado ($\alpha < \omega$)
 #+BEGIN_EXPORT latex
 \[
-  u_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}
+  \boxed{u_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}}
 \]
 #+END_EXPORT
 
