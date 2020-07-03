@@ -96,14 +96,45 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 :PROPERTIES:
 :beamer_opt: plain
 :END: 
-#+ATTR_LATEX: :height 0.8\textheight
-[[file:figs/Acoplamiento1.png]]
 
-$\Phi_{ii}$: flujo producido por la bobina $i$
+[[file:figs/acoplamientoTikz.pdf]]
 
-$\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+** 
+:PROPERTIES:
+:beamer_opt: plain
+:END: 
 
-$\Phi_{i}$: flujo total que atraviesa la bobina $i$
+#+ATTR_LATEX: :height 0.55\textheight
+[[file:figs/acoplamientoTikz.pdf]]
+#+begin_center
+$\phi_{ii}$: flujo producido por la bobina $i$
+
+$\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+
+$\phi_{i}$: flujo total que atraviesa la bobina $i$
+#+end_center
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+{\color{blue}\begin{align*}
+  \phi_{11} &= \phi_{d1} + \phi_{21}\\
+  \phi_{1} &= \phi_{11} + \phi_{12}
+\end{align*}}
+#+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+{\color{red}\begin{align*}
+  \phi_{22} &= \phi_{d2} + \phi_{12}\\
+  \phi_{2} &= \phi_{22} + \phi_{21}
+\end{align*}}
+#+end_export
+
 ** 
 :PROPERTIES:
 :beamer_opt: plain
@@ -137,10 +168,10 @@ $\Phi_{i}$: flujo total que atraviesa la bobina $i$
 :BEAMER_env: ignoreheading
 :END:
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/Acoplamiento1.png]]
+[[file:figs/acoplamientoTikz.pdf]]
 
 #+begin_center
-$\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+$\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 #+end_center
 ** 
 :PROPERTIES:
@@ -177,27 +208,29 @@ $\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 :BEAMER_env: ignoreheading
 :END:
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/Acoplamiento1.png]]
+[[file:figs/acoplamientoTikz.pdf]]
 
 #+begin_center
-$\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+$\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 #+end_center
 
 ** Coeficiente de acoplamiento magnético
-#+ATTR_LATEX: :height 0.58\textheight
-[[file:figs/Acoplamiento1.png]]
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/acoplamientoTikz.pdf]]
 
+Coeficiente de acoplamiento de la bobina 1:
 #+BEGIN_EXPORT latex
 \[
-  k_{21} = \frac{\phi_{21}}{\phi_{11}} = 1 - \frac{\phi_{d1}}{\phi_{11}} \leq 1
-\]
-
-\[
-  k_{12} = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
+  k_1 = \frac{\phi_{21}}{\phi_{11}} = 1 - \frac{\phi_{d1}}{\phi_{11}} \leq 1
 \]
 #+END_EXPORT
 
-
+Coeficiente de acoplamiento de la bobina 2:
+#+begin_export latex
+\[
+  k_2 = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
+\]
+#+end_export
 
 ** Coeficiente de inducción mutua
 
@@ -208,7 +241,7 @@ $\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 \]
 
 \[
-  k_{12} = k_{21} = k
+  k_1 = k_2 = k
 \]
 
 \[
@@ -256,13 +289,13 @@ $\Phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Acoplamiento1.png]]
+[[file:figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Acoplamiento1_circuito.png]]
+[[file:figs/acoplamiento_circuito.pdf]]
 
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
@@ -278,13 +311,13 @@ induce una tensión positiva en el otro terminal con punto.
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Acoplamiento1.png]]
+[[file:figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Acoplamiento1_circuito.png]]
+[[file:figs/acoplamiento_circuito.pdf]]
 
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
@@ -297,8 +330,8 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 #+end_export
 ** Flujos contrapuestos
-#+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/Acoplamiento2.png]]
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:figs/acoplamientoTikz_opuesto.pdf]]
 
 Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 ** Representación Circuital
@@ -307,14 +340,15 @@ Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2.png]]
+[[file:figs/acoplamientoTikz_opuesto.pdf]]
+
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2_circuito.png]]
+[[file:figs/acoplamiento_circuito_opuesto.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -329,14 +363,14 @@ induce una tensión positiva en el otro terminal con punto.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2.png]]
+[[file:figs/acoplamientoTikz_opuesto.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2_circuito.png]]
+[[file:figs/acoplamiento_circuito_opuesto.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -347,34 +381,21 @@ induce una tensión positiva en el otro terminal con punto.
   u_2(t) &= - M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}
 \end{align*}
 #+end_export
-** Criterio del punto
 
-[[file:figs/punto1.png]]
-
-** Criterio del punto
-
-[[file:figs/punto2.png]]
-
-** Criterio del punto
-
-[[file:figs/punto3.png]]
-** Criterio del punto
-
-[[file:figs/punto4.png]]
 ** Corriente Alterna Sinusoidal
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento1.png]]
+[[file:figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento1_circuito.png]]
+[[file:figs/acoplamiento_circuito.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -391,14 +412,14 @@ induce una tensión positiva en el otro terminal con punto.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2.png]]
+[[file:figs/acoplamientoTikz_opuesto.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/Acoplamiento2_circuito.png]]
+[[file:figs/acoplamiento_circuito_opuesto.pdf]]
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -410,7 +431,7 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
-[[file:figs/bobinas_serie1.png]]
+[[file:figs/bobinas_serie.pdf]]
 #+begin_export latex
 \[
   \overline{U}_1 = (j \omega L_1 + j \omega M) \overline{I}
@@ -425,7 +446,7 @@ induce una tensión positiva en el otro terminal con punto.
 \]
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
-[[file:figs/bobinas_serie2.png]]
+[[file:figs/bobinas_serie_opuesto.pdf]]
 #+begin_export latex
 \[
   \overline{U}_1 = (j \omega L_1 - j \omega M) \overline{I}

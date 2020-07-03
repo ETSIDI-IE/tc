@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors]{circuitikz}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw (0,0) coordinate (A1) to[short,*-, i = $i_1$] ++(2,0) coordinate(A1')
+  to[L, l_=$L1$, name = L1] ++(0,-4) coordinate (B1')
+  to[short, -*] ++(-2,0) coordinate (B1);
+  \draw (A1) to [open, v = $u_1(t)$] (B1);
+  \draw[fill=black] ($(L1.north west) + (0, .1)$) circle (1pt);
+  \draw (5.5,0) coordinate (A2) to[short,*-, i = $i_2$] ++(-2,0) coordinate(A2')
+  to[L, l=$L2$, mirror, name = L2] ++(0,-4) coordinate (B2')
+  to[short, -*] ++(2,0) coordinate (B2);
+  \draw (A2) to [open, v = $u_2(t)$] (B2);
+  \draw[fill=black] ($(L2.north west) + (0, .1)$) circle (1pt);
+  \draw [<->,>=stealth] ($(L1.north west) + (0, .2)$)  to [bend left] node[midway, above] {M} ($(L2.north west) + (0, .2)$);
+\end{circuitikz}
+\end{document}
