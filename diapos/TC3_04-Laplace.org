@@ -1,7 +1,7 @@
 #+TITLE: Análisis del Transitorio con la Transformada de Laplace
 #+SUBTITLE: Teoría de Circuitos III
 #+AUTHOR: Oscar Perpiñán Lamigueiro
-#+DATE: Septiembre 2018
+#+DATE: 
 #+STARTUP: beamer
 #+STARTUP: indent
 #+SETUPFILE: config.org

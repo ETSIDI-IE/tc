@@ -1,7 +1,7 @@
 #+TITLE: Acoplamientos Magnéticos
 #+SUBTITLE: Teoría de Circuitos II
 #+AUTHOR: Oscar Perpiñán Lamigueiro
-#+DATE: Abril 2019
+#+DATE: 
 #+STARTUP: beamer
 #+STARTUP: indent
 #+SETUPFILE: config.org

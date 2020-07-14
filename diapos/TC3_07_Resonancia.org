@@ -1,7 +1,7 @@
 #+TITLE: Respuesta en Frecuencia: Resonancia
 #+SUBTITLE: Teoría de Circuitos III
 #+AUTHOR: Oscar Perpiñán Lamigueiro
-#+DATE: Noviembre 2018
+#+DATE: 
 #+STARTUP: beamer
 #+STARTUP: indent
 #+SETUPFILE: config.org

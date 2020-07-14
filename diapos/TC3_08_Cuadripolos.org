@@ -1,7 +1,7 @@
 #+TITLE: Cuadripolos
 #+SUBTITLE: Teoría de Circuitos III
 #+AUTHOR: Oscar Perpiñán Lamigueiro
-#+DATE: Diciembre 2018
+#+DATE: 
 #+STARTUP: beamer
 #+STARTUP: indent
 #+SETUPFILE: config.org
