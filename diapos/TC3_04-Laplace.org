@@ -178,7 +178,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 
 #+BEGIN_EXPORT latex
 \[
-  K_i = \left[(\slp - p_1) \laplace{F}\right]_{s = p_i}
+  K_i = \left[(\slp - p_i) \laplace{F}\right]_{s = p_i}
 \]
 #+END_EXPORT
 
@@ -233,7 +233,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 \]
 #+END_EXPORT
 
-- Completar cuadrados + Método algebraico 
+- Método algebraico + Completar cuadrados
 *** Ejemplo 15.11 AS
 #+BEGIN_EXPORT latex
 \[
