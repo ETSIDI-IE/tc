@@ -7,10 +7,11 @@
   \draw[->] (-0.2,0) -- (5.1,0) node[below] {$\omega$};
   \draw[->] (0,-1.2) -- (0,10.5) node[above] {$|H(\omega)|$};
 
-  \draw[dashed,-,ultra thick,color=blue!50!black] (1,0) node[font = \Large, below] {$\omega_p$} -- (1,7.07) -- (0,7.07) node[font = \Large, left] {$1/\sqrt{2}$};
-  \draw[dashed,-, ultra thick,color =red!50!black] (0.5,0) node[font = \Large, below] {$\omega_1$} -- (0.5,8.94) -- (0,8.94) node[font = \Large, left] {$|H(\omega_1$};
+  \draw[dashed,-,ultra thick,color=blue!50!black] (1,0) node[font = \Large, below] {$\omega_p$} -- (1,7.07) -- (0,7.07) node[font = \Large, left] {$K'/\sqrt{2}$};
+  \draw[dashed,-, ultra thick,color =red!50!black] (0.5,0) node[font = \Large, below] {$\omega_1$} -- (0.5,8.94) -- (0,8.94) node[font = \Large, left] {$|H(\omega_1)|$};
   \draw[dashed,-,ultra thick,color=green!50!black] (2,0) node[font = \Large, below] {$\omega_2$} -- (2,4.47) -- (0,4.47) node[font = \Large, left] {$|H(\omega_2)|$};
-
+  \node[left, font = \Large] at (0,10) {$K'$};
+  
  \draw[ultra thick, color=black] plot[id=polo] function{10/sqrt(1+x**2)};
 \end{tikzpicture}
 
