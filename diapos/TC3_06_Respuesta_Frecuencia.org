@@ -71,19 +71,6 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 \]
 #+END_EXPORT
 
-** Polos y Ceros
-*** División de Polinomios 
-#+BEGIN_EXPORT latex
-\[
-  \laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{N}}{\laplace{D}} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)} 
-\]
-#+END_EXPORT
-*** :B_ignoreheading:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Ejemplo_PoleZero.pdf]]
 ** La función de transferencia es un fasor
 
 - Evaluamos la función de transferencia en el eje imaginario:
@@ -111,6 +98,29 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 \]
 #+END_EXPORT
 
+
+** División de Polinomios: Polos y Ceros
+
+#+BEGIN_EXPORT latex
+\[
+  \boxed{\laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{N}}{\laplace{D}} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)} }
+\]
+#+END_EXPORT
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+BEGIN_EXPORT latex
+\[
+\fasor{H} = \frac{j\omega - \mathbf{z_1}}{(j\omega - \mathbf{p_1}) \cdot (j\omega - \mathbf{p_2})}
+\]
+#+END_EXPORT
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:figs/InterpretacionGeometrica0.pdf]]
 
 ** Interpretación Geométrica
 
@@ -151,6 +161,7 @@ Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número c
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.75\textheight
 [[file:figs/CeroGeometricaPlot.pdf]]
 
 ** Interpretación Geométrica: polo simple
@@ -171,7 +182,7 @@ Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número c
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.6\textheight
+#+ATTR_LATEX: :height 0.75\textheight
 [[file:figs/PoloGeometricaPlot.pdf]]
 
 ** Ejercicios Recomendados
