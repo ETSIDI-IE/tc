@@ -370,17 +370,6 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 #+END_EXPORT
 
 
-** Ejemplo Diagrama Polos y Ceros
-
-[[file:figs/Ejemplo_PoleZero.pdf]]
-
-
-#+BEGIN_EXPORT latex
-\[
-  \laplace{H} = \frac{3\slp + 6}{\slp^3 + 3\slp^2 + 7\slp + 5}
-\]
-#+END_EXPORT
-
 ** Polos y Ceros
 *** Ceros
 
@@ -425,6 +414,23 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
   y_n(t) = \sum_{i = 1}^n A_1 e^{p_i t}
 \]
 #+END_EXPORT
+
+** Ejemplo Diagrama Polos y Ceros
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+BEGIN_EXPORT latex
+\[
+\laplace{H} = \frac{\slp - \mathbf{z_1}}{(\slp - \mathbf{p_1}) \cdot (\slp - \mathbf{p_2})}
+\]
+#+END_EXPORT
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:figs/InterpretacionGeometrica0.pdf]]
 
 ** Significado Diagrama Polos y Ceros
 [[file:figs/PoleZero.pdf]]
