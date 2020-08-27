@@ -207,7 +207,7 @@ Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número c
 *** Propiedades
 #+BEGIN_EXPORT latex
 \begin{align*}
-  \log {P_1 \cdot P_2} &= \log P_1 + \log P_2\\
+  \log (P_1 \cdot P_2) &= \log P_1 + \log P_2\\
   \log \frac{P_1}{P_2} &= \log P_1 - \log P_2\\
   \log P^n &= n \cdot \log P
 \end{align*}
@@ -483,7 +483,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 \]
 #+END_EXPORT
 
-
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:figs/BodeCeroCuadratico.pdf]]
 
 
