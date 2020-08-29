@@ -86,14 +86,6 @@ La tensión en un condensador no puede variar de forma abrupta (implica corrient
 \boxed{u_C(0^-) = u_C(0^+)}
 \]
 #+END_EXPORT
-*** Circuitos Equivalentes en $t = 0^+$
-- Sustituir fuentes de tensión $u_g(t)$ por $u_g(0^+)$.
-- Sustituir fuentes de corriente $i_g(t)$ por $i_g(0^+)$.
-- Sustituir bobinas por fuentes de corriente $i_L(0^+)$.
-- Sustituir condensadores por fuentes de tensión $u_C(0^+)$.
-- Calcular tensiones y corrientes en circuito.
-[[file:figs/CondicionesIniciales_CircuitosEquivalentes.pdf]]
-
 *** Ejemplo
 
 El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la posición (2) en $t = 0$:
@@ -276,7 +268,9 @@ La solución completa es:
 - $i_\infty(t)$: corriente en la bobina en régimen permanente para $t > 0$.
 - $i_\infty(0^+)$: corriente en la bobina en régimen permanente particularizada en $t = 0$.
 
+*** Equivalente de Thévenin
 
+[[file:figs/Thevenin_PrimerOrden.pdf]]
 ** Circuito RC paralelo
 
 *** Circuito básico
@@ -365,9 +359,13 @@ Suponiendo que el condensador está inicialmente descargado:
 \end{align*}
 #+END_EXPORT
 
+*** Equivalente de Norton
+
+[[file:figs/Thevenin_PrimerOrden.pdf]]
+
 ** Análisis Sistemático
 
-*** Equivalente de Thévenin (Norton)
+*** Equivalente de Thévenin/Norton
 
 [[file:figs/Thevenin_PrimerOrden.pdf]]
 
