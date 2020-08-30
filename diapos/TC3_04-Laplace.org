@@ -204,6 +204,13 @@ Reescribimos la transformada como suma de fracciones (descomposición en fraccio
 \]
 #+END_EXPORT
 
+*** Ejemplo 15.9 AS
+#+BEGIN_EXPORT latex
+\[
+  \laplace{F} = \frac{\slp^2 + 12}{\slp(\slp + 2)(\slp + 3)}
+\]
+#+END_EXPORT
+
 
 ** Transformada Inversa
 
