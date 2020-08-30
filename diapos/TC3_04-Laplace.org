@@ -162,17 +162,33 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 #+END_EXPORT
 
 ** Transformada Inversa
+
+Expresamos la transformada como una fracción de polinomios:
+
 #+BEGIN_EXPORT latex
 \[
   \laplace{F} = \frac{\laplace{N}}{\laplace{D}} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)}
 \]
 #+END_EXPORT
+
+- Las raíces de $\laplace{N}$ son los *ceros* de la transformada, $z_i$.
+- Las raíces de $\laplace{D}$ son los *polos* de la transformada, $p_i$.
+
+\vspace{\baselineskip}
+
+Para obtener la transformada inversa diferenciamos tres casos (o una combinación): 
+- Polos reales únicos
+- Polos reales repetidos
+- Polos conjugados.
+
 ** Transformada Inversa
 
 *** Polos reales únicos
+
+Reescribimos la transformada como suma de fracciones (descomposición en fracciones parciales):
 #+BEGIN_EXPORT latex
 \[
-  \laplace{F} = \frac{K_1}{\slp-p_1} + \frac{K_2}{\slp-p_2} + \ldots + \frac{K_n}{\slp-p_n} 
+  \laplace{F} = \frac{\laplace{N}}{\laplace{D}} = \frac{K_1}{\slp-p_1} + \frac{K_2}{\slp-p_2} + \ldots + \frac{K_n}{\slp-p_n} 
 \]
 #+END_EXPORT
 
@@ -192,6 +208,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 ** Transformada Inversa
 
 *** Polos reales repetidos
+Nuevamente descomposición de fracciones parciales, y calculamos coeficientes $K_i$ con el método algebraico (véase ejemplo 15.9 de AS)
 #+BEGIN_EXPORT latex
 \[
   \laplace{F} = \frac{K_1}{\slp-p_1} + \frac{K_2}{(\slp-p_1)^2} + \frac{K_3}{(\slp-p_1)^3} + \ldots + \frac{K_n}{(\slp-p_1)^n} 
@@ -204,7 +221,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 \]
 #+END_EXPORT
 
-- Método algebraico (véase ejemplo 15.9 de AS)
+
 
 *** Ejemplo 15.10 AS
 #+BEGIN_EXPORT latex
@@ -217,6 +234,9 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 ** Transformada Inversa
 
 *** Polos complejos conjugados
+
+Nuevamente calculamos con el método algebraico, y terminamos "completando cuadrados".
+
 #+BEGIN_EXPORT latex
 \[
   \laplace{F} = \frac{\laplace{N}}{\slp^2 + a \slp + b} = \frac{A (\slp + \alpha) + B \omega}{(\slp^2 + 2\alpha \slp + \alpha^2) + \omega^2}
@@ -233,7 +253,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 \]
 #+END_EXPORT
 
-- Método algebraico + Completar cuadrados
+
 *** Ejemplo 15.11 AS
 #+BEGIN_EXPORT latex
 \[
