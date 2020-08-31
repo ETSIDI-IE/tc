@@ -7,11 +7,11 @@
 \tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
 
 \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
-    \node [int] (a) {$\mathbf{H}(\mathbf{s})$};
+    \node [int] (a) {$\mathbf{H}(\omega)$};
     \node (b) [left of=a,node distance=2cm, coordinate] {a};
     \node (c) [right of=a,node distance=2cm, coordinate] {c};
-    \path[->] (b) edge node {$\mathbf{X}(\mathbf{s})$} (a);
-    \path[->] (a) edge node {$\mathbf{Y}(\mathbf{s})$} (c);
+    \path[->] (b) edge node {$\mathbf{X}(\omega)$} (a);
+    \path[->] (a) edge node {$\mathbf{Y}(\omega)$} (c);
 \end{tikzpicture}
 
 \end{document}

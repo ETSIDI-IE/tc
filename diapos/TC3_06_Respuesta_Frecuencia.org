@@ -10,23 +10,19 @@
 * Introducción
 ** Introducción
 
-*** Respuesta en Frecuencia
-La respuesta en frecuencia de un circuito es la variación del comportamiento del circuito a los cambios de la frecuencia de alimentación.
-
-*** :B_ignoreheading:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
 - Hasta ahora hemos analizado circuitos alimentados por generadores con frecuencia constante.
 - El análisis de la *respuesta en frecuencia* consiste en variar la frecuencia de alimentación y estudiar la respuesta.
 - Este análisis se realiza en *régimen permanente* con señales sinusoidales.
+
+*** Respuesta en Frecuencia
+La respuesta en frecuencia de un circuito es la variación del comportamiento del circuito a los cambios de la frecuencia de alimentación.
 
 
 * Función de Transferencia
 ** Función de Transferencia
 #+BEGIN_EXPORT latex
 \[
-  \laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{Y}}{\laplace{X}}
+  \fasor{H} = \frac{\fasor{Y}}{\fasor{X}}
 \]
 #+END_EXPORT
 
@@ -49,25 +45,25 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 - Ganancia de Tensión
 #+BEGIN_EXPORT latex
 \[
-\laplace{H} =\frac{\laplace{V_o}}{\laplace{V_i}}
+\fasor{H} =\frac{\fasor{V_o}}{\fasor{V_i}}
 \]
 #+END_EXPORT
 - Ganancia de Corriente
 #+BEGIN_EXPORT latex
 \[
-\laplace{H} =\frac{\laplace{I_o}}{\laplace{I_i}}
+\fasor{H} =\frac{\fasor{I_o}}{\fasor{I_i}}
 \]
 #+END_EXPORT
 - Impedancia de Transferencia
 #+BEGIN_EXPORT latex
 \[
-\laplace{H} =\frac{\laplace{V_o}}{\laplace{I_i}}
+\fasor{H} =\frac{\fasor{V_o}}{\fasor{I_i}}
 \]
 #+END_EXPORT
 - Admitancia de Transferencia
 #+BEGIN_EXPORT latex
 \[
-\laplace{H} =\frac{\laplace{I_o}}{\laplace{V_i}}
+\fasor{H} =\frac{\fasor{I_o}}{\fasor{V_i}}
 \]
 #+END_EXPORT
 
@@ -103,7 +99,7 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 
 #+BEGIN_EXPORT latex
 \[
-  \boxed{\laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{N}}{\laplace{D}} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)} }
+  \boxed{\laplace{H}\rvert_{\slp = j\omega} = \frac{\laplace{N}}{\laplace{D}}\rvert_{\slp = j\omega} = K \frac{(\slp-z_1) (\slp - z_2) \ldots (\slp - z_m)}{(\slp-p_1) (\slp - p_2) \ldots (\slp - p_n)}\rvert_{\slp = j\omega} }
 \]
 #+END_EXPORT
 ***                                                                 :BMCOL:
@@ -124,7 +120,7 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 
 ** Interpretación Geométrica
 
-Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número complejo que conecta un cero/polo con el eje imaginario.
+Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un cero/polo con el eje imaginario.
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
@@ -185,6 +181,16 @@ Cada uno de los factores de $\laplace{H}\rvert_{\slp = j\omega}$ es un número c
 #+ATTR_LATEX: :height 0.75\textheight
 [[file:figs/PoloGeometricaPlot.pdf]]
 
+** Forma normalizada o estándar
+Para la construcción del diagrama de Bode es conveniente escribir la función en forma normalizada:
+
+#+BEGIN_EXPORT latex
+\[
+  \laplace{H} = K' \frac{(1 + \slp/\omega_{z1}) \cdot (1 + \slp/\omega_{z2}) \ldots (1 + \slp/\omega_{zm})}{(1 + \slp/\omega_{p1}) \cdot (1 + \slp/\omega_{p2}) \ldots (1 + \slp/\omega_{pn})} 
+\]
+#+END_EXPORT
+
+siendo \omega_{zi} y \omega_{pi} las pulsaciones de los ceros y polos, respectivamente.
 ** Ejercicios Recomendados
 - AS: Ejemplo 14.2.
 - Exámenes:
@@ -393,27 +399,39 @@ Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
   |\fasor{H}| = 
   \begin{cases}
-  20 \log 1 = 0, \quad \omega \to 0\\
-  20 \log \frac{\omega}{\omega_z}, \quad \omega \gg \omega_z\\
+  20 \log 1 = 0, \enskip \omega \to 0\\
+  20 \log \frac{\omega}{\omega_z}, \enskip \omega \gg \omega_z\\
   \end{cases}
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
   \phi(\omega) = 
   \begin{cases}
-    \ang{0},\quad \omega \leq 0.1\omega_z\\
-    \ang{45}, \quad \omega = \omega_z\\
-    \ang{90}, \quad \omega \geq 10\omega_z\\
+    \ang{0},\enskip \omega \leq 0.1\omega_z\\
+    \ang{45}, \enskip \omega = \omega_z\\
+    \ang{90}, \enskip \omega \geq 10\omega_z\\
   \end{cases}
 \]
 #+END_EXPORT
 
+*** :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 [[file:figs/BodeCeroSimple.pdf]]
 
 ** Polo simple
@@ -428,28 +446,39 @@ Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
   |\fasor{H}| = 
   \begin{cases}
-  - 20 \log 1 = 0, \quad \omega \to 0\\
-  - 20 \log \frac{\omega}{\omega_p}, \quad \omega \gg \omega_p\\
+  - 20 \log 1 = 0, \enskip \omega \to 0\\
+  - 20 \log \frac{\omega}{\omega_p}, \enskip \omega \gg \omega_p\\
   \end{cases}
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
   \phi(\omega) = 
   \begin{cases}
-    \ang{0},\quad \omega \leq 0.1\omega_p\\
-    - \ang{45}, \quad \omega = \omega_p\\
-    - \ang{90}, \quad \omega \geq 10 \omega_p
+    \ang{0},\enskip \omega \leq 0.1\omega_p\\
+    - \ang{45}, \enskip \omega = \omega_p\\
+    - \ang{90}, \enskip \omega \geq 10 \omega_p
   \end{cases}
 \]
 #+END_EXPORT
 
-
+*** :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 [[file:figs/BodePoloSimple.pdf]]
 
 ** Cero cuadrático
@@ -461,28 +490,39 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 \]
 #+END_EXPORT
 
-
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
   |\fasor{H}| = 
   \begin{cases}
-  20 \log 1 = 0, \quad \omega \to 0\\
-  40 \log (\omega/\omega_0), \quad \omega \gg \omega_0\\
+  0, \enskip \omega \to 0\\
+  40 \log (\omega/\omega_0), \enskip \omega \gg \omega_0\\
   \end{cases}
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+BEGIN_EXPORT latex
 \[
-  \phi(\omega) = \atan \frac{2\zeta\omega/\omega_0}{1 - \omega^2/\omega_0^2}
+  \phi(\omega) = 
   \begin{cases}
-    \ang{0},\quad \omega \leq 0.1\omega_0\\
-    \ang{90}, \quad \omega = \omega_0\\
-    \ang{180}, \quad \omega \geq 10 \omega_0
+    \ang{0},\enskip \omega \leq 0.1\omega_0\\
+    \ang{90}, \enskip \omega = \omega_0\\
+    \ang{180}, \enskip \omega \geq 10 \omega_0
   \end{cases}
 \]
 #+END_EXPORT
 
+*** :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 #+ATTR_LATEX: :height 0.3\textheight
 [[file:figs/BodeCeroCuadratico.pdf]]
 
@@ -495,30 +535,40 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 \]
 #+END_EXPORT
 
-
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.55
+:END:
 #+BEGIN_EXPORT latex
 \[
   |\fasor{H}| = 
   \begin{cases}
-  - 20 \log 1 = 0, \quad \omega \to 0\\
-  - 40 \log (\omega/\omega_0), \quad \omega \gg \omega_0\\
+  0, \enskip \omega \to 0\\
+  - 40 \log (\omega/\omega_0), \enskip \omega \gg \omega_0\\
   \end{cases}
 \]
 #+END_EXPORT
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
 #+BEGIN_EXPORT latex
 \[
-  \phi(\omega) = - \atan \frac{2\zeta\omega/\omega_0}{1 - \omega^2/\omega_0^2}
+  \phi(\omega) = 
   \begin{cases}
-    \ang{0},\quad \omega \leq 0.1\omega_0\\
-    - \ang{90}, \quad \omega = \omega_0\\
-    - \ang{180}, \quad \omega \geq 10 \omega_0
+    \ang{0},\enskip \omega \leq 0.1\omega_0\\
+    - \ang{90}, \enskip \omega = \omega_0\\
+    - \ang{180}, \enskip \omega \geq 10 \omega_0
   \end{cases}
 \]
 #+END_EXPORT
 
 
-
+*** :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 [[file:figs/BodePoloCuadratico.pdf]]
 
 ** Ejercicios Recomendados
