@@ -1,0 +1,51 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\def\wat#1#2#3{
+\begin{scope}[shift={#1}]
+  \node[draw, circle, fill=white, radius = 0.5] (#2) at (0,0) {#3};
+  \draw (#2.north) -- ++(0, 0.5) node[below left] {*}
+  -| ($(#2.west) + (-.5,0)$) node[above right] {*};
+\end{scope}
+}
+
+\begin{circuitikz}
+  %% Líneas
+  \coordinate (A) at (-2,4.5);
+  \coordinate (A') at ($(A) + (7, 0)$);
+  \coordinate (B) at ($(A) + (0, -1.5)$);
+  \coordinate (B') at ($(B) + (7,0)$);
+  \coordinate (C) at ($(B) + (0, -1.5)$);
+  \coordinate (C') at ($(C) + (7,0)$);
+  \draw (A) node[left] {A} to [short, *-] (A');
+  \draw (B) node[left] {B} to [short, *-] (B');
+  \draw (C) node[left] {C} to [short, *-] (C');
+  %% Zt
+  \coordinate (Z0) at ($(C) + (0.5, -1.5)$);
+  \draw (Z0) to [european resistor, l = $Z_1$] ++(2,0) coordinate (Z1)
+  to [european resistor, l = $Z_1$] ++(2,0) coordinate (Z2)
+  to [short] ++(0, -1) coordinate (Z3)
+  to [european resistor, l = $Z_1$] (Z0|-Z3)
+  to [short] (Z0);
+  \draw (Z0) to [short, -*] ($(A) + (0.5, 0)$);
+  \draw (Z1) to [short, -*] (Z1|-B);
+  \draw (Z2) to [short, -*] (Z2|-C);
+  %% vatímetros
+  \wat{($(A') + (-1, 0)$)}{W1}{$W_1$};
+  \wat{($(B') + (-2, 0)$)}{W2}{$W_2$};
+  %% Salida de tensión de vatímetros
+  \draw (W1.south) to[short, -*] (W1.north|-C);
+  \draw (W2.south) to[short, -*] (W2.north|-C);
+  %% Zy
+  \draw
+  (A') to [european resistor, l = $Z_2$] ++(2,0) coordinate (Az)
+  (B') to [european resistor, l = $Z_2$] ++(2,0) coordinate (Bz)
+  (C') to [european resistor, l = $Z_2$] ++(2,0) coordinate (Cz)
+  (Az) to [short, -*] (Bz) to [short] (Cz);
+  % Voltímetro
+  \draw ($(A') + (-4, 0)$) to [rmeter, t = V, *-*] ($(B') + (-4, 0)$);
+\end{circuitikz}
+\end{document}
