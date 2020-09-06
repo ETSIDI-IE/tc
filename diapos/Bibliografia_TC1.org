@@ -1,6 +1,6 @@
 #+TITLE: Bibliografía
 #+SUBTITLE: Teoría de Circuitos
-#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+AUTHOR: 
 #+DATE: 
 #+STARTUP: beamer
 #+SETUPFILE: config.org
