@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\newcommand{\equal}{=}
+\begin{document}
+
+\begin{circuitikz}[european voltages]
+  \draw
+  (0,0) to [short, i>^= $I \equal 0$] ++(1,0) node[below] {A}
+  to [open, *-*, v^= $u_{AB}$] ++(2,0) node[below] {B}
+  to [short] ++(1,0);
+\end{circuitikz}
+
+\end{document}

@@ -12,6 +12,7 @@
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{diffcoeff}
 #+LATEX_HEADER: \usepackage{steinmetz}
+#+LATEX_HEADER: \usepackage{mathtools}
 #+LATEX_HEADER: \bibliographystyle{plain}
 #+BEAMER_HEADER: \AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
 #+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
@@ -31,3 +32,4 @@
 #+LATEX_HEADER: \newcommand{\slp}{\mathbf{s}}
 #+LATEX_HEADER: \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 #+LATEX_HEADER: \newcommand{\atan}{\mathrm{atan}}
+#+LATEX_HEADER: \parskip=5pt

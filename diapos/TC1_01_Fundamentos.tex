@@ -1,0 +1,839 @@
+% Created 2020-09-14 lun 21:41
+% Intended LaTeX compiler: pdflatex
+\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{mathpazo}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{diffcoeff}
+\usepackage{steinmetz}
+\usepackage{mathtools}
+\bibliographystyle{plain}
+\usepackage[emulate=units]{siunitx}
+\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
+\newunit{\wattpeak}{Wp}
+\newunit{\watthour}{Wh}
+\newunit{\amperehour}{Ah}
+\hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
+\newcommand{\slp}{\mathbf{s}}
+\newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
+\newcommand{\atan}{\mathrm{atan}}
+\parskip=5pt
+\usetheme{Boadilla}
+\usecolortheme{rose}
+\usefonttheme{serif}
+\author{Oscar Perpiñán Lamigueiro}
+\date{}
+\title{Fundamentos. Circuitos de Corriente Continua.}
+\subtitle{Teoría de Circuitos}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
+\hypersetup{
+ pdfauthor={Oscar Perpiñán Lamigueiro},
+ pdftitle={Fundamentos. Circuitos de Corriente Continua.},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+
+\section{Conceptos Fundamentales}
+\label{sec:org466b474}
+\subsection{Teoría de Circuitos}
+\label{sec:org97fdfb6}
+\begin{frame}[label={sec:org82bc1bf}]{}
+Este curso está dedicado al \alert{análisis} de \alert{circuitos eléctricos} \alert{lineales} de \alert{parámetros concentrados}.
+\end{frame}
+\begin{frame}[label={sec:org33e37a2}]{Circuito Eléctrico}
+Un \alert{circuito eléctrico} es un conjunto de componentes eléctricos interconectados mediante conductores que crean un camino cerrado por el que puede circular corriente eléctrica. 
+
+Un circuito eléctrico puede incluir:
+\begin{itemize}
+\item \alert{elementos activos} (generadores), que entregan potencia al circuito
+\item \alert{elementos pasivos} (receptores), que consumen o almacenan la potencia que circula.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgfa9faae}]{Análisis y Diseño}
+El \alert{análisis} (o resolución) de un circuito eléctrico existente persigue determinar sus condiciones de funcionamiento:
+\begin{enumerate}
+\item Definir las ecuaciones correspondientes al circuito,
+\item Obtener los valores de determinadas variables importantes a partir de dichas ecuaciones.
+\end{enumerate}
+
+El \alert{diseño} (o síntesis) de un circuito eléctrico tiene como objetivo definir el circuito eléctrico, es decir, determinar los componentes necesarios y su interconexión, para obtener unas condiciones de funcionamiento.
+\end{frame}
+\begin{frame}[label={sec:org54b110c}]{Sistemas lineales}
+Todos los circuitos eléctricos que se estudian en este curso se comportan como \alert{sistemas lineales}: 
+
+\begin{itemize}
+\item \(f(x + y) = f(x) + f(y)\)
+
+La respuesta \(f\) a la suma de dos entradas \(x\) e \(y\) es igual a la suma de la respuesta individual a cada una de las entradas
+\item \(f(k \cdot x) = k \cdot f(x)\)
+
+La respuesta a una entrada que está multiplicada por un factor de escala \(k\) es igual a multiplicar por este factor a la respuesta a la entrada.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org229a974}]{La linealidad es una aproximación de la realidad}
+\begin{itemize}
+\item Estas propiedades simplifican el tratamiento de los circuitos, y \alert{permiten aplicar técnicas de resolución de ecuaciones lineales}.
+\item La linealidad es una \alert{aproximación de la realidad} que no puede aplicarse de manera indiscriminada a cualquier componente y en cualquier condición.
+\item En particular, los \alert{dispositivos electrónicos} como diodos o transistores tienen un \alert{comportamiento} marcadamente \alert{no lineal}, de forma que los circuitos que los contienen no pueden analizarse directamente con las técnicas que aquí se exponen sin realizar previamente aproximaciones de su funcionamiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org8fb12a8}]{Parámetros concentrados}
+\begin{itemize}
+\item Los circuitos eléctricos reales ocupan espacio, las máquinas generadoras y los receptores tienen grandes dimensiones, y los cables conductores se extienden a lo largo de longitudes variopintas.
+\item Sin embargo, el análisis de circuitos no toma en consideración las propiedades espaciales de los circuitos ni de sus componentes, sino que los confina a elementos puntuales con un modelo de \alert{parámetros concentrados}.
+\item Por ejemplo, un conductor real de \(\SI{100}{\meter}\) se representará habitualmente como un conductor ideal con una resistencia en su punto medio.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:org32d06de}]{Simplificación de las ecuaciones de Maxwell}
+\begin{itemize}
+\item Este tratamiento es una simplificación de las ecuaciones del electromagnetismo de Maxwell
+\item Es aplicable únicamente cuando las dimensiones del circuito real son inferiores a la longitud de onda de la señal que circula por el circuito.
+\item Por ejemplo:
+\begin{itemize}
+\item A la frecuencia de \(\SI{50}{\hertz}\), habitual en sistemas eléctricos industriales, la longitud de onda de la señal es de \(\SI{6000}{\kilo\meter}\).
+\item A la frecuencia de \(\SI{2.6}{\giga\hertz}\), característica de la telefonía 4G, la longitud de onda se reduce a \(\SI{11.5}{\centi\meter}\).
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Variables}
+\label{sec:org1cfa4ea}
+\begin{frame}[label={sec:org3f77864}]{Tensión Eléctrica}
+El \alert{potencial eléctrico en un punto}, \(v(t)\),  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. 
+
+\begin{center}
+\includegraphics[height=0.3\textheight]{figs/tension_puntos.pdf}
+\end{center}
+
+La \alert{tensión o diferencia de potencial entre dos puntos} A y B, \(u_{AB}(t)\), es el trabajo realizado por el campo eléctrico al desplazar una carga unitaria entre esos puntos. 
+
+\begin{equation*}
+  u_{AB}(t) = v_A(t) - v_B(t) = \frac{dW_{e}}{dq}
+\end{equation*}
+
+La \alert{unidad} de la tensión eléctrica es el \alert{voltio} (V).
+\end{frame}
+
+\begin{frame}[label={sec:orge97c460}]{La trayectoria no importa}
+Dado que el campo eléctrico es \alert{conservativo}, la diferencia de potencial entre A y B \alert{no depende de la trayectoria} seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos. 
+
+\begin{center}
+\includegraphics[height=0.6\textheight]{figs/diagrama_tension.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org198cbae}]{El signo depende del sentido}
+Aunque la trayectoria no sea relevante para el cálculo de la tensión, siempre hay que tener en cuenta el \alert{sentido del desplazamiento}. 
+
+\begin{center}
+\includegraphics[height=0.4\textheight]{figs/sentido_tension.pdf}
+\end{center}
+
+Así, si el movimiento se produce desde B hasta A obtenemos el signo contrario al anterior resultado:
+
+\begin{equation*}
+  u_{BA} = v_B - v_A = - u_{AB} 
+\end{equation*}
+\end{frame}
+
+\begin{frame}[label={sec:orgd9bfc3c}]{Corriente Eléctrica}
+Se define la \alert{intensidad de la corriente eléctrica} como la variación de la carga \(q(t)\) que atraviesa la sección transversal de un conductor por unidad de tiempo:
+
+\begin{equation*}
+  i(t)=\frac{dq(t)}{dt}
+\end{equation*}
+
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/seccion_conductor.pdf}
+\end{center}
+
+La corriente eléctrica se produce por el \alert{movimiento de los electrones libres} que fluyen por el conductor. Sin embargo, por razones históricas, el \alert{convenio} que se se emplea considera como sentido de la corriente el debido al \alert{movimiento de las cargas positivas}.
+
+La \alert{unidad} de la corriente es el \alert{amperio} (A).
+\end{frame}
+
+\begin{frame}[label={sec:org2ec2f43}]{Potencia Eléctrica}
+La \alert{potencia eléctrica} es la variación del trabajo del campo eléctrico por unidad de tiempo:
+
+\begin{equation*}
+  p(t)=\frac{dW_{e}}{dt}
+\end{equation*}
+
+Esta definición genérica puede relacionarse con las anteriores variables:
+
+\begin{align*}
+  p(t) &= \frac{dW_e}{dq} \cdot \frac{dq(t)}{dt}\\
+       &= v(t)\cdot i(t)
+\end{align*}
+
+La \alert{unidad} de la potencia eléctrica es el \alert{vatio} (W).
+\end{frame}
+
+\begin{frame}[label={sec:org34a04be}]{Signo de la potencia eléctrica}
+Para determinar el \alert{signo de la potencia eléctrica} hay que tener en consideración los signos de las variables de las que depende, la tensión y la corriente. 
+\begin{itemize}
+\item Cuando las flechas de ambas variables tienen el \alert{mismo sentido} la potencia eléctrica es \alert{positiva}
+\item Cuando las flechas tienen \alert{sentidos opuestos} la potencia eléctrica es \alert{negativa}.
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/signo_potencia.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org6ac667a}]{Receptores y Generadores}
+Es habitual \alert{interpretar} este resultado en términos de potencia absorbida o potencia entregada. 
+\begin{itemize}
+\item Un \alert{circuito receptor absorbe potencia} y la corriente \emph{entra} por el terminal de mayor potencial,
+\item Un \alert{circuito generador entrega potencia} y la corriente \emph{sale} por el terminal de mayor potencial.
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/receptor_generador.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgb4bffa6}]{Potencia y Energía}
+\begin{description}
+\item[{Energía}] es la capacidad para realizar un trabajo.
+
+Unidades Wh, kWh
+
+1 kWh = 3.6 MJ
+
+\item[{Potencia}] es la cantidad de trabajo efectuado \emph{por unidad de
+tiempo}.
+
+Unidades W, kW
+\end{description}
+\end{frame}
+
+\begin{frame}[label={sec:org6ad6bc4}]{Corriente Continua y Corriente Alterna}
+\begin{itemize}
+\item Corriente Continua (\(\frac{d}{dt} = 0\))
+\end{itemize}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/continua.pdf}
+\end{center}
+
+\begin{itemize}
+\item Corriente Alterna (\(\frac{d}{dt} \neq 0\))
+\end{itemize}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/sin.pdf}
+\end{center}
+\end{frame}
+
+\section{Elementos circuitales}
+\label{sec:org71831d2}
+
+\subsection{Elementos Pasivos}
+\label{sec:org5898c9d}
+\begin{frame}[label={sec:org79ff75c}]{Resistencia}
+\begin{itemize}
+\item \alert{Ley de Ohm}: una resistencia provoca una \alert{diferencia de potencial} entre sus terminales \alert{directamente proporcional} a su corriente: \alert{resistencia} (Ohmios, [\(\Omega\)])
+\end{itemize}
+\[
+u(t) = R \cdot i(t)
+\]
+\begin{itemize}
+\item \alert{Criterio de Signos}: la tensión es positiva en el terminal por el que entra la corriente (las flechas de tensión y corriente tienen el mismo sentido).
+\end{itemize}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Resistencia.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Resistencia_Flecha.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org91b3831}]{Resistividad}
+\begin{itemize}
+\item El valor de la resistencia depende de la \alert{resistividad del material} (\(\rho\)), de la \alert{sección} (\(S\)), y de la
+longitud (\(l\)):
+\end{itemize}
+\begin{equation*}
+  R = \rho \cdot \frac{l}{S}
+\end{equation*}
+
+\begin{itemize}
+\item La \alert{sección} se expresa en \(\si{\milli\meter\squared}\).
+
+\item La \alert{resistividad} depende del material conductor y de la temperatura ambiente:
+
+\begin{itemize}
+\item Cobre a 20ºC: \(\SI{17.24}{\ohm\milli\meter\squared\per\meter}\).
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org7a2adb9}]{Cortocircuito y Circuito Abierto}
+\begin{itemize}
+\item Cortocircuito: resistencia nula (tensión nula)
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Cortocircuito.pdf}
+\end{center}
+
+\begin{itemize}
+\item Circuito abierto: resistencia infinita (corriente nula).
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/CircuitoAbierto.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org73a3328}]{Ley de Joule}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Resistencia.pdf}
+\end{center}
+
+\begin{itemize}
+\item \alert{Ley de Joule}: una resistencia disipa energía eléctrica produciendo \alert{calor}.
+\end{itemize}
+\[
+p(t)=R\cdot i^{2}(t)
+\]
+\end{frame}
+
+
+\begin{frame}[label={sec:org51c402e}]{Bobina o inductancia}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Bobina.pdf}
+\end{center}
+
+\begin{itemize}
+\item Cuando una corriente oscilante atraviesa un conductor arrollado alrededor de un núcleo, se produce una \alert{tensión inducida que se opone a esta corriente} (ley de Faraday y Lenz)
+
+\item La tensión en sus terminales es directamente proporcional al cambio de la corriente: coeficiente de autoinducción o \alert{inductancia} (Henrios [H]).
+\end{itemize}
+
+\[
+u_L(t)=L\cdot\frac{di(t)}{dt}
+\]
+\end{frame}
+
+\begin{frame}[label={sec:org96beb3d}]{Bobina o inductancia}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Bobina.pdf}
+\end{center}
+
+\begin{itemize}
+\item Almacena \alert{energía magnética}.
+\end{itemize}
+
+\[
+  E_L(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) d\tau = \frac{1}{2} \cdot L \cdot i^2(t)
+\]
+\begin{itemize}
+\item En circuitos de corriente continua es un cortocircuito.
+\end{itemize}
+
+\begin{equation*}
+  \frac{di(t)}{dt} = 0 \Rightarrow U_L = 0
+\end{equation*}
+\end{frame}
+
+\begin{frame}[label={sec:orgf83a139}]{Condensador}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Condensador.pdf}
+\end{center}
+
+\begin{itemize}
+\item Un \alert{condensador} está formado por dos placas metálicas separadas por una capa dieléctrica. Al aplicar tensión se produce una \alert{separación de cargas opuestas} que se \alert{acumulan} en cada placa.
+
+\item La \alert{carga acumulada} en un instante es \alert{proporcional} a la \alert{diferencia de potencial} en ese instante: \alert{capacidad} (Faradios [F]).
+\end{itemize}
+
+\[
+q(t) = C \cdot u(t)
+\]
+
+\begin{itemize}
+\item En el proceso de carga se produce una corriente eléctrica entre las dos placas.
+\end{itemize}
+\[
+i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
+\]
+\end{frame}
+
+
+\begin{frame}[label={sec:orge2c463c}]{Condensador}
+\begin{center}
+\includegraphics[height=0.2\textheight]{figs/Condensador.pdf}
+\end{center}
+
+\begin{itemize}
+\item Un condensador almacena \alert{energía eléctrica}
+\end{itemize}
+
+\[
+  E_c(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) d\tau = \frac{1}{2} \cdot C \cdot u^2(t)
+\]
+
+\begin{itemize}
+\item En un circuito de corriente continua se comporta como un circuito abierto.
+\end{itemize}
+
+\begin{equation*}
+  \frac{du(t)}{dt} = 0 \Rightarrow I_c = 0
+\end{equation*}
+\end{frame}
+
+\subsection{Elementos Activos}
+\label{sec:org25a4412}
+
+\begin{frame}[label={sec:orgcae5a87}]{Generadores de Tensión y Corriente}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.6\textheight]{figs/FuenteTensionIdealDC.pdf}
+\end{center}
+Un \alert{generador de tensión ideal} impone la tensión a la salida (\emph{la corriente depende del circuito})
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.6\textheight]{figs/FuenteCorrienteIdeal.pdf}
+\end{center}
+Un \alert{generador de corriente ideal} impone la corriente a la salida (\emph{la tensión depende del circuito})
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org4fc6854}]{Generador Real}
+Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight]{figs/FuenteTensionRealDC.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight]{figs/FuenteCorrienteRealDC.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\section{Leyes de Kirchhoff}
+\label{sec:org4debc03}
+
+\subsection{Definiciones}
+\label{sec:org7f98a9e}
+\begin{frame}[label={sec:org7244670}]{Nudo, rama, malla}
+\begin{description}
+\item[{Nudo}] unión de \alert{3} o más conductores.
+\item[{Rama}] elementos conectados entre dos nudos consecutivos.
+\item[{Lazo}] conjunto de ramas que forman un camino cerrado.
+\item[{Malla}] lazo que no contiene ningún otro en su interior.
+\end{description}
+
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/mallas.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org358bef3}]{Ley de Kirchhoff de las Corrientes (LKC)}
+\begin{itemize}
+\item La \alert{LKC} es el principio de conservación de la carga aplicado a los circuitos eléctricos.
+
+\item \alert{LKC}: la suma de las corrientes que llegan a un nudo es igual a la suma de las que salen.
+
+\begin{itemize}
+\item Las lineas de corriente son cerradas (o solenoidales).
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.4\textheight]{figs/LKC_FM.pdf}
+\end{center}
+\[
+i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
+\]
+\end{frame}
+
+\begin{frame}[label={sec:orgd6469af}]{Ley de Kirchhoff de los Voltajes (LKV)}
+\begin{itemize}
+\item La \alert{LKV} es el principio de conservación de la energía aplicado a los circuitos eléctricos.
+
+\item \alert{LKV}: la suma (con signo) de las tensiones a lo largo de un camino cerrado (circuito) es cero.
+
+\begin{itemize}
+\item La energía producida por un generador es consumida por los receptores del circuito para producir trabajo (mecánico, químico, etc.) o calor.
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.4\textheight]{figs/LKV_FM.pdf}
+\end{center}
+\[
+u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
+\]
+\end{frame}
+
+\subsection{Asociación de Elementos}
+\label{sec:orgd8864f4}
+
+\begin{frame}[label={sec:org6164292}]{Conexión en serie}
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/AsociacionSerie.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.7\columnwidth}
+Un conjunto de elementos están asociados en serie cuando circula la misma corriente por todos ellos.
+\begin{align*}
+  u_1(t) &= R_1 \cdot i(t)\\
+  u_2(t) &= R_2 \cdot i(t)\\
+  u_3(t) &= R_3 \cdot i(t)
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:orgef26e52}]{Conexión en serie}
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/AsociacionSerie.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.7\columnwidth}
+Aplicando LKV:
+\begin{equation*}
+  u(t) = u_1(t) + u_2(t) + u_3(t)
+\end{equation*}
+
+Sacando \(i(t)\) como factor común:
+\begin{equation*}
+  u(t) = i(t) \cdot (R_1 + R_2 + R_3)
+\end{equation*}
+
+Definimos la resistencia equivalente de la conexión serie:
+\begin{align*}
+  \Aboxed{R_s &= \sum_{i = 1}^n R_i}\\
+  u(t) &= R_s \cdot i(t)
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:orgd930981}]{Divisor de Tensión}
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/AsociacionSerie.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.7\columnwidth}
+De las ecuaciones anteriores tenemos:
+\begin{align*}
+  i(t) &= \frac{u(t)}{R_1 + R_2 + R_3}\\
+  u_3(t) &= R_3 \cdot i(t)\\
+\end{align*}
+
+Por tanto, la tensión parcial \(u_3(t)\) se puede expresar en función de la tensión total \(u(t)\): 
+\begin{equation*}
+  u_3(t) = u(t) \cdot \frac{R_3}{R_1 + R_2 + R_3}  
+\end{equation*}
+
+En general:
+\begin{equation*}
+  \boxed{u_o(t) = u(t) \cdot \frac{R_o}{R_s}}
+\end{equation*}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org2d55ce3}]{Conexión en serie de inductancias}
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/BobinasSerie.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.7\columnwidth}
+\begin{align*}
+  u_1(t) &= L_1 \cdot \frac{di(t)}{dt}\\
+  u_2(t) &= L_2 \cdot \frac{di(t)}{dt}\\
+  u_3(t) &= L_3 \cdot \frac{di(t)}{dt}\\
+\end{align*}
+
+\begin{align*}
+  \Aboxed{L_s &= \sum_{i = 1}^n L_i}\\
+  u(t) &= L_s \cdot \frac{di(t)}{dt}
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org2572a1b}]{Conexión en serie de condensadores}
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/CondensadoresSerie.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.7\columnwidth}
+\begin{align*}
+  i_1(t) &= C_1 \cdot \frac{du(t)}{dt}\\
+  i_2(t) &= C_2 \cdot \frac{du(t)}{dt}\\
+  i_3(t) &= C_3 \cdot \frac{du(t)}{dt}\\
+\end{align*}
+
+\begin{align*}
+  \Aboxed{\frac{1}{C_s} &= \sum_{i = 1}^n \frac{1}{C_i}}\\
+  i(t) &= C_s \cdot \frac{du(t)}{dt}
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org8b1fef4}]{Conexión en paralelo}
+Un conjunto de elementos están asociados en paralelo cuando están sometidos a la misma diferencia de potencial.
+\begin{center}
+\includegraphics[height=0.45\textheight]{figs/AsociacionParalelo.pdf}
+\end{center}
+
+\begin{align*}
+  i_1(t) &= u(t)/R_1\\
+  i_2(t) &= u(t)/R_2\\
+  i_3(t) &= u(t)/R_3
+\end{align*}
+\end{frame}
+\begin{frame}[label={sec:orgb59f6a6}]{Conexión en paralelo}
+\begin{columns}
+\begin{column}{0.4\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/AsociacionParalelo.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.6\columnwidth}
+Aplicando LKC:
+\begin{equation*}
+  i(t) = i_1(t) + i_2(t) + i_3(t)
+\end{equation*}
+
+Sacando \(u(t)\) como factor común:
+\begin{equation*}
+  i(t) = u(t) \cdot (\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3})
+\end{equation*}
+
+Definimos la resistencia equivalente de la conexión paralelo:
+\begin{align*}
+  \Aboxed{\frac{1}{R_p} &= \sum_{i = 1}^n \frac{1}{R_i}}\\
+  u(t) &= R_p \cdot i(t)
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:org4df8ba3}]{Dos resistencias en paralelo}
+En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
+\begin{equation*}
+  \frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2}
+\end{equation*}
+\ldots{} la expresión es:
+\begin{equation*}
+  \boxed{R_p = \frac{R_1 \cdot R_2}{R_1 + R_2}}
+\end{equation*}
+\end{frame}
+
+\begin{frame}[label={sec:org6e798ee}]{Conductancia}
+Para facilitar las operaciones es conveniente utilizar el inverso de la resistencia:
+
+\begin{equation*}
+  G = \frac{1}{R}
+\end{equation*}
+
+Así, en lugar de\ldots{}
+\begin{align*}
+  \frac{1}{R_p} &= \sum_{i = 1}^n \frac{1}{R_i}\\
+  u(t) &= R_p \cdot i(t)
+\end{align*}
+
+\ldots{} podemos escribir:
+\begin{align*}
+  \Aboxed{G_p &= \sum_{i = 1}^n G_i}\\
+  i(t) &= G_p \cdot u(t)
+\end{align*}
+\end{frame}
+
+\begin{frame}[label={sec:orge17a3af}]{Divisor de corriente}
+\begin{columns}
+\begin{column}{0.4\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/AsociacionParalelo.pdf}
+\end{center}
+\end{column}
+\begin{column}{0.6\columnwidth}
+De las ecuaciones anteriores tenemos (usando conductancia):
+\begin{align*}
+  u(t) &= \frac{i(t)}{G_1 + G_2 + G_3}\\
+  i_3(t) &= G_3 \cdot u(t)\\
+\end{align*}
+
+Por tanto, la corriente parcial \(i_3(t)\) se puede expresar en función de la corriente total \(i(t)\): 
+\begin{equation*}
+  i_3(t) = i(t) \cdot \frac{G_3}{G_1 + G_2 + G_3}  
+\end{equation*}
+
+En general:
+\begin{equation*}
+  \boxed{i_o(t) = i(t) \cdot \frac{G_o}{G_p}}
+\end{equation*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org56d17e6}]{Conexión en paralelo de inductancias}
+\begin{center}
+\includegraphics[height=0.45\textheight]{figs/BobinasParalelo.pdf}
+\end{center}
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  u(t) &= L_1 \cdot \frac{di_1(t)}{dt}\\
+  u(t) &= L_2 \cdot \frac{di_2(t)}{dt}\\
+  u(t) &= L_3 \cdot \frac{di_3(t)}{dt}\\
+\end{align*}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  \Aboxed{\frac{1}{L_p} &= \sum_{i = 1}^n \frac{1}{L_i}}\\
+  u(t) &= L_p \cdot \frac{di(t)}{dt}
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org4e61aca}]{Conexión en paralelo de condensadores}
+\begin{center}
+\includegraphics[height=0.45\textheight]{figs/CondensadoresParalelo.pdf}
+\end{center}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  i_1(t) &= C_1 \cdot \frac{du(t)}{dt}\\
+  i_2(t) &= C_2 \cdot \frac{du(t)}{dt}\\
+  i_3(t) &= C_3 \cdot \frac{du(t)}{dt}\\
+\end{align*}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  \Aboxed{C_p &= \sum_{i = 1}^n C_i}\\
+  i(t) &= C_p \cdot \frac{du(t)}{dt}
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Generadores}
+\label{sec:orgbcafec9}
+
+\begin{frame}[label={sec:orgf5ef473}]{Ecuación del generador}
+Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/FuenteTensionRealDC.pdf}
+\end{center}
+\[
+  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+\]
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/FuenteCorrienteRealDC.pdf}
+\end{center}
+\[
+  I = I_g - \frac{U_{AB}}{R_{I_g}}
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[label={sec:org7cf1b0c}]{Equivalencia de Fuentes}
+Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
+\begin{columns}
+\begin{column}{0.33\columnwidth}
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/FuenteTensionRealDC.pdf}
+\end{center}
+\[
+  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+\]
+\end{column}
+\begin{column}{0.33\columnwidth}
+\begin{align*}
+  R_g &= R_{\epsilon_g} = R_{I_g}\\
+  \epsilon_g &= R_g \cdot I_g\\
+  I_g &= \frac{\epsilon_g}{R_g}
+\end{align*}
+\end{column}
+\begin{column}{0.33\columnwidth}
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/FuenteCorrienteRealDC.pdf}
+\end{center}
+\[
+  I = I_g - \frac{U_{AB}}{R_{I_g}}
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\section{Métodos de Análisis}
+\label{sec:org586ea69}
+
+\subsection{Método de las mallas}
+\label{sec:orge678558}
+
+\subsection{Método de los nudos}
+\label{sec:org0ce5e43}
+\end{document}

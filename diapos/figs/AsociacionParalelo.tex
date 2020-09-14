@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american currents, american voltages]
+  \coordinate(A) at (0,3);
+  \coordinate(E) at (0,0);
+  \draw
+  (A) to [short, *-, i = $i(t)$] ++(1.5,0) coordinate (B)
+  to [R, l = $R_1$, i=$i_1(t)$, -*] ++(0,-3)
+  (B) to [short, *-] ++(1.5,0) coordinate (C)
+  to [R, l = $R_2$, i=$i_2(t)$, -*] ++(0,-3)
+  (C) to [short, *-] ++(1.5,0) coordinate (D)
+  to [R, l = $R_3$, i=$i_3(t)$] ++(0,-3)
+  to [short, -*] (E)
+  (A) to [open, v = $u(t)$] (E);  
+\end{circuitikz}
+
+\end{document}

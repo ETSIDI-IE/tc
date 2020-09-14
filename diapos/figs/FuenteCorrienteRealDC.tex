@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american currents, american voltages]
+  \coordinate (Ag) at (0,4);
+  \coordinate (Bg) at (0,0);
+  \coordinate (Az) at ($(Ag) + (1, 0)$);
+  \coordinate (Bz) at ($(Bg) + (1, 0)$);
+  \node[label=A] (A) at ($(Ag) + (2.5,0)$) {};
+  \node[label=below:B] (B) at ($(Bg) + (2.5,0)$) {};
+  \draw
+  (Bg) to [isource, l= $I_g$] (Ag)
+  (Az) to [R, l = $R_{I_g}$, i>^= $I_R$] (Bz)
+  (Ag) to [short] (Az) to [short, i = $I$] (A)
+  (Bg) to [short] (Bz) to [short] (B)
+  (A) to [open, *-*, v^= $U_{AB}$] (B);
+\end{circuitikz}
+
+\end{document}

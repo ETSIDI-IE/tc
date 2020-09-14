@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node (A) at (0,0) {A};
+  \node (B) at (3,3) {B};
+  \draw[->, red] (A) edge[bend left] (B);
+  \draw[->, gray] (A) -- (B);
+  \draw[->, blue] (A) edge[bend right] (B);
+\end{tikzpicture}
+
+\end{document}
