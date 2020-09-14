@@ -22,7 +22,7 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
 *** Acumulación de Energía
 **** Régimen Permanente
 *Energía acumulada* en *bobinas* y *condensadores*
-**** Régimen Estacionario
+**** Régimen Transitorio
 - *Redistribución* y *disipación* de energía acumulada.
 - La redistribución de energía *no* se puede realizar de forma *inmediata*
 - *Duración corta* ($\si{\micro\second}$) pero superior a 0, dependiendo de *relación entre acumulación y disipación* (resistencia).
