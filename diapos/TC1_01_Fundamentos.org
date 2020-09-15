@@ -311,17 +311,17 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.6\textheight
+#+ATTR_LATEX: :height 0.5\textheight
  [[file:figs/FuenteTensionIdealDC.pdf]]
- Un *generador de tensión ideal* impone la tensión a la salida (/la corriente depende del circuito/)
+ Un *generador de tensión ideal* impone la tensión a la salida (/la corriente depende del circuito/). Se caracteriza por su *fuerza electromotriz* (voltios [V]).
 
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.6\textheight
+#+ATTR_LATEX: :height 0.5\textheight
  [[file:figs/FuenteCorrienteIdeal.pdf]]
- Un *generador de corriente ideal* impone la corriente a la salida (/la tensión depende del circuito/)
+ Un *generador de corriente ideal* impone la corriente a la salida (/la tensión depende del circuito/). Se caracteriza por su corriente de generador.
 
 *** Generador Real
 Los generadores reales tienen pérdidas que se modelan con una resistencia en *serie* (generador de tensión) o en *paralelo* (generador de corriente)
@@ -381,6 +381,130 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
 u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \]
 #+END_EXPORT
+
+*** Balance de Tensiones
+[[file:figs/circuito_lkv.pdf]]
+#+begin_export latex
+\begin{equation*}
+  U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
+\end{equation*}
+
+\begin{equation*}
+  U_{AB} = U_{AA'} + U_{A'B'} + U_{B'B}
+\end{equation*}
+
+\begin{equation*}
+  U_{CD} = U_{CC'} + U_{C'D'} + U_{DD'}
+\end{equation*}
+#+end_export
+
+*** Balance de Tensiones
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:figs/circuito_lkv.pdf]]
+#+begin_export latex
+\begin{equation*}
+  U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
+\end{equation*}
+#+end_export
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+begin_export latex
+\begin{align*}
+  U_{A'A} &= I \cdot R_g\\
+  U_{AC} &= I \cdot R_L\\
+  U_{CC'} &= I \cdot R_m\\
+  U_{C'D'} &= \epsilon_m\\
+  U_{D'D} &= 0 = U_{BB'}\\
+  U_{DB} &= I \cdot R_L\\
+  U_{B'A'} &= -\epsilon_g
+\end{align*}
+#+end_export
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+begin_export latex
+\begin{equation*}
+  I \cdot (R_g + 2\cdot R_L + R_m) + \epsilon_m = \epsilon_g
+\end{equation*}
+
+\begin{equation*}
+  U_{AB} = \epsilon_g - I \cdot R_g
+\end{equation*}
+
+\begin{equation*}
+  U_{CD} = I\cdot R_m + \epsilon_m
+\end{equation*}
+
+#+end_export
+** Generadores
+
+*** Ecuación del generador
+
+Los generadores reales tienen pérdidas que se modelan con una resistencia en *serie* (generador de tensión) o en *paralelo* (generador de corriente)
+
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteTensionRealDC.pdf
+#+begin_export latex
+\[
+  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+\]
+#+end_export
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteCorrienteRealDC.pdf
+#+begin_export latex
+\[
+  I = I_g - \frac{U_{AB}}{R_{I_g}}
+\]
+#+end_export
+
+
+*** Equivalencia de Fuentes
+Sólo es posible establecer equivalencia entre *fuentes reales*.
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteTensionRealDC.pdf
+#+begin_export latex
+\[
+  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+\]
+#+end_export
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+begin_export latex
+    \begin{align*}
+      R_g &= R_{\epsilon_g} = R_{I_g}\\
+      \epsilon_g &= R_g \cdot I_g\\
+      I_g &= \frac{\epsilon_g}{R_g}
+    \end{align*}
+    #+end_export
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+#+ATTR_LATEX: :height 0.5\textheight
+ file:figs/FuenteCorrienteRealDC.pdf
+#+begin_export latex
+\[
+  I = I_g - \frac{U_{AB}}{R_{I_g}}
+\]
+#+end_export
 
 ** Asociación de Elementos
 
@@ -692,73 +816,6 @@ En general:
   i(t) &= C_p \cdot \frac{du(t)}{dt}
 \end{align*}
 #+end_export
-
-** Generadores
-
-*** Ecuación del generador
-
-Los generadores reales tienen pérdidas que se modelan con una resistencia en *serie* (generador de tensión) o en *paralelo* (generador de corriente)
-
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteTensionRealDC.pdf
-#+begin_export latex
-\[
-  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
-\]
-#+end_export
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteCorrienteRealDC.pdf
-#+begin_export latex
-\[
-  I = I_g - \frac{U_{AB}}{R_{I_g}}
-\]
-#+end_export
-
-
-*** Equivalencia de Fuentes
-Sólo es posible establecer equivalencia entre *fuentes reales*.
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.33
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteTensionRealDC.pdf
-#+begin_export latex
-\[
-  U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
-\]
-#+end_export
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.33
-    :END:
-    #+begin_export latex
-    \begin{align*}
-      R_g &= R_{\epsilon_g} = R_{I_g}\\
-      \epsilon_g &= R_g \cdot I_g\\
-      I_g &= \frac{\epsilon_g}{R_g}
-    \end{align*}
-    #+end_export
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.33
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteCorrienteRealDC.pdf
-#+begin_export latex
-\[
-  I = I_g - \frac{U_{AB}}{R_{I_g}}
-\]
-#+end_export
-
 
 * Métodos de Análisis
 
