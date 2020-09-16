@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american currents, american voltages]
+  \coordinate (Az) at (0,4);
+  \coordinate (Bz) at (0,0);
+  \coordinate (Ag) at ($(Az) + (1, 0)$);
+  \coordinate (Bg) at ($(Bz) + (1, 0)$);
+  \node[label=A] (A) at ($(Az) + (2.5,0)$) {};
+  \node[label=below:B] (B) at ($(Bz) + (2.5,0)$) {};
+  \draw
+  (Ag) to [isource, l= $\SI{6}{\milli\ampere}$] (Bg)
+  (Az) to [R, l_= $\SI{4.7}{\kilo\ohm}$] (Bz)
+  (Ag) to [short] (Az) to [short, i = $I$] (A)
+  (Bg) to [short] (Bz) to [short] (B);
+\end{circuitikz}
+
+\end{document}

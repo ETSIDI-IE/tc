@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \coordinate (Ag) at (0,4);
+  \coordinate (Bg) at (0,0);
+  \node[label=A] (A) at ($(Ag) + (2,0)$) {};
+  \node[label=below:B] (B) at ($(Bg) + (2,0)$) {};
+  \draw
+  (Bg) to [R, l_= $\SI{2.2}{\kilo\ohm}$] (B)
+  (Bg) to [V, v_= $\SI{9}{\volt}$] (Ag)
+  (Ag) to [short] (A);
+\end{circuitikz}
+
+\end{document}
