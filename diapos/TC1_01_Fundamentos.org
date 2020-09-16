@@ -816,7 +816,133 @@ En general:
   i(t) &= C_p \cdot \frac{du(t)}{dt}
 \end{align*}
 #+end_export
+*** Conexión Estrella - Triángulo
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/Conexion_Triangulo.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/Conexion_Estrella.pdf]]
+*** Conexión Estrella - Triángulo
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/Conexion_Triangulo.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+\begin{align*}
+  R_{AB} &= \frac{R_{ab} \cdot (R_{bc} + R_{ca})}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_{BC} &= \frac{R_{bc} \cdot (R_{ab} + R_{ca})}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_{CA} &= \frac{R_{ca} \cdot (R_{ab} + R_{bc})}{R_{ab} + R_{bc} + R_{ca}}
+\end{align*}
+#+end_export
+*** Conexión Estrella - Triángulo
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+[[file:figs/Conexion_Triangulo.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+begin_export latex
+\begin{align*}
+  R_{AB} &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_{BC} &= \frac{R_{bc} \cdot R_{ab}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_{CA} &= \frac{R_{ca} \cdot R_{ab}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{ca} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}
+\end{align*}
+#+end_export
+*** Conexión Estrella - Triángulo
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/Conexion_Estrella.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+\begin{align*}
+  R_{AB} &= R_a + R_b\\
+  \\
+  R_{BC} &= R_b + R_c\\
+  \\
+  R_{CA} &= R_c + R_a\\
+\end{align*}
+#+end_export
+*** Conexión Estrella - Triángulo
+#+begin_export latex
+\begin{align*}
+  \frac{R_{a{\color{red}b}} \cdot R_{{\color{red}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{blue}a} + R_{\color{red}b}\\
+  \\
+  \frac{R_{a{\color{red}b}} \cdot R_{{\color{red}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{b{\color{green}c}} \cdot R_{{\color{green}c}a}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{red}b} + R_{\color{green}c}\\
+  \\
+  \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{b{\color{green}c}} \cdot R_{{\color{green}c}a}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{green}c} + R_{\color{blue}a}
+\end{align*}
+#+end_export
+*** Conversión de Triángulo a Estrella
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+[[file:figs/Conexion_Triangulo.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+#+begin_export latex
+\begin{align*}
+  R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}\\
+  \\
+  R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}
+\end{align*}
+#+end_export
 
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+[[file:figs/Conexion_Estrella.pdf]]
+*** Conversión de Estrella a Triángulo
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+[[file:figs/Conexion_Estrella.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+#+begin_export latex
+\begin{align*}
+  G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}\\
+  \\
+  G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}\\
+  \\
+  G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}
+\end{align*}
+#+end_export
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+[[file:figs/Conexion_Triangulo.pdf]]
 * Métodos de Análisis
 
 ** Método de las mallas
