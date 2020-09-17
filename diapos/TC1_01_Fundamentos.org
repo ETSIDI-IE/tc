@@ -152,6 +152,36 @@ Es habitual *interpretar* este resultado en términos de potencia absorbida o po
 
    Unidades W, kW
 
+*** Rendimiento/Eficiencia
+Cuadripolo (entrada/salida)
+#+begin_export latex
+\begin{equation*}
+  \eta = \frac{P_{salida}}{P_{entrada}}
+\end{equation*}
+#+end_export
+
+Receptor
+#+begin_export latex
+\begin{equation*}
+  \eta_m = \frac{P_{util}}{P_{absorbida}}
+\end{equation*}
+#+end_export
+
+Generador
+#+begin_export latex
+\begin{equation*}
+  \eta_g = \frac{P_{entregada}}{P_{producida}}
+\end{equation*}
+#+end_export
+
+Cualquier máquina tiene pérdidas:
+
+#+begin_export latex
+\begin{equation*}
+  \boxed{\eta < 1}
+\end{equation*}
+#+end_export
+
 *** Corriente Continua y Corriente Alterna
 
 - Corriente Continua ($\frac{d}{dt} = 0$)
