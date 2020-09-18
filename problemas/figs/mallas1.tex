@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (C) at ($(A) + (4, 0)$) ;
+  \coordinate (B) at ($(C) + (0, 4)$) ;
+  \coordinate (D) at ($(C) + (4, 0)$) ;
+  \coordinate (E) at ($(C) + (0, -4)$) ;
+  \draw
+  (B) node[above] {B} to [short, *-] ++(-4, 0)
+  to [V, v = $\epsilon_1$] ++(0, -2)
+  to [R, l = $R_1$, -*, i<= $I_1$] (A) node[left] {A}
+  (B) to [V, v = $\epsilon_2$] ++(0, -2)
+  to [R, l = $R_3$, -*, i<= $I_3$] (C) node[below] {C}
+  (A) to [R, l = $R_2$, i= $I_2$] (C)
+  to [R, l = $R_4$, -*, i= $I_4$] (D) node[right] {D}
+  (B) to [short] ++(4, 0)
+  to [R, l = $R_5$, i<= $I_5$] (D)
+  (A) to [short] ++(0, -2)
+  to [V, v = $\epsilon_3$] ++(4,0)
+  to [R, l = $R_6$, i<= $I_6$] ++(4,0)
+  to [short] (D);
+\end{circuitikz}
+
+\end{document}

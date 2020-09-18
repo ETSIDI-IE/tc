@@ -977,4 +977,220 @@ En general:
 
 ** Método de las mallas
 
+*** Resolución de un circuito aplicando LKV y LKC
+[[file:figs/mallas1.pdf]]
+
+*** Aplicamos LKC
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/mallas1.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+Nudo A:
+\begin{equation*}
+  I_6 = I_1 + I_2
+\end{equation*}
+
+Nudo B:
+\begin{equation*}
+  I_1 + I_3 + I_5 = 0
+\end{equation*}
+
+Nudo C:
+\begin{equation*}
+  I_2 = I_3 + I_4
+\end{equation*}
+
+Nudo D:
+\begin{equation*}
+  I_4 = I_5 + I_6
+\end{equation*}
+#+end_export
+
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\vspace{5pt}
+
+#+begin_export latex
+
+No son ecuaciones linealmente independientes:
+\begin{equation*}
+  C = A + B + D
+\end{equation*}
+#+end_export
+
+*** Aplicamos LKC
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/mallas1.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+Malla ABCA
+\begin{equation*}
+  I_1 \cdot R_1 - \epsilon_1 + \epsilon_2 - I_3 \cdot R_3 - I_2 \cdot R_2 = 0
+\end{equation*}
+
+Malla BDCB
+\begin{equation*}
+  -I_5 \cdot R_5 - I_4 \cdot R_4 + I_3 \cdot R_3 - \epsilon_2 = 0
+\end{equation*}
+
+Malla ACDA
+\begin{equation*}
+  I_2 \cdot R_2 + I_4 \cdot R_4 + I_6 \cdot R_6 - \epsilon_3 = 0
+\end{equation*}
+#+end_export
+
+*** Combinamos las ecuaciones
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/mallas1.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\begin{align*}
+  - I_1 -  I_2 + I_6  &= 0\\
+  I_1 + I_3 + I_5 &= 0\\
+  I_4 - I_5 - I_6 &= 0\\
+  I_1 \cdot R_1 - I_2 \cdot R_2 - I_3 \cdot R_3 &= \epsilon_1 - \epsilon_2\\
+  I_3 \cdot R_3 - I_4 \cdot R_4 -I_5 \cdot R_5 &= \epsilon_2\\
+  I_2 \cdot R_2 + I_4 \cdot R_4 + I_6 \cdot R_6 &= \epsilon_3
+\end{align*}
+#+end_export
+*** Y las expresamos en forma matricial
+
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    -1 & -1 & 0 & 0 & 0 & 1\\
+    1 & 0 & 1 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1 & -1 & -1\\
+    R_1 & -R_2 & - R_3 & 0 & 0 & 0\\
+    0 & 0 & R_3 & - R_4 & - R_5 & 0\\
+    0 & R_2 & 0 & R_4 & 0 & R_6
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    I_1\\
+    I_2\\
+    I_3\\
+    I_4\\
+    I_5\\
+    I_6    
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    0\\
+    0\\
+    0\\
+    \epsilon_1 - \epsilon_2\\
+    \epsilon_2\\
+    \epsilon_3
+  \end{bmatrix}
+\end{equation*}
+#+end_export
+
+Resolver el circuito implica resolver un sistema lineal de 6 ecuaciones, en el que las incógnitas son las corrientes de cada rama.
+*** Método de las mallas
+
+El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes /virtuales/ denominadas *corrientes de malla*, aprovechando las relaciones entre corrientes de la LKC.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:figs/mallas1_corrientes.pdf]]
+*** Relaciones entre las corrientes de rama y malla
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+[[file:figs/mallas1_corrientes.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+#+begin_export latex
+Ramas externas:
+\begin{align*}
+  I_1 &= I_a\\
+  I_5 &= -I_b\\
+  I_6 &= I_c
+\end{align*}
+Ramas internas:
+\begin{align*}
+  I_2 &= I_c -I_a\\
+  I_3 &= I_b - I_a\\
+  I_4 &= I_c - I_b
+\end{align*}
+#+end_export
+*** Ecuaciones de malla
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/mallas1_corrientes.pdf]]
+
+#+begin_export latex
+Malla ABCA
+\begin{equation*}
+  I_a \cdot R_1 - \epsilon_1 + \epsilon_2 + (I_a - I_b) \cdot R_3 + (I_a - I_c) \cdot R_2 = 0
+\end{equation*}
+Malla BDCB
+\begin{equation*}
+  I_b \cdot R_5 + (I_b - I_c) \cdot R_4 + (I_b - I_a) \cdot R_3 - \epsilon_2 = 0
+\end{equation*}
+Malla ACDA
+\begin{equation*}
+  (I_c - I_a) \cdot R_2 + (I_c - I_b) \cdot R_4 + I_c \cdot R_6 - \epsilon_3 = 0
+\end{equation*}
+#+end_export
+*** Reagrupamos corrientes en las ecuaciones
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/mallas1_corrientes.pdf]]
+
+#+begin_export latex
+\begin{align*}
+  I_a \cdot (R_1 + R_3 + R_2)  - I_b\cdot R_3 - I_c \cdot R_2 &= \epsilon_1 - \epsilon_2\\
+  - I_a \cdot R_3 + I_b \cdot (R_5 + R_4 + R_3) - I_c \cdot R_4 &=  \epsilon_2\\
+  - I_a \cdot R_2 - I_b \cdot R_4 + I_c \cdot (R_2 + R_4 + R_6) &= \epsilon_3
+\end{align*}
+#+end_export
+*** Y lo expresamos en forma matricial
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/mallas1_corrientes.pdf]]
+
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    (R_1 + R_3 + R_2) &  - R_3 & - R_2 \\
+    - R_3 & (R_5 + R_4 + R_3) & - R_4 \\
+    - R_2 & - R_4 &  (R_2 + R_4 + R_6)
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    I_a\\
+    I_b\\
+    I_c\\
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \epsilon_1 - \epsilon_2\\
+    \epsilon_2\\
+    \epsilon_3
+  \end{bmatrix}
+\end{equation*}
+#+end_export
 ** Método de los nudos
