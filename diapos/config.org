@@ -26,6 +26,7 @@
 #+BEAMER_HEADER: \beamertemplatenavigationsymbolsempty
 #+BEAMER_HEADER: \setbeamertemplate{footline}[frame number]
 #+BEAMER_HEADER: \setbeamertemplate{itemize items}[triangle]
+#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[circle]
 #+BEAMER_HEADER: \setbeamertemplate{section in toc}[circle]
 #+BEAMER_HEADER: \setbeamertemplate{subsection in toc}[circle]
 #+LATEX_HEADER: \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}

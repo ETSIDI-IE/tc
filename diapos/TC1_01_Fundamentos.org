@@ -1193,4 +1193,35 @@ Malla ACDA
   \end{bmatrix}
 \end{equation*}
 #+end_export
+*** Ecuación General
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    {\color{BrickRed}\sum R_{aa}} &  - {\color{MidnightBlue}\sum R_{ab}} & - {\color{MidnightBlue}\sum R_{ca}} \\
+    - {\color{MidnightBlue}\sum R_{ab}} & {\color{BrickRed}\sum R_{bb}} & - {\color{MidnightBlue}\sum R_{bc}} \\
+    - {\color{MidnightBlue}\sum R_{ca}} & - {\color{MidnightBlue}\sum R_{bc}} &  {\color{BrickRed}\sum R_{cc}}
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    I_a\\
+    I_b\\
+    I_c\\
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    {\color{OliveGreen}\sum\epsilon_a}\\
+    {\color{OliveGreen}\sum\epsilon_b}\\
+    {\color{OliveGreen}\sum\epsilon_c}
+  \end{bmatrix}
+\end{equation*}
+#+end_export
+- ${\color{BrickRed}\sum R_{aa}}$ :: suma de las resistencias incluidas en la malla de $I_a$.
+- ${\color{MidnightBlue}\sum R_{ab}}$ :: suma de las resistencias incluidas en las ramas compartidas por las mallas de $I_a$ e $I_b$.
+- ${\color{OliveGreen}\sum \epsilon_a}$ :: suma algebraica de las fuerzas electromotrices de los generadores de la malla de $I_a$. Su signo es positivo si contribuyen al giro de la corriente.
+*** Procedimiento
+
+1. Identificar las corrientes de rama.
+2. Asignar un sentido a las corrientes de malla.
+3. Relacionar corrientes de rama con corrientes de malla.
+4. Escribir ecuación de mallas.
+5. Resolver la ecuación, obteniendo las corrientes de malla.
+6. Obtener las corrientes de rama con las relaciones del punto 3.
 ** Método de los nudos
