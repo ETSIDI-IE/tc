@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at ($(A) + (2, 0)$);
+  \coordinate (C) at ($(B) + (3, 0)$);
+  \coordinate (D) at ($(C) + (2, 0)$);
+  \coordinate (A') at ($(A) + (0, -2)$);
+  \coordinate (B') at ($(A') + (2, 0)$);
+  \coordinate (C') at ($(B') + (3, 0)$);
+  \coordinate (D') at ($(C') + (2, 0)$);
+  \draw
+  (A) to [short, -*] (B) node[above] {A}
+  to [R, l = $R_2$, i = $I_{ab}$] (C) node[above] {B}
+  to [short, *-] (D)
+  (A') to [short, -*] (B') node[below] {C}
+  to [short, -*] (C') node[ground] {}
+  to [short] (D')
+  (A') to [I, l = $I_{g1}$] (A)
+  (B) to [R, l = $R_1$, i = $I_a$] (B')
+  (C) to [R, l = $R_3$, i = $I_b$] (C')
+  (D) to [I, l = $I_{g2}$] (D');
+\end{circuitikz}
+
+\end{document}
