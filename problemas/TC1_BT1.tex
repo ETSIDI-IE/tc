@@ -101,6 +101,55 @@ Analiza el circuito de la figura mediante el método de las mallas, obteniendo l
   \includegraphics{figs/mallas2.pdf}
 \end{minipage}
 
+\section{}
+Aplica el método de los nudos en el circuito de la figura para determinar:
+\begin{enumerate}
+\item Los potenciales de los nudos A, B, C y D.
+\item Las intensidades de corriente señaladas.
+\item Carga, polaridad y energía almacenada en los condensadores,
+  supuestos sin carga inicial.
+\end{enumerate}
+
+\begin{minipage}[c]{0.3\textwidth}
+  \begin{align*}
+    R_i &= \mathrm{i\ } \si{\ohm}\\
+    C_i &= \mathrm{i\ } \si{\micro\farad}\\
+    E_1 &= \SI{6}{\volt}\\
+    E_2 &= \SI{18}{\volt}\\
+    E_3 &= \SI{6}{\volt}\\
+  \end{align*}
+\end{minipage}
+\begin{minipage}[c]{0.7\textwidth}
+  \includegraphics[width=\textwidth]{figs/nudos_condensadores.pdf}
+\end{minipage}
+
+\section{}
+
+  En el esquema de la figura los condensadores se conectaron sin carga. Mediante el método de las mallas determina:
+  \begin{enumerate}
+  \item Intensidades de corriente señaladas.
+  \item Potenciales en los puntos A, B, C y D.
+  \item Polaridades, cargas, y energías de los condensadores.
+  \item Balance de potencias.
+  \end{enumerate}
+
+  \begin{minipage}[c]{0.3\linewidth}
+  \begin{align*}
+    E_{1}&=\SI{118}{\volt}\\
+    E_{2}&=\SI{236}{\volt}\\
+    E_{3}&=\SI{118}{\volt}\\
+    R_{1}&= \SI{4}{\ohm}\\
+    R_{2}&=R_{3}=\SI{1}{\ohm}\\
+    R_{4}&= \SI{3}{\ohm}\\
+    R_{5}&= \SI{2}{\ohm}\\
+    C_{1}&=C_{2}=C_{3}=\SI{2}{\micro\farad}\\
+    X_1 &= X_2 = X_3 = \SI{1}{\ohm}\\
+  \end{align*}
+  \end{minipage}
+  \begin{minipage}[c]{0.7\linewidth}
+    \includegraphics{figs/mallas_condensadores.pdf}
+  \end{minipage}
+
 \end{document}
 
 

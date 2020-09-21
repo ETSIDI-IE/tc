@@ -1,0 +1,42 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at ($(A) + (2, 0)$) ;
+  \coordinate (C) at ($(B) + (4, 0)$) ;
+  \coordinate (D) at ($(C) + (2, 0)$) ;
+  \coordinate (N) at ($(B) + (2, -2)$);
+  \coordinate (A') at ($(A) + (0, -4)$) ;
+  \coordinate (B') at ($(A') + (2, 0)$) ;
+  \coordinate (C') at ($(B') + (4, 0)$) ;
+  \coordinate (D') at ($(C') + (2, 0)$) ;
+  \draw
+  (A) to [short, -*] (B)
+  to [C, l = $C_1$, -*] (C)
+  to [short, -*] (D)
+  (A') to [short, -*, i<= $I_1$] (B') node[below] {C}
+  to [R, l = $R_5$, i<= $I_5$] (C') node[below] {D}
+  to [short, *-] (D')
+  (A) to [V, v=$\epsilon_1$] ++(0, -2)
+  to [R, l = $R_1$] (A')
+  (B) to [R, l_= $R_4$, i<= $I_4$] (B')
+  (C') to [R, l = $R_2$, i = $I_2$] ++(0, 2)
+  to [V, v_=$\epsilon_2$] (C)
+  (D') to [R, l = $R_3$, i = $I_3$] ++(0, 2)
+  to [V, v_=$\epsilon_3$] (D)
+  (A) to [L, mirror, l = $X_1$, *-] ++(-2, 0) node[ground] {}
+  (D) to [L, l = $X_2$, *-] ++(2, 0) node[ground] {}
+  (B) to [C, l = $C_2$, -*] (N)
+  (B') to [L, l = $X_3$] (N)
+  (C) to [C, l_= $C_3$] (N);
+  \end{circuitikz}
+
+\end{document}
