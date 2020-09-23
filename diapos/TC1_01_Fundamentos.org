@@ -662,9 +662,9 @@ En general:
 
 #+begin_export latex
 \begin{align*}
-  i_1(t) &= C_1 \cdot \frac{du(t)}{dt}\\
-  i_2(t) &= C_2 \cdot \frac{du(t)}{dt}\\
-  i_3(t) &= C_3 \cdot \frac{du(t)}{dt}\\
+  i(t) &= C_1 \cdot \frac{du_1(t)}{dt}\\
+  i(t) &= C_2 \cdot \frac{du_2(t)}{dt}\\
+  i(t) &= C_3 \cdot \frac{du_3(t)}{dt}\\
 \end{align*}
 #+end_export
 
