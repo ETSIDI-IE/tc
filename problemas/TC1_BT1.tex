@@ -125,19 +125,20 @@ Aplica el método de los nudos en el circuito de la figura para determinar:
 
 \section{}
 
-  En el esquema de la figura los condensadores se conectaron sin carga. Mediante el método de las mallas determina:
-  \begin{enumerate}
-  \item Intensidades de corriente señaladas.
-  \item Potenciales en los puntos A, B, C y D.
-  \item Polaridades, cargas, y energías de los condensadores.
-  \item Balance de potencias.
-  \end{enumerate}
+En el esquema de la figura los condensadores se conectaron sin
+carga. Mediante el método de las mallas determina:
+\begin{enumerate}
+\item Intensidades de corriente señaladas.
+\item Potenciales en los puntos A, B, C y D.
+\item Polaridades, cargas, y energías de los condensadores.
+\item Balance de potencias.
+\end{enumerate}
 
-  \begin{minipage}[c]{0.3\linewidth}
+\begin{minipage}[c]{0.3\linewidth}
   \begin{align*}
-    E_{1}&=\SI{118}{\volt}\\
-    E_{2}&=\SI{236}{\volt}\\
-    E_{3}&=\SI{118}{\volt}\\
+    \epsilon_{1}&=\SI{118}{\volt}\\
+    \epsilon_{2}&=\SI{236}{\volt}\\
+    \epsilon_{3}&=\SI{118}{\volt}\\
     R_{1}&= \SI{4}{\ohm}\\
     R_{2}&=R_{3}=\SI{1}{\ohm}\\
     R_{4}&= \SI{3}{\ohm}\\
@@ -145,10 +146,62 @@ Aplica el método de los nudos en el circuito de la figura para determinar:
     C_{1}&=C_{2}=C_{3}=\SI{2}{\micro\farad}\\
     X_1 &= X_2 = X_3 = \SI{1}{\ohm}\\
   \end{align*}
-  \end{minipage}
-  \begin{minipage}[c]{0.7\linewidth}
-    \includegraphics{figs/mallas_condensadores.pdf}
-  \end{minipage}
+\end{minipage}
+\begin{minipage}[c]{0.7\linewidth}
+  \includegraphics{figs/mallas_condensadores.pdf}
+\end{minipage}
+
+\section{}
+
+En el circuito de la figura debes determinar:
+\begin{itemize}
+\item Las intensidades señaladas.
+\item Los potenciales en los puntos A, B, C, D, E y F.
+\item El balance de potencias.
+\end{itemize}
+
+\begin{minipage}[c]{0.2\linewidth}
+  \begin{align*}
+    \epsilon_{A}&=\SI{90}{\volt}\\
+    \epsilon_{B}&=\SI{60}{\volt}\\
+    \epsilon_{C}&=\SI{30}{\volt}\\
+    R_{1}&= R_2 = R_3 = \SI{10}{\ohm}\\
+    R_{4}&= R_5 = \SI{30}{\ohm}\\
+    C_{1}&= \SI{10}{\micro\farad}\\
+    C_{2}&= \SI{20}{\micro\farad}\\
+    L_1 &= \SI{1}{\micro\henry}\\
+    q^0_{C1} &= \SI{10}{\micro\coulomb}\\
+    q^0_{C2} &= \SI{20}{\micro\coulomb}
+  \end{align*}
+\end{minipage}
+\begin{minipage}[c]{0.8\linewidth}
+  \includegraphics[scale = 0.8]{figs/mallas_carga_inicial.pdf}
+\end{minipage}
+
+\section{}
+
+En el circuito de la figura se debe emplear el método de los nudos para determinar:
+\begin{itemize}
+\item Las tensiones en los nudos A y B.
+\item Las corrientes de todas las ramas.
+\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos.
+\end{itemize}
+
+\begin{minipage}[c]{0.3\linewidth}
+  \begin{align*}
+    \epsilon_1&=\SI{6}{\volt}\\
+    \epsilon_2&=\SI{12}{\volt}\\
+    \epsilon_3&=\SI{24}{\volt}\\
+    I_{g1} &= \SI{15}{\ampere}\\
+    I_{g2} &= \SI{9}{\ampere}\\
+    I_{g3} &= \SI{6}{\ampere}\\
+    R_{1}&= R_3 = R_4 = R_5 = \SI{2}{\ohm}\\
+    R_{2}&= \SI{1}{\ohm}
+  \end{align*}
+\end{minipage}
+\begin{minipage}[c]{0.7\linewidth}
+  \includegraphics{figs/nudos_fuentes.pdf}
+\end{minipage}
 
 \end{document}
 
