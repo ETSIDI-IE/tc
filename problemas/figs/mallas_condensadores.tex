@@ -19,7 +19,7 @@
   \coordinate (C') at ($(B') + (4, 0)$) ;
   \coordinate (D') at ($(C') + (2, 0)$) ;
   \draw
-  (A) to [short, -*] (B)
+  (A) node[above] {A} to [short, -*] (B)
   to [C, l = $C_1$, -*] (C)
   to [short, -*] (D)
   (A') to [short, -*, i<= $I_1$] (B') node[below] {C}
@@ -31,7 +31,7 @@
   (C') to [R, l = $R_2$, i = $I_2$] ++(0, 2)
   to [V, v_=$\epsilon_2$] (C)
   (D') to [R, l = $R_3$, i = $I_3$] ++(0, 2)
-  to [V, v_=$\epsilon_3$] (D)
+  to [V, v_=$\epsilon_3$] (D) node[above] {B}
   (A) to [L, mirror, l = $X_1$, *-] ++(-2, 0) node[ground] {}
   (D) to [L, l = $X_2$, *-] ++(2, 0) node[ground] {}
   (B) to [C, l = $C_2$, -*] (N)
