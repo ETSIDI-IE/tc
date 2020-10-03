@@ -357,8 +357,6 @@ En consecuencia,
 
 Además, la bobina $L_1$ es un cortocircuito.
 
-Obtenemos dos circuitos desacoplados dado que entre C y B no hay conexión ($C_1$ es un circuito abierto). Planteamos dos grupos de ecuaciones separadas.
-
 En el circuito de la izquierda tenemos dos mallas, y definimos dos corrientes de malla dextrógiras:
 
 \begin{equation*}
@@ -436,8 +434,6 @@ A partir de este resultado podemos calcular el resto de potenciales:
   U_E &= U_{ED} + U_D = I_1 \cdot R_1 + U_D = \SI{101}{\volt}\\
   U_F &= U_{FC} + U_C = -I_3 \cdot R_3 + U_C = \SI{11}{\volt}
 \end{align*}
-
-
 
 \clearpage
 
@@ -597,7 +593,113 @@ En el circuito de la figura se debe determinar:
   \includegraphics{figs/mallas_agrupacion_condensadores.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Sustituimos los condensadores por circuitos abiertos. En consecuencia, por las ramas correspondientes no puede circular corriente. En particular:
+
+\begin{align*}
+  I_3 &= \SI{0}{\ampere}\\
+  I_4 &= \SI{0}{\ampere}
+\end{align*}
+
+Tenemos dos mallas, y definimos dos corrientes de malla dextrógiras:
+
+\begin{equation*}
+  \begin{bmatrix}
+    R_1 + R_2 + R_3 & -R_3\\
+    -R_3 & R_3 + R_4 + R_6 + R_7\\
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    I_a\\
+    I_b
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \epsilon_1\\
+    \epsilon_2
+  \end{bmatrix}
+\end{equation*}
+
+La solución de este sistema es:
+
+\begin{align*}
+  I_a &= \SI{1}{\ampere}\\
+  I_b &= \SI{2}{\ampere}
+\end{align*}
+siendo,
+
+\begin{align*}
+  I_1 &= I_a = \SI{1}{\ampere}\\
+  I_2 &= I_b - I_a = \SI{1}{\ampere}\\
+  I_5 &= -I_b = \SI{-2}{\ampere}
+\end{align*}
+
+La potencia de los dos elementos activos es:
+
+\begin{align*}
+  P_{\epsilon1} = \epsilon_1 \cdot I_1 = \SI{1}{\watt}\\
+  P_{\epsilon2} = \epsilon_2 \cdot (-I_5) = \SI{14}{\watt}
+\end{align*}
+
+En total, $P_\epsilon = \SI{15}{\watt}$.
+
+Aplicando la ley de Joule en cada resistencia comprobamos que la potencia total disipada en las resistencias del circuito coincide con esta cantidad.
+
+Los potenciales en los puntos indicados son:
+
+\begin{align*}
+  V_A &= -I_2 \cdot R_3 = \SI{-1}{\volt}\\
+  V_B &= -\epsilon_2 - I_5 \cdot R_7 = \SI{-5}{\volt}\\
+  V_C &= U_{CB} + V_B = -I_5 \cdot R_6 + V_B = \SI{-3}{\volt}
+\end{align*}
+
+La carga almacenada en el condensador $C_4$ se calcula con la ecuación:
+\begin{equation*}
+  q_4 = C_4 \cdot U_{C4} = C_4 \cdot (-U_C) = \SI{12}{\micro\coulomb}
+\end{equation*}
+donde se ha asignado la polaridad positiva en la conexión a tierra.
+
+Los condensadores $C_1$, $C_2$ y $C_3$ forman parte de una asociación. Los condensadores $C_1$ y $C_2$ están asociados en paralelo:
+\begin{equation*}
+  C_{12} = C_1//C_2 = C_1 + C_2 = \SI{3}{\micro\farad}
+\end{equation*}
+
+A su vez, están conectados en serie con el condensador $C_3$:
+
+\begin{equation*}
+  C_T = \frac{C_{12} \cdot C_3}{C_{12} + C_3} = \SI{1.5}{\micro\farad}
+\end{equation*}
+
+Este condensador equivalente está conectado entre A y tierra, y asignamos la polaridad positiva a la conexión a tierra. Por tanto:
+
+\begin{equation*}
+  U_{CT} = -U_A = \SI{1}{\volt} \rightarrow q_T = C_T \cdot U_{CT} = \SI{1.5}{\micro\coulomb}
+\end{equation*}
+
+Al tratarse de una conexión serie, esta carga es la misma que tienen el condensador $C_3$ y el condensador equivalente $C_{12}$.
+
+\begin{align*}
+  q_3 &=  \SI{1.5}{\micro\coulomb}\\
+  q_{12} &=  \SI{1.5}{\micro\coulomb}
+\end{align*}
+
+Con estas cargas podemos calcular las diferencias de potencial en estos condensadores:
+
+\begin{align*}
+  U_{C3} &=  \frac{q_3}{C_3} = \SI{0.5}{\volt}\\
+  U_{C12} &=  \frac{q_{12}}{C_{12}} = \SI{0.5}{\volt}
+\end{align*}
+
+Por tanto,
+
+\begin{align*}
+  q_1 &= C_1 \cdot U_{C12} = \SI{0.5}{\micro\coulomb}\\
+  q_2 &= C_2 \cdot U_{C12} = \SI{1}{\micro\coulomb}
+\end{align*}
+
+Comprobamos que $q_1 + q_2 = q_{12}$.
+
 \clearpage
+
 
 \section{}
 
