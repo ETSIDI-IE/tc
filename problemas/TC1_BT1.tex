@@ -217,6 +217,99 @@ Aplica el método de los nudos en el circuito de la figura para determinar:
   \includegraphics[width=\textwidth]{figs/nudos_condensadores.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Sustituimos los condensadores por circuitos abiertos. En consecuencia, por las ramas correspondientes no puede circular corriente. En particular:
+
+\begin{align*}
+  I_1 &= \SI{0}{\ampere}\\
+  I_6 &= \SI{0}{\ampere}
+\end{align*}
+
+Para aplicar el método de los nudos transformamos las fuentes $\epsilon_2$ y $\epsilon_3$ en fuentes de corriente. Las ecuaciones del método de los nudos son:
+
+\begin{equation*}
+  \begin{bmatrix}
+    G_3 + G_4 & -G_4\\
+    -G_4 & G_5 + G_4\\
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    V_A\\
+    V_B
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \epsilon_2/R_3\\
+    \epsilon_3/R_5
+  \end{bmatrix}
+\end{equation*}
+
+Sustituimos valores y resolvemos:
+
+\begin{align*}
+  V_A &= \SI{15}{\volt}\\
+  V_B &= \SI{11}{\volt}
+\end{align*}
+
+Además, $V_D = 0$, dado que está conectado a tierra. Por otra parte, la caída de tensión en la resistencia $R_1$ es 0 porque $I_1 = 0$, luego $V_C = V_D$.
+
+Con estos resultados podemos obtener los valores de las corrientes de rama. Volvemos al circuito original para plantear las ecuaciones de rama:
+
+\begin{align*}
+  V_A &= I_2 \cdot R_3 + \epsilon_2\\
+  V_B &= I_3 \cdot R_5 + \epsilon_3
+\end{align*}
+
+De estas ecuaciones despejamos $I_2$ e $I_3$. Además, teniendo en cuenta que $I_1 = I_6 = 0$, tenemos:
+
+\begin{align*}
+  I_5 &= I_3\\
+  I_4 &= I_2\\
+  I_2 &= -I_3
+\end{align*}
+
+En definitiva:
+
+\begin{align*}
+  I_1 &= \SI{0}{\ampere}\\
+  I_2 &= \SI{-1}{\ampere}\\
+  I_3 &= \SI{1}{\ampere}\\
+  I_4 &= \SI{-1}{\ampere}\\
+  I_5 &= \SI{1}{\ampere}\\
+  I_6 &= \SI{0}{\ampere}
+\end{align*}
+
+Finalmente, calculamos las diferencias de potencial en los
+condensadores. En $C_1$ asignamos la polaridad positiva en A, y
+tenemos:
+
+\begin{equation*}
+  U_{AC} = U_{C1} + \epsilon_1 \rightarrow U_{C1} = \SI{9}{\volt}
+\end{equation*}
+
+Para $C_2$ y $C_3$ el cálculo es directo, asignando la polaridad positiva en A y B, respectivamente:
+
+\begin{align*}
+  U_{C2} &=  U_{AC} = \SI{15}{\volt}\\
+  U_{C3} &=  U_{BD} = \SI{11}{\volt}
+\end{align*}
+
+En consecuencia, las cargas almacenadas en cada condensador son:
+
+\begin{align*}
+  q_1 &= C_1 \cdot U_{C1} = \SI{9}{\micro\coulomb}\\
+  q_2 &= C_2 \cdot U_{C2} = \SI{30}{\micro\coulomb}\\
+  q_3 &= C_3 \cdot U_{C3} = \SI{33}{\micro\coulomb}
+\end{align*}
+
+Y las energías:
+
+\begin{align*}
+  E_{C1} &= \frac{1}{2} \cdot C_1 \cdot U^2_{C1} = \SI{40.5}{\micro\joule}\\
+  E_{C2} &= \frac{1}{2} \cdot C_2 \cdot U^2_{C2} = \SI{225}{\micro\joule}\\
+  E_{C3} &= \frac{1}{2} \cdot C_3 \cdot U^2_{C3} = \SI{181.5}{\micro\joule}
+\end{align*}
+
+
 \clearpage
 
 \section{}
