@@ -339,6 +339,106 @@ En el circuito de la figura debes determinar:
   \includegraphics[scale = 0.8]{figs/mallas_carga_inicial.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Sustituimos los condensadores por circuitos abiertos. En consecuencia, por las ramas correspondientes no puede circular corriente. En particular:
+
+\begin{align*}
+  I_5 &= \SI{0}{\ampere}\\
+  I_7 &= \SI{0}{\ampere}
+\end{align*}
+
+En consecuencia,
+
+\begin{align*}
+  I_3 &= -I_8\\
+  I_4 &= I_6
+\end{align*}
+
+Además, la bobina $L_1$ es un cortocircuito.
+
+Obtenemos dos circuitos desacoplados dado que entre C y B no hay conexión ($C_1$ es un circuito abierto). Planteamos dos grupos de ecuaciones separadas.
+
+En el circuito de la izquierda tenemos dos mallas, y definimos dos corrientes de malla dextrógiras:
+
+\begin{equation*}
+  \begin{bmatrix}
+    R_1 + R_2 & -R_2\\
+    -R_2 & R_2 + R_3\\
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    I_a\\
+    I_b
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \epsilon_A\\
+    -\epsilon_B
+  \end{bmatrix}
+\end{equation*}
+
+La solución de este sistema es:
+
+\begin{align*}
+  I_a &= \SI{4}{\ampere}\\
+  I_b &= \SI{-1}{\ampere}
+\end{align*}
+siendo,
+
+\begin{align*}
+  I_1 &= I_a\\
+  I_2 &= I_a - I_b\\
+  I_3 &= I_b\\
+  I_8 &= -I_b
+\end{align*}
+
+Para el circuito de la derecha tenemos una única malla:
+
+\begin{equation*}
+  \epsilon_C = I_4 \cdot R_4 \rightarrow I_4 = \SI{1}{\ampere}
+\end{equation*}
+
+Por tanto,
+
+\begin{align*}
+  I_1 &= \SI{4}{\ampere}\\
+  I_2 &= \SI{5}{\ampere}\\
+  I_3 &= \SI{-1}{\ampere}\\
+  I_4 &= \SI{1}{\ampere}\\
+  I_5 &= \SI{0}{\ampere}\\
+  I_6 &= \SI{1}{\ampere}\\
+  I_7 &= \SI{0}{\ampere}\\
+  I_8 &= \SI{1}{\ampere}\\
+\end{align*}
+
+Los potenciales en los puntos A y B se calculan así:
+
+\begin{align*}
+  V_A &= \epsilon_C = \SI{30}{\volt}\\
+  V_B &= R_5 \cdot I_5 = \SI{0}{\volt}
+\end{align*}
+
+Para calcular el potencial en el punto C debemos tener en cuenta que el condensador $C_1$ conserva su carga inicial porque el circuito no está cerrado en la parte superior. Por tanto,
+
+\begin{equation*}
+  U_{CB} = U_{C1} = \frac{q^0_{C1} }{C_1} = \SI{1}{\volt}
+\end{equation*}
+
+Por tanto,
+
+\begin{equation*}
+  U_C = U_{CB} + U_B = \SI{1}{\volt}
+\end{equation*}
+
+A partir de este resultado podemos calcular el resto de potenciales:
+
+\begin{align*}
+  U_D &= U_{DC} + U_C = \epsilon_B + U_C = \SI{61}{\volt}\\
+  U_E &= U_{ED} + U_D = I_1 \cdot R_1 + U_D = \SI{101}{\volt}\\
+  U_F &= U_{FC} + U_C = -I_3 \cdot R_3 + U_C = \SI{11}{\volt}
+\end{align*}
+
+
+
 \clearpage
 
 \section{}
