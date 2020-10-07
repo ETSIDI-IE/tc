@@ -1,5 +1,6 @@
 #+TITLE: Corriente alterna sinusoidal
 #+SUBTITLE: Teoría de Circuitos
+#+DATE:
 #+SETUPFILE: config.org
 #+OPTIONS: H:2
 
