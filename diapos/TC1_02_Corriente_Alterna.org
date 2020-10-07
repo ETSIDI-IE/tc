@@ -57,7 +57,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 *** Valor medio
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_{0}^{T}y(t)
+Y_m=\frac{1}{T}\int_{0}^{T}y(t)\, dt
 \]
 #+END_EXPORT
 
@@ -70,7 +70,7 @@ Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega\cdot+\theta)\, dt=0
 
 #+BEGIN_EXPORT latex
 \[
-Y = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)}
+Y = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)\, dt}
 \]
 #+END_EXPORT
 
@@ -93,8 +93,8 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 #+BEGIN_EXPORT latex
 \begin{align*}
 \overline{Y} &= Y\cdot e^{j\theta}\\
-\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sin(\theta))\\
-\overline{Y} &= Y\phase{\theta}
+\overline{Y} &= Y\phase{\theta}\\
+\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sin(\theta))
 \end{align*}
 #+END_EXPORT
 
@@ -189,14 +189,14 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta)
+    i(t) = I_o \cdot \sin(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= R \cdot i(t)=\\
-       &= R I_o \cdot \sin(\omega t + \theta) =\\
-       &= U_o \cdot \sin(\omega t + \theta)\\
+       &= {\color{blue}R I_o} \cdot \sin(\omega t + \theta_I + {\color{red!80}0}) =\\
+       &= {\color{blue}U_o} \cdot \sin(\omega t + \theta_I + {\color{red!80}0})\\
 \end{align*}
  #+END_EXPORT
 
@@ -237,14 +237,14 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta)
+    i(t) = I_o \cdot \sin(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= L \cdot \frac{d i(t)}{dt} =\\
-       &= {\color{blue}{L \omega I_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{+\pi/2}}) =\\
-       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{+\pi/2}})\\
+       &= {\color{blue}{L \omega I_o}} \cdot \sin(\omega t + \theta_I  {\color{red!80}{+\pi/2}}) =\\
+       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta_I  {\color{red!80}{+\pi/2}})\\
 \end{align*}
  #+END_EXPORT
 
@@ -290,14 +290,14 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta)
+    i(t) = I_o \cdot \sin(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
-       &= {\color{blue}{\frac{1}{\omega C} I_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{-\pi/2}}) =\\
-       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta  {\color{red!80}{-\pi/2}})\\
+       &= {\color{blue}{\frac{1}{\omega C} I_o}} \cdot \sin(\omega t + \theta_I  {\color{red!80}{-\pi/2}}) =\\
+       &= {\color{blue}{U_o}} \cdot \sin(\omega t + \theta_I  {\color{red!80}{-\pi/2}})\\
 \end{align*}
  #+END_EXPORT
 
