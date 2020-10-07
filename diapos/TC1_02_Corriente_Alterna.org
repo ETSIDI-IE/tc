@@ -1,5 +1,5 @@
 #+TITLE: Corriente alterna sinusoidal
-#+DATE: 2019-2020
+#+SUBTITLE: Teoría de Circuitos
 #+SETUPFILE: config.org
 #+OPTIONS: H:2
 
