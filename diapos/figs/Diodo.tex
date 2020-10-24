@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\newcommand{\equal}{=}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages]
+  \draw
+  (0,0) to [short, i>^= $I_D$] ++(1,0) node[below] {Ánodo}
+  to [full diode, *-*, l = $D$] ++(2,0) node[below] {Cátodo}
+  to [short] ++(1,0);
+\end{circuitikz}
+
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\newcommand{\equal}{=}
+
+\begin{document}
+\begin{circuitikz}
+  \draw
+  (0,0) node[npn] (npn) {}
+  (npn.base) node[anchor=east] {B}
+  (npn.collector) node[anchor=south] {C}
+  (npn.emitter) node[anchor=north] {E};
+\end{circuitikz}
+
+\end{document}
