@@ -11,6 +11,7 @@
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
 \usepackage{steinmetz}
+\usepackage{enumitem}
 
 \renewcommand{\thesection}{Problema \arabic{section}}
 
@@ -622,7 +623,7 @@ V'_g = S'_g / I' = \SI{208.2}{\volt}
 % \end{enumerate}
 
 % Independientemente del resultado obtenido, suponga que la capacidad instalada es $C = \SI{172}{\micro\farad}$. En estas condiciones, calcule:
-% \begin{enumerate}
+% \begin{enumerate}[resume]
 % \item Potencia aparente de las cargas (incluyendo al banco de condensadores)
 % \item Valor eficaz de la corriente que circula por la línea y potencia disipada en la misma.
 % \item Triángulo de potencias del generador y factor de potencia.
@@ -705,10 +706,10 @@ C = \frac{Q_c}{\omega U^2} = \SI{172.3}{\micro\farad}
 \end{enumerate}
 
 Independientemente del resultado obtenido, suponga que la capacidad instalada es $C = \SI{172}{\micro\farad}$. En estas condiciones, calcule:
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item Potencia aparente de las cargas (incluyendo al banco de condensadores)
 \[
-S'_T = \sqrt(P^2_T + Q'^2_T) = \SI{10350.1}{\voltampere}
+S'_T = \sqrt{P^2_T + Q'^2_T} = \SI{10350.1}{\voltampere}
 \]
 
 \item Valor eficaz de la corriente que circula por la línea y potencia disipada en la misma.
