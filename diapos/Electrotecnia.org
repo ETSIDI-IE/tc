@@ -1403,24 +1403,25 @@ Q'&= P_z \tan \theta'\\
 
 ****                                                               :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.4
+    :BEAMER_col: 0.5
     :END:
- #+ATTR_LATEX: :height 0.4\textheight
+
+#+ATTR_LATEX: :height 0.4\textheight
  [[file:figs/FasoresTrifasica_ABC.pdf]]
 
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.6
-    :END:
+
 Tensiones de *Fase*: $U_A$, $U_B$, $U_C$
 
 Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 
-****                                                     :B_ignoreheading:
+     
+****                                                               :BMCOL:
     :PROPERTIES:
-    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.5
     :END:
-     #+begin_export latex
+
+    
+      #+begin_export latex
      \begin{align*}
        \overline{U}_{AB} &= \overline{U}_A - \overline{U}_B\\
        \overline{U}_{BC} &= \overline{U}_B - \overline{U}_C\\
@@ -1428,6 +1429,17 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 \cline{1-2}
        \overline{U}_{AB} + \overline{U}_{BC} + \overline{U}_{CA} &= 0     \end{align*}
      #+end_export
+
+    #+begin_export latex
+    \[
+      \boxed{
+	\begin{array}{l}
+	  U = \sqrt{3}\cdot U_f\\
+	  \theta_l = \theta_f + \ang{30}\\
+	\end{array}
+      }
+    \]
+    #+end_export
 
 *** Secuencia de Fases
 
