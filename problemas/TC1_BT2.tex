@@ -231,13 +231,13 @@ $R_L = X_L = \SI{1}{\ohm}$
   \includegraphics{figs/circuitoA.pdf}
 \end{center}
 
-Sabiendo que $V_{CD} = \SI{200}{\volt}$ se debe calcular:
+Sabiendo que $U_{CD} = \SI{200}{\volt}$ se debe calcular:
 
 \begin{enumerate}
 \item Intensidades de corriente $I$, $I_1$, $I_2$ e $I_3$ \textbf{en forma fasorial}, tomando $V_{CD}$ como referencia de fase.
 
   \begin{align*}
-\overline{V}_{CD} &= \SI[parse-numbers=false]{200\phase{0}}{\volt}\\
+\overline{U}_{CD} &= \SI[parse-numbers=false]{200\phase{0}}{\volt}\\
 %
 \overline{Z}_1 &= \SI[parse-numbers=false]{10 + \mathrm{j}}{\ohm}\\
 %
@@ -245,11 +245,11 @@ Sabiendo que $V_{CD} = \SI{200}{\volt}$ se debe calcular:
 \end{align*}
 
 \begin{align*}
-\overline{I}_1 &= \frac{\overline{V}_{CD}}{\overline{Z}_1} = \SI[parse-numbers=false]{19.8 - 1.98\mathrm{j}}{\ampere}\\
+\overline{I}_1 &= \frac{\overline{U}_{CD}}{\overline{Z}_1} = \SI[parse-numbers=false]{19.8 - 1.98\mathrm{j}}{\ampere}\\
 %
-\overline{I}_2 &= \frac{\overline{V}_{CD}}{\overline{Z}_2} = \SI[parse-numbers=false]{19.8 + 1.98\mathrm{j}}{\ampere}\\
+\overline{I}_2 &= \frac{\overline{U}_{CD}}{\overline{Z}_2} = \SI[parse-numbers=false]{19.8 + 1.98\mathrm{j}}{\ampere}\\
 %
-\overline{I}_3 &= \frac{\overline{V}_{CD}}{R_3} = \SI[parse-numbers=false]{20\phase{\ang{0}}}{\ampere}\\
+\overline{I}_3 &= \frac{\overline{U}_{CD}}{R_3} = \SI[parse-numbers=false]{20\phase{\ang{0}}}{\ampere}\\
 %
 \overline{I} &= \overline{I}_1 + \overline{I}_2 + \overline{I}_3 =  \SI[parse-numbers=false]{59.6\phase{\ang{0}}}{\ampere}\\
 \end{align*}
@@ -258,7 +258,7 @@ Sabiendo que $V_{CD} = \SI{200}{\volt}$ se debe calcular:
 
   Calculamos con tensión y corriente:
   \begin{align*}
-\overline{S}_2 &= \overline{V}_{CD} \cdot \overline{I}^* = \SI[parse-numbers=false]{11920\phase{\ang{0}}}{VA}\\
+\overline{S}_2 &= \overline{U}_{CD} \cdot \overline{I}^* = \SI[parse-numbers=false]{11920\phase{\ang{0}}}{VA}\\
 %
 W_2 &= \mathrm{Re}\{\overline{S}_2\} = \SI{11920}{\watt}
 \end{align*}
@@ -431,7 +431,7 @@ Calcula:
 \begin{enumerate}
 \item El valor eficaz de la corriente absorbida por el motor.
 \begin{align*}
-  \overline{S}_m &= \overline{V} \cdot \overline{I}^*\\
+  \overline{S}_m &= \overline{U} \cdot \overline{I}^*\\
 %
   I &= \frac{\num{10000}}{230} = \SI{43.5}{\ampere}
 \end{align*}
@@ -960,7 +960,7 @@ Para terminar, podemos comprobar que $\overline{I} = \overline{I_1}
 
 % \clearpage
 
-En el circuito de la figura, el vatímetro marca $\SI{300}{\watt}$ y el amperímetro $\SI[parse-numbers=false]{\sqrt{2}}{\ampere}$. Se sabe que $X_C = \SI{400}{\ohm}$, y $X_1 = R_1 = 2 \cdot X_2$. La fuente que alimenta el circuito es $e(t) = 200\sqrt{2} \sin(\omega t)$Sabiendo que el factor de potencia del circuito es la unidad, calcula:
+En el circuito de la figura, el vatímetro marca $\SI{300}{\watt}$ y el amperímetro $\SI[parse-numbers=false]{\sqrt{2}}{\ampere}$. Se sabe que $X_C = \SI{400}{\ohm}$, y $X_1 = R_1 = 2 \cdot X_2$. La fuente que alimenta el circuito es $\epsilon(t) = 200\sqrt{2} \sin(\omega t)$Sabiendo que el factor de potencia del circuito es la unidad, calcula:
 
 \begin{enumerate}
 \item Valores de $R_1$, $R_2$, $X_1$, $X_2$.
@@ -975,13 +975,13 @@ En el circuito de la figura, el vatímetro marca $\SI{300}{\watt}$ y el amperím
 Pasamos a fasores:
 
 \[
-  \overline{E} = \SI[parse-numbers=false]{200\phase{0}}{\volt}
+  \overline{\epsilon} = \SI[parse-numbers=false]{200\phase{0}}{\volt}
 \]
 
 Además de la tensión a la entrada, conocemos la lectura del vatímetro, y el factor de potencia del circuito. Podemos, por tanto, calcular la corriente total:
 
 \[
-I = \frac{P}{E \cos\theta} = \frac{300}{200} = \SI{1.5}{\ampere}
+I = \frac{P}{\epsilon \cos\theta} = \frac{300}{200} = \SI{1.5}{\ampere}
 \]
 
 Dado que $\cos\theta = 1$ y $\theta_V = \ang{0}$, $\overline{I} =  \SI[parse-numbers=false]{1.5\phase{0}}{\ampere}$.
@@ -1078,7 +1078,7 @@ Finalmente, para obtener los fasores de las corrientes $I_1$ e $I_2$ recuperamos
 % \begin{enumerate}
 % \item Las corrientes $I_1$, $I_2$, $I_3$ en forma fasorial.
 % \item Las reactancias $X_1$, $X_3$, y la impedancia $\overline{Z}$.
-% \item La fuerza electromotriz $\overline{E}$.
+% \item La fuerza electromotriz $\overline{\epsilon}$.
 % \end{enumerate}
 % \begin{center}
 %   \includegraphics{figs/problema12}
@@ -1090,7 +1090,7 @@ La potencia reactiva del circuito de la figura es $\SI{80}{\voltampere_r}$ de ti
 \begin{enumerate}
 \item Las corrientes $I_1$, $I_2$, $I_3$ en forma fasorial.
 \item Las reactancias $X_1$, $X_3$, y la impedancia $\overline{Z}$.
-\item La fuerza electromotriz $\overline{E}$.
+\item La fuerza electromotriz $\overline{\epsilon}$.
 \end{enumerate}
 \begin{center}
   \includegraphics{figs/problema12}
@@ -1117,37 +1117,43 @@ y, por tanto, obtenemos $X_1$:
   \overline{Z}_1 = 10 + j5 = \SI[parse-numbers=false]{5\sqrt{5}\phase{\ang{26.56}}}{\ohm} 
 \]
 
-Usando la tensión $V_{AB}$ como referencia de fases podemos calcular el ángulo de la corriente $I_1$:
+Para obtener las corrientes en forma fasorial necesitamos una referencia de fases, y será la tensión $U_{AB}$:
 
 \[
-  \overline{I}_1 = \frac{\overline{V}_{AB}}{\overline{Z}_1} = \SI[parse-numbers=false]{2\sqrt{5}\phase{\ang{-26.56}}}{\ampere} 
+  \overline{U}_{AB} = \SI[parse-numbers=false]{50\phase{\ang{0}}}{\volt}
 \]
 
-De la misma forma podemos calcular la corriente $I_2$:
-\[
-  \overline{I}_2 = \frac{\overline{V}_{AB}}{jX_2} = \SI[parse-numbers=false]{1\phase{\ang{-90}}}{\ampere} 
-\]
-
-De la rama 3 no tenemos información directa, luego debemos obtener información del conjunto para aplicarla a esta rama. En particular, del circuito AB conocemos la tensión, la corriente y la potencia, luego podemos obtener su factor de potencia:
+Además, del circuito AB conocemos la tensión, la corriente y la potencia, luego podemos obtener su factor de potencia:
 
 \[
-  \cos\theta_{AB} = \frac{P_{AB}}{I \cdot V_{AB}} = 1
+  \cos\theta_{AB} = \frac{P_{AB}}{I \cdot U_{AB}} = 1
 \]
 
 Por tanto,
 
-\begin{align*}
-  Q_{AB} &= 0\\
-  \overline{I} &= \SI[parse-numbers=false]{4\phase{\ang{0}}}{\ampere} 
-\end{align*}
+\[
+  \overline{I} = \SI[parse-numbers=false]{4\phase{\ang{0}}}{\ampere}
+\]
+
+
+Con $\overline{U}_{AB}$ podemos calcular el ángulo de la corriente $I_1$:
+
+\[
+  \overline{I}_1 = \frac{\overline{U}_{AB}}{\overline{Z}_1} = \SI[parse-numbers=false]{2\sqrt{5}\phase{\ang{-26.56}}}{\ampere} 
+\]
+
+De la misma forma podemos calcular la corriente $I_2$:
+\[
+  \overline{I}_2 = \frac{\overline{U}_{AB}}{jX_2} = \SI[parse-numbers=false]{1\phase{\ang{-90}}}{\ampere} 
+\]
   
-Gracias a este último resultado podemos obtener la corriente en la rama 3:
+Mediante la LKC podemos obtener la corriente en la rama 3:
 
 \[
   \overline{I} = \overline{I}_1 + \overline{I}_2 + \overline{I}_3 \rightarrow \overline{I}_3 = \SI[parse-numbers=false]{3\phase{\pi/2}}{\ampere}
 \]
 
-Aplicamos el teorema de Boucherot para obtener reactancia de la rama 3:
+Aplicamos el teorema de Boucherot para obtener la reactancia de la rama 3, teniendo que en cuenta que $\cos(\theta_{AB}) = 1 \rightarrow Q_{AB} = 0$:
 
 \begin{align*}
   Q &= Q_1 + Q_2 + Q_3 = 0\\
@@ -1198,13 +1204,13 @@ Y con la potencia reactiva $Q$ obtenemos la potencia aparente:
 y la tensión:
 
 \[
-  \overline{E} = \frac{\overline{E}}{\overline{I}^*} = 90 - j20 = \SI[parse-numbers=false]{10\sqrt{85}\phase{\ang{-12.53}}}{\volt}
+  \overline{\epsilon} = \frac{\overline{S}}{\overline{I}^*} = 90 - j20 = \SI[parse-numbers=false]{10\sqrt{85}\phase{\ang{-12.53}}}{\volt}
 \]
 
 Podemos llegar a este mismo resultado con un balance de tensiones:
 
 \[
-  \overline{E} = \overline{V}_Z + \overline{V}_{AB} = \overline{Z} \cdot \overline{I} + \overline{V}_{AB}
+  \overline{\epsilon} = \overline{U}_Z + \overline{U}_{AB} = \overline{Z} \cdot \overline{I} + \overline{V}_{AB}
 \]
 
 \end{document}
