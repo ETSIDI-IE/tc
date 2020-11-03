@@ -1,7 +1,7 @@
 #+TITLE: Introducción al Régimen Transitorio
 #+SUBTITLE: Teoría de Circuitos
 #+AUTHOR: Oscar Perpiñán Lamigueiro
-#+DATE: Mayo 2020
+#+DATE: 
 #+STARTUP: beamer
 #+STARTUP: indent
 #+SETUPFILE: config.org

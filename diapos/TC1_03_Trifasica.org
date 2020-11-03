@@ -1,5 +1,5 @@
 #+TITLE: Sistemas Trifásicos
-#+DATE: 2019-2020
+#+DATE: 
 #+SETUPFILE: config.org
 #+OPTIONS: H:2
 
