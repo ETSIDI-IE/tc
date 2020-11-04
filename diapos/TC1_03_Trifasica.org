@@ -799,8 +799,7 @@ Desarrollamos los dos cosenos:
 \end{align*}
 #+end_export
 
-Si sumamos obtenemos la potencia activa (mismo resultado que con receptor desequilibrado):
-
+Si sumamos obtenemos la potencia activa:
 #+begin_export latex
 \[
   \boxed{W_1 + W_2 = \sqrt{3} U I \cos\theta = P}
