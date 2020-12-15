@@ -518,9 +518,9 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 #+END_EXPORT
 
 **** Tipos
-  - $R > R_{cr}$, $\alpha > \omega$, $\xi > 1$: *sobreamortiguado*
-  - $R = R_{cr}$,  $\alpha = \omega$, $\xi = 1$: *amortiguamiento crítico*
-  - $R < R_{cr}$,  $\alpha < \omega$, $\xi < 1$: *subamortiguado*
+  - $R > R_{cr}$, $\alpha > \omega_0$, $\xi > 1$: *sobreamortiguado*
+  - $R = R_{cr}$,  $\alpha = \omega_0$, $\xi = 1$: *amortiguamiento crítico*
+  - $R < R_{cr}$,  $\alpha < \omega_0$, $\xi < 1$: *subamortiguado*
 
 *** Circuito Sobreamortiguado ($\alpha > \omega_0$)
 #+BEGIN_EXPORT latex
@@ -721,9 +721,9 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 #+END_EXPORT
 
 **** Tipos
-  - $G > G_{cr}$, $\alpha > \omega$, $\xi > 1$: *sobreamortiguado*
-  - $G = G_{cr}$,  $\alpha = \omega$, $\xi = 1$: *amortiguamiento crítico*
-  - $G < G_{cr}$,  $\alpha < \omega$, $\xi < 1$: *subamortiguado*
+  - $G > G_{cr}$, $\alpha > \omega_0$, $\xi > 1$: *sobreamortiguado*
+  - $G = G_{cr}$,  $\alpha = \omega_0$, $\xi = 1$: *amortiguamiento crítico*
+  - $G < G_{cr}$,  $\alpha < \omega_0$, $\xi < 1$: *subamortiguado*
 
 *** Tipos de Respuesta
 
