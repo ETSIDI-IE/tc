@@ -2,7 +2,7 @@
 #+OPTIONS:   num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+STARTUP: beamer
 #+LaTeX_CLASS: beamer
-#+LATEX_CLASS_OPTIONS: [xcolor={usenames,svgnames,dvipsnames}]
+#+LATEX_CLASS_OPTIONS: [aspectratio=169, xcolor={usenames,svgnames,dvipsnames}]
 #+BEAMER_THEME: Boadilla
 #+BEAMER_COLOR_THEME: rose
 #+BEAMER_FONT_THEME: serif
