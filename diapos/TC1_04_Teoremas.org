@@ -264,6 +264,7 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 ** Planteamiento
 Sea el circuito lineal de la figura. ¿Qué impedancia $Z_L$ hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
 
+#+ATTR_LATEX: :height 0.55\textheight
 [[file:figs/EquivalenteThevenin.pdf]]
 
 Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
@@ -274,31 +275,38 @@ Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
 Calculamos la potencia activa en la impedancia de carga $Z_L$:
 ***                                                                   :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.4
+    :BEAMER_col: 0.3
     :END:
- [[file:figs/EquivalenteThevenin0.pdf]]
+    #+ATTR_LATEX: :height 0.45\textheight
+    [[file:figs/EquivalenteThevenin0.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.6
+    :BEAMER_col: 0.2
     :END:
    #+begin_export latex
    \begin{align*}
      \overline{Z}_{th} &= R_{th} + jX_{th}\\
      \overline{Z}_L &= R_L + jX_L\\
-     P_L &= I^2 \cdot R_L\\
    \end{align*}
-   #+end_export
+ #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+   #+begin_export latex
+   \begin{align*}
+   \overline{I} &= \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}\\
+   P_L &= I^2 \cdot R_L\\
+   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L}
+   \end{align*}
+ #+end_export
 
 ***                                                         :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :END:
- #+begin_export latex
- \[
-   \overline{I} = \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L} \rightarrow P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
- \]
- #+end_export
 
 
 Las condiciones de máximo son: 
@@ -355,15 +363,32 @@ Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
 
 ** Impedancia de carga
 
-Dado un circuito lineal (del que podemos calcular su generador equivalente de Thévenin) ...
+Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) ...
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/EquivalenteThevenin.pdf]]
 
 ... la impedancia de carga que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
-
 #+begin_export latex
 \[
   \boxed{\overline{Z}_L = \overline{Z}_{th}^*}
 \]
+#+end_export
+
+** Máxima potencia disponible
+
+La máxima potencia disponible en la carga es:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:figs/EquivalenteThevenin.pdf]]
+
+#+begin_export latex
+\begin{equation*}
+  \left.
+    \begin{matrix}
+      \overline{Z}_L = \overline{Z}_{th}^*\\
+      P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
+    \end{matrix} \right\}\rightarrow
+  \boxed{P_L = \frac{\epsilon^2_{th}}{4 R_{th}}}
+\end{equation*}
 #+end_export
 
 * Footnotes

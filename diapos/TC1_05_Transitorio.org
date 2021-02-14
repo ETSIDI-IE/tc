@@ -89,7 +89,7 @@ La tensión en un condensador no puede variar de forma abrupta (implica corrient
 *** Ejemplo
 
 El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la posición (2) en $t = 0$:
-
+#+ATTR_LATEX: :height 0.35\textheight
 [[file:figs/ejemplo_condiciones_iniciales.pdf]]
 
 
@@ -114,7 +114,7 @@ El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la p
 [[file:figs/transitorio_circuitoRL.pdf]]
 
 *** Respuesta natural
-
+#+ATTR_LATEX: :height 0.25\textheight
 file:figs/transitorio_circuitoRL_t0+.pdf
 Ecuaciones
 #+BEGIN_EXPORT latex
@@ -198,6 +198,7 @@ Cambiemos el funcionamiento del interruptor: en $t > 0$ la fuente alimenta el ci
 [[file:figs/transitorio_circuitoRL2.pdf]]
 
 *** Respuesta forzada
+#+ATTR_LATEX: :height 0.25\textheight
 [[file:figs/transitorio_circuitoRL2_t0+.pdf]]
 Las ecuaciones son ahora:
 #+BEGIN_EXPORT latex
@@ -253,6 +254,7 @@ La solución completa es:
 \]
 #+END_EXPORT
 
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/RespuestaCompleta_RL.pdf]]
 
 
@@ -269,13 +271,15 @@ La solución completa es:
 - $i_\infty(0^+)$: corriente en la bobina en régimen permanente particularizada en $t = 0$.
 
 *** Equivalente de Thévenin
-
+#+ATTR_LATEX: :height 0.85\textheight
 [[file:figs/Thevenin_PrimerOrden.pdf]]
 ** Circuito RC paralelo
 
 *** Circuito básico
 - En $t <0$ la fuente alimenta el circuito RC (el condensador se carga).
 - En $t = 0$ se desconecta la fuente (el condensador comienza a descargarse en la resistencia).
+
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/transitorio_circuitoRC.pdf]]
 
 *** Respuesta natural
@@ -316,6 +320,7 @@ Respuesta natural
 \]
 #+END_EXPORT
 
+#+ATTR_LATEX: :height 0.55\textheight
 [[file:figs/constante_tiempo.pdf]]
 
 *** Balance Energético
@@ -360,13 +365,13 @@ Suponiendo que el condensador está inicialmente descargado:
 #+END_EXPORT
 
 *** Equivalente de Norton
-
+#+ATTR_LATEX: :height 0.85\textheight
 [[file:figs/Thevenin_PrimerOrden.pdf]]
 
 ** Análisis Sistemático
 
 *** Equivalente de Thévenin/Norton
-
+#+ATTR_LATEX: :height 0.85\textheight
 [[file:figs/Thevenin_PrimerOrden.pdf]]
 
 *** Procedimiento General
@@ -407,7 +412,7 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 
 
 *** Respuesta natural (t > 0)
-
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -528,7 +533,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
   \boxed{i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/Sobreamortiguado_HKD.pdf]]
 
 *** Amortiguamiento Crítico ($\alpha = \omega_0$)
@@ -537,7 +542,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
   \boxed{i_n(t) = (A_1 + A_2 t) e^{s t} }
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/AmortiguamientoCritico_HKD.pdf]]
 
 
@@ -547,7 +552,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
   \boxed{i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/Subamortiguado_AS.pdf]]
 
 *** Valores Importantes
@@ -638,7 +643,7 @@ i_L(0^+) &= I_\infty + A_1 + A_2\\
 
 *** Respuesta natural (t > 0)
 
-
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -765,7 +770,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 
 *** Derivadas en $t = 0^+$: ejemplo RLC paralelo
 
-#+ATTR_LATEX: :height 0.35\textheight
+#+ATTR_LATEX: :height 0.25\textheight
 [[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex

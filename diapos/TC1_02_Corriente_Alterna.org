@@ -180,11 +180,13 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \]
 #+END_EXPORT
 
+#+ATTR_LATEX: :height 0.75\textheight
 [[file:figs/fasorImpedancia.pdf]]
 
 ** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:figs/resistivo.pdf]]
 
     #+begin_export latex
@@ -202,7 +204,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
 ** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
-
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:figs/resistivo.pdf]]
 
 ***                                                                   :BMCOL:
@@ -219,14 +221,16 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
     :PROPERTIES:
     :BEAMER_col: 0.35
     :END:
-[[file:figs/fasorResistencia_VI.pdf]]
+    #+ATTR_LATEX: :height 0.35\textheight
+    [[file:figs/fasorResistencia_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.35
     :END:
-[[file:figs/fasorResistencia.pdf]]
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:figs/fasorResistencia.pdf]]
 
 
 
@@ -271,15 +275,16 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
     :PROPERTIES:
     :BEAMER_col: 0.4
     :END:
-[[file:figs/fasorInductancia_VI.pdf]]
+    #+ATTR_LATEX: :height 0.4\textheight
+    [[file:figs/fasorInductancia_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.3
     :END:
-#+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/fasorInductancia.pdf]]
+    #+ATTR_LATEX: :height 0.4\textheight
+    [[file:figs/fasorInductancia.pdf]]
 
 
 ** Circuito Capacitivo puro
@@ -323,15 +328,16 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.4
     :END:
-[[file:figs/fasorCondensador_VI.pdf]]
+    #+ATTR_LATEX: :height 0.4\textheight
+    [[file:figs/fasorCondensador_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.3
     :END:
-#+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/fasorCondensador.pdf]]
+    #+ATTR_LATEX: :height 0.4\textheight
+    [[file:figs/fasorCondensador.pdf]]
 
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
@@ -340,16 +346,16 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.45
     :END:
-
-[[file:figs/RL.pdf]]
+    #+ATTR_LATEX: :width 0.8\textwidth
+    [[file:figs/RL.pdf]]
 
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.55
     :END:
-#+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorInductanciaReal_VI.pdf]]
+    #+ATTR_LATEX: :height 0.5\textheight
+    [[file:figs/fasorInductanciaReal_VI.pdf]]
 
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
@@ -412,8 +418,8 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.45
     :END:
-
-[[file:figs/RC.pdf]]
+    #+ATTR_LATEX: :width 0.8\textwidth
+    [[file:figs/RC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -839,7 +845,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 - Su valor medio es nulo.
 
 ** Circuito Inductivo con pérdidas
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:figs/inductivoPotencia.pdf]]
 
 #+begin_export latex
@@ -854,7 +860,7 @@ Valor medio positivo, $P = U I \cos \theta$
 
 
 ** Circuito Capacitivo con pérdidas
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:figs/capacitivoPotencia.pdf]]
 
 #+begin_export latex

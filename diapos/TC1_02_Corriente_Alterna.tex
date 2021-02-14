@@ -1,6 +1,6 @@
-% Created 2020-10-07 mié 19:40
+% Created 2021-02-14 dom 16:48
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, xcolor={usenames,svgnames,dvipsnames}]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -56,16 +56,16 @@
  pdftitle={Corriente alterna sinusoidal},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.3 (Org mode 9.4)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Conceptos Fundamentales}
-\label{sec:orgd071381}
+\label{sec:org4ee53fc}
 
-\begin{frame}[label={sec:org279a2aa}]{Onda sinusoidal}
+\begin{frame}[label={sec:org3b00d6f}]{Onda sinusoidal}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/sin.pdf}
 \end{center}
@@ -87,7 +87,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 \end{frame}
 
 
-\begin{frame}[label={sec:orga6a67ca}]{Fase}
+\begin{frame}[label={sec:orga661788}]{Fase}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/desfase.pdf}
 \end{center}
@@ -113,7 +113,7 @@ respecto a la referencia.
 \end{frame}
 
 
-\begin{frame}[label={sec:org9b15dee}]{Señales en Cuadratura}
+\begin{frame}[label={sec:orgae10864}]{Señales en Cuadratura}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/cuadratura.pdf}
 \end{center}
@@ -125,7 +125,7 @@ respecto a la referencia.
 \end{frame}
 
 
-\begin{frame}[label={sec:org1beb7c1}]{Valor medio y valor eficaz}
+\begin{frame}[label={sec:org3124f85}]{Valor medio y valor eficaz}
 \begin{block}{Valor medio}
 \[
 Y_m=\frac{1}{T}\int_{0}^{T}y(t)\, dt
@@ -146,9 +146,9 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{block}
 \end{frame}
 \section{Cálculo Fasorial}
-\label{sec:org52817ab}
+\label{sec:orgf1684b5}
 
-\begin{frame}[label={sec:org9f7c466}]{Representación fasorial}
+\begin{frame}[label={sec:org6f40e2c}]{Representación fasorial}
 \begin{itemize}
 \item Un fasor es un \alert{número complejo} que representa una señal sinusoidal para simplificar cálculos.
 \item El \alert{módulo} del fasor es el \alert{valor eficaz}. El \alert{argumento} es la \alert{fase}.
@@ -172,7 +172,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org743f746}]{Tensión y corriente en notación fasorial}
+\begin{frame}[label={sec:orgd4165f9}]{Tensión y corriente en notación fasorial}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/ondasTensionCorriente.pdf}
 \end{center}
@@ -194,7 +194,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{frame}
 
 
-\begin{frame}[label={sec:org3981802}]{Impedancia: relación entre fasores de tensión y corriente}
+\begin{frame}[label={sec:org879e38c}]{Impedancia: relación entre fasores de tensión y corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -232,21 +232,21 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 
 
 
-\begin{frame}[label={sec:orgf8e1b61}]{Impedancia Genérica}
+\begin{frame}[label={sec:orgca2b71b}]{Impedancia Genérica}
 \[
 \overline{Z} = R + j X
 \]
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/fasorImpedancia.pdf}
+\includegraphics[height=0.75\textheight]{figs/fasorImpedancia.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8591170}]{Circuito Resistivo}
+\begin{frame}[label={sec:org5796318}]{Circuito Resistivo}
 Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/resistivo.pdf}
+\includegraphics[height=0.4\textheight]{figs/resistivo.pdf}
 \end{center}
 
 \[
@@ -259,11 +259,10 @@ Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org1f49a75}]{Circuito Resistivo}
+\begin{frame}[label={sec:orgb50ae23}]{Circuito Resistivo}
 Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/resistivo.pdf}
+\includegraphics[height=0.3\textheight]{figs/resistivo.pdf}
 \end{center}
 
 \begin{columns}
@@ -275,14 +274,14 @@ Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 
 \begin{column}{0.35\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/fasorResistencia_VI.pdf}
+\includegraphics[height=0.35\textheight]{figs/fasorResistencia_VI.pdf}
 \end{center}
 \end{column}
 
 
 \begin{column}{0.35\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/fasorResistencia.pdf}
+\includegraphics[height=0.25\textheight]{figs/fasorResistencia.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -290,7 +289,7 @@ Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 
 
 
-\begin{frame}[label={sec:org6c0fffd}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:orga7c7c15}]{Circuito Inductivo puro}
 Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retrasa la corriente}.
 \begin{center}
 \includegraphics[height=0.3\textheight]{figs/inductivoPuro.pdf}
@@ -307,7 +306,7 @@ Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retras
 \end{frame}
 
 
-\begin{frame}[label={sec:org53cceb6}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:org9e2bc52}]{Circuito Inductivo puro}
 Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retrasa la corriente}.
 
 \begin{center}
@@ -324,7 +323,7 @@ Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retras
 
 \begin{column}{0.4\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/fasorInductancia_VI.pdf}
+\includegraphics[height=0.4\textheight]{figs/fasorInductancia_VI.pdf}
 \end{center}
 \end{column}
 
@@ -338,7 +337,7 @@ Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retras
 \end{frame}
 
 
-\begin{frame}[label={sec:orgbb6f54a}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:org7bcdf70}]{Circuito Capacitivo puro}
 Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adelanta la corriente}.
 
 \begin{center}
@@ -356,7 +355,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:org3986999}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:org0bcc892}]{Circuito Capacitivo puro}
 Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adelanta la corriente}.
 
 \begin{center}
@@ -373,7 +372,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 
 \begin{column}{0.4\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/fasorCondensador_VI.pdf}
+\includegraphics[height=0.4\textheight]{figs/fasorCondensador_VI.pdf}
 \end{center}
 \end{column}
 
@@ -386,14 +385,14 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org61b1c0d}]{Circuito RL (inductivo con pérdidas)}
+\begin{frame}[label={sec:orgbf5ff79}]{Circuito RL (inductivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.25\textheight]{figs/inductivo.pdf}
 \end{center}
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/RL.pdf}
+\includegraphics[width=0.8\textwidth]{figs/RL.pdf}
 \end{center}
 \end{column}
 
@@ -406,7 +405,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgcd180cb}]{Circuito RL (inductivo con pérdidas)}
+\begin{frame}[label={sec:org4e4546a}]{Circuito RL (inductivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RL.pdf}
 \end{center}
@@ -427,7 +426,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org857be7e}]{Circuito RL (inductivo con pérdidas)}
+\begin{frame}[label={sec:orgdb654fa}]{Circuito RL (inductivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RL.pdf}
 \end{center}
@@ -454,7 +453,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:org91b25de}]{Circuito RC (capacitivo con pérdidas)}
+\begin{frame}[label={sec:org76a4ddb}]{Circuito RC (capacitivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.25\textheight]{figs/capacitivo.pdf}
 \end{center}
@@ -463,7 +462,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \begin{columns}
 \begin{column}{0.45\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/RC.pdf}
+\includegraphics[width=0.8\textwidth]{figs/RC.pdf}
 \end{center}
 \end{column}
 
@@ -476,7 +475,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:org2d2eb16}]{Circuito RC (capacitivo con pérdidas)}
+\begin{frame}[label={sec:orgf80b1cb}]{Circuito RC (capacitivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RC.pdf}
 \end{center}
@@ -497,7 +496,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgdc46120}]{Circuito RC (capacitivo con pérdidas)}
+\begin{frame}[label={sec:org2d285dd}]{Circuito RC (capacitivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RC.pdf}
 \end{center}
@@ -526,7 +525,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:orge4a3ae5}]{Circuito RLC serie}
+\begin{frame}[label={sec:org6880a98}]{Circuito RLC serie}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RLC.pdf}
 \end{center}
@@ -549,7 +548,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org9be5939}]{Circuito RLC serie}
+\begin{frame}[label={sec:orge0f4a0b}]{Circuito RLC serie}
 \begin{center}
 \includegraphics[height=0.2\textheight]{figs/RLC.pdf}
 \end{center}
@@ -581,7 +580,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgefe5e76}]{Circuito RLC paralelo}
+\begin{frame}[label={sec:org2d9c8a2}]{Circuito RLC paralelo}
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/RLCparalelo.pdf}
 \end{center}
@@ -604,7 +603,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org6006627}]{Circuito RLC paralelo}
+\begin{frame}[label={sec:org0849945}]{Circuito RLC paralelo}
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/RLCparalelo.pdf}
 \end{center}
@@ -625,7 +624,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:org4d7174a}]{Impedancia y Admitancia}
+\begin{frame}[label={sec:org73b14fb}]{Impedancia y Admitancia}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -663,7 +662,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgc07bd3f}]{Impedancia y Admitancia}
+\begin{frame}[label={sec:org9e5873b}]{Impedancia y Admitancia}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -695,8 +694,8 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 \section{Potencia}
-\label{sec:orgea869fb}
-\begin{frame}[label={sec:org4c6824f}]{Expresión general}
+\label{sec:orgb61706e}
+\begin{frame}[label={sec:org3354059}]{Expresión general}
 Sea la tensión referencia de fases. Si \(\theta > 0\) (inductivo) la corriente está retrasada respecto de la tensión (\emph{circuito en retraso}).
 \begin{align*}
   u(t) &= U_o \cos \omega t\\
@@ -704,7 +703,7 @@ Sea la tensión referencia de fases. Si \(\theta > 0\) (inductivo) la corriente 
   p(t) &= u(t) \cdot i(t)
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgd4b5135}]{Expresión general}
+\begin{frame}[label={sec:orgb4c7ac7}]{Expresión general}
 \begin{align*}
   p(t) &= U_o I_o \cdot \cos(\omega t) \cdot \cos(\omega t - \theta) =\\
        &= \frac{1}{2} \cdot U_o I_o \cdot \left(\cos(2\omega t - \theta) + \cos(\theta)\right)\\
@@ -716,7 +715,7 @@ Sea la tensión referencia de fases. Si \(\theta > 0\) (inductivo) la corriente 
   \boxed{p(t) = U I \cos(\theta) + U I \cos(\theta) \cos(2\omega t) + U I \sin(\theta) \sin(2\omega t)}
 \end{equation*}
 \end{frame}
-\begin{frame}[label={sec:org1a8e1d7}]{Expresión general}
+\begin{frame}[label={sec:org1367dfd}]{Expresión general}
 \begin{equation*}
   p(t) = {\color{blue}U I \cos(\theta)} + {\color{blue}U I \cos(\theta)} \cos(2\omega t) + {\color{red}U I \sin(\theta)} \sin(2\omega t)
 \end{equation*}
@@ -732,7 +731,7 @@ Sea la tensión referencia de fases. Si \(\theta > 0\) (inductivo) la corriente 
 \end{frame}
 
 
-\begin{frame}[label={sec:org4f75156}]{Circuito Resistivo}
+\begin{frame}[label={sec:org114eb87}]{Circuito Resistivo}
    \[
      P = UI\cos\theta \quad%
      {\color{gray}Q = UI\sin\theta}
@@ -758,7 +757,7 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
   \]
 \end{frame}
 
-\begin{frame}[label={sec:orga490253}]{Circuito Resistivo}
+\begin{frame}[label={sec:org6ce8de8}]{Circuito Resistivo}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/resistivoPotencia.pdf}
 \end{center}
@@ -769,7 +768,7 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1b67d8c}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:org0198a0d}]{Circuito Inductivo puro}
    \[
      {\color{gray}P = UI\cos\theta} \quad%
      Q = UI\sin\theta
@@ -796,7 +795,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgc169a68}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:orgf1df968}]{Circuito Inductivo puro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/inductivoPuroPotencia.pdf}
 \end{center}
@@ -808,7 +807,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgeecca6f}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:orgcc8451d}]{Circuito Capacitivo puro}
    \[
      {\color{gray}P = UI\cos\theta} \quad%
      Q = UI\sin\theta
@@ -834,7 +833,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orge8ac1f9}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:org8ac218c}]{Circuito Capacitivo puro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/capacitivoPuroPotencia.pdf}
 \end{center}
@@ -846,9 +845,9 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc4bd6f7}]{Circuito Inductivo con pérdidas}
+\begin{frame}[label={sec:orgbe2ab1d}]{Circuito Inductivo con pérdidas}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/inductivoPotencia.pdf}
+\includegraphics[height=0.5\textheight]{figs/inductivoPotencia.pdf}
 \end{center}
 
 \[
@@ -861,9 +860,9 @@ Valor medio positivo, \(P = U I \cos \theta\)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgbb8e0ed}]{Circuito Capacitivo con pérdidas}
+\begin{frame}[label={sec:org70113ab}]{Circuito Capacitivo con pérdidas}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/capacitivoPotencia.pdf}
+\includegraphics[height=0.5\textheight]{figs/capacitivoPotencia.pdf}
 \end{center}
 
 \[
@@ -875,7 +874,7 @@ Valor medio positivo, \(P = U I \cos \theta\)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org16308dc}]{Triángulo de Potencias}
+\begin{frame}[label={sec:org80544b2}]{Triángulo de Potencias}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{itemize}
@@ -925,7 +924,7 @@ f.d.p. \equiv \cos(\theta)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org8263117}]{Potencia de elementos: Resistencia}
+\begin{frame}[label={sec:org71fcf79}]{Potencia de elementos: Resistencia}
 \[
 \theta = 0 \Rightarrow 
 \begin{cases}
@@ -941,7 +940,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org58b2ecc}]{Potencia de elementos: Inductancia}
+\begin{frame}[label={sec:orgd588200}]{Potencia de elementos: Inductancia}
 \[
 \theta = \pi/2 \Rightarrow 
 \begin{cases}
@@ -957,7 +956,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf54bc4f}]{Potencia de elementos: Condensador}
+\begin{frame}[label={sec:org8526150}]{Potencia de elementos: Condensador}
 \[
 \theta = - \pi/2 \Rightarrow 
 \begin{cases}
@@ -973,7 +972,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf08a51c}]{Teorema de Boucherot}
+\begin{frame}[label={sec:org5af64b0}]{Teorema de Boucherot}
 \begin{itemize}
 \item En un circuito con múltiples elementos, la potencia aparente total es la suma de las potencias aparentes individuales.
 \end{itemize}
@@ -992,7 +991,7 @@ Q &= \sum_{i = 1}^n Q_i
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org7a056ce}]{Medida de potencia}
+\begin{frame}[label={sec:org8694018}]{Medida de potencia}
 \begin{center}
 \includegraphics[height=0.7\textheight]{figs/vatimetro.pdf}
 \end{center}
@@ -1000,7 +999,7 @@ Q &= \sum_{i = 1}^n Q_i
 \alert{Vatímetro}: equipo de medida de 4 terminales (1 par para tensión, 1 par para corriente)
 \end{frame}
 
-\begin{frame}[label={sec:org8c05149}]{Medida de potencia}
+\begin{frame}[label={sec:org60aa933}]{Medida de potencia}
 \begin{center}
 \includegraphics[height=0.5\textheight]{figs/vatimetro_Z.pdf}
 \end{center}
@@ -1013,9 +1012,9 @@ Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
 \end{frame}
 
 \section{Compensación de reactiva}
-\label{sec:orgf37c685}
+\label{sec:org1ec929c}
 
-\begin{frame}[label={sec:orga820c2d}]{Factor de potencia}
+\begin{frame}[label={sec:org2e73ac7}]{Factor de potencia}
 El factor de potencia, \(\cos(\theta)\), representa la aportación de potencia activa dentro de la potencia aparente.
 \[
 P = S \cos \theta
@@ -1028,7 +1027,7 @@ Sean dos sistemas con \alert{misma tensión y potencia activa}, y factores de po
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgf76347a}]{Potencia Aparente}
+\begin{frame}[label={sec:org1871bff}]{Potencia Aparente}
 \begin{center}
 \includegraphics[height=0.5\textheight]{figs/Fasores_CompensacionReactiva.pdf}
 \end{center}
@@ -1040,7 +1039,7 @@ El sistema 2 requiere \alert{mayor potencia aparente} (generador mayor) para ali
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org62cd625}]{Sección de Conductores}
+\begin{frame}[label={sec:org664bcd7}]{Sección de Conductores}
 \begin{center}
 \includegraphics[height=0.5\textheight]{figs/Fasores_CompensacionReactiva.pdf}
 \end{center}
@@ -1051,7 +1050,7 @@ El sistema 2 requiere \alert{mayor sección} de cable para transportar la misma 
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgb89fc22}]{Generación Local de Reactiva}
+\begin{frame}[label={sec:org811f28e}]{Generación Local de Reactiva}
 \begin{itemize}
 \item Comúnmente, el factor de potencia es \alert{inductivo} (máquinas eléctricas
 industriales).
@@ -1064,7 +1063,7 @@ potencia reactiva.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org4248a7f}]{Compensación de Reactiva con Condensadores}
+\begin{frame}[label={sec:org9f83c90}]{Compensación de Reactiva con Condensadores}
 Sea una carga de potencia activa \(P_z\), potencia reactiva \(Q_z\), factor de potencia \(\cos\theta\). Se desea \alert{mejorar el factor de potencia} a \(\cos \theta' > \cos \theta\).
 
 \begin{center}
@@ -1078,7 +1077,7 @@ Sea una carga de potencia activa \(P_z\), potencia reactiva \(Q_z\), factor de p
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org726a946}]{Cálculo de la Capacidad}
+\begin{frame}[label={sec:org9dc7860}]{Cálculo de la Capacidad}
 \begin{center}
 \includegraphics[height=0.3\textheight]{figs/Circuito_CompensacionReactiva.pdf}
 \end{center}
