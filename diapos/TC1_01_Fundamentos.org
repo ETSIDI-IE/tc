@@ -525,39 +525,69 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
 
 
 *** Equivalencia de Fuentes
-Sólo es posible establecer equivalencia entre *fuentes reales*.
+
 ****                                                               :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.33
+    :BEAMER_col: 0.25
     :END:
-#+ATTR_LATEX: :height 0.5\textheight
+#+ATTR_LATEX: :height 0.45\textheight
  file:figs/FuenteTensionRealDC.pdf
+
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+- Dos fuentes son equivalentes cuando suministran el mismo valor de tensión y corriente a un *circuito externo*, para cualquier circuito.
+
+- Sólo es posible establecer equivalencia entre *fuentes reales*.
+
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.25
+    :END:
+
+#+ATTR_LATEX: :height 0.45\textheight
+ file:figs/FuenteCorrienteRealDC.pdf
+
+
+*** Equivalencia de Fuentes
+
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.25
+    :END:
+#+ATTR_LATEX: :height 0.43\textheight
+ file:figs/FuenteTensionRealDC.pdf
+
+#+ATTR_LATEX: :height 0.43\textheight
+ file:figs/FuenteCorrienteRealDC.pdf
+
+****                                                               :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.75
+    :END:
+
+La salida de tensión de una fuente de tensión es:
 #+begin_export latex
 \[
   U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
 \]
 #+end_export
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.33
-    :END:
-    #+begin_export latex
-    \begin{align*}
-      R_g &= R_{\epsilon_g} = R_{I_g}\\
-      \epsilon_g &= R_g \cdot I_g\\
-      I_g &= \frac{\epsilon_g}{R_g}
-    \end{align*}
-    #+end_export
-****                                                               :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.33
-    :END:
-#+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+Y de una fuente de corriente:
 #+begin_export latex
 \[
-  I = I_g - \frac{U_{AB}}{R_{I_g}}
+  I = I_g - \frac{U_{AB}}{R_{I_g}} \rightarrow U_{AB} = R_{I_g} \cdot I_g - R_{I_g} \cdot I
 \]
+#+end_export
+Las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier combinación $(U_{AB}, I)$:
+#+begin_export latex
+    \[
+    \boxed{R_g = R_{\epsilon_g} = R_{I_g}}
+    \]
+    \[
+      \boxed{\epsilon_g = R_g \cdot I_g} \Leftrightarrow \boxed{I_g = \frac{\epsilon_g}{R_g}}
+    \]
 #+end_export
 
 ** Asociación de Elementos
