@@ -63,6 +63,8 @@ Calcula la resistencia equivalente entre A y B.
 \includegraphics[scale=0.7]{figs/CircuitoResistivo_FM.pdf}
 \end{minipage}
 
+\clearpage
+
 \section{}
 
 Analiza el circuito de la figura mediante el método de las mallas, obteniendo:
@@ -88,6 +90,115 @@ Con estos resultados, realiza un balance de potencias comparando la potencia de 
   \includegraphics{figs/mallas1.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Tal y como se muestra en la figura, usamos tres corrientes de malla dextrógiras. 
+
+  \includegraphics{figs/mallas1_corrientes.pdf}
+
+En primer lugar, establecemos las relaciones entre las corrientes de rama y las corrientes de malla:
+
+\begin{align*}
+  I_1 &= I_a\\
+  I_2 &= -I_a + I_c\\
+  I_3 &= -I_a + I_b\\
+  I_4 &= -I_b + I_c\\
+  I_5 &= -I_b\\
+  I_6 &= I_c
+\end{align*}
+
+A continuación, escribimos las ecuaciones del método de las mallas:
+\begin{equation*}
+  \begin{pmatrix}
+    (R_1 + R_3 + R_2) &  - R_3 & - R_2 \\
+    - R_3 & (R_5 + R_4 + R_3) & - R_4 \\
+    - R_2 & - R_4 &  (R_2 + R_4 + R_6)
+  \end{pmatrix} \cdot %
+  \begin{pmatrix}
+    I_a\\
+    I_b\\
+    I_c\\
+  \end{pmatrix} = %
+  \begin{pmatrix}
+    \epsilon_1 - \epsilon_2\\
+    \epsilon_2\\
+    \epsilon_3
+  \end{pmatrix}
+\end{equation*}
+
+\[
+  \left(\begin{array}{ccc}
+          8 & -3 & -2 \\
+          -3 & 7 & -2 \\
+          -2 & -2 & 7\\
+        \end{array}\right)%
+      \cdot \left(\begin{array}{c}
+              I_a\\
+              I_b\\
+              I_c\\
+            \end{array}\right)%
+            = \left(\begin{array}{c}
+              -245\\
+              490\\
+              735
+            \end{array}\right)
+\]
+cuya solución es:
+
+\begin{align*}
+  I_a &= \SI{65}{\ampere}\\
+  I_b &= \SI{145}{\ampere}\\
+  I_c &= \SI{165}{\ampere}
+\end{align*}
+
+Por tanto, los valores de las corrientes de rama son:
+
+\begin{align*}
+  I_1 &= \SI{65}{\ampere}\\
+  I_2 &= \SI{100}{\ampere}\\
+  I_3 &= \SI{80}{\ampere}\\
+  I_4 &= \SI{20}{\ampere}\\
+  I_5 &= \SI{-145}{\ampere}\\
+  I_6 &= \SI{165}{\ampere}
+\end{align*}
+
+Se puede (y se debe) comprobar que estos resultados cumplen la LKC en los nudos del circuito.
+
+Los potenciales en cada punto son, tomando el punto A como referencia:
+
+\begin{align*}
+  V_A &= \SI{0}{\volt}\\
+  V_B &= U_{BA} = \epsilon_1 - I_1 \cdot R_1 = \SI{50}{\volt}\\
+  V_C &= U_{CA} = - I_2 \cdot R_2 = \SI{-200}{\volt}\\
+  V_D &= U_{DA} = -I_4 \cdot R_4 + V_D = \SI{-240}{\volt}
+\end{align*}
+
+
+La potencia entregada por los generadores del circuito es:
+
+\begin{align*}
+  P_{\epsilon_1} &= \epsilon_1 \cdot I_1 = \SI{15.925}{\kilo\watt}\\
+  P_{\epsilon_2} &= \epsilon_2 \cdot I_3 = \SI{39.2}{\kilo\watt}\\
+  P_{\epsilon_3} &= \epsilon_3 \cdot I_5 = \SI{121.275}{\kilo\watt}\\
+  P_\epsilon &= P_{\epsilon_1} + P_{\epsilon_2} + P_{\epsilon_3} = \SI{176.4}{\kilo\watt}  
+\end{align*}
+
+La potencia disipada por las resistencias es:
+
+\begin{align*}
+  P_{R_1} &= I_1^2 \cdot R_1 = \SI{12.675}{\kilo\watt}\\
+  P_{R_2} &= I_2^2 \cdot R_2 = \SI{20}{\kilo\watt}\\
+  P_{R_3} &= I_3^2 \cdot R_3 = \SI{19.2}{\kilo\watt}\\
+  P_{R_4} &= I_4^2 \cdot R_4 = \SI{800}{\watt}\\
+  P_{R_5} &= I_5^2 \cdot R_5 = \SI{42.05}{\kilo\watt}\\
+  P_{R_6} &= I_5^2 \cdot R_5 = \SI{81.675}{\kilo\watt}\\
+  P_R &= \sum_i P_{Ri} = \SI{176.4}{\kilo\watt}  
+\end{align*}
+
+Comprobamos que se cumple el balance de potencias.
+
+\clearpage
+
 \section{}
 Analiza el circuito de la figura mediante el método de las mallas, obteniendo la corriente de cada una de las ramas. Con este resultado calcula la diferencia de potencial entre A y B, y realiza un balance de potencias comparando la potencia de los elementos activos y la de los elementos pasivos.
 
@@ -107,6 +218,106 @@ Analiza el circuito de la figura mediante el método de las mallas, obteniendo l
   \includegraphics{figs/mallas2.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Como es habitual, usaremos tres corrientes de malla dextrógiras. Las nombramos de izquierda a derecha, $I_a$, $I_b$ e $I_c$.
+
+En primer lugar, establecemos las relaciones entre las corrientes de rama y las corrientes de malla:
+
+\begin{align*}
+  I_1 &= -I_a\\
+  I_2 &= I_a - I_b\\
+  I_3 &= I_b\\
+  I_4 &= I_b - I_c\\
+  I_5 &= I_c
+\end{align*}
+
+A continuación, escribimos las ecuaciones del método de las mallas:
+
+\[
+  \left(\begin{array}{ccc}
+          R_1 + R_2 & -R_2 & 0\\
+          -R_2 & R_2 + R_3 + R_4 & - R_4\\
+          0 & -R_4 & R_4 + R_5\\
+        \end{array}\right)%
+      \cdot \left(\begin{array}{c}
+              I_a\\
+              I_b\\
+              I_c\\
+            \end{array}\right)%
+            = \left(\begin{array}{c}
+              \epsilon_1 - \epsilon_2\\
+              \epsilon_2\\
+              \epsilon_3
+            \end{array}\right)
+\]
+
+\[
+  \left(\begin{array}{ccc}
+          2 & -1 & 0 \\
+          -1 & 6 & -3 \\
+          0 & -3 & 7\\
+        \end{array}\right)%
+      \cdot \left(\begin{array}{c}
+              I_a\\
+              I_b\\
+              I_c\\
+            \end{array}\right)%
+            = \left(\begin{array}{c}
+              -118\\
+              236\\
+              118
+            \end{array}\right)
+\]
+cuya solución es:
+
+\begin{align*}
+  I_a &= \SI{-32}{\ampere}\\
+  I_b &= \SI{54}{\ampere}\\
+  I_c &= \SI{40}{\ampere}
+\end{align*}
+
+Por tanto, los valores de las corrientes de rama son:
+
+\begin{align*}
+  I_1 &= \SI{32}{\ampere}\\
+  I_2 &= \SI{-86}{\ampere}\\
+  I_3 &= \SI{54}{\ampere}\\
+  I_4 &= \SI{14}{\ampere}\\
+  I_5 &= \SI{40}{\ampere}
+\end{align*}
+
+Se puede (y se debe) comprobar que estos resultados cumplen la LKC en los nudos del circuito.
+
+La diferencia de potencial entre A y B es:
+
+\[
+  U_{AB} = I_3 \cdot R_3 + I_4 \cdot R_4 = \SI{150}{\volt}
+\]
+
+La potencia entregada por los generadores del circuito es:
+
+\begin{align*}
+  P_{\epsilon_1} &= \epsilon_1 \cdot (-I_1) = -\SI{3,776}{\kilo\watt}\\
+  P_{\epsilon_2} &= \epsilon_2 \cdot (-I_2) = \SI{20,296}{\kilo\watt}\\
+  P_{\epsilon_3} &= \epsilon_3 \cdot I_5 = \SI{4,72}{\kilo\watt}\\
+  P_\epsilon &= P_{\epsilon_1} + P_{\epsilon_2} + P_{\epsilon_3} = \SI{21,42}{\kilo\watt}  
+\end{align*}
+
+Es importante recordar que el criterio de signos de un generador considera que la potencia entregada es positiva cuando la corriente sale del generador por su terminal positivo. Por tanto, $I_1$ e $I_2$ son empleadas con un signo negativo. En consecuencia, la potencia del generador $\epsilon_1$ es negativa, lo que quiere decir que este generador funciona como receptor (absorbe potencia) Ahora bien, dado que $I_2$ tiene valor negativo (es decir, circula en sentido contrario al indicado en la figura), la potencia del generador $\epsilon_2$ es positiva, de forma que este generador actúa como tal.
+
+La potencia disipada por las resistencias es:
+
+\begin{align*}
+  P_{R_1} &= I_1^2 \cdot R_1 = \SI{1,024}{\kilo\watt}\\
+  P_{R_2} &= I_2^2 \cdot R_2 = \SI{7,396}{\kilo\watt}\\
+  P_{R_3} &= I_3^2 \cdot R_3 = \SI{5,832}{\kilo\watt}\\
+  P_{R_4} &= I_4^2 \cdot R_4 = \SI{588}{\watt}\\
+  P_{R_5} &= I_5^2 \cdot R_5 = \SI{6,4}{\kilo\watt}\\
+  P_R &= \sum_i P_{Ri} = \SI{21,42}{\kilo\watt}  
+\end{align*}
+
+Comprobamos que se cumple el balance de potencias.
 
 \clearpage
 
