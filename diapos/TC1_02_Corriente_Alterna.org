@@ -827,7 +827,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
      \left\{% 
        \begin{array}{l}
 	 P = 0\\
-	 Q = UI = -U^2 \omega C = - \frac{I^2}{\omega C}\\
+	 Q = -UI = -U^2 \omega C = - \frac{I^2}{\omega C}\\
        \end{array}
        \right.
      \]
