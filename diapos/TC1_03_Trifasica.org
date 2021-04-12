@@ -4,6 +4,13 @@
 #+OPTIONS: H:2
 
 * Introducción
+
+** 
+   :PROPERTIES:
+   :beamer_opt: plain
+   :END:
+file:figs/EstrellaEquilibrado.pdf
+
 ** Motivación de los sistemas trifásicos
 
 -  En un sistema trifásico la potencia instantánea es constante, evitando vibraciones y esfuerzos en las máquinas. (/La potencia instantánea de un sistema monofásico es pulsante./)
