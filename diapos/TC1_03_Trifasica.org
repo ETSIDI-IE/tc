@@ -646,6 +646,102 @@ Finalmente, la relación entre masas de conductor es:
 \]
 #+end_export
 
+* Compensación de Reactiva
+
+** Objetivo 
+
+- Sea un receptor *equilibrado* *inductivo* del que conocemos $P$, $Q$ y, por tanto, su factor de potencia $\cos \theta$.
+
+- Para reducir la potencia reactiva del sistema debemos instalar un *banco de condensadores* que suministrarán una potencia reactiva $Q_c$.
+
+- Como *resultado*, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_c$ y $\cos\theta' > \cos \theta$.
+
+- En trifásica existen dos posibilidades:
+  - Conexión en triángulo: $C_\triangle$
+  - Conexión en estrella: $C_Y$.
+
+** Conexión en Triángulo
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+BEGIN_EXPORT latex
+  \begin{align*}
+    Q &= P\tan\theta\\
+    Q' &= P\tan\theta' =\\
+      &= Q - Q_c\\
+    Q_c &= 3 \cdot \omega C_\triangle \cdot U^2
+  \end{align*}
+  #+END_EXPORT
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3\omega U^2}}
+\]
+#+END_EXPORT
+
+** Conexión en Estrella
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+BEGIN_EXPORT latex
+  \begin{align*}
+    Q &= P\tan\theta\\
+    Q' &= P\tan\theta' =\\
+      &= Q - Q_c\\
+    Q_c &= 3 \cdot \omega C_Y \cdot U_f^2
+  \end{align*}
+  #+END_EXPORT
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+\]
+#+END_EXPORT
+** Comparación Estrella-Triángulo
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.55\textheight
+ [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.55\textheight
+ [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+\]
+#+END_EXPORT
+
+\medskip
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triángulo*.
 * Medida de Potencia en Sistemas Trifásicos
 ** Recordatorio: vatímetro
 #+ATTR_LATEX: :height 0.6\textheight
@@ -1157,99 +1253,3 @@ Supongamos *SFD*:
     #+end_export
 
 
-* Compensación de Reactiva
-
-** Objetivo 
-
-- Sea un receptor *equilibrado* *inductivo* del que conocemos $P$, $Q$ y, por tanto, su factor de potencia $\cos \theta$.
-
-- Para reducir la potencia reactiva del sistema debemos instalar un *banco de condensadores* que suministrarán una potencia reactiva $Q_c$.
-
-- Como *resultado*, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_c$ y $\cos\theta' > \cos \theta$.
-
-- En trifásica existen dos posibilidades:
-  - Conexión en triángulo: $C_\triangle$
-  - Conexión en estrella: $C_Y$.
-
-** Conexión en Triángulo
-
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
-
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-  #+BEGIN_EXPORT latex
-  \begin{align*}
-    Q &= P\tan\theta\\
-    Q' &= P\tan\theta' =\\
-      &= Q - Q_c\\
-    Q_c &= 3 \cdot \omega C_\triangle \cdot U^2
-  \end{align*}
-  #+END_EXPORT
-#+BEGIN_EXPORT latex
-\[
-  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3\omega U^2}}
-\]
-#+END_EXPORT
-
-** Conexión en Estrella
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-  #+BEGIN_EXPORT latex
-  \begin{align*}
-    Q &= P\tan\theta\\
-    Q' &= P\tan\theta' =\\
-      &= Q - Q_c\\
-    Q_c &= 3 \cdot \omega C_Y \cdot U_f^2
-  \end{align*}
-  #+END_EXPORT
-#+BEGIN_EXPORT latex
-\[
-  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
-\]
-#+END_EXPORT
-** Comparación Estrella-Triángulo
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-#+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
-#+BEGIN_EXPORT latex
-\[
-  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
-\]
-#+END_EXPORT
-
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.5
-    :END:
-#+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
-#+BEGIN_EXPORT latex
-\[
-  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
-\]
-#+END_EXPORT
-
-\medskip
-
-*** :B_ignoreheading:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
-
-Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triángulo*.
