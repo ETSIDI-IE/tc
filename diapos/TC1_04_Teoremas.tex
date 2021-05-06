@@ -1,4 +1,4 @@
-% Created 2021-02-14 dom 17:11
+% Created 2021-05-06 jue 14:36
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, xcolor={usenames,svgnames,dvipsnames}]{beamer}
 \usepackage[utf8]{inputenc}
@@ -55,16 +55,16 @@
  pdftitle={Teoremas Generales},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.4)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.3.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Generadores}
-\label{sec:org33e9c0d}
+\label{sec:orgcea69af}
 
-\begin{frame}[label={sec:orge56794a}]{Generadores de Tensión y Corriente}
+\begin{frame}[label={sec:orgf96bba9}]{Generadores de Tensión y Corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -82,7 +82,7 @@ Un \alert{generador de corriente ideal} impone la corriente a la salida (\emph{l
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgdf723c3}]{Generador Real}
+\begin{frame}[label={sec:orgb4b2a5f}]{Generador Real}
 Los generadores reales tienen pérdidas que se modelan con una resistencia/impedancia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
 
 \begin{columns}
@@ -105,7 +105,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia/imped
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgd45779a}]{Equivalencia de fuentes}
+\begin{frame}[label={sec:orgcd03e6d}]{Equivalencia de fuentes}
 Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \begin{columns}
 \begin{column}{0.33\columnwidth}
@@ -134,7 +134,7 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orga4b7032}]{Generadores de Tensión dependientes \ldots{}}
+\begin{frame}[label={sec:org21fec3b}]{Generadores de Tensión dependientes \ldots{}}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
   \begin{center}
@@ -150,7 +150,7 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgb0053e7}]{Generadores de Corriente dependientes \ldots{}}
+\begin{frame}[label={sec:org9c42b8a}]{Generadores de Corriente dependientes \ldots{}}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
  \begin{center}
@@ -168,9 +168,9 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{frame}
 
 \section{Circuitos Lineales}
-\label{sec:orgf2b0c9c}
+\label{sec:org23e91e2}
 
-\begin{frame}[label={sec:org5815b5c}]{Elementos lineales}
+\begin{frame}[label={sec:orgd0cb0ff}]{Elementos lineales}
 \begin{itemize}
 \item Un circuito eléctrico es lineal si los elementos pasivos y activos que incluye son lineales.
 \item Un \alert{elemento pasivo} es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: \alert{resistencias, condensadores y bobinas}.
@@ -183,7 +183,7 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1a23a81}]{Homogeneidad o Proporcionalidad}
+\begin{frame}[label={sec:org967d3f4}]{Homogeneidad o Proporcionalidad}
 Sea \(y(t)\) la respuesta de un \alert{circuito lineal} a una excitación \(x(t)\). 
 
 Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), la respuesta del circuito será modificada por la misma constante, \(K \cdot y(t)\).
@@ -193,7 +193,7 @@ Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), l
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8156104}]{Análisis de un circuito mediante proporcionalidad}
+\begin{frame}[label={sec:org1bc30b6}]{Análisis de un circuito mediante proporcionalidad}
 \begin{block}{¿Qué excitación debo aplicar a un circuito para obtener una determinada respuesta?}
 \begin{itemize}
 \item Aplicamos una excitación de valor unidad.
@@ -204,7 +204,7 @@ Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), l
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org44816f9}]{Análisis de un circuito mediante proporcionalidad}
+\begin{frame}[label={sec:org06a27e3}]{Análisis de un circuito mediante proporcionalidad}
 \begin{block}{¿Qué respuesta proporciona un circuito ante una determinada excitación?}
 \begin{itemize}
 \item Suponemos una respuesta de valor unidad.
@@ -215,7 +215,7 @@ Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), l
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org6107033}]{Aditividad o Superposición}
+\begin{frame}[label={sec:org487fddf}]{Aditividad o Superposición}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 La respuesta de un \alert{circuito lineal} a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado
@@ -227,13 +227,13 @@ y(t) = \sum_i y_i(t)
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/superposicion.pdf}
+\includegraphics[height=0.9\textheight]{figs/superposicion.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org9709f30}]{Análisis de un circuito mediante superposición}
+\begin{frame}[label={sec:orgea9531f}]{Análisis de un circuito mediante superposición}
 \begin{block}{Procedimiento}
 \begin{enumerate}
 \item Se apagan todas las fuentes \alert{independientes} del circuito menos una.
@@ -249,7 +249,7 @@ y(t) = \sum_i y_i(t)
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgbacc3de}]{Análisis de un circuito mediante superposición}
+\begin{frame}[label={sec:org60f57bc}]{Análisis de un circuito mediante superposición}
 \begin{block}{Observaciones}
 \begin{itemize}
 \item \alert{Siempre} hay que aplicar este método cuando en un circuito conviven fuentes de \alert{diferente frecuencia} (o fuentes de corriente continua y corriente alterna).
@@ -259,7 +259,7 @@ y(t) = \sum_i y_i(t)
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgf4e49b7}]{Principio de superposición y Potencia}
+\begin{frame}[label={sec:org2e427af}]{Principio de superposición y Potencia}
 \begin{itemize}
 \item El principio de superposición aplica a tensiones y corrientes, pero \alert{no} a potencias. Supongamos \(i(t) = i_1(t) + i_2(t)\):
 \end{itemize}
@@ -277,9 +277,9 @@ y(t) = \sum_i y_i(t)
 
 
 \section{Teorema de Thévenin/Norton}
-\label{sec:org608f50f}
+\label{sec:org76cdeeb}
 
-\begin{frame}[label={sec:org62a05c3}]{Thévenin}
+\begin{frame}[label={sec:org8f8a409}]{Thévenin}
 Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una impedancia (impedancia de Thévenin, \(Z_{th}\)).
 
 \begin{center}
@@ -287,7 +287,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgae74b19}]{Norton}
+\begin{frame}[label={sec:orgbbcd202}]{Norton}
 Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una impedancia (impedancia de Norton, \(Z_N\)).
 
 \begin{center}
@@ -295,9 +295,9 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org1e5842b}]{Cálculo del equivalente de Thévenin}
+\begin{frame}[label={sec:org174d9e6}]{Cálculo del equivalente de Thévenin}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/EquivalenteThevenin.pdf}
+\includegraphics[height=0.43\textheight]{figs/EquivalenteThevenin.pdf}
 \end{center}
 
 \begin{itemize}
@@ -314,9 +314,9 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org34a7fea}]{Cálculo del equivalente de Norton}
+\begin{frame}[label={sec:orgee7e667}]{Cálculo del equivalente de Norton}
 \begin{center}
-\includegraphics[width=.9\linewidth]{figs/EquivalenteNorton.pdf}
+\includegraphics[height=0.43\textheight]{figs/EquivalenteNorton.pdf}
 \end{center}
 
 \begin{itemize}
@@ -333,23 +333,24 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgcd298bc}]{Cálculo de Thévenin/Norton}
+\begin{frame}[label={sec:orgc596957}]{Cálculo de Thévenin/Norton}
 \begin{block}{Observaciones}
 \begin{itemize}
-\item Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
 \item Cálculo de la impedancia:
 \begin{itemize}
 \item Si el circuito \alert{no} contiene fuentes dependientes, se puede realizar \alert{apagando} todos los \alert{generadores} y obteniendo la impedancia equivalente.
 \item Si el circuito contiene fuentes dependientes, es necesario conectar un \alert{generador de prueba} a la salida del circuito y obtener la relación entre la tensión y corriente de este generador.
 \end{itemize}
+
+\item Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
 \end{itemize}
 \end{block}
 \end{frame}
 
 \section{Teorema de máxima transferencia de potencia}
-\label{sec:org1c86e4b}
+\label{sec:org96c39d8}
 
-\begin{frame}[label={sec:orgc5c2b33}]{Planteamiento}
+\begin{frame}[label={sec:org9d40083}]{Planteamiento}
 Sea el circuito lineal de la figura. ¿Qué impedancia \(Z_L\) hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
 
 \begin{center}
@@ -361,7 +362,7 @@ Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
 
 
 
-\begin{frame}[label={sec:org80745bc}]{Ecuaciones}
+\begin{frame}[label={sec:org2fd9ec1}]{Ecuaciones}
 Calculamos la potencia activa en la impedancia de carga \(Z_L\):
 \begin{columns}
 \begin{column}{0.3\columnwidth}
@@ -395,7 +396,7 @@ Las condiciones de máximo son:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgfdb4f4f}]{Reactancia}
+\begin{frame}[label={sec:org2ee872b}]{Reactancia}
 A partir de la expresión de potencia en la carga\ldots{}
 \[
   P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
@@ -410,7 +411,7 @@ Aplicamos la condición de máximo y obtenemos un resultado parcial:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org9c5d08b}]{Resistencia}
+\begin{frame}[label={sec:org9845671}]{Resistencia}
 Simplificamos la expresión de la potencia teniendo en cuenta el resultado anterior (\(X_L = - X_{th}\)):
 \[
   P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L
@@ -426,7 +427,7 @@ Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgdc8e3f4}]{Impedancia de carga}
+\begin{frame}[label={sec:orgc367731}]{Impedancia de carga}
 Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) \ldots{}
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/EquivalenteThevenin.pdf}
@@ -438,7 +439,7 @@ Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) \
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgcf73956}]{Máxima potencia disponible}
+\begin{frame}[label={sec:org9c941f6}]{Máxima potencia disponible}
 La máxima potencia disponible en la carga es:
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/EquivalenteThevenin.pdf}

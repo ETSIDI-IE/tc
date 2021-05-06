@@ -170,6 +170,7 @@ y(t) = \sum_i y_i(t)
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+ #+ATTR_LATEX: :height 0.9\textheight
  [[file:figs/superposicion.pdf]]
 
 ** Análisis de un circuito mediante superposición
@@ -218,7 +219,7 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 [[file:figs/EquivalenteNorton.pdf]]
 
 ** Cálculo del equivalente de Thévenin
-
+#+ATTR_LATEX: :height 0.43\textheight
 [[file:figs/EquivalenteThevenin.pdf]]
 
 - Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
@@ -235,7 +236,7 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 #+END_EXPORT
 
 ** Cálculo del equivalente de Norton
-
+#+ATTR_LATEX: :height 0.43\textheight
 [[file:figs/EquivalenteNorton.pdf]]
 
 - Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
@@ -254,10 +255,11 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 ** Cálculo de Thévenin/Norton
 
 *** Observaciones
-- Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
 - Cálculo de la impedancia:
   - Si el circuito *no* contiene fuentes dependientes, se puede realizar *apagando* todos los *generadores* y obteniendo la impedancia equivalente.
   - Si el circuito contiene fuentes dependientes, es necesario conectar un *generador de prueba* a la salida del circuito y obtener la relación entre la tensión y corriente de este generador.
+
+- Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
 
 * Teorema de máxima transferencia de potencia
 
