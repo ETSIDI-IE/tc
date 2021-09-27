@@ -423,7 +423,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 
 \begin{align*}
   U_{AB} &= U_{AA'} + U_{A'B'} + U_{B'B}\\
-  U_{CD} &= U_{CC'} + U_{C'D'} + U_{DD'}
+  U_{CD} &= U_{CC'} + U_{C'D'} + U_{D'D}
 \end{align*}
 #+end_export
 
