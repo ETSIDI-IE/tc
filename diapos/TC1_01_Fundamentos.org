@@ -490,7 +490,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{align*}
 
 \begin{align*}
-  U_{CD} &= U_{CC'} + U_{C'D'} + U_{DD'}\\
+  U_{CD} &= U_{CC'} + U_{C'D'} + U_{D'D}\\
   \Aboxed{U_{CD} &= \epsilon_m + I\cdot R_m}
 \end{align*}
 #+end_export
