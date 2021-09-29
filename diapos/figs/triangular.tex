@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+
+\begin{tikzpicture}[domain = -2:2, samples = 1000]
+  % \draw[very thin,color=gray] (-0.1,-1.1) grid (10,1.1);
+  \draw[->] (-2.2,0) -- (2.2,0) node[right] {$t$};
+  \draw[->] (0,-0.1) -- (0,2.1) node[above] {$f(t)$};
+  \draw[dashed, <->] (-1,-0.2) -- (1,-0.2);
+  \draw (0, -0.2) node[below] {$W$};
+  \draw[very thick, color=blue] plot[id=tri] function{x < -1 || x > 1 ? 0 : x > 0 ? -x + 1 : x + 1};
+\end{tikzpicture}
+
+\end{document}
+
+
