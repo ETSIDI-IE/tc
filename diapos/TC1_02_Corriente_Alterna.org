@@ -63,7 +63,7 @@ Y_m=\frac{1}{T}\int_{0}^{T}y(t)\, dt
 
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega\cdot+\theta)\, dt=0
+Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega \cdot t+\theta)\, dt=0
 \]
 #+END_EXPORT
 *** Valor eficaz

@@ -1407,11 +1407,81 @@ Nudo B
 
 * Formas de Onda
 
-** Definición
+** Definiciones
 
 *** Forma de Onda
 
-** Tipos
+- La salida de los generadores (de tensión o de corriente) son funciones que pueden variar con el tiempo.
+- La dependencia funcional $u = u(t)$ o $i = i(t)$ se denomina forma de onda.
+*** Clasificación
+**** Signo de la magnitud
+  - Unidireccionales
+    - Signo constante
+    - El valor puede ser constante (corriente continua) o variable.
+  - Bidireccionales
+    - Signo variable con el tiempo.
+**** Repetición del valor de la magnitud
+  - Periódicas
+
+    El valor de la magnitud se repite de forma regular.
+    
+  - No periódicas
+
+    El valor de la magnitud varía de forma arbitraria con el tiempo.
+    
+*** Valores que definen una onda periódica
+**** Período y frecuencia
+- Período ($T$): tiempo que tarda en repetirse la función.
+- Frecuencia ($f$): número de repeticiones por unidad de tiempo.
+- $f = \frac{1}{T}$
+**** Valor medio
+
+#+BEGIN_EXPORT latex
+\[
+U_m=\frac{1}{T}\int_{0}^{T}u(t)\, dt \qquad \qquad%
+I_m=\frac{1}{T}\int_{0}^{T}i(t)\, dt
+\]
+#+END_EXPORT
+
+**** Valor eficaz
+
+#+BEGIN_EXPORT latex
+\[
+U = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}u^{2}(t)\, dt} \qquad \qquad%
+I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
+\]
+#+END_EXPORT
+
+*** Valores que definen una onda periódica
+- Valores de pico
+
+    #+begin_export latex
+  \[
+  Y_{max} = \max(y(t)) \qquad Y_{min} = \min(y(t))
+  \]
+  #+end_export
+    
+- Amplitud o valor pico a pico
+
+#+begin_export latex
+  \[
+   |Y_{max} - Y_{min}|
+  \]
+#+end_export
+
+- Factor de amplitud
+
+#+begin_export latex
+    \[FA = \frac{Y_{max}}{Y}\]
+#+end_export
+
+- Factor de forma
+
+#+begin_export latex
+  \[FF = \frac{Y}{Y_{m}}\]
+#+end_export
+
+** Formas de Onda Básicas
 *** Escalón
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1599,3 +1669,57 @@ file:figs/triangular_t0.pdf
   \]
 #+end_export
 
+** Formas de Onda Periódicas
+
+
+*** Tren de Pulsos Bidireccional
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:figs/cuadrada_periodica.pdf]]
+
+*** Tren de Pulsos Unidireccional
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:figs/cuadrada0_periodica.pdf]]
+
+*** Onda Triangular Bidireccional
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:figs/triangular_periodica.pdf]]
+*** Onda Triangular Unidireccional
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:figs/triangular0_periodica.pdf]]
+
+*** Onda sinusoidal
+
+[[file:figs/sin.pdf]]
+
+
+\[
+y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
+\]
+
+- $Y_{o}$ valor máximo de la onda.
+
+- T: periodo de la onda (segundos)
+
+- $\omega=\frac{2\cdot\pi}{T}$: pulsación (radianes/segundo)
+
+- $f=\frac{\omega}{2\cdot\pi}=\frac{1}{T}$: frecuencia (Hz)
+  
+- $\theta$: fase (radianes o grados)
+
+
+*** Valor medio y valor eficaz
+
+**** Valor medio
+
+#+BEGIN_EXPORT latex
+\[
+Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega \cdot t + \theta)\, dt=0
+\]
+#+END_EXPORT
+**** Valor eficaz
+
+#+BEGIN_EXPORT latex
+\[
+Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\right)^{2}dt}=\frac{Y_{o}}{\sqrt{2}}
+\]
+#+END_EXPORT
