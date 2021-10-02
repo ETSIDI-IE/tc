@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
 \usepackage{steinmetz}
+\usepackage{diffcoeff}
 
 \renewcommand{\thesection}{Problema \arabic{section}}
 
@@ -1087,6 +1088,239 @@ P_{R7} & = & I_{14}^{2}\cdot R_{7}=1\, W
 \end{eqnarray*}
 siendo que la suma de estas potencias individuales coincide con la
 potencia total activa.
+
+\clearpage
+
+\section{}
+
+En el circuito de la figura hay que determinar:
+
+\begin{enumerate}
+\item La corriente $i_1(t)$.
+\item La potencia entregada por $e(t)$.
+\item La potencia disipada por $R$.
+\end{enumerate}
+
+Datos: $R = \SI{5}{\ohm}$, $C = \SI{0.2}{\farad}$.
+
+\subsection*{Solución}
+
+\begin{enumerate}
+
+\item La corriente $i(t)$.
+
+  El período de las señales $i(t)$ y $e(t)$ es $T = \SI{2}{\second}$, por lo que los cálculos se realizan únicamente en el intervalo $0 \leq t < 2$.
+
+Las expresiones analíticas de las señales de los generadores son:
+
+\[
+  e(t) = %
+  \begin{cases}
+    10\cdot t & 0 \leq t < 1\\
+    20 - 10 \cdot t & 1 \leq t < 2 
+  \end{cases}
+\]
+
+\[
+  i(t) = %
+  \begin{cases}
+    -3 & 0 \leq t < 1\\
+    3 & 1 \leq t < 2 
+  \end{cases}
+\]
+
+Las expresiones de las corrientes del circuito son:
+
+\[
+  i_1(t) = i_c(t) - i(t)
+\]
+
+\[
+  i_c(t) = C \diff{u_c(t)}{t} = C \diff{e(t)}{t}
+\]
+
+
+
+Derivamos $e(t)$ y obtenemos $i_c(t)$:
+
+\[
+  i_c(t) = %
+  \begin{cases}
+    2 & 0 \leq t < 1\\
+    -2 & 1 \leq t < 2 
+  \end{cases}
+\]
+
+A continuación descontamos la función $i(t)$ para obtener $i_1(t)$:
+
+\[
+  i_1(t) = %
+  \begin{cases}
+    5 & 0 \leq t < 1\\
+    -5 & 1 \leq t < 2 
+  \end{cases}
+\]
+
+\item La potencia entregada por $e(t)$.
+
+  \begin{align*}
+    p_E(t) &= e(t) \cdot i_1(t) = \\
+           &=%
+             \begin{cases}
+               50\cdot t & 0 \leq t < 1\\
+               50 \cdot t - 100 & 1 \leq t < 2 
+             \end{cases}
+  \end{align*}
+  
+  \begin{align*}
+    P_E &= \frac{1}{T} \int_0^T p_E(t) \enspace \mathrm{dt}=\\
+        &= \frac{1}{2} \left[ \int_0^1 10t \cdot 5 \enspace \mathrm{dt} + \int_1^2 (20 - 10t) \cdot (-5) \enspace \mathrm{dt}  \right] =\\
+        &=\SI{0}{\watt}
+  \end{align*}
+
+  
+\item La potencia disipada por $R$.
+
+  \[
+    P_R = R \cdot I^2
+  \]
+
+  $I$ es el valor eficaz de la corriente $i(t)$:
+
+  \[
+    I^2 = \frac{1}{T} \int_0^T i^2(t) \enspace \mathrm{dt} = 9
+  \]
+
+  \[
+    P_R = \SI{45}{\watt}
+  \]
+  
+\end{enumerate}
+
+\clearpage
+
+\section{}
+
+En el circuito de la figura se pide:
+
+\begin{enumerate}
+\item Obtener la expresión analítica y la representación gráfica de las corrientes $i_L(t)$ e $i_R(t)$.
+\item Calcular los valores medios y eficaces de las corrientes $i_L(t)$ e $i_R(t)$.
+\item Obtener la expresión analítica y la representación gráfica de la corriente $i(t)$ y de la potencia del generador $e(t)$.
+\end{enumerate}
+
+Datos: $R = \SI{6}{\ohm}$, $L = \SI{4}{\milli\henry}$, $E = \SI{12}{\volt}$.
+
+\subsection*{Solución}
+
+\begin{enumerate}
+\item $i_L(t)$ e $i_R(t)$
+  Obtenemos la expresión analítica de $e(t)$ en el primer periodo de la señal ($T = \SI{2}{\milli\second}$):
+  
+  \[
+    e(t) = %
+    \begin{cases}
+      12 & 0 \leq t < 10^{-3} \\
+      -12 & 10^{-3} \leq t < 2 \cdot 10^{-3}
+    \end{cases}
+  \]
+
+  A continuación obtenemos $i_R(t)$:
+
+  \[
+    i_R(t) = \frac{e(t)}{R} = %
+    \begin{cases}
+      2 & 0 \leq t < 10^{-3} \\
+      -2 & 10^{-3} \leq t < 2 \cdot 10^{-3}
+    \end{cases}
+  \]
+
+  Para obtener la corriente $i_L(t)$ debemos integrar por tramos, asumiendo que $i_L(-\infty) = 0$.
+
+  \[
+    i_L(t) = \frac{1}{L} \int_{-\infty}^t e(\tau) \enspace \mathrm{d}\tau = \frac{1}{L} \int_0^t e(\tau) \enspace \mathrm{d}\tau
+  \]
+
+  Calculamos esta integral por tramos:
+
+  \begin{itemize}
+  \item   $ 0 \leq t < 10^{-3}$
+    \[
+      i_L(t) = 250 \int_0^t 12 \enspace \mathrm{d}\tau = 3\cdot 10^3 \cdot t
+    \]
+    Particularizamos en los extremos temporales:
+    
+    \begin{align*}
+      i_L(t = 0) &= \SI{0}{\ampere}\\
+      i_L(t = 10^{-3}) &= \SI{3}{\ampere}
+    \end{align*}
+    
+  \item $10^{-3} \leq t < 2 \cdot 10^{-3}$
+    \[
+      i_L(t = 10^{-3}) + 250 \int_{10^{-3}}^t -12 \enspace \mathrm{d}\tau = 3 + 3\cdot 10^3 \cdot (10^{-3} - t) = 6- 3 \cdot 10^3 \cdot t
+    \]
+
+    Particularizamos:
+    \begin{align*}
+      i_L(t = 10^{-3}) &= \SI{3}{\ampere}\\
+      i_L(t = 2 \cdot 10^{-3}) &= \SI{0}{\ampere}
+    \end{align*}
+
+  \end{itemize}
+
+  
+\item Valores medios y eficaces.
+
+  El valor medio de $i_R(t)$ es 0. Calculamos el valor medio en un semiperiodo:
+
+  \[
+    I_{Rm}(t) = \frac{2}{T} \int_0^{T/2} i_R(t) \enspace \mathrm{dt} = \SI{2}{\ampere} 
+  \]
+
+  El valor eficaz de esta señal coincide con su valor máximo.
+
+  \[
+    I_R(t) = \sqrt{\frac{1}{T} \int_0^T i^2_R(t) \enspace \mathrm{dt}} = \SI{2}{\ampere} 
+  \]
+
+  Para la corriente $i_L(t)$ aprovechamos su simetría y calculamos únicamente en un semiperiodo:
+
+    \[
+      I_{Lm}(t) = \frac{1}{T} \int_0^{T/2} i_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} 3 \cdot 10 ^3 \cdot t \enspace \mathrm{dt} = \SI{1.5}{\ampere} 
+  \]
+
+      \[
+      I^2_L(t) = \frac{1}{T} \int_0^{T/2} i^2_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} (3 \cdot 10 ^3 \cdot t)^2 \enspace \mathrm{dt} = 3 \Rightarrow I_L = \SI{1.5}{\ampere} 
+  \]
+
+  
+\item $i(t)$ y $p_E(t)$
+
+  \[
+    i(t) = i_R(t) + i_L(t)
+  \]
+
+  \[
+    i(t) = %
+    \begin{cases}
+      2 + 3\cdot 10^3 \cdot t &  0 \leq t < 10^{-3}\\ 
+      4 - 3\cdot 10^3 \cdot t & 10^{-3} \leq t < 2 \cdot 10^{-3}
+    \end{cases}
+  \]
+
+  \[
+    p_E(t) = e(t) \cdot i(t)
+  \]
+  
+  \[
+    p_E(t) = %
+    \begin{cases}
+      24 + 36\cdot 10^3 \cdot t &  0 \leq t < 10^{-3}\\ 
+      -48 + 36\cdot 10^3 \cdot t & 10^{-3} \leq t < 2 \cdot 10^{-3}
+    \end{cases}
+  \]
+
+\end{enumerate}
 
 \end{document}
 
