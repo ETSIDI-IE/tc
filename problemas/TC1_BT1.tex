@@ -1103,6 +1103,16 @@ En el circuito de la figura hay que determinar:
 
 Datos: $R = \SI{5}{\ohm}$, $C = \SI{0.2}{\farad}$.
 
+\begin{minipage}[c]{0.3\linewidth}
+  \includegraphics{figs/tren_pulsos.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.4\linewidth}
+  \includegraphics{figs/formas_onda1.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.3\linewidth}
+  \includegraphics{figs/onda_triangular.pdf}
+\end{minipage}
+
 \subsection*{Solución}
 
 \begin{enumerate}
@@ -1163,16 +1173,23 @@ A continuación descontamos la función $i(t)$ para obtener $i_1(t)$:
 
 \item La potencia entregada por $e(t)$.
 
-  \begin{align*}
-    p_E(t) &= e(t) \cdot i_1(t) = \\
-           &=%
-             \begin{cases}
-               50\cdot t & 0 \leq t < 1\\
-               50 \cdot t - 100 & 1 \leq t < 2 
-             \end{cases}
-  \end{align*}
-  
-  \begin{align*}
+  \begin{minipage}[c]{0.7\linewidth}
+    \begin{align*}
+      p_E(t) &= e(t) \cdot i_1(t) = \\
+             &=%
+               \begin{cases}
+                 50\cdot t & 0 \leq t < 1\\
+                 50 \cdot t - 100 & 1 \leq t < 2 
+               \end{cases}
+    \end{align*}
+  \end{minipage}
+  \begin{minipage}[c]{0.3\linewidth}
+  \includegraphics{figs/tren_rampas.pdf}
+\end{minipage}
+
+Su valor medio es:
+
+\begin{align*}
     P_E &= \frac{1}{T} \int_0^T p_E(t) \enspace \mathrm{dt}=\\
         &= \frac{1}{2} \left[ \int_0^1 10t \cdot 5 \enspace \mathrm{dt} + \int_1^2 (20 - 10t) \cdot (-5) \enspace \mathrm{dt}  \right] =\\
         &=\SI{0}{\watt}
@@ -1201,6 +1218,7 @@ A continuación descontamos la función $i(t)$ para obtener $i_1(t)$:
 
 \section{}
 
+
 En el circuito de la figura se pide:
 
 \begin{enumerate}
@@ -1210,6 +1228,14 @@ En el circuito de la figura se pide:
 \end{enumerate}
 
 Datos: $R = \SI{6}{\ohm}$, $L = \SI{4}{\milli\henry}$, $E = \SI{12}{\volt}$.
+
+\begin{minipage}[c]{0.5\linewidth}
+  \includegraphics{figs/formas_onda2.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.5\linewidth}
+  \includegraphics{figs/tren_pulsos2.pdf}
+\end{minipage}
+
 
 \subsection*{Solución}
 
@@ -1227,13 +1253,18 @@ Datos: $R = \SI{6}{\ohm}$, $L = \SI{4}{\milli\henry}$, $E = \SI{12}{\volt}$.
 
   A continuación obtenemos $i_R(t)$:
 
-  \[
-    i_R(t) = \frac{e(t)}{R} = %
-    \begin{cases}
-      2 & 0 \leq t < 10^{-3} \\
-      -2 & 10^{-3} \leq t < 2 \cdot 10^{-3}
-    \end{cases}
-  \]
+  \begin{minipage}[c]{0.5\linewidth}
+    \[
+      i_R(t) = \frac{e(t)}{R} = %
+      \begin{cases}
+        2 & 0 \leq t < 10^{-3} \\
+        -2 & 10^{-3} \leq t < 2 \cdot 10^{-3}
+      \end{cases}
+    \]
+  \end{minipage}
+  \begin{minipage}[c]{0.5\linewidth}
+    \includegraphics{figs/tren_pulsos2_solucion.pdf}
+  \end{minipage}
 
   Para obtener la corriente $i_L(t)$ debemos integrar por tramos, asumiendo que $i_L(-\infty) = 0$.
 
@@ -1268,29 +1299,42 @@ Datos: $R = \SI{6}{\ohm}$, $L = \SI{4}{\milli\henry}$, $E = \SI{12}{\volt}$.
 
   \end{itemize}
 
-  
+  En resumen:
+
+  \begin{minipage}[c]{0.5\linewidth}
+    \[
+      i_L(t) = %
+      \begin{cases}
+        3\cdot 10^3 \cdot t & 0 \leq t < 10^{-3} \\
+        6- 3 \cdot 10^3 \cdot t & 10^{-3} \leq t < 2 \cdot 10^{-3}
+      \end{cases}
+    \]
+  \end{minipage}
+  \begin{minipage}[c]{0.5\linewidth}
+    \includegraphics{figs/onda_triangular2_solucion.pdf}
+  \end{minipage}
 \item Valores medios y eficaces.
 
   El valor medio de $i_R(t)$ es 0. Calculamos el valor medio en un semiperiodo:
 
   \[
-    I_{Rm}(t) = \frac{2}{T} \int_0^{T/2} i_R(t) \enspace \mathrm{dt} = \SI{2}{\ampere} 
+    I_{Rm} = \frac{2}{T} \int_0^{T/2} i_R(t) \enspace \mathrm{dt} = \SI{2}{\ampere} 
   \]
 
   El valor eficaz de esta señal coincide con su valor máximo.
 
   \[
-    I_R(t) = \sqrt{\frac{1}{T} \int_0^T i^2_R(t) \enspace \mathrm{dt}} = \SI{2}{\ampere} 
+    I_R = \sqrt{\frac{1}{T} \int_0^T i^2_R(t) \enspace \mathrm{dt}} = \SI{2}{\ampere} 
   \]
 
   Para la corriente $i_L(t)$ aprovechamos su simetría y calculamos únicamente en un semiperiodo:
 
     \[
-      I_{Lm}(t) = \frac{1}{T} \int_0^{T/2} i_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} 3 \cdot 10 ^3 \cdot t \enspace \mathrm{dt} = \SI{1.5}{\ampere} 
+      I_{Lm} = \frac{1}{T} \int_0^{T/2} i_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} 3 \cdot 10 ^3 \cdot t \enspace \mathrm{dt} = \SI{1.5}{\ampere} 
   \]
 
       \[
-      I^2_L(t) = \frac{1}{T} \int_0^{T/2} i^2_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} (3 \cdot 10 ^3 \cdot t)^2 \enspace \mathrm{dt} = 3 \Rightarrow I_L = \SI{1.5}{\ampere} 
+      I^2_L = \frac{1}{T} \int_0^{T/2} i^2_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} (3 \cdot 10 ^3 \cdot t)^2 \enspace \mathrm{dt} = 3 \Rightarrow I_L = \SI{1.5}{\ampere} 
   \]
 
   
