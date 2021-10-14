@@ -29,16 +29,16 @@
   to [short, -*] (D') node[ground] {}
   to [short, -*] (E')
   (A) node[left] {A}to [V, v = $\epsilon_1$] ++(0, -2)
-  to [R, l = $R_1$] (A')
-  (B) to [R, l = $R_4$] (B')
+  to [R, l = $R_1$, i<= $I_{R1}$] (A')
+  (B) to [R, l = $R_4$, i = $I_{R4}$] (B')
   (B) to [I, l_= $I_{g3}$] (C')
   (C') to [I, l_= $I_{g2}$] (C)
   (D) node[above] {B} to [V, v = $\epsilon_3$] ++(0, -2)
-  to [R, l = $R_3$] (D')
-  (E) to [R, l = $R_5$] (E')
+  to [R, l = $R_3$, i<= $I_{R3}$] (D')
+  (E) to [R, l = $R_5$, i = $I_{R5}$] (E')
   (A) to [short] ++(0, 2)
   to [V, v = $\epsilon_2$] ++(4.5, 0)
-  to [R, l = $R_2$] ++(4.5,0)
+  to [R, l = $R_2$, i<= $I_{R2}$] ++(4.5,0)
   to [short] (E);
 \end{circuitikz}
 

@@ -327,7 +327,7 @@ Comprobamos que se cumple el balance de potencias.
 En el circuito de la figura se debe emplear el método de los nudos para determinar:
 \begin{itemize}
 \item Las tensiones en los nudos A y B.
-\item Las corrientes de todas las ramas.
+\item Las corrientes de rama señaladas.
 \item El balance de potencias, diferenciando entre elementos activos y elementos pasivos.
 \end{itemize}
 
@@ -373,15 +373,17 @@ La solución de esta ecuación matricial es $V_A = \SI{4}{\volt}$ y $V_B = \SI{1
 Con estos resultados podemos calcular las corrientes que circulan por las resistencias asociadas a los generadores de tensión:
 
 \begin{align*}
-V_A &= E_1 - I_{R1} R_1\\
+V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
 V_{AB} &= E_2 - I_{R2} R_2\\
-V_B &= E_3 - I_{R3} R_3\\
+V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
 \end{align*}
 
 \begin{align*}
-I_{R1} &= \SI{1}{\ampere}\\
-I_{R2} &= \SI{22}{\ampere}\\
-I_{R3} &= \SI{5}{\ampere}
+  I_{R1} &= \SI{1}{\ampere}\\
+  I_{R2} &= \SI{22}{\ampere}\\
+  I_{R3} &= \SI{5}{\ampere}\\
+  I_{R4} &= \SI{2}{\ampere}\\
+  I_{R5} &= \SI{7}{\ampere}
 \end{align*}
 
 Por tanto, los elementos activos aportan un total de \SI{642}{\watt}:
@@ -1334,7 +1336,7 @@ Datos: $R = \SI{6}{\ohm}$, $L = \SI{4}{\milli\henry}$, $E = \SI{12}{\volt}$.
   \]
 
       \[
-      I^2_L = \frac{1}{T} \int_0^{T/2} i^2_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} (3 \cdot 10 ^3 \cdot t)^2 \enspace \mathrm{dt} = 3 \Rightarrow I_L = \SI{1.5}{\ampere} 
+      I^2_L = \frac{1}{T} \int_0^{T/2} i^2_L(t) \enspace \mathrm{dt} = 10^3 \int_0^{10^{-3}} (3 \cdot 10 ^3 \cdot t)^2 \enspace \mathrm{dt} = 3 \Rightarrow I_L = \SI[parse-numbers=false]{\sqrt{3}}{\ampere} 
   \]
 
   
