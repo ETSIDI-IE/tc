@@ -1,4 +1,4 @@
-% Created 2021-04-15 jue 20:01
+% Created 2021-11-13 sáb 20:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, xcolor={usenames,svgnames,dvipsnames}]{beamer}
 \usepackage[utf8]{inputenc}
@@ -23,11 +23,9 @@
 \usepackage{steinmetz}
 \usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker=comma}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
@@ -55,22 +53,22 @@
  pdftitle={Sistemas Trifásicos},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.3.6)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Introducción}
-\label{sec:org28ec705}
+\label{sec:org1705ebb}
 
-\begin{frame}[label={sec:orgdae3baa},plain]{}
+\begin{frame}[label={sec:orge31b54e},plain]{}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/EstrellaEquilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge4b954e}]{Motivación de los sistemas trifásicos}
+\begin{frame}[label={sec:orgb7c4c2e}]{Motivación de los sistemas trifásicos}
 \begin{itemize}
 \item En un sistema trifásico la potencia instantánea es constante, evitando vibraciones y esfuerzos en las máquinas. (\emph{La potencia instantánea de un sistema monofásico es pulsante.})
 
@@ -78,7 +76,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org5509680}]{Ondas Trifásicas}
+\begin{frame}[label={sec:org321470d}]{Ondas Trifásicas}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/TensionesTrifasica.pdf}
 \end{center}
@@ -90,7 +88,7 @@
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org3af4e05}]{Fasores de un sistema trifásico}
+\begin{frame}[label={sec:orgfd5a03d}]{Fasores de un sistema trifásico}
 \begin{center}
 \includegraphics[height=0.5\textheight]{figs/FasoresTrifasica.pdf}
 \end{center}
@@ -103,8 +101,8 @@
 \end{frame}
 
 \section{Generadores}
-\label{sec:org1bb1b08}
-\begin{frame}[label={sec:org4b09c75}]{Conexión}
+\label{sec:org936b874}
+\begin{frame}[label={sec:orgb7269dd}]{Conexión}
 \begin{center}
 \includegraphics[height=0.5\textheight]{figs/GeneradoresTrifasica.pdf}
 \end{center}
@@ -128,7 +126,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org59b5f85}]{Las tensiones suman 0}
+\begin{frame}[label={sec:orgff156e5}]{Las tensiones suman 0}
 \begin{center}
 \includegraphics[height=0.6\textheight]{figs/FasoresSumaCero.pdf}
 \end{center}
@@ -138,7 +136,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgfd213ff}]{Las tensiones suman 0}
+\begin{frame}[label={sec:orgf5ec13f}]{Las tensiones suman 0}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/TensionesTrifasica.pdf}
 \end{center}
@@ -149,7 +147,7 @@
 \end{frame}
 
 
-\begin{frame}[label={sec:org22dd587}]{Tensiones de Fase y Línea}
+\begin{frame}[label={sec:orgad749bd}]{Tensiones de Fase y Línea}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -172,7 +170,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
        \overline{U}_{AB} + \overline{U}_{BC} + \overline{U}_{CA} &= 0     \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org6b798b1}]{Tensiones de Fase y Línea}
+\begin{frame}[label={sec:org940a942}]{Tensiones de Fase y Línea}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -205,7 +203,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org5289d61}]{Secuencia de Fases}
+\begin{frame}[label={sec:orge4d9758}]{Secuencia de Fases}
 \begin{itemize}
 \item Sentido en el que ocurren los máximos de cada fase.
 \item Secuencia de Fases Directa (\alert{SFD}): ABC
@@ -221,7 +219,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgfbcf15d}]{Secuencia de Fases Directa (SFD)}
+\begin{frame}[label={sec:orgf20811e}]{Secuencia de Fases Directa (SFD)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/FasoresTrifasica_ABC.pdf}
 \end{center}
@@ -251,7 +249,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf71be67}]{Secuencia de Fases Inversa (SFI)}
+\begin{frame}[label={sec:org23eb0fd}]{Secuencia de Fases Inversa (SFI)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{figs/FasoresTrifasica_ACB.pdf}
 \end{center}
@@ -279,8 +277,8 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{columns}
 \end{frame}
 \section{Receptores}
-\label{sec:org64ab65e}
-\begin{frame}[label={sec:orgd91a55f}]{Tipos de Receptores}
+\label{sec:orgf5e55d7}
+\begin{frame}[label={sec:org5374533}]{Tipos de Receptores}
 \begin{block}{Conexión}
 \begin{itemize}
 \item \alert{Estrella} (punto común) Y
@@ -297,13 +295,13 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 
-\begin{frame}[label={sec:org65e4eec}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:org7d23984}]{Receptor en Estrella Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/EstrellaEquilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org039a9a4}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orgf3c1bba}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -332,19 +330,19 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org15ca9c5}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orgd12ce99}]{Receptor en Estrella Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/EstrellaEquilibrado_SinNeutro.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org59acf7d}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:org9ecf743}]{Receptor en Triángulo Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/TrianguloEquilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgd26d8b3}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:orgca0cea8}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -372,7 +370,7 @@ Corriente de Fase:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf85390d}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:org0f4e520}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -399,13 +397,13 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org1d3f843}]{Receptor en Estrella Desequilibrado con Neutro}
+\begin{frame}[label={sec:org88cf2a9}]{Receptor en Estrella Desequilibrado con Neutro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/EstrellaDesequilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgaf3a687}]{Receptor en Estrella Desequilibrado con Neutro}
+\begin{frame}[label={sec:org9707628}]{Receptor en Estrella Desequilibrado con Neutro}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -430,7 +428,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org0495d1e}]{Receptor en Estrella Desequilibrado sin Neutro}
+\begin{frame}[label={sec:org8932a44}]{Receptor en Estrella Desequilibrado sin Neutro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/EstrellaDesequilibrado_SinNeutro.pdf}
 \end{center}
@@ -439,18 +437,18 @@ Corriente de Línea:
 \overline{U}_N \neq \overline{U}_{N'}
 \]
 \end{frame}
-\begin{frame}[label={sec:org423fd2f}]{Receptor en Estrella con Carga Monofásica}
+\begin{frame}[label={sec:org4563af6}]{Receptor en Estrella con Carga Monofásica}
 \begin{center}
 \includegraphics[height=0.9\textheight]{figs/Estrella_CargaMonofasica.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org416a278}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:orga898d18}]{Receptor en Triángulo Desequilibrado}
 \begin{center}
 \includegraphics[height=0.9\textheight]{figs/TrianguloDesequilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org88c05a9}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:org8e0a316}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -475,9 +473,11 @@ Corriente de Línea:
 \end{frame}
 
 \section{Potencia en Sistemas Trifásicos}
-\label{sec:org39e00ae}
+\label{sec:orgef20905}
 
-\begin{frame}[label={sec:orgb9d27db}]{Potencia Instantánea en Sistemas Equilibrados}
+\begin{frame}[label={sec:orgdd8bdd2}]{Potencia Instantánea en Sistemas Equilibrados}
+Supongamos un receptor equilibrado en estrella con SFD:
+
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -487,9 +487,9 @@ Corriente de Línea:
 \end{align*}
 
 \begin{align*}
-  i_A(t) &= \sqrt{2} I_f \cos(\omega t + \ang{90} - \theta)\\
-  i_B(t) &= \sqrt{2} I_f \cos(\omega t - \ang{30} - \theta)\\
-  i_C(t) &= \sqrt{2} I_f \cos(\omega t - \ang{150} - \theta)
+  i_A(t) &= \sqrt{2} I \cos(\omega t + \ang{90} - \theta)\\
+  i_B(t) &= \sqrt{2} I \cos(\omega t - \ang{30} - \theta)\\
+  i_C(t) &= \sqrt{2} I \cos(\omega t - \ang{150} - \theta)
 \end{align*}
 \end{column}
 
@@ -505,29 +505,26 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org1db5120}]{Potencia Instantánea en Sistemas Equilibrados}
+\begin{frame}[label={sec:org7343758}]{Potencia Instantánea en Sistemas Equilibrados}
 \begin{align*}
-  p(t) &= \sqrt{2}U_f  \cos(\omega t + \ang{90}) \cdot \sqrt{2}I_f\cos(\omega t + \ang{90} - \theta) +\\
-       &+ \sqrt{2}U_f \cos(\omega t - \ang{30}) \cdot \sqrt{2}I_f \cos(\omega t - \ang{30} - \theta) +\\
-       &+ \sqrt{2}U_f \cos(\omega t - \ang{150}) \cdot \sqrt{2}I_f \cos(\omega t - \ang{150} - \theta)
+  p(t) &= \sqrt{2}U_f  \cos(\omega t + \ang{90}) \cdot \sqrt{2}I\cos(\omega t + \ang{90} - \theta) +\\
+       &+ \sqrt{2}U_f \cos(\omega t - \ang{30}) \cdot \sqrt{2}I \cos(\omega t - \ang{30} - \theta) +\\
+       &+ \sqrt{2}U_f \cos(\omega t - \ang{150}) \cdot \sqrt{2}I \cos(\omega t - \ang{150} - \theta)
 \end{align*}
-
 \[
   \cos(\alpha) \cdot \cos(\beta) = \frac{1}{2} \cdot (\cos(\alpha + \beta) + \cos(\alpha - \beta))
 \]
-
 \begin{align*}
-  p(t) &= U_f I_f [{\color{gray}\cos(2 \omega t + \ang{180} -\theta)} + \cos(\theta)] +\\
-       &+ U_f I_f [{\color{gray}\cos(2 \omega t - \ang{60} - \theta)} + \cos(\theta)] +\\
-       &+ U_f I_f [{\color{gray}\cos(2 \omega t - \ang{300} - \theta)} + \cos(\theta)]
+  p(t) &= U_f I [{\color{gray}\cos(2 \omega t + \ang{180} -\theta)} + \cos(\theta)] +\\
+       &+ U_f I [{\color{gray}\cos(2 \omega t - \ang{60} - \theta)} + \cos(\theta)] +\\
+       &+ U_f I [{\color{gray}\cos(2 \omega t - \ang{300} - \theta)} + \cos(\theta)]
 \end{align*}
-
 \[
-  \boxed{p(t) = 3 \cdot U_f \cdot I_f \cdot \cos (\theta) = \sqrt{3} \cdot U \cdot I \cdot \cos (\theta)} 
+  \boxed{p(t) = 3 \cdot U_f \cdot I \cdot \cos (\theta) = \sqrt{3} \cdot U \cdot I \cdot \cos (\theta)} 
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orge09a285}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orgc885263}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -557,7 +554,7 @@ Corriente de Línea:
 \end{frame}
 
 
-\begin{frame}[label={sec:orga1695ae}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:org4119623}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -586,7 +583,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org806b23b}]{Receptor en Estrella Desequilibrado}
+\begin{frame}[label={sec:orgb77bc36}]{Receptor en Estrella Desequilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -604,7 +601,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgf6dedc7}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:org1c083f6}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -622,7 +619,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org6720727}]{Comparativa Monofásica-Trifásica}
+\begin{frame}[label={sec:orgc2cced9}]{Comparativa Monofásica-Trifásica}
 Comparemos un sistema monofásico y un sistema trifásico (3H) que transmiten la \alert{misma potencia activa} y funcionan a la \alert{misma tensión entre líneas}.
 \[
 U I_1 \cos\theta = P_1 = P_3 = \sqrt{3}U I_3 \cos\theta \rightarrow \boxed{I_1 = \sqrt{3} I_3}
@@ -644,9 +641,9 @@ Finalmente, la relación entre masas de conductor es:
 \end{frame}
 
 \section{Compensación de Reactiva}
-\label{sec:org0861add}
+\label{sec:orge94010e}
 
-\begin{frame}[label={sec:orge90cb44}]{Objetivo}
+\begin{frame}[label={sec:org0d14b4a}]{Objetivo}
 \begin{itemize}
 \item Sea un receptor \alert{equilibrado} \alert{inductivo} del que conocemos \(P\), \(Q\) y, por tanto, su factor de potencia \(\cos \theta\).
 
@@ -662,7 +659,7 @@ Finalmente, la relación entre masas de conductor es:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgce37ca6}]{Conexión en Triángulo}
+\begin{frame}[label={sec:org6524dcc}]{Conexión en Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -684,7 +681,7 @@ Finalmente, la relación entre masas de conductor es:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgff543d1}]{Conexión en Estrella}
+\begin{frame}[label={sec:org5851d6e}]{Conexión en Estrella}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -704,7 +701,7 @@ Finalmente, la relación entre masas de conductor es:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orge5a58df}]{Comparación Estrella-Triángulo}
+\begin{frame}[label={sec:orge06f5f6}]{Comparación Estrella-Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -730,8 +727,8 @@ Finalmente, la relación entre masas de conductor es:
 Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es \alert{triángulo}.
 \end{frame}
 \section{Medida de Potencia en Sistemas Trifásicos}
-\label{sec:org046c601}
-\begin{frame}[label={sec:org269e122}]{Recordatorio: vatímetro}
+\label{sec:org89c3b3a}
+\begin{frame}[label={sec:orgcbc24e9}]{Recordatorio: vatímetro}
 \begin{center}
 \includegraphics[height=0.6\textheight]{figs/vatimetro.pdf}
 \end{center}
@@ -742,7 +739,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
   \boxed{W = \Re(\overline{U} \cdot \overline{I}^*)}
 \]
 \end{frame}
-\begin{frame}[label={sec:orgb4a04a6}]{Sistema de 4 Hilos}
+\begin{frame}[label={sec:orga13a692}]{Sistema de 4 Hilos}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -765,7 +762,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{frame}
 
 
-\begin{frame}[label={sec:orge88e205}]{Sistema de 4 Hilos Equilibrado}
+\begin{frame}[label={sec:orgc46b7d9}]{Sistema de 4 Hilos Equilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -786,7 +783,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{frame}
 
 
-\begin{frame}[label={sec:orga476a57}]{Sistema de 3 Hilos}
+\begin{frame}[label={sec:orgf36c4da}]{Sistema de 3 Hilos}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -806,7 +803,7 @@ Montaje de Aron
 \end{frame}
 
 
-\begin{frame}[label={sec:org1ed2de1}]{Sistema de 3 Hilos}
+\begin{frame}[label={sec:org3947241}]{Sistema de 3 Hilos}
 Desarrollamos las dos expresiones usando corrientes de fase y obviando el operador \(\Re\):
 \begin{align*}
   \overline{U}_{AC} \cdot \overline{I}^*_A &=   \overline{U}_{AC} \cdot (\overline{I}^*_{AB} - \overline{I}^*_{CA})\\
@@ -826,7 +823,7 @@ Extrayendo la parte real de este resultado obtenemos:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org14d5278}]{Sistema de 3 Hilos Equilibrado}
+\begin{frame}[label={sec:org5f41744}]{Sistema de 3 Hilos Equilibrado}
 Cuando el sistema es equilibrado, las lecturas individuales de los vatímetros tienen significado.
 
 
@@ -847,7 +844,7 @@ Cuando el sistema es equilibrado, las lecturas individuales de los vatímetros t
 \end{frame}
 
 
-\begin{frame}[label={sec:org247505f}]{Sistema de 3 Hilos Equilibrado}
+\begin{frame}[label={sec:org54ad1fa}]{Sistema de 3 Hilos Equilibrado}
 Supongamos SFD:
 
 \begin{align*}
@@ -863,7 +860,7 @@ Supongamos SFD:
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orga5c48a6}]{Sistema de 3 Hilos Equilibrado}
+\begin{frame}[label={sec:org44b7df5}]{Sistema de 3 Hilos Equilibrado}
 Desarrollamos los dos cosenos:
 \begin{align*}
   \cos(\ang{30} - \theta) &= \cos\ang{30}\cos\theta + \sin\ang{30}\sin\theta\\
@@ -886,7 +883,7 @@ Por tanto, también podemos calcular el ángulo del receptor:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgc403b88}]{Sistema de 3 Hilos Equilibrado}
+\begin{frame}[label={sec:org4f2f5f2}]{Sistema de 3 Hilos Equilibrado}
 Repetimos el desarrollo con SFI:
 
 \begin{align*}
@@ -909,7 +906,7 @@ Repetimos el desarrollo con SFI:
 
 
 
-\begin{frame}[label={sec:orgf2ca0d2}]{Sistema de 3 Hilos Equilibrado}
+\begin{frame}[label={sec:org4aaf4a4}]{Sistema de 3 Hilos Equilibrado}
 \begin{center}
 \includegraphics[height=0.3\textheight]{figs/Potencia3H_Equilibrado_AB.pdf}
 \end{center}
@@ -941,7 +938,7 @@ SFI
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgc9d57fd},plain]{Otras conexiones: 3H SFD}
+\begin{frame}[label={sec:orgdd359e3},plain]{Otras conexiones: 3H SFD}
 \[
   \boxed{(ABC) :: A \triangleright B \triangleright C \Longrightarrow \{AB, BC, CA\}}
 \]
@@ -981,7 +978,7 @@ SFI
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org3a99370},plain]{Otras conexiones: 3H SFI}
+\begin{frame}[label={sec:org1639aa1},plain]{Otras conexiones: 3H SFI}
 \[
   \boxed{(ACB) :: A \triangleright C \triangleright B \Longrightarrow \{AC, CB, BA\}}
 \]
@@ -1022,7 +1019,7 @@ SFI
 \end{frame}
 
 
-\begin{frame}[label={sec:org8e54bbc}]{Medida de Reactiva con un Vatímetro}
+\begin{frame}[label={sec:org77861c9}]{Medida de Reactiva con un Vatímetro}
 Cuando el sistema está equilibrado, es posible medir la potencia reactiva con un único vatímetro. 
 
 Supongamos \alert{SFD}:
@@ -1053,7 +1050,7 @@ Supongamos \alert{SFD}:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgd0ceced}]{Conexiones para medida de reactiva}
+\begin{frame}[label={sec:org74ede3b}]{Conexiones para medida de reactiva}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
 \begin{center}
@@ -1098,7 +1095,7 @@ SFI &\rightarrow \boxed{W =  - \frac{Q}{\sqrt{3}}}
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org2639dc9}]{Conexiones para medida de reactiva}
+\begin{frame}[label={sec:org8326ca5}]{Conexiones para medida de reactiva}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
 \begin{center}

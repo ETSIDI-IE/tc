@@ -449,6 +449,8 @@ Corriente de Línea:
 
 ** Potencia Instantánea en Sistemas Equilibrados
 
+   Supongamos un receptor equilibrado en estrella con SFD:
+
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
@@ -463,9 +465,9 @@ Corriente de Línea:
 
     #+begin_export latex
   \begin{align*}
-    i_A(t) &= \sqrt{2} I_f \cos(\omega t + \ang{90} - \theta)\\
-    i_B(t) &= \sqrt{2} I_f \cos(\omega t - \ang{30} - \theta)\\
-    i_C(t) &= \sqrt{2} I_f \cos(\omega t - \ang{150} - \theta)
+    i_A(t) &= \sqrt{2} I \cos(\omega t + \ang{90} - \theta)\\
+    i_B(t) &= \sqrt{2} I \cos(\omega t - \ang{30} - \theta)\\
+    i_C(t) &= \sqrt{2} I \cos(\omega t - \ang{150} - \theta)
   \end{align*}
     #+end_export
 
@@ -486,29 +488,26 @@ Corriente de Línea:
 ** Potencia Instantánea en Sistemas Equilibrados
    #+begin_export latex
    \begin{align*}
-     p(t) &= \sqrt{2}U_f  \cos(\omega t + \ang{90}) \cdot \sqrt{2}I_f\cos(\omega t + \ang{90} - \theta) +\\
-	  &+ \sqrt{2}U_f \cos(\omega t - \ang{30}) \cdot \sqrt{2}I_f \cos(\omega t - \ang{30} - \theta) +\\
-	  &+ \sqrt{2}U_f \cos(\omega t - \ang{150}) \cdot \sqrt{2}I_f \cos(\omega t - \ang{150} - \theta)
+     p(t) &= \sqrt{2}U_f  \cos(\omega t + \ang{90}) \cdot \sqrt{2}I\cos(\omega t + \ang{90} - \theta) +\\
+	  &+ \sqrt{2}U_f \cos(\omega t - \ang{30}) \cdot \sqrt{2}I \cos(\omega t - \ang{30} - \theta) +\\
+	  &+ \sqrt{2}U_f \cos(\omega t - \ang{150}) \cdot \sqrt{2}I \cos(\omega t - \ang{150} - \theta)
    \end{align*}
    #+end_export
-
    #+begin_export latex
    \[
      \cos(\alpha) \cdot \cos(\beta) = \frac{1}{2} \cdot (\cos(\alpha + \beta) + \cos(\alpha - \beta))
    \]
    #+end_export
-
    #+begin_export latex
    \begin{align*}
-     p(t) &= U_f I_f [{\color{gray}\cos(2 \omega t + \ang{180} -\theta)} + \cos(\theta)] +\\
-	  &+ U_f I_f [{\color{gray}\cos(2 \omega t - \ang{60} - \theta)} + \cos(\theta)] +\\
-	  &+ U_f I_f [{\color{gray}\cos(2 \omega t - \ang{300} - \theta)} + \cos(\theta)]
+     p(t) &= U_f I [{\color{gray}\cos(2 \omega t + \ang{180} -\theta)} + \cos(\theta)] +\\
+	  &+ U_f I [{\color{gray}\cos(2 \omega t - \ang{60} - \theta)} + \cos(\theta)] +\\
+	  &+ U_f I [{\color{gray}\cos(2 \omega t - \ang{300} - \theta)} + \cos(\theta)]
    \end{align*}
    #+end_export
-
    #+begin_export latex
    \[
-     \boxed{p(t) = 3 \cdot U_f \cdot I_f \cdot \cos (\theta) = \sqrt{3} \cdot U \cdot I \cdot \cos (\theta)} 
+     \boxed{p(t) = 3 \cdot U_f \cdot I \cdot \cos (\theta) = \sqrt{3} \cdot U \cdot I \cdot \cos (\theta)} 
    \]
    #+end_export
 
