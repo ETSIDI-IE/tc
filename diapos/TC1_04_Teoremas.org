@@ -192,7 +192,7 @@ y(t) = \sum_i y_i(t)
 
 ** Principio de superposición y Potencia
 
-- El principio de superposición aplica a tensiones y corrientes, pero *no* a potencias. Supongamos $i(t) = i_1(t) + i_2(t)$:
+El principio de superposición aplica a tensiones y corrientes, pero *no* a potencias. Supongamos $i(t) = i_1(t) + i_2(t)$:
 #+begin_export latex
 \begin{align*}
   p(t) &= R \cdot i^2(t) =\\
@@ -201,7 +201,14 @@ y(t) = \sum_i y_i(t)
   p(t) &\neq p_1(t) + p_2(t)
 \end{align*}
 #+end_export
-- Se pueden sumar las potencias *medias* de cada circuito cuando las señales que intervienen son ortogonales en un periodo[fn:1]: sinusoidales con diferente frecuencia, una sinusoide con una continua, ...
+** Principio de superposición y Potencia
+- Cuando las señales son *ortogonales en un período*[fn:1] se pueden sumar las potencias *medias* de cada circuito.
+#+begin_export latex
+\begin{align*}
+  P = \sum_i P_i
+\end{align*}
+#+end_export
+- Ejemplos de señales ortogonales: sinusoidales con diferente frecuencia, una sinusoide con una continua, ...
 
 
 
@@ -395,4 +402,4 @@ La máxima potencia disponible en la carga es:
 
 * Footnotes
 
-[fn:1] \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\] 
+[fn:1] Dos señales son ortogonales si cumplen la siguiente ecuación: \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\] 
