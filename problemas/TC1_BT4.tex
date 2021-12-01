@@ -369,11 +369,17 @@ Por tanto:
 
 Para calcular la impedancia apagamos la fuente independiente. Como la fuente dependiente permanece, es necesario aplicar un generador de prueba a la salida.
 
-\begin{align*}
-  \epsilon_0 &= (1 + \alpha) U\\
-  U &= I_0 R_1
-\end{align*}
-
+\begin{minipage}{0.5\linewidth}
+  \begin{center}
+    \includegraphics{figs/Thevenin1_fuenteprueba}
+  \end{center}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{align*}
+    \epsilon_0 &= (1 + \alpha) U\\
+    U &= I_0 R_1
+  \end{align*}
+\end{minipage}
 Por tanto,
 
 \begin{equation*}
@@ -418,10 +424,17 @@ Combinando estas ecuaciones obtenemos la tensión:
 
 Para obtener la impedancia apagamos las fuentes independientes. Como hay fuentes dependientes debemos aplicar una fuente de prueba a la salida del circuito, con fuerza electromotriz $\overline{\epsilon}_0$ y corriente inyectada $\overline{I}_0$.
 
-\begin{align*}
-  \overline{\epsilon}_0 &= ((1 + \alpha) \overline{I} + \overline{I}_0) \cdot \overline{Z}_2\\
-  \overline{\epsilon}_0 &= - \overline{I}\cdot \overline{Z}_3
-\end{align*}
+\begin{minipage}{0.5\linewidth}
+  \begin{center}
+    \includegraphics{figs/Thevenin4_fuenteprueba}
+  \end{center}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{align*}
+    \overline{\epsilon}_0 &= [(1 + \alpha) \overline{I} + \overline{I}_0] \cdot \overline{Z}_2\\
+    \overline{\epsilon}_0 &= - \overline{I}\cdot \overline{Z}_3
+  \end{align*}
+\end{minipage}
 
 Combinando ambas expresiones obtenemos:
 
@@ -578,10 +591,59 @@ Datos:
 \]
 \end{minipage}
 \begin{minipage}{0.7\linewidth}
-\includegraphics[width=.9\linewidth]{figs/theveninExt.pdf}
+\includegraphics[width=.9\linewidth]{figs/thevenin6.pdf}
 \end{minipage}
 
 \noindent\hrulefill
+
+\subsection*{Solución}
+
+Calculamos la tensión en circuito abierto, planteando las siguientes ecuaciones:
+
+\begin{align*}
+  \overline{I}_g + \overline{I}_Z + \overline{I}_{Z1} &= 0\\
+  - \overline{I}_Z \cdot \overline{Z}_2 &= \overline{\epsilon}_g - \overline{I}_{Z1} \cdot \overline{Z}_1\\
+  \overline{U}_{AB} = - \beta \cdot \overline{I}_Z - \overline{I}_Z \cdot \overline{Z}_2
+\end{align*}
+
+Combinando estas ecuaciones obtenemos:
+
+\begin{equation*}
+  \overline{U}_{AB} = (\beta + \overline{Z}_2) \cdot \frac{\overline{\epsilon}_g + \overline{I}_g \cdot \overline{Z}_1}{\overline{Z}_1 + \overline{Z}_2} = 138.48 + 3.99j \si{\volt} = \overline{\epsilon}_{th}
+\end{equation*}
+
+Para calcular la impedancia apagamos las fuentes independientes y conectamos un generador de prueba en AB:
+
+\begin{minipage}{0.5\linewidth}
+\includegraphics[width=.9\linewidth]{figs/thevenin6_fuenteprueba.pdf}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{align*}
+    \overline{I}_0 + \overline{I}_Z + \overline{I}_{Z1} &= 0\\
+    \overline{I}_Z \cdot \overline{Z}_2 &= \overline{I}_{Z1} \cdot \overline{Z}_1\\
+    \overline{\epsilon}_0 &= - \beta \cdot \overline{I}_Z - \overline{I}_Z \cdot \overline{Z}_2
+  \end{align*}
+\end{minipage}
+Por tanto,
+
+\begin{equation*}
+  \overline{Z}_{th} = \frac{\overline{\epsilon}_0}{\overline{I}_0} = \frac{\beta + \overline{Z}_2}{1 + \overline{Z}_2/\overline{Z}_1} = 4.8 + 1.4j\si{\ohm}
+\end{equation*}
+
+La potencia en AB depende de la carga conectada:
+
+\begin{equation*}
+  P_{AB} = R_L \cdot \frac{\epsilon_{th}^2}{|\overline{Z}_L + \overline{Z}_{th}|^2}
+\end{equation*}
+
+\begin{itemize}
+\item Cuando $\overline{Z}_L = \overline{Z}_{th}$, $P_{AB} = \SI{17.15}{\watt}$
+\item Cuando $\overline{Z}_L = R_{th}$, $P_{AB} = \SI{18.22}{\watt}$
+\item Cuando $\overline{Z}_L = jX_{th}$, $P_{AB} = \SI{0}{\watt}$
+\item Cuando $\overline{Z}_L = \overline{Z}^*_{th}$, $P_{AB} = \SI{18.61}{\watt}$
+\end{itemize}
+
+Comprobamos que el máximo valor se obtiene cuando conectamos la impedancia de Thévenin conjugada.
 
 \clearpage
 
@@ -614,5 +676,51 @@ Datos:
 \includegraphics[width=.9\linewidth]{figs/norton.pdf}
 \end{minipage}
 
+\subsection*{Solución}
+
+Para calcular el equivalente de Norton cortocircuitamos la salida del circuito. Podemos escribir las siguientes ecuaciones:
+
+\begin{minipage}{0.5\linewidth}
+  \includegraphics[width=.9\linewidth]{figs/norton_corto.pdf}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{align*}
+    U_R &= R \cdot I_{sc}\\
+    I_g+ I_R &= I_{sc}\\
+    U_{CD} &= \epsilon_g - 2 \cdot R \cdot I_g\\
+    U_{CD} &= \beta \cdot U_r - I_R \cdot R\\
+    U_{CD} &= U_R + \alpha \cdot I_R
+  \end{align*}
+\end{minipage}
+
+Combinando estas ecuaciones obtenemos:
+
+\begin{equation*}
+  I_{sc} = 10/3\si{\ampere} = I_N
+\end{equation*}
+
+Para obtener la resistencia equivalente apagamos la fuente independiente y conectamos un generador de prueba en AB:
+
+
+\begin{minipage}{0.5\linewidth}
+  \includegraphics[width=.9\linewidth]{figs/norton_fuenteprueba.pdf}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{align*}
+    U_R &= -I_0 \cdot R\\
+    I_2 + I_R + I_0 &= 0\\
+    U_{CD} &= -2R\cdot I_2\\
+    U_{CD} &= \beta \cdot U_R - I_R \cdot R\\
+    U_{CD} &= U_R + \alpha \cdot I_R + \epsilon_0
+  \end{align*}
+\end{minipage}
+
+Combinando estas ecuaciones obtenemos:
+
+\begin{equation*}
+  R_{th} = \frac{\epsilon_0}{I_0} = \SI{2}{\ohm}
+\end{equation*}
+
+Por tanto, habrá que conectar una resistencia de $\SI{2}{\ohm}$ para obtener la máxima potencia disponible.
 
 \end{document}
