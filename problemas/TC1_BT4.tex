@@ -315,6 +315,25 @@ Datos:
 
 \noindent\hrulefill
 
+Para obtener el generador dejamos el circuito en abierto y transformamos el generador de corriente en fuente de tensión. En el circuito resultante calculamos la corriente:
+
+\begin{equation*}
+  \overline{I} = \frac{\overline{\epsilon}_g + \overline{\epsilon}_1}{\overline{Z}_1 + \overline{Z}_2} = 3\phase{\ang{0}}\si{\ampere} 
+\end{equation*}
+
+Con esta corriente podemos calcular la tensión en la impedancia $Z_2$:
+
+\begin{equation*}
+  \overline{U}_{AB} = \overline{I} \cdot \overline{Z}_2 = 24 + 18j = 30\phase{\ang{36.87}}\si{\volt} = \overline{\epsilon}_{th}
+\end{equation*}
+
+Para obtener la impedancia apagamos las fuentes independientes. La impedancia vista desde AB es:
+
+\begin{equation*}
+  \overline{Z}_{AB} = \overline{Z}_1 || \overline{Z}_2 = 6.25\phase{\ang{0}}\si{\ohm} = \overline{Z}_{th}
+\end{equation*}
+
+
 \clearpage
 
 \section{}
@@ -325,6 +344,39 @@ Obtén el generador equivalente de Thévenin del circuito de la figura respecto 
 \end{center}
 
 \noindent\hrulefill
+
+\subsection*{Solución}
+
+Por una parte:
+
+\begin{equation*}
+  U_{AB} = \alpha U + U = (1 + \alpha) U
+\end{equation*}
+
+Además,
+
+\begin{equation*}
+  U = I_g \cdot R_1
+\end{equation*}
+
+Por tanto:
+
+\begin{equation*}
+  U_{AB} = (1 + \alpha) I_g R_1 = \epsilon_{th}
+\end{equation*}
+
+Para calcular la impedancia apagamos la fuente independiente. Como la fuente dependiente permanece, es necesario aplicar un generador de prueba a la salida.
+
+\begin{align*}
+  \epsilon_0 &= (1 + \alpha) U\\
+  U &= I_0 R_1
+\end{align*}
+
+Por tanto,
+
+\begin{equation*}
+  Z_{th} = \frac{\epsilon_0}{I_0} = (1 + \alpha) R_1
+\end{equation*}
 
 \clearpage
 
@@ -346,6 +398,44 @@ Datos:
 \end{align*}
 
 \noindent\hrulefill
+
+\subsection*{Solución}
+
+Dejamos el circuito en abierto y calculamos la tensión en AB:
+
+\begin{align*}
+  \overline{U}_{AB} &= \overline{\epsilon}_g + (1 + \alpha) \overline{I} \cdot \overline{Z}_2\\
+  \overline{U}_{AB} &= - \overline{I} \cdot \overline{Z}_3
+\end{align*}
+
+Combinando estas ecuaciones obtenemos la tensión:
+
+\begin{equation*}
+  \overline{\epsilon}_{th} = \overline{U}_{AB} = \frac{\overline{\epsilon}_g}{1 + (1 + \alpha) \frac{\overline{Z}_2}{\overline{Z}_3}} = 6 - 10j = 11.66\phase{\ang{-59.04}}\si{\volt}
+\end{equation*}
+
+Para obtener la impedancia apagamos las fuentes independientes. Como hay fuentes dependientes debemos aplicar una fuente de prueba a la salida del circuito, con fuerza electromotriz $\overline{\epsilon}_0$ y corriente inyectada $\overline{I}_0$.
+
+\begin{align*}
+  \overline{\epsilon}_0 &= ((1 + \alpha) \overline{I} + \overline{I}_0) \cdot \overline{Z}_2\\
+  \overline{\epsilon}_0 &= - \overline{I}\cdot \overline{Z}_3
+\end{align*}
+
+Combinando ambas expresiones obtenemos:
+
+\begin{equation*}
+  \overline{Z}_{th} = \frac{\overline{\epsilon}_0}{\overline{I}_0} = \frac{\overline{Z}_2 \cdot \overline{Z}_3}{(1 + \alpha) \overline{Z}_2 + \overline{Z}_3} = 0.64 + 0.52j\si{\ohm}
+\end{equation*}
+
+Para obtener la máxima potencia disponible hay que conectar una impedancia:
+\begin{equation*}
+\overline{Z}_L = \overline{Z}^*_{th} = 0.64-0.52j\si{\ohm}
+\end{equation*}
+
+Esta impedancia disipará una potencia:
+\begin{equation*}
+P_L = \frac{\epsilon_{th}^2}{4 \cdot R_{th}} = \SI{53.11}{\watt}
+\end{equation*}
 
 \clearpage
 
