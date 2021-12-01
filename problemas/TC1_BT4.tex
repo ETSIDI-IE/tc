@@ -315,6 +315,8 @@ Datos:
 
 \noindent\hrulefill
 
+\subsection*{Solución}
+
 Para obtener el generador dejamos el circuito en abierto y transformamos el generador de corriente en fuente de tensión. En el circuito resultante calculamos la corriente:
 
 \begin{equation*}
@@ -457,6 +459,29 @@ Datos:
 
 \noindent\hrulefill
 
+\subsection*{Solución}
+
+Para obtener la tensión $U_{AB}$ aplicamos divisor de tensión en ambas ramas:
+
+\begin{align*}
+  U_A &= \epsilon \cdot \frac{R_2}{R_1 + R_2}\\
+  U_B &= \epsilon \cdot \frac{R_4}{R_3 + R_4}\\
+  U_{AB} &= \epsilon \cdot (\frac{R_2}{R_1 + R_2} -  \frac{R_4}{R_3 + R_4}) = \SI{6}{\volt} = \epsilon_{th}
+\end{align*}
+
+Para calcular la resistencia equivalente apagamos la fuente de tensión. En el circuito resultante obtenemos:
+
+\begin{equation*}
+  R_{th} = (R_1 || R_2) + (R_3 || R_4) = 80/9\si{\ohm}
+\end{equation*}
+
+Para obtener la máxima potencia hay que conectar una resistencia $R_L = R_{th}$. Con esta resistencia el balance de potencias es:
+
+\begin{align*}
+  P_L &= \frac{\epsilon_{th}^2}{4R_{th}} = \SI{1.0125}{\watt}\\
+    P_\epsilon &= 2 \cdot P_L = \SI{2.025}{\watt}
+\end{align*}
+
 \clearpage
 
 \section{}
@@ -477,6 +502,39 @@ Datos:
 \end{align*}
 
 \noindent\hrulefill
+
+\subsection*{Solución}
+
+La tensión en circuito abierto es:
+
+\begin{equation*}
+  \overline{U}_{AB} = \alpha \overline{I} \cdot \overline{Z}_1 + \overline{\epsilon}_1 + \overline{\epsilon}_2
+\end{equation*}
+siendo $\epsilon_1 = \overline{Z}_2 \cdot \overline{I}$. Por tanto,
+
+\begin{equation*}
+  \epsilon_{th} = \alpha \cdot \overline{\epsilon}_1 \cdot \frac{\overline{Z}_1}{\overline{Z}_2} + \overline{\epsilon}_1 + \overline{\epsilon}_2 = 10 - 10j \si{\volt}
+\end{equation*}
+
+Para obtener la impedancia apagamos las fuentes independientes. Al apagar la fuente $\epsilon_1$, la impedancia $Z_2$ queda cortocircuitada y, por tanto, $I = 0$. En consecuencia, la fuente dependiente también queda apagada y obtenemos:
+
+\begin{equation*}
+  \overline{Z}_{th} = \overline{Z}_1 = 4 - 3j \si{\volt}
+\end{equation*}
+
+Para obtener la máxima potencia debemos conectar la impedancia:
+
+\begin{equation*}
+  \overline{Z}_{L} = \overline{Z}^*_{th} = 4 + 3j \si{\volt}
+\end{equation*}
+
+El balance de potencias es:
+
+\begin{align*}
+  P_L &= \frac{\epsilon_{th}^2}{4 \cdot R_{th}} = \SI{12.5}{\watt}\\
+  P_{\epsilon} &= 2 \cdot P_L = \SI{25}{\watt} 
+\end{align*}
+
 
 \clearpage
 
