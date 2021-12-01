@@ -56,13 +56,56 @@ Datos:
 
 \noindent\hrulefill
 
-% \begin{center}
-% \includegraphics{figs/superposicion2_A}
-% \end{center}
+\subsection*{Solución}
 
-% \begin{center}
-% \includegraphics{figs/superposicion2_B}
-% \end{center}
+Dado que las fuentes trabajan a frecuencias diferentes, hay que resolver mediante superposición.
+
+Activamos una de las fuentes:
+\begin{center}
+\includegraphics{figs/superposicion2_A}
+\end{center}
+
+La resistencia está cortocircuitada. Por tanto:
+
+\begin{align*}
+  u_{Ra}(t) &= \SI{0}{\volt}\\
+  u_{La}(t) &= \epsilon_a(t)\\  
+\end{align*}
+
+En este circuito la potencia disipada por la resistencia es $P_{Ra} = \SI{0}{\watt}$ y, en consecuencia, la potencia entregada por el generador es $P_{\epsilon_a} = \SI{0}{\watt}$.
+
+Hacemos el análisis con la otra fuente:
+
+\begin{center}
+\includegraphics{figs/superposicion2_B}
+\end{center}
+
+En este circuito:
+
+\begin{align*}
+  u_{Rb}(t) &= \epsilon_b(t)\\
+  u_{Lb}(t) &= -\epsilon_b(t)\\  
+\end{align*}
+
+El balance de potencias es:
+
+\begin{equation*}
+  P_{Rb} = \frac{\epsilon_b^2}{R_b} = \SI{30}{\watt} = P_{\epsilon_b}\\
+\end{equation*}
+
+Por tanto:
+
+\begin{align*}
+  u_R(t) &= u_{Ra}(t) + u_{Rb}(t) = 30\sqrt{2}\sin(10^4 t)\\
+  u_L(t) &= u_{La}(t) + u_{Lb}(t) = 3\sqrt{2}\sin(10^3 t) - 30\sqrt{2}\sin(10^4 t)\\
+\end{align*}
+
+Además, dado que las dos señales de los generadores son ortogonales, podemos sumar las potencias calculadas en cada circuito:
+
+\begin{align*}
+  P_R &= P_{Ra} + P_{Rb} = \SI{30}{\watt}\\
+  P_\epsilon &= P_{\epsilon_a} + P_{\epsilon_b} = \SI{30}{\watt}\\
+\end{align*}
 
 \clearpage
 
@@ -87,6 +130,71 @@ Datos:
 
 
 \noindent\hrulefill
+
+\subsection*{Solución}
+
+Aplicamos superposición.
+
+Analizamos con la fuente de corriente alterna:
+
+\begin{center}
+\includegraphics{figs/superposicion1_AC}
+\end{center}
+
+La rama $R_2 - C$ está cortocircuitada y, por tanto, podemos prescindir de ella:
+
+\begin{align*}
+  \overline{Z}_1 &= R_1 + jX_L = 6 + 8j\si{\ampere}\\
+  \overline{I}_1 &= \overline{\epsilon}_1 / \overline{Z}_1 = 5\sqrt{2}/2\phase{\ang{-53.13}}\si{\ampere}
+\end{align*}
+
+En el dominio del tiempo obtenemos:
+
+\begin{equation*}
+  i_1(t) = 5\sin(1000t - 0.9273)\si{\ampere}
+\end{equation*}
+
+En cuanto al balance de potencias:
+
+\begin{align*}
+  P_{R11} &= I_1^2 R_1 = \SI{75}{\watt}\\
+  P_{R21} &= \SI{0}{\watt}\\
+  P_{\epsilon_1} &= \Re(\overline{\epsilon}_1 \cdot \overline{I}_1^*) = \SI{75}{\watt}
+\end{align*}
+
+Analizamos con la fuente de corriente continua:
+
+\begin{center}
+\includegraphics{figs/superposicion1_DC}
+\end{center}
+
+En este circuito sustituimos la bobina por un cortocircuito y el condensador por un circuito abierto. En consecuencia:
+
+\begin{equation*}
+  i_2(t) = \epsilon_2(t) / R_1 = \SI{5}{\ampere}
+\end{equation*}
+
+En cuanto al balance de potencias:
+
+\begin{align*}
+  P_{R12} &= I_2^2 \cdot R_1 = \SI{150}{\watt}\\
+  P_{R22} &= \SI{0}{\watt}\\
+  P_{\epsilon2} &= \epsilon_2 \cdot I_2 = \SI{150}{\watt}
+\end{align*}
+
+Por tanto:
+
+\begin{equation*}
+  i(t) = i_1(t) + i_2(t) = 5 + 5\sin(1000t - 0.9273)\si{\ampere}
+\end{equation*}
+
+Además, como las señales son ortogonales, podemos hacer el balance de potencias conjunto con los dos circuitos:
+
+\begin{align*}
+  P_{R1} &= P_{R11} + P_{R12} = \SI{225}{\watt}\\
+  P_{R2} &= P_{R21} + P_{R22} = \SI{0}{\watt}\\
+  P_{\epsilon} &= P_{\epsilon1} + P_{\epsilon2} = \SI{225}{\watt}\\
+\end{align*}
 
 \clearpage
 
@@ -117,9 +225,79 @@ Datos:
 
 \noindent\hrulefill
 
+\subsection*{Solución}
+
+Aplicamos superposición.
+
+Activamos en primer lugar la fuente de corriente porque es de la que tenemos información completa para resolver.
+
+\begin{center}
+  \includegraphics{figs/superposicion3_DC}
+\end{center}
+
+Podemos sustituir las dos resistencias por su equivalente paralelo, $R_p = \SI{24}{\ohm}$, y calcular la potencia y la tensión:
+
+\begin{align*}
+  U_{Ig} &= I_g R_p = \SI{24}{\volt}\\
+  P_{R_1R_2I_g} &= I_g^2 \cdot R_p = \SI{24}{\watt}
+\end{align*}
+
+Este último resultado podemos utilizarlo en el circuito de la otra fuente, porque las señales son ortogonales. Por tanto:
+
+\begin{equation*}
+  P_{R1R2} = P_{R1R2e} + P_{R1R2I_g} \rightarrow P_{R1R2e} = \SI{16}{\watt}
+\end{equation*}
+
+\begin{center}
+  \includegraphics{figs/superposicion3_fuentepulsos}
+\end{center}
+
+En este circuito la fuente está conectada en paralelo con la conexión serie de las dos resistencias. Así, la potencia disipada por las dos resistencias en este circuito es:
+
+\begin{equation*}
+  P_{R1R2e} = \frac{E^2}{R_1 + R_2} = \frac{E^2}{100} = \SI{16}{\watt} \rightarrow E = \SI{40}{\volt}
+\end{equation*}
+
+Teniendo en cuenta que en un tren de pulsos simétrico el valor eficaz, $E$, coincide con el valor máximo, $E_0$, obtenemos $E_0 = \SI{40}{\volt}$.
+
+Por otra parte, en este circuito podemos obtener la tensión en la resistencia $R_1$ mediante un divisor de tensión:
+\begin{equation*}
+  u_e(t) = e(t) \cdot \frac{R_1}{R_1 + R_2} = 0.6\cdot e(t)
+\end{equation*}
+
+El resultado es un tren de pulsos simétrico con valor máximo $U_{e0} = \SI{24}{\volt}$.
+
+Combinando los dos circuitos obtenemos:
+
+\begin{equation*}
+  u(t) = u_{Ig}(t) + u_e(t) = 24 + 0.6 \cdot e(t)
+\end{equation*}
+
+\begin{center}
+  \includegraphics{figs/superposicionOndaCuadrada2}
+\end{center}
+
+Para calcular el valor eficaz de esta señal podemos aplicar la definición:
+
+\begin{align*}
+  U &= \sqrt{\frac{1}{T}\int_0^Tu^2(t)\mathrm{d}t} = \\
+    &= \sqrt{500 \int_0^{10^-3}48^2 \mathrm{d}t} = \\
+  &= \SI[parse-numbers=false]{24\sqrt{2}}{\volt}
+\end{align*}
+
+También podemos aprovechar el hecho de que sean señales ortogonales:
+
+\begin{equation*}
+  P_{R1} = \frac{U^2}{R_1} = \frac{U_{Ig}^2}{R_1} + \frac{U_e^2}{R_1} \rightarrow U^2 = U_{Ig}^2 + U_e^2
+\end{equation*}
+
+Por tanto, $U = \SI[parse-numbers=false]{24\sqrt{2}}{\volt}$.
+
 \clearpage
 
+
 \section{}
+
 
 Obtén los generadores equivalentes de Thévenin y Norton del circuito de la figura respecto de A y B.
 
