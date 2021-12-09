@@ -33,6 +33,19 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
 
 Al aplicar Kirchhoff a un circuito lineal obtenemos ecuaciones integro-diferenciales. 
 
+#+begin_export latex
+  \[
+    u_L(t) = L \cdot \diff{i_L(t)}{t}
+    \leftrightarrow
+    i_L(t) = \frac{1}{L} \int^t_{-\infty}u_L(t') \mathrm{d}t'
+  \]
+  \[
+    i_C(t) = C \cdot \diff{u_C(t)}{t}
+    \leftrightarrow
+    u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
+  \]
+#+end_export
+
 Por ejemplo, la ecuación de un circuito RLC será de la forma:
 
 #+begin_export latex
@@ -73,24 +86,27 @@ La solución de esta ecuación para $t > 0$ (respuesta completa del circuito lin
 - *Se aplican* a la topología del circuito en $t = 0^+$.
 
 *** Resistencia
+No acumula energía: sigue los cambios de forma instantánea.
+
 #+BEGIN_EXPORT latex
 \[
 u(t) = R i(t)
 \]
 #+END_EXPORT
 
-No acumula energía: sigue los cambios de forma instantánea.
+
 
 *** Inductancia
+La corriente en una bobina no puede variar de forma abrupta (implica tensión infinita).
+
 #+BEGIN_EXPORT latex
 \[
-u(t) = L \diff{i_L(t)}{t}
+u_L(t) = L \cdot \diff{i_L(t)}{t}
 \leftrightarrow
-i_L(t) = \frac{1}{L} \int^t_{-\infty}u(t') \mathrm{d}t'
+i_L(t) = \frac{1}{L} \int^t_{-\infty}u_L(t') \mathrm{d}t'
 \]
 #+END_EXPORT
 
-La corriente en una bobina no puede variar de forma abrupta (implica tensión infinita).
 #+BEGIN_EXPORT latex
 \[
 \boxed{i_L(0^-) = i_L(0^+)}
@@ -98,15 +114,16 @@ La corriente en una bobina no puede variar de forma abrupta (implica tensión in
 #+END_EXPORT
 
 *** Capacidad
+La tensión en un condensador no puede variar de forma abrupta (implica corriente infinita).
+
 #+BEGIN_EXPORT latex
 \[
-i(t) = C \diff{u_C(t)}{t}
+i_C(t) = C \cdot \diff{u_C(t)}{t}
 \leftrightarrow
-u(t) = \frac{1}{C} \int^t_{-\infty}i(t') \mathrm{d}t'
+u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 \]
 #+END_EXPORT
 
-La tensión en un condensador no puede variar de forma abrupta (implica corriente infinita).
 #+BEGIN_EXPORT latex
 \[
 \boxed{u_C(0^-) = u_C(0^+)}
@@ -127,9 +144,10 @@ El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la p
   - RL serie
   - RC paralelo
 *** Respuesta natural y forzada
-- El método de resolución analiza el circuito en dos etapas:
-  - Sin fuentes: *respuesta natural* (la energía acumulada en $t < 0$ se disipa en la resistencia).
-  - Con fuentes: *respuesta forzada* (determinada por la forma de onda de las fuentes).
+- El método de resolución analiza el circuito en tres etapas:
+  1. Cálculo de las *condiciones iniciales*, analizando el circuito en $t < 0$.
+  2. *Respuesta natural*: análisis del circuito /sin fuentes/ en $t > 0$ (la energía acumulada en $t < 0$ se disipa en la resistencia).
+  3. *Respuesta forzada*: análisis del circuito /con fuentes/ en $t > 0$ (la respuesta está determinada por la forma de onda de las fuentes).
 
 ** Circuito RL serie
 
@@ -168,7 +186,7 @@ Analizando circuito para $t < 0$ ...
 file:figs/transitorio_circuitoRL_t0-.pdf
 ...obtenemos  $i(0^-) = I_0 = \frac{U_0}{R}$ 
 
-*** Condiciones Iniciales
+*** Respuesta Natural
 Por otra parte, para $t > 0$:
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -242,7 +260,7 @@ Para la solución particular, $i_\infty$, se propone una función análoga a la 
 \end{align*}
 #+END_EXPORT
 
-*** Condiciones iniciales
+*** Constante de integración
 Particularizamos las ecuaciones en $t = 0^+$:
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -303,7 +321,8 @@ La solución completa es:
 
 *** Circuito básico
 - En $t <0$ la fuente alimenta el circuito RC (el condensador se carga).
-- En $t = 0$ se desconecta la fuente (el condensador comienza a descargarse en la resistencia).
+- En $t = 0$ se desconecta la fuente
+- En $t > 0$ el condensador comienza a descargarse en la resistencia.
 
 #+ATTR_LATEX: :height 0.45\textheight
 [[file:figs/transitorio_circuitoRC.pdf]]
