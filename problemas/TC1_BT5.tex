@@ -17,9 +17,6 @@
 
 \title{}
 
-\date{2019-20}
-
-
 \section{Transitorio de primer orden}
 
 \subsection{FM 4.2}
@@ -41,6 +38,74 @@ Datos:
 \end{align*}
 \end{minipage}
 
+\subsubsection*{Solución}
+
+Calculamos las condiciones iniciales ($t = 0^-$)
+
+Dibujamos el circuito para $t < 0$ y obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_2_t0-}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{equation*}
+    i(t) = \frac{\epsilon}{R_2 + R_3}
+  \end{equation*}
+\end{minipage}
+
+Por tanto, $i(0^-) = \SI{3}{\ampere}$. Al tratarse de una bobina, $i(0^+) = i(0^-) = \SI{3}{\ampere}$.
+
+A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta natural y la respuesta forzada.
+
+Para obtener la respuesta natural apagamos las fuentes. En este circuito obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_2_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    R_{th} &= R_3 + R_1||R_2 = 20/3\si{\ohm}\\
+    \tau &= L/R_{th} = 9/4\si{\second}\\
+    i_n(t) &= A \cdot e^{-\frac{t}{\tau}} = A \cdot e^{-4t/9}
+  \end{align*}
+\end{minipage}
+Queda por determinar la constante de integración.
+
+Para obtener la respuesta forzada volvemos a activar las fuentes. En este circuito obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_2_forzada}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    I_g &= \frac{\epsilon}{R_2 + R_1||R_3}\\
+    i_\infty(t) &= I_g \cdot \frac{G_3}{G_3 + G_1} = \SI{2.4}{\ampere}
+  \end{align*}
+\end{minipage}
+
+Con estos dos resultados podemos obtener la respuesta completa:
+
+\begin{align*}
+  i(t) &= i_n(t) + i_\infty(t)\\
+  i(t) &= A \cdot e^{-4t/9} + 2.4
+\end{align*}
+
+Para determinar la constante de integración recurrimos a las condiciones iniciales:
+
+\begin{align*}
+  i(0^+) &= A + 2.4\\
+  i(0^+) &= 3\\
+  A &= 0.6
+\end{align*}
+
+Por tanto,
+
+\begin{equation*}
+  i(t) = 0.6 \cdot e^{-4t/9} + 2.4
+\end{equation*}
+
+\clearpage
+
 \subsection{FM 4.3}
 
 Calcular la tensión en bornes del condensador para $t > 0$.
@@ -57,9 +122,77 @@ Datos:
   R_1 &= \SI{6}{\ohm}\\
   R_2 &= \SI{4}{\ohm}\\
   R_3 &= \SI{12}{\ohm}\\
-  C &= \SI[parse-numbers]{1/16}{\farad}      
+  C &= \SI[parse-numbers=false]{1/16}{\farad}      
 \end{align*}
+
 \end{minipage}
+
+\subsubsection*{Solución}
+
+Calculamos las condiciones iniciales ($t = 0^-$)
+
+Dibujamos el circuito para $t < 0$ y obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_3_t0-}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{equation*}
+    u_C(t) = I_g \cdot R_1 
+  \end{equation*}
+\end{minipage}
+
+Por tanto, $u_c(0^-) = \SI{24}{\volt}$. Al tratarse de un condensador, $u_C(0^+) = u_C(0^-) = \SI{24}{\volt}$.
+
+A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta natural y la respuesta forzada.
+
+Para obtener la respuesta natural apagamos las fuentes. En este circuito obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_3_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    R_{th} &= R_2 + R_3 = \SI{16}{\ohm}\\
+    \tau &= C/G_{th} = \SI{1}{\second}\\
+    u_{Cn}(t) &= A \cdot e^{-\frac{t}{\tau}} = A \cdot e^{-t}
+  \end{align*}
+\end{minipage}
+Queda por determinar la constante de integración.
+
+Para obtener la respuesta forzada volvemos a activar las fuentes. En este circuito obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics{figs/FM_4_3_forzada}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{equation*}
+    u_{c\infty}(t) = \epsilon = \SI{20}{\volt}
+  \end{equation*}
+\end{minipage}
+
+Con estos dos resultados podemos obtener la respuesta completa:
+
+\begin{align*}
+  u_C(t) &= u_{Cn}(t) + u_{c\infty}(t)\\
+  u_C(t) &= A \cdot e^{-t} + 20
+\end{align*}
+
+Para determinar la constante de integración recurrimos a las condiciones iniciales:
+
+\begin{align*}
+  u_C(0^+) &= A + 20\\
+  u_C(0^+) &= 24\\
+  A &= \SI{4}{\volt}
+\end{align*}
+
+Por tanto,
+
+\begin{equation*}
+  u_C(t) = 4 \cdot e^{-t} + 20
+\end{equation*}
+
+\clearpage
 
 \subsection{HKD 8.4}
 
