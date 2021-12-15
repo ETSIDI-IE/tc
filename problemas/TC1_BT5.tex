@@ -12,6 +12,7 @@
 \usepackage[spanish]{babel}
 \usepackage{steinmetz}
 \usepackage{enumitem}
+\usepackage{diffcoeff}
 
 \begin{document}
 
@@ -294,6 +295,93 @@ Datos:
   C &= \SI{0.2}{\farad}      
 \end{align*}
 \end{minipage}
+
+\subsection*{Solución}
+
+Calculamos las condiciones iniciales ($t = 0^-$)
+
+Dibujamos el circuito para $t < 0$ y obtenemos:
+
+\begin{minipage}{0.3\textwidth}
+%\includegraphics{figs/FM_4_8_t0-}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    u_C(t) &= \SI{10}{\volt}\\
+    i_L(t) &= \frac{\epsilon_g}{R_1} = \SI{1}{\ampere}
+  \end{align*}
+\end{minipage}
+
+Por tanto, $u_c(0^+) = u_c(0^-) = \SI{10}{\volt}$ y $i_L(0^+) = i_L(0^-) = \SI{1}{\ampere}$.
+
+A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta natural y la respuesta forzada. En el circuito resultante no hay fuentes, por lo que no habrá respuesta forzada.
+
+\begin{minipage}{0.3\textwidth}
+%\includegraphics{figs/FM_4_8_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    i_L(t) &= A_1 \cdot e^{s_1 \cdot t} + A_2 \cdot e^{s_2 \cdot t}\\
+    s_1 &= -\alpha + \sqrt{\alpha^2 - \omega_0^2}\\
+    s_2 &= -\alpha - \sqrt{\alpha^2 - \omega_0^2}\\
+    \alpha &= \frac{R}{2L} = \SI{3}{\per\second}\\
+    \omega_0 &= \frac{1}{\sqrt{LC}} = \sqrt{2}\si{\radian\per\second}
+  \end{align*}
+\end{minipage}
+
+Dado que $\alpha > \omega_0$ se trata de un transitorio sobreamortiguado:
+
+\begin{align*}
+  s_1 &= \SI{-0.354}{\per\second}\\
+  s_2 &= \SI{-5.645}{\per\second}\\
+  i_L(t) &= A_1 \cdot e^{-0.354 \cdot t} + A_2 \cdot e^{-5.645 \cdot t}
+\end{align*}
+
+Para determinar las constantes de integración recurrimos a las condiciones iniciales:
+
+\begin{align*}
+  u_R(t) + u_L(t) &= u_C(t)\\
+  u_L(0^+) &= u_C(0^+) - u_R(0^+)\\
+  u_R(0^+) &= R \cdot i_L(0^+) = \SI{15}{\volt}\\
+  u_L(0^+) &= 10 - 15 = \SI{-5}{\volt}
+\end{align*}
+
+Por tanto,
+
+\begin{align*}
+  i_L(0^+) &= \SI{1}{\ampere}\\
+  \diff{i_L(t)}{t}{t = 0^+} &= \frac{1}{L} \cdot u_L(0^+) = \SI{-2}{\ampere\per\second}
+\end{align*}
+
+Con estos resultados, particularizamos la ecuación de $i_L(t)$ para $t = 0$ y así planteamos las ecuaciones para obtener $A_1$ y $A_2$:
+
+\begin{align*}
+  i_L(0^+) &= A_1 + A_2 = 1\\
+  \diff{i_L(t)}{t}{t = 0^+} &= A_1 \cdot s_1 + A_2 \cdot s_2 = -2
+\end{align*}
+
+Por tanto,
+
+\begin{align*}
+  A_1 &= 0.689\\
+  A_2 &= 0.311
+\end{align*}
+
+Finalmente,
+
+\begin{equation*}
+  i_L(t) = 0.689 \cdot e^{-0.354 \cdot t} + 0.311 \cdot e^{-5.645 \cdot t}\\
+\end{equation*}
+
+Para obtener la tensión en el condensador recurrimos a la LKV:
+
+\begin{align*}
+  u_C(t) &= u_R(t) + u_L(t) = \\
+         &= R \cdot i_L(t) + L \diff{i_L(t)}{t} = \\
+  &= 9.7275 \cdot e^{-0.354 \cdot t} + 0.275 \cdot e^{-5.645 \cdot t}
+\end{align*}
+
+\clearpage
 
 \subsection{FM 4.9}
 
