@@ -322,9 +322,6 @@ A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta nat
 \end{minipage}
 \begin{minipage}{0.7\textwidth}
   \begin{align*}
-    i_L(t) &= A_1 \cdot e^{s_1 \cdot t} + A_2 \cdot e^{s_2 \cdot t}\\
-    s_1 &= -\alpha + \sqrt{\alpha^2 - \omega_0^2}\\
-    s_2 &= -\alpha - \sqrt{\alpha^2 - \omega_0^2}\\
     \alpha &= \frac{R}{2L} = \SI{3}{\per\second}\\
     \omega_0 &= \frac{1}{\sqrt{LC}} = \sqrt{2}\si{\radian\per\second}
   \end{align*}
@@ -335,19 +332,28 @@ A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta nat
 Dado que $\alpha > \omega_0$ se trata de un transitorio sobreamortiguado:
 
 \begin{align*}
-  s_1 &= \SI{-0.354}{\per\second}\\
-  s_2 &= \SI{-5.645}{\per\second}\\
+  s_1 &= -\alpha + \sqrt{\alpha^2 - \omega_0^2} = \SI{-0.354}{\per\second}\\
+  s_2 &= -\alpha - \sqrt{\alpha^2 - \omega_0^2} = \SI{-5.645}{\per\second}\\
   i_L(t) &= A_1 \cdot e^{-0.354 \cdot t} + A_2 \cdot e^{-5.645 \cdot t}
 \end{align*}
 
 Para determinar las constantes de integración recurrimos a las condiciones iniciales:
 
-\begin{align*}
-  u_R(t) + u_L(t) &= u_C(t)\\
-  u_L(0^+) &= u_C(0^+) - u_R(0^+)\\
-  u_R(0^+) &= R \cdot i_L(0^+) = \SI{15}{\volt}\\
-  u_L(0^+) &= 10 - 15 = \SI{-5}{\volt}
-\end{align*}
+\bigskip
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[scale=0.8]{figs/FM_4_8_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    u_R(t) + u_L(t) &= u_C(t)\\
+    u_L(0^+) &= u_C(0^+) - u_R(0^+)\\
+    u_R(0^+) &= R \cdot i_L(0^+) = \SI{15}{\volt}\\
+    u_L(0^+) &= 10 - 15 = \SI{-5}{\volt}
+  \end{align*}
+\end{minipage}
+
+\bigskip
 
 Por tanto,
 
@@ -393,7 +399,7 @@ En el circuito de la figura, calcula la tensión $u_c(t)$ para $t > 0$.
 \vspace*{1cm}
 
 \begin{minipage}{0.7\textwidth}
-  \includegraphics[scale=0.8]{figs/FM_4_9}
+  \includegraphics{figs/FM_4_9}
 \end{minipage}
 \hfill
 \begin{minipage}{0.3\textwidth}
@@ -407,5 +413,95 @@ Datos:
 \end{align*}
 \end{minipage}
 
+\subsection*{Solución}
+
+Calculamos las condiciones iniciales ($t = 0^-$). Dibujamos el circuito para $t < 0$ y obtenemos:
+
+\bigskip
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[scale=0.8]{figs/FM_4_9_t0-}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    u_C(t) &= \SI{2}{\volt}\\
+    i_L(t) &= \frac{\epsilon_g}{R_1 + R_2} = \SI{1}{\ampere}
+  \end{align*}
+\end{minipage}
+
+\bigskip
+Por tanto, $u_c(0^+) = u_c(0^-) = \SI{2}{\volt}$ y $i_L(0^+) = i_L(0^-) = \SI{1}{\ampere}$.
+
+A continuación dibujamos el circuito para $t > 0$ para obtener la respuesta natural y la respuesta forzada. En el circuito resultante no hay fuentes, por lo que no habrá respuesta forzada.
+
+\bigskip
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[scale=0.8]{figs/FM_4_9_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+  \begin{align*}
+    \alpha &= \frac{G}{2C} = \SI{1}{\per\second}\\
+    \omega_0 &= \frac{1}{\sqrt{LC}} = 2\si{\radian\per\second}
+  \end{align*}
+\end{minipage}
+
+\bigskip
+
+Dado que $\alpha < \omega_0$, se trata de un transitorio subamortiguado:
+
+\begin{align*}
+  \omega_d &= \sqrt{\omega_0^2 - \alpha^2} = \sqrt{3}\si{\radian\per\second}\\
+  u_C(t) &= (B_1 \cdot \cos(\sqrt{3} \cdot t) + B_2 \cdot \sin(\sqrt{3} \cdot t)) \cdot e^{-t}
+\end{align*}
+
+Para determinar las constantes de integración recurrimos a las condiciones iniciales:
+
+\bigskip
+
+\begin{minipage}{0.3\textwidth}
+\includegraphics[scale=0.8]{figs/FM_4_9_natural}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+\begin{align*}
+  i_C(0^+) &= i_L(0^+) - i_R(0^+)\\
+  i_R(0^+) &= G_1 \cdot u_C(0^+) = \SI{1}{\ampere}\\
+  i_C(0^+) &= 1 - 1 = \SI{0}{\ampere}
+\end{align*}
+\end{minipage}
+
+\bigskip
+
+Por tanto,
+
+\begin{align*}
+  u_C(0^+) &= \SI{2}{\volt}\\
+  \diff{u_C(t)}{t}{t = 0^+} &= \frac{1}{C} \cdot i_C(0^+) = \SI{0}{\volt\per\second}
+\end{align*}
+
+Con estos resultados, particularizamos la ecuación de $u_C(t)$ para $t = 0$ y así planteamos las ecuaciones para obtener $B_1$ y $B_2$:
+
+\begin{align*}
+  u_C(0^+) &= B_1 = 2\\
+  \diff{u_C(t)}{t}{t = 0^+} &= -e^{-t} \cdot (2\cos(\sqrt{3}t) + B_2\sin(\sqrt{3}t)) +\\
+           &+ e^{-t} \cdot (-2\sqrt{3}\sin(\sqrt{3}t) + \sqrt{3} B_2\cos(\sqrt{3}t)) =\\
+           &= 0
+\end{align*}
+
+Por tanto,
+
+\begin{align*}
+  B_1 &= 2\\
+  B_2 &= \frac{2\sqrt{3}}{3}
+\end{align*}
+
+Finalmente,
+
+\begin{equation*}
+  u_C(t) = (2 \cdot \cos(\sqrt{3} \cdot t) + \frac{2\sqrt{3}}{3} \cdot \sin(\sqrt{3} \cdot t)) \cdot e^{-t}
+\end{equation*}
+
+
+\clearpage
 
 \end{document}
