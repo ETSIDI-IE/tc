@@ -14,13 +14,135 @@
 \usepackage{enumitem}
 \usepackage{diffcoeff}
 
+\renewcommand{\thesubsection}{Problema \arabic{subsection}}
+
 \begin{document}
 
 \title{}
 
 \section{Transitorio de primer orden}
 
-\subsection{FM 4.2}
+\subsection{}
+
+El interruptor de la figura ha estado cerrado por un tiempo muy prolongado y en $t = 0$ se abre.
+
+\begin{minipage}{0.5\linewidth}
+  \center{\includegraphics{figs/BT5_CondicionesIniciales_bobina.pdf}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \center{Datos:}
+  \begin{align*}
+    R_1 &= \SI{5}{\ohm}\\
+    R_2 &= \SI{5}{\ohm}\\
+    R_3 &= \SI{2}{\ohm}\\
+    L &= \SI{3.5}{\milli\henry}\\
+    \epsilon_1 &= \SI{24}{\volt}\\
+    \epsilon_2 &= \SI{12}{\volt}
+  \end{align*}
+\end{minipage}
+
+\medskip
+
+Con esta información se debe calcular:
+\begin{enumerate}
+\item Valores de $i_1(0^+)$, $i_2(0^+)$, $i_L(0+)$, $u_L(0^+)$ y $u_{AB}(0+)$.
+\item Expresión de $i_L(t)$ para $t > 0$.
+\item Expresiones de $u_L(t)$ y $u_{AB}(t)$ para $t > 0$.
+\end{enumerate}
+
+\subsubsection*{Solución}
+
+En el circuito en $t <0$ la bobina se comporta como un cortocircuito. Resolviendo por mallas el circuito resultante obtenemos los valores para $t = 0^-$:
+
+\begin{align*}
+  i_L(0^-) &= \qty{4}{\ampere}\\
+  i_1(0^-) &= \qty{3.2}{\ampere}\\
+  i_2(0^-) &= \qty{0.8}{\ampere}
+\end{align*}
+
+En la bobina podemos plantear la condición de continuidad $i_L(0^-) = i_L(0^+)$, que nos permite obtener los valores para $t = 0^+$, una vez abierto el interruptor:
+
+\begin{align*}
+  i_L(0^+) &= \qty{4}{\ampere}\\
+  i_1(0^+) &= i_L(0^+)\\
+  i_2(0^+) &= \qty{0}{\ampere}\\
+  u_L(0^+) &= \epsilon_1 - i_1(0^+) \cdot R_1 - i_L(0^+) \cdot R_3 = -\qty{4}{\volt}\\
+  u_{AB}(0^+) &= \epsilon_1 - i_1(0^+) \cdot R_1 = \qty{4}{\volt}
+\end{align*}
+
+Analizamos ahora el circuito para $t > 0$, en el que el interruptor está abierto. La resistencia vista por la bobina es $R_{th} = \qty{7}{\ohm}$. Por tanto:
+
+\begin{equation*}
+  \tau = \frac{L}{R_{th}} = \qty{500}{\micro\second}
+\end{equation*}
+
+Obtenemos la respuesta forzada analizando el circuito en régimen permanente, en el que la bobina se comportará como un cortocircuito:
+
+\begin{equation*}
+  i_{L}(\infty) = \frac{\epsilon_1}{R_1 + R_3} = \qty{3.43}{\ampere}
+\end{equation*}
+
+Obtenemos la respuesta natural apagando la fuente $\epsilon_1$:
+
+\begin{equation*}
+  i_{Ln}(t) = A \cdot e^{-2000 \cdot t}
+\end{equation*}
+
+Para obtener la constante $A$ recurrimos a la condición inicial $i_L(0^+) = \qty{4}{\ampere}$:
+
+\begin{equation*}
+  A = i_L(0^+) - i_L(\infty) = \qty{0.57}{\ampere}
+\end{equation*}
+
+Por tanto:
+
+\begin{equation*}
+  i_L(t) = 3.43 + 0.57 \cdot e^{-2000 \cdot t} \unit{\ampere}
+\end{equation*}
+
+Con este resultado podemos obtener las tensiones en el circuito:
+
+\begin{equation*}
+  u_L(t) = L \cdot \diff{i_L}{t} = - 4 \cdot e^{-2000 \cdot t} \unit{\volt}
+\end{equation*}
+
+
+\begin{equation*}
+  u_{AB}(t) =  u_L(t) + R_3 \cdot i_L(t) = 6.86 - 2.86 \cdot e^{-2000 \cdot t} \unit{\volt}
+\end{equation*}
+
+Comprobamos que estas expresiones concuerdan con los resultados obtenidos para $u_L(0^+)$ y $u_{AB}(0^+)$.
+
+\clearpage
+
+\subsection{}
+
+El interruptor del circuito de la figura lleva abierto un tiempo indefinido. En el instante $t= 0$ se cierra este interruptor. Hay que obtener:
+\begin{enumerate}
+\item Valores de las tensiones $u_1(0^+)$, $u_2(0^+)$, $u_3(0^+)$ y $u_c(0^+)$.
+\item Expresión temporal de la tensión $u_c(t)$ para $t > 0$.
+\item Expresiones temporales de $u_2(t)$ y $u_3(t)$ para $t > 0$.
+\end{enumerate}
+
+\begin{minipage}{0.5\linewidth}
+  \center{\includegraphics{figs/BT5_CondicionesIniciales_condensador.pdf}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  Datos:
+
+  $e(t) = 10\unit{\volt}$
+  
+  $R_1 = R_2 = 2 \unit{\ohm}$
+
+  $R_3= 4 \unit{\ohm}$
+
+  $C = 1 \unit{\farad}$
+\end{minipage}
+
+
+\clearpage
+
+\subsection{}
 
 Calcular la corriente $i(t)$ para $t > 0$. 
 
@@ -107,7 +229,7 @@ Por tanto,
 
 \clearpage
 
-\subsection{FM 4.3}
+\subsection{}
 
 Calcular la tensión en bornes del condensador para $t > 0$.
 
@@ -195,7 +317,7 @@ Por tanto,
 
 \clearpage
 
-\subsection{HKD 8.4}
+\subsection{}
 
 Determina las corrientes $i_L(t)$ e $i_1(t)$ para $t > 0$.
 
@@ -275,7 +397,7 @@ En el primer apartado habíamos obtenido $i_1(0^-) = \SI{200}{\milli\ampere}$. C
 
 \section{Transitorio de segundo orden}
 
-\subsection{FM 4.8}
+\subsection{}
 
 El circuito de la figura ha alcanzado el régimen permanente con el interruptor cerrado. El interruptor se abre en $t = 0$. Calcula las expresiones de la tensión en bornes del condensador y de la corriente por la bobina para $t > 0$.
 
@@ -392,7 +514,7 @@ Para obtener la tensión en el condensador recurrimos a la LKV:
 
 \clearpage
 
-\subsection{FM 4.9}
+\subsection{}
 
 En el circuito de la figura, calcula la tensión $u_c(t)$ para $t > 0$.
 
