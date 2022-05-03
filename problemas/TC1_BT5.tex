@@ -139,6 +139,105 @@ El interruptor del circuito de la figura lleva abierto un tiempo indefinido. En 
   $C = 1 \unit{\farad}$
 \end{minipage}
 
+\subsubsection*{Solución}
+
+\begin{enumerate}
+\item
+
+  En $t < 0$, dado que el circuito lleva funcionando un tiempo
+  indefinido, el condensador se comporta como un circuito
+  abierto. Además, el interruptor está abierto y, por tanto, la fuente
+  está aislada del circuito. En estas condiciones
+  $u_c(0^-) = \qty{0}{\volt}$. Debido a las condiciones de
+  continuidad, $u_c(0^+) = u_c(0^-) = \qty{0}{\volt}$.
+
+\begin{minipage}{0.6\linewidth}
+  Con este resultado podemos determinar el resto de tensiones del
+  circuito en $t = 0^+$, teniendo en cuenta que para $t > 0$ el
+  interruptor está cerrado y el condensador es equivalente a un
+  cortocircuito ($u_c(0^+) = \qty{0}{\volt}$).
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+  \center{\includegraphics{figs/BT5_CondicionesIniciales_condensador0+.pdf}}
+\end{minipage}
+
+En este circuito $R_2$ y $R_3$ están en paralelo entre sí, siendo
+$R_{23} = \frac{R_2 \cdot R_3}{R_2 + R_3}$. Esta resistencia paralelo
+está en serie con $R_1$, formando un divisor de tensión. Por tanto:
+
+\begin{align*}
+  u_2(0^+) = u_3(0^+) &= e(t) \cdot \frac{R_{23}}{R_1 + R_{23}} = \qty{4}{\volt}\\
+  u_1(0^+) &= e(t) - u_2(0^+) = \qty{6}{\volt}.
+\end{align*}
+
+\item
+
+  Analizamos ahora el circuito para $t > 0$, en el que el interruptor
+  está abierto.
+
+
+  \begin{minipage}{0.6\linewidth}
+    La resistencia vista por el condensador es
+
+  \[
+    R_{th} = R_3 + \frac{R_1 \cdot R_2}{R_1 + R_2} = \qty{5}{\ohm}
+  \]
+
+  Por tanto:
+  \begin{equation*}
+    \tau = \frac{C}{G_{th}} = \qty{5}{\second}
+  \end{equation*}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+  \center{\includegraphics{figs/BT5_CondicionesIniciales_condensador_Rth.pdf}}
+\end{minipage}
+
+Obtenemos la respuesta forzada analizando el circuito en régimen
+permanente, en el que el condensador se comportará como un circuito
+abierto:
+
+\begin{equation*}
+  u_{C}(\infty) = e(t) \cdot \frac{R_2}{R_1 + R_2} = \qty{5}{\volt}
+\end{equation*}
+
+Obtenemos la respuesta natural apagando la fuente $e(t)$:
+
+\begin{equation*}
+  u_{Cn}(t) = A \cdot e^{-0.2t}
+\end{equation*}
+
+Para obtener la constante $A$ recurrimos a la condición inicial
+$u_C(0^+) = \qty{0}{\volt}$:
+
+\begin{equation*}
+  A = u_C(0^+) - u_C(\infty) = \qty{-5}{\volt}
+\end{equation*}
+
+Por tanto:
+
+\begin{equation*}
+  u_C(t) = 5 - 5 \cdot e^{-0.2t} \unit{\volt}
+\end{equation*}
+
+\item Con este resultado podemos obtener la corriente que circula por
+  el condensador:
+
+\begin{equation*}
+  i_C(t) = C \cdot \diff{u_C}{t} = e^{-0.2t} \unit{\ampere}
+\end{equation*}
+
+y las tensiones en las resistencias:
+
+\begin{align*}
+  u_{R3}(t) &=  R_3 \cdot i_C(t) = 4 \cdot e^{-0.2t} \unit{\volt}\\
+  u_{R2}(t) &=  u_{R3}(t) + u_C(t) = 5 - e^{-0.2t} \unit{\volt}
+\end{align*}
+  
+
+
+  
+  
+\end{enumerate}
 
 \clearpage
 
