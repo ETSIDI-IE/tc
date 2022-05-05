@@ -129,11 +129,6 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 \boxed{u_C(0^-) = u_C(0^+)}
 \]
 #+END_EXPORT
-*** Ejemplo
-
-El interruptor lleva en la posición (1) desde un tiempo infinito y  pasa a la posición (2) en $t = 0$:
-#+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/ejemplo_condiciones_iniciales.pdf]]
 
 
 * Circuitos de Primer Orden
