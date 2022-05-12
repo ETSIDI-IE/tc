@@ -673,7 +673,7 @@ Por tanto,
 
 \begin{align*}
   i_L(0^+) &= \SI{1}{\ampere}\\
-  \diff{i_L(t)}{t}{t = 0^+} &= \frac{1}{L} \cdot u_L(0^+) = \SI{-2}{\ampere\per\second}
+  \diff{i_L(t)}{t}[t = 0^+] &= \frac{1}{L} \cdot u_L(0^+) = \SI{-2}{\ampere\per\second}
 \end{align*}
 
 Con estos resultados, particularizamos la ecuación de $i_L(t)$ para
@@ -681,7 +681,7 @@ $t = 0$ y así planteamos las ecuaciones para obtener $A_1$ y $A_2$:
 
 \begin{align*}
   i_L(0^+) &= A_1 + A_2 = 1\\
-  \diff{i_L(t)}{t}{t = 0^+} &= A_1 \cdot s_1 + A_2 \cdot s_2 = -2
+  \diff{i_L(t)}{t}[t = 0^+] &= A_1 \cdot s_1 + A_2 \cdot s_2 = -2
 \end{align*}
 
 Por tanto,
@@ -796,7 +796,7 @@ Por tanto,
 
 \begin{align*}
   u_C(0^+) &= \SI{2}{\volt}\\
-  \diff{u_C(t)}{t}{t = 0^+} &= \frac{1}{C} \cdot i_C(0^+) = \SI{0}{\volt\per\second}
+  \diff{u_C(t)}{t}[t = 0^+] &= \frac{1}{C} \cdot i_C(0^+) = \SI{0}{\volt\per\second}
 \end{align*}
 
 Con estos resultados, particularizamos la ecuación de $u_C(t)$ para
@@ -804,7 +804,7 @@ $t = 0$ y así planteamos las ecuaciones para obtener $B_1$ y $B_2$:
 
 \begin{align*}
   u_C(0^+) &= B_1 = 2\\
-  \diff{u_C(t)}{t}{t = 0^+} &= -e^{-t} \cdot (2\cos(\sqrt{3}t) + B_2\sin(\sqrt{3}t)) +\\
+  \diff{u_C(t)}{t}[t = 0^+] &= -e^{-t} \cdot (2\cos(\sqrt{3}t) + B_2\sin(\sqrt{3}t)) +\\
            &+ e^{-t} \cdot (-2\sqrt{3}\sin(\sqrt{3}t) + \sqrt{3} B_2\cos(\sqrt{3}t)) =\\
            &= 0
 \end{align*}
