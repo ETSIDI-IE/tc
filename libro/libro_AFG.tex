@@ -36,7 +36,7 @@
 \usepackage{diffcoeff}
 
 \usepackage{graphicx} % Required for including pictures
-\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+\graphicspath{{../figs/}} % Specifies the directory where pictures are stored
 
 \usepackage{lipsum} % Inserts dummy text
 
@@ -58,8 +58,8 @@
 
 \usepackage{avant} % Use the Avantgarde font for headings
 %\usepackage{times} % Use the Times font for headings
-\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
-
+%\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+\usepackage{mathpazo}
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
@@ -519,6 +519,9 @@ addtohook={%
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
 %%hasta aquí
+
+\usepackage{mathpazo}
+
 \begin{document}
 	
 	%----------------------------------------------------------------------------------------
@@ -531,7 +534,7 @@ addtohook={%
 \coordinate [below=12cm] (midpoint) at (current page.north);
 \node at (current page.north west)
 {\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{Pictures/portada0.jpg}}; % Background image
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{../figs/portada0.jpg}}; % Background image
 \draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Teoría de Circuitos I\\[15pt] % Book title
 {\Large Escuela Técnica Superior de Ingeniería y Diseño Industrial}\\[20pt] % Subtitle
 {\huge 2022/23}}}; % Author name
@@ -542,7 +545,7 @@ addtohook={%
 	
 % 	\begingroup
 % 	\thispagestyle{empty}
-% 	\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=2.1]{Pictures/portada0.png}}} % Image background
+% 	\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=2.1]{../figs/portada0.png}}} % Image background
 % 	\centering
 % 	\vspace*{5.2cm}
 % 	\par\normalfont\fontsize{35}{35}\sffamily\selectfont
@@ -653,7 +656,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.2\linewidth]{Pictures/tension_puntos.PNG}
+		\includegraphics[width=0.2\linewidth]{../figs/tension_puntos.PNG}
 		\caption{Diferencia de potencial}
 		\label{fig.tension_puntos}
 	\end{figure}
@@ -671,8 +674,8 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Trayectoria]{\includegraphics[width=0.25\linewidth]{Pictures/diagrama_tension.PNG}\label{fig.diagrama_tension}}\hfil
-		\subfigure[Sentido]{\includegraphics[width=0.25\linewidth]{Pictures/sentido_tension.pdf}\label{fig.sentido_tension}}
+		\subfigure[Trayectoria]{\includegraphics[width=0.25\linewidth]{../figs/diagrama_tension.PNG}\label{fig.diagrama_tension}}\hfil
+		\subfigure[Sentido]{\includegraphics[width=0.25\linewidth]{../figs/sentido_tension.pdf}\label{fig.sentido_tension}}
 		\caption{Consideraciones sobre la diferencia de potencial}
 	\end{figure}
 	
@@ -683,7 +686,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.45\linewidth]{Pictures/seccion_conductor.pdf}
+		\includegraphics[width=0.45\linewidth]{../figs/seccion_conductor.pdf}
 		\caption{Corriente eléctrica}
 		\label{fig.seccion_conductor}
 	\end{figure}
@@ -710,7 +713,7 @@ addtohook={%
 			\item \textbf{Corriente continua constante:} Su valor instantáneo a lo largo del tiempo permanece inalterable ($\frac{di(t)}{dt} = 0$, Figura~\ref{fig.continua}). Suele estar suministrada por pilas, baterías, dinamos, fuentes de alimentación de corriente continua, etc. 
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.75\linewidth]{Pictures/continua.pdf}
+				\includegraphics[width=0.75\linewidth]{../figs/continua.pdf}
 				\caption{Forma de onda de la corriente continua constante}
 				\label{fig.continua}
 			\end{figure}
@@ -721,7 +724,7 @@ addtohook={%
 			\item \textbf{Corriente alterna sinusoidal:} Los valores absolutos instantáneos son sucesivamente proporcionales a los valores que toma el seno de 0$^\circ$ a 360$^\circ$ (Figura~\ref{fig.sin}).
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.75\linewidth]{Pictures/sin.pdf}
+				\includegraphics[width=0.75\linewidth]{../figs/sin.pdf}
 				\caption{Forma de onda de la corriente alterna senoidal}
 				\label{fig.sin}
 			\end{figure}
@@ -760,8 +763,8 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[$P>0$]{\includegraphics[width=0.3\linewidth]{Pictures/signo_potencia1.pdf}}\hfil
-		\subfigure[$P<0$]{\includegraphics[width=0.3\linewidth]{Pictures/signo_potencia2.pdf}}
+		\subfigure[$P>0$]{\includegraphics[width=0.3\linewidth]{../figs/signo_potencia1.pdf}}\hfil
+		\subfigure[$P<0$]{\includegraphics[width=0.3\linewidth]{../figs/signo_potencia2.pdf}}
 		\caption{Convenio de signos para la potencia}
 		\label{fig.signo_potencia}
 	\end{figure}
@@ -772,8 +775,8 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Receptor]{\includegraphics[width=0.25\linewidth]{Pictures/receptor_generador1.pdf}}\hfil
-		\subfigure[Generador]{\includegraphics[width=0.25\linewidth]{Pictures/receptor_generador2.pdf}}
+		\subfigure[Receptor]{\includegraphics[width=0.25\linewidth]{../figs/receptor_generador1.pdf}}\hfil
+		\subfigure[Generador]{\includegraphics[width=0.25\linewidth]{../figs/receptor_generador2.pdf}}
 		\caption{Convenio de signos para la potencia}
 		\label{fig.receptor_generador}
 	\end{figure}
@@ -816,8 +819,8 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Ideal]{\includegraphics[height=3.5cm]{Pictures/FuenteTensionIdealDC.pdf}}\hfil
-		\subfigure[Real]{\includegraphics[height=3.5cm]{Pictures/FuenteTensionRealDC.pdf}}
+		\subfigure[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteTensionIdealDC.pdf}}\hfil
+		\subfigure[Real]{\includegraphics[height=3.5cm]{../figs/FuenteTensionRealDC.pdf}}
 		\caption{Generador de tensión}
 		\label{fig.fuentetension}
 	\end{figure}
@@ -833,8 +836,8 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Ideal]{\includegraphics[height=3.5cm]{Pictures/FuenteCorrienteIdeal.pdf}}\hfil
-		\subfigure[Real]{\includegraphics[height=3.5cm]{Pictures/FuenteCorrienteRealDC.pdf}}
+		\subfigure[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteIdeal.pdf}}\hfil
+		\subfigure[Real]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteRealDC.pdf}}
 		\caption{Generador de corriente}
 		\label{fig.fuentecorriente}
 	\end{figure}
@@ -845,8 +848,8 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Fuente real de tensión]{\includegraphics[height=4.9cm]{Pictures/FuenteTensionRealDC.pdf}}\hfil
-		\subfigure[Fuente real de corriente]{\includegraphics[height=4.9cm]{Pictures/FuenteCorrienteRealDC.pdf}}
+		\subfigure[Fuente real de tensión]{\includegraphics[height=4.9cm]{../figs/FuenteTensionRealDC.pdf}}\hfil
+		\subfigure[Fuente real de corriente]{\includegraphics[height=4.9cm]{../figs/FuenteCorrienteRealDC.pdf}}
 		\caption{Equivalencia de generadores}
 		\label{fig.equivalencia_generadores}
 	\end{figure}
@@ -885,10 +888,10 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Tensión--Tensión]{\includegraphics[height=4cm]{Pictures/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}}\hfill
-		\subfigure[Tensión--Corriente]{\includegraphics[height=4cm]{Pictures/FuenteTensionDependienteCorriente.pdf}\label{fig.tension-corriente}}\hfill
-		\subfigure[Corriente--Tensión]{\includegraphics[height=4cm]{Pictures/FuenteCorrienteDependienteTension.pdf}\label{fig.corriente-tension}}\hfill
-		\subfigure[Corriente--Corriente]{\includegraphics[height=4cm]{Pictures/FuenteCorrienteDependienteCorriente.pdf}\label{fig.corriente-corriente}}
+		\subfigure[Tensión--Tensión]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}}\hfill
+		\subfigure[Tensión--Corriente]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteCorriente.pdf}\label{fig.tension-corriente}}\hfill
+		\subfigure[Corriente--Tensión]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteTension.pdf}\label{fig.corriente-tension}}\hfill
+		\subfigure[Corriente--Corriente]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteCorriente.pdf}\label{fig.corriente-corriente}}
 		\caption{Fuentes dependientes}
 		\label{fig.fuentes_dependientes}
 	\end{figure}
@@ -917,8 +920,8 @@ addtohook={%
 	Por tanto, la resistencia eléctrica representa la mayor o menor dificultad que ofrecen los diferentes materiales para ser recorridos por una corriente eléctrica. Su valor se mide en ohmios [$\Omega$]. El criterio de signos utilizado considerar que la tensión es positiva en el terminal por el que entra la corriente, esto es, las flechas de tensión y corriente tienen el mismo sentido (Figura~\ref{fig.resistencia}).
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Referencia mediante signo]{\includegraphics{Pictures/Resistencia.pdf}}\hfil
-		\subfigure[Referencia mediante flecha]{\includegraphics{Pictures/Resistencia_Flecha.pdf}}
+		\subfigure[Referencia mediante signo]{\includegraphics{../figs/Resistencia.pdf}}\hfil
+		\subfigure[Referencia mediante flecha]{\includegraphics{../figs/Resistencia_Flecha.pdf}}
 		\caption{Criterio de signos en una resistencia}
 		\label{fig.resistencia}
 	\end{figure}
@@ -978,8 +981,8 @@ addtohook={%
 	\end{itemize}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Cortocircuito]{\includegraphics[width=0.2\linewidth]{Pictures/cortocircuito.pdf}\label{fig.cortocircuito}}\hfil
-		\subfigure[Circuito abierto]{\includegraphics[width=0.2\linewidth]{Pictures/CircuitoAbierto.pdf}\label{fig.c_abierto}}
+		\subfigure[Cortocircuito]{\includegraphics[width=0.2\linewidth]{../figs/cortocircuito.pdf}\label{fig.cortocircuito}}\hfil
+		\subfigure[Circuito abierto]{\includegraphics[width=0.2\linewidth]{../figs/CircuitoAbierto.pdf}\label{fig.c_abierto}}
 		\caption{Cortocircuito y circuito abierto}
 		
 	\end{figure}
@@ -999,12 +1002,12 @@ addtohook={%
 	\end{remark}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.15\linewidth]{Pictures/Bobina.pdf}
+		\includegraphics[width=0.15\linewidth]{../figs/Bobina.pdf}
 		\caption{Tensión y corriente en una bobina}
 		\label{fig.bobina}
 	\end{figure}
 	
-	La relación inversa de la expresión~\eqref{eq.u_L} se puede obtener por integración entre un tiempo inicial $t_iu$ y un tiempo final $t_f$, resultando:
+	La relación inversa de la expresión~\eqref{eq.u_L} se puede obtener por integración entre un tiempo inicial $t_i$ y un tiempo final $t_f$, resultando:
 	\begin{equation*}
 		\int_{t_i}^{t_f} \dfrac{di(t)}{dt}dt=\dfrac{1}{L}\int_{t_i}^{t_f}u(t)\cdot dt \rightarrow i(t_f)-i(t_i)=\dfrac{1}{L}\cdot\int_{t_i}^{t_f} u(t)\cdot dt\,
 	\end{equation*}
@@ -1077,7 +1080,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.15\linewidth]{Pictures/Condensador.pdf}
+		\includegraphics[width=0.15\linewidth]{../figs/Condensador.pdf}
 		\caption{Tensión y corriente en un condensador}
 		\label{fig.condensador}
 	\end{figure}
@@ -1113,8 +1116,8 @@ addtohook={%
 		\end{equation}
 		\begin{figure}[htbp]
 			\centering
-			\subfigure[Ideal]{\includegraphics[height=3.5cm]{Pictures/receptor_ideal.pdf}}\hfil
-			\subfigure[Real]{\includegraphics[height=3.5cm]{Pictures/receptor_real.pdf}}
+			\subfigure[Ideal]{\includegraphics[height=3.5cm]{../figs/receptor_ideal.pdf}}\hfil
+			\subfigure[Real]{\includegraphics[height=3.5cm]{../figs/receptor_real.pdf}}
 			\caption{Receptores}
 			\label{fig.receptores}
 		\end{figure}
@@ -1193,7 +1196,7 @@ addtohook={%
 		\textbf{Determinar el número de nudos, ramas, lazos y mallas del circuito de la Figura~\ref{fig.mallas}.}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.4\linewidth]{Pictures/mallas.pdf}
+			\includegraphics[width=0.4\linewidth]{../figs/mallas.pdf}
 			\caption{Ejercicio~\ref{ej.1-3}}
 			\label{fig.mallas}
 		\end{figure}
@@ -1222,7 +1225,7 @@ addtohook={%
 		
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.35\linewidth]{Pictures/LKC_FM.pdf}
+			\includegraphics[width=0.35\linewidth]{../figs/LKC_FM.pdf}
 			\caption{Primera ley de Kirchhoff}
 			\label{fig.LKC_FM}
 		\end{figure}
@@ -1238,7 +1241,7 @@ addtohook={%
 		\end{equation*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.35\linewidth]{Pictures/LKV_FM.pdf}
+			\includegraphics[width=0.35\linewidth]{../figs/LKV_FM.pdf}
 			\caption{Segunda ley de Kirchhoff}
 			\label{fig.LKV_FM}
 		\end{figure}
@@ -1247,7 +1250,7 @@ addtohook={%
 	\subsection{Balance de tensiones: ecuación de una rama y ley de Ohm para un circuito cerrado}
 	\begin{figure}[tbp]
 		\centering
-		\includegraphics[width=0.5\linewidth]{Pictures/circuito_lkv.pdf}
+		\includegraphics[width=0.5\linewidth]{../figs/circuito_lkv.pdf}
 		\caption{Ecuación de una rama}
 		\label{fig.circuito_lkv}
 	\end{figure}
@@ -1311,7 +1314,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.2\linewidth]{Pictures/AsociacionSerie.pdf}
+			\includegraphics[width=0.2\linewidth]{../figs/AsociacionSerie.pdf}
 			\caption{Conexión de resistencias en serie}
 			\label{fig.serie}
 		\end{figure}
@@ -1356,7 +1359,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.2\linewidth]{Pictures/BobinasSerie.pdf}
+			\includegraphics[width=0.2\linewidth]{../figs/BobinasSerie.pdf}
 			\caption{Conexión de bobinas en serie}
 			\label{fig.bobinas-serie}
 		\end{figure}
@@ -1384,7 +1387,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.2\linewidth]{Pictures/CondensadoresSerie.pdf}
+			\includegraphics[width=0.2\linewidth]{../figs/CondensadoresSerie.pdf}
 			\caption{Conexión de condensadores en serie}
 			\label{fig.condensadores-serie}
 		\end{figure}
@@ -1424,7 +1427,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[tbp]
 			\centering
-			\includegraphics[width=0.35\linewidth]{Pictures/AsociacionParalelo.pdf}
+			\includegraphics[width=0.35\linewidth]{../figs/AsociacionParalelo.pdf}
 			\caption{Conexión de resistencias en paralelo}
 			\label{fig.resistencias-paralelo}
 		\end{figure}
@@ -1491,7 +1494,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.35\linewidth]{Pictures/BobinasParalelo.pdf}
+			\includegraphics[width=0.35\linewidth]{../figs/BobinasParalelo.pdf}
 			\caption{Conexión de bobinas en paralelo}
 			\label{fig.bobinas-paralelo}
 		\end{figure}
@@ -1519,7 +1522,7 @@ addtohook={%
 		\end{align*}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.4\linewidth]{Pictures/CondensadoresParalelo.pdf}
+			\includegraphics[width=0.4\linewidth]{../figs/CondensadoresParalelo.pdf}
 			\caption{Conexión de condensadores en paralelo}
 			\label{fig.condensadores-paralelo}
 		\end{figure}
@@ -1559,8 +1562,8 @@ addtohook={%
 	externo $A$, $B$ y $C$, y que se unen en un punto común $N$. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Conexión triángulo]{\includegraphics[width=0.3\linewidth]{Pictures/Conexion_Triangulo.pdf}}\hfil
-		\subfigure[Conexión estrella]{\includegraphics[width=0.3\linewidth]{Pictures/Conexion_Estrella.pdf}}
+		\subfigure[Conexión triángulo]{\includegraphics[width=0.3\linewidth]{../figs/Conexion_Triangulo.pdf}}\hfil
+		\subfigure[Conexión estrella]{\includegraphics[width=0.3\linewidth]{../figs/Conexion_Estrella.pdf}}
 		\caption{Conexión en estrella y en triángulo}
 		\label{fig.estrella-triangulo}
 	\end{figure}
@@ -1635,7 +1638,7 @@ addtohook={%
 		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.mallas1}.}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.35\linewidth]{Pictures/mallas1.pdf}
+			\includegraphics[width=0.35\linewidth]{../figs/mallas1.pdf}
 			\caption{Ejercicio~\ref{ej.1-4}}
 			\label{fig.mallas1}
 		\end{figure}
@@ -1722,7 +1725,7 @@ addtohook={%
 			\item Asignar un sentido a las corrientes de malla: se muestra en la Figura~\ref{fig.mallas1_corrientes}
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.35\linewidth]{Pictures/mallas1_corrientes.pdf}
+				\includegraphics[width=0.35\linewidth]{../figs/mallas1_corrientes.pdf}
 				\caption{Corrientes de malla del circuito}
 				\label{fig.mallas1_corrientes}
 			\end{figure}
@@ -1821,7 +1824,7 @@ addtohook={%
 		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.nudos}.}
 		\begin{figure}[htbp]
 			\centering
-			\includegraphics[width=0.6\linewidth]{Pictures/nudos.pdf}
+			\includegraphics[width=0.6\linewidth]{../figs/nudos.pdf}
 			\caption{Ejercicio~\ref{ej.1-6}}
 			\label{fig.nudos}
 		\end{figure}
@@ -1941,7 +1944,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=.35\linewidth]{Pictures/escalon.pdf}
+		\includegraphics[width=.35\linewidth]{../figs/escalon.pdf}
 		\caption{Función escalón en el origen de tiempos}
 		\label{fig.escalon}
 	\end{figure}
@@ -1962,7 +1965,7 @@ addtohook={%
 	\end{equation}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=.35\linewidth]{Pictures/pulso.pdf}
+		\includegraphics[width=.35\linewidth]{../figs/pulso.pdf}
 		\caption{Función pulso rectangular}
 		\label{fig.pulso}
 	\end{figure}
@@ -1980,7 +1983,7 @@ addtohook={%
 	\end{equation}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.35\linewidth]{Pictures/rampa.pdf}
+		\includegraphics[width=0.35\linewidth]{../figs/rampa.pdf}
 		\caption{Función rampa}
 		\label{fig.rampa}
 	\end{figure}
@@ -2000,7 +2003,7 @@ addtohook={%
 	\end{equation}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.35\linewidth]{Pictures/triangular.pdf}
+		\includegraphics[width=0.35\linewidth]{../figs/triangular.pdf}
 		\caption{Función triangular}
 		\label{fig.triangular}
 	\end{figure}
@@ -2009,10 +2012,10 @@ addtohook={%
 	Una forma de onda puede retrasarse en el tiempo si se desplaza el eje de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig.retraso} muestra diversos ejemplos de las formas de onda básicas. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Escalón retrasado]{\includegraphics[width=.35\linewidth]{Pictures/escalon_t0.pdf}}\hfil
-		\subfigure[Pulso retrasado]{\includegraphics[width=.35\linewidth]{Pictures/pulso_t0.pdf}}\\
-		\subfigure[Rampa retrasada]{\includegraphics[width=.35\linewidth]{Pictures/rampa_t0.pdf}}\hfil
-		\subfigure[Triangular retrasada]{\includegraphics[width=.35\linewidth]{Pictures/triangular_t0.pdf}}
+		\subfigure[Escalón retrasado]{\includegraphics[width=.35\linewidth]{../figs/escalon_t0.pdf}}\hfil
+		\subfigure[Pulso retrasado]{\includegraphics[width=.35\linewidth]{../figs/pulso_t0.pdf}}\\
+		\subfigure[Rampa retrasada]{\includegraphics[width=.35\linewidth]{../figs/rampa_t0.pdf}}\hfil
+		\subfigure[Triangular retrasada]{\includegraphics[width=.35\linewidth]{../figs/triangular_t0.pdf}}
 		\caption{Formas de onda básicas retrasadas}
 		\label{fig.retraso}
 	\end{figure}
@@ -2080,7 +2083,7 @@ addtohook={%
 	siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o frecuencia angular [rad/s] ($\omega=2\cdot\pi\cdot f$, siendo $f$ la frecuencia de la onda [Hz]) y $\theta$ la fase [rad o $^\circ$]. Un ejemplo de este tipo de forma de onda se muestra en la Figura \ref{fig.sin}.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=.9\linewidth]{Pictures/sin.pdf}
+		\includegraphics[width=.9\linewidth]{../figs/sin.pdf}
 		\caption{Ejemplo de forma de onda sinusoidal}
 		\label{fig.sin}
 	\end{figure}
@@ -2152,7 +2155,7 @@ addtohook={%
 	siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o frecuencia angular [rad/s] ($\omega=2\cdot\pi\cdot f$, siendo $f$ la frecuencia de la onda [Hz]) y $\theta$ la fase/desfase [rad o $^\circ$]. Esta fase representa el argumento de la onda para $t=0$. Tomando una onda como referencia, si la fase de otra onda es $0^\circ$, se dice que la onda está \textbf{en fase} con la onda de referencia; si la fase es positiva ($+$) respecto a la de referencia, se dice que la onda está \textbf{en adelanto}; y si la fase es negativa ($-$) respecto a la de referencia, se dice que la onda está \textbf{en retraso}. Así, en la Figura~\ref{fig.desfase}, considerando como referencia la onda de color negro (que tiene una fase $\theta=0$), la {\color{blue} onda azul} está en retraso, mientras que la {\color{red} onda roja} está en adelanto. En caso de que el desfase entre dos ondas sea de 90$^\circ$, se dice que están \textbf{en cuadratura}: el paso por 0 de una onda, coincide con el paso por el máximo/mínimo de la otra.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=.9\linewidth]{Pictures/desfase.pdf}
+		\includegraphics[width=.9\linewidth]{../figs/desfase.pdf}
 		\caption{Fases entre ondas sinusoidales}
 		\label{fig.desfase}
 	\end{figure}
@@ -2178,7 +2181,7 @@ addtohook={%
 	\end{equation}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasor.pdf}
+		\includegraphics{../figs/fasor.pdf}
 		\caption{Concepto de fasor}
 		\label{fig.fasor}
 	\end{figure}
@@ -2254,7 +2257,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=.9\linewidth]{Pictures/ondasTensionCorriente.pdf}
+		\includegraphics[width=.9\linewidth]{../figs/ondasTensionCorriente.pdf}
 		\caption{Tensión y corriente en notación fasorial}
 		\label{fig.ondasTensionCorriente}
 	\end{figure}
@@ -2262,7 +2265,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.3\linewidth]{Pictures/fasorTensionCorriente.pdf}
+		\includegraphics[width=0.3\linewidth]{../figs/fasorTensionCorriente.pdf}
 		\caption{Diagrama fasorial de $\overline{U}$ e  $\overline{I}$}
 		\label{fig.fasortensioncorriente}
 	\end{figure}
@@ -2299,7 +2302,7 @@ addtohook={%
 	donde $R$ es la parte resistiva de la impedancia (resistencia), y $X$ es la parte reactiva (bobina y/o condensador), como se muestra en la Figura~\ref{fig.fasorimpedancia}. La parte imaginaria de $\overline{Z}$ (la $X$) puede ser positiva (reactancia inductiva $\rightarrow$ bobina) o negativa (reactancia capacitiva $\rightarrow$ condensador). Además, una impedancia puede ser puramente resistiva ($Z=R$), inductiva ($Z=+X$) o capacitiva ($Z=-X$).
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasorImpedancia.pdf}
+		\includegraphics{../figs/fasorImpedancia.pdf}
 		\caption{Fasor de una impedancia genérica $\overline{Z}$}
 		\label{fig.fasorimpedancia}
 	\end{figure}
@@ -2336,7 +2339,7 @@ addtohook={%
 	donde $\theta_I=\theta_U$.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/resistivo.pdf}
+		\includegraphics{../figs/resistivo.pdf}
 		\caption{$u(t)$ e $i(t)$ en circuitos resistivos puros}
 		\label{fig.resistivo}
 	\end{figure}
@@ -2356,8 +2359,8 @@ addtohook={%
 	La representación fasorial de $\overline{U}$ e $\overline{I}$, así como la de $\overline{Z_R}$, se muestran en la Figura~\ref{fig.fasorResistencia}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.2\linewidth]{Pictures/fasorResistencia_VI.pdf}}\hfil
-		\subfigure[$\overline{Z_R}$]{\includegraphics[width=0.22\linewidth]{Pictures/fasorResistencia.pdf}}
+		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.2\linewidth]{../figs/fasorResistencia_VI.pdf}}\hfil
+		\subfigure[$\overline{Z_R}$]{\includegraphics[width=0.22\linewidth]{../figs/fasorResistencia.pdf}}
 		\caption{Diagrama fasorial de un circuito resistivo puro}
 		\label{fig.fasorResistencia}
 	\end{figure}
@@ -2378,7 +2381,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/inductivoPuro.pdf}
+		\includegraphics{../figs/inductivoPuro.pdf}
 		\caption{$u(t)$ e $i(t)$ en circuitos inductivos puros}
 		\label{fig.inductivoPuro}
 	\end{figure}
@@ -2398,8 +2401,8 @@ addtohook={%
 	La representación fasorial de $\overline{U}$ e $\overline{I}$, así como la de $\overline{Z_L}$, se muestran en la Figura~\ref{fig.fasorInductancia}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.28\linewidth]{Pictures/fasorInductancia_VI.pdf}}\hfil
-		\subfigure[$\overline{Z_L}$]{\includegraphics[width=0.19\linewidth]{Pictures/fasorInductancia.pdf}}
+		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.28\linewidth]{../figs/fasorInductancia_VI.pdf}}\hfil
+		\subfigure[$\overline{Z_L}$]{\includegraphics[width=0.19\linewidth]{../figs/fasorInductancia.pdf}}
 		\caption{Diagrama fasorial de un circuito inductivo puro}
 		\label{fig.fasorInductancia}
 	\end{figure}
@@ -2420,7 +2423,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/capacitivoPuro.pdf}
+		\includegraphics{../figs/capacitivoPuro.pdf}
 		\caption{$u(t)$ e $i(t)$ en circuitos capacitivos puros}
 		\label{fig.capacitivoPuro}
 	\end{figure}
@@ -2440,8 +2443,8 @@ addtohook={%
 	La representación fasorial de $\overline{U}$ e $\overline{I}$, así como la de $\overline{Z_C}$, se muestran en la Figura~\ref{fig.fasorCondensador}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.28\linewidth]{Pictures/fasorCondensador_VI.pdf}}\hfil
-		\subfigure[$\overline{Z_C}$]{\includegraphics[width=0.19\linewidth]{Pictures/fasorCondensador.pdf}}
+		\subfigure[$\overline{U}$ e $\overline{I}$]{\includegraphics[width=0.28\linewidth]{../figs/fasorCondensador_VI.pdf}}\hfil
+		\subfigure[$\overline{Z_C}$]{\includegraphics[width=0.19\linewidth]{../figs/fasorCondensador.pdf}}
 		\caption{Diagrama fasorial de un circuito capacitivo puro}
 		\label{fig.fasorCondensador}
 	\end{figure}
@@ -2453,7 +2456,7 @@ addtohook={%
 	Este circuito se corresponde con el mostrado en la Figura~\ref{fig.RL}, equivalente a un circuito inductivo con pérdidas. 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.3\linewidth]{Pictures/RL.pdf}
+		\includegraphics[width=0.3\linewidth]{../figs/RL.pdf}
 		\caption{Circuito $RL$ serie}
 		\label{fig.RL}
 	\end{figure}
@@ -2478,8 +2481,8 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Evolución temporal]{\includegraphics[width=0.7\linewidth]{Pictures/inductivo.pdf}}\hfil
-		\subfigure[Diagrama fasorial]{    \includegraphics{Pictures/fasorInductanciaReal_VI.pdf}}
+		\subfigure[Evolución temporal]{\includegraphics[width=0.7\linewidth]{../figs/inductivo.pdf}}\hfil
+		\subfigure[Diagrama fasorial]{    \includegraphics{../figs/fasorInductanciaReal_VI.pdf}}
 		\caption{Evolución temporal y diagrama fasorial de $u(t)$ e $i(t)$ en circuitos $RL$}
 		\label{fig.fasorInductanciaReal_VI}
 	\end{figure}
@@ -2499,7 +2502,7 @@ addtohook={%
 	\end{align*}. 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasorInductanciaReal.pdf}
+		\includegraphics{../figs/fasorInductanciaReal.pdf}
 		\caption{Representación gráfica de la impedancia de un circuito $RL$}
 		\label{fig.fasorinductanciareal}
 	\end{figure}
@@ -2509,7 +2512,7 @@ addtohook={%
 	Este circuito se corresponde con el mostrado en la Figura~\ref{fig.RC}, equivalente a un circuito capacitivo con pérdidas. 
 	\begin{figure}[h]
 		\centering
-		\includegraphics{Pictures/RC.pdf}
+		\includegraphics{../figs/RC.pdf}
 		\caption{Circuito $RC$ serie}
 		\label{fig.RC}
 	\end{figure}
@@ -2534,8 +2537,8 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Evolución temporal]{\includegraphics[width=0.7\linewidth]{Pictures/capacitivo.pdf}}\hfil
-		\subfigure[Diagrama fasorial]{    \includegraphics[width=0.28\linewidth]{Pictures/fasorCondensadorReal_VI.pdf}}
+		\subfigure[Evolución temporal]{\includegraphics[width=0.7\linewidth]{../figs/capacitivo.pdf}}\hfil
+		\subfigure[Diagrama fasorial]{    \includegraphics[width=0.28\linewidth]{../figs/fasorCondensadorReal_VI.pdf}}
 		\caption{Evolución temporal y diagrama fasorial de $u(t)$ e $i(t)$ en circuitos $RC$}
 		\label{fig.fasorCapacitivoReal_VI}
 	\end{figure}
@@ -2555,7 +2558,7 @@ addtohook={%
 	\end{align*}. 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasorCondensadorReal.pdf}
+		\includegraphics{../figs/fasorCondensadorReal.pdf}
 		\caption{Representación gráfica de la impedancia de un circuito $RC$}
 		\label{fig.fasorcondensadorreal}
 	\end{figure}
@@ -2569,7 +2572,7 @@ addtohook={%
 	Este circuito se corresponde con el mostrado en la Figura~\ref{fig.RLC}. 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.4\linewidth]{Pictures/RLC.pdf}
+		\includegraphics[width=0.4\linewidth]{../figs/RLC.pdf}
 		\caption{Circuito $RLC$ serie}
 		\label{fig.RLC}
 	\end{figure}
@@ -2594,7 +2597,7 @@ addtohook={%
 	\end{equation*}
 	
 	\begin{figure}[htbp]
-		\centering \includegraphics[width=0.3\linewidth]{Pictures/fasorRLC_VI.pdf}
+		\centering \includegraphics[width=0.3\linewidth]{../figs/fasorRLC_VI.pdf}
 		\caption{Diagrama fasorial de un circuito $RLC$, suponiendo carácter inductivo}
 		\label{fig.fasorRLC_VI}
 	\end{figure}
@@ -2614,7 +2617,7 @@ addtohook={%
 	\end{align*}. 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasorRLC.pdf}
+		\includegraphics{../figs/fasorRLC.pdf}
 		\caption{Representación gráfica de la impedancia de un circuito $RLC$}
 		\label{fig.fasorRLC}
 	\end{figure}
@@ -2660,7 +2663,7 @@ addtohook={%
 		El diagrama fasorial se puede ver en la Figura~\ref{fig.diagrama_fasorial_ejemplo2-3}
 		\begin{figure}[h]
 			\centering
-			\includegraphics{Pictures/diagrama_fasorial_ejemplo2_3.pdf}
+			\includegraphics{../figs/diagrama_fasorial_ejemplo2_3.pdf}
 			\caption{Diagrama fasorial del Ejercicio~\ref{ej.2-3}}
 			\label{fig.diagrama_fasorial_ejemplo2-3}
 		\end{figure}
@@ -2674,8 +2677,8 @@ addtohook={%
 	Considérese un circuito en serie formado por $n$ impedancias, donde cada impedancia es de la forma $\overline{Z_i}=R_i+\mathrm{j}\,X_i$, como se muestra en la Figura~\ref{fig.serie-general-inicio}. Este circuito se alimenta con una tensión $u(t)$, de valor eficaz $U$, de manera que circula por el mismo una intensidad $i(t)$ de valor eficaz $I$. Se dice que la impedancia equivalente a las $n$ impedancias en serie es aquella que, al aplicarle la misma tensión $u(t)$, origina la misma intensidad $i(t)$, es decir, la que \textbf{conserva el módulo de $\overline{I}$ y el ángulo de fase} entre $\overline{U}$ e $\overline{I}$ del circuito serie original
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Real]{\includegraphics[height=2cm]{Pictures/serie_general.pdf}\label{fig.serie-general-inicio}}\hfil
-		\subfigure[Equivalente]{\includegraphics[height=2cm]{Pictures/serie_general_eq.pdf}\label{fig.serie-general-eq}}
+		\subfigure[Real]{\includegraphics[height=2cm]{../figs/serie_general.pdf}\label{fig.serie-general-inicio}}\hfil
+		\subfigure[Equivalente]{\includegraphics[height=2cm]{../figs/serie_general_eq.pdf}\label{fig.serie-general-eq}}
 		\caption{Circuito serie general alimentado por corriente alterna}
 		\label{fig.serie-general}
 	\end{figure}
@@ -2760,8 +2763,8 @@ addtohook={%
 	\subsection{Circuito paralelo general}
 	\begin{figure}[tbp]
 		\centering
-		\subfigure[Real]{\includegraphics[height=4cm]{Pictures/paralelo_general.pdf}\label{fig.paralelo-general-inicio}}\hfil
-		\subfigure[Equivalente]{\includegraphics[height=4cm]{Pictures/paralelo_general_eq.pdf}\label{fig.paralelo-general-eq}}
+		\subfigure[Real]{\includegraphics[height=4cm]{../figs/paralelo_general.pdf}\label{fig.paralelo-general-inicio}}\hfil
+		\subfigure[Equivalente]{\includegraphics[height=4cm]{../figs/paralelo_general_eq.pdf}\label{fig.paralelo-general-eq}}
 		\caption{Circuito paralelo general alimentado por corriente alterna}
 		\label{fig.paralelo-general}
 	\end{figure}
@@ -2812,8 +2815,8 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Impedancia]{\includegraphics{Pictures/Z.pdf}}\hfil
-		\subfigure[Admitancia]{\includegraphics{Pictures/Y.pdf}}
+		\subfigure[Impedancia]{\includegraphics{../figs/Z.pdf}}\hfil
+		\subfigure[Admitancia]{\includegraphics{../figs/Y.pdf}}
 		\caption{Equivalencias entre impedancia y admitancia}
 		\label{fig.equivalencias_impedancia_admitancia}
 	\end{figure}
@@ -2841,8 +2844,8 @@ addtohook={%
 	La Figura~\ref{fig.impedancia_admitancia} muestra gráficamente una impedancia $\overline{Z}=R+\mathrm{j}\,X=Z\phase{\theta}$, donde su admitancia correspondiente es $\overline{Y}=G-\mathrm{j}\,B=Y\phase{-\psi}$.
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Impedancia]{\includegraphics{Pictures/impedancia.pdf}}\hfil
-		\subfigure[Admitancia]{\includegraphics{Pictures/admitancia.pdf}}
+		\subfigure[Impedancia]{\includegraphics{../figs/impedancia.pdf}}\hfil
+		\subfigure[Admitancia]{\includegraphics{../figs/admitancia.pdf}}
 		\caption{Representación gráfica de la impedancia y admitancia}
 		\label{fig.impedancia_admitancia}
 	\end{figure}
@@ -2924,10 +2927,10 @@ addtohook={%
 	%Para explicar estos conceptos, se va a hacer referencia a las Secciones~\ref{sec.RL} y \ref{sec.RC}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Impedancias]{\includegraphics[height=4cm]{Pictures/Z_ind_corriente.pdf}\label{fig.Z_ind_corriente}}\hfill
-		%\subfigure[Admitancias]{\includegraphics[width=0.25\linewidth]{Pictures/Y_ind_corriente.pdf}}\hfil
-		\subfigure[Tensiones ($\overline{I}=I\phase{0^\circ}$)]{\includegraphics[height=4cm]{Pictures/tension_Z_ind.pdf}\label{fig.tension_z_ind}}\hfill
-		\subfigure[Corrientes ($\overline{U}=U\phase{0^\circ}$)]{\includegraphics[height=3.6cm]{Pictures/corriente_Z_ind.pdf}\label{fig.corriente_z_ind}}\hfil
+		\subfigure[Impedancias]{\includegraphics[height=4cm]{../figs/Z_ind_corriente.pdf}\label{fig.Z_ind_corriente}}\hfill
+		%\subfigure[Admitancias]{\includegraphics[width=0.25\linewidth]{../figs/Y_ind_corriente.pdf}}\hfil
+		\subfigure[Tensiones ($\overline{I}=I\phase{0^\circ}$)]{\includegraphics[height=4cm]{../figs/tension_Z_ind.pdf}\label{fig.tension_z_ind}}\hfill
+		\subfigure[Corrientes ($\overline{U}=U\phase{0^\circ}$)]{\includegraphics[height=3.6cm]{../figs/corriente_Z_ind.pdf}\label{fig.corriente_z_ind}}\hfil
 		\caption{Diagramas fasoriales de un circuito inductivo $RL$}
 		\label{fig.fasores_inductivo_corrientes}
 	\end{figure}
@@ -2936,10 +2939,10 @@ addtohook={%
 	Ahora, considérese un circuito capacitivo $RC$, se tiene que la impedancia $\overline{Z}$ tiene un ángulo $\theta<0^\circ$ (Figura~\ref{fig.Z_cap_corriente}). Tomando como referencia la corriente $\overline{I}=I\phase{0^\circ}$, las tensiones en la resistencia ($U_R=R\cdot I$), condensador ($U_C=X\cdot I$) y total ($U=Z\cdot I$) se pueden representar en un diagrama fasorial como se muestra en la Figura~\ref{fig.tension_z_cap}. Por último, en la Figura~\ref{fig.corriente_z_cap}, se considera como referencia de fases la tensión $\overline{U}=U\phase{0^\circ}$, y se dibuja la corriente $\overline{I}$ que, como puede apreciarse, va \textbf{en adelanto} respecto a la tensión (al tratarse de un circuito capacitivo). 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Impedancias]{\includegraphics[height=4cm]{Pictures/Z_cap_corriente.pdf}\label{fig.Z_cap_corriente}}\hfill
-		%\subfigure[Admitancias]{\includegraphics[width=0.25\linewidth]{Pictures/Y_ind_corriente.pdf}}\hfil
-		\subfigure[Tensiones ($\overline{I}=I\phase{0^\circ}$)]{\includegraphics[height=4cm]{Pictures/tension_Z_cap.pdf}\label{fig.tension_z_cap}}\hfill
-		\subfigure[Corrientes ($\overline{U}=U\phase{0^\circ}$)]{\includegraphics[height=4.4cm]{Pictures/corriente_Z_cap.pdf}\label{fig.corriente_z_cap}}\hfil
+		\subfigure[Impedancias]{\includegraphics[height=4cm]{../figs/Z_cap_corriente.pdf}\label{fig.Z_cap_corriente}}\hfill
+		%\subfigure[Admitancias]{\includegraphics[width=0.25\linewidth]{../figs/Y_ind_corriente.pdf}}\hfil
+		\subfigure[Tensiones ($\overline{I}=I\phase{0^\circ}$)]{\includegraphics[height=4cm]{../figs/tension_Z_cap.pdf}\label{fig.tension_z_cap}}\hfill
+		\subfigure[Corrientes ($\overline{U}=U\phase{0^\circ}$)]{\includegraphics[height=4.4cm]{../figs/corriente_Z_cap.pdf}\label{fig.corriente_z_cap}}\hfil
 		\caption{Diagramas fasoriales de un circuito capacitivo $RC$}
 		\label{fig.fasores_capacitivo_corrientes}
 	\end{figure}
@@ -2956,7 +2959,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/corrientes_act_react.pdf}
+		\includegraphics{../figs/corrientes_act_react.pdf}
 		\caption{Componentes activa y reactiva de la corriente}
 		\label{fig.corrientes_act_react}
 	\end{figure}
@@ -2976,7 +2979,7 @@ addtohook={%
 		\textbf{En el circuito de la Figura \ref{fig.ejercicio6_tema01}, determinar la tensión $V$ que hace que la corriente que circula por la impedancia $2+j3$ $\Omega$ sea nula.}
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.7\linewidth]{Pictures/ejercicio6_tema01.pdf}
+			\includegraphics[width=0.7\linewidth]{../figs/ejercicio6_tema01.pdf}
 			\caption{Ejemplo \ref{ej.2-6}}
 			\label{fig.ejercicio6_tema01}
 		\end{figure}
@@ -3046,7 +3049,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/inductivoPuroPotencia.pdf}
+		\includegraphics{../figs/inductivoPuroPotencia.pdf}
 		\caption{Ondas de tensión, corriente y potencia instantáneas}
 		\label{fig.inductivoPuroPotencia}
 	\end{figure}
@@ -3085,7 +3088,7 @@ addtohook={%
 	puesto que $\cos(0^\circ)=1$ y $\sin(0^\circ)=0$. Dibujando las ondas de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig.resistivoPotencia}), se observa que $p(t)$ fluctúa al doble de frecuencia que $u(t)$ e $i(t)$, y que \textbf{siempre es positiva}, puesto que tensión y corriente van en fase y, por tanto, siempre tienen el mismo signo. Además, su valor medio es igual a $P=U\cdot I$.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/resistivoPotencia.pdf}
+		\includegraphics{../figs/resistivoPotencia.pdf}
 		\caption{Ondas de tensión, corriente y potencia instantáneas en un circuito resistivo}
 		\label{fig.resistivoPotencia}
 	\end{figure}
@@ -3102,7 +3105,7 @@ addtohook={%
 	puesto que $\cos(90^\circ)=0$ y $\sin(90^\circ)=1$. Dibujando las ondas de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig.inductivoPotencia}), se observa que $p(t)$ fluctúa al doble de frecuencia que $u(t)$ e $i(t)$, y que \textbf{tiene periodos positivos y negativos}, pasando por los ceros de tensión y corriente. Además, su valor medio es nulo, coincidiendo con $P=0$.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/inductivoPuroPotencia.pdf}
+		\includegraphics{../figs/inductivoPuroPotencia.pdf}
 		\caption{Ondas de tensión, corriente y potencia instantáneas en un circuito inductivo puro}
 		\label{fig.inductivoPotencia}
 	\end{figure}
@@ -3119,7 +3122,7 @@ addtohook={%
 	puesto que $\cos(-90^\circ)=0$ y $\sin(-90^\circ)=-1$. Dibujando las ondas de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig.capacitivoPotencia}), se observa que $p(t)$ fluctúa al doble de frecuencia que $u(t)$ e $i(t)$, y que \textbf{tiene periodos positivos y negativos}, pasando por los ceros de tensión y corriente. Además, su valor medio es nulo, coincidiendo con $P=0$.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/capacitivoPuroPotencia.pdf}
+		\includegraphics{../figs/capacitivoPuroPotencia.pdf}
 		\caption{Ondas de tensión, corriente y potencia instantáneas en un circuito capacitivo puro}
 		\label{fig.capacitivoPotencia}
 	\end{figure}
@@ -3128,9 +3131,9 @@ addtohook={%
 	Supóngase un circuito con carácter inductivo, con resistencia $R$ y reactancia $X$. El módulo de la impedancia global del circuito puede calcularse como $\overline{Z}=\sqrt{R^2+X^2}$, obteniendo un diagrama fasorial conocido como \textbf{triángulo de impedancias}. Si se multiplica cada lado de dicho triángulo por el módulo de $\overline{I}$, se obtiene el \textbf{triángulo de tensiones}, donde el eje $\Re$ es el módulo de la tensión en la resistencia $U_R=R\cdot I$ y el eje $\Im$ es el módulo de la tensión en la reactancia $U_X=X\cdot I$, siendo el módulo de la tensión total $U=Z\cdot I=\sqrt{U_R^2+U_X^2}$. Si, de nuevo, vuelve a multiplicarse dicho triángulo por el módulo de $\overline{I}$, se llega al \textbf{triángulo de potencias}, siendo el eje $\Re$ representa la potencia activa $P=R\cdot I^2$ y, el eje $\Im$, la potencia reactiva $Q=X\cdot I^2$. La hipotenusa de dicho triángulo es conocida como \textbf{potencia aparente}. Estos triángulos se presentan en la Figura~\ref{fig.triangulo_potencias}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Impedancias]{\includegraphics[height=4cm]{Pictures/Z_ind_corriente.pdf}}\hfill
-		\subfigure[Tensiones ]{\includegraphics[height=4cm]{Pictures/tension_Z_ind.pdf}}\hfill
-		\subfigure[Potencias]{\includegraphics[height=4cm]{Pictures/triangulo_potencias.pdf}\label{fig.triangulo_potencias_pqs}}\hfil
+		\subfigure[Impedancias]{\includegraphics[height=4cm]{../figs/Z_ind_corriente.pdf}}\hfill
+		\subfigure[Tensiones ]{\includegraphics[height=4cm]{../figs/tension_Z_ind.pdf}}\hfill
+		\subfigure[Potencias]{\includegraphics[height=4cm]{../figs/triangulo_potencias.pdf}\label{fig.triangulo_potencias_pqs}}\hfil
 		\caption{Triángulo de potencias de un circuito inductivo $RL$}
 		\label{fig.triangulo_potencias}
 	\end{figure}
@@ -3166,7 +3169,7 @@ addtohook={%
 		La Figura~\ref{fig.trianguloPotencias} muestra la potencia compleja y su descomposición en $P$ y $Q$.
 		\begin{figure}
 			\centering
-			\includegraphics{Pictures/trianguloPotencias.pdf}
+			\includegraphics{../figs/trianguloPotencias.pdf}
 			\caption{Triángulo de potencias}
 			\label{fig.trianguloPotencias}
 		\end{figure}
@@ -3247,7 +3250,7 @@ addtohook={%
 	\end{align*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/boucherot.pdf}
+		\includegraphics{../figs/boucherot.pdf}
 		\caption{Teorema de Boucherot}
 		\label{fig.boucherot}
 	\end{figure}
@@ -3267,7 +3270,7 @@ addtohook={%
 		\textbf{Sabiendo que las fuentes de tensión del circuito de la Figura \ref{fig.problema9_garri} vienen definidas por las formas de onda $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V. Calcular las potencias de cada elemento, así como el balance de potencias del circuito. }
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\linewidth]{Pictures/problema9_CA_garri.pdf}
+			\includegraphics[width=0.6\linewidth]{../figs/problema9_CA_garri.pdf}
 			\caption{Ejemplo \ref{ej.2-7}}
 			\label{fig.problema9_garri}
 		\end{figure}
@@ -3351,7 +3354,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/vatimetro_2.pdf}
+	    \includegraphics{../figs/vatimetro_2.pdf}
 	    \caption{Vatímetro}
 	    \label{fig.vatimetro_2}
 	\end{figure}
@@ -3383,7 +3386,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics{Pictures/fasorescompensacionreactiva.pdf}
+		\includegraphics{../figs/fasorescompensacionreactiva.pdf}
 		\caption{Fasores de potencias para dos sistemas con $U$ y $P$, pero diferentes $\cos(\theta)$}
 		\label{fig.fasorescompensacionreactiva}
 	\end{figure} 
@@ -3408,9 +3411,9 @@ addtohook={%
 	
 	\begin{figure}
 		\centering
-		\subfigure[Circuito]{\includegraphics[height=3cm]{Pictures/circuitocompensacionreactiva.pdf}\label{fig.circuito_compensacion}}
+		\subfigure[Circuito]{\includegraphics[height=3cm]{../figs/circuitocompensacionreactiva.pdf}\label{fig.circuito_compensacion}}
 		\hfil
-		\subfigure[Triángulo de potencias]{\includegraphics{Pictures/trianguloCompensacionQ.pdf}\label{fig.triangulocompensacionQ}}
+		\subfigure[Triángulo de potencias]{\includegraphics{../figs/trianguloCompensacionQ.pdf}\label{fig.triangulocompensacionQ}}
 		\caption{Circuito de compensación de potencia reactiva y triángulo de potencias}
 		\label{fig.circuitocompensacionreactiva}
 	\end{figure}
@@ -3441,8 +3444,8 @@ addtohook={%
 	\end{align*}
 	\begin{figure}
 		\centering
-		\subfigure[Forma de onda]{\includegraphics[]{Pictures/TensionesTrifasica.pdf}\label{fig.tensionesTrifasica}} \hfill
-		\subfigure[Fasores]{\includegraphics[]{Pictures/FasoresTrifasica.pdf}\label{fig.fasoresTrifasica}}
+		\subfigure[Forma de onda]{\includegraphics[]{../figs/TensionesTrifasica.pdf}\label{fig.tensionesTrifasica}} \hfill
+		\subfigure[Fasores]{\includegraphics[]{../figs/FasoresTrifasica.pdf}\label{fig.fasoresTrifasica}}
 		\caption{Forma de onda y fasores de una tensión trifásica}
 		\label{fig.tensiontrifasica}
 	\end{figure}
@@ -3466,7 +3469,7 @@ addtohook={%
 	\end{equation*}
 	\begin{figure}
 		\centering
-		\includegraphics{Pictures/FasoresSumaCero.pdf}
+		\includegraphics{../figs/FasoresSumaCero.pdf}
 		\caption{Suma de fasores de una tensión trifásica}
 		\label{fig.fasoressumacero}
 	\end{figure}
@@ -3508,8 +3511,8 @@ addtohook={%
 	El orden en el que se suceden las tensiones de cada fase de un circuito trifásico es lo que se conoce como \textit{secuencia de fases} (hace referencia a un punto concreto de la onda, por ejemplo, cuando todas ellas alcanzan el valor máximo). Existen dos tipos de secuencia de fases: $(i)$~secuencia de fases directa (\textbf{SFD}) y $(ii)$~secuencia de fases inversa (\textbf{SFI}), como se muestra en la Figura~\ref{fig.secuencia_fases}. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[SFD]{\includegraphics[width=0.45\linewidth]{Pictures/TensionesTrifasica_ABC.pdf}}\hfil
-		\subfigure[SFI]{\includegraphics[width=0.45\linewidth]{Pictures/TensionesTrifasica_ACB.pdf}}
+		\subfigure[SFD]{\includegraphics[width=0.45\linewidth]{../figs/TensionesTrifasica_ABC.pdf}}\hfil
+		\subfigure[SFI]{\includegraphics[width=0.45\linewidth]{../figs/TensionesTrifasica_ACB.pdf}}
 		\caption{Secuencia de fases}
 		\label{fig.secuencia_fases}
 	\end{figure}
@@ -3550,8 +3553,8 @@ addtohook={%
 	En la Figura~\ref{fig.linea-fase-SFD} se muestra el diagrama fasorial de las tensiones de fase y de línea. 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Obtención de la tensión de línea]{\includegraphics{Pictures/tension_LF.pdf}}\hfil
-		\subfigure[Fasores de fase y línea]{\includegraphics[]{Pictures/FasoresTrifasica_ABC.pdf}}
+		\subfigure[Obtención de la tensión de línea]{\includegraphics{../figs/tension_LF.pdf}}\hfil
+		\subfigure[Fasores de fase y línea]{\includegraphics[]{../figs/FasoresTrifasica_ABC.pdf}}
 		\caption{Fasores de tensión de fase y línea en SFD}
 		\label{fig.linea-fase-SFD}
 	\end{figure}
@@ -3588,8 +3591,8 @@ addtohook={%
 
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Obtención de la tensión de línea]{\includegraphics{Pictures/tension_LF_SFI.pdf}}\hfil
-		\subfigure[Fasores de fase y línea]{\includegraphics[]{Pictures/FasoresTrifasica_ACB.pdf}}
+		\subfigure[Obtención de la tensión de línea]{\includegraphics{../figs/tension_LF_SFI.pdf}}\hfil
+		\subfigure[Fasores de fase y línea]{\includegraphics[]{../figs/FasoresTrifasica_ACB.pdf}}
 		\caption{Fasores de tensión de fase y línea en SFI}
 		\label{fig.linea-fase-SFI}
 	\end{figure}
@@ -3631,8 +3634,8 @@ addtohook={%
     de donde se concluye que, en este caso, la existencia del neutro es \textbf{innecesaria} al no circular corriente por él. 
 	\begin{figure}[tbp]
 		\centering
-		\subfigure[Generador]{\includegraphics{Pictures/generador_estrella.pdf}}\hfill
-		\subfigure[Receptor]{\includegraphics{Pictures/EstrellaEquilibrado_Receptor.pdf}}
+		\subfigure[Generador]{\includegraphics{../figs/generador_estrella.pdf}}\hfill
+		\subfigure[Receptor]{\includegraphics{../figs/EstrellaEquilibrado_Receptor.pdf}}
 		\caption{Conexión en estrella a cuatro hilos}
 		\label{fig.conexion_estrella_4}
 	\end{figure}
@@ -3655,8 +3658,8 @@ addtohook={%
     \end{equation*}
 	\begin{figure}[tbp]
 		\centering
-		\subfigure[Generador]{\includegraphics{Pictures/EstrellaEquilibrado_sinneutro.pdf}}\hfill
-		\subfigure[Receptor]{\includegraphics{Pictures/EstrellaEquilibrado_Receptor_SN.pdf}}
+		\subfigure[Generador]{\includegraphics{../figs/EstrellaEquilibrado_sinneutro.pdf}}\hfill
+		\subfigure[Receptor]{\includegraphics{../figs/EstrellaEquilibrado_Receptor_SN.pdf}}
 		\caption{Conexión en estrella a tres hilos}
 		\label{fig.conexion_estrella_3}
 	\end{figure}
@@ -3692,7 +3695,7 @@ addtohook={%
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-1}. 
 	    \begin{figure}[htbp]
 	        \centering
-	        \includegraphics[width=0.4\linewidth]{Pictures/diagrama_ejemplo3_1.pdf}
+	        \includegraphics[width=0.4\linewidth]{../figs/diagrama_ejemplo3_1.pdf}
 	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-1}}
 	        \label{fig.diagrama_ejemplo_3-1}
 	    \end{figure}
@@ -3714,7 +3717,7 @@ addtohook={%
 	
 	\begin{figure}
 	    \centering
-	    \includegraphics{Pictures/EstrellaDesequilibrado_Receptor.pdf}
+	    \includegraphics{../figs/EstrellaDesequilibrado_Receptor.pdf}
 	    \caption{Receptor desequilibrado en estrella a cuatro hilos}
 	    \label{fig.estrelladeseqiulibrado_4hilos}
 	\end{figure}
@@ -3725,8 +3728,8 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Generador]{\includegraphics{Pictures/TrianguloEquilibrado_Generador.pdf}}\hfill
-		\subfigure[Receptor]{\includegraphics{Pictures/TrianguloEquilibrado_Receptor.pdf}}
+		\subfigure[Generador]{\includegraphics{../figs/TrianguloEquilibrado_Generador.pdf}}\hfill
+		\subfigure[Receptor]{\includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}}
 		\caption{Conexión en triángulo}
 		\label{fig.conexion_triangulo}
 	\end{figure}
@@ -3783,7 +3786,7 @@ addtohook={%
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-2}. 
 	    \begin{figure}[htbp]
 	        \centering
-	    \includegraphics[width=0.4\linewidth]{Pictures/diagrama_ejemplo3_2.pdf}
+	    \includegraphics[width=0.4\linewidth]{../figs/diagrama_ejemplo3_2.pdf}
 	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-2}}
 	        \label{fig.diagrama_ejemplo_3-2}
 	    \end{figure}
@@ -3806,7 +3809,7 @@ addtohook={%
 	
 	\begin{figure}
 	    \centering
-	    \includegraphics{Pictures/trianguloDesequilibrado_receptor.pdf}
+	    \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
 	    \caption{Receptor en triángulo desequilibrado}
 	    \label{fig.trianguloDesequilibrado_receptor}
 	\end{figure}
@@ -3835,7 +3838,7 @@ addtohook={%
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-3}. 
 	    \begin{figure}
 	        \centering
-	        \includegraphics{Pictures/diagrama_3_3.pdf}
+	        \includegraphics{../figs/diagrama_3_3.pdf}
 	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-3}}
 	       \label{fig.diagrama_ejemplo_3-3}
 	    \end{figure}
@@ -3947,7 +3950,7 @@ addtohook={%
 	
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/EstrellaDesequilibrado_Receptor_SN.pdf}
+	    \includegraphics{../figs/EstrellaDesequilibrado_Receptor_SN.pdf}
 	    \caption{Receptor en estrella desequilibrado}
 	    \label{fig.estrellaDesequilibrado_potencia}
 	\end{figure}
@@ -3991,7 +3994,7 @@ addtohook={%
 	
 	\begin{figure}
 	    \centering
-	    \includegraphics{Pictures/trianguloDesequilibrado_receptor.pdf}
+	    \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
 	    \caption{Receptor en triángulo desequilibrado}
 	    \label{fig.trianguloDesequilibrado_receptor_potencia}
 	\end{figure}
@@ -4024,7 +4027,7 @@ addtohook={%
 	
 	\begin{figure}
 	    \centering
-	    \includegraphics{Pictures/EstrellaEquilibrado_Receptor_SN.pdf}
+	    \includegraphics{../figs/EstrellaEquilibrado_Receptor_SN.pdf}
 	    \caption{Receptor en estrella equilibrado}
 	    \label{fig.estrellaequilibrado_SN_potencia}
 	\end{figure}
@@ -4055,7 +4058,7 @@ addtohook={%
 	
 	\begin{figure}
 	    \centering
-	    \includegraphics{Pictures/TrianguloEquilibrado_Receptor.pdf}
+	    \includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}
 	    \caption{Receptor en triángulo equilibrado}
 	    \label{fig.trianguloEquilibrado_receptor_potencia}
 	\end{figure}
@@ -4075,8 +4078,8 @@ addtohook={%
 	\end{remark}
 	\begin{figure}[htbp]
 		\centering
-		\subfigure[Estrella desequilibrada]{\includegraphics[height=5cm]{Pictures/Potencia4H.pdf}\label{fig.potencia4H}}\hfill
-		\subfigure[Estrella equilibrada]{\includegraphics[height=5cm]{Pictures/Potencia4H_Equilibrado.pdf}\label{fig.potencia4Hequilibrado}}
+		\subfigure[Estrella desequilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H.pdf}\label{fig.potencia4H}}\hfill
+		\subfigure[Estrella equilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H_Equilibrado.pdf}\label{fig.potencia4Hequilibrado}}
 		\caption{Vatímetros para sistemas a cuatro hilos}
 		\label{fig.vatimetro4hilos}
 	\end{figure}
@@ -4144,7 +4147,7 @@ addtohook={%
 	Se eligen \textbf{dos líneas cualesquiera} a las que se conectan las \textbf{bobinas de intensidad} del vatímetro. Las \textbf{entradas de las bobinas de tensión} se conectan a las \textbf{mismas líneas} que las de intensidad y, las \textbf{salidas}, a la \textbf{línea no usada}, como se muestra en la Figura~\ref{fig.potencia3H}. Como se mencionó en la Sección~\ref{sec.medida_potencia}, si alguno de los vatímetros da una lectura negativa, en la suma se considerará con el signo $-$.   
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/Potencia3H.pdf}
+	    \includegraphics{../figs/Potencia3H.pdf}
 	    \caption{Método de los dos vatímetros en líneas $A$ y $B$}
 	    \label{fig.potencia3H}
 	\end{figure}
@@ -4154,7 +4157,7 @@ addtohook={%
 	Supóngase una SFD y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$)
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/fasores_potencia3H.pdf}
+	    \includegraphics{../figs/fasores_potencia3H.pdf}
 	    \caption{Diagrama fasorial de un receptor en estrella, inductivo y alimentado con SFD}
 	    \label{fig.fasores_potencia3H}
 	\end{figure}
@@ -4201,8 +4204,8 @@ Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros
 \end{align*}
 \begin{figure}[htbp]
     \centering
-    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{Pictures/Potencia3H_Equilibrado_BC.pdf}\label{fig.Potencia3H_Equilibrado_BC}}\hfill
-    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{Pictures/Potencia3H_Equilibrado_CA.pdf}\label{fig.Potencia3H_Equilibrado_CA}}
+    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_BC.pdf}\label{fig.Potencia3H_Equilibrado_BC}}\hfill
+    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_CA.pdf}\label{fig.Potencia3H_Equilibrado_CA}}
     \caption{Método de los dos vatímetros en SFD}
 \end{figure}
   
@@ -4210,7 +4213,7 @@ Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros
 	Considérese ahora una SFI y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H_SFI}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$)
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/fasores_potencia3H_SFI.pdf}
+	    \includegraphics{../figs/fasores_potencia3H_SFI.pdf}
 	    \caption{Diagrama fasorial de un receptor en estrella, inductivo y alimentado con SFI}
 	    \label{fig.fasores_potencia3H_SFI}
 	\end{figure}
@@ -4252,8 +4255,8 @@ Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{Pictures/Potencia3H_Equilibrado_SFI_BC.pdf}\label{fig.Potencia3H_Equilibrado_SFI_BC}}\hfill
-    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{Pictures/Potencia3H_Equilibrado_SFI_CA.pdf}\label{fig.Potencia3H_Equilibrado_SFI_CA}}
+    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_SFI_BC.pdf}\label{fig.Potencia3H_Equilibrado_SFI_BC}}\hfill
+    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_SFI_CA.pdf}\label{fig.Potencia3H_Equilibrado_SFI_CA}}
     \caption{Método de los dos vatímetros en SFI}
 \end{figure}
 Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_SFI_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_SFI_CA}, las potencias activas y reactivas totales serán: 
@@ -4276,7 +4279,7 @@ Por tanto, si se coloca un vatímetro que mida dicho producto escalar (como se m
 donde $W$ representa la lectura del vatímetro. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics{Pictures/Reactiva3H_A-BC.pdf}
+    \includegraphics{../figs/Reactiva3H_A-BC.pdf}
     \caption{Medida de reactiva con un vatímetro}
     \label{fig.Reactiva3H_A-BC}
 \end{figure}
@@ -4294,20 +4297,20 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 
 \begin{figure}
     \centering
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_A-BC.pdf}\label{fig.conexiones_reactiva1}}\hfill
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_B-CA.pdf}\label{fig.conexiones_reactiva2}}\hfill
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_C-AB.pdf}\label{fig.conexiones_reactiva3}}
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_A-CB.pdf}\label{fig.conexiones_reactiva4}}\hfill
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_B-AC.pdf}\label{fig.conexiones_reactiva5}}\hfill
-    \subfigure[]{\includegraphics[width=0.3\linewidth]{Pictures/Reactiva3H_C-BA.pdf}\label{fig.conexiones_reactiva6}}
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-BC.pdf}\label{fig.conexiones_reactiva1}}\hfill
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-CA.pdf}\label{fig.conexiones_reactiva2}}\hfill
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-AB.pdf}\label{fig.conexiones_reactiva3}}
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-CB.pdf}\label{fig.conexiones_reactiva4}}\hfill
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-AC.pdf}\label{fig.conexiones_reactiva5}}\hfill
+    \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-BA.pdf}\label{fig.conexiones_reactiva6}}
     \caption{Conexiones para medida de reactiva}
 \end{figure}
 		
 		\section{Mejora del factor de potencia}
 		\begin{figure}
 		    \centering
-		    \subfigure[Estrella]{\includegraphics[width=0.35\linewidth]{Pictures/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfill
-		    \subfigure[Triángulo]{\includegraphics[width=0.4\linewidth]{Pictures/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
+		    \subfigure[Estrella]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfill
+		    \subfigure[Triángulo]{\includegraphics[width=0.4\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
 		    \caption{Compensación de reactiva}
 		\end{figure}
 		El objetivo y procedimiento es el mismo que en las instalaciones monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la potencia reactiva del sistema, se debe instalar un \textbf{banco de condensadores} que suministren una potencia reactiva $Q_c$. Como resultado, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_C$ y $\cos\theta' > \cos \theta$. La única diferencia es que en este caso se puede optar por un banco de condensadores acoplados en estrella ($C_Y$) o en triángulo ($C_D$):
@@ -4342,14 +4345,14 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 	% Supóngase un sistema trifásico equilibrado como el que se muestra en la Figura \ref{fig.estrella_gen_carga}, en el que tanto receptor como generador están conectados en estrella y enlazados por una línea trifásica de impedancia $Z_L$. 
 	% \begin{figure}[h!]
 		%     \centering
-		%     \includegraphics[width=\linewidth]{Pictures/estrella_gen_carga.pdf}
+		%     \includegraphics[width=\linewidth]{../figs/estrella_gen_carga.pdf}
 		%     \caption{Circuito trifásico con generación y carga en estrella}
 		%     \label{fig.estrella_gen_carga}
 		% \end{figure}
 	% Un circuito equivalente monofásico al mostrado en la Figura \ref{fig.estrella_gen_carga} sería el representado en la Figura \ref{fig.eq_mon}.
 	% \begin{figure}[h!]
 		%     \centering
-		%     \includegraphics[width=0.5\linewidth]{Pictures/eq_mon.pdf}
+		%     \includegraphics[width=0.5\linewidth]{../figs/eq_mon.pdf}
 		%     \caption{Circuito equivalente monofásico}
 		%     \label{fig.eq_mon}
 		% \end{figure}
@@ -4381,7 +4384,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 		% \textbf{Dado el circuito de la Figura \ref{fig.eq_monofasico}, calcular las corrientes de línea del circuito.}
 		% \begin{figure}[h!]
 			%     \centering
-			%     \includegraphics[width=\linewidth]{Pictures/eq_monofasico.PNG}
+			%     \includegraphics[width=\linewidth]{../figs/eq_monofasico.PNG}
 			%     \caption{Ejemplo 1.10}
 			%     \label{fig.eq_monofasico}
 			% \end{figure}
@@ -4401,7 +4404,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 		% y se considerará un desfase nulo para una fase (en este caso, la $a$), según se explicó en la Sección \ref{sec.c_eq_mon}. Así, el equivalente monofásico del circuito se muestra en la Figura \ref{fig.equivalente_monofasico2}.
 		% \begin{figure}[h!]
 			%     \centering
-			%     \includegraphics[width=0.5\linewidth]{Pictures/equivalente_monofasico.pdf}
+			%     \includegraphics[width=0.5\linewidth]{../figs/equivalente_monofasico.pdf}
 			%     \caption{Equivalente monofásico}
 			%     \label{fig.equivalente_monofasico2}
 			% \end{figure}
@@ -4428,7 +4431,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 				% \end{itemize}}
 		% \begin{figure}[h!]
 			%     \centering
-			%     \includegraphics[width=0.8\linewidth]{Pictures/circuito_trifasico.PNG}
+			%     \includegraphics[width=0.8\linewidth]{../figs/circuito_trifasico.PNG}
 			%     \caption{Ejemplo 1.11}
 			%     \label{fig.circ_trifasico}
 			% \end{figure}
@@ -4522,7 +4525,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 		% Al tratarse de un circuito equilibrado, se realiza el equivalente monofásico en estrella, puesto que se sabe de antemano que $V_{RN}=\frac{380}{\sqrt{3}}\phase 0$V. El circuito equivalente sería entonces el mostrado en la Figura \ref{fig.equivalente_monofasico1}.
 		% \begin{figure}[h!]
 			%     \centering
-			%     \includegraphics[width=0.5\linewidth]{Pictures/equivalente_monofasico_2.pdf}
+			%     \includegraphics[width=0.5\linewidth]{../figs/equivalente_monofasico_2.pdf}
 			%     \caption{Equivalente monofásico}
 			%     \label{fig.equivalente_monofasico1}
 			% \end{figure}
@@ -4582,8 +4585,8 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
     Es consecuencia de la propiedad de superposición de los circuitos lineales. El teorema dice así: \textit{En una red formada por generadores (dependientes e independientes) e impedancias, la corriente en una rama o la tensión en un  nudo, cuando todos los generadores actúan simultáneamente, es la suma de las corrientes o las tensiones que crearía cada generador INDEPENDIENTE si actuase solo (individualmente) sobre el circuito} (Figura~\ref{fig.superposicion}).
     \begin{figure}[htbp]
         \centering
-        \subfigure[Respuesta total]{\includegraphics{Pictures/superposicion.pdf}}\hfil
-        \subfigure[Respuestsa individual]{\includegraphics{Pictures/superposicion2.pdf}}
+        \subfigure[Respuesta total]{\includegraphics{../figs/superposicion.pdf}}\hfil
+        \subfigure[Respuestsa individual]{\includegraphics{../figs/superposicion2.pdf}}
         \caption{Superposición}
         \label{fig.superposicion}
     \end{figure}
@@ -4721,8 +4724,8 @@ Es consecuencia de la propiedad de proporcionalidad de los circuitos lineales. E
 
 \begin{figure}[htbp]
         \centering
-        \subfigure[Respuesta inicial]{\includegraphics{Pictures/proporcionalidad.pdf}}\hfil
-        \subfigure[Respuestsa proporcional]{\includegraphics{Pictures/proporcionalidad2.pdf}}
+        \subfigure[Respuesta inicial]{\includegraphics{../figs/proporcionalidad.pdf}}\hfil
+        \subfigure[Respuestsa proporcional]{\includegraphics{../figs/proporcionalidad2.pdf}}
         \caption{Proporcionalidad}
         \label{fig.proporcionalidad}
     \end{figure}
@@ -4762,8 +4765,8 @@ Cuando el interés en el estudio de un circuito se fija en una parte del mismo (
 Enunciado por León Charles Thévenin en 1883, un ingeniero de telégrafos francés, este teorema dice lo siguiente:  \textit{Cualquier \textbf{red lineal} compuesta por elementos pasivos y activos (dependientes o independientes) se puede sustituir, desde el punto de vista de unos terminales externos $A-B$, por una fuente de tensión $\epsilon_{Th}$ (generador de Thévenin) y una impedancia en \textbf{serie} $Z_{Th}$ (impedancia de Thévenin)}.
 \begin{figure}[htbp]
         \centering
-        \subfigure[Red lineal]{\includegraphics[width=0.35\linewidth]{Pictures/EquivalenteThevenin.pdf}}\hfil
-        \subfigure[Equivalente Thévenin]{\includegraphics[width=0.3\linewidth]{Pictures/EquivalenteThevenin2.pdf}}
+        \subfigure[Red lineal]{\includegraphics[width=0.35\linewidth]{../figs/EquivalenteThevenin.pdf}}\hfil
+        \subfigure[Equivalente Thévenin]{\includegraphics[width=0.3\linewidth]{../figs/EquivalenteThevenin2.pdf}}
         \caption{Equivalente de Thévenin}
         \label{fig.thevenin}
     \end{figure}
@@ -4781,8 +4784,8 @@ Enunciado por León Charles Thévenin en 1883, un ingeniero de telégrafos franc
 Enunciado por el ingeniero estadounidense Edward Lawry Norton, de los Laboratorios Bell, que lo publicó en un informe interno en el año 1926, se trata de la versión dual del teorema de Thévenin, diciendo lo siguiente: \textit{Cualquier \textbf{red lineal} compuesta por elementos pasivos y activos (dependientes o independientes) se puede sustituir, desde el punto de vista de unos terminales externos $A-B$, por una fuente de corriente $I_{N}$ (generador de Norton) y una impedancia en \textbf{paralelo} $Z_{N}$ (impedancia de Norton)}. 
 \begin{figure}[htbp]
         \centering
-        \subfigure[Red lineal]{\includegraphics[width=0.35\linewidth]{Pictures/EquivalenteThevenin.pdf}}\hfil
-        \subfigure[Equivalente Norton]{\includegraphics[width=0.3\linewidth]{Pictures/EquivalenteNorton.pdf}\label{fig.norton1}}
+        \subfigure[Red lineal]{\includegraphics[width=0.35\linewidth]{../figs/EquivalenteThevenin.pdf}}\hfil
+        \subfigure[Equivalente Norton]{\includegraphics[width=0.3\linewidth]{../figs/EquivalenteNorton.pdf}\label{fig.norton1}}
         \caption{Equivalente de Norton}
         \label{fig.norton}
     \end{figure}
@@ -4800,7 +4803,7 @@ de donde se deduce que el generador de corriente de Norton es igual a la corrien
 En equipos de transmisión--recepción, en sistemas de telecomunicación, en amplificadores, etc., interesa que la potencia de la señal a la salida sea máxima, es decir, que se entregue la máxima potencia a la carga conectada en los terminales de salida. Considérese el caso de un circuito lineal que entrega energía a un receptor representado por una impedancia $Z_L$ (Figura~\ref{fig.planteamiento_mtp}). ¿\textbf{Cuál es el valor de $Z_L$ para que, al conectarla entre los terminales $A-B$, el circuito entregue la máxima potencia disponible}?
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.35\linewidth]{Pictures/EquivalenteThevenin.pdf}
+    \includegraphics[width=0.35\linewidth]{../figs/EquivalenteThevenin.pdf}
     \caption{Planteamiento del teorema de la máxima transferencia de potencia}
     \label{fig.planteamiento_mtp}
 \end{figure}
@@ -4808,7 +4811,7 @@ En equipos de transmisión--recepción, en sistemas de telecomunicación, en amp
 Aplicando el teorema de Thévenin (se llegaría a la misma conclusión si se hiciera con Norton), se convierte el circuito activo en un generador de fem $\epsilon_{Th}$ en serie con una impedancia $\overline{Z_{Th}}$ y la impedancia $\overline{Z_L}$ conectada entre $A-B$, como se muestra en la Figura~\ref{fig.equivalenteThevenin0}. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics{Pictures/EquivalenteThevenin0.pdf}
+    \includegraphics{../figs/EquivalenteThevenin0.pdf}
     \caption{Ecuaciones del teorema de la máxima transferencia de potencia}
     \label{fig.equivalenteThevenin0}
 \end{figure}
@@ -5080,7 +5083,7 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 		
 % 		\begin{figure}[htbp]
 % 			\centering
-% 			\includegraphics[width=0.5\linewidth]{Pictures/ejemplo1_t5.png}
+% 			\includegraphics[width=0.5\linewidth]{../figs/ejemplo1_t5.png}
 % 			\caption{Ejercicio~\ref{ej.5-1}}
 % 			\label{fig.ej5-1}
 % 		\end{figure}
@@ -5127,7 +5130,7 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	Sea el circuito RC mostrado en la Figura~\ref{fig.transitorio_RC}, donde se cumple que en $t = 0$ se cierra el interruptor, alimentando al condensador, que está descargado inicialmente. 
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/transitorio_circuitoRC.pdf}
+	    \includegraphics{../figs/transitorio_circuitoRC.pdf}
 	    \caption{Análisis transitorio de un circuito RC paralelo}
 	    \label{fig.transitorio_RC}
 	\end{figure}
@@ -5181,7 +5184,7 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	Sea el circuito RL mostrado en la Figura~\ref{fig.transitorio_RL}, donde se cumple que en $t = 0$ se cierra el interruptor, alimentando a la bobina, que está descargada inicialmente. Lógicamente, una vez cerrado el interruptor, se cumple que $i_R(t)=i_L(t)$.  
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics{Pictures/transitorio_circuitoRL.pdf}
+	    \includegraphics{../figs/transitorio_circuitoRL.pdf}
 	    \caption{Análisis transitorio de un circuito RL serie}
 	    \label{fig.transitorio_RL}
 	\end{figure}
@@ -5248,15 +5251,15 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	Supóngase un circuito eléctrico cualquiera como se muestra en la Figura~\ref{fig.CE_primerorden} (C.E. es un circuito eléctrico que no contiene ningún elemento almacenador de energía), en el que se conectan entre los terminales $A-B$ un elemento almacenador de energía (condensador o bobina). 
 	\begin{figure}[htbp]
 	    \centering
-	    \includegraphics[width=0.38\linewidth]{Pictures/CE_primerorden.pdf}
+	    \includegraphics[width=0.38\linewidth]{../figs/CE_primerorden.pdf}
 	    \caption{Circuito eléctrico de primer orden}	    \label{fig.CE_primerorden}
 	\end{figure}
 	
 	Si las variables a estudiar son la tensión en el condensador $u_C(t)$ o la intensidad en la bobina $i_L(t)$, respectivamente, dicho circuito eléctrico de primer orden se puede convertir en los circuitos eléctricos mostrados en las Figuras \ref{fig.transitorio_RC} y \ref{fig.transitorio_RL}, calculando el equivalente de Norton o Thévenin de los dipolos, como se muestra en la Figura~\ref{fig.thevenin_1orden}. 
 	\begin{figure}[htbp]
 	    \centering
-	    \subfigure[Equivalente de Norton]{\includegraphics{Pictures/thevenin_1orden_C.pdf}}\hfil
-	    \subfigure[Equivalente de Thévenin]{\includegraphics{Pictures/thevenin_1orden_L.pdf}}
+	    \subfigure[Equivalente de Norton]{\includegraphics{../figs/thevenin_1orden_C.pdf}}\hfil
+	    \subfigure[Equivalente de Thévenin]{\includegraphics{../figs/thevenin_1orden_L.pdf}}
 	    \caption{Equivalentes de Norton y Thévenin para un circuito de primer orden}
 	    \label{fig.thevenin_1orden}
 	\end{figure}

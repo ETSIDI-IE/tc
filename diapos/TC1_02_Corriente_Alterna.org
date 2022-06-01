@@ -8,7 +8,7 @@
    
 ** Onda sinusoidal
 
-[[file:figs/sin.pdf]]
+[[file:../figs/sin.pdf]]
 
 
 \[
@@ -26,7 +26,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
   
 ** Fase
 
-[[file:figs/desfase.pdf]]
+[[file:../figs/desfase.pdf]]
 
 
 \[
@@ -46,7 +46,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 
 ** Señales en Cuadratura
 
-[[file:figs/cuadratura.pdf]]
+[[file:../figs/cuadratura.pdf]]
 
 - Cuando el desfase entre dos señales es de 90º ($\theta_I - \theta_U = \pi/2$), se dice que están en cuadratura.
 - El paso por cero de una señal coincide con el paso por el máximo/mínimo de la otra señal.
@@ -103,11 +103,11 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasor.pdf]]
+[[file:../figs/fasor.pdf]]
 
 ** Tensión y corriente en notación fasorial
 
-[[file:figs/ondasTensionCorriente.pdf]]
+[[file:../figs/ondasTensionCorriente.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -126,7 +126,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorTensionCorriente.pdf]]
+[[file:../figs/fasorTensionCorriente.pdf]]
 
 
 ** Impedancia: relación entre fasores de tensión y corriente
@@ -158,7 +158,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorTensionCorriente.pdf]]
+[[file:../figs/fasorTensionCorriente.pdf]]
 
 
 *** Convenio de origen de fases
@@ -181,13 +181,13 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 #+END_EXPORT
 
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/fasorImpedancia.pdf]]
+[[file:../figs/fasorImpedancia.pdf]]
 
 ** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/resistivo.pdf]]
+[[file:../figs/resistivo.pdf]]
 
     #+begin_export latex
 \[
@@ -205,7 +205,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 ** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/resistivo.pdf]]
+[[file:../figs/resistivo.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -224,7 +224,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
     :BEAMER_col: 0.35
     :END:
     #+ATTR_LATEX: :height 0.35\textheight
-    [[file:figs/fasorResistencia_VI.pdf]]
+    [[file:../figs/fasorResistencia_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
@@ -232,14 +232,14 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
     :BEAMER_col: 0.35
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/fasorResistencia.pdf]]
+    [[file:../figs/fasorResistencia.pdf]]
 
 
 
 ** Circuito Inductivo puro                                            :BMCOL:
 Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/inductivoPuro.pdf]]
+[[file:../figs/inductivoPuro.pdf]]
 
     #+begin_export latex
 \[
@@ -259,7 +259,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/inductivoPuro.pdf]]
+[[file:../figs/inductivoPuro.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -280,7 +280,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
     :BEAMER_col: 0.4
     :END:
     #+ATTR_LATEX: :height 0.4\textheight
-    [[file:figs/fasorInductancia_VI.pdf]]
+    [[file:../figs/fasorInductancia_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
@@ -288,14 +288,14 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
     :BEAMER_col: 0.3
     :END:
     #+ATTR_LATEX: :height 0.4\textheight
-    [[file:figs/fasorInductancia.pdf]]
+    [[file:../figs/fasorInductancia.pdf]]
 
 
 ** Circuito Capacitivo puro
 Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/capacitivoPuro.pdf]]
+[[file:../figs/capacitivoPuro.pdf]]
 
     #+begin_export latex
 \[
@@ -315,7 +315,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/capacitivoPuro.pdf]]
+[[file:../figs/capacitivoPuro.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -335,7 +335,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.4
     :END:
     #+ATTR_LATEX: :height 0.4\textheight
-    [[file:figs/fasorCondensador_VI.pdf]]
+    [[file:../figs/fasorCondensador_VI.pdf]]
 
 
 ***                                                                   :BMCOL:
@@ -343,17 +343,17 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.3
     :END:
     #+ATTR_LATEX: :height 0.4\textheight
-    [[file:figs/fasorCondensador.pdf]]
+    [[file:../figs/fasorCondensador.pdf]]
 
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/inductivo.pdf]]
+[[file:../figs/inductivo.pdf]]
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.45
     :END:
     #+ATTR_LATEX: :width 0.8\textwidth
-    [[file:figs/RL.pdf]]
+    [[file:../figs/RL.pdf]]
 
 
 ***                                                                   :BMCOL:
@@ -361,11 +361,11 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.55
     :END:
     #+ATTR_LATEX: :height 0.5\textheight
-    [[file:figs/fasorInductanciaReal_VI.pdf]]
+    [[file:../figs/fasorInductanciaReal_VI.pdf]]
 
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RL.pdf]]
+[[file:../figs/RL.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -390,7 +390,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     #+end_export
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RL.pdf]]
+[[file:../figs/RL.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -412,12 +412,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.55
     :END:
-[[file:figs/fasorInductanciaReal.pdf]]
+[[file:../figs/fasorInductanciaReal.pdf]]
 
 
 ** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/capacitivo.pdf]]
+[[file:../figs/capacitivo.pdf]]
 
 
 ***                                                                   :BMCOL:
@@ -425,19 +425,19 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.45
     :END:
     #+ATTR_LATEX: :width 0.8\textwidth
-    [[file:figs/RC.pdf]]
+    [[file:../figs/RC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.55
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasorCondensadorReal_VI.pdf]]
+[[file:../figs/fasorCondensadorReal_VI.pdf]]
 
 
 ** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RC.pdf]]
+[[file:../figs/RC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -463,7 +463,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     #+end_export
 ** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RC.pdf]]
+[[file:../figs/RC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -490,12 +490,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.55
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasorCondensadorReal.pdf]]
+[[file:../figs/fasorCondensadorReal.pdf]]
 
 
 ** Circuito RLC serie
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RLC.pdf]]
+[[file:../figs/RLC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -522,7 +522,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 ** Circuito RLC serie
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RLC.pdf]]
+[[file:../figs/RLC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -562,7 +562,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 ** Circuito RLC paralelo
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/RLCparalelo.pdf]]
+[[file:../figs/RLCparalelo.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -589,7 +589,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 ** Circuito RLC paralelo
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/RLCparalelo.pdf]]
+[[file:../figs/RLCparalelo.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -616,7 +616,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.5
     :END:
     #+ATTR_LATEX: :height 0.1\textheight
-    [[file:figs/Z.pdf]]
+    [[file:../figs/Z.pdf]]
     #+begin_export latex
     \[
       \overline{U} = \overline{Z} \cdot \overline{I}
@@ -631,7 +631,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.5
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Y.pdf]]
+    [[file:../figs/Y.pdf]]
     #+begin_export latex
     \[
       \overline{I} = \overline{Y} \cdot \overline{U}
@@ -664,7 +664,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.5
     :END:
     #+ATTR_LATEX: :height 0.1\textheight
-    [[file:figs/Z.pdf]]
+    [[file:../figs/Z.pdf]]
 
     #+begin_export latex
     \[
@@ -681,7 +681,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.5
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Y.pdf]]
+    [[file:../figs/Y.pdf]]
 
     #+begin_export latex
     \[
@@ -772,7 +772,7 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
 
 ** Circuito Resistivo
 
-[[file:figs/resistivoPotencia.pdf]]
+[[file:../figs/resistivoPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Es siempre positiva.
@@ -808,7 +808,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 
 ** Circuito Inductivo puro
 
-[[file:figs/inductivoPuroPotencia.pdf]]
+[[file:../figs/inductivoPuroPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Pasa por los ceros de tensión y corriente.
@@ -844,7 +844,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 
 ** Circuito Capacitivo puro
 
-[[file:figs/capacitivoPuroPotencia.pdf]]
+[[file:../figs/capacitivoPuroPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Pasa por los ceros de tensión y corriente.
@@ -852,7 +852,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 
 ** Circuito Inductivo con pérdidas
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/inductivoPotencia.pdf]]
+[[file:../figs/inductivoPotencia.pdf]]
 
 #+begin_export latex
 \[
@@ -867,7 +867,7 @@ Valor medio positivo, $P = U I \cos \theta$
 
 ** Circuito Capacitivo con pérdidas
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/capacitivoPotencia.pdf]]
+[[file:../figs/capacitivoPotencia.pdf]]
 
 #+begin_export latex
 \[
@@ -917,7 +917,7 @@ Valor medio positivo, $P = U I \cos \theta$
     :PROPERTIES:
     :BEAMER_col: 0.6
     :END:
-[[file:~/github/esf/figs/trianguloPotencias.pdf]]
+[[file:~/github/esf/../figs/trianguloPotencias.pdf]]
 
 #+begin_export latex
 \[
@@ -997,13 +997,13 @@ Q &= \sum_{i = 1}^n Q_i
 
 ** Medida de potencia
 #+ATTR_LATEX: :height 0.7\textheight
- [[file:figs/vatimetro.pdf]]
+ [[file:../figs/vatimetro.pdf]]
 
 *Vatímetro*: equipo de medida de 4 terminales (1 par para tensión, 1 par para corriente)
 
 ** Medida de potencia
 #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/vatimetro_Z.pdf]]
+ [[file:../figs/vatimetro_Z.pdf]]
 
 
 Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
@@ -1026,11 +1026,11 @@ Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
  Sean dos sistemas con *misma tensión y potencia activa*, y factores de potencia $\cos \theta_2 < \cos \theta_1$ ($Q_2 > Q_1$)
 
  #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/Fasores_CompensacionReactiva.pdf]]
+ [[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 ** Potencia Aparente
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Fasores_CompensacionReactiva.pdf]]
+[[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 
 El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar la misma potencia activa.
@@ -1042,7 +1042,7 @@ El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar
 
 ** Sección de Conductores
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Fasores_CompensacionReactiva.pdf]]
+[[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 El sistema 2 requiere *mayor sección* de cable para transportar la misma potencia activa.
 #+BEGIN_EXPORT latex
@@ -1067,7 +1067,7 @@ El sistema 2 requiere *mayor sección* de cable para transportar la misma potenc
 Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de potencia $\cos\theta$. Se desea *mejorar el factor de potencia* a $\cos \theta' > \cos \theta$.
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Circuito_CompensacionReactiva.pdf]]
+[[file:../figs/Circuito_CompensacionReactiva.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1079,7 +1079,7 @@ Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de poten
 
 ** Cálculo de la Capacidad
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/Circuito_CompensacionReactiva.pdf]]
+[[file:../figs/Circuito_CompensacionReactiva.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}

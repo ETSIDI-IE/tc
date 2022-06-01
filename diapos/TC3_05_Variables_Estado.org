@@ -55,7 +55,7 @@ El comportamiento de un circuito puede ser descrito con ecuaciones diferenciales
 
 ** Diagrama de Bloques
 
-[[file:figs/Bloques_Variables_Estado.pdf]]
+[[file:../figs/Bloques_Variables_Estado.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -78,7 +78,7 @@ El comportamiento de un circuito puede ser descrito con ecuaciones diferenciales
 
 ** Trayectoria
 
-[[file:figs/trayectoria.pdf]]
+[[file:../figs/trayectoria.pdf]]
 
 * Topología de Redes
 
@@ -86,26 +86,26 @@ El comportamiento de un circuito puede ser descrito con ecuaciones diferenciales
 
 - *Grafo*: representación simplificada de un circuito eléctrico.
 
-[[file:figs/grafo.pdf]]
+[[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Árbol*: conjunto de ramas que unen todos los nudos sin formar caminos cerrados.
 
-[[file:figs/grafo.pdf]]
+[[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Cuerdas* o *Eslabones*: ramas no incluidas en el árbol.
 - *Lazos básicos*: lazos de un árbol con sólo un eslabón. 
-[[file:figs/grafo.pdf]]
+[[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Grupos de corte*: conjunto de ramas al que aplica la LKC.
 - *Grupos de corte básicos*: grupo de corte que contiene sólo una rama del árbol.
 
-[[file:figs/grafo.pdf]]
+[[file:../figs/grafo.pdf]]
 
 ** LKC y LKV
 - Al aplicar la *LKC* en los *grupos de corte básico* se obtienen ecuaciones linealmente independientes.

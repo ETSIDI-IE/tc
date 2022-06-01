@@ -34,7 +34,7 @@
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/CurvaResonancia.pdf]]
+[[file:../figs/CurvaResonancia.pdf]]
 
 *** :B_ignoreheading:
 :PROPERTIES:
@@ -57,14 +57,14 @@
 ** Ancho de Banda y Factor de Calidad
 
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/Q_B.pdf]]
+[[file:../figs/Q_B.pdf]]
 * Circuito RLC paralelo
 
 
 ** Admitancia
 
 #+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/RLC_paralelo_resonante.pdf]]
+[[file:../figs/RLC_paralelo_resonante.pdf]]
 
 - Admitancia:
 #+BEGIN_EXPORT latex
@@ -127,7 +127,7 @@
 ** Balance de corrientes en resonancia
 
 #+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/RLC_paralelo_resonante.pdf]]
+[[file:../figs/RLC_paralelo_resonante.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -148,7 +148,7 @@
 ** Balance de corrientes en resonancia
 
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/RLC_paralelo_resonante.pdf]]
+[[file:../figs/RLC_paralelo_resonante.pdf]]
 
 - Valores máximos (*atención en circuitos con $Q$ alto*)
 #+BEGIN_EXPORT latex
@@ -214,7 +214,7 @@ P_R = \frac{U^2}{R} \rightarrow w_R = T_0 \cdot \frac{U^2}{R}
   
 ** La curva de resonancia *no* es simétrica
 La frecuencia de resonancia no está en el centro del ancho de banda
-[[file:figs/CurvaResonancia.pdf]]
+[[file:../figs/CurvaResonancia.pdf]]
 
 ** La curva de resonancia *no* es simétrica
 
@@ -347,7 +347,7 @@ x = Q_0 \cdot \epsilon
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/CUR.pdf]]
+[[file:../figs/CUR.pdf]]
 
 ** Puntos de potencia mitad en la CUR
 
@@ -367,7 +367,7 @@ x = Q_0 \cdot \epsilon
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/CUR.pdf]]
+[[file:../figs/CUR.pdf]]
 
 *** :B_ignoreheading:
 :PROPERTIES:
@@ -476,7 +476,7 @@ B = \omega_2 - \omega_1 = \frac{R}{L}
 
 ** Circuito RLC con bobina real
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/resonante_real.pdf]]
+[[file:../figs/resonante_real.pdf]]
 
 La figura representa un circuito paralelo con una bobina real (con pérdidas). La impedancia de este circuito es:
 #+BEGIN_EXPORT latex
@@ -534,7 +534,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 - Una bobina real tiene pérdidas resistivas debidas al hilo conductor[fn:1].
 - Se modela como una conexión serie de una bobina ideal y una resistencia.
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/BobinaReal.pdf]]
+[[file:../figs/BobinaReal.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -549,7 +549,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 #+END_EXPORT
 ** Condensador Real
 #+ATTR_LATEX: :height 0.5\textheight 
-[[file:figs/CondensadorReal.pdf]]
+[[file:../figs/CondensadorReal.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -579,7 +579,7 @@ Demuestra que la expresión del factor de calidad de una bobina con pérdidas mo
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/BobinaRealParalelo.pdf]]
+[[file:../figs/BobinaRealParalelo.pdf]]
 
 
 ** Conversión serie-paralelo
@@ -596,7 +596,7 @@ Demuestra que la expresión del factor de calidad de una bobina con pérdidas mo
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/BobinaSerie.pdf]]
+[[file:../figs/BobinaSerie.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -610,7 +610,7 @@ Demuestra que la expresión del factor de calidad de una bobina con pérdidas mo
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/BobinaParalelo.pdf]]
+[[file:../figs/BobinaParalelo.pdf]]
 
 
 *** :B_ignoreheading:
@@ -646,7 +646,7 @@ Para bobinas con alto factor de calidad ($Q \geq 10$)
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/BobinaReal2.pdf]]
+[[file:../figs/BobinaReal2.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -667,7 +667,7 @@ Para bobinas con alto factor de calidad ($Q \geq 10$)
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/RL_paralelo.pdf]]
+[[file:../figs/RL_paralelo.pdf]]
 
 ** Conversión Serie-Paralelo
 
@@ -677,7 +677,7 @@ Empleando ecuaciones similares se puede demostrar la siguiente transformación p
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/CondensadorSerie.pdf]]
+[[file:../figs/CondensadorSerie.pdf]]
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
@@ -699,11 +699,11 @@ Empleando ecuaciones similares se puede demostrar la siguiente transformación p
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
 
-[[file:figs/CondensadorParalelo.pdf]]
+[[file:../figs/CondensadorParalelo.pdf]]
 
 ** Aplicación: transformación de circuito RLC
 
-[[file:figs/resonante_real.pdf]]
+[[file:../figs/resonante_real.pdf]]
 
 ** Ejercicios Recomendados
 - AS: ejemplos 14.7 y 14.8

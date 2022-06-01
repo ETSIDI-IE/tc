@@ -129,12 +129,12 @@ u_C(0^-) = u_C(0^+)
 - Sustituir bobinas por fuentes de corriente $i_L(0^+)$.
 - Sustituir condensadores por fuentes de tensión $u_C(0^+)$.
 - Calcular tensiones y corrientes en circuito.
-[[file:figs/CondicionesIniciales_CircuitosEquivalentes.pdf]]
+[[file:../figs/CondicionesIniciales_CircuitosEquivalentes.pdf]]
 
 ** Ejemplo
 
 *** (Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito y pasa a la posición (2) en $t = 0$.
-[[file:figs/ejemplo_condiciones_iniciales.pdf]]
+[[file:../figs/ejemplo_condiciones_iniciales.pdf]]
 
 * Funciones importantes
 ** Función Escalón
@@ -147,7 +147,7 @@ u(t - t_0) =
      \end{cases}
 \]
 #+END_EXPORT
-[[file:figs/funcion_escalon.pdf]]
+[[file:../figs/funcion_escalon.pdf]]
 
 ** Función Escalón ($t_0 = 0$)
 
@@ -161,7 +161,7 @@ u(t) =
 \]
 #+END_EXPORT
 
-[[file:figs/funcion_escalon0.pdf]]
+[[file:../figs/funcion_escalon0.pdf]]
 
 ** Función Exponencial
 - Es igual a su derivada. 
@@ -181,5 +181,5 @@ u(t) =
 ** Función Exponencial
 - Cuando el exponente es positivo la respuesta crece indefinidamente (circuito inestable).
 - Cuando el exponente es negativo la respuesta decae hasta 0 (circuito estable).
-[[file:figs/exp_decreciente.pdf]]
+[[file:../figs/exp_decreciente.pdf]]
 

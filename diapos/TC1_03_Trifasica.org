@@ -9,7 +9,7 @@
    :PROPERTIES:
    :beamer_opt: plain
    :END:
-file:figs/EstrellaEquilibrado.pdf
+file:../figs/EstrellaEquilibrado.pdf
 
 ** Motivación de los sistemas trifásicos
 
@@ -19,7 +19,7 @@ file:figs/EstrellaEquilibrado.pdf
 
 ** Ondas Trifásicas
 
- [[file:figs/TensionesTrifasica.pdf]]
+ [[file:../figs/TensionesTrifasica.pdf]]
 
  #+begin_export latex
  \begin{align*}
@@ -31,7 +31,7 @@ file:figs/EstrellaEquilibrado.pdf
 
 ** Fasores de un sistema trifásico
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/FasoresTrifasica.pdf]]
+[[file:../figs/FasoresTrifasica.pdf]]
 
  #+begin_export latex
  \begin{align*}
@@ -44,7 +44,7 @@ file:figs/EstrellaEquilibrado.pdf
 * Generadores
 ** Conexión
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/GeneradoresTrifasica.pdf]]
+[[file:../figs/GeneradoresTrifasica.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -73,7 +73,7 @@ file:figs/EstrellaEquilibrado.pdf
 
 ** Las tensiones suman 0
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/FasoresSumaCero.pdf]]
+[[file:../figs/FasoresSumaCero.pdf]]
 
 #+begin_export latex
 \[
@@ -82,7 +82,7 @@ file:figs/EstrellaEquilibrado.pdf
 #+end_export
 
 ** Las tensiones suman 0
-[[file:figs/TensionesTrifasica.pdf]]
+[[file:../figs/TensionesTrifasica.pdf]]
 
 #+begin_export latex
 \[
@@ -98,7 +98,7 @@ file:figs/EstrellaEquilibrado.pdf
     :BEAMER_col: 0.4
     :END:
  #+ATTR_LATEX: :height 0.4\textheight
- [[file:figs/FasoresTrifasica_ABC.pdf]]
+ [[file:../figs/FasoresTrifasica_ABC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -150,7 +150,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/FasoresFaseLinea.pdf]]
+ [[file:../figs/FasoresFaseLinea.pdf]]
 
     #+begin_export latex
     \[
@@ -167,14 +167,14 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 - Sentido en el que ocurren los máximos de cada fase.
 - Secuencia de Fases Directa (*SFD*): ABC
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/TensionesTrifasica_ABC.pdf]]
+[[file:../figs/TensionesTrifasica_ABC.pdf]]
 - Secuencia de Fases Inversa (*SFI*): ACB
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/TensionesTrifasica_ACB.pdf]]
+[[file:../figs/TensionesTrifasica_ACB.pdf]]
 
 ** Secuencia de Fases Directa (SFD)
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/FasoresTrifasica_ABC.pdf]]
+[[file:../figs/FasoresTrifasica_ABC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -191,7 +191,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :PROPERTIES:
     :BEAMER_col: 0.2
     :END:
-[[file:figs/ReglaSFD.pdf]]
+[[file:../figs/ReglaSFD.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -208,7 +208,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 
 ** Secuencia de Fases Inversa (SFI)
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/FasoresTrifasica_ACB.pdf]]
+[[file:../figs/FasoresTrifasica_ACB.pdf]]
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.4
@@ -225,7 +225,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :PROPERTIES:
     :BEAMER_col: 0.2
     :END:
-[[file:figs/ReglaSFI.pdf]]
+[[file:../figs/ReglaSFI.pdf]]
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.4
@@ -249,7 +249,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 
 
 ** Receptor en Estrella Equilibrado
-[[file:figs/EstrellaEquilibrado.pdf]]
+[[file:../figs/EstrellaEquilibrado.pdf]]
 
 ** Receptor en Estrella Equilibrado
 
@@ -258,7 +258,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaEquilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -291,10 +291,10 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 \]
  #+end_export
 ** Receptor en Estrella Equilibrado
-[[file:figs/EstrellaEquilibrado_SinNeutro.pdf]]
+[[file:../figs/EstrellaEquilibrado_SinNeutro.pdf]]
 
 ** Receptor en Triángulo Equilibrado
-[[file:figs/TrianguloEquilibrado.pdf]]
+[[file:../figs/TrianguloEquilibrado.pdf]]
 
 ** Receptor en Triángulo Equilibrado
 
@@ -302,7 +302,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/TrianguloEquilibrado_Receptor.pdf]]
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -337,7 +337,7 @@ Corriente de Fase:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/TrianguloEquilibrado_Receptor.pdf]]
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -367,7 +367,7 @@ Corriente de Línea:
 
 ** Receptor en Estrella Desequilibrado con Neutro
 
-[[file:figs/EstrellaDesequilibrado.pdf]]
+[[file:../figs/EstrellaDesequilibrado.pdf]]
 
 ** Receptor en Estrella Desequilibrado con Neutro
 ***                                                                   :BMCOL:
@@ -375,7 +375,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaDesequilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -402,7 +402,7 @@ Corriente de Línea:
  #+end_export
 
 ** Receptor en Estrella Desequilibrado sin Neutro
-[[file:figs/EstrellaDesequilibrado_SinNeutro.pdf]]
+[[file:../figs/EstrellaDesequilibrado_SinNeutro.pdf]]
 
 #+begin_export latex
 \[
@@ -411,10 +411,10 @@ Corriente de Línea:
 #+end_export
 ** Receptor en Estrella con Carga Monofásica
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/Estrella_CargaMonofasica.pdf]]
+[[file:../figs/Estrella_CargaMonofasica.pdf]]
 ** Receptor en Triángulo Desequilibrado
    #+ATTR_LATEX: :height 0.9\textheight
- file:figs/TrianguloDesequilibrado.pdf
+ file:../figs/TrianguloDesequilibrado.pdf
 
 ** Receptor en Triángulo Desequilibrado
 ***                                                                   :BMCOL:
@@ -422,7 +422,7 @@ Corriente de Línea:
     :BEAMER_col: 0.6
     :END:
     
-[[file:figs/TrianguloDesequilibrado_Receptor.pdf]]
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -518,7 +518,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaEquilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -551,7 +551,7 @@ Corriente de Línea:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/TrianguloEquilibrado_Receptor.pdf]]
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -583,7 +583,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaDesequilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -603,7 +603,7 @@ Corriente de Línea:
     :BEAMER_col: 0.6
     :END:
     
-[[file:figs/TrianguloDesequilibrado_Receptor.pdf]]
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -665,7 +665,7 @@ Finalmente, la relación entre masas de conductor es:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -690,7 +690,7 @@ Finalmente, la relación entre masas de conductor es:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
@@ -714,7 +714,7 @@ Finalmente, la relación entre masas de conductor es:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
 #+BEGIN_EXPORT latex
 \[
   \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
@@ -726,7 +726,7 @@ Finalmente, la relación entre masas de conductor es:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
 #+BEGIN_EXPORT latex
 \[
   \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
@@ -744,7 +744,7 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
 * Medida de Potencia en Sistemas Trifásicos
 ** Recordatorio: vatímetro
 #+ATTR_LATEX: :height 0.6\textheight
- [[file:figs/vatimetro.pdf]]
+ [[file:../figs/vatimetro.pdf]]
 
 *Vatímetro*: equipo de medida de 4 terminales (1 par para tensión, 1 par para corriente)
 
@@ -760,7 +760,7 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
     :BEAMER_col: 0.7
     :END:
     #+ATTR_LATEX: :height 0.85\textheight
-    [[file:figs/Potencia4H.pdf]]
+    [[file:../figs/Potencia4H.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -786,7 +786,7 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
     :BEAMER_col: 0.6
     :END:
     #+ATTR_LATEX: :height 0.85\textheight
-    [[file:figs/Potencia4H_Equilibrado.pdf]]
+    [[file:../figs/Potencia4H_Equilibrado.pdf]]
  
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -809,7 +809,7 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
- [[file:figs/Potencia3H.pdf]]
+ [[file:../figs/Potencia3H.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -860,7 +860,7 @@ Cuando el sistema es equilibrado, las lecturas individuales de los vatímetros t
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
- [[file:figs/Potencia3H_Equilibrado_AB.pdf]]
+ [[file:../figs/Potencia3H_Equilibrado_AB.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -960,7 +960,7 @@ Repetimos el desarrollo con SFI:
 ** Sistema de 3 Hilos Equilibrado
 
 #+ATTR_LATEX: :height 0.3\textheight
- [[file:figs/Potencia3H_Equilibrado_AB.pdf]]
+ [[file:../figs/Potencia3H_Equilibrado_AB.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -1014,7 +1014,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_AB.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_AB.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: AC \notin SFD\\
@@ -1025,7 +1025,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_BC.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_BC.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: BA \notin SFD\\
@@ -1037,7 +1037,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_CA.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_CA.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: CB \notin SFD\\
@@ -1065,7 +1065,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_AB_SFI.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_AB_SFI.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: BC \notin SFI\\
@@ -1076,7 +1076,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_BC_SFI.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_BC_SFI.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: CA \notin SFI\\
@@ -1088,7 +1088,7 @@ SFI
     :PROPERTIES:
     :BEAMER_col: 0.33
     :END:
-  [[file:figs/Potencia3H_Equilibrado_CA_SFI.pdf]]
+  [[file:../figs/Potencia3H_Equilibrado_CA_SFI.pdf]]
   #+begin_export latex
   \begin{align*}
     W_1&: AB \notin SFI\\
@@ -1106,7 +1106,7 @@ Supongamos *SFD*:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/Reactiva3H_A-BC.pdf]]
+[[file:../figs/Reactiva3H_A-BC.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -1142,7 +1142,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_A-BC.pdf]]
+    [[file:../figs/Reactiva3H_A-BC.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{BC} \cdot \overline{I}_A^*)
@@ -1157,7 +1157,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_B-CA.pdf]]
+    [[file:../figs/Reactiva3H_B-CA.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{CA} \cdot \overline{I}_B^*)
@@ -1172,7 +1172,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_C-AB.pdf]]
+    [[file:../figs/Reactiva3H_C-AB.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{AB} \cdot \overline{I}_C^*)
@@ -1200,7 +1200,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_A-CB.pdf]]
+    [[file:../figs/Reactiva3H_A-CB.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{CB} \cdot \overline{I}_A^*)
@@ -1215,7 +1215,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_B-AC.pdf]]
+    [[file:../figs/Reactiva3H_B-AC.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{AC} \cdot \overline{I}_B^*)
@@ -1230,7 +1230,7 @@ Supongamos *SFD*:
     :BEAMER_col: 0.33
     :END:
     #+ATTR_LATEX: :height 0.25\textheight
-    [[file:figs/Reactiva3H_C-BA.pdf]]
+    [[file:../figs/Reactiva3H_C-BA.pdf]]
     #+begin_export latex
     \[
       W = \Re(\overline{U}_{BA} \cdot \overline{I}_C^*)

@@ -292,7 +292,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
     :BEAMER_col: 0.5
     :END:
 
-[[file:figs/Resistencia_Laplace.pdf]]
+[[file:../figs/Resistencia_Laplace.pdf]]
 
 ** Bobina
 *** Ecuación                                                          :BMCOL:
@@ -323,10 +323,10 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
     :END:
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Bobina_Laplace_Impedancia.pdf]]
+[[file:../figs/Bobina_Laplace_Impedancia.pdf]]
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Bobina_Laplace_Admitancia.pdf]]
+[[file:../figs/Bobina_Laplace_Admitancia.pdf]]
 
 
 ** Condensador
@@ -357,11 +357,11 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Condensador_Laplace_Admitancia.pdf]]
+[[file:../figs/Condensador_Laplace_Admitancia.pdf]]
 
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Condensador_Laplace_Impedancia.pdf]]
+[[file:../figs/Condensador_Laplace_Impedancia.pdf]]
 
 
 
@@ -395,12 +395,12 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/E2_circuito.pdf]]
+[[file:../figs/E2_circuito.pdf]]
 
 * Diagramas Polos y Ceros
 
 ** Función de Transferencia
-[[file:figs/TransferFunction.pdf]]
+[[file:../figs/TransferFunction.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -469,10 +469,10 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/InterpretacionGeometrica0.pdf]]
+[[file:../figs/InterpretacionGeometrica0.pdf]]
 
 ** Significado Diagrama Polos y Ceros
-[[file:figs/PoleZero.pdf]]
+[[file:../figs/PoleZero.pdf]]
 
 # 1. A real pole p i = −σ in the left-half of the s-plane defines an exponentially decaying component
 # , Ce −σt , in the homogeneous response. The rate of the decay is determined by the pole
@@ -498,7 +498,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
 \]
 #+END_EXPORT
 
-[[file:figs/Ejemplo_Polos.pdf]]
+[[file:../figs/Ejemplo_Polos.pdf]]
 
 
 * Ejercicios Recomendados

@@ -11,7 +11,7 @@
 El *potencial eléctrico en un punto*, $v(t)$,  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. 
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/tension_puntos.pdf]]
+[[file:../figs/tension_puntos.pdf]]
 
 La *tensión o diferencia de potencial entre dos puntos* A y B, $u_{AB}(t)$, es el trabajo realizado por el campo eléctrico al desplazar una carga unitaria entre esos puntos. 
 
@@ -26,14 +26,14 @@ La *unidad* de la tensión eléctrica es el *voltio* (V).
 Dado que el campo eléctrico es *conservativo*, la diferencia de potencial entre A y B *no depende de la trayectoria* seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos. 
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/diagrama_tension.pdf]]
+[[file:../figs/diagrama_tension.pdf]]
 
 *** El signo depende del sentido
 
 Aunque la trayectoria no sea relevante para el cálculo de la tensión, siempre hay que tener en cuenta el *sentido del desplazamiento*. 
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/sentido_tension.pdf]]
+[[file:../figs/sentido_tension.pdf]]
 
 Así, si el movimiento se produce desde B hasta A obtenemos el signo contrario al anterior resultado:
 
@@ -50,7 +50,7 @@ Se define la *intensidad de la corriente eléctrica* como la variación de la ca
 \end{equation*}
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/seccion_conductor.pdf]]
+[[file:../figs/seccion_conductor.pdf]]
 
 La corriente eléctrica se produce por el *movimiento de los electrones libres* que fluyen por el conductor. Sin embargo, por razones históricas, el *convenio* que se se emplea considera como sentido de la corriente el debido al *movimiento de las cargas positivas*.
 
@@ -80,7 +80,7 @@ Para determinar el *signo de la potencia eléctrica* hay que tener en considerac
 - Cuando las flechas tienen *sentidos opuestos* la potencia eléctrica es *negativa*. 
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/signo_potencia.pdf]]
+[[file:../figs/signo_potencia.pdf]]
 
 *** Receptores y Generadores
 Es habitual *interpretar* este resultado en términos de potencia absorbida o potencia entregada. 
@@ -88,7 +88,7 @@ Es habitual *interpretar* este resultado en términos de potencia absorbida o po
 - Un *circuito generador entrega potencia* y la corriente /sale/ por el terminal de mayor potencial.
 
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/receptor_generador.pdf]]
+[[file:../figs/receptor_generador.pdf]]
 
 *** Potencia y Energía
 
@@ -137,11 +137,11 @@ Cualquier máquina tiene pérdidas:
 
 - Corriente Continua ($\frac{d}{dt} = 0$)
 #+ATTR_LATEX: :width \textwidth
-[[file:figs/continua.pdf]]
+[[file:../figs/continua.pdf]]
 
 - Corriente Alterna ($\frac{d}{dt} \neq 0$)
 #+ATTR_LATEX: :width \textwidth
-[[file:figs/sin.pdf]]
+[[file:../figs/sin.pdf]]
 
 * Elementos circuitales
 
@@ -160,13 +160,13 @@ u(t) = R \cdot i(t)
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia.pdf]]
+[[file:../figs/Resistencia.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia_Flecha.pdf]]
+[[file:../figs/Resistencia_Flecha.pdf]]
 
 *** Resistividad
 -  El valor de la resistencia depende de la *resistividad del material* (\rho), de la *sección* ($S$), y de la
@@ -187,17 +187,17 @@ u(t) = R \cdot i(t)
 - Cortocircuito: resistencia nula (tensión nula)
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Cortocircuito.pdf]]
+[[file:../figs/Cortocircuito.pdf]]
 
 - Circuito abierto: resistencia infinita (corriente nula).
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/CircuitoAbierto.pdf]]
+[[file:../figs/CircuitoAbierto.pdf]]
 
 *** Ley de Joule
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia.pdf]]
+[[file:../figs/Resistencia.pdf]]
 
 - *Ley de Joule*: una resistencia disipa energía eléctrica produciendo *calor*.
 #+BEGIN_EXPORT latex
@@ -210,7 +210,7 @@ p(t)=R\cdot i^{2}(t)
 *** Bobina o inductancia
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Bobina.pdf]]
+[[file:../figs/Bobina.pdf]]
 
 -  Cuando una corriente oscilante atraviesa un conductor arrollado alrededor de un núcleo, se produce una *tensión inducida que se opone a esta corriente* (ley de Faraday y Lenz)
 
@@ -225,7 +225,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 *** Bobina o inductancia
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Bobina.pdf]]
+[[file:../figs/Bobina.pdf]]
 
 -  Almacena *energía magnética*.
 
@@ -245,7 +245,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 *** Condensador
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Condensador.pdf]]
+[[file:../figs/Condensador.pdf]]
 
 - Un *condensador* está formado por dos placas metálicas separadas por una capa dieléctrica. Al aplicar tensión se produce una *separación de cargas opuestas* que se *acumulan* en cada placa.
 
@@ -268,7 +268,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Condensador
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Condensador.pdf]]
+[[file:../figs/Condensador.pdf]]
 
 - Un condensador almacena *energía eléctrica*
 
@@ -289,7 +289,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Diodo
 
 #+ATTR_LATEX: :height 0.15\textheight
-[[file:figs/Diodo.pdf]]
+[[file:../figs/Diodo.pdf]]
 
 - Un diodo es un dispositivo electrónico que permite el paso de
   corriente a través de él a partir de una tensión de polarización.
@@ -301,7 +301,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Diodo
 
 #+ATTR_LATEX: :height 0.15\textheight
-[[file:figs/Diodo.pdf]]
+[[file:../figs/Diodo.pdf]]
 
 -  Por tanto, puede ser utilizado como
 
@@ -314,7 +314,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Transistor
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/Transistor.pdf]]
+[[file:../figs/Transistor.pdf]]
 
 - Un transistor es un dispositivo electrónico con tres terminales que
   permite el paso de corriente entre dos de sus terminales cuando en el
@@ -328,7 +328,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Transistor
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/Transistor.pdf]]
+[[file:../figs/Transistor.pdf]]
 
 Por tanto, puede ser utilizado como:
 
@@ -348,7 +348,7 @@ Por tanto, puede ser utilizado como:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/FuenteTensionIdealDC.pdf]]
+ [[file:../figs/FuenteTensionIdealDC.pdf]]
  Un *generador de tensión ideal* impone la tensión a la salida (/la corriente depende del circuito/). Se caracteriza por su *fuerza electromotriz* (voltios [V]).
 
 ****                                                               :BMCOL:
@@ -356,7 +356,7 @@ Por tanto, puede ser utilizado como:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/FuenteCorrienteIdeal.pdf]]
+ [[file:../figs/FuenteCorrienteIdeal.pdf]]
  Un *generador de corriente ideal* impone la corriente a la salida (/la tensión depende del circuito/). Se caracteriza por su corriente de generador.
 
 *** Generador Real
@@ -367,13 +367,13 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.7\textheight
- file:figs/FuenteTensionRealDC.pdf
+ file:../figs/FuenteTensionRealDC.pdf
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.7\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+ file:../figs/FuenteCorrienteRealDC.pdf
 
 
 * Leyes de Kirchhoff
@@ -387,7 +387,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
   - Las lineas de corriente son cerradas (o solenoidales).
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/LKC_FM.pdf]]
+[[file:../figs/LKC_FM.pdf]]
 #+BEGIN_EXPORT latex
 \[
 i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
@@ -402,7 +402,7 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
   - La energía producida por un generador es consumida por los receptores del circuito para producir trabajo (mecánico, químico, etc.) o calor.
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/LKV_FM.pdf]]
+[[file:../figs/LKV_FM.pdf]]
 #+BEGIN_EXPORT latex
 \[
 u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
@@ -410,7 +410,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 #+END_EXPORT
 
 *** Balance de Tensiones
-[[file:figs/circuito_lkv.pdf]]
+[[file:../figs/circuito_lkv.pdf]]
 #+begin_export latex
 \begin{equation*}
   U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
@@ -427,7 +427,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 
 *** Balance de Tensiones
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/circuito_lkv.pdf]]
+[[file:../figs/circuito_lkv.pdf]]
 #+begin_export latex
 \begin{equation*}
   U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
@@ -475,7 +475,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/AsociacionSerie.pdf]]
+[[file:../figs/AsociacionSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -494,7 +494,7 @@ Un conjunto de elementos están asociados en serie cuando circula la misma corri
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/AsociacionSerie.pdf]]
+[[file:../figs/AsociacionSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -527,7 +527,7 @@ Definimos la resistencia equivalente de la conexión serie:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/BobinasSerie.pdf]]
+[[file:../figs/BobinasSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -553,7 +553,7 @@ Definimos la resistencia equivalente de la conexión serie:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/CondensadoresSerie.pdf]]
+[[file:../figs/CondensadoresSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -578,7 +578,7 @@ Definimos la resistencia equivalente de la conexión serie:
 
 Un conjunto de elementos están asociados en paralelo cuando están sometidos a la misma diferencia de potencial.
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/AsociacionParalelo.pdf]]
+[[file:../figs/AsociacionParalelo.pdf]]
 
 #+begin_export latex
 \begin{align*}
@@ -592,7 +592,7 @@ Un conjunto de elementos están asociados en paralelo cuando están sometidos a 
 :PROPERTIES:
 :BEAMER_col: 0.4
 :END:
-[[file:figs/AsociacionParalelo.pdf]]
+[[file:../figs/AsociacionParalelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.6
@@ -636,7 +636,7 @@ En el caso concreto de *dos* resistencias en paralelo ...
 
 *** Conexión en paralelo de inductancias
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/BobinasParalelo.pdf]]
+[[file:../figs/BobinasParalelo.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -664,7 +664,7 @@ En el caso concreto de *dos* resistencias en paralelo ...
 *** Conexión en paralelo de condensadores
 
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/CondensadoresParalelo.pdf]]
+[[file:../figs/CondensadoresParalelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -690,7 +690,7 @@ En el caso concreto de *dos* resistencias en paralelo ...
 ** Conceptos Fundamentales   
 *** Onda sinusoidal
 
-[[file:figs/sin.pdf]]
+[[file:../figs/sin.pdf]]
 
 
 \[
@@ -708,7 +708,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
   
 *** Fase
 
-[[file:figs/desfase.pdf]]
+[[file:../figs/desfase.pdf]]
 
 
 \[
@@ -728,7 +728,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 
 *** Señales en Cuadratura
 
-[[file:figs/cuadratura.pdf]]
+[[file:../figs/cuadratura.pdf]]
 
 - Cuando el desfase entre dos señales es de 90º ($\theta_I - \theta_U = \pi/2$), se dice que están en cuadratura.
 - El paso por cero de una señal coincide con el paso por el máximo/mínimo de la otra señal.
@@ -786,11 +786,11 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasor.pdf]]
+[[file:../figs/fasor.pdf]]
 
 *** Tensión y corriente en notación fasorial
 
-[[file:figs/ondasTensionCorriente.pdf]]
+[[file:../figs/ondasTensionCorriente.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -809,7 +809,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorTensionCorriente.pdf]]
+[[file:../figs/fasorTensionCorriente.pdf]]
 
 
 *** Impedancia: relación entre fasores de tensión y corriente
@@ -841,7 +841,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorTensionCorriente.pdf]]
+[[file:../figs/fasorTensionCorriente.pdf]]
 
 
 *** Impedancia Genérica
@@ -851,13 +851,13 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \]
 #+END_EXPORT
 
-[[file:figs/fasorImpedancia.pdf]]
+[[file:../figs/fasorImpedancia.pdf]]
 
 
 *** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
-[[file:figs/resistivo.pdf]]
+[[file:../figs/resistivo.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -873,14 +873,14 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
     :PROPERTIES:
     :BEAMER_col: 0.35
     :END:
-[[file:figs/fasorResistencia_VI.pdf]]
+[[file:../figs/fasorResistencia_VI.pdf]]
 
 
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.35
     :END:
-[[file:figs/fasorResistencia.pdf]]
+[[file:../figs/fasorResistencia.pdf]]
 
 
 
@@ -890,7 +890,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/inductivoPuro.pdf]]
+[[file:../figs/inductivoPuro.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -908,7 +908,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
     :PROPERTIES:
     :BEAMER_col: 0.4
     :END:
-[[file:figs/fasorInductancia_VI.pdf]]
+[[file:../figs/fasorInductancia_VI.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -916,7 +916,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
     :BEAMER_col: 0.3
     :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/fasorInductancia.pdf]]
+[[file:../figs/fasorInductancia.pdf]]
 
 
 
@@ -924,7 +924,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/capacitivoPuro.pdf]]
+[[file:../figs/capacitivoPuro.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -941,7 +941,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.4
     :END:
-[[file:figs/fasorCondensador_VI.pdf]]
+[[file:../figs/fasorCondensador_VI.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -949,17 +949,17 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.3
     :END:
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/fasorCondensador.pdf]]
+[[file:../figs/fasorCondensador.pdf]]
 
 *** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/inductivo.pdf]]
+[[file:../figs/inductivo.pdf]]
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.45
     :END:
 
-[[file:figs/RL.pdf]]
+[[file:../figs/RL.pdf]]
 
     #+begin_export latex
     \begin{align*}
@@ -972,11 +972,11 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.55
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/fasorInductanciaReal_VI.pdf]]
+[[file:../figs/fasorInductanciaReal_VI.pdf]]
 
 *** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RL.pdf]]
+[[file:../figs/RL.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -998,12 +998,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.55
     :END:
-[[file:figs/fasorInductanciaReal.pdf]]
+[[file:../figs/fasorInductanciaReal.pdf]]
 
 
 *** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/capacitivo.pdf]]
+[[file:../figs/capacitivo.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1011,7 +1011,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.45
     :END:
 
-[[file:figs/RC.pdf]]
+[[file:../figs/RC.pdf]]
 
     #+begin_export latex
 \begin{align*}
@@ -1024,12 +1024,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.55
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasorCondensadorReal_VI.pdf]]
+[[file:../figs/fasorCondensadorReal_VI.pdf]]
 
 
 *** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RC.pdf]]
+[[file:../figs/RC.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1056,12 +1056,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :BEAMER_col: 0.55
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/fasorCondensadorReal.pdf]]
+[[file:../figs/fasorCondensadorReal.pdf]]
 
 
 *** Circuito RLC serie
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/RLC.pdf]]
+[[file:../figs/RLC.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1102,14 +1102,14 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 ** Potencia
 *** Circuito Resistivo
 
-[[file:figs/resistivoPotencia.pdf]]
+[[file:../figs/resistivoPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Es siempre positiva.
 
 *** Circuito Inductivo puro
 
-[[file:figs/inductivoPuroPotencia.pdf]]
+[[file:../figs/inductivoPuroPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Pasa por los ceros de tensión y corriente.
@@ -1117,7 +1117,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 *** Circuito Capacitivo puro
 
-[[file:figs/capacitivoPuroPotencia.pdf]]
+[[file:../figs/capacitivoPuroPotencia.pdf]]
 
 - Fluctúa al doble de frecuencia.
 - Pasa por los ceros de tensión y corriente.
@@ -1125,7 +1125,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 *** Circuito Inductivo con pérdidas
 
-[[file:figs/inductivoPotencia.pdf]]
+[[file:../figs/inductivoPotencia.pdf]]
 
 #+begin_center
 Valor medio positivo, $P = U I \cos \theta$
@@ -1134,7 +1134,7 @@ Valor medio positivo, $P = U I \cos \theta$
 
 *** Circuito Capacitivo con pérdidas
 
-[[file:figs/capacitivoPotencia.pdf]]
+[[file:../figs/capacitivoPotencia.pdf]]
 
 #+begin_center
 Valor medio positivo, $P = U I \cos \theta$
@@ -1170,7 +1170,7 @@ Valor medio positivo, $P = U I \cos \theta$
     :PROPERTIES:
     :BEAMER_col: 0.6
     :END:
-[[file:~/github/esf/figs/trianguloPotencias.pdf]]
+[[file:~/github/esf/../figs/trianguloPotencias.pdf]]
 
 #+begin_export latex
 \[
@@ -1261,11 +1261,11 @@ Q &= \sum_{i = 1}^n Q_i
  Sean dos sistemas con *misma tensión y potencia activa*, y factores de potencia $\cos \theta_2 < \cos \theta_1$ ($Q_2 > Q_1$)
 
  #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/Fasores_CompensacionReactiva.pdf]]
+ [[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 *** Potencia Aparente
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Fasores_CompensacionReactiva.pdf]]
+[[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 
 El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar la misma potencia activa.
@@ -1277,7 +1277,7 @@ El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar
 
 *** Sección de Conductores
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Fasores_CompensacionReactiva.pdf]]
+[[file:../figs/Fasores_CompensacionReactiva.pdf]]
 
 El sistema 2 requiere *mayor sección* de cable para transportar la misma potencia activa.
 #+BEGIN_EXPORT latex
@@ -1302,7 +1302,7 @@ El sistema 2 requiere *mayor sección* de cable para transportar la misma potenc
 Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de potencia $\cos\theta$. Se desea *mejorar el factor de potencia* a $\cos \theta' > \cos \theta$.
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/Circuito_CompensacionReactiva.pdf]]
+[[file:../figs/Circuito_CompensacionReactiva.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1314,7 +1314,7 @@ Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de poten
 
 *** Cálculo de la Capacidad
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/Circuito_CompensacionReactiva.pdf]]
+[[file:../figs/Circuito_CompensacionReactiva.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1340,7 +1340,7 @@ Q'&= P_z \tan \theta'\\
 
 *** Ondas Trifásicas
 
- [[file:figs/TensionesTrifasica.pdf]]
+ [[file:../figs/TensionesTrifasica.pdf]]
 
  #+begin_export latex
  \begin{align*}
@@ -1352,7 +1352,7 @@ Q'&= P_z \tan \theta'\\
 
 *** Generadores
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/GeneradoresTrifasica.pdf]]
+[[file:../figs/GeneradoresTrifasica.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1381,7 +1381,7 @@ Q'&= P_z \tan \theta'\\
 
 *** Las tensiones suman 0
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/FasoresSumaCero.pdf]]
+[[file:../figs/FasoresSumaCero.pdf]]
 
 #+begin_export latex
 \[
@@ -1390,7 +1390,7 @@ Q'&= P_z \tan \theta'\\
 #+end_export
 
 *** Las tensiones suman 0
-[[file:figs/TensionesTrifasica.pdf]]
+[[file:../figs/TensionesTrifasica.pdf]]
 
 #+begin_export latex
 \[
@@ -1407,7 +1407,7 @@ Q'&= P_z \tan \theta'\\
     :END:
 
 #+ATTR_LATEX: :height 0.4\textheight
- [[file:figs/FasoresTrifasica_ABC.pdf]]
+ [[file:../figs/FasoresTrifasica_ABC.pdf]]
 
 
 Tensiones de *Fase*: $U_A$, $U_B$, $U_C$
@@ -1446,10 +1446,10 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 - Sentido en el que ocurren los máximos de cada fase.
 - Secuencia de Fases Directa (*SFD*): ABC
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/TensionesTrifasica_ABC.pdf]]
+[[file:../figs/TensionesTrifasica_ABC.pdf]]
 - Secuencia de Fases Inversa (*SFI*): ACB
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/TensionesTrifasica_ACB.pdf]]
+[[file:../figs/TensionesTrifasica_ACB.pdf]]
 
 ** Receptores
 *** Tipos de Receptores
@@ -1463,7 +1463,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 
 
 *** Receptor en Estrella Equilibrado
-[[file:figs/EstrellaEquilibrado.pdf]]
+[[file:../figs/EstrellaEquilibrado.pdf]]
 
 *** Receptor en Estrella Equilibrado
 
@@ -1472,7 +1472,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaEquilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1496,10 +1496,10 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
 \]
  #+end_export
 *** Receptor en Estrella Equilibrado
-[[file:figs/EstrellaEquilibrado_SinNeutro.pdf]]
+[[file:../figs/EstrellaEquilibrado_SinNeutro.pdf]]
 
 *** Receptor en Triángulo Equilibrado
-[[file:figs/TrianguloEquilibrado.pdf]]
+[[file:../figs/TrianguloEquilibrado.pdf]]
 
 *** Receptor en Triángulo Equilibrado
 
@@ -1507,7 +1507,7 @@ Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/TrianguloEquilibrado_Receptor.pdf]]
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1537,7 +1537,7 @@ Corriente de Línea:
 
 *** Receptor en Estrella Desequilibrado con Neutro
 
-[[file:figs/EstrellaDesequilibrado.pdf]]
+[[file:../figs/EstrellaDesequilibrado.pdf]]
 
 *** Receptor en Estrella Desequilibrado con Neutro
 ****                                                               :BMCOL:
@@ -1545,7 +1545,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaDesequilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1572,7 +1572,7 @@ Corriente de Línea:
  #+end_export
 
 *** Receptor en Estrella Desequilibrado sin Neutro
-[[file:figs/EstrellaDesequilibrado_SinNeutro.pdf]]
+[[file:../figs/EstrellaDesequilibrado_SinNeutro.pdf]]
 
 #+begin_export latex
 \[
@@ -1580,9 +1580,9 @@ Corriente de Línea:
 \]
 #+end_export
 *** Receptor en Estrella con Carga Monofásica
-[[file:figs/Estrella_CargaMonofasica.pdf]]
+[[file:../figs/Estrella_CargaMonofasica.pdf]]
 *** Receptor en Triángulo Desequilibrado
- file:figs/TrianguloDesequilibrado.pdf
+ file:../figs/TrianguloDesequilibrado.pdf
 
 *** Receptor en Triángulo Desequilibrado
 ****                                                               :BMCOL:
@@ -1590,7 +1590,7 @@ Corriente de Línea:
     :BEAMER_col: 0.6
     :END:
     
-[[file:figs/TrianguloDesequilibrado_Receptor.pdf]]
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1622,7 +1622,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaEquilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1655,7 +1655,7 @@ Corriente de Línea:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/TrianguloEquilibrado_Receptor.pdf]]
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1687,7 +1687,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
     
-[[file:figs/EstrellaDesequilibrado_Receptor.pdf]]
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1707,7 +1707,7 @@ Corriente de Línea:
     :BEAMER_col: 0.6
     :END:
     
-[[file:figs/TrianguloDesequilibrado_Receptor.pdf]]
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1742,7 +1742,7 @@ Corriente de Línea:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -1767,7 +1767,7 @@ Corriente de Línea:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
@@ -1791,7 +1791,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
 #+BEGIN_EXPORT latex
 \[
   \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
@@ -1803,7 +1803,7 @@ Corriente de Línea:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.55\textheight
- [[file:figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
 #+BEGIN_EXPORT latex
 \[
   \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}

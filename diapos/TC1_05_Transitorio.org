@@ -150,11 +150,11 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 - En $t < 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
 - En $t = 0$ la fuente se desconecta.
 - En $t > 0$ la bobina se descarga en la resistencia.
-[[file:figs/transitorio_circuitoRL.pdf]]
+[[file:../figs/transitorio_circuitoRL.pdf]]
 
 *** Respuesta natural
 #+ATTR_LATEX: :height 0.25\textheight
-file:figs/transitorio_circuitoRL_t0+.pdf
+file:../figs/transitorio_circuitoRL_t0+.pdf
 Ecuaciones
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -178,7 +178,7 @@ Ecuación Característica
 
 *** Condiciones Iniciales
 Analizando circuito para $t < 0$ ... 
-file:figs/transitorio_circuitoRL_t0-.pdf
+file:../figs/transitorio_circuitoRL_t0-.pdf
 ...obtenemos  $i(0^-) = I_0 = \frac{U_0}{R}$ 
 
 *** Respuesta Natural
@@ -218,7 +218,7 @@ Por tanto, la respuesta natural es:
 - Valores altos de $\tau$ implican decrecimiento lento.
 - La respuesta natural "desaparece" tras $\simeq 5\tau$.
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/constante_tiempo.pdf]]
+[[file:../figs/constante_tiempo.pdf]]
 
 *** Balance Energético
 
@@ -234,11 +234,11 @@ La energía acumulada en la bobina en $t < 0$ se disipa en la resistencia en $t 
 
 *** Respuesta forzada
 Cambiemos el funcionamiento del interruptor: en $t > 0$ la fuente alimenta el circuito RL.
-[[file:figs/transitorio_circuitoRL2.pdf]]
+[[file:../figs/transitorio_circuitoRL2.pdf]]
 
 *** Respuesta forzada
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/transitorio_circuitoRL2_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRL2_t0+.pdf]]
 Las ecuaciones son ahora:
 #+BEGIN_EXPORT latex
 \[
@@ -294,7 +294,7 @@ La solución completa es:
 #+END_EXPORT
 
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/RespuestaCompleta_RL.pdf]]
+[[file:../figs/RespuestaCompleta_RL.pdf]]
 
 
 *** Expresión general de la respuesta completa
@@ -311,7 +311,7 @@ La solución completa es:
 
 *** Equivalente de Thévenin
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/Thevenin_PrimerOrden.pdf]]
+[[file:../figs/Thevenin_PrimerOrden.pdf]]
 ** Circuito RC paralelo
 
 *** Circuito básico
@@ -320,11 +320,11 @@ La solución completa es:
 - En $t > 0$ el condensador comienza a descargarse en la resistencia.
 
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/transitorio_circuitoRC.pdf]]
+[[file:../figs/transitorio_circuitoRC.pdf]]
 
 *** Respuesta natural
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/transitorio_circuitoRC_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRC_t0+.pdf]]
 
 Ecuaciones
 #+BEGIN_EXPORT latex
@@ -361,7 +361,7 @@ Respuesta natural
 #+END_EXPORT
 
 #+ATTR_LATEX: :height 0.55\textheight
-[[file:figs/constante_tiempo.pdf]]
+[[file:../figs/constante_tiempo.pdf]]
 
 *** Balance Energético
 
@@ -387,7 +387,7 @@ La energía acumulada en el condensador en $t < 0$ se disipa en la resistencia (
 
 *** Ejemplo con respuesta forzada
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/transitorio_circuitoRC2.pdf]]
+[[file:../figs/transitorio_circuitoRC2.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -406,13 +406,13 @@ Suponiendo que el condensador está inicialmente descargado:
 
 *** Equivalente de Norton
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/Thevenin_PrimerOrden.pdf]]
+[[file:../figs/Thevenin_PrimerOrden.pdf]]
 
 ** Análisis Sistemático
 
 *** Equivalente de Thévenin/Norton
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/Thevenin_PrimerOrden.pdf]]
+[[file:../figs/Thevenin_PrimerOrden.pdf]]
 
 *** Procedimiento General
 
@@ -448,12 +448,12 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 ** Circuito RLC serie
 *** Circuito básico
 
-[[file:figs/transitorio_circuitoRLC_serie.pdf]]
+[[file:../figs/transitorio_circuitoRLC_serie.pdf]]
 
 
 *** Respuesta natural (t > 0)
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRLC_serie_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -574,7 +574,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/Sobreamortiguado_HKD.pdf]]
+[[file:../figs/Sobreamortiguado_HKD.pdf]]
 
 *** Amortiguamiento Crítico ($\alpha = \omega_0$)
 #+BEGIN_EXPORT latex
@@ -583,7 +583,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/AmortiguamientoCritico_HKD.pdf]]
+[[file:../figs/AmortiguamientoCritico_HKD.pdf]]
 
 
 *** Circuito Subamortiguado ($\alpha < \omega$)
@@ -593,12 +593,12 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/Subamortiguado_AS.pdf]]
+[[file:../figs/Subamortiguado_AS.pdf]]
 
 *** Valores Importantes
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/RespuestaEscalon_SegundoOrden.png]]
+[[file:../figs/RespuestaEscalon_SegundoOrden.png]]
 
 - *Tiempo de Subida*: tiempo para subir de 10% al 90% del valor en régimen permanente.
 
@@ -607,7 +607,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 *** Valores Importantes
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/RespuestaEscalon_SegundoOrden.png]]
+[[file:../figs/RespuestaEscalon_SegundoOrden.png]]
 
 - *Valor máximo* y *Tiempo del Valor Máximo*.
 
@@ -630,7 +630,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 
 *** Derivadas en $t = 0^+$
 #+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/transitorio_circuitoRLC_serie_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRLC_serie_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -679,12 +679,12 @@ i_L(0^+) &= I_\infty + A_1 + A_2\\
 *** Circuito básico
 
 
-[[file:figs/transitorio_circuitoRLC_paralelo.pdf]]
+[[file:../figs/transitorio_circuitoRLC_paralelo.pdf]]
 
 *** Respuesta natural (t > 0)
 
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -811,7 +811,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 *** Derivadas en $t = 0^+$: ejemplo RLC paralelo
 
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
+[[file:../figs/transitorio_circuitoRLC_paralelo_t0+.pdf]]
 
 #+BEGIN_EXPORT latex
 \[

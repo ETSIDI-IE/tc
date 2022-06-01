@@ -26,20 +26,20 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 \]
 #+END_EXPORT
 
-[[file:figs/TransferFunction.pdf]]
+[[file:../figs/TransferFunction.pdf]]
 
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/sinX.pdf]]
+[[file:../figs/sinX.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/sinY.pdf]]
+[[file:../figs/sinY.pdf]]
 
 ** Funciones de Transferencia
 - Ganancia de Tensión
@@ -116,7 +116,7 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/InterpretacionGeometrica0.pdf]]
+[[file:../figs/InterpretacionGeometrica0.pdf]]
 
 ** Interpretación Geométrica
 
@@ -137,7 +137,7 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
 :BEAMER_opt: [t]
 :END:
 #+ATTR_LATEX: :height 0.8\textheight
-[[file:figs/InterpretacionGeometrica.pdf]]
+[[file:../figs/InterpretacionGeometrica.pdf]]
 
 ** Interpretación Geométrica: cero simple
 
@@ -151,14 +151,14 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/CeroGeometrica.pdf]]
+[[file:../figs/CeroGeometrica.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/CeroGeometricaPlot.pdf]]
+[[file:../figs/CeroGeometricaPlot.pdf]]
 
 ** Interpretación Geométrica: polo simple
 
@@ -172,14 +172,14 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/PoloGeometrica.pdf]]
+[[file:../figs/PoloGeometrica.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/PoloGeometricaPlot.pdf]]
+[[file:../figs/PoloGeometricaPlot.pdf]]
 
 ** Forma normalizada o estándar
 Para la construcción del diagrama de Bode es conveniente escribir la función en forma normalizada:
@@ -206,7 +206,7 @@ siendo \omega_{zi} y \omega_{pi} las pulsaciones de los ceros y polos, respectiv
   - Magnitud en *decibelios* frente al logaritmo de la frecuencia/pulsación.
   - Fase en radianes/grados frente al logaritmo de la frecuencia/pulsación.
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Bode.pdf]]
+[[file:../figs/Bode.pdf]]
 
 ** Repaso de logaritmos
 
@@ -239,7 +239,7 @@ G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
 \]
 #+END_EXPORT
 
-[[file:figs/Red_Ganancia.pdf]]
+[[file:../figs/Red_Ganancia.pdf]]
 
 
 ** Decibelio
@@ -252,7 +252,7 @@ G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
 \]
 #+END_EXPORT
 
-[[file:figs/Red_Ganancia.pdf]]
+[[file:../figs/Red_Ganancia.pdf]]
 
 ** Valores importantes
 
@@ -330,7 +330,7 @@ G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
 - La estrategia de construcción consiste en analizar la *contribución de cada cero/polo por separado* y *sumar* para obtener el resultado global.
 
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Bode.pdf]]
+[[file:../figs/Bode.pdf]]
 
 ** Construcción del Diagrama de Bode
 *** Posibilidades
@@ -355,7 +355,7 @@ G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
 \]
 #+END_EXPORT
 
-[[file:figs/BodeConstante.pdf]]
+[[file:../figs/BodeConstante.pdf]]
 
 ** Cero en el origen[fn:1]
 #+BEGIN_EXPORT latex
@@ -370,7 +370,7 @@ G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
 
 
 
-[[file:figs/BodeCeroOrigen.pdf]]
+[[file:../figs/BodeCeroOrigen.pdf]]
 
 Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 
@@ -385,7 +385,7 @@ Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 \]
 #+END_EXPORT
 
-[[file:figs/BodePoloOrigen.pdf]]
+[[file:../figs/BodePoloOrigen.pdf]]
 
 ** Cero simple
 
@@ -432,7 +432,7 @@ Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
-[[file:figs/BodeCeroSimple.pdf]]
+[[file:../figs/BodeCeroSimple.pdf]]
 
 ** Polo simple
 
@@ -479,7 +479,7 @@ Década: rango de frecuencias comprendido entre $\omega_1$ y $10\cdot\omega_1$.
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
-[[file:figs/BodePoloSimple.pdf]]
+[[file:../figs/BodePoloSimple.pdf]]
 
 ** Cero cuadrático
 Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, con $\alpha < \omega_0$. Usando $\zeta = \alpha/\omega_0 < 1$ y normalizando:
@@ -524,7 +524,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 :BEAMER_env: ignoreheading
 :END:
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/BodeCeroCuadratico.pdf]]
+[[file:../figs/BodeCeroCuadratico.pdf]]
 
 
 ** Polo cuadrático
@@ -569,7 +569,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
-[[file:figs/BodePoloCuadratico.pdf]]
+[[file:../figs/BodePoloCuadratico.pdf]]
 
 ** Ejercicios Recomendados
 - AS: ejemplos 14.3, 14.4, 14.5, 14.6.
@@ -594,7 +594,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
-[[file:figs/Filtro_PasoBajo.pdf]]
+[[file:../figs/Filtro_PasoBajo.pdf]]
 
 ** Filtro Paso Alto
 ***                                                                   :BMCOL:
@@ -613,7 +613,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
-[[file:figs/Filtro_PasoAlto.pdf]]
+[[file:../figs/Filtro_PasoAlto.pdf]]
 
 ** Filtro Paso Banda
 ***                                                                   :BMCOL:
@@ -633,7 +633,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :BEAMER_col: 0.7
     :END:
 
-[[file:figs/Filtro_PasoBanda.pdf]]
+[[file:../figs/Filtro_PasoBanda.pdf]]
 
 ** Filtro Banda Eliminada
 ***                                                                   :BMCOL:
@@ -652,7 +652,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
-[[file:figs/Filtro_BandaEliminada.pdf]]
+[[file:../figs/Filtro_BandaEliminada.pdf]]
 
 ** Ejemplo: circuito RC
 
@@ -660,7 +660,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/filtroRC.pdf]]
+[[file:../figs/filtroRC.pdf]]
 
 # #+BEGIN_EXPORT latex
 # \[
@@ -676,7 +676,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/Hw_RC.pdf]]
+[[file:../figs/Hw_RC.pdf]]
 
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
@@ -693,7 +693,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/filtroRL.pdf]]
+[[file:../figs/filtroRL.pdf]]
 
 # #+BEGIN_EXPORT latex
 # \[
@@ -709,7 +709,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-[[file:figs/Hw_RL.pdf]]
+[[file:../figs/Hw_RL.pdf]]
 
 *** :B_ignoreheading:
     :PROPERTIES:
@@ -732,7 +732,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
   \fasor{H} = \frac{\fasor{U_R}}{\fasor{E_g}}
 \]
 #+END_EXPORT
-[[file:figs/filtroCR.pdf]]
+[[file:../figs/filtroCR.pdf]]
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -742,7 +742,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
   \fasor{H} = \frac{\fasor{U_R}}{\fasor{E_g}}
 \]
 #+END_EXPORT
-[[file:figs/filtroLR.pdf]]
+[[file:../figs/filtroLR.pdf]]
 
 * Footnotes
 

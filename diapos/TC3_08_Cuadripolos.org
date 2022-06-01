@@ -11,7 +11,7 @@
 
 *** Cuadripolo
 
-[[file:figs/cuadripolo.pdf]]
+[[file:../figs/cuadripolo.pdf]]
 
 #+BEGIN_CENTER
 *Atención al sentido de las corrientes*
@@ -26,7 +26,7 @@
 
 *** Definición
 
-[[file:figs/cuadripolo_fuentes_corriente.pdf]]
+[[file:../figs/cuadripolo_fuentes_corriente.pdf]]
 
 Mediante teorema de superposición:
 #+BEGIN_EXPORT latex
@@ -41,7 +41,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$.
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_fuentes_corriente.pdf]]
+[[file:../figs/cuadripolo_fuentes_corriente.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -68,7 +68,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$
 
 *** Circuito Equivalente
 
-[[file:figs/circuitoEquivalenteZ.pdf]]
+[[file:../figs/circuitoEquivalenteZ.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -101,7 +101,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosZ_entrada.pdf]]
+[[file:../figs/parametrosZ_entrada.pdf]]
 
 **** :B_ignoreheading:
 :PROPERTIES:
@@ -138,7 +138,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$
 :PROPERTIES:
 :BEAMER_col: 0.75
 :END:
-[[file:figs/parametrosZ_salida.pdf]]
+[[file:../figs/parametrosZ_salida.pdf]]
 
 *****                                                             :BMCOL:
 :PROPERTIES:
@@ -201,12 +201,12 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadZ_entrada.pdf]]
+[[file:../figs/reciprocidadZ_entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadZ_salida.pdf]]
+[[file:../figs/reciprocidadZ_salida.pdf]]
 *** Relación entre parámetros
 Las impedancias de transferencia son idénticas
 #+BEGIN_EXPORT latex
@@ -223,12 +223,12 @@ Las impedancias de transferencia son idénticas
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadZ_entrada.pdf]]
+[[file:../figs/reciprocidadZ_entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadZ_salida.pdf]]
+[[file:../figs/reciprocidadZ_salida.pdf]]
 
 *** Circuito Equivalente en T
 
@@ -260,10 +260,10 @@ Las impedancias de transferencia son idénticas
 **** Ejercicio
 Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la figura.
 
-[[file:figs/circuitoEquivalenteZReciproco.pdf]]
+[[file:../figs/circuitoEquivalenteZReciproco.pdf]]
 
 *** Cuadripolo Simétrico
-[[file:figs/circuitoEquivalenteZSimetrico.pdf]]
+[[file:../figs/circuitoEquivalenteZSimetrico.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -301,7 +301,7 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la fig
 ** Parámetros de Admitancia
 *** Definición
 
-[[file:figs/cuadripolo_fuentes_tension.pdf]]
+[[file:../figs/cuadripolo_fuentes_tension.pdf]]
 
 Mediante teorema de superposición:
 #+BEGIN_EXPORT latex
@@ -316,7 +316,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$.
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_fuentes_tension.pdf]]
+[[file:../figs/cuadripolo_fuentes_tension.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -343,7 +343,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$
 
 *** Circuito Equivalente
 
-[[file:figs/circuitoEquivalenteY.pdf]]
+[[file:../figs/circuitoEquivalenteY.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -377,7 +377,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosY_entrada.pdf]]
+[[file:../figs/parametrosY_entrada.pdf]]
 
 **** :B_ignoreheading:
 :PROPERTIES:
@@ -415,7 +415,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosY_salida.pdf]]
+[[file:../figs/parametrosY_salida.pdf]]
 
 *****                                                             :BMCOL:
 :PROPERTIES:
@@ -479,12 +479,12 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadY_entrada.pdf]]
+[[file:../figs/reciprocidadY_entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadY_salida.pdf]]
+[[file:../figs/reciprocidadY_salida.pdf]]
 *** Relación entre parámetros
 Las admitancias de transferencia son idénticas
 #+BEGIN_EXPORT latex
@@ -501,12 +501,12 @@ Las admitancias de transferencia son idénticas
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadY_entrada.pdf]]
+[[file:../figs/reciprocidadY_entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/reciprocidadY_salida.pdf]]
+[[file:../figs/reciprocidadY_salida.pdf]]
 *** Circuito Equivalente en $\pi$
 #+BEGIN_EXPORT latex
 \[
@@ -536,12 +536,12 @@ Las admitancias de transferencia son idénticas
 **** Ejercicio
 Demostrar que un cuadripolo recíproco es equivalente al circuito en $\pi$ de la figura.
 
-[[file:figs/circuitoEquivalenteYReciproco.pdf]]
+[[file:../figs/circuitoEquivalenteYReciproco.pdf]]
 
 *** Cuadripolo Simétrico
 
 
-[[file:figs/circuitoEquivalenteYSimetrico.pdf]]
+[[file:../figs/circuitoEquivalenteYSimetrico.pdf]]
 
 
 #+BEGIN_EXPORT latex
@@ -580,7 +580,7 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en $\pi$ de la
 ** Parámetros Híbridos
 *** Definición
 
-[[file:figs/cuadripolo_hibrido.pdf]]
+[[file:../figs/cuadripolo_hibrido.pdf]]
 
 Mediante teorema de superposición:
 #+BEGIN_EXPORT latex
@@ -596,7 +596,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_hibrido.pdf]]
+[[file:../figs/cuadripolo_hibrido.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -623,7 +623,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 
 *** Circuito Equivalente
 
-[[file:figs/circuitoEquivalenteH.pdf]]
+[[file:../figs/circuitoEquivalenteH.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -656,7 +656,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosH_entrada.pdf]]
+[[file:../figs/parametrosH_entrada.pdf]]
 
 **** :B_ignoreheading:
 :PROPERTIES:
@@ -693,7 +693,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 :PROPERTIES:
 :BEAMER_col: 0.75
 :END:
-[[file:figs/parametrosH_salida.pdf]]
+[[file:../figs/parametrosH_salida.pdf]]
 
 *****                                                             :BMCOL:
 :PROPERTIES:
@@ -741,7 +741,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 
 *** Definición
 
-[[file:figs/cuadripolo_hibrido_inverso.pdf]]
+[[file:../figs/cuadripolo_hibrido_inverso.pdf]]
 
 Mediante teorema de superposición:
 #+BEGIN_EXPORT latex
@@ -756,7 +756,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$.
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_hibrido_inverso.pdf]]
+[[file:../figs/cuadripolo_hibrido_inverso.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -783,7 +783,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 
 *** Circuito Equivalente
 
-[[file:figs/circuitoEquivalenteG.pdf]]
+[[file:../figs/circuitoEquivalenteG.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -816,7 +816,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosG_entrada.pdf]]
+[[file:../figs/parametrosG_entrada.pdf]]
 
 **** :B_ignoreheading:
 :PROPERTIES:
@@ -853,7 +853,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-[[file:figs/parametrosG_salida.pdf]]
+[[file:../figs/parametrosG_salida.pdf]]
 
 *****                                                             :BMCOL:
 :PROPERTIES:
@@ -901,7 +901,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 
 *** Definición
 
-[[file:figs/cuadripolo_transmision.pdf]]
+[[file:../figs/cuadripolo_transmision.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -918,7 +918,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 #+END_CENTER
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_transmision.pdf]]
+[[file:../figs/cuadripolo_transmision.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -963,7 +963,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/cuadripolo_transmision.pdf]]
+[[file:../figs/cuadripolo_transmision.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -984,7 +984,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 
 *** Definición
 
-[[file:figs/cuadripolo_transmision_inversa.pdf]]
+[[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -1000,7 +1000,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 #+END_CENTER
 
 *** Expresión Matricial
-[[file:figs/cuadripolo_transmision_inversa.pdf]]
+[[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 #+BEGIN_EXPORT latex
 \[
@@ -1044,7 +1044,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/cuadripolo_transmision_inversa.pdf]]
+[[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1236,7 +1236,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :BEAMER_opt: plain
 :END:
 #+ATTR_LATEX: :width 1.15\textwidth
-[[file:figs/Tabla_Parametros.pdf]]
+[[file:../figs/Tabla_Parametros.pdf]]
 
 *** Reciprocidad
 A partir de las relaciones ya obtenidas para impedancia y admitancia, utilizando la tabla anterior obtenemos la relación para parámetros híbridos y de transmisión:
@@ -1295,7 +1295,7 @@ Además:
 ** Situación General
 *** 
 
-[[file:figs/cuadripolo_cargado_fuente_tension.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1306,7 +1306,7 @@ Además:
 
 *** 
 
-[[file:figs/cuadripolo_cargado_fuente_corriente.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1322,9 +1322,9 @@ Además:
 :BEAMER_col: 0.5
 :END:
 
-[[file:figs/cuadripolo_cargado_fuente_tension.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
-[[file:figs/cuadripolo_cargado_fuente_corriente.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1350,9 +1350,9 @@ Además:
 :BEAMER_col: 0.5
 :END:
 
-[[file:figs/cuadripolo_cargado_fuente_tension.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
-[[file:figs/cuadripolo_cargado_fuente_corriente.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1380,9 +1380,9 @@ Además:
 :BEAMER_col: 0.5
 :END:
 
-[[file:figs/cuadripolo_cargado_fuente_tension.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
-[[file:figs/cuadripolo_cargado_fuente_corriente.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1415,7 +1415,7 @@ Demuestra que la impedancia de entrada del circuito a la derecha de la fuente re
 #+END_EXPORT
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/cuadripolo_cargado_impedancia_entrada.pdf]]
+[[file:../figs/cuadripolo_cargado_impedancia_entrada.pdf]]
 
 
 
@@ -1424,7 +1424,7 @@ Demuestra que la impedancia de entrada del circuito a la derecha de la fuente re
 ¿Qué impedancia de carga $\mathbf{Z}_L$ hay que conectar a la salida del cuadripolo para obtener la máxima transferencia de potencia?
 
 
-[[file:figs/cuadripolo_cargado_fuente_tension.pdf]]
+[[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
 ** Parámetros Imagen
 
@@ -1443,7 +1443,7 @@ Para un cuadripolo *recíproco* y *simétrico* se definen los parámetros imagen
 :BEAMER_col: 0.7
 :END:
 
-[[file:figs/cuadripolo_impedancia_caracteristica.pdf]]
+[[file:../figs/cuadripolo_impedancia_caracteristica.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1486,7 +1486,7 @@ Para un cuadripolo *recíproco* y *simétrico* se definen los parámetros imagen
 :BEAMER_col: 0.6
 :END:
 
-[[file:figs/cuadripolo_impedancia_caracteristica.pdf]]
+[[file:../figs/cuadripolo_impedancia_caracteristica.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1511,7 +1511,7 @@ Para un cuadripolo *recíproco* y *simétrico* se definen los parámetros imagen
 :BEAMER_col: 0.6
 :END:
 
-[[file:figs/cuadripolo_impedancia_caracteristica.pdf]]
+[[file:../figs/cuadripolo_impedancia_caracteristica.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1685,7 +1685,7 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/serie-serie.pdf]]
+[[file:../figs/serie-serie.pdf]]
 
 
 
@@ -1719,7 +1719,7 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 :BEAMER_col: 0.65
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/serie-serie.pdf]]
+[[file:../figs/serie-serie.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1751,7 +1751,7 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 :PROPERTIES:
 :BEAMER_col: 0.9
 :END:
-[[file:figs/serie-serie-interaccion.pdf]]
+[[file:../figs/serie-serie-interaccion.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
@@ -1785,12 +1785,12 @@ Si no hay interacción, al aplicar superposición la corriente de circulación d
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-serie-superposicion-entrada.pdf]]
+[[file:../figs/serie-serie-superposicion-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-serie-superposicion-salida.pdf]]
+[[file:../figs/serie-serie-superposicion-salida.pdf]]
 
 *** Test de Brune
 :PROPERTIES:
@@ -1801,21 +1801,21 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-serie-brune-entrada.pdf]]
+[[file:../figs/serie-serie-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-serie-brune-salida.pdf]]
+[[file:../figs/serie-serie-brune-salida.pdf]]
 
 
 *** Métodos para evitar interacción
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/serie-serie-transformador.pdf]]
+[[file:../figs/serie-serie-transformador.pdf]]
 
 *** Métodos para evitar interacción
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/serie-serie-corto.pdf]]
+[[file:../figs/serie-serie-corto.pdf]]
 
 ** Asociación Paralelo-Paralelo
 *** Conexión
@@ -1824,7 +1824,7 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/paralelo-paralelo.pdf]]
+[[file:../figs/paralelo-paralelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
@@ -1854,7 +1854,7 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :BEAMER_col: 0.65
 :END:
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/paralelo-paralelo.pdf]]
+[[file:../figs/paralelo-paralelo.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1878,7 +1878,7 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 #+END_EXPORT
 *** Interacción
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/paralelo-paralelo-interaccion.pdf]]
+[[file:../figs/paralelo-paralelo-interaccion.pdf]]
 *** Interacción
 :PROPERTIES:
 :BEAMER_opt: plain
@@ -1888,12 +1888,12 @@ Si no hay interacción, al aplicar superposición la corriente de circulación d
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-superposicion-entrada.pdf]]
+[[file:../figs/paralelo-paralelo-superposicion-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-superposicion-salida.pdf]]
+[[file:../figs/paralelo-paralelo-superposicion-salida.pdf]]
 
 *** Test de Brune
 :PROPERTIES:
@@ -1904,12 +1904,12 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-brune-entrada.pdf]]
+[[file:../figs/paralelo-paralelo-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-brune-salida.pdf]]
+[[file:../figs/paralelo-paralelo-brune-salida.pdf]]
 
 *** Test de Brune
 :PROPERTIES:
@@ -1920,19 +1920,19 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-brune-entrada2.pdf]]
+[[file:../figs/paralelo-paralelo-brune-entrada2.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-paralelo-brune-salida2.pdf]]
+[[file:../figs/paralelo-paralelo-brune-salida2.pdf]]
 
 *** Métodos para evitar interacción
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/paralelo-paralelo-transformador.pdf]]
+[[file:../figs/paralelo-paralelo-transformador.pdf]]
 *** Métodos para evitar interacción
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/paralelo-paralelo-corto.pdf]]
+[[file:../figs/paralelo-paralelo-corto.pdf]]
 ** Asociación Serie-Paralelo
 *** Conexión
 ****                                                               :BMCOL:
@@ -1940,7 +1940,7 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/serie-paralelo.pdf]]
+[[file:../figs/serie-paralelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.35
@@ -1969,12 +1969,12 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-paralelo-brune-entrada.pdf]]
+[[file:../figs/serie-paralelo-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/serie-paralelo-brune-salida.pdf]]
+[[file:../figs/serie-paralelo-brune-salida.pdf]]
 
 ** Asociación Paralelo-Serie
 *** Conexión
@@ -1983,7 +1983,7 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.75\textheight
-[[file:figs/paralelo-serie.pdf]]
+[[file:../figs/paralelo-serie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.35
@@ -2012,16 +2012,16 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-serie-brune-entrada.pdf]]
+[[file:../figs/paralelo-serie-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.65
 :END:
-[[file:figs/paralelo-serie-brune-salida.pdf]]
+[[file:../figs/paralelo-serie-brune-salida.pdf]]
 ** Asociación Cascada
 
 *** Conexión
-[[file:figs/cascada.pdf]]
+[[file:../figs/cascada.pdf]]
 
 #+BEGIN_EXPORT latex
 \begin{align*}

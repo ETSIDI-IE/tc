@@ -20,14 +20,14 @@ Un campo magnético ejerce una fuerza sobre una carga en movimiento (o corriente
      :BEAMER_col: 0.5
      :END:
  #+ATTR_LATEX: :height 0.5\textheight  
- [[file:figs/Fuerza_Lorentz.png]]
+ [[file:../figs/Fuerza_Lorentz.png]]
 
 ****                                                                  :BMCOL:
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
  #+ATTR_LATEX: :height 0.5\textheight  
- [[file:figs/Fuerza_Lorentz_Conductor.png]]
+ [[file:../figs/Fuerza_Lorentz_Conductor.png]]
 
 *** Campo Magnético creado por un Conductor
 
@@ -37,18 +37,18 @@ Una corriente eléctrica crea un campo magnético en torno al conductor[fn:2].
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
-[[file:figs/Electromagnetism.png]]
+[[file:../figs/Electromagnetism.png]]
 ****                                                                  :BMCOL:
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
-[[file:figs/Solenoide.jpg]]
+[[file:../figs/Solenoide.jpg]]
 
 *** Interacción entre Conductores
 
 Dos conductores se repelen o atraen según el sentido de sus corrientes.
 
-[[file:figs/FuerzasRepulsion.png]]
+[[file:../figs/FuerzasRepulsion.png]]
 #+BEGIN_CENTER
 Vídeo: [[https://www.youtube.com/watch?v=2j8D_N1v0tU&t=0m15s][Repulsión entre barras de Alta Tensión]]
 #+END_CENTER
@@ -64,7 +64,7 @@ Depende de la densidad de campo, $B$, el área de la superficie, $A$, y la posic
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/flujo_magnetico.pdf]]
+[[file:../figs/flujo_magnetico.pdf]]
 
 *** Ley de Faraday
 
@@ -111,7 +111,7 @@ Una máquina eléctrica realiza una conversión entre dos formas de energía, un
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
-[[file:figs/Stator_and_rotor_by_Zureks.jpeg]]
+[[file:../figs/Stator_and_rotor_by_Zureks.jpeg]]
 
 **** 
 La transformación de energía eléctrica y mecánica se produce a través del campo magnético del entrehierro, lugar del acoplamiento energético entre estátor y rótor. 
@@ -120,7 +120,7 @@ La transformación de energía eléctrica y mecánica se produce a través del c
 
 Al elemento que emite el campo magnético se le denomina *inductor* y aquel que es atravesado por este flujo es el *inducido*.
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Electric_motor_cycle_3.pdf]]
+[[file:../figs/Electric_motor_cycle_3.pdf]]
 
 ** Tipos de Motor
 *** Motor asíncrono o de inducción
@@ -132,7 +132,7 @@ Al elemento que emite el campo magnético se le denomina *inductor* y aquel que 
 - Rotor gira a menor velocidad que el campo.
 
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Seccion_Motor.jpeg]]
+[[file:../figs/Seccion_Motor.jpeg]]
 
 Vídeos: Motor de inducción artesanal [[http://www.youtube.com/watch?v=ZRGlAu0uCHY&feature=related][(1)]] [[http://www.youtube.com/watch?v=P-eTLmJC2cQ][(2)]]
 
@@ -143,7 +143,7 @@ Vídeos: Motor de inducción artesanal [[http://www.youtube.com/watch?v=ZRGlAu0u
 - *Rotor-Inducido* alimentado con *corriente DC* a través de un colector de delgas, o sin escobillas.
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/Electric_motor_cycle_3.pdf]]
+[[file:../figs/Electric_motor_cycle_3.pdf]]
 
 
 ** Tipos de Generador
@@ -176,7 +176,7 @@ Vídeos: Motor de inducción artesanal [[http://www.youtube.com/watch?v=ZRGlAu0u
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
-[[file:figs/InsideWindTurbine.jpg]]
+[[file:../figs/InsideWindTurbine.jpg]]
 
 *** Generador DC
 - *Estator-Inductor* genera campo constante (alimentado por corriente DC o imanes permanentes).
@@ -203,8 +203,8 @@ Vídeos: Motor de inducción artesanal [[http://www.youtube.com/watch?v=ZRGlAu0u
      :BEAMER_col: 0.4
      :END:
 
-[[file:figs/Transformador2.pdf]]
-[[file:figs/Transformador.png]]
+[[file:../figs/Transformador2.pdf]]
+[[file:../figs/Transformador.png]]
 
 *** Relación de Transformación
 
@@ -216,7 +216,7 @@ N_{s}\cdot I_{s} &= N_{p}\cdot I_{p}\\
 #+END_EXPORT
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/Transformador2.pdf]]
+[[file:../figs/Transformador2.pdf]]
 
 -  Ejemplo: un transformador elevador sube tensión ($V_{s}>V_{p}$) y reduce corriente ($I_{s}<I_{p}$): $N_{p}/N_{s}<1$, más vueltas en el secundario que en el primario.
    
@@ -235,7 +235,7 @@ seguridad*.
 *** Componentes del Sistema de Suministro Eléctrico
 
 
-[[file:figs/Redelectrica2.png]]
+[[file:../figs/Redelectrica2.png]]
 
 -  Generadores
 
@@ -289,7 +289,7 @@ Modificar un sistema en carga para:
 
 - Descarga eléctrica que se forma entre dos electrodos sometidos a una diferencia de potencial.
 #+ATTR_LATEX: :height 0.35\textheight
-[[file:figs/arco_electrico.jpg]]
+[[file:../figs/arco_electrico.jpg]]
 
 - Luminosidad muy intensa y un gran desprendimiento de calor (fenómeno destructivo)
 
@@ -313,7 +313,7 @@ Vídeo: [[http://www.youtube.com/watch?v=WBTvGqRA4_0][Apertura en Alta Tensión]
 - Un seccionador *no* está diseñado para abrir o cerrar el paso de la corriente.
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/seccionador.jpeg]]
+[[file:../figs/seccionador.jpeg]]
 
 *** Interruptor de carga
 - Dispositivo no automático (*accionamiento manual*) de dos posiciones (abierto/cerrado).
@@ -322,7 +322,7 @@ Vídeo: [[http://www.youtube.com/watch?v=WBTvGqRA4_0][Apertura en Alta Tensión]
 
 - Al ser manual *no ofrece protección* (funcionamiento en condiciones normales del circuito).
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/interruptor_manual.jpg]]
+[[file:../figs/interruptor_manual.jpg]]
 
 
 *** Contactor
@@ -331,7 +331,7 @@ Vídeo: [[http://www.youtube.com/watch?v=WBTvGqRA4_0][Apertura en Alta Tensión]
 - Utilizado para tareas de control.
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/Contactor.jpg]]
+[[file:../figs/Contactor.jpg]]
 
 
 *** Fusible
@@ -349,7 +349,7 @@ Vídeo: [[http://www.youtube.com/watch?v=WBTvGqRA4_0][Apertura en Alta Tensión]
      :BEAMER_col: 0.3
      :END:
 
-[[file:figs/fusible.jpg]]
+[[file:../figs/fusible.jpg]]
 
 
 ***  Interruptor magnetotérmico
@@ -368,7 +368,7 @@ Vídeo: [[http://www.youtube.com/watch?v=WBTvGqRA4_0][Apertura en Alta Tensión]
      :PROPERTIES:
      :BEAMER_col: 0.5
      :END:
-[[file:figs/interruptor-magnetotermico.jpg]]
+[[file:../figs/interruptor-magnetotermico.jpg]]
 
 **** 
 Vídeo: [[http://www.youtube.com/watch?v=c6QqnLgWbCQ][Apertura de un PIA]]
@@ -384,7 +384,7 @@ Vídeo: [[http://www.youtube.com/watch?v=c6QqnLgWbCQ][Apertura de un PIA]]
      :END:
 
 
-[[file:figs/InterruptorDiferencial.JPG]]
+[[file:../figs/InterruptorDiferencial.JPG]]
 
 
 ****                                                                  :BMCOL:
@@ -392,7 +392,7 @@ Vídeo: [[http://www.youtube.com/watch?v=c6QqnLgWbCQ][Apertura de un PIA]]
      :BEAMER_col: 0.5
      :END:
 
-[[file:figs/interruptor-diferencial.jpg]]
+[[file:../figs/interruptor-diferencial.jpg]]
 
 
 * Recursos

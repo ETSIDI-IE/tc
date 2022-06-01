@@ -13,7 +13,7 @@
 Una corriente eléctrica circulando por un conductor crea un campo magnético en torno al conductor (/regla de la mano derecha/)
 
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/Electromagnetism.png]]
+[[file:../figs/Electromagnetism.png]]
 
 
 ** Ley de Faraday
@@ -43,14 +43,14 @@ El flujo magnético es la cantidad de líneas de fuerza magnética que atraviesa
 :BEAMER_col: 0.7
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/flujo_magnetico.pdf]]
+[[file:../figs/flujo_magnetico.pdf]]
 
 ** Bobina
 Una bobina es un arrollamiento de un conductor (/conjunto de $N$ espiras conectadas en serie/) alrededor de un material ferromagnético:
 - Al circular corriente se produce un campo magnético.
 - Este campo magnético atraviesa la propia bobina y produce una tensión (auto)inducida.
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/Solenoide.jpg]]
+[[file:../figs/Solenoide.jpg]]
 
 ** Bobina
 
@@ -90,14 +90,14 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 :END:
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Bobina.pdf]]
+[[file:../figs/Bobina.pdf]]
 * Acoplamiento magnético
 ** 
 :PROPERTIES:
 :beamer_opt: plain
 :END: 
 
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 ** 
 :PROPERTIES:
@@ -105,7 +105,7 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 :END: 
 
 #+ATTR_LATEX: :height 0.55\textheight
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 #+begin_center
 $\phi_{ii}$: flujo producido por la bobina $i$
 
@@ -168,7 +168,7 @@ $\phi_{i}$: flujo total que atraviesa la bobina $i$
 :BEAMER_env: ignoreheading
 :END:
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 #+begin_center
 $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
@@ -208,7 +208,7 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 :BEAMER_env: ignoreheading
 :END:
 #+ATTR_LATEX: :height 0.65\textheight
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 #+begin_center
 $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
@@ -216,7 +216,7 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 
 ** Coeficiente de acoplamiento magnético
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 Coeficiente de acoplamiento de la bobina 1:
 #+BEGIN_EXPORT latex
@@ -289,13 +289,13 @@ Coeficiente de acoplamiento de la bobina 2:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/acoplamiento_circuito.pdf]]
+[[file:../figs/acoplamiento_circuito.pdf]]
 
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
@@ -311,13 +311,13 @@ induce una tensión positiva en el otro terminal con punto.
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/acoplamiento_circuito.pdf]]
+[[file:../figs/acoplamiento_circuito.pdf]]
 
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
@@ -331,7 +331,7 @@ induce una tensión positiva en el otro terminal con punto.
 #+end_export
 ** Flujos contrapuestos
 #+ATTR_LATEX: :height 0.8\textheight
-[[file:figs/acoplamientoTikz_opuesto.pdf]]
+[[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 ** Representación Circuital
@@ -340,7 +340,7 @@ Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamientoTikz_opuesto.pdf]]
+[[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 
 ***                                                                 :BMCOL:
@@ -348,7 +348,7 @@ Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamiento_circuito_opuesto.pdf]]
+[[file:../figs/acoplamiento_circuito_opuesto.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -363,14 +363,14 @@ induce una tensión positiva en el otro terminal con punto.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamientoTikz_opuesto.pdf]]
+[[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamiento_circuito_opuesto.pdf]]
+[[file:../figs/acoplamiento_circuito_opuesto.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -388,14 +388,14 @@ induce una tensión positiva en el otro terminal con punto.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamientoTikz.pdf]]
+[[file:../figs/acoplamientoTikz.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamiento_circuito.pdf]]
+[[file:../figs/acoplamiento_circuito.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -412,14 +412,14 @@ induce una tensión positiva en el otro terminal con punto.
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamientoTikz_opuesto.pdf]]
+[[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/acoplamiento_circuito_opuesto.pdf]]
+[[file:../figs/acoplamiento_circuito_opuesto.pdf]]
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -431,7 +431,7 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
-[[file:figs/bobinas_serie.pdf]]
+[[file:../figs/bobinas_serie.pdf]]
 #+begin_export latex
 \[
   \overline{U}_1 = (j \omega L_1 + j \omega M) \overline{I}
@@ -446,7 +446,7 @@ induce una tensión positiva en el otro terminal con punto.
 \]
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
-[[file:figs/bobinas_serie_opuesto.pdf]]
+[[file:../figs/bobinas_serie_opuesto.pdf]]
 #+begin_export latex
 \[
   \overline{U}_1 = (j \omega L_1 - j \omega M) \overline{I}

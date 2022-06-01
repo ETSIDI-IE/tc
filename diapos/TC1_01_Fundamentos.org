@@ -60,7 +60,7 @@ Todos los circuitos eléctricos que se estudian en este curso se comportan como 
 El *potencial eléctrico en un punto*, $v(t)$,  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. 
 
 #+ATTR_LATEX: :height 0.3\textheight
-[[file:figs/tension_puntos.pdf]]
+[[file:../figs/tension_puntos.pdf]]
 
 La *tensión o diferencia de potencial entre dos puntos* A y B, $u_{AB}(t)$, es el trabajo realizado por el campo eléctrico al desplazar una carga unitaria entre esos puntos. 
 
@@ -75,14 +75,14 @@ La *unidad* de la tensión eléctrica es el *voltio* (V).
 Dado que el campo eléctrico es *conservativo*, la diferencia de potencial entre A y B *no depende de la trayectoria* seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos. 
 
 #+ATTR_LATEX: :height 0.6\textheight
-[[file:figs/diagrama_tension.pdf]]
+[[file:../figs/diagrama_tension.pdf]]
 
 *** El signo depende del sentido
 
 Aunque la trayectoria no sea relevante para el cálculo de la tensión, siempre hay que tener en cuenta el *sentido del desplazamiento*. 
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/sentido_tension.pdf]]
+[[file:../figs/sentido_tension.pdf]]
 
 Así, si el movimiento se produce desde B hasta A obtenemos el signo contrario al anterior resultado:
 
@@ -99,7 +99,7 @@ Se define la *intensidad de la corriente eléctrica* como la variación de la ca
 \end{equation*}
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/seccion_conductor.pdf]]
+[[file:../figs/seccion_conductor.pdf]]
 
 La corriente eléctrica se produce por el *movimiento de los electrones libres* que fluyen por el conductor. Sin embargo, por razones históricas, el *convenio* que se se emplea considera como sentido de la corriente el debido al *movimiento de las cargas positivas*.
 
@@ -129,7 +129,7 @@ Para determinar el *signo de la potencia eléctrica* hay que tener en considerac
 - Cuando las flechas tienen *sentidos opuestos* la potencia eléctrica es *negativa*. 
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/signo_potencia.pdf]]
+[[file:../figs/signo_potencia.pdf]]
 
 *** Receptores y Generadores
 Es habitual *interpretar* este resultado en términos de potencia absorbida o potencia entregada. 
@@ -137,7 +137,7 @@ Es habitual *interpretar* este resultado en términos de potencia absorbida o po
 - Un *circuito generador entrega potencia* y la corriente /sale/ por el terminal de mayor potencial.
 
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/receptor_generador.pdf]]
+[[file:../figs/receptor_generador.pdf]]
 
 *** Potencia y Energía
 
@@ -186,11 +186,11 @@ Cualquier máquina tiene pérdidas:
 
 - Corriente Continua ($\frac{d}{dt} = 0$)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/continua.pdf]]
+[[file:../figs/continua.pdf]]
 
 - Corriente Alterna ($\frac{d}{dt} \neq 0$)
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/sin.pdf]]
+[[file:../figs/sin.pdf]]
 
 * Elementos circuitales
 
@@ -209,13 +209,13 @@ u(t) = R \cdot i(t)
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia.pdf]]
+[[file:../figs/Resistencia.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia_Flecha.pdf]]
+[[file:../figs/Resistencia_Flecha.pdf]]
 
 *** Resistividad
 -  El valor de la resistencia depende de la *resistividad del material* (\rho), de la *sección* ($S$), y de la
@@ -236,17 +236,17 @@ u(t) = R \cdot i(t)
 - Cortocircuito: resistencia nula (tensión nula)
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Cortocircuito.pdf]]
+[[file:../figs/Cortocircuito.pdf]]
 
 - Circuito abierto: resistencia infinita (corriente nula).
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/CircuitoAbierto.pdf]]
+[[file:../figs/CircuitoAbierto.pdf]]
 
 *** Ley de Joule
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Resistencia.pdf]]
+[[file:../figs/Resistencia.pdf]]
 
 - *Ley de Joule*: una resistencia disipa energía eléctrica produciendo *calor*.
 #+BEGIN_EXPORT latex
@@ -259,7 +259,7 @@ p(t)=R\cdot i^{2}(t)
 *** Bobina o inductancia
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Bobina.pdf]]
+[[file:../figs/Bobina.pdf]]
 
 -  Cuando una corriente oscilante atraviesa un conductor arrollado alrededor de un núcleo, se produce una *tensión inducida que se opone a esta corriente* (ley de Faraday y Lenz)
 
@@ -274,7 +274,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 *** Bobina o inductancia
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Bobina.pdf]]
+[[file:../figs/Bobina.pdf]]
 
 -  Almacena *energía magnética*.
 
@@ -294,7 +294,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 *** Condensador
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Condensador.pdf]]
+[[file:../figs/Condensador.pdf]]
 
 - Un *condensador* está formado por dos placas metálicas separadas por una capa dieléctrica. Al aplicar tensión se produce una *separación de cargas opuestas* que se *acumulan* en cada placa.
 
@@ -317,7 +317,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 *** Condensador
 
 #+ATTR_LATEX: :height 0.2\textheight
-[[file:figs/Condensador.pdf]]
+[[file:../figs/Condensador.pdf]]
 
 - Un condensador almacena *energía eléctrica*
 
@@ -342,7 +342,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/FuenteTensionIdealDC.pdf]]
+ [[file:../figs/FuenteTensionIdealDC.pdf]]
  Un *generador de tensión ideal* impone la tensión a la salida (/la corriente depende del circuito/). Se caracteriza por su *fuerza electromotriz* (voltios [V]).
 
 ****                                                               :BMCOL:
@@ -350,7 +350,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- [[file:figs/FuenteCorrienteIdeal.pdf]]
+ [[file:../figs/FuenteCorrienteIdeal.pdf]]
  Un *generador de corriente ideal* impone la corriente a la salida (/la tensión depende del circuito/). Se caracteriza por su corriente de generador.
 
 *** Generador Real
@@ -361,13 +361,13 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.7\textheight
- file:figs/FuenteTensionRealDC.pdf
+ file:../figs/FuenteTensionRealDC.pdf
 ****                                                               :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.7\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+ file:../figs/FuenteCorrienteRealDC.pdf
 
 
 * Leyes de Kirchhoff
@@ -380,7 +380,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
   - Malla :: lazo que no contiene ningún otro en su interior.
 
 #+ATTR_LATEX: :height 0.5\textheight
-file:figs/mallas.pdf
+file:../figs/mallas.pdf
 
 *** Ley de Kirchhoff de las Corrientes (LKC)
 - La *LKC* es el principio de conservación de la carga aplicado a los circuitos eléctricos.
@@ -390,7 +390,7 @@ file:figs/mallas.pdf
   - Las lineas de corriente son cerradas (o solenoidales).
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/LKC_FM.pdf]]
+[[file:../figs/LKC_FM.pdf]]
 #+BEGIN_EXPORT latex
 \[
 i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
@@ -405,7 +405,7 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
   - La energía producida por un generador es consumida por los receptores del circuito para producir trabajo (mecánico, químico, etc.) o calor.
 
 #+ATTR_LATEX: :height 0.4\textheight
-[[file:figs/LKV_FM.pdf]]
+[[file:../figs/LKV_FM.pdf]]
 #+BEGIN_EXPORT latex
 \[
 u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
@@ -414,7 +414,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 
 *** Balance de Tensiones
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/circuito_lkv.pdf]]
+[[file:../figs/circuito_lkv.pdf]]
 
 #+begin_export latex
 \begin{equation*}
@@ -429,7 +429,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 
 *** Balance de Tensiones
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/circuito_lkv.pdf]]
+[[file:../figs/circuito_lkv.pdf]]
 #+begin_export latex
 \begin{equation*}
   U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
@@ -462,7 +462,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 #+end_export
 *** Generador y Receptor
 #+ATTR_LATEX: :height 0.25\textheight
-[[file:figs/circuito_lkv.pdf]]
+[[file:../figs/circuito_lkv.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -505,7 +505,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteTensionRealDC.pdf
+ file:../figs/FuenteTensionRealDC.pdf
 #+begin_export latex
 \[
   U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
@@ -516,7 +516,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.5
     :END:
 #+ATTR_LATEX: :height 0.5\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+ file:../figs/FuenteCorrienteRealDC.pdf
 #+begin_export latex
 \[
   I = I_g - \frac{U_{AB}}{R_{I_g}}
@@ -531,7 +531,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.25
     :END:
 #+ATTR_LATEX: :height 0.45\textheight
- file:figs/FuenteTensionRealDC.pdf
+ file:../figs/FuenteTensionRealDC.pdf
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -548,7 +548,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :END:
 
 #+ATTR_LATEX: :height 0.45\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+ file:../figs/FuenteCorrienteRealDC.pdf
 
 
 *** Equivalencia de Fuentes
@@ -558,10 +558,10 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en *s
     :BEAMER_col: 0.25
     :END:
 #+ATTR_LATEX: :height 0.43\textheight
- file:figs/FuenteTensionRealDC.pdf
+ file:../figs/FuenteTensionRealDC.pdf
 
 #+ATTR_LATEX: :height 0.43\textheight
- file:figs/FuenteCorrienteRealDC.pdf
+ file:../figs/FuenteCorrienteRealDC.pdf
 
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -599,7 +599,7 @@ Las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier comb
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/AsociacionSerie.pdf]]
+[[file:../figs/AsociacionSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -619,7 +619,7 @@ Un conjunto de elementos están asociados en serie cuando circula la misma corri
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/AsociacionSerie.pdf]]
+[[file:../figs/AsociacionSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -653,7 +653,7 @@ Definimos la resistencia equivalente de la conexión serie:
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/AsociacionSerie.pdf]]
+[[file:../figs/AsociacionSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -686,7 +686,7 @@ En general:
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/BobinasSerie.pdf]]
+[[file:../figs/BobinasSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -713,7 +713,7 @@ En general:
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.85\textheight
-[[file:figs/CondensadoresSerie.pdf]]
+[[file:../figs/CondensadoresSerie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -738,7 +738,7 @@ En general:
 
 Un conjunto de elementos están asociados en paralelo cuando están sometidos a la misma diferencia de potencial.
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/AsociacionParalelo.pdf]]
+[[file:../figs/AsociacionParalelo.pdf]]
 
 #+begin_export latex
 \begin{align*}
@@ -752,7 +752,7 @@ Un conjunto de elementos están asociados en paralelo cuando están sometidos a 
 :PROPERTIES:
 :BEAMER_col: 0.4
 :END:
-[[file:figs/AsociacionParalelo.pdf]]
+[[file:../figs/AsociacionParalelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.6
@@ -825,7 +825,7 @@ Así, en lugar de...
 :PROPERTIES:
 :BEAMER_col: 0.4
 :END:
-[[file:figs/AsociacionParalelo.pdf]]
+[[file:../figs/AsociacionParalelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.6
@@ -855,7 +855,7 @@ En general:
 
 *** Conexión en paralelo de inductancias
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/BobinasParalelo.pdf]]
+[[file:../figs/BobinasParalelo.pdf]]
 
 ****  :BMCOL:
 :PROPERTIES:
@@ -883,7 +883,7 @@ En general:
 *** Conexión en paralelo de condensadores
 
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/CondensadoresParalelo.pdf]]
+[[file:../figs/CondensadoresParalelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -910,18 +910,18 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Conexion_Triangulo.pdf]]
+[[file:../figs/Conexion_Triangulo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Conexion_Estrella.pdf]]
+[[file:../figs/Conexion_Estrella.pdf]]
 *** Conexión Estrella - Triángulo
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Conexion_Triangulo.pdf]]
+[[file:../figs/Conexion_Triangulo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -940,7 +940,7 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/Conexion_Triangulo.pdf]]
+[[file:../figs/Conexion_Triangulo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
@@ -959,7 +959,7 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/Conexion_Estrella.pdf]]
+[[file:../figs/Conexion_Estrella.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -988,7 +988,7 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/Conexion_Triangulo.pdf]]
+[[file:../figs/Conexion_Triangulo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.4
@@ -1007,13 +1007,13 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/Conexion_Estrella.pdf]]
+[[file:../figs/Conexion_Estrella.pdf]]
 *** Conversión de Estrella a Triángulo
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/Conexion_Estrella.pdf]]
+[[file:../figs/Conexion_Estrella.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.4
@@ -1031,14 +1031,14 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-[[file:figs/Conexion_Triangulo.pdf]]
+[[file:../figs/Conexion_Triangulo.pdf]]
 * Métodos de Análisis
 
 ** Método de las mallas
 
 *** 
 #+ATTR_LATEX: :height 0.95\textheight
-[[file:figs/mallas1.pdf]]
+[[file:../figs/mallas1.pdf]]
 
 *** Aplicamos LKC
 
@@ -1046,7 +1046,7 @@ En general:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/mallas1.pdf]]
+[[file:../figs/mallas1.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1094,7 +1094,7 @@ No son ecuaciones linealmente independientes:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/mallas1.pdf]]
+[[file:../figs/mallas1.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1122,7 +1122,7 @@ Malla ACDA
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/mallas1.pdf]]
+[[file:../figs/mallas1.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1176,13 +1176,13 @@ Resolver el circuito implica resolver un sistema lineal de 6 ecuaciones, en el q
 El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes /virtuales/ denominadas *corrientes de malla*, aprovechando las relaciones entre corrientes de la LKC.
 
 #+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas1_corrientes.pdf]]
 *** Relaciones entre las corrientes de rama y malla
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.6
 :END:
-[[file:figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas1_corrientes.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.4
@@ -1203,7 +1203,7 @@ Ramas internas:
 #+end_export
 *** Ecuaciones de malla
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas1_corrientes.pdf]]
 
 #+begin_export latex
 Malla ABCA
@@ -1221,7 +1221,7 @@ Malla ACDA
 #+end_export
 *** Reagrupamos corrientes en las ecuaciones
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas1_corrientes.pdf]]
 
 #+begin_export latex
 \begin{align*}
@@ -1232,7 +1232,7 @@ Malla ACDA
 #+end_export
 *** Y lo expresamos en forma matricial
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas1_corrientes.pdf]]
 
 #+begin_export latex
 \begin{equation*}
@@ -1289,10 +1289,10 @@ Malla ACDA
 
 ** Método de los nudos
 *** 
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 *** Aplicamos LKC
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 #+begin_export latex
 Nudo A
@@ -1306,7 +1306,7 @@ Nudo B
 \end{equation*}
 #+end_export
 *** Tensiones en las resistencias
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 #+begin_export latex
 \begin{align*}
@@ -1316,7 +1316,7 @@ Nudo B
 \end{align*}
 #+end_export
 *** Despejamos las corrientes
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 #+begin_export latex
 \begin{align*}
@@ -1328,7 +1328,7 @@ Nudo B
 
 
 *** Combinamos las ecuaciones
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 #+begin_export latex
 Nudo A
@@ -1344,7 +1344,7 @@ Nudo B
 
 
 *** Reorganizamos las ecuaciones
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 
 #+begin_export latex
 Nudo A
@@ -1359,7 +1359,7 @@ Nudo B
 #+end_export
 
 *** Expresión matricial
-[[file:figs/nudos.pdf]]
+[[file:../figs/nudos.pdf]]
 #+begin_export latex
 \begin{equation*}
   \begin{bmatrix}
@@ -1487,7 +1487,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/escalon.pdf]]
+[[file:../figs/escalon.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1510,7 +1510,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :BEAMER_col: 0.5
 :END:
 
-[[file:figs/escalon_t0.pdf]]
+[[file:../figs/escalon_t0.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1533,7 +1533,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/pulso.pdf]]
+[[file:../figs/pulso.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1555,7 +1555,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/pulso_t0.pdf]]
+[[file:../figs/pulso_t0.pdf]]
 
 
 ****                                                               :BMCOL:
@@ -1579,7 +1579,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/rampa.pdf]]
+[[file:../figs/rampa.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1601,7 +1601,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-[[file:figs/rampa_t0.pdf]]
+[[file:../figs/rampa_t0.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1624,7 +1624,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :BEAMER_col: 0.4
 :END:
 
-[[file:figs/triangular.pdf]]
+[[file:../figs/triangular.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1650,7 +1650,7 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 :BEAMER_col: 0.4
 :END:
 
-file:figs/triangular_t0.pdf
+file:../figs/triangular_t0.pdf
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -1674,22 +1674,22 @@ file:figs/triangular_t0.pdf
 
 *** Tren de Pulsos Bidireccional
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/cuadrada_periodica.pdf]]
+[[file:../figs/cuadrada_periodica.pdf]]
 
 *** Tren de Pulsos Unidireccional
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/cuadrada0_periodica.pdf]]
+[[file:../figs/cuadrada0_periodica.pdf]]
 
 *** Onda Triangular Bidireccional
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/triangular_periodica.pdf]]
+[[file:../figs/triangular_periodica.pdf]]
 *** Onda Triangular Unidireccional
 #+ATTR_LATEX: :height 0.9\textheight
-[[file:figs/triangular0_periodica.pdf]]
+[[file:../figs/triangular0_periodica.pdf]]
 
 *** Onda sinusoidal
 
-[[file:figs/sin.pdf]]
+[[file:../figs/sin.pdf]]
 
 
 \[
