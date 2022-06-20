@@ -4,8 +4,525 @@
 
 \documentclass[11pt]{book} % Default font size and left-justified equations
 
-\include{config}
+%----------------------------------------------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% Structural Definitions File
+% Version 2.0 (9/2/15)
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+% 
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
+
+\usepackage{caption}
+\usepackage{mathtools}
+\usepackage{subfigure}
+\usepackage{cancel}
+\usepackage{colortbl}
+\usepackage{steinmetz}
+\usepackage{diffcoeff}
+
+\usepackage{graphicx} % Required for including pictures
+\graphicspath{{../figs/}} % Specifies the directory where pictures are stored
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{tikz} % Required for drawing custom shapes
+
+\usepackage[spanish]{babel} % English language/hyphenation
+
+\usepackage{enumitem} % Customize lists
+\setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
+
+\usepackage{booktabs} % Required for nicer horizontal rules in tables
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY AND INDEX
+%----------------------------------------------------------------------------------------
+
+\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+%----------------------------------------------------------------------------------------
+%	MAIN TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{titletoc} % Required for manipulating the table of contents
+
+\contentsmargin{0cm} % Removes the default margin
+
+% Part text styling
+\titlecontents{part}[0cm]
+{\addvspace{20pt}\centering\large\bfseries}
+{}
+{}
+{}
+
+% Chapter text styling
+\titlecontents{chapter}[1.25cm] % Indentation
+{\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
+{\color{ocre}}  
+{\color{ocre!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+
+% Section text styling
+\titlecontents{section}[1.25cm] % Indentation
+{\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+{}
+{\hfill\color{black}\thecontentspage} % Page number
+[]
+
+% Subsection text styling
+\titlecontents{subsection}[1.25cm] % Indentation
+{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+{}
+{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[]
+
+% List of figures
+\titlecontents{figure}[0em]
+{\addvspace{-5pt}\sffamily}
+{\thecontentslabel\hspace*{1em}}
+{}
+{\ \titlerule*[.5pc]{.}\;\thecontentspage}
+[]
+
+% List of tables
+\titlecontents{table}[0em]
+{\addvspace{-5pt}\sffamily}
+{\thecontentslabel\hspace*{1em}}
+{}
+{\ \titlerule*[.5pc]{.}\;\thecontentspage}
+[]
+
+%----------------------------------------------------------------------------------------
+%	MINI TABLE OF CONTENTS IN PART HEADS
+%----------------------------------------------------------------------------------------
+
+% Chapter text styling
+\titlecontents{lchapter}[0em] % Indenting
+{\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+{\color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
+{}  
+{\color{ocre}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+
+% Section text styling
+\titlecontents{lsection}[0em] % Indenting
+{\sffamily\small} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+{}
+{}
+
+% Subsection text styling
+\titlecontents{lsubsection}[.5em] % Indentation
+{\normalfont\footnotesize\sffamily} % Font settings
+{}
+{}
+{}
+
+%----------------------------------------------------------------------------------------
+%	PAGE HEADERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Required for header and footer configuration
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
+\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+\fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
+\fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
+\renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
+\addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+
+% Removes the header from odd empty pages at the end of chapters
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi}
+
+%----------------------------------------------------------------------------------------
+%	THEOREM STYLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
+
+\newcommand{\intoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
+\newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
+\newcommand{\intff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
+\newtheorem{notation}{Notation}[chapter]
+
+% Boxed/framed environments
+\newtheoremstyle{ocrenumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
+
+\newtheoremstyle{blacknumex}% Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% Body font
+{} % Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+\newtheoremstyle{blacknumbox} % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+% Non-boxed/non-framed environments
+\newtheoremstyle{ocrenum}% % Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
+\makeatother
+
+% Defines the theorem text style for each type of theorem to one of the three styles above
+\newcounter{dummy} 
+\numberwithin{dummy}{section}
+\theoremstyle{ocrenumbox}
+\newtheorem{theoremeT}[dummy]{Theorem}
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{exerciseT}{Ejemplo}[chapter]
+\theoremstyle{blacknumex}
+\newtheorem{exampleT}{Ejemplo}[chapter]
+\theoremstyle{blacknumbox}
+\newtheorem{vocabulary}{Vocabulary}[chapter]
+\newtheorem{definitionT}{Definition}[section]
+\newtheorem{corollaryT}[dummy]{Corollary}
+\theoremstyle{ocrenum}
+\newtheorem{proposition}[dummy]{Proposition}
+
+%----------------------------------------------------------------------------------------
+%	DEFINITION OF COLORED BOXES
+%----------------------------------------------------------------------------------------
+
+\RequirePackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+% Theorem box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!5,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt]{tBox}
+
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=ocre!10,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}	
+
+% Definition box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=0pt]{dBox}	
+
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=gray,
+backgroundcolor=black!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{cBox}
+
+% Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
+\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
+\newenvironment{example}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}			
+\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+
+%----------------------------------------------------------------------------------------
+%	REMARK ENVIRONMENT
+%----------------------------------------------------------------------------------------
+
+\newenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{N}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
+
+%----------------------------------------------------------------------------------------
+%	SECTION NUMBERING IN THE MARGIN
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{ocre}{\csname the#1\endcsname}\hspace{1em}}}                    
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\normalfont\large\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\normalfont\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{.2ex \@plus.2ex }
+{\normalfont\small\sffamily\bfseries}}                        
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{.1ex}
+{\normalfont\small\sffamily\bfseries}}
+
+%----------------------------------------------------------------------------------------
+%	PART HEADINGS
+%----------------------------------------------------------------------------------------
+
+% numbered part in the table of contents
+\newcommand{\@mypartnumtocformat}[2]{%
+\setlength\fboxsep{0pt}%
+\noindent\colorbox{ocre!20}{\strut\parbox[c][.7cm]{\ecart}{\color{ocre!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{ocre!40}{\strut\parbox[c][.7cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering#2}}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% unnumbered part in the table of contents
+\newcommand{\@myparttocformat}[1]{%
+\setlength\fboxsep{0pt}%
+\noindent\colorbox{ocre!40}{\strut\parbox[c][.7cm]{\linewidth}{\Large\sffamily\centering#1}}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\esp
+\setlength\esp{4pt}
+\newlength\ecart
+\setlength\ecart{1.2cm-\esp}
+\newcommand{\thepartimage}{}%
+\newcommand{\partimage}[1]{\renewcommand{\thepartimage}{#1}}%
+\def\@part[#1]#2{%
+\ifnum \c@secnumdepth >-2\relax%
+\refstepcounter{part}%
+\addcontentsline{toc}{part}{\texorpdfstring{\protect\@mypartnumtocformat{\thepart}{#1}}{\partname~\thepart\ ---\ #1}}
+\else%
+\addcontentsline{toc}{part}{\texorpdfstring{\protect\@myparttocformat{#1}}{#1}}%
+\fi%
+\startcontents%
+\markboth{}{}%
+{\thispagestyle{empty}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+\fill[ocre!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
+\node[anchor=north] at (4cm,-3.25cm){\color{ocre!40}\fontsize{220}{100}\sffamily\bfseries\@Roman\c@part}; 
+\node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{8.5cm}{
+\printcontents{l}{0}{\setcounter{tocdepth}{1}}%
+}};
+\node[anchor=north east] at (\paperwidth-1.5cm,-3.25cm){\parbox[t][][t]{15cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#2}};
+\end{tikzpicture}};
+\end{tikzpicture}}%
+\@endpart}
+\def\@spart#1{%
+\startcontents%
+\phantomsection
+{\thispagestyle{empty}%
+\begin{tikzpicture}[remember picture,overlay]%
+\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+\fill[ocre!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
+\node[anchor=north east] at (\paperwidth-1.5cm,-3.25cm){\parbox[t][][t]{15cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#1}};
+\end{tikzpicture}};
+\end{tikzpicture}}
+\addcontentsline{toc}{part}{\texorpdfstring{%
+\setlength\fboxsep{0pt}%
+\noindent\protect\colorbox{ocre!40}{\strut\protect\parbox[c][.7cm]{\linewidth}{\Large\sffamily\protect\centering #1\quad\mbox{}}}}{#1}}%
+\@endpart}
+\def\@endpart{\vfil\newpage
+\if@twoside
+\if@openright
+\null
+\thispagestyle{empty}%
+\newpage
+\fi
+\fi
+\if@tempswa
+\twocolumn
+\fi}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER HEADINGS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\thechapterimage}{}%
+\newcommand{\chapterimage}[1]{\renewcommand{\thechapterimage}{#1}}%
+\def\@makechapterhead#1{%
+{\parindent \z@ \raggedright \normalfont
+\ifnum \c@secnumdepth >\m@ne
+\if@mainmatter
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+\draw[anchor=west] (\Gm@lmargin,-9cm) node [line width=2pt,rounded corners=15pt,draw=ocre,fill=white,fill opacity=0.5,inner sep=15pt]{\strut\makebox[22cm]{}};
+\draw[anchor=west] (\Gm@lmargin+.3cm,-9cm) node {\huge\sffamily\bfseries\color{black}\thechapter. #1\strut};
+\end{tikzpicture}};
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+\draw[anchor=west] (\Gm@lmargin,-9cm) node [line width=2pt,rounded corners=15pt,draw=ocre,fill=white,fill opacity=0.5,inner sep=15pt]{\strut\makebox[22cm]{}};
+\draw[anchor=west] (\Gm@lmargin+.3cm,-9cm) node {\huge\sffamily\bfseries\color{black}#1\strut};
+\end{tikzpicture}};
+\end{tikzpicture}
+\fi\fi\par\vspace*{270\p@}}}
+
+%-------------------------------------------
+
+\def\@makeschapterhead#1{%
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+\draw[anchor=west] (\Gm@lmargin,-9cm) node [line width=2pt,rounded corners=15pt,draw=ocre,fill=white,fill opacity=0.5,inner sep=15pt]{\strut\makebox[22cm]{}};
+\draw[anchor=west] (\Gm@lmargin+.3cm,-9cm) node {\huge\sffamily\bfseries\color{black}#1\strut};
+\end{tikzpicture}};
+\end{tikzpicture}
+\par\vspace*{270\p@}}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS IN THE DOCUMENTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= ocre,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+\usepackage{bookmark}
+\bookmarksetup{
+open,
+numbered,
+addtohook={%
+\ifnum\bookmarkget{level}=0 % chapter
+\bookmarksetup{bold}%
+\fi
+\ifnum\bookmarkget{level}=-1 % part
+\bookmarksetup{color=ocre,bold}%
+\fi
+}
+}
+
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+%\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+%\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+%\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{float}
+
+%%hasta aquí
 \begin{document}
 	
 	%----------------------------------------------------------------------------------------
@@ -51,7 +568,7 @@
 	
 	\noindent \href{}\\ % URL
 	
-	\noindent \textsc{Apuntes de la asignatura \emph{Teoría de circuitos} realizados por Ana Fernández Guillamón y	Oscar Perpiñán Lamigueiro. Se trata de una asignatura común a todos los Grados impartidos en la Escuela Técnica Superior de Ingeniería y Diseño Industrial}\\ % License information
+	\noindent \textsc{Apuntes de la asignatura \emph{Teoría de circuitos} realizados por Ana Fernández Guillamón. Se trata de una asignatura común a todos los Grados impartidos en la Escuela Técnica Superior de Ingeniería y Diseño Industrial}\\ % License information
 	
 	%\noindent \textit{Versi\'{o}n: \printdate} % Printing/edition date
 	
@@ -73,12 +590,10 @@
 	%	CHAPTER 1
 	%----------------------------------------------------------------------------------------
 	
-	\chapterimage{imagen_t1.jpg} % Chapter heading image
+	\chapterimage{tema1.jpg} % Chapter heading image
 	\chapter{Fundamentos. Corriente continua}\label{chap.cc}
 	
 	\setcounter{page}{1}
-	
-	%Referencias: \cite{edminister1988circuitos,usaola2003circuitos}
 	
 	\section{Introducción}
 	
@@ -183,7 +698,7 @@
 		La unidad [A] se escribe en mayúsculas en honor a André-Marie Ampère, matemático y físico francés del siglo XVIII-XIX, que inventó el primer telégrafo eléctrico y formuló la teoría del electromagnetismo en 1827.
 	\end{remark}
 	
-	Cabe resaltar que el amperio es una unidad muy grande, por lo que a menudo se utilizan submúltiplos (mA, $\mu$A...). En algunos casos puede hablarse también de la \textbf{densidad de corriente}, definida como el cociente entre la intensidad $i(t)$ y la sección transversal del conductor $S$:
+	Cabe resaltar que el amperio es una unidad muy grande, por lo que a menudo se utilizan submúltiplos (mA, $\mu$A...). En algunos casos, puede hablarse también de la \textbf{densidad de corriente}, definida como el cociente entre la intensidad $i(t)$ y la sección transversal del conductor $S$:
 	\begin{equation*}
 		\delta =\dfrac{i(t)}{S}
 	\end{equation*}
@@ -265,6 +780,10 @@
 		\label{fig.receptor_generador}
 	\end{figure}
 	
+	\begin{remark}
+	    Téngase en cuenta, que por el principio de conservación de la energía, la potencia generada y consumida en un circuito, debe ser igual. O, si se trabaja con potencias positivas y negativas, el balance de potencias de un circuito debe cumplir que $\sum P=0$
+	\end{remark}
+	
 	\subsubsection{Energía y potencia}
 	
 	La \textbf{energía} $W$ es una magnitud física asociada con la capacidad que tienen los cuerpos para realizar un trabajo (emitir luz, generar calor, etc.). Puede manifestarse de distintas formas: gravitatoria, cinética, química, eléctrica, magnética, nuclear, radiante, etc., existiendo la posibilidad de transformar unos tipos de energía en otros, pero respetando siempre el principio de conservación de la energía. En el SI, la energía (del tipo que sea) se mide en julios [J]. El julio se define como el trabajo realizado por una fuerza $F$ de 1 Newton [N] cuando provoca un desplazamiento $d$ de 1 metro [m]. Por tanto, una forma de definir la energía es:
@@ -283,8 +802,10 @@
 	
 	\vspace{4mm}
 	\begin{example}
-		\textbf{¿Cuál es la equivalencia entre un kWh y un J?}\\
-		1 kWh = 1 kW $\cdot$ 1 h = 1000 W $\cdot$ 3600 s = 3.6 MJ 
+		\textbf{¿Cuál es la equivalencia entre un kWh y un J?}
+		\begin{equation*}
+		    1 kWh = 1 kW \cdot 1 h = 1000 W \cdot 3600 s = 3.6 MJ 
+		\end{equation*}
 	\end{example}
 	
 	\section{Elementos de los circuitos}
@@ -356,10 +877,33 @@
 	    Nótese que el polo $+$ de la fuente de tensión queda en la misma posición que la flecha de la fuente de corriente
 	\end{remark}
 	
-	\begin{example}
-	    \textbf{Convertir en fuente de intensidad o de tensión, según corresponda, las siguientes fuentes. }
+	\begin{example}\label{ex.1-2}
+	    \textbf{Convertir en fuente de intensidad o de tensión, según corresponda, las fuentes mostradas en la Figura~\ref{fig.ejemplo1-2}.}
+	    \begin{figure}[H]
+	        \centering
+	        \subfigure[]{\includegraphics[height=3.7cm]{../figs/Conversion_Fuentes.pdf}}\hfil
+	        \subfigure[]{\includegraphics[height=3.7cm]{../figs/Conversion_Fuentes_2.pdf}}\hfil
+	        \subfigure[]{\includegraphics[height=3.7cm]{../figs/Conversion_Fuentes_3.pdf}}\hfil
+	        \subfigure[]{\includegraphics[height=3.7cm]{../figs/Conversion_Fuentes_4.pdf}}
+	        \caption{Ejemplo~\ref{ex.1-2}}
+	        \label{fig.ejemplo1-2}
+	    \end{figure}
 	    
-	    EJERCICIO 1.7 DE PROBLEMAS BT1 CURSO 21-22
+	    \textbf{GENERADOR (a)}
+	    
+	    Se trata de un generador de tensión en serie con una resistencia $R_g=6\Omega$. Se puede transformar en un generador de corriente con una resistencia en paralelo (de mismo valor, $6\Omega$), y de intensidad de la fuente $I_g=\frac{18}{6}=3$ A, con la punta de flecha hacia arriba.
+	    
+	    \textbf{GENERADOR (b)}
+	    
+	    Se trata de un generador de tensión en serie con una resistencia $R_g=2.2k\Omega$. Se puede transformar en un generador de corriente con una resistencia en paralelo (de mismo valor, $2.2k\Omega$), y de intensidad de la fuente $I_g=\frac{9}{2.2\cdot10^3}=4.1$ mA, con la punta de flecha hacia abajo.
+	    
+	    \textbf{GENERADOR (c)}
+	    
+	    Se trata de un generador de corriente en paralelo con una resistencia $R_g=3\Omega$. Se puede transformar en un generador de tensión con una resistencia en serie (de mismo valor, $3\Omega$), y de fem de la fuente $\varepsilon_g=1.5\cdot 3=4.5$ V, con el polo $+$ arriba.
+	    
+	    \textbf{GENERADOR (d)}
+	    
+	    Se trata de un generador de corriente en paralelo con una resistencia $R_g=4.7k\Omega$. Se puede transformar en un generador de tensión con una resistencia en serie (de mismo valor, $4.7k\Omega$), y de fem de la fuente $\varepsilon_g=6\cdot 10^{-3}\cdot 4.7\cdot 10^3=28.2$ V, con el polo $+$ abajo.
 	\end{example}
 	
 	\subsubsection{Generadores dependientes o generadores controlados}
@@ -381,7 +925,7 @@
 	\end{figure}
 	
 	\begin{remark}
-		Si en un circuito \textbf{solo} existen generadores dependientes, el circuito \textbf{no estaría excitado}.
+		Si en un circuito \textbf{solo} existen generadores dependientes, el circuito \textbf{no está excitado}.
 	\end{remark} 
 	
 	
@@ -418,8 +962,8 @@
 	
 	\vspace{4mm}
 	\begin{example}
-		\textbf{Calcular la resistencia de un conductor de cobre tiene una longitud $l=10$~m y una sección $S=2$~mm$^2$.}\\
-		Aplicando la anterior: 
+		\textbf{Calcular la resistencia de un conductor de cobre que tiene una longitud $l=10$~m y una sección $S=2$~mm$^2$.}\\
+		Aplicando la expresión anterior: 
 		\begin{equation*}
 			R=\rho\cdot \dfrac{l}{S}=(1/56)\cdot \dfrac{10}{2}=0.089\;\Omega
 		\end{equation*}
@@ -491,7 +1035,7 @@
 		\label{fig.bobina}
 	\end{figure}
 	
-	La relación inversa de la expresión~\eqref{eq.u_L} se puede obtener por integración entre un tiempo inicial $t_i$ y un tiempo final $t_f$, resultando:
+	La relación inversa de la expresión~\eqref{eq.u_L} se puede obtener por integración entre un tiempo inicial $t_iu$ y un tiempo final $t_f$, resultando:
 	\begin{equation*}
 		\int_{t_i}^{t_f} \dfrac{di(t)}{dt}dt=\dfrac{1}{L}\int_{t_i}^{t_f}u(t)\cdot dt \rightarrow i(t_f)-i(t_i)=\dfrac{1}{L}\cdot\int_{t_i}^{t_f} u(t)\cdot dt\,
 	\end{equation*}
@@ -602,7 +1146,7 @@
 			\centering
 			\subfigure[Ideal]{\includegraphics[height=3.5cm]{../figs/receptor_ideal.pdf}}\hfil
 			\subfigure[Real]{\includegraphics[height=3.5cm]{../figs/receptor_real.pdf}}
-			\caption{Receptores}
+			\caption{Otros receptores}
 			\label{fig.receptores}
 		\end{figure}
 	\end{itemize}
@@ -678,9 +1222,9 @@
 	\vspace{4mm}
 	\begin{example}\label{ej.1-3}
 		\textbf{Determinar el número de nudos, ramas, lazos y mallas del circuito de la Figura~\ref{fig.mallas}.}
-		\begin{figure}[htbp]
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.4\linewidth]{../figs/mallas.pdf}
+			\includegraphics[width=0.3\linewidth]{../figs/mallas.pdf}
 			\caption{Ejercicio~\ref{ej.1-3}}
 			\label{fig.mallas}
 		\end{figure}
@@ -781,6 +1325,66 @@
 	\begin{equation}
 		\boxed{I=\dfrac{\displaystyle\sum_{j=1}^m \varepsilon_j}{\displaystyle\sum_{i=1}^n R_i}}
 	\end{equation}
+	
+	\begin{example}\label{ex.motor-bt1}
+	    \textbf{Un generador de corriente continua, $fem=500$ V y $0.75\Omega$ de resistencia, alimenta mediante una línea de cobre de 18 m$\Omega$mm$^2$/m y 16 mm$^2$ de sección a un motor de 1 CV y rendimiento 74.49\%, situado a 1 km de distancia. Se pide determinar:
+	    \begin{itemize}
+	        \item Intensidad de corriente en el motor y densidad de corriente, sabiendo que ésta última no debe superar 2 A/mm$^2$
+	        \item Tensiones en bornes del generador y del motor, así como la caída de tensión en la línea
+	        \item $fcem$ del motor y su resistencia
+	    \end{itemize}}
+	    
+	    El circuito eléctrico equivalente se muestra en la Figura~\ref{fig.ejemplo_BT1_motor}.
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.4\linewidth]{../figs/ejemplo_BT1_motor.pdf}
+	        \caption{Circuito eléctrico equivalente del ejemplo~\ref{ex.motor-bt1}}
+	        \label{fig.ejemplo_BT1_motor}
+	    \end{figure}
+	    La potencia útil del motor es 1 CV $=736$ W. La potencia absorbida, a partir del rendimiento: 
+	    \begin{equation*}
+	        P_{abs,M}=\dfrac{P_{u,M}}{\eta_M}=\dfrac{736}{0.7449}=988.05\;\text{W}=U_M\,I\Rightarrow U_M =\dfrac{988.05}{I}
+	    \end{equation*}
+	    siendo $U_M$ la tensión en el motor (motor + resistencia del motor). La resistencia de la línea es:
+	    \begin{equation*}
+	        R_l=2\,\rho\dfrac{l}{S}=2\cdot 18\cdot 10^{-3}\dfrac{1000}{16}= 2.25\Omega
+	    \end{equation*}
+	    Aplicando la 2LK al circuito completo, se obtiene que: 
+	    \begin{equation*}
+	        \epsilon_g-R_g\,I-R_l\,I-U_M=500-0.75\cdot I -2.25\cdot I-\dfrac{988.05}{I}=0\Rightarrow \begin{cases}
+	            I_1=164.67\,\text{A}\\
+	            I_2=2\,\text{A}
+	        \end{cases}
+	    \end{equation*}
+	    
+	    Con estos valores de corriente, se calcula la densidad para que cumpla la condición de densidad estipulada: 
+	    \begin{align*}
+	        \delta_1&=\dfrac{I_1}{S}=\dfrac{164.67}{16}=10.29\,\text{A/mm}^2>2\,\text{A/mm}^2\\
+	        \delta_2&=\dfrac{I_2}{S}=\dfrac{2}{16}={0.13\,\text{A/mm}^2 < 2\,\text{A/mm}^2}
+	    \end{align*}
+	    Por tanto:
+	    \begin{align*}
+	        {I&=2\,\text{A}}\\
+	        {\delta&=0.13\,\text{A/mm}^2}
+	    \end{align*}
+	    
+	    Una vez conocida la corriente, la tensión en bornes del generador y motor son:
+	    \begin{align*}
+	        {U_M&=\dfrac{P_{abs,M}}{I}=\dfrac{988.05}{2}=494.03\,\text{V}}\\
+	        {U_l&=R_l\cdot I=2.25\cdot 2=4.5\,\text{V}}\\
+	        {U_g&=U_M+U_l=494.03+4.5=498.53\,\text{V}}
+	    \end{align*}
+	    
+	    Por definición, la potencia útil del motor es:
+	    \begin{equation*}
+	        P_{u,M}=fcem\, I\Rightarrow {fcem=\dfrac{P_{u,M}}{I}=\dfrac{736}{2}=368\,\text{V}}
+	    \end{equation*}
+	    y la resistencia del mismo, a partir de la tensión $U_M$:
+	    \begin{equation*}
+	        U_M=fcem+R_M\,I\Rightarrow {R_M=\dfrac{U_M-fcem}{I}=\dfrac{494.03-368}{2}=63.02\;\Omega}
+	    \end{equation*}
+	    
+	\end{example}
 	
 	\subsection{Asociación de elementos}
 	
@@ -1035,6 +1639,29 @@
 	\end{itemize}
 	
 	
+	\begin{example}\label{ex.serie-paralelo}
+	    \textbf{Calcular la corriente que pasa por la fuente de tensión de la Figura \ref{fig.ejercicio1_tema1}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics{../figs/ej1_BT1.pdf}
+			\caption{Ejemplo~\ref{ex.serie-paralelo}}
+			\label{fig.ejercicio1_tema1}
+		\end{figure}
+		
+		Se pide calcular la corriente $I_1$. Se empiezan asociando las tres resistencias en paralelo de 12, 6 y 18~$\Omega$:
+\begin{equation*}
+    R_{eq,||}=\dfrac{1}{\frac{1}{R_{12}}+\frac{1}{R_{6}}+\frac{1}{R_{18}}}=\dfrac{1}{\frac{1}{12}+\frac{1}{6}+\frac{1}{18}}=3.273\,\Omega
+\end{equation*}
+La resistencia equivalente total:
+\begin{equation*}
+    R_{eq}=R_5+R_{eq,||}=5+3.273=8.273\,\Omega
+\end{equation*}
+Por la ley de Ohm: 
+\begin{equation*}
+    I_1=\dfrac{U}{R_{eq}}=\dfrac{50}{8.273}={6.04\,\text{A}}
+\end{equation*}
+	\end{example}
+	
 	
 	
 	\subsubsection{Conexión estrella-triángulo}
@@ -1089,41 +1716,77 @@
 	\end{align*}
 	Igualando y operando, se llega a las siguientes relaciones: 
 	\begin{itemize}
-		\item \textbf{Conversión de triángulo a estrella.} 
-		\begin{align*}
-			R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
-			\\
-			R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}\\
-			\\
-			R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}
-		\end{align*}
-		\item \textbf{Conversión de estrella a triángulo.}
-		\begin{align*}
-			G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}\\
-			\\
-			G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}\\
-			\\
-			G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}
-		\end{align*}
+		\item \textbf{Conversión de triángulo a estrella:} 
+		\begin{align}
+			\Aboxed{R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}}\\[10pt]
+			\Aboxed{R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}}\\[10pt]
+			\Aboxed{R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}}
+		\end{align}
+		\item \textbf{Conversión de estrella a triángulo:}
+		\begin{align}
+			\Aboxed{G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}}\\[10pt]
+			\Aboxed{G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}}\\[10pt]
+			\Aboxed{G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}}
+		\end{align}
 	\end{itemize}
 	
 	Las transformaciones anteriores se utilizan con gran frecuencia en el análisis de circuitos, ya que permiten simplificar ciertas redes en las que las impedancias no están
 	conectadas de forma simple (en serie o en paralelo). Quiere destacarse que, en caso de que las resistencias sean iguales ($R_a=R_b=R_c=R_Y$ para la estrella y $R_{ab}=R_{bc}=R_{ca}=R_D$ para el triángulo), se cumple que: 
-	\begin{equation}
+	\begin{equation}\label{eq.triangulo-estrella-igual}
 		\boxed{R_D=3\cdot R_Y}
 	\end{equation}
+	
+	\begin{example}\label{ex.estrella-triangulo}
+	\textbf{Convertir los circuitos de la Figura~\ref{fig.ejercicio7-bt1} en triángulo o estrella equivalente, según corresponda. }
+ \begin{figure}[H]
+ 		\centering
+\includegraphics{../figs/ej7_BT1.pdf}
+% 		\subfigure[Conexión estrella]{\includegraphics[width=0.3\linewidth]{../figs/ej7b_BT1.pdf}}
+ 		\caption{Ejemplo~\ref{ex.estrella-triangulo}}
+ 		\label{fig.ejercicio7-bt1}
+ 	\end{figure}
+ 	
+ 	Se calcula primero el cambio de estrella a triángulo. Puesto que las tres resistencias tienen un valor de 60 $\Omega$ ($R_a=R_b=R_c=R_Y=60\Omega$), se cumple que, según~\eqref{eq.triangulo-estrella-igual}: 
+	\begin{equation*}
+		R_D=3\cdot R_Y=3\cdot 60=180\Omega
+	\end{equation*}
+	Puede comprobarse que se llegaría a la misma solución empleando las expresiones completas, donde $G_i=\frac{1}{R_i}=\frac{1}{60}$ S: 
+	\begin{align*}
+			G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}=\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{ab}=\dfrac{1}{G_{ab}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega\\[10pt]
+			G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}=\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{bc}=\dfrac{1}{G_{bc}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega\\[10pt]
+			G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{ca}=\dfrac{1}{G_{ca}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega
+		\end{align*}
+
+El cambio de triángulo a estrella debe hacerse a partir de las ecuaciones completas, puesto que sus resistencias son todas diferentes: 
+\begin{align*}
+			R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}=\frac{10 \cdot 20}{10 + 30 + 20}=\frac{10}{3}\Omega\\
+			\\
+			R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}=\frac{10 \cdot 30}{10+30+20}=5\Omega\\
+			\\
+			R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}=\frac{30 \cdot 20}{10+30+20}=10\Omega
+		\end{align*}
+
+Los circuitos equivalentes son los mostrados en la Figura~\ref{fig.ejercicio7-bt1-sol}.
+ \begin{figure}[H]
+ 		\centering
+\includegraphics{../figs/ej7_BT1_sol.pdf}% 
+ 		\caption{Ejemplo~\ref{ex.estrella-triangulo} -- Solución}
+ 		\label{fig.ejercicio7-bt1-sol}
+ 	\end{figure}
+	    
+	\end{example}
 	
 	\section{Métodos de análisis}
 	Para resolver un circuito, se debe conocer $U$ e $I$ en cada una de sus ramas. Por tanto, si se tiene un circuito formado por $r$ ramas, el número de incógnitas será $2\cdot r$ (una de tensión y otra de intensidad). Por tanto, para resolver el circuito se deben disponer de $2\cdot r$ ecuaciones linealmente independientes. Para ello, basta con aplicar las leyes de Kirchhoff a los nudos y mallas del circuito. 
 	
-	\vspace{4mm}
+	
 	\begin{example}
 		\label{ej.1-4}
 		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.mallas1}.}
-		\begin{figure}[htbp]
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.35\linewidth]{../figs/mallas1.pdf}
-			\caption{Ejercicio~\ref{ej.1-4}}
+			\includegraphics{../figs/mallas1.pdf}
+			\caption{Ejemplo~\ref{ej.1-4}}
 			\label{fig.mallas1}
 		\end{figure}
 		
@@ -1182,23 +1845,22 @@
 		Se observa que es necesario resolver un sistema lineal de 6 ecuaciones en las que las incógnitas son las corrientes de cada rama. 
 	\end{example}
 	
-	Esta forma de resolución de circuitos eléctricos, aunque es válida, no es útil por el número de ecuaciones a resolver. Por ello, lo más habitual es utilizar otros métodos que permiten la resolución de los circuitos con un número menor de ecuaciones. Aunque existen diferentes métodos, se van a presentar dos: el método de las mallas y el método de los nudos.
+	Esta forma de resolución de circuitos eléctricos, aunque es válida, no es útil por el número de ecuaciones a resolver. Por ello, lo más habitual es utilizar otros métodos que permiten la resolución de los circuitos con un número menor de ecuaciones. Aunque existen diferentes métodos, se van a presentar tres: el método de las mallas y el método de los nudos, explicando posteriormente una modificación de este último.
 	
 	\subsection{Método de las mallas}
 	El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes \emph{ficticias} denominadas \textbf{corrientes de malla}, aprovechando las relaciones entre corrientes de la 1LK. El procedimiento general de aplicación de este método es el siguiente:
 	\begin{enumerate}
 		\item Identificar las corrientes de rama.
 		\item Asignar un sentido a las corrientes de malla, teniendo en cuenta que hay un total de:
-		\begin{equation}
-			\boxed{Mallas=Ramas-(Nudos-1)}
-		\end{equation}
+		\begin{equation*}
+			{Mallas=Ramas-(Nudos-1)}
+		\end{equation*}
 		\item Relacionar corrientes de rama con corrientes de malla.
 		\item Escribir ecuaciones de mallas.
 		\item Resolver la ecuación, obteniendo las corrientes de malla.
 		\item Obtener las corrientes de rama con las relaciones del punto 3.
 	\end{enumerate}
 	
-	\vspace{4mm}
 	\begin{example}
 		\label{ej.1-5}
 		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.mallas1}.}
@@ -1207,10 +1869,10 @@
 		\begin{enumerate}
 			\item Identificar las corrientes de rama: están identificadas directamente en el circuito de la Figura~\ref{fig.mallas1}
 			\item Asignar un sentido a las corrientes de malla: se muestra en la Figura~\ref{fig.mallas1_corrientes}
-			\begin{figure}[htbp]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.35\linewidth]{../figs/mallas1_corrientes.pdf}
-				\caption{Corrientes de malla del circuito}
+				\includegraphics{../figs/mallas1_corrientes.pdf}
+				\caption{Corrientes de malla del circuito del Ejemplo~\ref{ej.1-5}}
 				\label{fig.mallas1_corrientes}
 			\end{figure}
 			\item Relacionar corrientes de rama con corrientes de malla:
@@ -1266,7 +1928,7 @@
 		\end{enumerate}
 	\end{example}
 	
-	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un sistema de $n$ mallas, siendo esta: 
+	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un circuito de $n$ mallas, siendo esta: 
 	\begin{equation*}
 		\begin{bmatrix}
 			{\color{magenta}\sum R_{11}} &  {\color{teal}\pm\sum R_{12}} & {\color{teal}{\dots}} & {\color{teal}\pm\sum R_{1n}} \\
@@ -1287,29 +1949,106 @@
 			{\color{orange}\sum\epsilon_n}
 		\end{bmatrix}
 	\end{equation*}
-	donde cada {\color{magenta}$R_{ii}$} se corresponde con la suma de resistencias incluidas en la malla $i$; cada {\color{teal}$\pm R_{ij}$} se corresponde con la suma de las resistencias incluidas en las ramas compartidas por las mallas $i$ y $j$, con signo positivo ($+$) si las corrientes van en el mismo sentido, y negativo ($-$) en caso contrario; y cada {\color{orange} $\sum \epsilon_i$} es la suma algebraica de las fuerzas electromotrices de los generadores de la malla $i$, considerando un signo positivo ($+$) si contribuyen al giro de la corriente, y negativo ($-$) en caso contrario. Debe tenerse en cuenta que para aplicar este método \textbf{todos los generadores deben ser fuentes de tensión}. 
+	donde cada {\color{magenta}$R_{ii}$} se corresponde con la suma de resistencias incluidas en la malla $i$; cada {\color{teal}$\pm R_{ij}$} se corresponde con la suma de las resistencias incluidas en las ramas compartidas por las mallas $i$ y $j$, con signo positivo ($+$) si las corrientes van en el mismo sentido, y negativo ($-$) en caso contrario; y cada {\color{orange} $\sum \epsilon_i$} es la suma algebraica de las fuerzas electromotrices de los generadores de la malla $i$, considerando un signo positivo ($+$) si contribuyen al giro de la corriente, y negativo ($-$) en caso contrario (es decir, si la corriente sale por el polo $+$ de la fuente, se considera positivo; si sale por el polo $-$, se considera negativo). Debe tenerse en cuenta que para aplicar este método \textbf{todos los generadores deben ser fuentes de tensión}. 
+	
+	\begin{example}\label{ex.ejemplo_mallas}
+	    \textbf{Calcular las tres intensidades de malla del circuito de la Figura \ref{fig.ejercicio5_tema1}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[]{../figs/ej5_BT1.pdf}
+			\caption{Ejemplo~\ref{ex.ejemplo_mallas}}
+			\label{fig.ejercicio5_tema1}
+		\end{figure}
+		
+		Se plantea el sistema de ecuaciones en forma matricial:
+\begin{equation*}
+		\begin{bmatrix}
+			7 & 0 & 5 \\
+			0 & 6 & -4 \\
+			5 & -4 & 12
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			I_1\\
+			I_2\\
+			I_3
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			10 \\
+			-10\\
+			0
+		\end{bmatrix}
+	\end{equation*}
+	cuya solución es:
+	\begin{align*}
+	    {I_1&=3.55\,\text{A}}\\
+	    {I_2&=-1.98\,\text{A}}\\
+	    {I_3&=-2.98\,\text{A}}
+	\end{align*}
+	\end{example}
+	
+	\begin{example}\label{ex.mallas_dependiente}
+	    \textbf{Calcular la corriente $I$ en el circuito de la Figura~\ref{fig.ejemplo_mallas_dependiente}.}
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics{../figs/ejemplo_mallas_dependiente.pdf}
+	        \caption{Ejemplo~\ref{ex.mallas_dependiente}}
+	        \label{fig.ejemplo_mallas_dependiente}
+	    \end{figure}
+	    
+	    En este caso, no se va a transformar el generador de intensidad, sino que se le asigna una caída de tensión arbitraria (y desconocida), $U_{g1}$, considerándolo como un generador de tensión. Posteriormente, al plantear el sistema de ecuaciones, se añadirá una ecuación adicional, puesto que la intensidad de esa rama es conocida (2 A). El circuito queda como se muestra en la Figura~\ref{fig.mallas_dpendiente_sol}.
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics{../figs/ejemplo_mallas_dependiente_sol.pdf}
+	        \caption{Ejemplo~\ref{ex.mallas_dependiente} -- Mallas}
+	        \label{fig.mallas_dpendiente_sol}
+	    \end{figure}
+	    
+	    Se plantea el método de mallas en forma matricial: 
+	    \begin{equation*}
+		\begin{bmatrix}
+			5 & -2 \\
+			-2 & 7 
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			I_a\\
+			I_b
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			-4-U_{g1} \\
+			4-3\cdot U_r
+		\end{bmatrix}
+	\end{equation*}
+	donde se sabe que $I_a=-2$ A. Además, la tensión $U_r$ se puede expresar, a partir d ela ley de Ohm y las relaciones entre las corrientes de malla como:
+	\begin{equation*}
+	    U_r=(I_a-I_b)\cdot R_{2\Omega}=(I_a-I_b)\cdot 2 = (-2-I_b)\cdot 2=-4-2\, I_b
+	\end{equation*}
+	Reemplazando en la segunda ecuación del sistema:
+	\begin{equation*}
+	    -2\, I_a+7\,I_b=4-3\,U_r; -2\,(-2)+7\, I_b=4-3\,(-4-2\,I_b); 4+7\,I_b=4+12+6\,I_b\Rightarrow I_b=12\, A 
+	\end{equation*}
+	    Por lo que $I=-I_b=-12$ A
+	\end{example}
 	
 	\subsection{Método de los nudos}
 	El método de los nudos es otro de los procedimientos de análisis utilizados en teoría de circuitos, aprovechando las relaciones entre corrientes de la 1LK. El procedimiento general de aplicación de este método es el siguiente:
 	\begin{enumerate}
 		\item Identificar las corrientes de rama.
 		\item Identificar los nudos independientes, que son:
-		\begin{equation}
-			\boxed{Nudos\;\;Independientes=Nudos-1}
-		\end{equation}
+		\begin{equation*}
+			{Nudos\;\;Independientes=Nudos-1}
+		\end{equation*}
 		\item Aplicar la 1LK a cada nudo independiente.
 		\item Determinar las tensiones en los receptores a partir de la Ley de Ohm (considerando la resistencia y, después, la conductancia).
 		\item Combinar las ecuaciones de los puntos 3 y 4.
 		\item Resolver la ecuación.
 	\end{enumerate}
 	
-	\vspace{4mm}
 	\begin{example}\label{ej.1-6}
 		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.nudos}.}
-		\begin{figure}[htbp]
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.6\linewidth]{../figs/nudos.pdf}
-			\caption{Ejercicio~\ref{ej.1-6}}
+			\includegraphics{../figs/nudos.pdf}
+			\caption{Ejemplo~\ref{ej.1-6}}
 			\label{fig.nudos}
 		\end{figure}
 		
@@ -1365,7 +2104,7 @@
 		\end{enumerate}
 	\end{example}
 	
-	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un sistema de $n$ nudos, siendo esta: 
+	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un circuito de $n$ nudos, siendo esta: 
 	\begin{equation*}
 		\begin{bmatrix}
 			{\color{magenta}\sum G_{1}} &  {\color{teal}-\sum G_{12}} & {\color{teal}{\dots}} & {\color{teal}-\sum G_{1n}} \\
@@ -1387,6 +2126,165 @@
 		\end{bmatrix}
 	\end{equation*}
 	donde cada {\color{magenta}$G_{i}$} se corresponde con la suma de conductancias conectadas al nudo $i$; cada {\color{teal}$ G_{ij}$} se corresponde con la suma de las conductancias conectadas entre los nudos $i$ y $j$; y cada {\color{orange} $\sum I_{gi}$} es la suma algebraica de las corrientes de los generadores conectados al nudo $i$, considerando un signo positivo ($+$) si el generador inyecta corriente en el nudo, y negativo ($-$) en caso contrario. Debe tenerse en cuenta que para aplicar este método \textbf{todos los generadores deben ser fuentes de corriente}. 
+	
+	\begin{example}\label{ex.nudos}
+	\textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes} se debe emplear el método de los nudos para determinar:
+\begin{itemize}
+\item Las tensiones en los nudos A y B
+\item Las corrientes de rama señaladas
+\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos
+\end{itemize}
+Datos: $\epsilon_1=6V;\;\epsilon_2={12} V;\; \epsilon_3={24}V;\;I_{g1}= {15}A;\;I_{g2} ={9}A;\; I_{g3}= 6A;\; R_{1}= R_3 = R_4 = R_5 = {2}\Omega;\;R_{2}= 1\Omega$}
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/nudos_fuentes.pdf}
+    \caption{Ejemplo~\ref{ex.nudos}}
+    \label{fig.nudos_fuentes}
+\end{figure}
+
+Hay tres fuentes de tensión en serie con resistencias, que se deben transformar en fuentes de corriente para poder aplicar el método de nudos:
+\begin{align*}
+    I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=3\,\text{A}\\
+    I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=12\,\text{A}\\
+    I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=12\,\text{A}\\
+\end{align*}
+
+El sistema en forma matricial queda:
+\begin{equation*}
+    \begin{bmatrix}
+        \frac{1}{2}+\frac{1}{2}+\frac{1}{1} & -\frac{1}{1}\\
+        -\frac{1}{1} & \frac{1}{1}+\frac{1}{2}+\frac{1}{2}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        U_A\\
+        U_B
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        3+12-15-6\\
+        15+9+12-12
+    \end{bmatrix}
+\end{equation*}
+cuya solución es: 
+\begin{align*}
+    {U_A&=4\,V}\\
+    {U_B&=14\,V}
+\end{align*}
+
+A partir de las tensiones, se determinan las corrientes de rama señaladas:
+
+% \begin{align*}
+% V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
+% V_{AB} &= E_2 - I_{R2} R_2\\
+% V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
+% \end{align*}
+
+\begin{align*}
+  U_A=\epsilon_1-I_{R1}\,R_1&\Rightarrow {I_{R1}=\dfrac{6-4}{2}=1\,A}\\
+  U_{AB}=U_A-U_B=-10=\epsilon_2 - I_{R2}\, R_2&\Rightarrow I_{R2} = \dfrac{12-(-10)}{1}=22\,A\\
+  U_B=\epsilon_3-I_{R3}\,R_3 &\Rightarrow I_{R3}=\dfrac{24-14}{2}=5\,A\\
+  I_{R4}=\dfrac{U_A}{R_4}&=\dfrac{4}{2}=2\,A\\
+  I_{R5}=\dfrac{U_B}{R_5}&=\dfrac{14}{2}=7\,A
+\end{align*}
+
+\begin{itemize}
+    \item \textbf{Potencia de los generadores:}
+    \begin{itemize}
+        \item Generador $\epsilon_1$: $P_{g,\epsilon1}=-\epsilon_1\,I_{R1}=-6\cdot 1=-6$ W (G)
+        \item Generador $\epsilon_2$:  $P_{g,\epsilon2}=-\epsilon_2\,I_{R2}=-12\cdot 22=-264$ W (G)
+        \item Generador $\epsilon_3$:  $P_{g,\epsilon3}=-\epsilon_3\,I_{R3}=-24\cdot 5=-120$ W (G)
+        \item Generador $I_{g1}$: $P_{Ig1}=U_{AB}\,I_{g1}=(4-14)\cdot 15=-150$ W (G)
+        \item Generador $I_{g2}$:  $P_{Ig2}=-U_B\,I_{g2}=-14\cdot 9=-126$ W (G)
+        \item Generador $I_{g3}$:  $P_{Ig3}=U_{A}\,I_{g3}=4\cdot 6=24$ W (R)
+    \end{itemize}
+    \item \textbf{Potencia de las resistencias:}
+    \begin{itemize}
+        \item Resistencia 1: $P_{R1}=R_1\,I_{R1}^2=2\cdot 1^2=2$ W (R)
+        \item Resistencia 2: $P_{R2}=R_2\,I_{R2}^2=1\cdot 22^2=484$ W (R)
+        \item Resistencia 3: $P_{R3}=R_3\,I_{R3}^2=2\cdot 5^2=50$ W (R)
+        \item Resistencia 4: $P_{R4}=R_4\,I_{R4}^2=2\cdot 2^2=8$ W (R)
+        \item Resistencia 5: $P_{R5}=R_5\,I_{R5}^2=2\cdot 7^2=98$ W (R)
+    \end{itemize}
+\end{itemize}
+donde se cumple que la suma es 0.
+	\end{example}
+	
+	\subsubsection{Método de los nudos modificados}
+	Otra manera de plantear el método de los nudos es mediante el conocido como método de los nudos modificados, que permite que en el circuito haya \textbf{fuentes de tensión y de corriente}. En este caso, tras elegir el nudo de referencia ($U_{ref}=0$), se aplica la 1LK a cada uno de los nudos independientes ($N-1$) del siguiente modo:
+	\begin{enumerate}
+	    \item Se supone que, en cada nudo independiente, las corrientes \textbf{salen} de él
+	    \item Cada nudo debe cumplir con la 1LK: $\sum I=0$
+	    \item En cada nudo, aplicar la siguiente expresión:
+	    \begin{equation*}
+	        I_{i,j}=\dfrac{U_i-U_j+\sum\pm \epsilon_g}{\sum R}
+	    \end{equation*}
+	    siendo $I_{i,j}$ la corriente que va del nudo $i$ al $j$, $U_i$ la tensión del nudo del que se sale, $U_j$ la tensión del nudo al que se llega, $\epsilon_g$ son las $fem$ de los generadores, considerando el signo $+$ si la corriente de la rama sale por el polo positivo y el signo $-$ si la corriente sale por el negativo.
+	\end{enumerate}
+	
+	\begin{example}\label{ex.nudos_modificados}
+	    \textbf{Determinar las tensiones en los nudos A y B en el circuito de la Figura~\ref{fig.nudos_fuentes}.}
+	    
+	    Se trabaja con el circuito original. 
+	    
+	    \textbf{Nudo A}
+	    \begin{align*}
+	        I_{R1}& + I_{R2} + I_{R4} + I_{g1} + I_{g3} = 0\\
+	        I_{R1}&=\dfrac{U_A-0-\epsilon_1}{R_1}=\dfrac{U_A-6}{2}\\
+	        I_{R2}&=\dfrac{U_A-U_B-\epsilon_2}{R_2}=\dfrac{U_A-U_B-12}{1}\\
+	        I_{R4}&=\dfrac{U_A-0}{R_4}=\dfrac{U_A}{2}\\
+	        I_{g1}&=15\,A\\
+	        I_{g3}&=6\,A
+	    \end{align*}
+	    
+	    \textbf{Nudo B}
+	    \begin{align*}
+	        I_{R2}& + I_{R3} + I_{R5} + I_{g1} + I_{g2} = 0\\
+	        I_{R2}&=\dfrac{U_B-U_A+\epsilon_2}{R_2}=\dfrac{U_B-U_A+12}{1}\\
+	        I_{R3}&=\dfrac{U_B-0-\epsilon_3}{R_3}=\dfrac{U_B-24}{2}\\
+	        I_{R5}&=\dfrac{U_B-0}{R_5}=\dfrac{U_B}{2}\\
+	        I_{g1}&=-15\,A\\
+	        I_{g2}&=-9\,A
+	    \end{align*}
+	    
+	    Combinando las ecuaciones del nudo A, se obtiene que:
+	    \begin{equation*}
+	        \dfrac{U_A-6}{2}&+\dfrac{U_A-U_B-12}{1}+\dfrac{U_A}{2}+15+6=0\Rightarrow 2\,U_A-U_B=-6
+	    \end{equation*}
+	    De manera análoga, con el nudo B: 
+	    \begin{equation*}
+	        \dfrac{U_B-U_A+6}{1}&+\dfrac{U_B-24}{2}+\dfrac{U_B}{2}-15-6=0\Rightarrow -U_A+2\,U_B=24
+	    \end{equation*}
+	    Resolviendo el sistema de ecuaciones, se llega a la conclusión de que: 
+	    \begin{align*}
+	        {U_A&=4\,V}\\
+	        {U_B&=14\,V}
+	    \end{align*}
+
+	\end{example}
+	
+	\begin{example}\label{ex.nudos_mod_fdep}
+	    \textbf{Calcular la corriente $I$ en el circuito de la Figura~\ref{fig.ejemplo_mallas_dependiente}.}
+	    
+	    Se considera como referencia (masa) el nudo de abajo. La 1LK aplicada al nudo de arriba queda: 
+	    \begin{equation*}
+	        2+\dfrac{U_A-0-4}{2}+\dfrac{U_A-0-3\,U_r}{5}=2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_r}{5}
+	    \end{equation*}
+	    Además, el valor de $U_r$ se puede obtener a partir de la ley de Ohm:
+	    \begin{equation*}
+	        U_r=2\, I_{R_2}=2\cdot \left( \dfrac{U_A-4}{2} \right)=U_A-4
+	    \end{equation*}
+	    Y, reemplazando este valor en la ecuación de la 1LK se obtiene que: 
+	    \begin{equation*}
+	        2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_A+12}{5}=0\Rightarrow U_A=-24\,V
+	    \end{equation*}
+	    por lo que $I$:
+	    \begin{equation*}
+	        I=-\left(\dfrac{U_A-3\,U_r}{5} \right)=-\left(\dfrac{24-3\,(-24-4)}{5}\right)=-12\,A
+	    \end{equation*}
+	\end{example}
+	
+	
 	
 	\section{Formas de onda}
 	
@@ -1518,6 +2416,9 @@
 		\begin{equation*}
 			f = \dfrac{1}{T}
 		\end{equation*}
+		\begin{remark}
+		    La unidad [Hz] se escribe en mayúsculas en honor a Heinrich Rudolf Hertz, físico alemán del siglo XIX que descubrió el efecto fotoeléctrico, la propagación de las ondas electromagnéticas y las formas para producirlas y detectarlas.
+		\end{remark}
 		\item \textbf{Valor instantáneo}: valor $y(t)$ que toma la forma de onda en un instante de tiempo dado
 		\item \textbf{Valores de pico ($Y_{max}$, $Y_{min}$)}: valores máximo y mínimo que toma la forma de onda en un periodo:
 		\begin{equation*}
@@ -1543,7 +2444,7 @@
 			Y_{ef}=\sqrt{\dfrac{1}{t_2-t_1}\cdot\int_{t_1}^{t_2}y^2(t)\, dt}
 		\end{equation*}
 		Si es periódica: 
-		\begin{equation}
+		\begin{equation}\label{eq.valor_eficaz}
 			\boxed{Y_{ef} = \sqrt{\frac{1}{T}\cdot\int_{a}^{a+T}y^{2}(t)\, dt}}
 		\end{equation}
 		\item \textbf{Factor de amplitud ($FA$)}: es el cociente entre el valor máximo y el valor eficaz de una onda:
@@ -1559,12 +2460,79 @@
 		\end{remark}
 	\end{itemize}
 	
+	\begin{example}\label{ex.forma_onda}
+	    \textbf{Hallar el valor medio y eficaz de la onda periódica de la Figura~\ref{fig.forma_onda}.}
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics{../figs/ejemplo_forma_onda.pdf}
+	        \caption{Ejemplo~\ref{ex.forma_onda}}
+	        \label{fig.forma_onda}
+	    \end{figure}
+	    
+	    La onda es una función periódica, de periodo $T=4$ s, para la cual, en el intervalo $[0,4]$ s, la función se expresa como:
+	    \begin{equation*}
+	        u(t)=\dfrac{100}{4}\,t=25\,t\quad (0\leq t\leq 4\,\text{s})
+	    \end{equation*}
+	    
+	    Se utiliza la expresión~\eqref{eq.valor_medio} para determinar el valor medio: 
+	    \begin{equation*}
+	        U_m=\dfrac{1}{T}\int_0^T u(t)\,dt=\dfrac{1}{4}\int_0^4 (25\,t)\,dt=\dfrac{1}{4}\,\left[25\,\dfrac{t^2}{2} \right]_0^4={50}
+	    \end{equation*}
+	    
+	    Se utiliza la ecuación~\eqref{eq.valor_eficaz} para el valor eficaz:
+	    \begin{align*}
+	        U_{ef}&=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}u(t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(25\,t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(625\,t^2)\, dt}=\\
+	        &=\sqrt{\frac{1}{4}\, 625\,\left[\dfrac{t^3}{3}\right]_0^4}={57.74}
+	    \end{align*}
+	\end{example}
+	
+	\begin{example}\label{ex.forma_onda2}
+	    \textbf{Un condensador de 2 F, inicialmente cargado con una tensión $u_C=-3$ V, es alimentado por un generador de corriente cuya forma de onda es la indicada en la Figura~\ref{fig.forma_onda2}.
+	    \begin{itemize}
+	        \item Expresar analíticamente $i(t)$
+	        \item Encontrar la expresión analítica de $u_C(t)$
+	    \end{itemize}
+	    }
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics{../figs/ejemplo_ondas2.pdf}
+	        \caption{Ejemplo~\ref{ex.forma_onda2}}
+	        \label{fig.forma_onda2}
+	    \end{figure}
+	    
+	    A partir de la Figura~\ref{fig.forma_onda2} se observa que $i(t)=1$~A para $0<t<1$~s, $i(t)=2$~A para $3<t<4$ e $i(t)=0$ para $t>6$~s. Para los tramos oblicuos se utiliza la expresión general de una recta: 
+	    \begin{align*}
+	        i(t)&=\dfrac{2-(-2)}{3-1}(t-2);\quad 1<t<3\\
+	        i(t)&=\dfrac{0-(-2)}{6-4}(t-6);\quad 4<t<6
+	    \end{align*}
+	    Así, la forma analítica para la intensidad $i(t)$ es:
+	    \begin{equation*}
+	        i(t)=\begin{cases}
+	            1\qquad\qquad 0<t<1\\
+	            2\,t-4 \qquad 1<t<3\\
+	            2\qquad\qquad 3<t<4\\
+	            -t+6\qquad 4<t<6\\
+	            0\qquad\qquad t>6
+	        \end{cases}
+	    \end{equation*}
+	    
+	    Para la expresión analítica de $u_C(t)$, hay que utilizar la ecuación propia del condensador (ecuación~\eqref{eq.u_C}), por lo que es necesario integrar la intensidad $i(t)$ en cada intervalo de tiempo:
+	    \begin{equation*}
+	        u_C(t)=\begin{cases}
+	            -3+\frac{1}{2}\left[ t \right]_0^t=\dfrac{t}{2}-3 \Rightarrow u_C(1)=-\dfrac{5}{2}\qquad\qquad\qquad 0<t<1\\[10pt]
+	            -\dfrac{5}{2}+\dfrac{1}{2}\left[t^2-4\,t \right]_1^t=\dfrac{t^2}{2}-2\,t \Rightarrow u_C(3)=-\dfrac{5}{2}\qquad 1<t<3\\[10pt]
+	            -\dfrac{5}{2}+\dfrac{1}{2}\left[2\,t\right]_3^t=t-\dfrac{11}{2} \Rightarrow u_C(4)=-\dfrac{3}{2}\qquad\qquad 3<t<4\\[10pt]	            -\dfrac{3}{2}+\dfrac{1}{2}\left[-\dfrac{t^2}{2}+6\,t \right]_4^t=-\dfrac{t^2}{4}+3\,t-\dfrac{19}{2} \Rightarrow u_C(6)=-\dfrac{1}{2}\qquad 4<t<6\\[10pt]
+	            -\dfrac{1}{2}\qquad\qquad t>6
+	        \end{cases}
+	    \end{equation*}
+	\end{example}
+	
 	\subsubsection{Función sinusoidal}\label{sec.sinusoidal}
 	Dentro de las ondas periódicas, las \textbf{ondas sinusoidales} son de gran importancia en el campo de la electricidad. Estas formas de onda vienen determinadas por:
 	\begin{equation}
 		\boxed{y(t)=Y_{max}\cdot\sin(\omega t+\theta)} 
 	\end{equation}
-	siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o frecuencia angular [rad/s] ($\omega=2\cdot\pi\cdot f$, siendo $f$ la frecuencia de la onda [Hz]) y $\theta$ la fase [rad o $^\circ$]. Un ejemplo de este tipo de forma de onda se muestra en la Figura \ref{fig.sin}.
+	siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o frecuencia angular [rad/s] ($\omega=2\cdot\pi\cdot f$, siendo $f$ la frecuencia de la onda [Hz]) y $\theta$ la fase [rad]. Un ejemplo de este tipo de forma de onda se muestra en la Figura \ref{fig.sin}.
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=.9\linewidth]{../figs/sin.pdf}
@@ -1610,26 +2578,266 @@
 	
 	\subsubsection{Interpretación fasorial de una función sinusoidal}
 	
-	Cuando se trabaje con corriente alterna, siempre se usarán funciones de onda sinusoidales, todas ellas a la misma pulsación $\omega$. Por tanto, las diferencias que habrá en dichas ondas serán, únicamente, las amplitudes $Y_{max}$ y las fases $\theta$. Esto permite que, en lugar de trabajar con formas de onda, se pueda trabajar con \textbf{fasores}. Un fasor es un vector giratorio, anclado en el origen del plano complejo, que gira en el sentido contrario a las agujas del reloj a velocidad angular constante $\omega$. La longitud del fasor (su módulo) es el \textbf{valor eficaz} de la función sinusoidal, que se define como el valor de la corriente alterna que consigue generar el mismo resultado de tensión/corriente que si fuera en corriente continua, y se calcula como el valor máximo entre raíz de 2 (como se justificó en la Sección~\ref{sec.sinusoidal}). Su posición (ángulo) se determina en cualquier instante de tiempo haciendo el producto $\omega t$, pero la de más interés es para $t=0$.  
+	Cuando se trabaje con corriente alterna, siempre se usarán funciones de onda sinusoidales, todas ellas a la misma pulsación $\omega$. Por tanto, las diferencias que habrá en dichas ondas serán, únicamente, las amplitudes $Y_{max}$ y las fases $\theta$. Esto permite que, en lugar de trabajar con formas de onda, se pueda trabajar con \textbf{fasores}. Un fasor es un vector giratorio, anclado en el origen del plano complejo, que gira en el sentido contrario a las agujas del reloj a velocidad angular constante $\omega$. La longitud del fasor (su módulo) es el \textbf{valor eficaz} de la función sinusoidal, que se define como el valor de la corriente alterna que consigue generar el mismo resultado de tensión/corriente que si fuera en corriente continua, y se calcula como el valor máximo entre raíz de 2 (como se justificó en la Sección~\ref{sec.sinusoidal}). Su posición (ángulo) se determina en cualquier instante de tiempo haciendo el producto $\omega t$, pero la de más interés es para $t=0$. Por simplicidad, la fase $\theta$ al trabajar con fasores puede expresarse en [$^\circ$].
 	
-	\vspace{4mm}
 	\begin{example}
 		\textbf{Expresar en modo de fasor las siguientes funciones sinusoidales:
 			\begin{itemize}
-				\item $u(t)=150\cdot\sqrt{2}\cdot \cos(500\cdot t+45^\circ)$ V
-				\item $i(t) = 3\cdot\sqrt{2}\cdot \cos(2000\cdot t+30^\circ)$ A
+				\item $u(t)=150\,\sqrt{2}\cdot \cos(500\cdot t+\frac{\pi}{4})$ V
+				\item $i(t) = 3\,\sqrt{2}\cdot \cos(2000\cdot t+\frac{\pi}{6})$ A
 		\end{itemize}}
-		Para expresar los fasores, hay que utilizar los valores eficaces ($U_{ef}=150$ V; $I_{ef}=3$ A) y los desfases (45$^\circ$ para la $u(t)$ y 30$^\circ$ para la $i(t)$). Así: 
+		
+		Para expresar los fasores, hay que utilizar los valores eficaces ($U_{ef}=150$ V; $I_{ef}=3$ A) y los desfases ($\frac{\pi}{4}=45^\circ$ para la $u(t)$ y $\frac{\pi}{6}=60^\circ$ para la $i(t)$). Así: 
 		\begin{itemize}
-			\item $u(t)=150\cdot\sqrt{2}\cdot \cos(500\cdot t+45^\circ)$ V $\rightarrow \overline{U}=150\phase{45^\circ}$ V
-			\item $i(t) = 3\cdot\sqrt{2}\cdot \cos(2000\cdot t+30^\circ)$ A $\rightarrow \overline{I}=3\phase{30^\circ}$ A
+			\item $\overline{U}=150\phase{45^\circ}$ V
+			\item $\overline{I}=3\phase{30^\circ}$ A
 		\end{itemize}
 	\end{example}
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Calcular las corrientes de malla mostradas en el circuito de la Figura \ref{fig.ejercicio2_tema1}.\\
+\emph{Sol.: $I_1=-1.31$ A; $I_2=3.17$ A; $I_3=10.45$ A}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics{../figs/ej2_BT1.pdf}
+			\caption{Ejercicio 1}
+			\label{fig.ejercicio2_tema1}
+		\end{figure}
+		
+\item Calcular el valor de $U_s$ que hace que $I_0=7.5$ mA en el circuito de la Figura \ref{fig.ejercicio3_tema1}. \\
+\emph{Sol.: $U_s=0.705$ V}    
+		\begin{figure}[h!]
+			\centering
+			\includegraphics{../figs/ej3_BT1.pdf}
+			\caption{Ejercicio 2}
+			\label{fig.ejercicio3_tema1}
+		\end{figure}
+		
+\item Calcular la intensidad $I$ en el circuito de la Figura \ref{fig.ejercicio4_tema1}. \\
+\emph{Sol.: $I=-8.77 $ A}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics{../figs/ej4_BT1.pdf}
+			\caption{Ejercicio 3}
+			\label{fig.ejercicio4_tema1}
+		\end{figure}
+		
+		\item En el circuito de la Figura~\ref{fig.ejercicio8-bt1} obtener las intensidades de corriente señaladas primero mediante un análisis por el método de las mallas y posteriormente mediante un análisis por el método de los nudos.\\
+\emph{Sol.: $I_1=-3.31\,A;\;I_2=3.37\,{A};\; I_3=-0.06\,{A};\; I_4=0.73\,{A};\; I_5=-0.79\,A$}
+ \begin{figure}[h!]
+ 		\centering
+\includegraphics{../figs/ej8_BT1.pdf}
+ 		\caption{Ejercicio 4}
+ 		\label{fig.ejercicio8-bt1}
+ 	\end{figure}
+ 	
+ 	\item Analizar el circuito de la Figura~\ref{fig.mallas2} mediante el método de las mallas, obteniendo la corriente de cada una de las ramas. Con este resultado, calcular la diferencia de potencial entre A y B, y realizar un balance de potencias comparando la potencia de los elementos activos y la de los elementos pasivos. Datos: $R_1 = R_2 = {1}\Omega; R_3 = {2}\Omega; R_4 = {3}\Omega; R_5={4}\Omega; \epsilon_1={118} V; \epsilon_2 = 236V; \epsilon_3 = {118}V$.\\
+ 	\emph{Sol. $I_1 = {32}A; I_2 = {-86} A; I_3 ={54}A; I_4 = {14}A; I_5 = {40}A; U_{AB}=150V; \sum P=0$}
+ 	\begin{figure}[h!]
+ 	    \centering
+ 	    \includegraphics{../figs/mallas2.pdf}
+ 	    \caption{Ejercicio 5}
+ 	    \label{fig.mallas2}
+ 	\end{figure}
+ 	
+\item Determinar las corrientes marcadas en la Figura~\ref{fig.ej13_BT1}.\\
+\emph{Sol.: $I_1=I_a=5.38\,A;\;I_2=2.07\,A; I_3=6.62\,A\; I_4=3.31\,A\;     I_5=-1.24\,A$}
+\begin{figure}[h!]
+    \centering
+    \includegraphics{../figs/ej13_BT1.pdf}
+    \caption{Ejercicio 6}
+    \label{fig.ej13_BT1}
+\end{figure}
+
+\item Determinar las tensiones en los nudos $A$ y $B$ del circuito de la Figura~\ref{fig.ej14_BT1}.\\
+\emph{Sol.: $U_A=30\,V;\;U_B=20\,V$}
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{../figs/ej14_BT1.pdf}
+    \caption{Ejercicio 7}
+    \label{fig.ej14_BT1}
+\end{figure}
+
+\item En el circuito de la Figura~\ref{fig.ej9_BT1}, determinar:
+\begin{itemize}
+    \item Todas las intensidades de rama señaladas
+    \item Carga, polaridad y energía almacenada en los condensadores
+    \item Balance de potencias
+\end{itemize}
+\emph{Sol.: $I_1=I_2=I_3=-I_4=1\,A;\; I_5=I_6=I_7=0\,A;\;Q_{1\mu F}=-7\,\mu\text{C};\;Q_{2\mu F}=-4\,\mu\text{C};\;Q_{3\mu F}=3\,\mu\text{C};\;E_{1\mu F}=24.5\,\mu\text{J};\;E_{2\mu F}=4\,\mu\text{J};\; E_{3\mu F}=1.5\,\mu\text{J}$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{../figs/ej9_BT1.pdf}
+    \caption{Ejercicio 8}
+    \label{fig.ej9_BT1}
+\end{figure}
+\item Aplicar el método de los nudos en el circuito de la Figura~\ref{fig.nudos_condensadores} para determinar:
+\begin{itemize}
+\item Los potenciales de los nudos A, B, C y D.
+\item Las intensidades de corriente señaladas.
+\item Carga, polaridad y energía almacenada en los condensadores, supuestos sin carga inicial.
+\end{itemize}
+Datos: $R_i = \mathrm{i\ } \Omega; C_i = \mathrm{i\ } \mu F; E_1 = 6V; E_2 = 18 V; E_3 = {6} V$\\
+\emph{Sol.: $U_A=15V; U_B=11V; U_C=U_D=0V; I_1=I_6=0A;I_2=I_4=-1A; I_3=I_5=1A; q_1=9\mu C; q_2=30\mu C; q_3=33\mu C; E_{C1}=40.5\mu J; E_{C2}=225\mu J;E_{C2}=181.5\mu J$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[]{../figs/nudos_condensadores.pdf}
+    \caption{Ejercicio 9}
+    \label{fig.nudos_condensadores}
+\end{figure}
+\item En el circuito de la Figura~\ref{fig.ej10_BT1}, donde se sabe que la carga inicial de los condensadores era 10 $\mu$C (para el de 10 $\mu$F) y 20 $\mu$C (para el de 20 $\mu$F) con las polaridades indicadas, se pide determinar:
+\begin{itemize}
+    \item Intensidades de corriente señaladas
+    \item Potenciales en los puntos A, B, C, D, E y F
+\end{itemize}
+\emph{Sol. $I_1=4A; I_2=5A; I_3=-1A;I_4=I_8=1A; I_5=I_7=0A; U_A=30V; U_B=0V; U_C=1V; U_D=61V;U_E=101V; U_F=11V$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/ej10_BT1.pdf}
+    \caption{Ejercicio 10}
+    \label{fig.ej10_BT1}
+\end{figure}
+
+\item En el circuito de la Figura~\ref{fig.mallas_condensadores}, los condensadores se conectaron sin
+carga. Mediante el método de las mallas determina:
+\begin{itemize}
+\item Intensidades de corriente señaladas
+\item Potenciales en los puntos A, B, C y D
+\item Polaridades, cargas, y energías de los condensadores
+\item Balance de potencias
+\end{itemize}
+Datos: $ \epsilon_{1}={118}V; \epsilon_{2}={236} V; \epsilon_{3}=118V; R_{1}= {4}\Omega; R_{2}=R_{3}={1}{\Omega}; R_{4}= {3}{\Omega}; R_{5}={2}{\Omega}; C_{1}=C_{2}=C_{3}={2}{\mu F}; X_1 = X_2 = X_3 = {1}{\Omega}$
+
+\emph{Sol.: $I_1=40A; I_2=-86A; I_3=32A; I_4=14A; I_5=54A; U_A=U_B=0V; U_C=41V; U_D=150V; U_{C1}=0V; q_1=0\mu F; E_{C1}=0J; U_{C2}=-42V; q_2=84\mu F; E_{C2}=1.76 mJ; U_{C3}=-42V; q_3=84\mu F; E_{C3}=1.76 mJ; \sum P = 0$}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics{../figs/mallas_condensadores.pdf}
+        \caption{Ejercicio 11}
+        \label{fig.mallas_condensadores}
+    \end{figure}
+
+\item En el circuito de la Figura~\ref{fig.ej11_BT1}, determinar:
+\begin{itemize}
+    \item Las ecuaciones para el cálculo de las intensidades
+    \item Todas las intensidades indicadas
+    \item Potenciales en todos los nudos
+    \item Carga y energía almacenada en los condensadores
+\end{itemize}
+\emph{Sol.: $I_1=I_6=-6.5A; I_2=-4A; I_3=-2.5A; I_4=3A; I_5=0.5A; U_A=-8V; U_B=2V; U_C=0.5V; U_D=0V;Q_{1\mu F}=8\mu C; Q_{2\mu F}=Q_{3\mu F}=0\mu C; Q_{4\mu F}=-2\mu C; E_{1\mu F}=32\mu F; E_{2\mu F}=E_{3\mu F}=0 J; E_{4\mu F}=0.5\mu C$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{../figs/ej11_BT1.pdf}
+    \caption{Ejercicio 12}
+    \label{fig.ej11_BT1}
+\end{figure}
+
+\item En el circuito de la Figura~\ref{fig.mallas_agrupacion_condensadores} se debe determinar:
+\begin{itemize}
+\item Las corrientes señaladas.
+\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos.
+\item Los potenciales en los puntos A, B y C.
+\item La carga y polaridad en los condensadores, supuestos sin carga inicial.
+\end{itemize}
+Datos: $\epsilon_1 ={1}V; \epsilon_2 ={7}V; R_i  = {1}\Omega; C_i = {i}{\mu F}$
+
+\emph{Sol.: $I_1=I_2=1 A; I_3=I_4=0 A; I_5=-2 A; \sum P = 0; U_A=-1 V; U_B=-5 V; U_C=-3 V; q_1=0.5 \mu C; q_2 = 1\mu F; q_3=1.5\mu F; q_4=12\mu C$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{../figs/mallas_agrupacion_condensadores.pdf}
+    \caption{Ejercicio 13}
+    \label{fig.mallas_agrupacion_condensadores}
+\end{figure}
+  
+\item El circuito de la Figura~\ref{fig.mallas_condensadores_bobinas} está funcionando en régimen estacionario. Los condensadores estaban inicialmente descargados. Resuelve el circuito mediante el método que consideres conveniente para obtener los siguientes resultados:
+\begin{itemize}
+\item Las intensidades señaladas.
+\item Polaridad y energía almacenada en los condensadores.
+\item Balance de potencias.
+\end{itemize}
+Datos: $\epsilon_{1}={40}V; \epsilon_{2}={22}V; \epsilon_{3}={20}V; C_{1}=C_{2}=C_{3}={2}{\mu F}; R_{g1}=R_{g2}=R_{g3}={4}{\Omega}; R_{1}=R_{2}=R_{3}=R_{4}={2}{\Omega}; R_{5}=R_{6}=R_{7}={1}{\Omega}$
+    
+    \emph{Sol.: $I_1=I_5=2A; I_2=I_3=I_8=I_{10}=-1A; I_4=I_7=I_{11}=I_{12}=I_{13}=0A; I_6=I_{14}=1A; E_{C1}=0.676 mJ; E_{C2}=0.576 mJ; E_{C3}=1\mu J; \sum P = 0$}
+  \begin{figure}[htbp]
+      \centering
+      \includegraphics{../figs/mallas_condensadores_bobinas.pdf}
+      \caption{Ejercicio 14}
+      \label{fig.mallas_condensadores_bobinas}
+  \end{figure}
+
+\item En el circuito de la Figura~\ref{fig.ej12_BT1}, obtener las intensidades de
+corriente señaladas mediante un análisis por el método de
+las mallas y mediante un análisis por el método de los nudos.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/ej12_BT1.pdf}
+    \caption{Ejercicio 15}
+    \label{fig.ej12_BT1}
+\end{figure}
+
+\emph{Sol.: $I_1=-0.74\,A;\,I_2=-1.33\,A;\,I_3=0.07\,A;\,I_4=-0.39\,A;\;I_5=0.46\,A;\,I_6=-0.87\,A;\,I_7=1.26\,A$}
+
+\item En el circuito de la Figura~\ref{fig:formas_onda1} hay que determinar:
+
+\begin{itemize}
+\item La corriente $i_1(t)$
+\item La potencia entregada por $e(t)$
+\item La potencia disipada por $R$
+\end{itemize}
+Datos: $R = {5}{\Omega}$, $C = {0.2}{F}$
+
+\emph{Sol.: $i_1(t) =   \begin{cases}
+    5 & 0 \leq t < 1\\
+    -5 & 1 \leq t < 2 
+  \end{cases};\,p_E(t) =                \begin{cases}
+                 50\cdot t & 0 \leq t < 1\\
+                 50 \cdot t - 100 & 1 \leq t < 2 
+               \end{cases};\,P_R = {45} W$}
+
+\begin{figure}[H]
+    \includegraphics[width=0.23\linewidth]{../figs/tren_pulsos.pdf}
+    \includegraphics[width=0.45\linewidth]{../figs/formas_onda1.pdf}
+    \includegraphics[width=0.25\linewidth]{../figs/onda_triangular.pdf}
+    \caption{Ejercicio 16}
+    \label{fig:formas_onda1}
+\end{figure}
+
+\item En el circuito de la Figura~\ref{fig:formas_onda2} se pide:
+
+\begin{itemize}
+\item Obtener la expresión analítica y la representación gráfica de las corrientes $i_L(t)$ e $i_R(t)$.
+\item Calcular los valores medios y eficaces de las corrientes $i_L(t)$ e $i_R(t)$.
+\item Obtener la expresión analítica de la corriente $i(t)$ y de la potencia del generador $e(t)$.
+\end{itemize}
+Datos: $R = {6}{\Omega}$, $L = {4}{mH}$, $E = {12}{V}$
+
+\emph{Sol.: $i_R(t) = 
+      \begin{cases}
+        2 & 0 \leq t < 10^{-3} \\
+        -2 & 10^{-3} \leq t < 2 \cdot 10^{-3}
+      \end{cases};\; i_L(t) = 
+      \begin{cases}
+        3\cdot 10^3 \cdot t & 0 \leq t < 10^{-3} \\
+        6- 3 \cdot 10^3 \cdot t & 10^{-3} \leq t < 2 \cdot 10^{-3}
+      \end{cases};\;I_{Rm}=2A;\;I_R=2A;\;I_{Lm}=1.5\,A;\;I_L=\sqrt{3} A$}
+\begin{figure}[H]
+ \centering
+    \includegraphics[width=0.35\linewidth]{../figs/formas_onda2.pdf}\hfil
+    \includegraphics[width=0.25\linewidth]{../figs/tren_pulsos2.pdf}
+    \caption{Ejercicio 17}
+    \label{fig:formas_onda2}
+\end{figure}
+
+
+
+\end{enumerate}
 	
-	\chapterimage{imagen_t2.jpg}
-	\chapter{Corriente alterna monofásica}\label{chap.ca_mono}
+
+	
+ 	\chapterimage{tema2.jpg}
+ 	\chapter{Corriente alterna monofásica}\label{chap.ca_mono}
 	
 	\section{Conceptos fundamentales}
 	Como ya se mencionó en el Tema~\ref{chap.cc}, la corriente alterna monofásica se basa en ondas sinusoidales, que se expresan de forma matemática como:
@@ -1692,7 +2900,7 @@
 		
 		Para hacer el cociente se utiliza la forma polar: 
 		\begin{equation*}
-			\dfrac{\overline{U_1}}{\overline{U_2}}=\dfrac{25\phase{145^\circ}}{11\phase{25^\circ}}=\dfrac{25}{11}\phase{145-25}=2.27\phase{120^\circ}
+			\dfrac{\overline{U_1}}{\overline{U_2}}=\dfrac{25\phase{145^\circ}}{11\phase{25^\circ}}=\dfrac{25}{11}\phase{145^\circ-25^\circ}=2.27\phase{120^\circ}
 		\end{equation*}
 		
 		Para hacer la suma, es necesario usar la forma binómica:
@@ -1709,17 +2917,17 @@
 	
 	\vspace{4mm}
 	\begin{example}
-		\textbf{Sabiendo que $i_1(t)=2\cdot\sqrt{2}\cdot \sin(600\cdot t)$ A; $i_2(t)=4\cdot\sqrt{2}\cdot \sin(600\cdot t+90)$ A; e $i_3(t)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-180)$ A, determinar la suma de $i_1(t)+i_2(t)+i_3(t)$.}
+		\textbf{Sabiendo que $i_1(t)=2\cdot\sqrt{2}\cdot \sin(600\cdot t)$ A; $i_2(t)=4\cdot\sqrt{2}\cdot \sin(600\cdot t+\frac{\pi}{2})$ A; e $i_3(t)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-\pi)$ A, determinar la suma de $i_1(t)+i_2(t)+i_3(t)$.}
 		
 		En primer lugar, pasamos todo a funciones seno: 
 		\begin{equation*}
 			i_1(t)=2\cdot\sqrt{2}\cdot \sin(600\cdot t)\rightarrow \overline{I_1}=2\phase{0^\circ}\;\text{A}\
 		\end{equation*}
 		\begin{equation*}
-			i_2(t)=4\cdot\sqrt{2}\cdot \sin(600\cdot t+90^\circ)\rightarrow \overline{I_2}=4\phase{90^\circ}\;\text{A}\
+			i_2(t)=4\cdot\sqrt{2}\cdot \sin(600\cdot t+\frac{\pi}{2})\rightarrow \overline{I_2}=4\phase{90^\circ}\;\text{A}\
 		\end{equation*}
 		\begin{equation*}
-			i_3(t)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-180^\circ)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-90^\circ)\rightarrow \overline{I_3}=10\phase{-90^\circ}\;\text{A}\
+			i_3(t)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-\pi)=10\cdot\sqrt{2}\cdot \cos(600\cdot t-\frac{\pi}{2})\rightarrow \overline{I_3}=10\phase{-90^\circ}\;\text{A}\
 		\end{equation*}
 		
 		Así, la suma de $i_1(t)+i_2(t)+i_3(t)$ es:
@@ -1727,7 +2935,7 @@
 			\overline{I_1}+\overline{I_2}+\overline{I_3}=(2\phase{0^\circ})+(4\phase{90^\circ})+(10\phase {-90^\circ})=6.32\phase{-71.5651^\circ}\;\text{A} \,,
 		\end{equation*}
 		\begin{equation*}
-			i_1(t)+i_2(t)+i_3(t)=6.32\cdot\sqrt{2}\cdot \sin(600\cdot t-71.5651^\circ)\;\text{A}
+			i_1(t)+i_2(t)+i_3(t)=6.32\cdot\sqrt{2}\cdot \sin(600\cdot t-1.249)\;\text{A}
 		\end{equation*}
 	\end{example}
 	
@@ -1775,9 +2983,9 @@
 				\theta = \theta_U - \theta_I
 		\end{cases}}
 	\end{equation}
-	Por tanto, la impedancia $\overline{Z}=Z\phase{\theta}$ es el cociente entre tensión y corriente [$\Omega$]. De manera general, y salvo que se indique otra cosa, se considerará como origen de fases la tensión ($\theta_U=0$, siendo así la fase de la impedancia $\theta=-\theta_I$. De nuevo, la expresión para la impedancia mostrada en la ecuación~\eqref{eq.impedancia} se presenta en forma polar, siendo en forma binómica: 
+	Por tanto, la impedancia $\overline{Z}=Z\phase{\theta}$ es el cociente entre tensión y corriente [$\Omega$]. De manera general, y salvo que se indique otra cosa, se considerará como origen de fases la tensión ($\theta_U=0$), siendo así la fase de la impedancia $\theta=-\theta_I$. De nuevo, la expresión para la impedancia mostrada en la ecuación~\eqref{eq.impedancia} se presenta en forma polar, siendo en forma binómica: 
 	\begin{equation*}
-		\overline{Z} = Z\cdot\cos(\theta)+\mathrm{j}\,Z\cdot\sin(\theta) = R + \mathrm{j} X
+		\overline{Z} = Z\cdot\cos(\theta)+\mathrm{j}\,Z\cdot\sin(\theta) %= R + \mathrm{j} X
 	\end{equation*}
 	cuyo resultado, según se demostrará más adelante, es igual a: 
 	\begin{equation}
@@ -1828,7 +3036,7 @@
 		\label{fig.resistivo}
 	\end{figure}
 	
-	Por tanto, la impedancia $\overline{Z_R}$, según la expresión~\eqref{eq.impedancia}:
+	Así, la impedancia $\overline{Z_R}$, según la expresión~\eqref{eq.impedancia}:
 	\begin{equation*}
 		\overline{Z_R}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
 		\begin{cases}
@@ -2106,57 +3314,6 @@
 		\label{fig.fasorRLC}
 	\end{figure}
 	
-	\vspace{4mm}
-	\begin{example}\label{ej.2-3}
-		\textbf{Un circuito en serie formado por $R=10\,\Omega$, $L=20$ mH y $C=100\,\mu$F se conecta a una tensión alterna de expresión $u(t)=200\cdot\sin(1000t+\frac{\pi}{4})$ V. Calcular $\overline{I}$, ${u_R(t)}$, $u_L(t)$ y $u_C(t)$ y dibujar el diagrama fasorial.}
-		
-		El valor eficaz de la tensión y su fase inicial son:
-		\begin{equation*}
-			U=\dfrac{U_{max}}{\sqrt{2}}=\dfrac{200}{\sqrt{2}}\approx 141.42\;\text{V};\;\;\theta_U=\dfrac{\pi}{4}=45^\circ \rightarrow \overline{U}=141.42\phase{45^\circ}
-		\end{equation*}
-		
-		El valor de las impedancias $X_L$ y $X_C$ se pueden calcular sabiendo que $\omega=1000$ rad/s:
-		\begin{equation*}
-			\overline{X_L}=\mathrm{j}\,\omega\,L=\mathrm{j}\,1000\cdot20\cdot 10^{-3}= \mathrm{j}\,20\;\Omega=20\phase{90^\circ}\;\Omega
-		\end{equation*}
-		\begin{equation*}
-			\overline{X_C}=-\mathrm{j}\,\dfrac{1}{\omega\,C}=\dfrac{1}{1000\cdot100\cdot 10^{-6}}= -\mathrm{j}\,10\;\Omega=10\phase{-90^\circ}\;\Omega
-		\end{equation*}
-		
-		La impedancia equivalente es:
-		\begin{equation*}
-			\overline{Z_{eq}}=R+\overline{X_L}+\overline{X_C}=10+\mathrm{j}\,20-\mathrm{j}\,10=10+\mathrm{j}\,10\;\Omega\approx 14.14\phase{45^\circ}
-		\end{equation*}
-		
-		Aplicando la ley de Ohm, se obtiene la corriente:
-		\begin{equation*}
-			\overline{I}=\dfrac{\overline{U}}{\overline{Z_{eq}}}=\dfrac{141.42\phase{45^\circ}}{14.14\phase{45^\circ}}=10\phase{0^\circ}
-		\end{equation*}
-		
-		Con la corriente es posible calcular directamente las tensiones en cada elemento: 
-		\begin{equation*}
-			\overline{U_R}=\overline{I}\cdot R=10\phase{0^\circ}\cdot 10=100\phase{0^\circ}\,\text{V}\rightarrow u_R(t)=100\sqrt{2}\cdot\sin(1000t)\;\text{V}
-		\end{equation*}
-		\begin{equation*}
-			\overline{U_L}=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 20\phase{90^\circ}=200\phase{90^\circ}\,\text{V}\rightarrow u_L(t)=200\sqrt{2}\cdot\sin(1000t+90^\circ)\;\text{V}
-		\end{equation*}
-		\begin{equation*}
-			\overline{U_C}=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 10\phase{-90^\circ} =100\phase{-90^\circ}\,\text{V}\rightarrow u_C(t)=100\sqrt{2}\cdot\sin(1000t-90^\circ)\;\text{V}
-		\end{equation*}
-		
-		El diagrama fasorial se puede ver en la Figura~\ref{fig.diagrama_fasorial_ejemplo2-3}
-		\begin{figure}[h]
-			\centering
-			\includegraphics{../figs/diagrama_fasorial_ejemplo2_3.pdf}
-			\caption{Diagrama fasorial del Ejercicio~\ref{ej.2-3}}
-			\label{fig.diagrama_fasorial_ejemplo2-3}
-		\end{figure}
-		
-		
-		
-		
-	\end{example}
-	
 	\subsection{Circuito serie general}
 	Considérese un circuito en serie formado por $n$ impedancias, donde cada impedancia es de la forma $\overline{Z_i}=R_i+\mathrm{j}\,X_i$, como se muestra en la Figura~\ref{fig.serie-general-inicio}. Este circuito se alimenta con una tensión $u(t)$, de valor eficaz $U$, de manera que circula por el mismo una intensidad $i(t)$ de valor eficaz $I$. Se dice que la impedancia equivalente a las $n$ impedancias en serie es aquella que, al aplicarle la misma tensión $u(t)$, origina la misma intensidad $i(t)$, es decir, la que \textbf{conserva el módulo de $\overline{I}$ y el ángulo de fase} entre $\overline{U}$ e $\overline{I}$ del circuito serie original
 	\begin{figure}[htbp]
@@ -2191,6 +3348,36 @@
 	\begin{equation*}
 		\theta=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)
 	\end{equation*}
+	
+	\vspace{4mm}
+	\begin{example}\label{ej.2-3}
+		\textbf{Un circuito en serie formado por $R=10\,\Omega$, $L=20$ mH y $C=100\,\mu$F se conecta a una tensión $u(t)=200\cdot\sin(1000t+\frac{\pi}{4})$ V. Calcular $\overline{I}$, ${u_R(t)}$, $u_L(t)$ y $u_C(t)$ y dibujar el diagrama fasorial.}
+		
+		El valor eficaz de la tensión y su fase inicial son:
+		\begin{equation*}
+			U=\dfrac{U_{max}}{\sqrt{2}}=\dfrac{200}{\sqrt{2}}\approx 141.42\;\text{V};\;\;\theta_U=\dfrac{\pi}{4}=45^\circ \Rightarrow \overline{U}=141.42\phase{45^\circ}
+		\end{equation*}
+		El valor de las impedancias $X_L$ y $X_C$ y la impedancia equivalente son:
+		\begin{align*}
+			\overline{X_L}&=\mathrm{j}\,\omega\,L=\mathrm{j}\,1000\cdot20\cdot 10^{-3}= \mathrm{j}\,20\;\Omega=20\phase{90^\circ}\;\Omega\\
+			\overline{X_C}&=-\mathrm{j}\,\dfrac{1}{\omega\,C}=\dfrac{1}{1000\cdot100\cdot 10^{-6}}= -\mathrm{j}\,10\;\Omega=10\phase{-90^\circ}\;\Omega		\\
+			\overline{Z_{eq}}&=R+\overline{X_L}+\overline{X_C}=10+\mathrm{j}\,20-\mathrm{j}\,10=10+\mathrm{j}\,10\;\Omega\approx 14.14\phase{45^\circ}
+		\end{align*}
+		Aplicando la ley de Ohm, se obtiene la corriente y, con ella, las tensiones de cada elemento:
+		\begin{align*}
+			\overline{I}&=\dfrac{\overline{U}}{\overline{Z_{eq}}}=\dfrac{141.42\phase{45^\circ}}{14.14\phase{45^\circ}}=10\phase{0^\circ}\\
+			\overline{U_R}&=\overline{I}\cdot R=10\phase{0^\circ}\cdot 10=100\phase{0^\circ}\,\text{V}\Rightarrow u_R(t)=100\sqrt{2}\cdot\sin(1000t)\;\text{V}\\
+			\overline{U_L}&=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 20\phase{90^\circ}=200\phase{90^\circ}\,\text{V}\Rightarrow u_L(t)=200\sqrt{2}\cdot\sin(1000t+\frac{\pi}{2})\;\text{V}\\
+			\overline{U_C}&=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 10\phase{-90^\circ} =100\phase{-90^\circ}\,\text{V}\Rightarrow u_C(t)=100\sqrt{2}\cdot\sin(1000t-\frac{\pi}{2})\;\text{V}
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[]{../figs/diagrama_fasorial_ejemplo2_3.pdf}
+			\caption{Diagrama fasorial del Ejemplo~\ref{ej.2-3}}
+			\label{fig.diagrama_fasorial_ejemplo2-3}
+		\end{figure}
+		
+	\end{example}
 	
 	\subsection{Resonancia}\label{sec.resonancia_serie}
 	
@@ -2228,30 +3415,26 @@
 		\end{equation*}
 		
 		Por tanto, la tensión en cada elemento es: 
-		\begin{equation*}
-			\overline{U_R}=R\cdot\overline{I}=1\cdot 100\phase{0^\circ}=100\phase{0^\circ}\,\text{V}
-		\end{equation*}
-		\begin{equation*}
-			\overline{U_L}=\overline{X_L}\cdot\overline{I}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{V}
-		\end{equation*}
-		\begin{equation*}
+		\begin{align*}
+			\overline{U_R}=R\cdot\overline{I}=1\cdot 100\phase{0^\circ}=100\phase{0^\circ}\,\text{V}\\
+			\overline{U_L}=\overline{X_L}\cdot\overline{I}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{V}\\
 			\overline{U_C}=\overline{X_C}\cdot\overline{I}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\text{V}
-		\end{equation*}
+		\end{align*}
 	\end{example}
 	
 	
 	\section{Respuesta de los circuitos paralelo a una excitación senoidal}
-	
-	Para el caso de circuitos en paralelo, se analiza directamente el circuito general. 
-	
-	\subsection{Circuito paralelo general}
-	\begin{figure}[tbp]
+	\begin{figure}[bp]
 		\centering
 		\subfigure[Real]{\includegraphics[height=4cm]{../figs/paralelo_general.pdf}\label{fig.paralelo-general-inicio}}\hfil
 		\subfigure[Equivalente]{\includegraphics[height=4cm]{../figs/paralelo_general_eq.pdf}\label{fig.paralelo-general-eq}}
 		\caption{Circuito paralelo general alimentado por corriente alterna}
 		\label{fig.paralelo-general}
 	\end{figure}
+	
+	Para el caso de circuitos en paralelo, se analiza directamente el circuito general. 
+	%
+	%\subsection{Circuito paralelo general}
 	Considérese un circuito en paralelo formado por $n$ impedancias, donde cada impedancia es de la forma $\overline{Z_i}=R_i+\mathrm{j}\,X_i$, como se muestra en la Figura~\ref{fig.paralelo-general-inicio}. Este circuito se alimenta con una tensión $u(t)$, de valor eficaz $U$, de manera que circula por cada impedancia una intensidad $i_i(t)$ obtenidas según: 
 	\begin{equation*}
 		\overline{I_i}=\dfrac{\overline{U}}{\overline{Z_i}}
@@ -2273,7 +3456,7 @@
 		\dfrac{1}{\overline{Z_{eq}}}=\dfrac{1}{\overline{Z_1}}+\dfrac{1}{\overline{Z_2}}+\dfrac{1}{\overline{Z_3}}+...+\dfrac{1}{\overline{Z_n}}\Rightarrow \boxed{\dfrac{1}{\overline{Z_{eq}}}=\dfrac{1}{\displaystyle\sum_{i=1}^n \overline{Z_i}}}
 	\end{equation}
 	
-	\subsubsection{Admitancia}
+	\subsection{Admitancia}
 	
 	Puesto que el cálculo de la impedancia equivalente operando de esta forma es, con frecuencia, complicado y no exento de errores, es más frecuente hablar de \textbf{admitancia}. Conceptualmente, la admitancia representa la \textit{facilidad} que ofrece el circuito al paso de la corriente alterna, y es el recíproco (inversa) de la impedancia: 
 	\begin{equation*}
@@ -2286,15 +3469,11 @@
 		\item $B>0$: admitancia resistiva
 	\end{itemize}
 	En los elementos simples, las admitancias se pueden calcular como: 
-	\begin{equation}
-		\boxed{\overline{Y_R}=\dfrac{1}{R}=G}\Rightarrow G\geq 0
-	\end{equation}
-	\begin{equation}
-		\boxed{\overline{Y_L}=\dfrac{1}{\overline{X_L}}=\dfrac{1}{\mathrm{j}\,\omega\,L}=\dfrac{-\mathrm{j}}{\omega\,L}=B_L}\Rightarrow B_L\leq 0
-	\end{equation}
-	\begin{equation}
-		\boxed{\overline{Y_C}=\dfrac{1}{\overline{X_C}}=\dfrac{1}{\frac{1}{\mathrm{j}\,\omega\,C}}=\mathrm{j}\,\omega\,C=B_C}\Rightarrow B_C\geq 0
-	\end{equation}
+	\begin{align}
+		\Aboxed{\overline{Y_R}&=\dfrac{1}{R}=G}\Rightarrow G\geq 0\\
+		\Aboxed{\overline{Y_L}&=\dfrac{1}{\overline{X_L}}=\dfrac{1}{\mathrm{j}\,\omega\,L}=\dfrac{-\mathrm{j}}{\omega\,L}=B_L}\Rightarrow B_L\leq 0\\
+		\Aboxed{\overline{Y_C}&=\dfrac{1}{\overline{X_C}}=\dfrac{1}{\frac{1}{\mathrm{j}\,\omega\,C}}=\mathrm{j}\,\omega\,C=B_C}\Rightarrow B_C\geq 0
+	\end{align}
 	Las admitancias se asocian en serie y paralelo de la misma forma que las impedancias, pero el cálculo de su valor equivalente es justo a la inversa: es decir, en paralelo su equivalente es la suma de las admitancias, y en serie el inverso de la admitancia equivalente es la suma de los inversos de las admitancias.
 	
 	\begin{figure}[htbp]
@@ -2334,20 +3513,12 @@
 		\label{fig.impedancia_admitancia}
 	\end{figure}
 	A partir de este gráfico, se pueden verificar las siguientes relaciones: 
-	\begin{equation*}
-		Z=\sqrt{R^2+X^2}\qquad\qquad Y=\sqrt{G^2+B^2}
-	\end{equation*}
-	\begin{equation*}
-		\theta=\arctan\left(\dfrac{X}{R}\right) \qquad\qquad \psi=\arctan\left(\dfrac{B}{G}\right)
-	\end{equation*}
-	\begin{equation*}
-		R=Z\cdot \cos(\theta)\qquad\qquad G=Y\cdot \cos(\psi)
-	\end{equation*}
-	\begin{equation*}
-		X=Z\cdot \sin(\theta)\qquad\qquad B=Y\cdot \sin(\psi)
-	\end{equation*}
-	
-	
+	\begin{align*}
+		Z=\sqrt{R^2+X^2}\qquad & \qquad Y=\sqrt{G^2+B^2}\\
+		\theta=\arctan\left(\dfrac{X}{R}\right)\qquad &  \qquad \psi=\arctan\left(\dfrac{B}{G}\right)\\
+		R=Z\cdot \cos(\theta)\qquad & \qquad G=Y\cdot \cos(\psi)\\
+		X=Z\cdot \sin(\theta)\qquad & \qquad B=Y\cdot \sin(\psi)
+	\end{align*}
 	
 	\begin{remark}
 		Nótese que la susceptancia $B$ \textbf{siempre} tiene signo contrario a la reactancia $X$:
@@ -2356,6 +3527,34 @@
 			\text{Circuito capacitivo}&: X < 0 \Rightarrow B>0
 		\end{align*}
 	\end{remark}
+	
+	\begin{example}\label{ex.impedancia_admitancia_eq}
+	    \textbf{Calcular la impedancia y admitancia compleja equivalente del circuito de la Figura~\ref{fig.impedancia_admitancia_eq}.}
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.4\linewidth]{../figs/impedancia_admitancia_eq.pdf}
+	        \caption{Ejemplo~\ref{ex.impedancia_admitancia_eq}}
+	        \label{fig.impedancia_admitancia_eq}
+	    \end{figure}
+	    
+	    La impedancia equivalente de la resistencia y la bobina es:
+	    \begin{equation*}
+	        \overline{Z_{R,L}}=R+\overline{X_L}=10+\mathrm{j}20\,\Omega
+	    \end{equation*}
+	    y la de la resistencia y el condensador: 
+	    \begin{equation*}
+	        \overline{Z_{R,C}}=R+\overline{X_C}=15-\mathrm{j}15\,\Omega
+	    \end{equation*}
+	    siendo por tanto la impedancia equivalente total: 
+	    \begin{equation*}
+	        \ovelrine{Z_{eq}}=\dfrac{1}{\dfrac{1}{\overline{Z_{R,L}}}+\dfrac{1}{\overline{Z_{R,C}}}}= \dfrac{1}{\dfrac{1}{10+\mathrm{j}20}+\dfrac{1}{15-\mathrm{j}15}}=18.61\phase{7.1250^\circ}\Omega
+	    \end{equation*}
+	    
+	    A partir de la impedancia equivalente se determina la admitancia: 
+	    \begin{equation*}
+	        \overline{Y_{eq}}=\dfrac{1}{\ovelrine{Z_{eq}}}=\dfrac{1}{18.61\phase{7.1250^\circ}}=0.05\phase{-7.1250^\circ} S
+	    \end{equation*}
+	\end{example}
 	
 	\subsection{Antirresonancia}
 	En un circuito paralelo $RLC$ se dice que se produce \textbf{antirresonancia} cuando la susceptancia es nula:
@@ -2375,15 +3574,11 @@
 		\textbf{Un circuito en paralelo formado por $R=1\,\Omega$, ${X_L}=0.01\,\Omega$ y ${X_C}=100\,\Omega$ se conecta a una tensión alterna $\overline{U}=100\phase{0^\circ}$ V. Calcular las corrientes de cada uno de los elementos.}
 		
 		En primer lugar, se calculan la conductancia de la resistencia y las susceptacias de bobina y condensador: 
-		\begin{equation*}
-			\overline{G}=\dfrac{1}{R}=\dfrac{1}{1}=1\;\text{S}
-		\end{equation*}
-		\begin{equation*}
-			\overline{B_L}=-\dfrac{\mathrm{j}}{X_L}=-\dfrac{\mathrm{j}}{0.01}=-\mathrm{j}\,100\;\text{S}
-		\end{equation*}
-		\begin{equation*}
-			\overline{B_C}=\mathrm{j}\,X_C=\mathrm{j}\,100\;\text{S}
-		\end{equation*}
+		\begin{align*}
+			\overline{G}&=\dfrac{1}{R}=\dfrac{1}{1}=1\;\text{S}\\
+			\overline{B_L}&=-\dfrac{\mathrm{j}}{X_L}=-\dfrac{\mathrm{j}}{0.01}=-\mathrm{j}\,100\;\text{S}\\
+			\overline{B_C}&=\mathrm{j}\,X_C=\mathrm{j}\,100\;\text{S}
+		\end{align*}
 		
 		La susceptancia total se calcula como:
 		\begin{equation*}
@@ -2396,19 +3591,62 @@
 		\end{equation*}
 		
 		La corriente en cada elemento es:
+		\begin{align*}
+			\overline{I_R}&=\overline{G}\cdot \overline{U}={1\phase{0^\circ}}\cdot {100\phase{0^\circ}}=100\phase{0^\circ}\;\text{A}\\
+			\overline{I_L}&=\overline{B_L}\cdot\overline{U}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\text{A}\\
+			\overline{I_C}&=\overline{B_C}\cdot\overline{U}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{A}
+		\end{align*}
+	\end{example}
+	
+	\vspace{4mm}
+	\begin{example}\label{ej.2-6}
+		\textbf{En el circuito de la Figura \ref{fig.ejercicio6_tema01}, determinar la tensión $U$ que hace que la corriente que circula por la impedancia $2+\mathrm{j}3\,\Omega$ sea nula.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../figs/ej6_BT2.pdf}
+			\caption{Ejemplo \ref{ej.2-6}}
+			\label{fig.ejercicio6_tema01}
+		\end{figure}
+		
+		Se plantea el sistema de ecuaciones para el circuito: 
 		\begin{equation*}
-			\overline{I_R}=\overline{G}\cdot \overline{U}={1\phase{0^\circ}}\cdot {100\phase{0^\circ}}=100\phase{0^\circ}\;\text{A}
-		\end{equation*} 
-		\begin{equation*}
-			\overline{I_L}=\overline{B_L}\cdot\overline{U}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\text{A}
+			\begin{bmatrix}
+				30\phase{0^\circ} \\
+				0 \\
+				-\overline{U}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				5+\mathrm{j}\,5 & -\mathrm{j}\,5 & 0 \\
+				-\mathrm{j}\,5 & 2+\mathrm{j}\,8 & -6 \\
+				0 & -6 & 10 \\
+			\end{bmatrix}
+			\cdot 
+			\begin{bmatrix}
+				\overline{I_1} \\
+				\overline{I_2} \\
+				\overline{I_3}
+			\end{bmatrix}
 		\end{equation*}
+		Se sabe que la corriente que circula por la impedancia $2+\mathrm{j}\,3$ $\Omega$ es nula $\rightarrow \overline{I_2}=0$ A. Así: 
 		\begin{equation*}
-			\overline{I_C}=\overline{B_C}\cdot\overline{U}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{A}
+			30\phase{0^\circ} = (5+\mathrm{j}\,5)\cdot \overline{I_1} - \cancelto{0}{\mathrm{j}\,5\cdot \overline{I_2}} = (5+\mathrm{j}\,5)\cdot \overline{I_1} \rightarrow \overline{I_1} = 4.24\phase{-45^\circ}\;\text{A}
+		\end{equation*}
+		Con esto, se reemplaza en la segunda ecuación para obtener el valor de $\overline{I_3}$:
+		\begin{equation*}
+			0 = (-\mathrm{j}\,5)\cdot \overline{I_1} + \cancelto{0}{(2+\mathrm{j}\,8)\cdot \overline{I_2}} -6\cdot \overline{I_3} = (-\mathrm{j}\,5)\cdot (4.24\phase{-45^\circ}) - 6 \cdot \overline{I_3} = 0 \rightarrow \overline{I_3} = 3.53\phase{-135^\circ}\;\text{A}
+		\end{equation*}
+		Sustituyendo ahora los valores de $\overline{I_1}$ e $\overline{I_3}$ en la tercera ecuación: 
+		\begin{equation*}
+			-\overline{U}=\cancelto{0}{(-6)\cdot \overline{I_2}} +10\cdot \overline{I_3} = 10 \cdot (3.53\phase{-135^\circ}) = -\overline{U} \rightarrow \overline{U} = 35.33\phase{45^\circ}\;\text{V}
 		\end{equation*}
 	\end{example}
 	
 	\section{Componentes activa y reactiva de la intensidad}
 	%Para explicar estos conceptos, se va a hacer referencia a las Secciones~\ref{sec.RL} y \ref{sec.RC}. 
+	
+	Considérese un circuito inductivo $RL$, es decir, la impedancia $\overline{Z}$ tiene un ángulo $\theta>0^\circ$ (Figura~\ref{fig.Z_ind_corriente}). Tomando como referencia la corriente $\overline{I}=I\phase{0^\circ}$, las tensiones en la resistencia ($U_R=R\cdot I$), bobina ($U_L=X\cdot I$) y total ($U=Z\cdot I$) se pueden representar en un diagrama fasorial como se muestra en la Figura~\ref{fig.tension_z_ind}. Por último, en la Figura~\ref{fig.corriente_z_ind}, se considera como referencia de fases la tensión $\overline{U}=U\phase{0^\circ}$, y se dibuja la corriente $\overline{I}$ que, como puede apreciarse, va \textbf{en retraso} respecto a la tensión (al tratarse de un circuito inductivo). 
+	
 	\begin{figure}[htbp]
 		\centering
 		\subfigure[Impedancias]{\includegraphics[height=4cm]{../figs/Z_ind_corriente.pdf}\label{fig.Z_ind_corriente}}\hfill
@@ -2418,9 +3656,8 @@
 		\caption{Diagramas fasoriales de un circuito inductivo $RL$}
 		\label{fig.fasores_inductivo_corrientes}
 	\end{figure}
-	Considérese un circuito inductivo $RL$, se tiene que la impedancia $\overline{Z}$ tiene un ángulo $\theta>0^\circ$ (Figura~\ref{fig.Z_ind_corriente}). Tomando como referencia la corriente $\overline{I}=I\phase{0^\circ}$, las tensiones en la resistencia ($U_R=R\cdot I$), bobina ($U_L=X\cdot I$) y total ($U=Z\cdot I$) se pueden representar en un diagrama fasorial como se muestra en la Figura~\ref{fig.tension_z_ind}. Por último, en la Figura~\ref{fig.corriente_z_ind}, se considera como referencia de fases la tensión $\overline{U}=U\phase{0^\circ}$, y se dibuja la corriente $\overline{I}$ que, como puede apreciarse, va \textbf{en retraso} respecto a la tensión (al tratarse de un circuito inductivo). 
 	
-	Ahora, considérese un circuito capacitivo $RC$, se tiene que la impedancia $\overline{Z}$ tiene un ángulo $\theta<0^\circ$ (Figura~\ref{fig.Z_cap_corriente}). Tomando como referencia la corriente $\overline{I}=I\phase{0^\circ}$, las tensiones en la resistencia ($U_R=R\cdot I$), condensador ($U_C=X\cdot I$) y total ($U=Z\cdot I$) se pueden representar en un diagrama fasorial como se muestra en la Figura~\ref{fig.tension_z_cap}. Por último, en la Figura~\ref{fig.corriente_z_cap}, se considera como referencia de fases la tensión $\overline{U}=U\phase{0^\circ}$, y se dibuja la corriente $\overline{I}$ que, como puede apreciarse, va \textbf{en adelanto} respecto a la tensión (al tratarse de un circuito capacitivo). 
+	Ahora, considérese un circuito capacitivo $RC$, donde la impedancia $\overline{Z}$ tiene un ángulo $\theta<0^\circ$ (Figura~\ref{fig.Z_cap_corriente}). Tomando como referencia la corriente $\overline{I}=I\phase{0^\circ}$, las tensiones en la resistencia ($U_R=R\cdot I$), condensador ($U_C=X\cdot I$) y total ($U=Z\cdot I$) se pueden representar en un diagrama fasorial como se muestra en la Figura~\ref{fig.tension_z_cap}. Por último, en la Figura~\ref{fig.corriente_z_cap}, se considera como referencia de fases la tensión $\overline{U}=U\phase{0^\circ}$, y se dibuja la corriente $\overline{I}$ que, como puede apreciarse, va \textbf{en adelanto} respecto a la tensión (al tratarse de un circuito capacitivo). 
 	\begin{figure}[htbp]
 		\centering
 		\subfigure[Impedancias]{\includegraphics[height=4cm]{../figs/Z_cap_corriente.pdf}\label{fig.Z_cap_corriente}}\hfill
@@ -2431,7 +3668,7 @@
 		\label{fig.fasores_capacitivo_corrientes}
 	\end{figure}
 	
-	Como puede observarse, al dibujar el diagrama fasorial, cuando la tensión se considera la referencia $\overline{U}=U\phase{0^\circ}$ (Figuras~\ref{fig.corriente_z_ind} y \ref{fig.corriente_z_cap}), la corriente $\overline{I}$ puede descomponerse en dos:
+	Como puede observarse, al dibujar el diagrama fasorial, cuando la tensión se considera como referencia $\overline{U}=U\phase{0^\circ}$ (Figuras~\ref{fig.corriente_z_ind} y \ref{fig.corriente_z_cap}), la corriente $\overline{I}$ puede descomponerse en dos:
 	\begin{itemize}
 		\item $I_a$, conocida como la  \textbf{componente activa} de la intensidad $\overline{I}$, que está \textbf{en fase} con la tensión $\overline{U}$
 		\item $I_r$, conocida como la \textbf{componente reactiva} de la intensidad $\overline{I}$, que está \textbf{en cuadratura} con la tensión $\overline{U}$
@@ -2457,50 +3694,6 @@
 		\overline{I}=I_a+\mathrm{j}\,I_r=I\cos(\theta)-\mathrm{j}\,I\sin(\theta)
 	\end{equation*}
 	donde $I_r$ \textbf{tiene signo contrario} al de $\theta$ de la impedancia.
-	
-	\vspace{4mm}
-	\begin{example}\label{ej.2-6}
-		\textbf{En el circuito de la Figura \ref{fig.ejercicio6_tema01}, determinar la tensión $V$ que hace que la corriente que circula por la impedancia $2+j3$ $\Omega$ sea nula.}
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.7\linewidth]{../figs/ejercicio6_tema01.pdf}
-			\caption{Ejemplo \ref{ej.2-6}}
-			\label{fig.ejercicio6_tema01}
-		\end{figure}
-		
-		Se plantea el sistema de ecuaciones para el circuito: 
-		\begin{equation*}
-			\begin{bmatrix}
-				30\phase{0^\circ} \\
-				0 \\
-				-\overline{V}
-			\end{bmatrix}
-			=
-			\begin{bmatrix}
-				5+\mathrm{j}\,5 & -\mathrm{j}\,5 & 0 \\
-				-\mathrm{j}\,5 & 2+\mathrm{j}\,8 & & -6 \\
-				0 & -6 & 10 \\
-			\end{bmatrix}
-			\cdot 
-			\begin{bmatrix}
-				\overline{I_1} \\
-				\overline{I_2} \\
-				\overline{I_3}
-			\end{bmatrix}
-		\end{equation*}
-		Se sabe que la corriente que circula por la impedancia $2+\mathrm{j}\,3$ $\Omega$ es nula $\rightarrow \overline{I_2}=0$ A. Así: 
-		\begin{equation*}
-			30\phase{0^\circ} = (5+\mathrm{j}\,5)\cdot \overline{I_1} - \overbrace{\mathrm{j}\,5\cdot \overline{I_2}}^0 = (5+\mathrm{j}\,5)\cdot \overline{I_1} \rightarrow \overline{I_1} = 4.24\phase{-45^\circ}\;\text{A}
-		\end{equation*}
-		Con esto, se reemplaza en la segunda ecuación para obtener el valor de $\overline{I_3}$:
-		\begin{equation*}
-			0 = (-\mathrm{j}\,5)\cdot \overline{I_1} + \overbrace{(2+\mathrm{j}\,8)\cdot \overline{I_2}}^0 -6\cdot \overline{I_3} = (-\mathrm{j}\,5)\cdot (4.24\phase{-45^\circ}) - 6 \cdot \overline{I_3} = 0 \rightarrow \overline{I_3} = 3.53\phase{-135^\circ}\;\text{A}
-		\end{equation*}
-		Sustituyendo ahora los valores de $\overline{I_1}$ e $\overline{I_3}$ en la tercera ecuación: 
-		\begin{equation*}
-			-\overline{V}=\overbrace{(-6)\cdot \overline{I_2}}^0 +10\cdot \overline{I_3} = 10 \cdot (3.53\phase{-135^\circ}) = -\overline{V} \rightarrow \overline{V} = 35.33\phase{45^\circ}\;\text{V}
-		\end{equation*}
-	\end{example}
 	
 	\section{Potencia en corriente alterna}\label{sec.potencia_CA}
 	
@@ -2751,15 +3944,15 @@
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.2-7}
-		\textbf{Sabiendo que las fuentes de tensión del circuito de la Figura \ref{fig.problema9_garri} vienen definidas por las formas de onda $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V. Calcular las potencias de cada elemento, así como el balance de potencias del circuito. }
-		\begin{figure}[h!]
+		\textbf{Sabiendo que las fuentes de tensión del circuito de la Figura \ref{fig.problema9_garri} vienen definidas por las formas de onda $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V, calcular las potencias de cada elemento, así como el balance de potencias del circuito. }
+		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.6\linewidth]{../figs/problema9_CA_garri.pdf}
+			\includegraphics[width=0.6\linewidth]{../figs/ej7_BT2.pdf}
 			\caption{Ejemplo \ref{ej.2-7}}
 			\label{fig.problema9_garri}
 		\end{figure}
 		
-		Se pasa $u_1(t)$ a función senoidal, obteniéndose $u_1(t)=10\sqrt{2}\cdot \sin(1000\cdot t+90^\circ)$. Así, los fasores de $\overline{U_1}$ y $\overline{U_2}$ son:
+		Se pasa $u_1(t)$ a función senoidal, obteniéndose $u_1(t)=10\sqrt{2}\cdot \sin(1000\cdot t+\frac{\pi}{2})$. Así, los fasores de $\overline{U_1}$ y $\overline{U_2}$ son:
 		\begin{align*}
 			\overline{U_1}&=10\phase{90^\circ}\;V\\
 			\overline{U_2}&=5\phase{0^\circ}\;V
@@ -2770,7 +3963,7 @@
 			\overline{X_L}=\mathrm{j}\,\omega\, L=\mathrm{j} 1\,\Omega
 		\end{equation*}
 		
-		Con esto, y suponiendo las corrientes $\overline{I_a}$ (en el mismo sentido que $I$) e $\overline{I_b}$ (en el mismo sentido que $I_2$), el sistema matricial es: 
+		Con esto, el sistema matricial por el método de mallas es: 
 		\begin{equation*}
 			\begin{bmatrix}
 				10\phase{90^\circ} \\
@@ -2789,14 +3982,14 @@
 		\end{equation*}
 		Resolviendo el sistema se obtiene que:
 		\begin{align*}
-			\overline{I_a}&= 6.32\phase{71.57^\circ}\;A\\
-			\overline{I_b}&= 8.05\phase{-119.75^\circ}\;A
+			\overline{I_a}&= 6.32\phase{71.5651^\circ}\;A\\
+			\overline{I_b}&= 8.05\phase{-119.7449^\circ}\;A
 		\end{align*}
 		y reemplazando en el circuito: 
 		\begin{align*}
-			\overline{I}&=\overline{I_a}=6.32\phase{71.57^\circ}\;A\\
-			\overline{I_1}&=\overline{I_a}+\overline{I_b}=2.23\phase{-153.51^\circ}\;A\\
-			\overline{I_2}&=\overline{I_b}=8.05\phase{-119.75^\circ}\;A
+			\overline{I}&=\overline{I_a}=6.32\phase{71.5651^\circ}\;A\\
+			\overline{I_1}&=\overline{I_a}+\overline{I_b}=2.23\phase{-153.5271^\circ}\;A\\
+			\overline{I_2}&=\overline{I_b}=8.05\phase{-119.7449^\circ}\;A
 		\end{align*}
 		
 		
@@ -2806,26 +3999,26 @@
 			Q_L &= X_L\cdot I_2^2=64.80\;VAr\\
 			Q_C&=X_C\cdot I_1^2=-9.95\;VAr
 		\end{align*}
-		siendo la potencia aparente total consumida por los receptores (T. Boucherot):
+		siendo la potencia aparente total consumida por los receptores:
 		\begin{equation*}
 			S=P+\mathrm{j}\;Q=39.94+\mathrm{j}\,54.85\;VA
 		\end{equation*}
 		
-		% Se calcula también la potencia aparente de las fuentes de alimentación:
-		% \begin{equation*}
-			%     S_{u1}=-U_1\cdot I^*=-(10\phase {90^\circ})\cdot (6.32\phase {-71.57^\circ})=-59.96-\mathrm{j}\,19.98\;VA
-			% \end{equation*}
-		% \begin{equation*}
-			%     S_{u2}=-U_2\cdot I_2^*=-(5\phase{0^\circ})\cdot (8.05\phase{119.75^\circ})=19.92-\mathrm{j}\,34.95\;VA
-			% \end{equation*}
+		Se calcula también la potencia aparente de las fuentes de alimentación:
+		\begin{equation*}
+			    S_{u1}=-U_1\cdot I^*=-(10\phase {90^\circ})\cdot (6.32\phase {-71.57^\circ})=-59.96-\mathrm{j}\,19.98\;VA
+			\end{equation*}
+		\begin{equation*}
+			    S_{u2}=-U_2\cdot I_2^*=-(5\phase{0^\circ})\cdot (8.05\phase{119.75^\circ})=19.92-\mathrm{j}\,34.95\;VA
+			\end{equation*}
 		
-		% Haciendo el balance de potencias, por el Teorema de Boucherot:
-		% \begin{equation*}
-			%     \sum P = 39.94-59.96+19.92=0
-			% \end{equation*}
-		% \begin{equation*}
-			%     \sum Q = 64.8-9.95-34.95=0
-			% \end{equation*}
+		Haciendo el balance de potencias, se cumple que:
+		\begin{equation*}
+			    \sum P = 39.94-59.96+19.92=0
+			\end{equation*}
+		\begin{equation*}
+			    \sum Q = 64.8-9.95-34.95=0
+			\end{equation*}
 	\end{example}
 	
 	\subsection{Medida de potencia: vatímetro}\label{sec.medida_potencia}
@@ -2888,7 +4081,7 @@
 		Q_Z &= P_Z \tan (\theta)\\
 		Q'&= P_Z \tan (\theta')
 	\end{align*}
-	\begin{equation}
+	\begin{equation}\label{eq.compensacion_Q_mono}
 		|Q_c| = Q_z - Q' = P_Z\cdot \left[\tan (\theta) - \tan (\theta')\right]=\dfrac{U^2}{X_C}={U^2\,\omega\,C}\rightarrow \boxed{C=\frac{P_Z \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}}
 	\end{equation}
 	
@@ -2902,9 +4095,200 @@
 		\label{fig.circuitocompensacionreactiva}
 	\end{figure}
 	
+	\begin{example}\label{ex.condensador_Q}
+	    \textbf{Una instalación de 230 V, 50 Hz consume una potencia activa de $5.2$ kW con un factor de potencia $0.8$ en retraso. Calcular la capacidad necesaria para obtener un factor de potencia de $0.95$.}
+	    
+	    A partir de la fórmula~\eqref{eq.compensacion_Q_mono}, se obtiene que la capacidad es:
+	    \begin{equation*}
+	        C=\frac{P \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\mu F
+	    \end{equation*}
+	    
+	    A este mismo resultado se puede llegar sin necesiadad de aprenderse la fórmula anterior, de la interpretación de los triángulos de potencias. La potencia activa inicial y final connsumida por la carga es:
+	    \begin{equation*}
+	        P=P'=5200\,W
+	    \end{equation*}
+	    La potencia reactiva inicial y final:
+	    \begin{align*}
+	        Q&=P\,\tan(\theta)=5200\cdot\tan(\arccos(0.8))=3900\,VAr\\
+	        Q'&=P'\,\tan(\theta')=5200\cdot\tan(\arccos(0.95))=1709.16\,VAr
+	    \end{align*}
+	    por lo que la potencia reactiva que genera el condensador es: 
+	    \begin{equation*}
+	        Q_c=Q'-Q=1709.16-3900=-2190.84\,VAr
+	    \end{equation*}
+	    a partir de la cual se determina que la capacidad de dicho condensador es:
+	    \begin{equation*}
+	        Q_c=X_c\,I^2=\dfrac{U^2}{X_c}=\dfrac{U^2}{\frac{1}{\omega\,C}}\Rightarrow C=\dfrac{Q_c}{\omega\,U^2}=\dfrac{2190.84}{2\cdot\pi\cdot 50\cdot 230^2}=131.83\,\mu F
+	    \end{equation*}
+	\end{example}
+	
+	\section{Ejercicios}
+	
+	\begin{enumerate}
+		
+\item Calcular la impedancia equivalente $\overline{Z_{eq}}$ del circuito de la Figura \ref{fig.ej_CA1}, expresándolo en forma binaria y polar.\\
+\emph{Sol.: $\overline{Z_{eq}}=4.54\phase{57.9855^\circ}\Omega=2.41+\mathrm{j}3.85\Omega$}
+ \begin{figure}[H]
+        \centering
+        \includegraphics{../figs/ej1_BT2.pdf}
+        \caption{Ejercicio 1}
+        \label{fig.ej_CA1}
+    \end{figure}
+    \item Determinar $\overline{Z}$ en el circuito de la Figura \ref{fig.ej_CA2}.\\
+    \emph{Sol.: $\overline{Z}=2.83\phase{45.0715^\circ}\Omega$}
+     \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{../figs/ej2_BT2.pdf}
+        \caption{Ejercicio 2}
+        \label{fig.ej_CA2}
+    \end{figure}
+    \item Un circuito serie con dos elementos consume una potencia activa de $940$ W y tiene un factor de potencia $0.707$ en $adelanto$. Determinar los elementos del circuito si la tensión tiene un valor máximo $99$ V. \\
+    \emph{Sol.: $R=2.60\Omega;\;C=1.22\,mF$}
+    \item Un circuito en serie con una resistencia $10\Omega$ y una inductancia $\mathrm{j}5\Omega$ tiene una tensión eficaz aplicada de $120$ V. Determinar las potencias consumidas y el factor de potencia, indicando si éste va en retraso o adelanto. \\
+    \emph{Sol.: $P=1151.33 \,W;\; Q=575.66 \,VAr;\; \overline{S}=1287.22\phase{26.5649^\circ} VA;\; \cos(\phi)=0.894$, en retraso}
+    \item Para determinar las constantes $R$ y $L$ de una bobina, se conecta en serie con una resistencia de {25}{$\Omega$} y al conjunto se le aplica una fuente de tensión de {120}{V} a {60}{Hz}, se miden las tensiones en bornes de la resistencia y de la bobina, dando los valores $U_R = {70.8}{V}$ y $U_B = {86}{V}$. ¿Cuáles son las constantes de la bobina?\\
+    \emph{Sol.: $R= 5{\Omega};\; L = {79.5}mH$}
+    \item En un circuito serie $RL$ con $R=5\Omega$ y $L=0.06H$, la tensión en bornes de la bobina es $u_L(t)=15\sin(200\,t)$ V. Determinar:
+    \begin{itemize}
+        \item La tensión total
+        \item Intensidad de corriente
+        \item Ángulo de desfase de la intensidad respecto de la tensión
+        \item Impedancia del circuito
+    \end{itemize}
+    \emph{Sol.: $\overline{Z_{eq}}=5+\mathrm{j}\,12\Omega;\;\overline{I}=0.88\phase{-90^\circ}A;\;\overline{U}=11.48\phase{-22.5304^\circ} V;\; \phi=67.4696^\circ$}
+    \item Un circuito serie RLC con $R = {5}{\Omega}$ , $L = {0.02}{H}$ y $C={80}{\mu F}$, tiene aplicada una tensión senoidal de frecuencia variable. Determinar los valores de la pulsación $\omega$ para los cuales la corriente:
+\begin{itemize}
+\item Adelanta {45}{$^\circ$} a la tensión
+\item Está en fase con ella
+\item Retrasa {45}{$^\circ$}
+\end{itemize}
+\emph{Sol.: $\omega=675.39\,rad/s;\; \omega=790.57\,rad/s;\, \omega=925.39\,rad/s$}
+\item Determinar el triángulo de potencias de un circuito al que se le aplica una tensión $u(t)=340 \cdot \sin(\omega t - 60^\circ)$ V y circula una intensidad de corriente $i(t)= 13.3 \cdot \sin(\omega t-48.7^\circ)$.\\
+\emph{Sol.: $P=2217.17\,W;\;Q=443.03\,VAr;\;S=2261\phase{-11.3^\circ}\,VA$}
+\item En el esquema de la Figura~\ref{fig.ej8_BT2} los elementos tienen los siguientes valores:
+\begin{align*}
+    R_1 &= R_2 = R_3 = {10}{\Omega}\\
+    X_1 &= X_2 = {1}{\Omega}\\
+    R_L &= X_L = {1}{\Omega}
+\end{align*}
+Sabiendo que $U_{CD} = {200}{V}$ se debe calcular:
+\begin{itemize}
+\item Intensidades de corriente $I$, $I_1$, $I_2$ e $I_3$ {en forma fasorial}, tomando $U_{CD}$ como referencia de fase
+\item Lectura de los vatímetros $W_1$ y $W_2$
+\end{itemize}
+\emph{Sol.: $\overline{I_1}=19.90\phase{-5.7106^\circ}\,A;\; \overline{I_2}=19.90\phase{5.7106^\circ}\,A;\; \overline{I_3}=20\phase{0^\circ}\,A;\;\overline{I}=59.60\phase{0^\circ}\,A;\;W_1=19024.32\,W;\; W_2=11920\,W$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/ej8_BT2.pdf}
+    \caption{Ejercicio 9}
+    \label{fig.ej8_BT2}
+\end{figure}
+\item En el circuito de la Figura~\ref{fig.ej9_BT2}, los amperímetros $A_1$ y $A_2$ marcan ${4.5}{A}$ y ${6}{A}$, respectivamente; el voltímetro, ${150}{V}$ y el vatímetro ${900}{W}$. Sabiendo que la frecuencia del generador es de ${250}{Hz}$ y el f.d.p. de la impedancia $Z$ es de 0.8 en retraso, se pide calcular:
+\begin{itemize}
+\item Valores de R, C y Z en forma compleja
+\item La tensión del generador
+\end{itemize}
+\emph{Sol.: $\overline{R}=33.33\phase{0^\circ}\Omega; \,\overline{X_c}-\mathrm{j}\,25\Omega;\,\overline{Z}=16+\mathrm{j}\,12\Omega;\,\overline{U_{AC}}=212.13\phase{45^\circ} V$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{../figs/ej9_BT2.pdf}
+    \caption{Ejercicio 10}
+    \label{fig.ej9_BT2}
+\end{figure}
+\item En el circuito de la Figura~\ref{fig.ej11_BT2}, determinar las lecturas de los aparatos de medida y el balance de potencias activas y reactivas, así como el triángulo global de potencias.\\
+Datos: $e(t)=100\sqrt{2}(\omega\,t)$; $R_1=2\Omega$; $R_2=4\Omega$; $\omega\,L=4\Omega$.\\
+\emph{Sol.: $V=100\,V;\;A = 45.20 A;\;W_1=2788.31W;\;W_2=1250.33\,W;\,P_{R1}=1539.02 W;\;P_{R2}=1250.33 W;\,Q_{L1}=2308.52 VAr;\;Q_{L2}=1250.33 VAr;\,P_T=2789.35 W;\,Q_T=3558.82 VAr;\;\overline{S_T}=2789.35+\mathrm{j}3558.82 VA$}
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/ej11_BT2.pdf}
+    \caption{Ejercicio 11}
+    \label{fig.ej11_BT2}
+\end{figure}
+\item Un motor monofásico de $S = {10}{kVA}$ y $fdp = 0.8$ está alimentado por una fuente de ${230}{V}$ a $f = {50}{Hz}$.
+Calcular:
+\begin{itemize}
+    \item El valor eficaz de la corriente absorbida por el motor
+    \item La potencia aparente del generador
+    \item La capacidad del condensador necesario para compensar el factor de potencia a la unidad
+    \item El valor eficaz de la corriente absorbida por el conjunto condensador-motor
+    \item La potencia aparente del generador necesario una vez conectado el condensador del tercer apartado
+    \item Compara de forma razonada los resultados de los apartados 4 y 5 con los valores calculados en los apartados 1 y 2
+\end{itemize}
+\emph{Sol.: $I= {43.5}{A};\; S_g = {10}{kVA};\;C={361}{\mu F};\, I'=34.78A;\, S_g' = {8000}{kVA}$}
+
+\item Un generador de corriente alterna monofásica ($f=50$ Hz) alimenta a dos cargas a través de una línea de cobre. Esta línea, de resistividad $\rho=21$ m$\Omega$ mm$^2$/m, tiene una longitud de 100 m y una sección de 16 mm$^2$. Las dos cargas, cuya tensión de alimentación es de 230 V, son dos motores, uno con potencia de 7 kW y f.d.p. de $0.65$, y otro con una potencia de 5 kW y f.d.p. de $0.85$. Con esta información, se pide calcular:
+\begin{itemize}
+    \item Triángulo de potencias de cada carga y del conjunto de ambas
+    \item Valor eficaz de las corrientes en cada carga y de la corriente total
+    \item Triángulo de potencias del generador
+    \item Valor eficaz de la tensión en bornes del generador
+    \item Capacidad del condensador a instalar en bornes de las cargas para mejorar el factor de potencia a $0.95$
+    \item Valor eficaz de la corriente entregada por el generador una vez instalado el condensador
+    \item Triángulo de potencias del generador una vez instalado el condensador
+\end{itemize}
+\emph{Sol.: $P_1=7000W;\; Q_1=8183.91VAr;\;S_1=10769.23VA;\;P_2=5000W;\;Q_2=5882.35VAr;\;S_2=3098.72VA;\;P_T=12000W;\;Q_T=11282.63VAr;\;S_T=16471.12VA;\, I_1=46.82\,A;\;I_2=25.58\,A;\;I_T=71.62\,A;\,P_g=13333.65 W;\;Q_g=11282.63 VAr;\,S_g=17466.65 VA;\;U_g=243.88 V;\; C=441.66 \mu F;\,I'=54.92 A;\;P_g'=12784.21 W;\;Q_g'=3944.21 VAr;\;S_g'=13378.82 VA$}
+\item Determinar la capacidad del condensador de la Figura~\ref{fig.ejemplo9_BT2} para que la corriente de la fuente esté en fase con la tensión de alimentación, sabiendo que $f=50$ Hz.\\
+\emph{Sol.: $C=275.59\,\mu F$}
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics{../figs/ejemplo9_BT2.pdf}
+	        \caption{Ejercicio 14}
+	        \label{fig.ejemplo9_BT2}
+	    \end{figure}
+\item Calcular la corriente $i(t)$ del circuito de la Figura~\ref{fig.ejercicio13_BT2}.\\
+\emph{Sol.: $i(t)=\sqrt{2}\,10\,\cos(100\,t) A$}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/ejercicio13_BT2.pdf}
+    \caption{Ejercicio 15}
+    \label{fig.ejercicio13_BT2}
+\end{figure}
+
+\item Un generador de corriente alterna monofásica ($f = {50}{Hz}$) alimenta a dos cargas a través de una línea de cobre. Esta línea, de resistividad $\rho = {0.017}{\Omega mm^2/m}$, tiene una longitud de {40}{m} y una sección de {6}{mm$^2$}. Las dos cargas, cuya tensión de alimentación es de {200}{V}, son:
+\begin{enumerate}
+\item Un motor de {7}{kW} con f.d.p. {0,7}.
+\item Un grupo de lámparas fluorescentes con potencia total {200}{W} y f.d.p. {0,5}.
+\end{enumerate}
+Se pide: 
+\begin{itemize}
+    \item Esquema del circuito señalando adecuadamente los elementos, corrientes y tensiones
+    \item Potencias activa, reactiva y aparente de cada carga
+    \item Valor eficaz de las corrientes en cada carga, y de la corriente total
+    \item Potencia activa y reactiva entregada por el generador
+    \item Valor eficaz de la tensión en bornes del generador
+    \item Capacidad necesaria a instalar en bornes de las cargas para mejorar el factor de potencia de las mismas a la unidad
+    \item Valor eficaz de la tensión en bornes del generador, y potencia aparente entregada por el mismo una vez instalada la capacidad determinada en el apartado anterior
+\end{itemize}
+\emph{Sol.: $P_M = {7000}{W};\; Q_M = {7141.43}{VAr};\; S_M ={10000}{VA};\; P_F = {200}{W};\;  Q_F = {346.41}{VAr};\; S_F ={400}{VA};\;I_M = {50}{A};\; I_F = {2}{A};\; I_T = {51.94}{A};\;P_g = {7811.50}{W};\; Q_g = {7487.8}{VAr};\; U_g = {208.33}{V}; C={595.86}{\mu F};\; U_g' = {207.92}{V};\; S_g' = {7485.12}{VA}$ }
+\item El circuito de la Figura~\ref{fig.ej17_BT2} tiene carácter inductivo.  La impedancia de la línea es $Z={10\sqrt{2}}{\Omega}$ con
+f.d.p. $\sqrt{2}/2$ en retraso. Tomando como referencia de fases la intensidad total $\overline{I}$, se pide calcular:
+\begin{itemize}
+\item Potencia activa y reactiva consumida por $Z$
+\item Expresiones complejas de las intensidades medidas por los amperímetros $A$, $A_1$, $A_2$ y $A_3$ 
+\item  Expresiones complejas de las tensiones $\overline{U_{AB}}$, $\overline{U_{AC}}$ y $\overline{U_{CB}}$
+\item  Valores de $R_1$, $X_1$, $R_2$, $R_3$ y $X_3$
+\end{itemize}
+
+Datos: $A = {5\sqrt{5}}{A};\; A_1 = {5\sqrt{2}}{A};\;A_2 = {5}{A};\;A_3 = {\sqrt{10}}{A};\;U_{AB} = {247}{V};\;W_1 = {2350}{W};\;R_1 = R_3$
+
+\emph{Sol.: $P_z=1250\,W;\;Q_z=1250\,VAr;\;\overline{I}=11.18\phase{0^\circ}A;\; \overline{I_1}=7.07\phase{-34.6711^\circ}A;\; \overline{I_2}=5\phase{10.3289^\circ}A;\;\overline{I_3}=3.16\phase{81.8940^\circ}A;\; \overline{U_{AB}}=247\phase{31.6823^\circ}V;\; \overline{U_{AC}}=158.11\phase{45^\circ}\,V;\; \overline{U_{CB}}=100\phase{10.3289^\circ} V;\;R_1=R_3=10\Omega;\;R_2=20\Omega; X_1=10\Omega;\;X_3=-30\Omega$}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{../figs/ej17_BT2.pdf}
+    \caption{Ejercicio 17}
+    \label{fig.ej17_BT2}
+\end{figure}
+
+
+
+
+
+\end{enumerate}
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\chapterimage{imagen_t3.jpeg}
+	\chapterimage{tema3.jpg}
 	\chapter{Sistemas trifásicos}
 	
 	%Referencias: \cite{edminister1997circuitos,pastor2003circuitos,conejo2004circuitos}
@@ -2943,9 +4327,9 @@
 	\section{Generadores trifásicos}
 	Desde el punto de vista de la Teoría de Circuitos, cada fase de un generador trifásico (\textit{alternador}) equivale a un \textbf{generador de tensión real}. Así, en los sistemas trifásicos se tienen simultáneamente tres tensiones de igual frecuencia y amplitud, pero desfasadas $360^\circ/3=120^\circ$ unas con otras:
 	\begin{align*}
-		u_1(t) &= U\,\sqrt{2}\cdot \sin(\omega t)\rightarrow  \overline{U}_1 = U\phase{0}\\
-		u_2(t) &= U\,\sqrt{2} \cdot\sin(\omega t + 2\pi/3) \rightarrow  \overline{U}_2 = U\phase{2\pi/3}\\
-		u_3(t) &= U\,\sqrt{2}\cdot \sin(\omega t - 2\pi/3) \rightarrow  \overline{U}_3 = U\phase{-2\pi/3}
+		u_1(t) &= U\,\sqrt{2}\cdot \sin(\omega t)\rightarrow  \overline{U_1} = U\phase{0}\\
+		u_2(t) &= U\,\sqrt{2} \cdot\sin(\omega t + 2\pi/3) \rightarrow  \overline{U_2} = U\phase{120^\circ}\\
+		u_3(t) &= U\,\sqrt{2}\cdot \sin(\omega t - 2\pi/3) \rightarrow  \overline{U_3} = U\phase{-120^\circ}
 	\end{align*}
 	Nótese que, la suma de las tensiones de fase suman 0, como muestra la Figura~\ref{fig.fasoressumacero}:
 	\begin{equation*}
@@ -2990,7 +4374,7 @@
 		\item \textbf{Intensidad de línea.} Es la intensidad que pasa por el conductor de la línea. 
 	\end{itemize}
 	
-	\subsection{Secuencia de fases}
+	\subsection{Secuencia de fases}\label{sec.secuencia_fases}
 	
 	El orden en el que se suceden las tensiones de cada fase de un circuito trifásico es lo que se conoce como \textit{secuencia de fases} (hace referencia a un punto concreto de la onda, por ejemplo, cuando todas ellas alcanzan el valor máximo). Existen dos tipos de secuencia de fases: $(i)$~secuencia de fases directa (\textbf{SFD}) y $(ii)$~secuencia de fases inversa (\textbf{SFI}), como se muestra en la Figura~\ref{fig.secuencia_fases}. 
 	\begin{figure}[htbp]
@@ -3010,9 +4394,9 @@
 	
 	Se dice que se tiene \textit{secuencia directa} ($ABC$ o positiva), cuando la tensión $B$ está retrasada 120$^\circ$ respecto a la $A$, y la $C$ se retrasa 240$^\circ$ respecto a la $A$ (es decir, se adelanta 120$^\circ$). El \textbf{convenio} que se utiliza en esta asignatura para las tensiones en una \textbf{SFD} es:
 	\begin{align*}
-		u_A(t)&=U\,\sqrt{2}\cdot \sin(\omega\, t+90^\circ) \rightarrow \overline{U_A}=U\phase {90^\circ}\\
-		u_B(t)&=U\,\sqrt{2}\cdot \sin(\omega\, t-30^\circ)\rightarrow \overline{U_B}=U\phase {-30^\circ}\\
-		u_C(t)&=U\,\sqrt{2}\cdot \sin(\omega\,t+210^\circ) \rightarrow \overline{U_C}=U\phase {210^\circ}
+		u_A(t)&=U\,\sqrt{2}\cdot \sin(\omega\, t+\frac{\pi}{2}) \rightarrow \overline{U_A}=U\phase {90^\circ}\\
+		u_B(t)&=U\,\sqrt{2}\cdot \sin(\omega\, t-\frac{\pi}{6})\rightarrow \overline{U_B}=U\phase {-30^\circ}\\
+		u_C(t)&=U\,\sqrt{2}\cdot \sin(\omega\,t+\frac{7\pi}{6}) \rightarrow \overline{U_C}=U\phase {210^\circ}
 	\end{align*}
 	
 	Para conocer directamente la relación entre tensiones de fase y de línea, considérese las tensiones de fase $\overline{U_A}$ y $\overline{U_B}$: 
@@ -3026,7 +4410,7 @@
 		\overline{U_{AB}}=\overline{U_{A}}-\overline{U_{B}}=(0+\mathrm{j}\,U_F)-\left(\dfrac{\sqrt{3}\,U_F}{2}-\mathrm{j}\,\dfrac{U_F}{2}\right)=-\dfrac{\sqrt{3}\cdot U_F}{2}+\mathrm{j}\,\dfrac{3\,U_F}{2}=\sqrt{3}\,U_F \phase{ 120^\circ}\,,
 	\end{equation*}
 	es decir, que el módulo es $\sqrt{3}$ veces mayor que $U_F$ y está 30$^\circ$ adelantado respecto a la de fase. Por tanto:  
-	\begin{equation}
+	\begin{equation}\label{eq.sfd_fase-linea}
 		\boxed{
 			\begin{array}{l}
 				U_L = \sqrt{3}\cdot U_F\\
@@ -3043,9 +4427,9 @@
 		\label{fig.linea-fase-SFD}
 	\end{figure}
 	
-	\subsubsection{Secuencia de Fases Indirecta}
+	\subsubsection{Secuencia de Fases Inversa (SFI)}
 	
-	En la \textit{secuencia indirecta} ($ACB$, negativa), la fase $C$ se retrasa 120$^\circ$ respecto a la $A$, y la $B$, se adelanta 120$^\circ$. La secuencia indirecta se consigue permutando dos fases, generalmente $B$ por $C$. El \textbf{convenio} que se utiliza en esta asignatura para las tensiones en una \textbf{SFI}:
+	En la \textit{secuencia inversa} ($ACB$, negativa), la fase $C$ se retrasa 120$^\circ$ respecto a la $A$, y la $B$, se adelanta 120$^\circ$. La secuencia indirecta se consigue permutando dos fases, generalmente $B$ por $C$. El \textbf{convenio} que se utiliza en esta asignatura para las tensiones en una \textbf{SFI}:
 	\begin{align*}
 		u_{A}(t)&=U\cdot\sqrt{2}\cdot \sin(\omega\cdot t-90^\circ)\rightarrow \overline{U_{A}}=U\phase {-90^\circ}\\
 		u_{C}(t)&=U\cdot\sqrt{2}\cdot \sin(\omega\cdot t+150^\circ) \rightarrow \overline{U_{C}}=U\phase {150^\circ}\\
@@ -3063,7 +4447,7 @@
 		\overline{U_{AB}}=\overline{U_{A}}-\overline{U_{B}}=(0-\mathrm{j}\,U_F)-\left(\dfrac{\sqrt{3}\,U_F}{2}+\mathrm{j}\,\dfrac{U_F}{2}\right)=-\dfrac{\sqrt{3}\cdot U_F}{2}-\mathrm{j}\,\dfrac{3\,U_F}{2}=\sqrt{3}\,U_F \phase{-120^\circ}\,,
 	\end{equation*}
 	es decir, habiendo una relación entre tensiones de línea y de fase de: 
-	\begin{equation}
+	\begin{equation}\label{eq.sfi_fase-linea}
 		\boxed{
 			\begin{array}{l}
 				U_L = \sqrt{3}\cdot U_F\\
@@ -3160,7 +4544,7 @@
     \begin{example}\label{ej.3-1}
 	    \textbf{Un sistema a cuatro hilos y SFI alimenta tres impedancias $\overline{Z}=10\phase{60^\circ}\;\Omega$, conectadas en estrella a la tensión $200\,\sqrt{3}$ V. Determinar las corrientes de línea y el diagrama fasorial.}
 	    
-	    Siguiendo la referencia para SFI (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea del sistema son:
+	    Siguiendo la referencia para SFI (Figura~\ref{fig.linea-fase-SFI}), las tensiones de fase y línea del sistema son:
 	    \begin{align*}
 	        \overline{U_{AB}}&=200\,\sqrt{3}\phase{-120^\circ}\rightarrow \overline{U_A}=200\phase{-90^\circ}\\
 	        \overline{U_{BC}}&=200\,\sqrt{3}\phase{0^\circ}\rightarrow \overline{U_B}=200\phase{30^\circ}\\
@@ -3174,13 +4558,13 @@
 	    \end{align*}
 	    siendo la corriente del neutro, por 1LK:
 	    \begin{equation*}
-	        \overline{I_N}=-(\overline{I_A}+\overline{I_B}+\overline{I_C})=0
+	        \overline{I_N}=-(\overline{I_A}+\overline{I_B}+\overline{I_C})=-(20\phase{-150^\circ}+20\phase{-30^\circ}+20\phase{90^\circ})=0
 	    \end{equation*}
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-1}. 
-	    \begin{figure}[htbp]
+	    \begin{figure}[H]
 	        \centering
 	        \includegraphics[width=0.4\linewidth]{../figs/diagrama_ejemplo3_1.pdf}
-	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-1}}
+	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-1}}
 	        \label{fig.diagrama_ejemplo_3-1}
 	    \end{figure}
 	\end{example}
@@ -3208,7 +4592,7 @@
 	
 	Si se tiene un sistema a tres hilos, no se puede seguir el procedimiento anterior, y se deberá aplicar el método de las mallas. 
 	
-	\subsection{Conexión en triángulo}
+	\subsection{Conexión en triángulo}\label{sec.triangulo}
 	
 	\begin{figure}[htbp]
 		\centering
@@ -3218,7 +4602,7 @@
 		\label{fig.conexion_triangulo}
 	\end{figure}
 	
-	Una forma alternativa de conectar las tres fases de un generador/receptor es la \textbf{conexión en triángulo}, que se consigue conectando el terminal de polaridad de referencia negativa de una fase, con el de referencia positiva de otra fase ($A'$ con $B$, $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura \ref{fig.conexion_triangulo}. En este caso, se tiene también un \textbf{sistema a tres hilos}, por lo que solo se dispone de la \textbf{tensión de línea}: 
+	Una forma alternativa de conectar las tres fases de un generador/receptor es la \textbf{conexión en triángulo}, que se consigue conectando el terminal de polaridad de referencia negativa de una fase, con el de referencia positiva de otra fase ($A'$ con $B$, $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura \ref{fig.conexion_triangulo}. En este caso, se tiene únicamente un \textbf{sistema a tres hilos}, por lo que solo se dispone de la \textbf{tensión de línea}: 
 	\begin{equation*}
 	    \overline{U_{AB}};\qquad\qquad \overline{U_{BC}};\qquad\qquad \overline{U_{CA}}\qquad\qquad
 	\end{equation*}
@@ -3263,15 +4647,15 @@
 	    \end{align*}
 	    siendo las corrientes de línea, por 1LK:
 	    \begin{align*}
-	        \overline{I_A}=\sqrt{3}\cdot 20\phase{60^\circ}\,A\\
-	        \overline{I_B}=\sqrt{3}\cdot 20\phase{-60^\circ}\,A\\
-	        \overline{I_C}=\sqrt{3}\cdot 20\phase{180^\circ}\,A
+	        \overline{I_A}&=\sqrt{3}\cdot 20\phase{60^\circ}\,A\\
+	        \overline{I_B}&=\sqrt{3}\cdot 20\phase{-60^\circ}\,A\\
+	        \overline{I_C}&=\sqrt{3}\cdot 20\phase{180^\circ}\,A
 	    \end{align*}
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-2}. 
-	    \begin{figure}[htbp]
+	    \begin{figure}[H]
 	        \centering
 	    \includegraphics[width=0.4\linewidth]{../figs/diagrama_ejemplo3_2.pdf}
-	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-2}}
+	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-2}}
 	        \label{fig.diagrama_ejemplo_3-2}
 	    \end{figure}
 	\end{example}
@@ -3300,9 +4684,9 @@
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.3-3}
-	    \textbf{Un sistema trifásico de secuencia SFI y tensión 200 V alimenta tres impedancias conectadas en triángulo, de valor $\overline{Z_{AB}}=10\phase{0^\circ}\;\Omega$, $\overline{Z_{BC}}=10\phase{30^\circ}\;\Omega$,$\overline{Z_{AB}}=10\phase{-45^\circ}\;\Omega$. Determinar las corrientes de fase y línea y dibujar el diagrama fasorial.}
+	    \textbf{Un sistema trifásico de secuencia SFI y tensión 200 V alimenta tres impedancias conectadas en triángulo, de valor $\overline{Z_{AB}}=10\phase{0^\circ}\;\Omega$, $\overline{Z_{BC}}=10\phase{30^\circ}\;\Omega$, $\overline{Z_{AB}}=10\phase{-45^\circ}\;\Omega$. Determinar las corrientes de fase y línea y dibujar el diagrama fasorial.}
 	    
-	    Siguiendo la referencia para SFD (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea del sistema son:
+	    Siguiendo la referencia para SFI (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea del sistema son:
 	    \begin{align*}
 	        \overline{U_{AB}}&=200\phase{-120^\circ}\,V\\
 	        \overline{U_{BC}}&=200\phase{0^\circ}\,V\\
@@ -3320,79 +4704,88 @@
 	    \overline{I_C}&=(20\phase{165^\circ})-(20\phase{-30^\circ} \,A)=39.660\phase{157.5^\circ}\,A
 	    \end{align*}
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-3}. 
-	    \begin{figure}
+	    \begin{figure}[H]
 	        \centering
-	        \includegraphics{../figs/diagrama_3_3.pdf}
-	        \caption{Diagrama fasorial del Ejercicio~\ref{ej.3-3}}
+	        \includegraphics[width=0.35\linewidth]{../figs/diagrama_3_3.pdf}
+	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-3}}
 	       \label{fig.diagrama_ejemplo_3-3}
 	    \end{figure}
 	\end{example}
 	
-	% SEGUIR AQUI, AUNQUE FALTA LA ESTRELLA DESEQUILIBRADA
-	
-% 	\section{Receptores en estrella y triángulo}
-% 	Las conexiones de un sistema trifásico se pueden hacer en \textbf{estrella} (designada por la letra $Y$) y en \textbf{triángulo} (designada por la letra $D$). Estas conexiones pueden hacerse tanto en los generadores como en los receptores. Sin embargo, en el caso de los generadores siempre se supondrá que se conoce la tensión de línea y, por tanto, no es necesario su análisis. 
-	
-% 	Tres impedancias idénticas se pueden conectar en estrella y en triángulo para formar un receptor trifásico. En este caso, además, las impedancias formarán una \textbf{carga equilibrada} si son idénticas en módulo \textbf{y} fase, y una \textbf{carga desequilibrada} en caso contrario. 
-	
-% 	La conexión en estrella se consigue uniendo los terminales de polaridad de referencia ``negativa'' ($A'$, $B'$, $C'$), en un punto común llamado \textbf{neutro} ($N$), quedando los otros tres terminales ($A$, $B$, $C$) como terminales de entrada por los que recibir la alimentación del generador. También puede usarse como terminal de salida el punto neutro y utilizar un cuarto conductor, denominado \textbf{hilo neutro} (o, simplemente, \textbf{neutro}). Si este conductor existe, se dice que el sistema trifásico es un \textitbf{sistema a cuatro hilos} y, si no existe, se dice que es un \textbf{sistema a tres hilos}. En este caso, por convenio, el sentido de las corrientes va desde las fuentes hasta las cargas. Suponiendo un sistema equilibrado y en secuencia directa, las relaciones de fase y línea para los receptores son: 
-% 	\begin{itemize}
-% 		\item \textbf{Receptor en estrella.} Se unen a un punto común los terminales $a'$, $b'$ y $c'$ de la carga. Por aplicación de la segunda ley de Kirchhoff:
-% 		\begin{equation*}
-% 			\overline{U_{ab}}=\overline{U_{a,n}}-\overline{U_{b,n}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{U_{bc}}=\overline{U_{b,n}}-\overline{U_{c,n}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{U_{ca}}=\overline{U_{c,nN}}-\overline{U_{a,n}}
-% 		\end{equation*}
-% 		Suponiendo que $\overline{U_{a,n}}=U_F\phase {0^\circ}=U_F+j0$ y $\overline{U_{b,n}}=U_F\phase {-120^\circ}=-\frac{U_F}{2}-j\frac{\sqrt{3}\cdot U_F}{2}$), la relación entre tensión de fase y línea en una conexión estrella es:
-% 		\begin{equation*}
-% 			\overline{U_{ab}}=\overline{U_{a,n}}-\overline{U_{b,n}}=\dfrac{3\cdot U_F}{2}+j\dfrac{\sqrt{3}\cdot U_F}{2}=(\sqrt{3}\phase {30^\circ})\,\overline{U_F}
-% 		\end{equation*}
-% 		es decir, la tensión de línea es $\sqrt{3}$ veces mayor en módulo que la de fase y adelantada 30$^\circ$ respecto a ésta. Además, se observa que la intensidad en de los conductores (corriente de línea) es igual a la que recorre cada uno de los receptores (corriente de fase). Por tanto, las relaciones son idénticas a las obtenidas para la generación. 
-% 		\item \textbf{Receptor en triángulo.} Se observa que las tensiones de fase son iguales a las de línea:
-% 		\begin{equation*}
-% 			\overline{U_{ab}}=\overline{U_{aa'}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{U_{bc}}=\overline{U_{bb'}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{U_{ca}}=\overline{U_{cc'}}
-% 		\end{equation*}
-% 		Aplicando la primera ley de Kirchhoff a cada nudo del triángulo: 
-% 		\begin{equation*}
-% 			\overline{I_{a}}=\overline{I_{ab}}-\overline{I_{ca}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{I_{b}}=\overline{I_{bc}}-\overline{I_{ab}}
-% 		\end{equation*}
-% 		\begin{equation*}
-% 			\overline{I_{c}}=\overline{I_{ca}}-\overline{I_{bc}}
-% 		\end{equation*}
-% 		Suponiendo que $\overline{I_{a,b}}=I_{F}\phase {0^\circ}=I_{F}+j0$ e $\overline{I_{c,a}}=I_{F}\phase {120^\circ}=-\frac{I_{F}}{2}+j\frac{\sqrt{3}\cdot I_{F}}{2}$), la relación entre corriente de fase y línea en una conexión triángulo es:
-% 		\begin{equation*}
-% 			\overline{I_{a}}=\overline{I_{a,b}}-\overline{I_{c,a}}=\dfrac{3\cdot I_{F}}{2}-j\dfrac{\sqrt{3}\cdot I_{F}}{2}=(\sqrt{3}\phase {-30^\circ})\,\overline{I_F}
-% 		\end{equation*}
-% 		es decir, la corriente de línea es $\sqrt{3}$ veces mayor en módulo que la de fase y retrasada 30$^\circ$ respecto a ésta.
-% 	\end{itemize}
-	
-% 	Si se quiere pasar de una conexión estrella a triángulo (o viceversa), en el caso concreto de receptores equilibrados, se cumple que:
-% 	\begin{equation*}
-% 		\overline{Z_D}=3\cdot \overline{Z_Y}
-% 	\end{equation*}
-% 	\vspace{2mm}
-% 	\begin{example}\label{ejercicio.3-1}
-% 		\textbf{Un sistema trifásico directo, con una tensión de línea de valor eficaz 120 V, tiene tres impedancias iguales conectadas en estrella de valor $20\phase{-30^\circ}$ $\Omega$. Determinar las intensidades de línea y dibujar también el diagrama fasorial.}
-% 	\end{example}
-	
-% 	\vspace{2mm}
-% 	\begin{example}
-% 		\textbf{Un sistema trifásico directo, con una tensión de línea de valor eficaz 120 V, tiene tres impedancias iguales conectadas en triángulo de valor $5\phase{45^\circ}$ $\Omega$. Determinar las intensidades de línea. Dibujar también el diagrama fasorial.}
-% 	\end{example}
-	
+	\section{Circuito equivalente monofásico de cargas trifásicas}\label{sec.c_eq_mon}
+	 Siempre que se tenga un sistema equilibrado, es posible utilizar un \textbf{circuito monofásico equivalente} al trifásico, en el cual se representa una fase del original. Esto permite tomar cada fase en forma independiente de las restantes, sabiendo que las magnitudes de corriente y tensión calculadas serán iguales en amplitud y frecuencia, pero desfasada $120^\circ$ entre sí. Este método puede aplicarse tanto a estrella como a triángulo, teniendo siempre en cuenta que el circuito equivalente irá por \textbf{fase} y, por tanto, los elementos deberán tener una conexión en \textbf{estrella}. Nótese que, en este caso, las corrientes que se calcularán serán las de \textbf{línea}, que coincidirán con las de fase si la conexión inicial de la carga era en estrella, pero \textbf{no} si es en triángulo (ver Sección~\ref{sec.triangulo}); en este caso, las relaciones entre fase y línea mostradas en la Sección~\ref{sec.secuencia_fases} para la tensión son válidas también para la corriente.
+	 
+	  \begin{example}\label{ex.eq-mono}
+	\textbf{	Un circuito trifásico de SFD presenta una línea de impedancia $1+\mathrm{j}2 \Omega$/hilo. A él se conectan dos cargas equilibradas con una tensión compuesta en sus terminales de 380V/50 Hz. La carga 1, en triángulo, presenta una impedancia $19\,\sqrt{3}\phase {60^\circ}\;\Omega$/fase; la carga 2, conectada en estrella, tiene una impedancia de $38/\sqrt{3}\phase{60^\circ}\;\Omega$/fase. Se pide:
+			\begin{itemize}
+				    \item Corrientes de fase en las cargas 1 y 2 y la corriente total absorbida
+				    \item Tensión compuesta a principio de la línea
+				\end{itemize}}
+		
+		La referencia de tensiones de línea, al ser secuencia directa:
+		\begin{align*}
+		  \overline{U_{A'B'}}&=380\phase{120^\circ} V\\
+		  \overline{U_{B'C'}}&=380\phase{0^\circ} V\\
+		  \overline{U_{C'A'}}&=380\phase{-120^\circ} V
+		\end{align*}
+		y las de fase:
+		\begin{align*}	    \overline{U_A'}&=\dfrac{380}{\sqrt{3}}\phase{90^\circ}V\\    \overline{U_B'}&=\dfrac{380}{\sqrt{3}}\phase{-30^\circ}V\\   \overline{U_C'}&=\dfrac{380}{\sqrt{3}}\phase{-150^\circ}V
+		\end{align*}
+		
+		Para determinar el equivalente monofásico, es necesario transformar la carga 1 en su estrella equivalente. Siguiendo la expresión~\eqref{eq.triangulo-estrella-igual}, extrapolado a una impedancia:
+		\begin{equation*}
+		    \overline{Z_{1,D}}=3\,\overline{Z_{1,Y}}\Rightarrow \overline{Z_{1,Y}}=\dfrac{\overline{Z_{1,D}}}{3}=\dfrac{19\,\sqrt{3}\phase{60^\circ}}{3}=\dfrac{19}{\sqrt{3}}\phase{60^\circ}\Omega
+		\end{equation*}
+		
+		Así, queda un circuito monofásico (se calculará la fase $A$), formado por $\overline{Z_L}$ y las impedancias de $\overline{Z_{1,Y}}$ y $\overline{Z_2}$ en paralelo. Las corrientes de cada carga:
+		\begin{align*}
+		    \overline{I_{1,L,A}}&=\dfrac{\overline{U_A'}}{\overline{Z_{1,Y}}}=\dfrac{\frac{380}{\sqrt{3}}\phase{90^\circ}}{\frac{19}{\sqrt{3}}\phase{60^\circ}}=20\phase{30^\circ}\,A\\
+		    \overline{I_{2,L,A}}&=\dfrac{\overline{U_A'}}{\overline{Z_{2}}}=\dfrac{\frac{380}{\sqrt{3}}\phase{90^\circ}}{\frac{38}{\sqrt{3}}\phase{60^\circ}}=10\phase{30^\circ}\,A
+		\end{align*}
+		y, por 1LK, la corriente total:
+		\begin{equation*}
+		    \overline{I_{L,A}}=\overline{I_{1,L,A}}+\overline{I_{2,L,A}}=20\phase{30^\circ}+10\phase{30^\circ}=30\phase{30^\circ} A
+		\end{equation*}
+		Volviendo al circuito original, las corrientes de la carga 1 de línea son:
+		\begin{align*}
+		    \overline{I_{1,L,A}}&=20\phase{30^\circ}\,A\\
+		    \overline{I_{1,L,B}}&=20\phase{-90^\circ}\,A\\
+		    \overline{I_{1,L,C}}&=20\phase{-210^\circ}\,A\\
+		\end{align*}
+		y, siguiendo las relaciones~\eqref{eq.sfd_fase-linea} al tratarse de una SFD, se obtiene que las corrientes de fase son: 
+		\begin{align*}
+		    \overline{I_{1,F,A}}&=\dfrac{20}{\sqrt{3}}\phase{0^\circ}\,A\\
+		    \overline{I_{1,F,B}}&=\dfrac{20}{\sqrt{3}}\phase{-120^\circ}\,A\\
+		    \overline{I_{1,F,C}}&=\dfrac{20}{\sqrt{3}}\phase{-240^\circ}\,A\\
+		\end{align*}
+		La corriente que circula por cada fase de la carga 2 es igual a la de línea al estar conectada en estrella. Por tanto:
+		\begin{align*}
+		    \overline{I_{2,F,A}}&=10\phase{30^\circ}\,A\\
+		    \overline{I_{2,F,B}}&=10\phase{-90^\circ}\,A\\
+		    \overline{I_{2,F,C}}&=10\phase{-210^\circ}\,A
+		\end{align*}
+		La corriente total absorbida en cada línea:
+		\begin{align*}
+		    \overline{I_{L,A}}&=30\phase{30^\circ} A\\
+		    \overline{I_{L,B}}&=30\phase{-90^\circ} A\\
+		    \overline{I_{L,C}}&=30\phase{-210^\circ} A\\
+		\end{align*}
+		
+		
+		La tensión de fase en el generador (principio de la línea) en el circuito equivalente monofásico:
+		\begin{equation*}
+		    \overline{U_{F,A}}=\overline{Z_L}\;\overline{I_{L,A}}+ \overline{U_A'}=(1+\mathrm{j}2)\cdot(30\phase{30^\circ})+\dfrac{380}{\sqrt{3}}\phase{90^\circ}=286.38\phase{90.8041^\circ} V
+		\end{equation*}
+		y, siguiendo las relaciones~\eqref{eq.sfd_fase-linea} al tratarse de una SFD, se obtiene que la tensión compuesta (de línea) es: 
+		\begin{equation*}
+		    \overline{U_{L,A}}=\sqrt{3}\,286.38\phase{120.8041^\circ} V 
+		\end{equation*}
+		siendo las tensiones en las líneas $B$ y $C$:
+		\begin{align*}
+			  \overline{U_{L,B}}&=\sqrt{3}\,286.38\phase{0.8041^\circ} V\\
+			  \overline{U_{L,C}}&=\sqrt{3}\,286.38\phase{-119.1959^\circ} V
+			\end{align*}
+		\end{example}
 	
 	\section{Potencia en sistemas trifásicos}
 	
@@ -3547,6 +4940,44 @@
 	    \label{fig.trianguloEquilibrado_receptor_potencia}
 	\end{figure}
 	
+	\begin{example}
+	    \textbf{Una red trifásica de $20$ kV de tensión de línea alimenta a una instalación que dispone de dos cargas:
+\begin{itemize}
+    \item Carga 1: conexión triángulo, potencia nominal aparente de $300$ kVA y fdp $0.85$ inductivo
+    \item Carga 2: conexión estrella, potencia nominal aparente de $100$ kVA y fdp $0.95$ capacitivo
+\end{itemize}
+Se pide calcular las potencias totales $P$, $Q$ y $S$, el módulo de la corriente de línea absorbida y el factor de potencia del conjunto.}
+
+Las potencias de la carga 1:
+\begin{align*}
+    P_1&=S_1\,\cos(\phi_1)=300\cdot 0.85 = 255\,kW\\
+    Q_1&=S_1\,\sin(\phi_1)=300\cdot\sin(\arccos(0.85))=158.03\,kVAr\\
+    S_1&=300\,kVA
+\end{align*}
+y las de la carga 2:
+\begin{align*}
+    P_2&=S_2\,\cos(\phi_2)=100\cdot 0.95 = 95\,kW\\
+    Q_2&=S_2\,\sin(\phi_2)=100\cdot\sin(\arccos(0.95))=-31.22\,kVAr\\
+    S_2&=100\,kVA
+\end{align*}
+donde $Q_2$ es negativa al tratarse de un receptor capacitivo. Aplicando T. Boucherot, se tienen las potencias de la instalación:
+\begin{align*}
+    P_T&=P_1+P_2=255+95=350\,kW\\
+    Q_T&=Q_1+Q_2=158.03+(-31.22)=126.81\,kVAr\\
+    \overline{S_T}&=P_T+\mathrm{j}\,Q_T=350+\mathrm{j}\,126.81 \,kVA=372.26\phase{19.9162^\circ}\,kVA
+\end{align*}
+por lo que el factor de potencia del conjunto es:
+\begin{equation*}
+    fdp_T=\cos(\phi_T)=\cos(19.9162^\circ)=0.94
+\end{equation*}
+de carácter inductivo ($\phi_T>0$). 
+
+Con las potencias se puede determinar el módulo de la corriente de línea:
+\begin{equation*}
+    I_L=\dfrac{S_T}{\sqrt{3}\,U_L}=\dfrac{372.26\cdot 10^3}{\sqrt{3}\cdot 20000}=10.75\,A
+\end{equation*}
+	\end{example}
+	
 	\section{Medida de potencia en sistemas trifásicos} 
 	
 	Se estudian dos casos: sistema a cuatro y a tres hilos.
@@ -3588,9 +5019,9 @@
 	    P_T&=P_A+P_B+P_C=\overline{U_{A}}\;\circ\; \overline{I_A} + \overline{U_{B}}\;\circ\; \overline{I_B} + \overline{U_{C}}\;\circ\,\overline{I_C}=\overline{U_{A}}\;\circ\; \overline{I_A}+\overline{U_{B}}\;\circ\; \overline{I_B}+\overline{U_{C}}\;\circ\left(-(\overline{I_A}+\overline{I_B})\right)=\nonumber \\
 	    & =(\overline{U_A}-\overline{U_C})\;\circ\; \overline{I_A}+(\overline{U_B}-\overline{U_C})\;\circ\; \overline{I_B}\Rightarrow \boxed{P_T=\overline{U_{\textcolor{red}{A}C}}\,\circ\,\overline{I_{\textcolor{red}{A}}}+\overline{U_{\textcolor{cyan}{B}C}}\,\circ\,\overline{I_{\textcolor{cyan}{B}}}}
 	\end{align}
-	es decir, que si se conectan dos vatímetros de manera que uno mida $W_A=\overline{U_{AC}}\,\circ\,\overline{I_A}$ y el otro $W_B=\overline{U_{BC}}\,\circ\,\overline{I_B}$, la suma de ambas lecturas es la potencia total: 
+	es decir, que si se conectan dos vatímetros de manera que uno mida $W_1=\overline{U_{AC}}\,\circ\,\overline{I_A}$ y el otro $W_2=\overline{U_{BC}}\,\circ\,\overline{I_B}$, la suma de ambas lecturas es la potencia total: 
 	\begin{equation*}
-	    P_T=W_A+W_B
+	    P_T=W_1+W_2
 	\end{equation*}
 	\begin{remark}
 	    Se hace la observación de que $\overline{U_{AC}}=-\overline{U_{CA}}$. Además, si en lugar de $\overline{I_C}$ se hubiera despejado $\overline{I_A}$ o $\overline{I_B}$:
@@ -3619,12 +5050,12 @@
 	    P_T&=P_{AB}+P_{BC}+P_{CA}=\overline{U_{AB}}\;\circ\; \overline{I_{AB}} + \overline{U_{BC}}\;\circ\;\left(\overline{I_B}+\overline{I_{AB}} \right)  + \overline{U_{CA}}\;\circ\,(\overline{I_{AB}}-\overline{I_A})=\nonumber \\
 	    & =\underbrace{(\overline{U_{AB}}+\overline{U_{BC}}+\overline{U_{CA}})}_{0}\;\circ\; \overline{I_{AB}}+\overline{U_{BC}}\,\circ\,\overline{I_B}\underbrace{-\overline{U_{CA}}}_{\overline{U_{AC}}}\;\circ\; \overline{I_A}\Rightarrow \boxed{P_T=\overline{U_{\textcolor{red}{A}C}}\,\circ\,\overline{I_{\textcolor{red}{A}}}+\overline{U_{\textcolor{cyan}{B}C}}\,\circ\,\overline{I_{\textcolor{cyan}{B}}}}
 	\end{align}
-	idéntico resultado al que se obtiene para una estrella a tres hilos. Por tanto, si se conectan dos vatímetros de manera que uno mida $W_A=\overline{U_{AC}}\,\circ\,\overline{I_A}$ y el otro $W_B=\overline{U_{BC}}\,\circ\,\overline{I_B}$, la suma de ambas lecturas es la potencia total: 
+	idéntico resultado al que se obtiene para una estrella a tres hilos. Por tanto, si se conectan dos vatímetros de manera que uno mida $W_1=\overline{U_{AC}}\,\circ\,\overline{I_A}$ y el otro $W_2=\overline{U_{BC}}\,\circ\,\overline{I_B}$, la suma de ambas lecturas es la potencia total: 
 	\begin{equation*}
-	    P_T=W_A+W_B
+	    P_T=W_1+W_2
 	\end{equation*}
 	
-	\subsection{Método de los dos vatímetros}
+	\subsection{Método de los dos vatímetros}\label{sec.dos_vat}
 	
 	Al procedimiento mostrado en la Sección~\ref{sec.potencia_3H} se le denomina \textbf{método de los dos vatímetros} (o montaje de Aron), y se realiza del siguiente modo: 
 	
@@ -3646,55 +5077,69 @@
 	    \label{fig.fasores_potencia3H}
 	\end{figure}
 	
-	Colocando dos vatímetros en las líneas $A$ y $B$:
+	Colocando dos vatímetros en las líneas $A$ y $B$, como en la Figura~\ref{fig.Potencia3H_Equilibrado_AB}:
 	\begin{equation*}
-	    W_A=\overline{U_{AC}}\,\circ\,\overline{I_A}\qquad\qquad W_B=\overline{U_{BC}}\,\circ\,\overline{I_B}
+	    W_1=\overline{U_{AC}}\,\circ\,\overline{I_A}\qquad\qquad W_2=\overline{U_{BC}}\,\circ\,\overline{I_B}
 	\end{equation*}
-	que, teniendo en cuenta el diagrama fasorial de la Figura~\ref{fig.fasores_potencia3H}, es igual a: 
+	donde se sabe que:
+	\begin{align*}
+	   \overline{U_{AC}}&=-\overline{U_{CA}}=U_L\phase{-120^\circ-180^\circ}=U_L\phase{60^\circ}\\ \overline{U_{BC}}&=U_L\phase{0^\circ}\\ \overline{I_A}&=I_L\phase{90^\circ-\theta}\\ \overline{I_B}&=I_L\phase{-30^\circ-\theta} 
+	\end{align*}
+	Por tanto: 
 	\begin{equation*}
-	    W_A={U_{AC}}\; {I_A}\;\cos{(30-\theta)}=U_L\;I_L\;\cos{(30-\theta)}\qquad W_B={U_{BC}}\; {I_B}\;\cos{(30+\theta)}=U_L\;I_L\;\cos{(30+\theta)}
+	    W_1=U_L\;I_L\;\cos{(\theta-30^\circ)}\qquad W_2={U_L}\; {I_L}\;\cos{(\theta+30^\circ)}
 	\end{equation*}
 	
 	Desarrollando los dos cosenos:
 \begin{align*}
-  \cos({30} - \theta) &= \cos({30})\,\cos(\theta) + \sin({30})\,\sin(\theta)\\
-  \cos({30} + \theta) &= \cos({30})\,\cos(\theta) - \sin({30})\,\sin(\theta)
+  \cos({30^\circ} - \theta) &= \cos({30^\circ})\,\cos(\theta) + \sin({30^\circ})\,\sin(\theta)\\
+  \cos({30^\circ} + \theta) &= \cos({30^\circ})\,\cos(\theta) - \sin({30^\circ})\,\sin(\theta)
 \end{align*}
-y reemplazando en las expresiones de $W_A$ y $W_B$:
+y reemplazando en las expresiones de $W_1$ y $W_2$:
 \begin{align*}
-    W_A&=U_L\;I_L\;\cos{(30-\theta)}=U_L\;I_L\;\left( \cos({30})\,\cos(\theta) + \sin({30})\,\sin(\theta)\right)\\
-    W_B&=U_L\;I_L\;\cos{(30+\theta)}=U_L\;I_L\;\left( \cos({30})\,\cos(\theta) - \sin({30})\,\sin(\theta)\right)
+    W_1&=U_L\;I_L\;\cos{(\theta-30^\circ)}=U_L\;I_L\;\left( \cos({30^\circ})\,\cos(\theta) + \sin({30^\circ})\,\sin(\theta)\right)\\
+    W_2&=U_L\;I_L\;\cos{(\theta+30^\circ)}=U_L\;I_L\;\left( \cos({30^\circ})\,\cos(\theta) - \sin({30^\circ})\,\sin(\theta)\right)
 \end{align*}
 
 Si se suman las medidas de los dos vatímetros, se obtiene que:
 \begin{align}\label{eq.P_2vat_SFD}
-    W_A+W_B&=\left[ U_L\;I_L\;\left( \cos({30})\,\cos(\theta) + \cancel{\sin({30})\,\sin(\theta)}\right) \right] + \left[U_L\;I_L\;\left( \cos({30})\,\cos(\theta) - \cancel{\sin({30})\,\sin(\theta)}\right) \right]=\nonumber\\
-    &= 2\; U_L\;I_L\;\cos({30})\,\cos(\theta) \Rightarrow \boxed{W_A + W_B = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
+    W_1&+W_2=\left[ U_L\;I_L\;\left( \cos({30^\circ})\,\cos(\theta) + \cancel{\sin({30^\circ})\,\sin(\theta)}\right) \right] + [U_L\;I_L\;( \cos({30^\circ})\,\cos(\theta) -\nonumber\\
+    &-\cancel{\sin({30^\circ})\,\sin(\theta)}) ]=2\;U_L\;I_L\;\cos({30^\circ})\,\cos(\theta) \Rightarrow \boxed{W_1 + W_2 = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
 \end{align}
 Además, si se restan: 
 \begin{align}\label{eq.Q_2vat_SFD}
-    W_A-W_B&=\left[ U_L\;I_L\;\left( \cancel{\cos({30})\,\cos(\theta)} + \sin({30})\,\sin(\theta)\right) \right] - \left[U_L\;I_L\;\left( \cancel{\cos({30})\,\cos(\theta)} - \sin({30})\,\sin(\theta)\right) \right]=\nonumber\\
-    &= 2\; U_L\;I_L\;\sin({30})\,\sin(\theta) \Rightarrow \boxed{W_A - W_B = U_L\, I_L\,\sin(\theta) = \dfrac{Q_T}{\sqrt{3}}}
+    W_1&-W_2=\left[ U_L\;I_L\;\left( \cancel{\cos({30^\circ})\,\cos(\theta)} + \sin({30^\circ})\,\sin(\theta)\right) \right] - [U_L\;I_L\;( \cancel{\cos({30^\circ})\,\cos(\theta)} -\nonumber \\
+    &-\sin({30^\circ})\,\sin(\theta)) ]= 2\; U_L\;I_L\;\sin({30^\circ})\,\sin(\theta) \Rightarrow \boxed{W_1 - W_2 = U_L\, I_L\,\sin(\theta) = \dfrac{Q_T}{\sqrt{3}}}
 \end{align}
 Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq.P_2vat_SFD} y \eqref{eq.Q_2vat_SFD}, puesto que:
 \begin{equation}
-    \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_A - W_B}{W_A + W_B}}
+    \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_1 - W_2}{W_1 + W_2}}
 \end{equation}
 
-Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_CA}), las potencias activas y reactivas totales serán: 
+Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
 \begin{align*}
-    \text{B y C}: &\qquad P_T=W_B + W_C  &Q_T=\sqrt{3}\,(W_B - W_C)\\
-    \text{C y A}: &\qquad P_T=W_C + W_A  &Q_T=\sqrt{3}\,(W_C - W_A)\\
+    W_1&=U_L\,I_L\,\cos(\theta-30^\circ) \\
+    W_2&=U_L\,I_L\,\cos(\theta+30^\circ)
+\end{align*}
+siendo las potencias activas y reactivas totales: 
+\begin{align*}
+    P_T&=W_1 + W_2\\
+    Q_T&=\sqrt{3}\,(W_1 - W_2)
 \end{align*}
 \begin{figure}[htbp]
-    \centering
-    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_BC.pdf}\label{fig.Potencia3H_Equilibrado_BC}}\hfill
-    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_CA.pdf}\label{fig.Potencia3H_Equilibrado_CA}}
+    \centering\subfigure[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia_3H_equilibrado_AB.pdf}\label{fig.Potencia3H_Equilibrado_AB}}\hfill
+    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia_3H_Equilibrado_BC.pdf}\label{fig.Potencia3H_Equilibrado_BC}}\hfill
+    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia_3H_Equilibrado_CA.pdf}\label{fig.Potencia3H_Equilibrado_CA}}
     \caption{Método de los dos vatímetros en SFD}
+    \label{fig.potencia3H_equilibrado_SFD}
 \end{figure}
+
+\begin{remark}
+    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFD, las fases presentan una sucesión $ABCABCABC$... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AC$, $BA$ ni $CB$, correspondientes a las conexiones de $W_1$ de la Figura~\ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de la Figura~\ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
+\end{remark}
   
-  \subsubsection{Secuencia de fases indirecta}
-	Considérese ahora una SFI y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H_SFI}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$)
+  \subsubsection{Secuencia de fases inversa}
+	Considérese ahora una SFI y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H_SFI}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$).
 	\begin{figure}[htbp]
 	    \centering
 	    \includegraphics{../figs/fasores_potencia3H_SFI.pdf}
@@ -3702,59 +5147,102 @@ Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros
 	    \label{fig.fasores_potencia3H_SFI}
 	\end{figure}
 	
-	Colocando dos vatímetros en las líneas $A$ y $B$:
+	Colocando dos vatímetros en las líneas $A$ y $B$, como se muestra en la Figura~\ref{fig.Potencia3H_Equilibrado_AB_SFI}:
 	\begin{equation*}
-	    W_A=\overline{U_{AC}}\,\circ\,\overline{I_A}\qquad\qquad W_B=\overline{U_{BC}}\,\circ\,\overline{I_B}
+	    W_1=\overline{U_{BC}}\,\circ\,\overline{I_B}\qquad\qquad W_2=\overline{U_{AC}}\,\circ\,\overline{I_A}
 	\end{equation*}
-	que, teniendo en cuenta el diagrama fasorial de la Figura~\ref{fig.fasores_potencia3H_SFI}, es igual a: 
+	donde se sabe que:
+	\begin{align*}
+	    \overline{U_{BC}}&=U_L\phase{0^\circ}\\
+	   \overline{U_{AC}}&=-\overline{U_{CA}}=U_L\phase{120^\circ+180^\circ}=U_L\phase{-60^\circ}\\ \overline{I_B}&=I_L\phase{30^\circ-\theta} \\  \overline{I_A}&=I_L\phase{-90^\circ-\theta}
+	\end{align*}
+	Por tanto: 
 	\begin{equation*}
-	    W_A={U_{AC}}\; {I_A}\;\cos{(30+\theta)}=U_L\;I_L\;\cos{(30+\theta)}\qquad W_B={U_{BC}}\; {I_B}\;\cos{(30-\theta)}=U_L\;I_L\;\cos{(30-\theta)}
+	    W_1=U_L\;I_L\;\cos{(\theta-30^\circ)}\qquad W_2={U_L}\; {I_L}\;\cos{(\theta+30^\circ)}
 	\end{equation*}
-	
-	Desarrollando los dos cosenos:
-\begin{align*}
-  \cos({30} + \theta) &= \cos({30})\,\cos(\theta) - \sin({30})\,\sin(\theta)\\
-  \cos({30} - \theta) &= \cos({30})\,\cos(\theta) + \sin({30})\,\sin(\theta)
-\end{align*}
-y reemplazando en las expresiones de $W_A$ y $W_B$:
-\begin{align*}
-    W_A&=U_L\;I_L\;\cos{(30+\theta)}=U_L\;I_L\;\left( \cos({30})\,\cos(\theta) - \sin({30})\,\sin(\theta)\right)\\
-    W_B&=U_L\;I_L\;\cos{(30-\theta)}=U_L\;I_L\;\left( \cos({30})\,\cos(\theta) + \sin({30})\,\sin(\theta)\right)
-\end{align*}
-
-Si se suman las medidas de los dos vatímetros, se obtiene que:
+	cuyo resultado es idéntico al obtenido para la SFD: 
 \begin{align}\label{eq.P_2vat_SFI}
-    W_A+W_B&=\left[U_L\;I_L\;\left( \cos({30})\,\cos(\theta) - \cancel{\sin({30})\,\sin(\theta)}\right) \right] + \left[U_L\;I_L\;\left( \cos({30})\,\cos(\theta) + \cancel{\sin({30})\,\sin(\theta)}\right) \right]=\nonumber\\
-    &= 2\; U_L\;I_L\;\cos({30})\,\cos(\theta) \Rightarrow \boxed{W_A + W_B = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
+    W_1&+W_2=\left[U_L\;I_L\;\left( \cos({30^\circ})\,\cos(\theta) - \cancel{\sin({30^\circ})\,\sin(\theta)}\right) \right] + [U_L\;I_L\;( \cos({30^\circ})\,\cos(\theta) +\nonumber\\
+    &+ \cancel{\sin({30^\circ})\,\sin(\theta)}) ]= 2\; U_L\;I_L\;\cos({30^\circ})\,\cos(\theta) \Rightarrow \boxed{W_1 + W_2 = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
 \end{align}
-Además, si se restan: 
+y de signo opuesto para la reactiva: 
 \begin{align}\label{eq.Q_2vat_SFI}
-    &W_A-W_B=\left[ U_L\;I_L\;\left( \cancel{\cos({30})\,\cos(\theta)} - \sin({30})\,\sin(\theta)\right) \right] - \left[U_L\;I_L\;\left( \cancel{\cos({30})\,\cos(\theta)} + \sin({30})\,\sin(\theta)\right)\right]=\nonumber\\
-    &= -2\; U_L\;I_L\;\sin({30})\,\sin(\theta) \rightarrow W_A - W_B = -U_L\, I_L\,\sin(\theta) = -\dfrac{Q_T}{\sqrt{3}} \Rightarrow \boxed{W_B - W_A = \dfrac{Q_T}{\sqrt{3}}}
+    &W_1-W_2=\left[ U_L\;I_L\;\left( \cancel{\cos({30^\circ})\,\cos(\theta)} - \sin({30^\circ})\,\sin(\theta)\right) \right] - [U_L\;I_L\;( \cancel{\cos({30^\circ})\,\cos(\theta)} +\nonumber\\
+    &+\sin({30^\circ})\,\sin(\theta))]= -2\; U_L\;I_L\;\sin({30^\circ})\,\sin(\theta) \rightarrow \boxed{W_1 - W_2 = -U_L\, I_L\,\sin(\theta) = -\dfrac{Q_T}{\sqrt{3}}}
 \end{align}
 Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq.P_2vat_SFI} y \eqref{eq.Q_2vat_SFI}, puesto que:
 \begin{equation}
-    \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_B - W_A}{W_A + W_B}}
+    \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_2 - W_1}{W_1 + W_2}}
 \end{equation}
 
 \begin{figure}[htbp]
     \centering
-    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_SFI_BC.pdf}\label{fig.Potencia3H_Equilibrado_SFI_BC}}\hfill
-    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.4\linewidth]{../figs/Potencia3H_Equilibrado_SFI_CA.pdf}\label{fig.Potencia3H_Equilibrado_SFI_CA}}
+    \centering\subfigure[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_AB_SFI.pdf}\label{fig.Potencia3H_Equilibrado_AB_SFI}}\hfill
+    \subfigure[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_BC_SFI.pdf}\label{fig.Potencia3H_Equilibrado_BC_SFI}}\hfill
+    \subfigure[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_CA_SFI.pdf}\label{fig.Potencia3H_Equilibrado_CA_SFI}}
     \caption{Método de los dos vatímetros en SFI}
+    \label{fig.potencia3H_equilibrado_SFI}
 \end{figure}
-Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_SFI_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_SFI_CA}, las potencias activas y reactivas totales serán: 
+
+Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
 \begin{align*}
-    \text{B y C}: &\qquad P_T=W_B + W_C  &Q_T=\sqrt{3}\,(W_C - W_B)\\
-    \text{C y A}: &\qquad P_T=W_C + W_A  &Q_T=\sqrt{3}\,(W_A - W_C)\\
+    W_1&=U_L\,I_L\,\cos(\theta-30^\circ) \\
+    W_2&=U_L\,I_L\,\cos(\theta+30^\circ)
 \end{align*}
+siendo las potencias activas y reactivas totales: 
+\begin{align*}
+    P_T&=W_1 + W_2\\
+    Q_T&=\sqrt{3}\,(W_2 - W_1)
+\end{align*}
+
+\begin{remark}
+    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFI, las fases presentan una sucesión $ACBACBACB$.... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AB$, $BC$ ni $CA$, correspondientes a las conexiones de $W_1$ de las Figuras~\ref{fig.potencia3H} y \ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de las Figuras~\ref{fig.potencia3H} y \ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
+\end{remark}
+
+\begin{example}\label{ex.dos-vatimetros}
+\textbf{Hallar la indicación del voltímetro en el sistema trifásico equilibrado de SFD de la Figura~\ref{fig.ej_dosvat}, sabiendo que: $W_1=700$ W; $W_2=400$ W; $\overline{Z_L}=1+\mathrm{j}2\Omega$; $\overline{Z_1}=100\Omega$; $\overline{Z_2}=47\phase{37^\circ}\Omega$.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/ej_dosvat.pdf}
+    \caption{Ejemplo~\ref{ex.dos-vatimetros}}
+    \label{fig.ej_dosvat}
+\end{figure}
+
+Al ser SFD, las potencias activa y reactiva totales:
+\begin{align*}
+    P_T&=W_1+W_2=700+400=1100\,W\\
+    Q_T&=\sqrt{3}(W_1-W_2)=\sqrt{3}(700-400)=519.62\,VAr
+\end{align*}
+
+Con estos valores, se empieza a trabajar mediante un equivalente monofásico (de la fase $A$) del circuito trifásico original (ver Sección~\ref{sec.c_eq_mon}). Las cargas $\overline{Z_1}$ y $\overline{Z_2}$ están en paralelo, pudiéndose calcular la impedancia equivalente por fase:
+\begin{equation*}
+    \overline{Z_{eq,F}}=\dfrac{\overline{Z_1}\cdot\overline{Z_2}}{\overline{Z_1}+\overline{Z_2}}=\dfrac{100\cdot 47\phase{37^\circ}}{100+ 47\phase{37^\circ}}=33.47\phase{25.3787^\circ}\Omega=30.24+\mathrm{j}\,14.35\Omega
+\end{equation*}
+Al tratarse de un sistema equilibrado, la potencia activa y reactiva de cada fase es $1/3$ de la total. Con eso, y por su definición, puede determinarse el módulo de la corriente que circula por cada fase:
+\begin{align*}
+    P_F&=R_F\cdot I_F^2\Rightarrow I_F=\sqrt{\dfrac{P_F}{R_F}}=\sqrt{\dfrac{1100/3}{30.24}}=3.48\,A\\
+    Q_F&=X_F\cdot I^2\Rightarrow I_F=\sqrt{\dfrac{Q_F}{X_F}}=\sqrt{\dfrac{519.62/3}{14.35}}=3.48\,A
+\end{align*}
+\begin{remark}
+    Bastaría con calcular $I_F$ con la $P$ o la $Q$, aunque de esta forma se comprueba que el circuito hasta ahora está bien resuelto. 
+\end{remark}
+Esta $I_F$ es la que recorre a $\overline{Z_L}$ y a $\overline{Z_{eq}}$. Suponiendo que la corriente es el origen de fases $\overline{I_F}=3.48\phase{0^\circ}$ A, la tensión de fase del generador:
+\begin{equation*}
+    \overline{U_F}=\overline{I_F}\cdot (\overline{Z_L}+\overline{Z_{eq,F}})=3.48\phase{0^\circ}\cdot(1+\mathrm{j}2+30.24+\mathrm{j}\,14.35)=122.70\phase{27.6261^\circ} V
+\end{equation*}
+
+Dado que el voltímetro mide la \textbf{tensión entre fases} (es decir, la tensión de línea), marcará:
+\begin{equation*}
+    V=\sqrt{3}\,U_F=\sqrt{3}\cdot 122.70=212.52\,V
+\end{equation*}
+\end{example}
 
 
 \subsection{Medida de potencia reactiva con un vatímetro}
 
 Supóngase una SFD y un receptor en estrella de carácter inductivo, con el diagrama fasorial de la Figura~\ref{fig.fasores_potencia3H}. Si se hace el producto escalar de $\overline{U_{BC}}\,\circ\,\overline{I_A}$, se obtiene que:
 \begin{equation*}
-    \overline{U_{BC}}\,\circ\,\overline{I_A}=U_{BC}\;I_A\;\cos(90-\theta)=U_{BC}\;I_A\;\sin(\theta)
+    \overline{U_{BC}}\,\circ\,\overline{I_A}=U_{BC}\;I_A\;\cos(90^\circ-\theta)=U_{BC}\;I_A\;\sin(\theta)
 \end{equation*}
 Por tanto, si se coloca un vatímetro que mida dicho producto escalar (como se muestra en la Figura~\ref{fig.Reactiva3H_A-BC}), se obtiene que: 
 \begin{equation}
@@ -3770,13 +5258,13 @@ donde $W$ representa la lectura del vatímetro.
 
 A modo de resumen, se muestran a continuación las diferentes conexiones que se pueden utilizar para medir la potencia reactiva, indicando su expresión tanto para SFD como SFI. Si se hace la conexión de las Figuras~\ref{fig.conexiones_reactiva1}--\ref{fig.conexiones_reactiva3}, la potencia reactiva es:
 \begin{align}
-SFD &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}\\
-SFI &\rightarrow \boxed{W =  - \frac{Q}{\sqrt{3}}}
+SFD &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}\\
+SFI &\rightarrow \boxed{W =  - \frac{Q_T}{\sqrt{3}}}
 \end{align}
 Si se hace la conexión de las Figuras~\ref{fig.conexiones_reactiva4}--\ref{fig.conexiones_reactiva6}, la potencia reactiva es:
 \begin{align}
-SFD &\rightarrow \boxed{W = - \frac{Q}{\sqrt{3}}}\\
-SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
+SFD &\rightarrow \boxed{W = - \frac{Q_T}{\sqrt{3}}}\\
+SFI &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}
 \end{align}
 
 \begin{figure}
@@ -3789,81 +5277,146 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
     \subfigure[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-BA.pdf}\label{fig.conexiones_reactiva6}}
     \caption{Conexiones para medida de reactiva}
 \end{figure}
+
+\begin{remark}
+    Siguiendo las anotaciones realizadas para la medida de potencia activa y reactiva por el método de los dos vatímetros, las conexiones de las Figuras~\ref{fig.conexiones_reactiva1}--\ref{fig.conexiones_reactiva3} {\color{red}\textbf{sí}} se tienen en la SFD ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFI ($Q_T=-\sqrt{3}\,W$). De manera similar, las conexiones de las Figuras~\ref{fig.conexiones_reactiva4}--\ref{fig.conexiones_reactiva6} {\color{red}\textbf{sí}} se tienen en la SFI ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFD ($Q_T=-\sqrt{3}\,W$)
+\end{remark}
+
 		
+		\begin{example}\label{ex.Q_vat}
+\textbf{El sistema trifásico de la Figura~\ref{fig.Q_vat} es de 380 V, 50 Hz. Sabiendo que la carga es equilibrada y consume 24 kW
+con un factor de potencia de 0,8 (inductivo), que las tensiones de línea son equilibradas y que se tiene una SFD, se pide calcular:
+\begin{itemize}
+    \item Valor de las intensidades de línea en forma fasorial
+    \item Lectura de los vatímetros
+    \item Si la línea de alimentación a la carga dispone de una impedancia $\overline{Z_L}=1+\mathrm{j}$ por conductor, determinar la tensión en forma fasorial que debe disponer el generador en sus bornas para que
+la tensión en la carga sea 380V
+\end{itemize}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/Q_vat.pdf}
+    \caption{Ejemplo~\ref{ex.Q_vat}}
+    \label{fig.Q_vat}
+\end{figure}
+
+Al tratarse de un sistema equilibrado en SFD:
+\begin{align*}
+    \overline{U_A}=\dfrac{380}{\sqrt{3}}\phase{90^\circ}\,V\qquad &\overline{U_{AB}}=380\phase{120^\circ}\,V\\
+    \overline{U_B}=\dfrac{380}{\sqrt{3}}\phase{-30^\circ}\,V\qquad &\overline{U_{BC}}=380\phase{0^\circ}\,V\\
+    \overline{U_C}=\dfrac{380}{\sqrt{3}}\phase{-150^\circ}\,V\qquad &\overline{U_{CA}}=380\phase{-120^\circ}\,V
+\end{align*}
+
+El módulo de la intensidad es:
+\begin{equation*}
+    P_T=\sqrt{3}\,U_L\,I_L\,\cos(\phi)\Rightarrow I=\dfrac{24000}{\sqrt{3}\cdot 380\cdot 0.8}=45.58\,A
+\end{equation*}
+Como el ángulo de la carga es $\arccos{(0.8)}=36.8699^\circ$ (por ser inductivo), y la fase de la corriente se puede determinar a partir de $\theta_I=\theta_U-\phi$:
+\begin{align*}
+    \overline{I_A}&=45.58\phase{53.1301^\circ}\,A\\
+    \overline{I_B}&=45.58\phase{-66.8699^\circ}\,A\\
+    \overline{I_C}&=45.58\phase{-186.8699^\circ}\,A
+\end{align*}
+
+La suma de los vatímetros $W_1$ y $W_3$ va a ser la potencia total de la carga (método de los dos vatímetros). El vatímetro $W_1$ mide la corriente $\overline{I_B}$ y la tensión $\overline{U_{BA}}$, por lo que: \begin{equation*}
+    W_1=\overline{U_{BA}}\circ \overline{I_B}=U_{L}\cdot I_L\cdot \cos{(\theta_{U_{BA}}-\theta_{I_B})}= 380\cdot 45.58\cdot \cos(-60-(-66.8699))=17196.05\,W
+\end{equation*}
+El vatímetro $W_3$ mide la corriente $\overline{I_C}$ y la tensión $\overline{U_{CA}}$, por lo que: \begin{equation*}
+    W_3=\overline{U_{CA}}\circ \overline{I_C}=U_{L}\cdot I_L\cdot \cos{(\theta_{U_{CA}}-\theta_{I_C})}= 380\cdot 45.58\cdot \cos(-120-(-186.8699))=6803.80\,W
+\end{equation*}
+cuya suma se comprueba que es igual a los 24 kW del enunciado.
+\begin{remark}
+    Los valores de $W_1$ y $W_3$ también podrían haberse obtenido directamente con lo indicado en la Sección~\ref{sec.dos_vat}:
+    \begin{align*}
+        W_1&=U_L\,I_L\,\cos(\phi-30)=380\cdot 45.58\cdot \cos(36.8699-30)=17196.05\,W\\
+        W_3&=U_L\,I_L\,\cos(\phi+30)=380\cdot 45.58\cdot \cos(36.8699+30)=6803.80\,W
+    \end{align*}
+\end{remark}
+
+El vatímetro $W_2$ mide en realidad la potencia reactiva, en este caso dividida por $\sqrt{3}$. Dado que la potencia reactiva total es:
+\begin{equation*}
+    Q_T=P_T\,\tan(\phi)=24000\cdot\tan(36.8699)=18000 \,\text{VAr}\Rightarrow W_2=\dfrac{Q_T}{\sqrt{3}}=10392.30\,W
+\end{equation*}
+
+El vatímetro $W_4$ mide la potencia de la fase $A$. Al tratarse de un sistema equilibrado:
+\begin{equation*}
+    W_4=\dfrac{P_T}{3}=\dfrac{24000}{3}=8000W
+\end{equation*}
+
+Las potencias en los bornes del generador son:
+\begin{align*}
+    P_T&=P_L+P_C=3\,R_L\,I_L^2+P_C=3\cdot 1\cdot 45.58^2+24000=30232.61\,W\\
+    Q_T&=Q_L+Q_C=3\,X_L\,I_L^2+P_C=3\cdot 1\cdot 45.58^2+18000=24232.61\,VAr\\
+    \overline{S_T}&=P_T+\mathrm{j}Q_T=30232.61+\mathrm{j}24232.61=38745.71\phase{38.7135^\circ} VA
+\end{align*}
+por lo que la tensión del generador:
+\begin{equation*}
+    S=\sqrt{3}\,U_L\, I_L\Rightarrow U_L=\dfrac{38745.71}{\sqrt{3}\,45.58}=490.78\,V
+\end{equation*}
+que, en forma fasorial, sabiendo que $\theta_U=30+\phi_T+\theta_I$ (puesto que los ángulos son de las fases):
+\begin{align*}
+    \overline{U_A}&=490.72\phase{121.8436^\circ} V\\
+    \overline{U_B}&=490.72\phase{1.8436^\circ} V\\
+    \overline{U_C}&=490.72\phase{-118.1564^\circ} V
+\end{align*}
+\end{example}
+
 		\section{Mejora del factor de potencia}
-		\begin{figure}
-		    \centering
-		    \subfigure[Estrella]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfill
-		    \subfigure[Triángulo]{\includegraphics[width=0.4\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
-		    \caption{Compensación de reactiva}
-		\end{figure}
-		El objetivo y procedimiento es el mismo que en las instalaciones monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la potencia reactiva del sistema, se debe instalar un \textbf{banco de condensadores} que suministren una potencia reactiva $Q_c$. Como resultado, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_C$ y $\cos\theta' > \cos \theta$. La única diferencia es que en este caso se puede optar por un banco de condensadores acoplados en estrella ($C_Y$) o en triángulo ($C_D$):
+		
+		El objetivo y procedimiento es el mismo que en las instalaciones monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la potencia reactiva del sistema, se debe instalar un \textbf{banco de condensadores} que suministren una potencia reactiva $Q_C$. Como resultado, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_C$ y $\cos(\theta') > \cos (\theta)$. La única diferencia con respecto a las instalaciones monofásicas es que en este caso se puede optar por un banco de condensadores acoplados en triángulo ($C_D$) o en estrella ($C_Y$):
 		\begin{itemize}
 		    \item \textbf{Conexión en triángulo.} Si se conectan los condensadores en triángulo, como en la Figura~\ref{fig.compensacion_reactiva_triangulo_trif}, se tiene que: 
 		\begin{align*}
           Q &= P\tan(\theta)\\
-          Q' &= P\tan(\theta') = Q - Q_c\\
-          Q_c &= 3 \cdot \omega C_D \cdot U_L^2
+          Q' &= P\tan(\theta') = Q - Q_C\\
+          Q_C &= 3 \cdot \omega\, C_D \cdot U_L^2
         \end{align*}
         \begin{equation}
-            \boxed{C_D = \frac{P(\tan (\theta) - \tan (\theta'))}{3\omega U_L^2}}
+            \boxed{C_D = \frac{P(\tan (\theta) - \tan (\theta'))}{3\,\omega\, U_L^2}}
         \end{equation}
 		    \item \textbf{Conexión en estrella.} Cuando se conectan los condensadores en estrella, como en la Figura~\ref{fig.compensacionY_reactiva_triangulo_trif}, se tiene que: 
 		\begin{align*}
           Q &= P\tan(\theta)\\
-          Q' &= P\tan(\theta') = Q - Q_c\\
-          Q_c &= 3 \cdot \omega C_Y \cdot U_F^2 = \cancel{3} \cdot \omega C_Y \cdot \left(\dfrac{U_L}{\cancel{\sqrt{3}}}\right)^2=\omega C_Y \cdot U_L^2
+          Q' &= P\tan(\theta') = Q - Q_C\\
+          Q_c &= 3 \cdot \omega C_Y \cdot U_F^2 = \cancel{3} \cdot \omega \,C_Y \cdot \left(\dfrac{U_L}{\cancel{\sqrt{3}}}\right)^2=\omega C_Y \cdot U_L^2
         \end{align*}
         \begin{equation}
-            \boxed{C_Y = \frac{P(\tan (\theta) - \tan (\theta'))}{\omega U_L^2}}
+            \boxed{C_Y = \frac{P(\tan (\theta) - \tan (\theta'))}{\omega\, U_L^2}}
         \end{equation}
 		\end{itemize}
 		
-		Por tanto, y dado que $C_Y = 3 \cdot C_D$, la capacidad en triángulo es tres veces menor que en estrella. Así, la configuración recomendada en \textbf{triángulo}.
+		\begin{figure}
+		    \centering
+		    \subfigure[Triángulo]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfill
+		    \subfigure[Estrella]{\includegraphics[width=0.4\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
+		    \caption{Compensación de reactiva}
+		\end{figure}
 		
+		Por tanto, y dado que $C_Y = 3 \cdot C_D$, la capacidad en triángulo es \textbf{tres veces menor} que en estrella. Así, la configuración recomendada en \textbf{triángulo}.
 		
-		
-		\section{Circuito equivalente monofásico de cargas trifásicas}\label{sec.c_eq_mon}
-	 En muchos casos, es posible utilizar un circuito monofásico equivalente al trifásico, en el cual se representa una fase del original. Este método puede aplicarse tanto a estrella como a triángulo, teniendo siempre en cuenta que el circuito equivalente irá por \textbf{fase} y, por tanto, considerando una conexión en \textbf{estrella}. 
-	
-	% Supóngase un sistema trifásico equilibrado como el que se muestra en la Figura \ref{fig.estrella_gen_carga}, en el que tanto receptor como generador están conectados en estrella y enlazados por una línea trifásica de impedancia $Z_L$. 
-	% \begin{figure}[h!]
-		%     \centering
-		%     \includegraphics[width=\linewidth]{../figs/estrella_gen_carga.pdf}
-		%     \caption{Circuito trifásico con generación y carga en estrella}
-		%     \label{fig.estrella_gen_carga}
-		% \end{figure}
-	% Un circuito equivalente monofásico al mostrado en la Figura \ref{fig.estrella_gen_carga} sería el representado en la Figura \ref{fig.eq_mon}.
-	% \begin{figure}[h!]
-		%     \centering
-		%     \includegraphics[width=0.5\linewidth]{../figs/eq_mon.pdf}
-		%     \caption{Circuito equivalente monofásico}
-		%     \label{fig.eq_mon}
-		% \end{figure}
-	
-	% Con esto, la corriente $I_a$ se puede obtener mediante la expresión:
-	% \begin{equation*}
-		%     I_a=\dfrac{E_a}{Z_L+Z_Y}
-		% \end{equation*}
-	% y las tensiones $U_L$ y $U_{a'}$ se obtendrán: 
-	% \begin{equation*}
-		%     U_L=Z_L\cdot I_a
-		% \end{equation*}
-	% \begin{equation*}
-		%     U_{a'}=Z_Y\cdot I_a
-		% \end{equation*}
-	% Nótese que la tensión $E_a = U_a$. A partir de las magnitudes en la fase $a$, se pueden obtener las de las fases $b$ y $c$, siempre y cuando el sistema esté equilibrado (se desfasaría $b$ -120^\circ respecto de $a$; y $c$ se desfasaría -120^\circ respecto de $b$). 
-	
-	% Si las impedancias y generador estuvieran conectados en triángulo, podrían sustituirse por su equivalente en estrella, siendo:
-	% \begin{equation*}\label{eq.z_mono}
-		%     Z_{Y}=\dfrac{Z_{D}}{3}
-		% \end{equation*}
-	% \begin{equation*}\label{eq.eq_E_Y}
-		%     E_a = \dfrac{E_{ab}-E_{bc}}{3}
-		% \end{equation*}
+		\begin{example}\label{ex.compensacion_Q_trif}
+		    \textbf{Una red trifásica de 380 V, 50 Hz y secuencia SFD alimenta a dos cargas equilibradas: $(i)$ 30 kW y factor de potencia $0.7$ inductivo; $(ii)$ 24 kW y factor de potencia $0.6$ inductivo. Determinar la capacidad de cada uno de los condensadores a conectar a la red para que el factor de potencia global mejore hasta $0.95$.}
+		    
+		    La potencia reactiva inicial es:
+		    \begin{equation*}
+		        Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kVAr}
+		    \end{equation*}
+		    La potencia reactiva una vez se tenga la batería de condensadores será: 
+		    \begin{equation*}
+		        Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kVAr}
+		    \end{equation*}
+		    siendo la potencia aportada por los condensadores:
+		    \begin{equation*}
+		        Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kVAr}
+		    \end{equation*}
+		    por lo que la capacidad a conectar en cada fase del triángulo: 
+		    \begin{equation*}
+		     C_D=\dfrac{Q_C}{3\,\omega\,U_L^2}=\dfrac{44.80\cdot 10^3}{3\cdot 2\cdot \pi\cdot 50\cdot 380^2}=329.63\,\mu F/fase
+		    \end{equation*}
+		\end{example}
+
+		 
 	
 	
-	% \vspace{2mm}
 	% \begin{example}
 		% \textbf{Dado el circuito de la Figura \ref{fig.eq_monofasico}, calcular las corrientes de línea del circuito.}
 		% \begin{figure}[h!]
@@ -3883,7 +5436,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 		
 		% La tensión de la fase $a$ será, según \eqref{eq.eq_E_Y}:
 		% \begin{equation*}
-			%     E_{a,F}=\dfrac{E_{ab}-E_{bc}}{3}=\dfrac{240\phase 0-240\phase -120}{3}=138.56\phase 30\;V
+			%     E_{a,F}=\dfrac{E_{ab}-E_{bc}}{3}=\dfrac{240\phase 0-240\phase -120}{3}=138.56\phase 30^\circ\;V
 			% \end{equation*}
 		% y se considerará un desfase nulo para una fase (en este caso, la $a$), según se explicó en la Sección \ref{sec.c_eq_mon}. Así, el equivalente monofásico del circuito se muestra en la Figura \ref{fig.equivalente_monofasico2}.
 		% \begin{figure}[h!]
@@ -3895,7 +5448,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 		
 		% A partir del equivalente monofásico, el valor de la corriente para la fase $a$ es:
 		% \begin{equation*}
-			%     I_{a,F}=\dfrac{138.56\phase 30}{(1.8\phase 68.2)+(1+j\sqrt{3})+(2.13\phase -51.34)}=40\phase 0 \;\text{A}
+			%     I_{a,F}=\dfrac{138.56\phase 30^\circ}{(1.8\phase 68.2)+(1+j\sqrt{3})+(2.13\phase -51.34)}=40\phase 0 \;\text{A}
 			% \end{equation*}
 		% Haciendo los desfases correspondientes de -120^\circ, se tiene que: \begin{equation*}
 			%     I_{b}=40\phase (-30-120)=40\phase -120 \;\text{A}
@@ -3907,139 +5460,10 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 	
 	
 	% \vspace{2mm}
-	% \begin{example}
-		% \textbf{En el circuito de la Figura \ref{fig.circ_trifasico} se muestra un línea trifásica de impedancia 1+j2 $\Omega$/hilo, con una tensión compuesta en los terminales de las cargas de 380V/50 Hz, con un conjunto receptor constituido por dos cargas trifásicas equilibradas, una en triángulo de impedancia $19\cdot \sqrt{3}\phase 60\;\Omega$/fase y otra en estrella de $38/\sqrt{3}\phase 60\;\Omega$/fase. La secuencia de fases es RST (directa) y se toma como tensión de referencia $V_{RN}$ en las cargas. Se pide:
-			% \begin{itemize}
-				%     \item Corrientes de fase en las cargas 1 y 2 y la corriente total absorbida
-				%     \item Tensión compuesta a principio de la línea, teniendo en cuenta que la tensión compuesta en los terminales de los receptores es de 380 V.
-				% \end{itemize}}
-		% \begin{figure}[h!]
-			%     \centering
-			%     \includegraphics[width=0.8\linewidth]{../figs/circuito_trifasico.PNG}
-			%     \caption{Ejemplo 1.11}
-			%     \label{fig.circ_trifasico}
-			% \end{figure}
-		
-		% La referencia de tensiones, al ser secuencia directa:
-		% \begin{equation*}
-			%     V_{RN}=\dfrac{380}{\sqrt{3}}\phase 0\;V
-			% \end{equation*}
-		% y el resto de tensiones simples (de fase): 
-		% \begin{equation*}
-			%     V_{SN}=\dfrac{380}{\sqrt{3}}\phase -120\;V
-			% \end{equation*}
-		% \begin{equation*}
-			%     V_{TN}=\dfrac{380}{\sqrt{3}}\phase -240\;V
-			% \end{equation*}
-		% Con esto, se calcular las tensiones compuestas (de línea):
-		% \begin{equation*}
-			%     V_{RS}=V_{RN}-V_{SN}=\left(\dfrac{380}{\sqrt{3}}\phase 0\right)-\left(\dfrac{380}{\sqrt{3}}\phase -120\right)=380\phase 30\;V
-			% \end{equation*}
-		% \begin{equation*}
-			%     V_{ST}=V_{SN}-V_{TN}=\left(\dfrac{380}{\sqrt{3}}\phase -120\right)-\left(\dfrac{380}{\sqrt{3}}\phase -240\right)=380\phase -90\;V
-			% \end{equation*}
-		% \begin{equation*}
-			%     V_{TR}=V_{TN}-V_{RN}=\left(\dfrac{380}{\sqrt{3}}\phase -240\right)-\left(\dfrac{380}{\sqrt{3}}\phase 0\right)=380\phase -210\;V
-			% \end{equation*}
-		
-		% \underline{CARGA 1}
-		
-		% La corriente que circula por la fase es:
-		% \begin{equation*}
-			%     I_{RS,1}=\dfrac{V_{RS}}{Z_D}=\dfrac{380\phase 30}{19\cdot \sqrt{3}\phase 60}=11.55\phase -30\;A
-			% \end{equation*}
-		% Al ser una carga equilibrada en secuencia directa, las otras corrientes serán: 
-		% \begin{equation*}
-			%     I_{ST,1}=11.55\phase -150\;A
-			% \end{equation*}
-		% \begin{equation*}
-			%     I_{TR,1}=11.55\phase -270\;A
-			% \end{equation*}
-		% Por tanto, las corrientes de línea:
-		% \begin{equation*}
-			%     I_{R,1}=I_{RS,1}-I_{TR,1}=\left(11.55\phase -30\right)-\left(11.55\phase -270\right)=20\phase -60\;A
-			% \end{equation*}
-		% \begin{equation*}
-			%     I_{S,1}=I_{ST,1}-I_{RS,1}=\left(11.55\phase -150\right)-\left(11.55\phase -30\right)=20\phase -180\;A
-			% \end{equation*}
-		% \begin{equation*}
-			%     I_{T,1}=I_{TR,1}-I_{ST,1}=\left(11.55\phase -270\right)-\left(11.55\phase -150\right)=20\phase -300\;A
-			% \end{equation*}
-		% (Una vez obtenida $I_{R,1}$ también podían obtenerse $I_{S,1}$ e $I_{T,1}$ haciendo los desfases de -120^\circ).
-		
-		% \vspace{1mm}
-		% \underline{CARGA 2}
-		
-		% La corriente que circula por la fase es:
-		% \begin{equation*}
-			%     I_{R,2}=\dfrac{V_{RN}}{Z_Y}=\dfrac{380/\sqrt{3}\phase 0}{38/\sqrt{3}\phase 60}=10\phase -60\;A
-			% \end{equation*}
-		% Al ser una carga equilibrada en secuencia directa, las otras corrientes serán: 
-		% \begin{equation*}
-			%     I_{S,2}=10\phase -180\;A
-			% \end{equation*}
-		% \begin{equation*}
-			%     I_{T,2}=10\phase -300\;A
-			% \end{equation*}
-		% Al estar la carga 2 conectada en estrella, las corrientes de fase son iguales a las de línea. 
-		
-		% \vspace{1mm}
-		% \underline{CORRIENTE TOTAL ABSORBIDA}
-		
-		% La corriente total absorbida, a partir de los datos obtenidos en las dos cargas, se calcula a partir de la primera ley de Kirchhoff:
-		% \begin{equation*}
-			%     I_R=I_{R,1}+I_{R,2}=(20\phase -60)+(10\phase -60)=30\phase -60\,A
-			% \end{equation*}
-		% Para el resto de fases, sabiendo que es secuencia directa: 
-		% \begin{equation*}
-			%     I_S=30\phase -180\,A
-			% \end{equation*}
-		% \begin{equation*}
-			%     I_T=30\phase -300\,A
-			% \end{equation*}
-		
-		% \vspace{1mm}
-		% \underline{TENSIÓN COMPUESTA AL PRINCIPIO DE LA LÍNEA}
-		
-		% Considerando la impedancia de línea de la fase $R$, la caída de tensión debido a dicha impedancia es:
-		% \begin{equation*}
-			%     V_{Z_L}=I_R\cdot Z_L=(30\phase -60)\cdot (1+j\,2)=67.08\phase 3.43\;V
-			% \end{equation*}
-		
-		% Al tratarse de un circuito equilibrado, se realiza el equivalente monofásico en estrella, puesto que se sabe de antemano que $V_{RN}=\frac{380}{\sqrt{3}}\phase 0$V. El circuito equivalente sería entonces el mostrado en la Figura \ref{fig.equivalente_monofasico1}.
-		% \begin{figure}[h!]
-			%     \centering
-			%     \includegraphics[width=0.5\linewidth]{../figs/equivalente_monofasico_2.pdf}
-			%     \caption{Equivalente monofásico}
-			%     \label{fig.equivalente_monofasico1}
-			% \end{figure}
-		% Por tanto, la tensión de la fase $R$ al inicio de la línea es:
-		% \begin{equation*}
-			%   V_{R'N'}=V_{Z_L}+V_{RN}=(67.08\phase 3.43)+(380/\sqrt{3}\phase 0)=286.38\phase 0.8\;V
-			% \end{equation*}
-		% Las otras tensiones de fase al inicio de línea, sabiendo que es secuencia directa: 
-		% \begin{equation*}
-			%   V_{S'N'}=286.38\phase -119.2\;V
-			% \end{equation*}
-		% \begin{equation*}
-			%   V_{T'N'}=286.38\phase -239.2\;V
-			% \end{equation*}
-		% Por tanto, la tensión compuesta $V_{R'S'}$ es: 
-		% \begin{equation*}
-			%     V_{S'T'}=V_{R'N'}-V_{S'N'}=(286.38\phase 0.8)-(286.38\phase -119.2)=496.02\phase 30.8\;V
-			% \end{equation*}
-		% y para el resto de líneas: 
-		% \begin{equation*}
-			%     V_{T'R'}=496.02\phase -89.2\;V
-			% \end{equation*}
-		% \begin{equation*}
-			%     V_{R'S'}=496.02\phase -209.2\;V
-			% \end{equation*}
-		% \end{example}
 	
 	% %%%%%%%%%%%%%%%%%
 	
-	\chapterimage{imagen_t4.jpg} % Chapter heading image
+	\chapterimage{tema4.jpg} % Chapter heading image
 	\chapter{Teoremas generales de circuitos}
 	
 	\section{Circuitos lineales}
@@ -4574,7 +5998,7 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 % 	\end{example}
 	
 	
-	\section{Circuitos de primer orden}
+	\section{Circuitos de primer orden}\label{sec.primer_orden}
 	
 	Se estudian los circuitos cuyo modelo matemático es una ecuación diferencial lineal de primer orden. Físicamente, estos circuitos están constituidos por un número cualquiera de resistencias y fuentes independientes, pero con \textbf{un único elemento reactivo} (o varios del mismo tipo que puedan ser sustituidos por uno equivalente por estar asociados en serie o paralelo). La ecuación homogénea del circuito ($g(t)=0$) es de la forma:
 	\begin{equation*}
@@ -4782,7 +6206,11 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	\end{enumerate}
 	
 	\section{Circuitos de segundo orden}
-	Se estudian los circuitos cuyo modelo matemático es una ecuación diferencial lineal de segundo orden. Físicamente, estos circuitos están constituidos por un número cualquiera de resistencias y fuentes independientes, pero con \textbf{dos elementos reactivos} de distinto tipo o que no están asociados en serie/paralelo. 
+	Se estudian los circuitos cuyo modelo matemático es una ecuación diferencial lineal de segundo orden. Físicamente, estos circuitos están constituidos por un número cualquiera de resistencias y fuentes independientes, pero con \textbf{dos elementos reactivos} de distinto tipo, o varios del mismo que no están asociados en serie/paralelo. La ecuación diferencial general tiene la forma: 
+	\begin{equation*}
+	    a_2\,y''(t)+a_1\,y'(t)+a_0\,y(t)=g(t)
+	\end{equation*}
+	cuya solución está formada por dos términos (la solución natural, resolviendo la ecuación diferencial homogénea; y la solución particular, obtenida al resolver la ecuación completa).
 	
 	\subsection{Determinar la solución natural}
 	La ecuación homogénea del circuito ($g(t)=0$) es de la forma:
@@ -4790,9 +6218,9 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	    a_2\,y''(t)+a_1\,y'(t)+a_0\,y(t)=0\Rightarrow y''(t)+\dfrac{a_1}{a_2}\,y'(t)+\dfrac{a_0}{a_2}y(t)=0
 	\end{equation*}
 	Haciendo los cambios de variable:
-	\begin{equation*}
-	    \dfrac{a_1}{a_0}=2\,\xi\,\omega_n\qquad \qquad \dfrac{a_0}{a_2}=\omega_n^2
-	\end{equation*}
+	\begin{equation}\label{eq.xi-omega_n}
+	    \boxed{\dfrac{a_1}{a_0}=2\,\xi\,\omega_n}\qquad \qquad \boxed{\dfrac{a_0}{a_2}=\omega_n^2}
+	\end{equation}
 	donde $\omega_n$ es la pulsación natural no amortiguada y $\xi$, el coeficiente de amortiguamiento, el polinomio característico queda: 
 	\begin{equation*}
 	    \lambda^2+2\,\xi\,\omega_n\,\lambda + \omega_n^2=0
@@ -4834,13 +6262,135 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'= \frac{1}{C} \int^{0^-
 	 y_g(t)=M\,\sin\left(\omega_n\,t + \theta \right)
 	\end{equation*}
 	
+	\subsection{Determinar la solución particular}
+	Se corresponde con la respuesta de régimen permanente $y_\infty(t)$, y se obtiene siguiendo el procedimiento estudiado en los circuitos de primer orden (ver Sección~\ref{sec.primer_orden}) según el tipo de alimentación del circuito:
+	\begin{itemize}
+	        \item \textit{Corriente continua}: sustituir las bobinas por cortocircuitos y los condensadores por circuitos abiertos
+	        \item \textit{Corriente alterna senoidal}: resolver el circuito por el método fasorial
+	        \item \textit{Otro tipo de forma de onda}: determinar la solución particular de la ecuación diferencial
+	    \end{itemize}
+	
 	\subsection{Determinar las constantes de integración}
-	A partir de la solución general, se determina: 
+	En general, se puede seguir el siguiente procedimiento:
+	\begin{enumerate}
+	    \item Obtener el valor de $i_L(0^-)$ y $u_C(0^-)$ para determinar, por continuidad, $i_L(0^+)$ y $u_C(0^+)$ según lo indicado en la Sección~\ref{sec.condiciones_iniciales}
+	    \item Sustituir las bobinas y condensadores por fuentes de intensidad y tensión, respectivamente, de valor $i_L(0^+)$ y $u_C(0^+)$
+	    \item Con este nuevo circuito, puramente resistivo, cualquier variable se puede obtener por superposición $\rightarrow$ se obtiene la primera condición de contorno
+	    \item Derivar la expresión de la variable en estudio, particularizada para $t=0^+$ $\rightarrow$ se obtiene la segunda condición de contorno
+	\end{enumerate}
 	
-	ES LO ÚNICO QUE FALTA, TENGO QUE ACABARLO
-	
-	
-	
+	\begin{example}
+	    \textbf{El circuito de la Figura~\ref{fig.ejemplo_2orden} lleva en la situación indicada un tiempo suficientemente grande, de forma que se encuentra en régimen permanente. En el instante $t=0$, se cierra el interruptor. Determinar la intensidad $i(t)$ para $t>0$. }
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.45\linewidth]{../figs/ejemplo_2orden.pdf}
+	        \captionof{figure}{Ejemplo ZXX}
+	        \label{fig.ejemplo_2orden}
+	    \end{figure}
+	        
+	    \textbf{Cálculo de condiciones iniciales}
+	        
+	    Antes de cerrar el interruptor, no circula corriente por la bobina, por lo que $i_L(0^-)=i_L(0^+)=0$ A, por continuidad. 
+	    
+	    El circuito de la derecha está en régimen permanente de corriente continua, por lo que el condensador se puede sustituir por un circuito abierto, no circulando así corriente por la resistencia. De este modo, $u_C(0^-)=u_C(0^+)=4$ V, por continuidad.
+	    
+	    
+	    
+	    Una vez se cierra el interruptor, y caracterizando los elementos pasivos por su impedancia operacional, se tiene el circuito de la Figura~\ref{fig.ejemplo_2orden1}. 
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.45\linewidth]{../figs/ejemplo_2orden1.pdf}
+	        \captionof{figure}{Ejemplo ZXX}
+	        \label{fig.ejemplo_2orden1}
+	    \end{figure}
+	    
+	    \textbf{Obtención de la ecuación diferencial}
+	    
+	    Aplicando el método de nudos modificados, suponiendo que todas las corrientes salieran del nudo $A$, se tiene que: 
+	    \begin{align*}
+	        0&=i_L(t)+i(t)+i_C(t)\\
+	        i_L(t)&=\dfrac{U_A-0-U_1}{4\,D}=\dfrac{U_A-U_1}{4\,D}\\
+	        i(t)&=\dfrac{U_A-0}{1}=U_A\\
+	        i_C(t)&=\dfrac{U_A-0-U_2}{\frac{1}{D}}=D\,U_A-D\,U_2\\
+	    \end{align*}
+	Sustituyendo en la 1LK y operando, se obtiene que:
+	\begin{equation*}
+	    U_A=\dfrac{U_1+4\,D^2\,U_2}{4\,D^2+4\,D+1}
+	\end{equation*}
+	Por tanto, dado que $i(t)=\frac{U_A}{1}$, se obtiene que:
+	\begin{equation*}
+	    i(t)=\dfrac{U_1+4\,D^2\,U_2}{4\,D^2+4\,D+1}\Rightarrow \left(4\,D^2+4\,D+1\right) i(t)=U_1+4\,\cancelto{0}{D^2\,U_2}\Rightarrow \left(4\,D^2+4\,D+1\right) i(t)=6
+	\end{equation*}
+    que es la ecuación diferencial a resolver. 
+	    
+	    \textbf{Determinar la solución natural}
+	    
+	    La ecuación homogénea es: 
+	    \begin{equation*}
+	        \left(4\,D^2+4\,D+1\right) i(t)=4\diff[2]{i(t)}{t}+4\diff{i(t)}{t}+1=0
+	    \end{equation*}
+% 	    y considerando las expresiones de~\eqref{eq.xi-omega_n}: 
+% 	    \begin{align*}
+% 	    \dfrac{1}{4}&=\omega_n^2\Rightarrow \omega_n=\dfrac{1}{2}\\
+% 	    1&=2\,\xi\,\omega_n=2\,\xi\,\dfrac{1}{2}\Rightarrow \xi = 1
+% 	\end{align*}
+    Resolviendo el polinomio característico, se tiene que: 
+    \begin{equation*}
+        \lambda_1=\lambda_2=\lambda=-\dfrac{1}{2}
+    \end{equation*}
+    por lo que: 
+    \begin{equation*}
+        i_g(t)=\mathrm{e}^{-\frac{1}{2}\,t}(K_1\,+K_2\,t) 
+    \end{equation*}
+	    
+	    \textbf{Determinar la solución en régimen permanente}
+	    
+	    Al tratarse de un circuito de corriente continua, el régimen permanente la bobina se comporta como un cortocircuito y el condensador como un circuito abierto, quedando la fuente de 4 V aislada y recibiendo la resistencia una tensión de 6 V. Por la ley de Ohm:
+	    \begin{equation*}
+	        i_\infty(t)=\dfrac{U_R}{R}=\dfrac{6}{1}=6\,\text{A}
+	    \end{equation*}
+	    
+	    \textbf{Determinar las constantes}
+	    
+	    Se sustituye la bobina por una fuente de intensidad de valor 0 A y el condensador por una fuente de tensión de 4 V, como en la Figura~\ref{fig.ejemplo_2orden1}.
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.45\linewidth]{../figs/ejemplo_2orden2.pdf}
+	        \caption{Caption}
+	        \label{fig.ejemplo_2orden2}
+	    \end{figure}
+	    
+	    Por tanto, la corriente en la resistencia queda determinada por las dos fuentes de tensión ubicadas a su derecha:
+	    \begin{equation*}
+	        u_R(t)=U_2-u_C(t)\Rightarrow i(t)=\dfrac{u_R(t)}{R}
+	    \end{equation*}
+	    cuya derivada es: 
+	    \begin{equation*}
+	        \diff{i(t)}{t}=\dfrac{\cancelto{0}{\diff{U_2}{t}}-\diff{u_C(t)}{t}}{R}=-\dfrac{1}{R}\,\diff{u_C(t)}{t}=-\dfrac{i_C(t)}{R\,C}
+	    \end{equation*}
+	    La intensidad del condensador, por la 1LK:
+	    \begin{equation*}
+	        i_C(t)=i(t)-i_L(t)
+	    \end{equation*}
+	    Dando ahora los valores de las condiciones iniciales a bobina y condensador, y particularizando para $t=0^+$, se obtienen las constantes $K_1$ y $K_2$:
+	    \begin{align*}
+	        i(0^+)&=\dfrac{4-4}{1}=0\\
+	        \diff{i}{t}[t = 0^+]&=-\dfrac{i(0^+)-i_L(0^+)}{R\,C}=-\dfrac{0-0}{1\,1}=0
+	    \end{align*}
+	    Imponiendo estas condiciones a la solución de la ecuación diferencial:
+	    \begin{equation*}
+	        i(t)=6+\mathrm{e}^{-\frac{1}{2}\,t}(K_1\,+K_2\,t)\Rightarrow
+	        \begin{cases}
+	            i(0^+)=0=6+\mathrm{e}^{-\frac{1}{2}\,0}(K_1\,+K_2\,0)=6+K_1\Rightarrow K_1=-6\\
+	            \diff{i}{t}[t = 0^+]=0=\mathrm{e}^{-\frac{1}{2}0}\left[-\frac{1}{2}(K_1+K_2\cdot 0)+K_2 \right]\Rightarrow K_2=-3
+	        \end{cases}
+	    \end{equation*}
+	    por lo que la corriente para $t>0$ es:
+	    \begin{equation*}
+	        i(t)=6+\mathrm{e}^{-\frac{1}{2}\,t}(-6-3\,t)
+	    \end{equation*}
+	    
+	\end{example}
 	
  
 \end{document}
