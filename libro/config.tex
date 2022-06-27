@@ -1,24 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Legrand Orange Book
-% Structural Definitions File
-% Version 2.0 (9/2/15)
-%
-% Original author:
-% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
-% Vel (vel@latextemplates.com)
-% 
-% This file has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
 
 \usepackage{caption}
@@ -30,7 +9,7 @@
 \usepackage{diffcoeff}
 
 \usepackage{graphicx} % Required for including pictures
-\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+\graphicspath{{../figs/}} % Specifies the directory where pictures are stored
 
 \usepackage{lipsum} % Inserts dummy text
 
@@ -165,6 +144,8 @@
 \addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
 \renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
 \fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+
+\renewcommand{\chaptername}{BT}
 
 % Removes the header from odd empty pages at the end of chapters
 \makeatletter
@@ -511,5 +492,3 @@ addtohook={%
 
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
-
-\usepackage{float}
