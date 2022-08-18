@@ -230,7 +230,7 @@ u(t) = R \cdot i(t)
 
 - La *resistividad* depende del material conductor y de la temperatura ambiente:
 
-  - Cobre a 20ºC: $\SI{17.24}{\milli\ohm\milli\meter\squared\per\meter}$.
+  - Cobre a 20ºC: $\qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}$.
 
 *** Cortocircuito y Circuito Abierto
 - Cortocircuito: resistencia nula (tensión nula)
