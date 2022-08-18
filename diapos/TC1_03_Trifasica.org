@@ -23,9 +23,9 @@ file:../figs/EstrellaEquilibrado.pdf
 
  #+begin_export latex
  \begin{align*}
-   u_1(t) &= U_0 \cos(\omega t)\\
-   u_2(t) &= U_0 \cos(\omega t + 2\pi/3)\\
-   u_3(t) &= U_0 \cos(\omega t - 2\pi/3)
+   u_1(t) &= U_0 \sin(\omega t)\\
+   u_2(t) &= U_0 \sin(\omega t + 2\pi/3)\\
+   u_3(t) &= U_0 \sin(\omega t - 2\pi/3)
  \end{align*}
  #+end_export
 
@@ -53,9 +53,9 @@ file:../figs/EstrellaEquilibrado.pdf
 
 #+begin_export latex
 \begin{align*}
-  u_1(t) &= U_0 \cos(\omega t)\\
-  u_2(t) &= U_0 \cos(\omega t + 2\pi/3)\\
-  u_3(t) &= U_0 \cos(\omega t - 2\pi/3)
+  u_1(t) &= U_0 \sin(\omega t)\\
+  u_2(t) &= U_0 \sin(\omega t + 2\pi/3)\\
+  u_3(t) &= U_0 \sin(\omega t - 2\pi/3)
 \end{align*}
 #+end_export
 
