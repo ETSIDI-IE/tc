@@ -7,7 +7,200 @@
 #+SETUPFILE: config.org
 #+OPTIONS: H:3
 
+
 * Conceptos Fundamentales
+** Formas de Onda
+*** Forma de Onda
+
+- La salida de los generadores (de tensión o de corriente) son funciones que pueden variar con el tiempo.
+- La dependencia funcional $u = u(t)$ o $i = i(t)$ se denomina forma de onda.
+
+*** Escalón
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:../figs/escalon.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < 0\\
+    K & t \geq 0
+  \end{cases}
+  \]
+#+end_export
+
+*** Escalón desplazado
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+[[file:../figs/escalon_t0.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < t_0\\
+    K & t \geq t_0
+  \end{cases}
+  \]
+#+end_export
+
+*** Pulso
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:../figs/pulso.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < 0\\
+    K & 0 \leq t \leq W
+  \end{cases}
+  \]
+#+end_export
+
+*** Pulso desplazado
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:../figs/pulso_t0.pdf]]
+
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < t_0\\
+    K & t_0 \leq t \leq t_0 + W
+  \end{cases}
+  \]
+#+end_export
+
+*** Rampa
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:../figs/rampa.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < 0\\
+    m \cdot t  & t \geq 0
+  \end{cases}
+  \]
+#+end_export
+
+*** Rampa desplazada
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:../figs/rampa_t0.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < t_0\\
+    m \cdot (t - t_0)  & t \geq t_0
+  \end{cases}
+  \]
+#+end_export
+
+*** Triangular
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+[[file:../figs/triangular.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < -W/2\\
+    m \cdot (t + W/2)  & -W/2 \leq t \leq 0\\
+    -m \cdot (t - W/2)  & 0 \leq t \leq W/2\\
+    0  & t > W/2
+  \end{cases}
+  \]
+#+end_export
+
+*** Triangular desplazada
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+file:../figs/triangular_t0.pdf
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+#+begin_export latex
+\[
+  f(t) = %
+  \begin{cases}
+    0 & t < t_0 - W/2\\
+    m \cdot [t - (t_0 -  W/2)]  & t_0 - W/2 \leq t \leq t_0\\
+    -m \cdot [t - (t_0 + W/2)]  & t_0 \leq t \leq t_0 + W/2\\
+    0  & t > t_0 + W/2
+  \end{cases}
+  \]
+#+end_export
 
 ** ¿Qué es el régimen transitorio?
 *** Permanente y Transitorio
@@ -147,69 +340,70 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 ** Circuito RL serie
 
 *** Circuito básico
-- En $t < 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
-- En $t = 0$ la fuente se desconecta.
-- En $t > 0$ la bobina se descarga en la resistencia.
+- En $t < 0$ la fuente está desconectada.
+- En $t = 0$ la fuente se conecta.
+- En $t > 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
+  
+#+ATTR_LATEX: :height 0.55\textheight
 [[file:../figs/transitorio_circuitoRL.pdf]]
 
-*** Respuesta natural
-#+ATTR_LATEX: :height 0.25\textheight
+*** Condiciones Iniciales
+Analizando circuito para $t < 0$ ...
+#+ATTR_LATEX: :height 0.45\textheight
+file:../figs/transitorio_circuitoRL_t0-.pdf
+...obtenemos  $i(0^-) = 0$ (/resultado particular de este circuito./)
+
+*** Circuito en $t > 0$
+#+ATTR_LATEX: :height 0.55\textheight
 file:../figs/transitorio_circuitoRL_t0+.pdf
-Ecuaciones
 #+BEGIN_EXPORT latex
 \begin{align*}
-  u_R(t) + u_L(t) &= 0\\
-  R i + L\diff{i}{t} &= 0
+  u_R(t) + u_L(t) &= U_0\\
+  R i + L\diff{i}{t} &= U_0
 \end{align*}
 #+END_EXPORT
 
+*** Respuesta Natural
+
+Apagamos la fuente:
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.35\textheight
+file:../figs/transitorio_circuitoRL_t0+_Natural.pdf
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+BEGIN_EXPORT latex
+\begin{align*}
+  u_R(t) + u_L(t) &= 0\\
+  R i_n + L\diff{i_n}{t} &= 0
+\end{align*}
+#+END_EXPORT
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 Solución Genérica
 #+BEGIN_EXPORT latex
 \[
-  i(t) = A e^{st}
+  \boxed{i_n(t) = A e^{st}}
 \]
 #+END_EXPORT
 Ecuación Característica
 #+BEGIN_EXPORT latex
 \[
-  s + \frac{R}{L} = 0 \Rightarrow s = -\frac{R}{L}
+  s + \frac{R}{L} = 0 \Rightarrow \boxed{s = -\frac{R}{L}}
 \]
 #+END_EXPORT
-
-*** Condiciones Iniciales
-Analizando circuito para $t < 0$ ... 
-file:../figs/transitorio_circuitoRL_t0-.pdf
-...obtenemos  $i(0^-) = I_0 = \frac{U_0}{R}$ 
-
-*** Respuesta Natural
-Por otra parte, para $t > 0$:
-#+BEGIN_EXPORT latex
-\begin{align*}
-  i(t) &= A e^{-R/L t}\\
-  i(0^+) &= A e^0 = A\\
-\end{align*}
-#+END_EXPORT
-
-Y dada la condición de continuidad, $i(0^+) = i(0^-)$:
-#+BEGIN_EXPORT latex
-\[
-  A = I_0
-\]
-#+END_EXPORT
-Por tanto, la respuesta natural es:
-#+begin_export latex
-\[
-  \boxed{i(t) = I_0 e^{-R/L t}}
-\]
-#+end_export
-
-
 
 *** Constante de tiempo
 
 #+BEGIN_EXPORT latex
 \[
-  \boxed{i(t) = I_0 e^{-t/\tau}}
+  \boxed{i_n(t) = A e^{-t/\tau}}
 \]
 #+END_EXPORT
 
@@ -220,7 +414,7 @@ Por tanto, la respuesta natural es:
 #+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/constante_tiempo.pdf]]
 
-*** Balance Energético
+*** COMMENT Balance Energético
 
 La energía acumulada en la bobina en $t < 0$ se disipa en la resistencia en $t > 0$
 
@@ -233,52 +427,50 @@ La energía acumulada en la bobina en $t < 0$ se disipa en la resistencia en $t 
 #+END_EXPORT
 
 *** Respuesta forzada
-Cambiemos el funcionamiento del interruptor: en $t > 0$ la fuente alimenta el circuito RL.
-[[file:../figs/transitorio_circuitoRL2.pdf]]
-
-*** Respuesta forzada
-#+ATTR_LATEX: :height 0.25\textheight
-[[file:../figs/transitorio_circuitoRL2_t0+.pdf]]
-Las ecuaciones son ahora:
+Volvemos a activar la fuente:
+#+ATTR_LATEX: :height 0.33\textheight
+[[file:../figs/transitorio_circuitoRL_t0+.pdf]]
 #+BEGIN_EXPORT latex
 \[
   u_R(t) + u_L(t) = u(t) \rightarrow R i + L\diff{i}{t} = U_0
 \]
 #+END_EXPORT
 
-Para la solución particular, $i_\infty$, se propone una función análoga a la excitación (analizando circuito para $t > 0$)
-#+BEGIN_EXPORT latex
-\begin{align*}
-  i(t) &= i_n(t) + i_\infty(t)\\
-  i_n(t) &= A e^{st}\\
-  i_\infty(t) &= U_0/R\\
-\end{align*}
-#+END_EXPORT
+*** Respuesta forzada
+Para la solución particular, $i_\infty$, se propone una función análoga a la excitación (analizando circuito para $t \rightarrow \infty$):
 
-*** Constante de integración
-Particularizamos las ecuaciones en $t = 0^+$:
-#+BEGIN_EXPORT latex
-\begin{align*}
-  i(0^+) &= i_n(0^+) + i_\infty(0^+)\\
-  i(0^+) &= A + i_\infty(0^+)\\
-  A &= i(0^+) - i_\infty(0^+)
-\end{align*}
-#+END_EXPORT
-
-*** Respuesta completa (ejemplo)
+#+ATTR_LATEX: :height 0.33\textheight
+[[file:../figs/transitorio_circuitoRL_tinf.pdf]]
 
 #+BEGIN_EXPORT latex
-\begin{align*}
-  i(t) &= i_n(t) + i_\infty(t)\\
-  i_n(t) &= A e^{st}\\
-  i_\infty(t) &= U_0/R\\
-  A &= i(0^+) - i_\infty(0^+)
-\end{align*}
+\begin{equation*}
+  i_\infty(t) = U_0/R
+\end{equation*}
 #+END_EXPORT
 
-Suponiendo que la bobina está inicialmente descargada, $i(0^-) = 0$, y teniendo en cuenta la condición de continuidad, $i(0^+) = i(0^-) = 0$, obtenemos $A= 0 - U_0/R$. 
+*** Respuesta completa
 
-La solución completa es:
+#+BEGIN_EXPORT latex
+\begin{equation*}
+  i(t) = i_n(t) + i_\infty(t) \rightarrow
+  \begin{cases}
+    i_n(t) = A e^{st}\\
+    i_\infty(t) = U_0/R\\
+  \end{cases}
+\end{equation*}
+#+END_EXPORT
+
+Para determinar el valor de la constante de integración particularizamos en $t = 0$:
+#+begin_export latex
+\begin{equation*}
+  i(0^+) = A + U_0/R \rightarrow A = i(0^+) - i_\infty(0^+)
+\end{equation*}
+#+end_export
+Teniendo en cuenta la condición de continuidad, $i(0^+) = i(0^-) = 0$, obtenemos:
+#+begin_export latex
+\[A= 0 - U_0/R\]
+#+end_export
+La solución completa es (/en este circuito de ejemplo/):
 #+BEGIN_EXPORT latex
 \[
   \boxed{i(t) = \frac{U_0}{R}(1 - e^{-\frac{t}{\tau}})  }
@@ -312,6 +504,7 @@ La solución completa es:
 *** Equivalente de Thévenin
 #+ATTR_LATEX: :height 0.85\textheight
 [[file:../figs/Thevenin_PrimerOrden.pdf]]
+
 ** Circuito RC paralelo
 
 *** Circuito básico
@@ -322,6 +515,18 @@ La solución completa es:
 #+ATTR_LATEX: :height 0.45\textheight
 [[file:../figs/transitorio_circuitoRC.pdf]]
 
+*** Condiciones iniciales
+
+Analizamos el circuito en $t < 0$:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/transitorio_circuitoRC_t0-.pdf]]
+
+#+begin_export latex
+\begin{equation*}
+  u_c(0^-) = R \cdot I_0 
+\end{equation*}
+#+end_export
+
 *** Respuesta natural
 #+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/transitorio_circuitoRC_t0+.pdf]]
@@ -330,21 +535,21 @@ Ecuaciones
 #+BEGIN_EXPORT latex
 \begin{align*}
   i_R(t) + i_C(t) &= 0\\
-  G u + C\diff{u}{t} &= 0
+  G u_n + C\diff{u_n}{t} &= 0
 \end{align*}
 #+END_EXPORT
 
 Solución Genérica
 #+BEGIN_EXPORT latex
 \[
-  u(t) = A e^{st}
+  u_n(t) = A e^{st}
 \]
 #+END_EXPORT
 
 Respuesta natural
 #+BEGIN_EXPORT latex
 \[
-  \boxed{u(t) = U_0 e^{-G/C t}}
+  \boxed{u_n(t) = U_0 e^{-G/C t}}
 \]
 #+END_EXPORT
 
@@ -356,7 +561,7 @@ Respuesta natural
 
 #+BEGIN_EXPORT latex
 \[
-  \boxed{u(t) = U_0 e^{-t/\tau}  }
+  \boxed{u_n(t) = U_0 e^{-t/\tau}  }
 \]
 #+END_EXPORT
 
@@ -365,12 +570,15 @@ Respuesta natural
 
 *** Balance Energético
 
-La energía acumulada en el condensador en $t < 0$ se disipa en la resistencia (conductancia) en $t > 0$
+La energía disipada en la resistencia (conductancia) en $t > 0$ es la energía que ha acumulado el condensador en $t < 0$:
 
 #+BEGIN_EXPORT latex
-\[
-  W_G = \int_0^\infty G u^2(t)  \mathrm{d}t = \frac{1}{2} C U_0^2 = W_C
-\]
+\begin{align*}
+  W_G &= \int_0^\infty G u^2(t)  \mathrm{d}t =\\
+  &= \int_0^\infty G (U_0 e^{-t/\tau})^2  \mathrm{d}t = \\
+  & = G U_0^2 \int_0^\infty e^{\frac{-2R}{C}t}  \mathrm{d}t\\
+  &= \frac{1}{2} C U_0^2 = W_C  
+\end{align*}
 #+END_EXPORT
 
 *** Expresión general de la respuesta completa
@@ -385,7 +593,7 @@ La energía acumulada en el condensador en $t < 0$ se disipa en la resistencia (
 - $u_\infty(t)$: tensión en el condensador en régimen permanente para $t > 0$.
 - $u_\infty(0^+)$: tensión en el condensador en régimen permanente particularizada en $t = 0$.
 
-*** Ejemplo con respuesta forzada
+*** COMMENT Ejemplo con respuesta forzada
 #+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/transitorio_circuitoRC2.pdf]]
 
@@ -595,7 +803,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 #+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/Subamortiguado_AS.pdf]]
 
-*** Valores Importantes
+*** COMMENT Valores Importantes
 
 #+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/RespuestaEscalon_SegundoOrden.png]]
@@ -604,7 +812,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 
 - *Tiempo de Establecimiento*: tiempo para que la diferencia entre la respuesta y el régimen permanente permanezca dentro de una banda del 1%.
 
-*** Valores Importantes
+*** COMMENT Valores Importantes
 
 #+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/RespuestaEscalon_SegundoOrden.png]]

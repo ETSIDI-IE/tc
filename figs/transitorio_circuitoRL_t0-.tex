@@ -6,13 +6,12 @@
 
 \begin{circuitikz}[american]
   \draw
-  (0, 0) node[cute spdt up, xscale = -1] (Sw) {}
-  (Sw.out 1) to [short] ++(-2,0)
-  to [V, v = $U_0$] ++(0, -2) coordinate (A)
-  (Sw.in) to [R, l = R, i>^= $i(t)$, v = $u_R(t)$] ++(3,0)
-  to [L, l = L, v = $u_L(t)$] ++(2,0)
-  |- (A)
-  (Sw.out 2) to[short] (Sw.out 2|-A);
+  (0,0) to [R, i = $i(t)$] ++(3,0)
+  to [open, *-*] ++(2,0)
+  to [short] ++(1,0)
+  to [L, v = $u_L(t)$, i = $i(t)$] ++(0,-4)
+  to [short] ++(-6,0)
+  (0,0) to [V, v= $U_0$] ++(0,-4);
 \end{circuitikz}
 
 \end{document}

@@ -6,12 +6,14 @@
 
 \begin{circuitikz}[american]
   \draw
-  (0,0) to [R, i = $i(t)$] ++(3,0)
+  (0,0) to [R, l = $R$, i = $i_n(t)$] ++(3,0)
   to [short, *-*] ++(2,0)
   to [short] ++(1,0)
-  to [L, v = $u_L(t)$, i = $i(t)$] ++(0,-4)
+  to [L, v = $u_L(t)$, i = $i_n(t)$] ++(0,-4)
   to [short] ++(-6,0)
-  (0,0) to [V, v= $U_0$] ++(0,-4);
+  (0,0) to [short] (0, -1)
+  to [short, *-*] ++(0, -2)
+  to [short] ++(0,-1);
 \end{circuitikz}
 
 \end{document}
