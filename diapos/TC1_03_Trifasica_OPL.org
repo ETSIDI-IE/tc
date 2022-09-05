@@ -478,7 +478,7 @@ Corriente de Línea:
   #+begin_export latex
   \begin{align*}
     p_A(t) &= u_A(t) \cdot i_A(t)\\
-    p_B(t) &= u_C(t) \cdot i_B(t)\\
+    p_B(t) &= u_B(t) \cdot i_B(t)\\
     p_C(t) &= u_C(t) \cdot i_C(t)\\
     \\
     p(t) &= p_A(t) + p_B(t) + p_C(t)
