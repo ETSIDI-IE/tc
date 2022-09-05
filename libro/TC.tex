@@ -1,59 +1,56 @@
-\documentclass[a4paper]{memoir}
+\documentclass[oldfontcommands,a4paper]{memoir}
 
-\input{preambulo.tex}
+\input{preambulo.tex} 
 
 \begin{document}
 
+
+%\pagestyle{empty}
 \begin{titlingpage}
 
-  \title{Análisis de Circuitos Eléctricos Lineales}
-  \author{Oscar Perpiñán Lamigueiro}
-  
-  \date{Noviembre 2019}
+\title{Teoría de Circuitos}
 
-  \maketitle
+\author{
+  Ana Fernández-Guillamón\\
+  Oscar Perpiñán Lamigueiro}
+
+\date{
+  Universidad Politécnica de Madrid\\
+  Curso 2022/23
+}
+
+\maketitle
+
 
 \end{titlingpage}
 
 \frontmatter
 
-\cleardoublepage
-
-% \include{Licencia}
-
 \tableofcontents
-
-\printnomenclature{}
+% \clearpage
+% \listoffigures*
+% \clearpage
+% \listoftables*
 
 \cleardoublepage{}
 
+
 \mainmatter
 
-\include{introduccion}
+\include{01_Fundamentos}
 
+\include{02_CorrienteAlterna}
 
-\part{Conceptos Básicos}
-\label{part:conceptos-basicos}
+\include{03_Trifasica}
 
-\include{variables}
-\include{elementos}
-\include{kirchhoff}
-\include{metodos}
+\include{04_Transitorio}
 
-
-
-\part{Corriente Alterna Sinusoidal}
-\label{part:corriente-alterna}
-\include{fasorial}
-\include{monofasica}
-\include{trifasica}
 
 \backmatter
 
-\printbibliography
-
 
 \end{document}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t

@@ -21,21 +21,30 @@
 % \providecommand{\makenomenclature}{\makeglossary}
 \makenomenclature
 
-\usepackage[caption=false]{subfig}
+\usepackage{subfig}
 %Configuración de los caption
-%\PassOptionsToPackage{caption=false}{subfig}%Evita que el paquete subfig lo descabale todo
+\PassOptionsToPackage{caption=false}{subfig}%Evita que el paquete subfig lo descabale todo
 \captiontitlefont{\itshape}
 \captionnamefont{\scshape}
-%\captionstyle{\centering}
+\captionstyle{\centering}
 \hangcaption
+\usepackage{cancel}
+\usepackage{steinmetz}
+\usepackage{diffcoeff}
+\usepackage{mathtools}
 
+\newtheorem{exerciseT}{Ejemplo}[chapter]
 
 \usepackage[spanish]{babel}
 \addto\shorthandsspanish{\spanishdeactivate{~<>}}
 
 
-\usepackage[emulate=units]{siunitx}
-\sisetup{per=fraction, fraction=nice, decimalsymbol=comma}
+\usepackage{siunitx}
+\DeclareSIUnit\kWh{kWh}
+\DeclareSIUnit{\watthour}{Wh}
+\DeclareSIUnit\Wh{Wh}
+
+\sisetup{per-mode=symbol-or-fraction}
 %\usepackage{lscape}
 \usepackage{mathpazo}%Letra palatino con fuentes para matemáticas
 \usepackage{flafter}%obliga a que los flotantes aparezcan después de su referencia
@@ -51,26 +60,24 @@
 \feetbelowfloat
 
 
-\usepackage[citestyle=alphabetic, bibstyle=alphabetic, maxbibnames=5,minbibnames=3,
-backend=bibtex, doi=true, url=true]{biblatex}
+% \usepackage[citestyle=alphabetic, bibstyle=alphabetic, maxbibnames=5,minbibnames=3,
+% backend=bibtex, doi=true, url=true]{biblatex}
 
-\DefineBibliographyStrings{spanish}{%
-  andothers        = {et\addabbrvspace al\adddot},
-  andmore          = {et\addabbrvspace al\adddot},
-  in               = {},
-}
+% \DefineBibliographyStrings{spanish}{%
+%   andothers        = {et\addabbrvspace al\adddot},
+%   andmore          = {et\addabbrvspace al\adddot},
+%   in               = {},
+% }
 
-\addbibresource{../biblio.bib}
+% \let\cite\parencite
 
-\let\cite\parencite
-
-\renewcommand{\bibsection}{%
-	\chapter*{\bibname}
-	\bibmark
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\bibname}
-	\prebibhook}
-% \renewcommand{\bbltechreport}{Informe T\'ecnico}
+% \renewcommand{\bibsection}{%
+% 	\chapter*{\bibname}
+% 	\bibmark
+% 	\phantomsection
+% 	\addcontentsline{toc}{chapter}{\bibname}
+% 	\prebibhook}
+% % \renewcommand{\bbltechreport}{Informe T\'ecnico}
 
 \usepackage{hyperref}
 
@@ -86,9 +93,10 @@ backend=bibtex, doi=true, url=true]{biblatex}
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Análisis de Circuitos Eléctricos Lineales},    % title
-    pdfauthor={Oscar Perpiñán Lamigueiro},     % author
-    pdfcreator={AucTeX/Emacs},   % creator of the document
+    pdftitle={Teoria de Circuitos},    % title
+    pdfauthor={Ana Fernández-Guillamón},     % author
+    pdfsubject={ETSIDI},   % subject of the document
+    pdfcreator={Overleaf},   % creator of the document
     pdfproducer={LaTeX}, % producer of the document
     pdfnewwindow=true,      % links in new window
     pdfborder={0 0 0},
@@ -98,31 +106,35 @@ backend=bibtex, doi=true, url=true]{biblatex}
     filecolor=black,      % color of file links
     urlcolor=Blue           % color of external links 
 }
-	
 
-\DeclareSIUnit\kWh{kWh}
-\DeclareSIUnit\Wh{Wh}
-
-%\spanishdecimal{.} %Para que no lo sustituya automáticamente por comas
 \addto\captionsspanish{%
 \def\tablename{Tabla}%
 \def\listtablename{\'Indice de tablas}}
 
-\renewcommand\nomname{Nomenclatura}
+
+%\spanishdecimal{.} %Para que no lo sustituya automáticamente por comas
 \def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 
 %Configuración de MEMOIR
 %%Pone la fecha en SMALL CAPS y hacia la derecha
 %%pagina 60 de memman.pdf
-\pretitle{\vfill \begin{flushright} \bfseries \scshape \HUGE \color{BrickRed}}
-\posttitle{\par\end{flushright}}
+\pretitle{
+\vfill
+\centering \bfseries \scshape \HUGE \color{BrickRed}
+\posttitle{\par}
+}
 
-\preauthor{\begin{flushright} \large \scshape}
-\postauthor{\par\end{flushright}}
+\preauthor{
+\vfill
+\centering
+\large \scshape
+\postauthor{
+\par }
+}
 
-%\date{}
 \predate{\vfill \begin{flushright}\large\scshape}
 \postdate{\par\end{flushright}\vfill}
+
 
 \setsecnumdepth{subsection}
 
@@ -145,33 +157,37 @@ backend=bibtex, doi=true, url=true]{biblatex}
 \renewcommand{\floatpagefraction}{0.7}
 
 
-%Centra las figuras en los flotantes y los enmarca
-\makeatletter
-\renewenvironment{figure}[1][]{%
-     	\@float{figure}%
-		%\begin{framed}    
-		\precaption{\rule{\linewidth}{0.4pt}\par}%En las figuras el caption va debajo
-		%\hrule\vspace{\onelineskip}
-		\centering
-		  }{%
-		%\end{framed}
-		%\postcaption{\rule{\linewidth}{0.4pt}}
-		%\vspace{\onelineskip}\hrule
-    	\end@float	
-}
-\makeatother
+\usepackage{float}
 
-\makeatletter
-\renewenvironment{table}[1][]{%
-      	\@float{table}%
-		%\begin{framed}    
-		\postcaption{\rule{\linewidth}{0.4pt}\par}%En las tablas el caption va encima
-		\centering
-		  }{%
-		%\end{framed}
-    	\end@float	
-}
-\makeatother
+\RequirePackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=false,
+topline=false,
+bottomline=false,
+backgroundcolor=BrickRed!10,
+linecolor=BrickRed,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}
+
+\newenvironment{example}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{BrickRed}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}	
 
 
 \renewcommand{\textfloatsep}{10pt}%Espacio entre el flotante y el texto
+
+\usepackage{tikz}
+\newenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=BrickRed!60,line width=1pt,circle,fill=BrickRed!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{BrickRed}{N}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark

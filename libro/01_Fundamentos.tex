@@ -1,0 +1,2460 @@
+\chapter{Fundamentos. Corriente continua}\label{chap.cc}
+	
+	\setcounter{page}{1}
+	
+	\section{Introducción}
+	
+	La electricidad constituye una forma de energía que está presente en casi todas las actividades del hombre de una sociedad desarrollada, ya que gran parte de los aparatos y máquinas que usamos funcionan con ella. Produce efectos luminosos, mecánicos, caloríficos, químicos, etc., y se debe a la separación o movimiento de los electrones que forman los átomos. Las primeras observaciones de la atracción eléctrica ocurrieron en la antigua Grecia, donde observaron que, al frotar ámbar, éste atraía pequeños objetos livianos (paja, plumas, tela...). De hecho, el concepto de fuerza eléctrica tuvo su origen en experimentos muy sencillos como la frotación de dos cuerpos entre sí, al ver que cuando se frota una varilla de vidrio o de ámbar con un trapo o piel, éstas son capaces de desplazar piezas muy ligeras. Así, apareció la propiedad llamada \textbf{carga eléctrica} que causa este comportamiento. Además, se observaron dos tipos de acciones, \textbf{atracción} y \textbf{repulsión}, asociadas, por tanto, a la existencia de dos tipos de cargas (positiva y negativa). Con esta premisa, en el siglo XVIII, Benjamin Franklin sugirió que todo objeto posee una cantidad ``normal'' de electricidad y, cuando dos objetos se frotan entre sí, parte de la electricidad se transfiere de un cuerpo al otro. 
+	
+	Además, la fuerza que actúa sobre dos cuerpos cargados es proporcional al producto de las cargas e inversamente proporcional al cuadrado de la distancia que las separa, teniendo en cuenta que cargas iguales se repelen y distintas se atraen (ley de Coulomb). El medio en que se encuentren las cargas va a influir en dicha fuerza, reflejado mediante la constante de proporcionalidad $k$ (constante de Coulomb):
+	\begin{equation*}\label{eq.coulomb}
+		\Vec{F}=k\cdot\dfrac{Q_1\cdot Q_2}{r^2}\cdot \Vec{u}
+	\end{equation*}
+	Esta fuerza es debida a la creación de un campo eléctrico $\Vec{E}$. Por tanto, se dice que en una región del espacio existe un \textbf{campo eléctrico} si al situar en ella cargas eléctricas, se originan fuerzas de tipo electrostático, regidas por la expresión anterior. De hecho, una carga crea un campo eléctrico en todo el espacio, y este campo ejerce una fuerza la otra carga. La fuerza es, por tanto, ejercida por el campo en la posición de la segunda carga, más que por la propia primera carga que se encuentra a cierta distancia:
+	\begin{equation*}
+		\Vec{E}=\dfrac{F}{q_0}
+	\end{equation*}
+	siendo $q_0$ una carga lo suficientemente pequeña para que su efecto sobre la distribución de carga sea despreciable. Entonces, el campo eléctrico es un vector que describe la condición en el espacio creada por un sistema de cargas puntuales, siendo, por tanto, una función vectorial de la posición. La fuerza ejercida sobre la carga testigo $q_0$ en cualquier punto está relacionada con el campo eléctrico por:
+	\begin{equation*}
+		\Vec{F}=q_0\cdot \Vec{E}
+	\end{equation*}
+	
+	
+	\section{Conceptos fundamentales}
+	
+	\subsection{Circuito eléctrico} \label{sec.circuito_electrico}
+	
+	Un \textbf{circuito eléctrico} es un conjunto de componentes eléctricos combinados de tal forma que crean un camino cerrado por el que puede circular una corriente eléctrica. %
+	%
+	% \begin{theorem}[Circuito eléctrico]
+		% Conjunto de elementos combinados de tal forma que existe la posibilidad de que se origine una corriente eléctrica.
+		% \end{theorem}
+	%
+	Hay dos tipos de elementos que se pueden
+	integrar en un circuito eléctrico: 
+	\begin{itemize}
+		\item \textbf{Elementos activos.} Dispositivos eléctricos que actúan como causas o factores motivantes para la circulación de la corriente eléctrica (generadores de tensión o corriente).
+		\item \textbf{Elementos pasivos.} Componentes eléctricos que toman energía de los elementos activos para transformarla en otro tipo de energía, o acumularla en forma de campo magnético o eléctrico (receptores: resistencias, bobinas y condensadores). 
+	\end{itemize}
+	
+	El \textbf{análisis} (o resolución) de un circuito eléctrico existente persigue determinar sus condiciones de funcionamiento, es decir, definir las ecuaciones correspondientes al circuito, así como obtener los valores de determinadas variables importantes a partir de dichas ecuaciones. Por contra, el \textbf{diseño} (o síntesis) de un circuito eléctrico tiene como objetivo definir el circuito eléctrico, es decir, determinar los componentes necesarios y su interconexión, para obtener unas condiciones de funcionamiento.
+	
+	Este curso está dedicado al análisis de circuitos eléctricos \textbf{lineales} de \textbf{parámetros concentrados}. 
+	\begin{itemize}
+		\item Al considerar que todos los circuitos eléctricos se comportan como sistemas lineales, se cumplen las dos condiciones mostradas a continuación:
+		\begin{enumerate}
+			\item $f(x + y) = f(x) + f(y)$: La respuesta $f$ a la suma de dos entradas $x$ e $y$ es igual a la suma de la respuesta individual a cada una de las entradas.
+			\item $f(k \cdot x) = k \cdot f(x)$: La respuesta a una entrada que está multiplicada por un factor de escala $k$ es igual a multiplicar por este factor a la respuesta a la entrada.
+		\end{enumerate}
+		Al considerar el circuito como lineal, se simplifica su tratamiento de los circuitos, y \textbf{se puede aplicar técnicas de resolución de ecuaciones lineales}. Sin embargo, debe recordarse que la linealidad es una \textbf{aproximación de la realidad}, que no puede aplicarse de manera indiscriminada a cualquier componente y en cualquier condición. En particular, los \textbf{dispositivos electrónicos} como diodos o transistores tienen un \textbf{comportamiento} marcadamente \textbf{no lineal}, de forma que los circuitos que los contienen no pueden analizarse directamente con las técnicas que aquí se exponen sin realizar previamente aproximaciones de su funcionamiento.
+		\item El análisis de circuitos no toma en consideración las propiedades espaciales de los circuitos ni de sus componentes, sino que los \textit{confina} a elementos puntuales con un modelo de \textbf{parámetros concentrados}. Sin embargo, los circuitos eléctricos reales ocupan espacio, las máquinas generadoras y los receptores tienen grandes dimensiones, y los cables conductores se extienden a lo largo de longitudes variopintas. Por ejemplo, un conductor real de 100~m se representa con este modelo de parámetros concentrados como un conductor ideal con una resistencia en su punto medio. Este tratamiento es una simplificación de las ecuaciones del electromagnetismo de Maxwell, y es aplicable únicamente cuando las dimensiones del circuito real son inferiores a la longitud de onda de la señal que circula por el circuito. Así, a la frecuencia de 50~Hz (habitual en sistemas eléctricos industriales), la longitud de onda de la señal es de 6000~km, mientras que a la frecuencia de 2.6~GHz (característica de la telefonía 4G), la longitud de onda se reduce a 11.5~cm.
+	\end{itemize}
+	
+	\subsection{Variables}
+	\subsubsection{Tensión eléctrica}
+	El \textbf{potencial eléctrico} en un punto, $v(t)$,  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. Dado que la fuerza electrostática $\vec{F}$ (definida con la ecuación~\eqref{eq.coulomb}) es conservativa, la variación de la energía potencial $dV$ viene dada por:
+	\begin{equation*}
+		dV=-\Vec{F}\cdot d\vec{l}=-q_0\cdot \Vec{E}\cdot d\vec{l}
+	\end{equation*}
+	donde $d\vec{l}$ es el desplazamiento que experimenta la carga debido al campo eléctrico $\Vec{E}$. La \textbf{tensión} o \textbf{diferencia de potencial entre dos puntos}, $u_{AB}(t)$ (Figura~\ref{fig.tension_puntos}), es el trabajo realizado por el campo eléctrico al desplazar una carga unitaria entre esos puntos: 
+	\begin{equation*}
+		u_{AB}(t) = v_A(t) - v_B(t) = \frac{dW_{e}}{dq_0}.
+	\end{equation*}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.2\linewidth]{../figs/tension_puntos.PNG}
+		\caption{Diferencia de potencial}
+		\label{fig.tension_puntos}
+	\end{figure}
+	
+	Puesto que el potencial eléctrico es el trabajo electrostático por unidad de carga, la unidad del SI para $v(t)$ y $u_{AB}(t)$ es el \textbf{voltio} [V]:
+	\begin{equation*}
+		1\;V=\dfrac{1\;J}{1\;C}.
+	\end{equation*}
+	\begin{remark}
+		La unidad [V] se escribe en mayúsculas en honor a Alessandro Volta, físico y químico italiano del siglo XVIII famoso por la invención y desarrollo de la pila eléctrica en 1799.
+	\end{remark}
+	Además, el campo eléctrico también es conservativo, por lo que la diferencia de potencial entre A y B \textbf{no depende de la trayectoria} seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos (Figura~\ref{fig.diagrama_tension}). Sin embargo, y pese a que la trayectoria no es relevante, siempre hay que tener en cuenta el \textbf{sentido del desplazamiento} (Figura~\ref{fig.sentido_tension}). Así, si el movimiento se produce desde B hasta A.
+	\begin{equation*}
+		u_{BA}(t) = v_B(t) - v_A(t) = - u_{AB}(t). 
+	\end{equation*}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Trayectoria]{\includegraphics[width=0.25\linewidth]{../figs/diagrama_tension.PNG}\label{fig.diagrama_tension}}\hfil
+		\subfloat[Sentido]{\includegraphics[width=0.25\linewidth]{../figs/sentido_tension.pdf}\label{fig.sentido_tension}}
+		\caption{Consideraciones sobre la diferencia de potencial}
+	\end{figure}
+	
+	\subsubsection{Corriente eléctrica}
+	La \textbf{intensidad de la corriente eléctrica}, $i(t)$, se define como la variación de la carga eléctrica $q(t)$ que atraviesa la sección transversal de un conductor por unidad de tiempo (Figura~\ref{fig.seccion_conductor}). 
+	\begin{equation*}\label{eq.intensidad}
+		i(t)=\dfrac{dq(t)}{dt}
+	\end{equation*}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\linewidth]{../figs/seccion_conductor.pdf}
+		\caption{Corriente eléctrica}
+		\label{fig.seccion_conductor}
+	\end{figure}
+	
+	La corriente eléctrica se produce por el \textbf{movimiento de los electrones libres} que fluyen por el conductor, es decir, que el \textbf{sentido real} de la intensidad es del polo $-$ al polo $+$ del generador (a través del conductor). Sin embargo, por razones históricas, el \textbf{convenio} que se emplea es justo el opuesto, esto es, del polo $+$ al polo $-$. La unidad en el SI de la corriente es el \textbf{amperio} [A]: 
+	\begin{equation*}
+		1\,A =\dfrac{1\,C}{1\,s}.
+	\end{equation*}
+	\begin{remark}
+		La unidad [A] se escribe en mayúsculas en honor a André-Marie Ampère, matemático y físico francés del siglo XVIII-XIX, que inventó el primer telégrafo eléctrico y formuló la teoría del electromagnetismo en 1827.
+	\end{remark}
+	
+	Cabe resaltar que el amperio es una unidad muy grande, por lo que a menudo se utilizan submúltiplos (mA, $\mu$A...). En algunos casos, puede hablarse también de la \textbf{densidad de corriente}, definida como el cociente entre la intensidad $i(t)$ y la sección transversal del conductor $S$:
+	\begin{equation*}
+		\delta =\dfrac{i(t)}{S}
+	\end{equation*}
+	La densidad de corriente se mide en el SI en [A/m$^2$], aunque en la industria suele venir determinada en [A/mm$^2$], al ser ésta una unidad más manejable.
+	
+	\subsubsection{Corriente continua y corriente alterna} \label{sec.cc-ca}
+	Al estudiar la electricidad, es importante destacar que existen dos tipos de corriente: la corriente continua y la corriente alterna:
+	\begin{itemize}
+		\item \textbf{Corriente continua:} La corriente continua es aquella que siempre fluye en el mismo sentido (positivo o negativo). A su vez, puede ser:
+		\begin{itemize}
+			\item \textbf{Corriente continua constante:} Su valor instantáneo a lo largo del tiempo permanece inalterable ($\frac{di(t)}{dt} = 0$, Figura~\ref{fig.continua}). Suele estar suministrada por pilas, baterías, dinamos, fuentes de alimentación de corriente continua, etc. 
+			\begin{figure}[H]
+				\centering	\includegraphics[width=0.75\linewidth]{../figs/continua.pdf}
+				\caption{Forma de onda de la corriente continua constante}
+				\label{fig.continua}
+			\end{figure}
+			\item \textbf{Corriente continua variable:} Su valor instantáneo no es constante a lo largo del tiempo, aunque siempre es del mismo signo (negativo o positivo). 
+		\end{itemize}
+		\item \textbf{Corriente alterna:} Aquella corriente que cambia de sentido (de positivo a negativo, y viceversa) cada cierto tiempo ($\frac{di(t)}{dt} \neq 0$). Se subdivide de nuevo en varios tipos:
+		\begin{itemize}
+			\item \textbf{Corriente alterna sinusoidal:} Los valores absolutos instantáneos son sucesivamente proporcionales a los valores que toma el seno de 0$^\circ$ a 360$^\circ$ (Figura~\ref{fig.sinBT1}).
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.75\linewidth]{../figs/sin.pdf}
+				\caption{Forma de onda de la corriente alterna senoidal}
+				\label{fig.sinBT1}
+			\end{figure}
+			\item \textbf{Corriente alterna periódica:} Tiene una forma de onda que se repite de manera periódica, cambiando de sentido, pero no es sucesivamente proporcional a los valores que toma el seno de 0$^\circ$ a 360$^\circ$.
+			\item \textbf{Corriente alterna aperiódica:} Tiene una forma de onda que cambia de sentido pero sin seguir ningún periodo.
+		\end{itemize}
+	\end{itemize}
+	Por comodidad, a la corriente continua constante se la conoce simplemente como \textit{corriente continua} (CC) y a la corriente alterna sinusoidal como \textit{corriente alterna} (CA).
+	
+	
+	\subsubsection{Fuerza electromotriz (f.e.m.)}
+	En todo circuito eléctrico es necesaria la existencia de al menos un elemento activo que suministre energía eléctrica, de manera que las cargas permanezcan en movimiento y, por tanto, exista corriente eléctrica. La causa capaz de mantener los electrones en movimiento en un circuito recibe el nombre de \textbf{fuerza electromotriz} (f.e.m.). Los dispositivos capaces de proporcionar esta diferencia de potencial estacionaria, permitiendo mantener una corriente eléctrica, son los \textbf{generadores} (baterías, pilas, dinamos, etc.), siendo la f.e.m. ($E$, $e(t)$ o $\epsilon$) la característica de éstos.  Por tanto, la fuerza electromotriz representa la energía que el generador cede a la unidad de carga eléctrica. Al tener la misma naturaleza que la tensión eléctrica, también se mide en voltios [V]. 
+	
+	\subsubsection{Potencia eléctrica}
+	La \textbf{potencia eléctrica} es la variación del trabajo del campo eléctrico por unidad de tiempo:
+	\begin{equation*}
+		p(t)=\frac{dW_{e}}{dt} 
+	\end{equation*}
+	que puede relacionarse con las variables anteriores:
+	\begin{equation*}\label{eq.pvi}
+		p(t) = \frac{dW_e}{dq(t)} \cdot \frac{dq(t)}{dt}= u(t)\cdot i(t)
+	\end{equation*}
+	
+	La {unidad} de la potencia eléctrica en el SI es el \textbf{vatio} [W]: 
+	\begin{equation*}
+		1\;W = \dfrac{1\;J}{1\;s}= 1\;A\cdot 1\;V.
+	\end{equation*}
+	\begin{remark}
+		La unidad [W] se escribe en mayúsculas en honor a James Watt, ingeniero mecánico, inventor y químico escocés de los siglos XVIII-XIX, por sus contribuciones al desarrollo de la máquina de vapor, fundamental en el desarrollo de la primera Revolución Industrial.
+	\end{remark}
+	
+	Para determinar el \textbf{signo de la potencia eléctrica} (Figura~\ref{fig.signo_potencia}) hay que tener en consideración los signos de las variables de las que depende (tensión y corriente): 
+	\begin{itemize}
+		\item Cuando las flechas de ambas variables tienen el \textbf{mismo sentido}, la potencia eléctrica es \textbf{positiva} ($P>0$)
+		\item Cuando las flechas tienen \textbf{sentidos opuestos}, la potencia eléctrica es \textbf{negativa} ($P<0$)
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[$P>0$]{\includegraphics[width=0.3\linewidth]{../figs/signo_potencia1.pdf}}\hfil
+		\subfloat[$P<0$]{\includegraphics[width=0.3\linewidth]{../figs/signo_potencia2.pdf}}
+		\caption{Convenio de signos para la potencia}
+		\label{fig.signo_potencia}
+	\end{figure}
+	En la práctica, no es conveniente trabajar con potencias negativas, por lo que es habitual interpretar este resultado como potencia absorbida y potencia generada/entregada (Figura~\ref{fig.receptor_generador}):
+	\begin{itemize}
+		\item Un circuito o elemento es un \textbf{receptor} (absorbe potencia) cuando la corriente \emph{entra} por el terminal de mayor potencial
+		\item Un circuito o elemento es un \textbf{generador} (entrega potencia) cuando la corriente \emph{sale} por el terminal de mayor potencial
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Receptor]{\includegraphics[width=0.25\linewidth]{../figs/receptor_generador1.pdf}}\hfil
+		\subfloat[Generador]{\includegraphics[width=0.25\linewidth]{../figs/receptor_generador2.pdf}}
+		\caption{Convenio de signos para la potencia}
+		\label{fig.receptor_generador}
+	\end{figure}
+	
+	\begin{remark}
+	    Téngase en cuenta, que por el principio de conservación de la energía, la potencia generada y consumida en un circuito, debe ser igual. O, si se trabaja con potencias positivas y negativas, el balance de potencias de un circuito debe cumplir que $\sum P=0$
+	\end{remark}
+	
+	\subsubsection{Energía y potencia}
+	
+	La \textbf{energía} $W$ es una magnitud física asociada con la capacidad que tienen los cuerpos para realizar un trabajo (emitir luz, generar calor, etc.). Puede manifestarse de distintas formas: gravitatoria, cinética, química, eléctrica, magnética, nuclear, radiante, etc., existiendo la posibilidad de transformar unos tipos de energía en otros, pero respetando siempre el principio de conservación de la energía. En el SI, la energía (del tipo que sea) se mide en julios [J]. El julio se define como el trabajo realizado por una fuerza $F$ de 1 Newton [N] cuando provoca un desplazamiento $d$ de 1 metro [m]. Por tanto, una forma de definir la energía es:
+	\begin{equation*}
+		W=F\cdot d 
+	\end{equation*}
+	\begin{remark}
+		La unidad [J] se escribe en mayúsculas en honor a James Prescott Joule, físico e investigador inglés del siglo XIX, considerado como uno de los físicos más notables de su época. 
+	\end{remark}
+	
+	Dado que la potencia $P$ se define como la cantidad de trabajo realizado (es decir, la energía $W$) por unidad de tiempo $t$ ($P=\frac{W}{t}$), también se puede definir la energía como:
+	\begin{equation*}\label{eq.Ept}
+		W=P\cdot t
+	\end{equation*}
+	Por tanto, otra unidad muy utilizada para medir energía es el vatio-hora [Wh], aunque ésta \textbf{\emph{no}} es la aceptada en el SI. Esta unidad representa el trabajo realizado por una máquina de potencia 1 W durante un tiempo de 1 hora. El Wh se utiliza comúnmente para medir la \textbf{energía eléctrica}. 
+	
+	\vspace{4mm}
+	\begin{example}
+		\textbf{¿Cuál es la equivalencia entre un kWh y un J?}
+		\begin{equation*}
+		    1 kWh = 1 kW \cdot 1 h = 1000 W \cdot 3600 s = 3.6 MJ 
+		\end{equation*}
+	\end{example}
+	
+	\section{Leyes básicas}
+	
+	\subsection{Ley de Ohm}
+	
+	La ley de Ohm, postulada por el físico  alemán Georg Ohm (1789--1854), es una ley que establece la relación entre la tensión y la intensidad de la corriente eléctrica, de acuerdo a la expresión: 
+	\begin{equation}
+	   \boxed{ U=R\cdot I}
+	\end{equation}
+    donde $R$ es la resistencia que opone el material al paso de la corriente eléctrica (se profundiza más en el concepto de \textbf{resistencia} en la Sección~\ref{sec.resistencia}).
+	
+	\subsection{Leyes de Kirchhoff}
+	
+	Existen una serie de definiciones previas que es necesario conocer para el análisis y la teoría de circuitos eléctricos:
+	\begin{itemize}
+		\item \textbf{Nudo:} unión de \textbf{3} o más conductores
+		\item \textbf{Rama:} elementos conectados entre dos nudos consecutivos
+		\item \textbf{Lazo:} conjunto de ramas que forman un camino cerrado
+		\item \textbf{Malla:} lazo que no contiene ningún otro en su interior
+	\end{itemize}
+
+	\begin{example}\label{ej.1-3}
+		\textbf{Determinar el número de nudos, ramas, lazos y mallas del circuito de la Figura~\ref{fig.mallas}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{../figs/mallas.pdf}
+			\caption{Ejemplo~\ref{ej.1-3}}
+			\label{fig.mallas}
+		\end{figure}
+		
+		Nudos: 4 (A, B, C, D)
+		
+		Ramas: 6 (AB, AC, AD, BC, BD, DC)
+		
+		Lazos: 7 (ABDA, BCDB, ACBA, ABCDA, ACBDA, BDCAB, ACDA) 
+		
+		Mallas: 3 (ABDA, BCDB, ACBA)
+	\end{example}
+	
+	
+	Aún era un estudiante cuando en 1845 Gustav Robert Kirchhoff, a la edad de 21 años, realizó la primera de sus grandes aportaciones a la física, formulando las ahora denominadas \textbf{leyes de Kirchhoff}, ecuaciones básicas de los circuitos eléctricos.
+	
+	\begin{itemize}
+		\item \textbf{Primera ley de Kirchhoff}. Esta ley es el resultado directo del \textbf{principio de conservación de la carga} aplicado a los circuitos eléctricos. Se conoce como primera ley de Kirchhoff (1LK) o ley de Kirchhoff de las corrientes (LKC), y dice que la suma algebráica de las intensidades de corriente que concurren en un nudo es cero. Esto es igual a decir que la suma de las corrientes que llegan a un nudo es igual a la suma de las que salen: 
+		\begin{equation}
+			\boxed{\sum_{i=1}^n i_i(t)=0}
+		\end{equation}
+		Así, en la Figura~\ref{fig.LKC_FM} se cumple que:
+		\begin{equation*}
+			i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
+		\end{equation*}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.35\linewidth]{../figs/LKC_FM.pdf}
+			\caption{Primera ley de Kirchhoff}
+			\label{fig.LKC_FM}
+		\end{figure}
+		\item \textbf{Segunda ley de Kirchhoff.} Esta ley es consecuencia del \textbf{principio de conservación de la energía} aplicado a los circuitos eléctricos. Se le
+		denomina segunda ley de Kirchhoff (2LK) o ley de Kirchhoff de los voltajes (LKV), y dice que la suma (con signo) de las tensiones a lo largo de un circuito cerrado es cero. Esto quiere decir que la energía producida por un generador es consumida por los receptores del circuito
+		para producir algún tipo trabajo (mecánico, químico, etc.) o calor:
+		\begin{equation}
+			\boxed{\sum_{j=1}^m u_i(t)=0}
+		\end{equation}
+		Así, en el circuito de la Figura~\ref{fig.LKV_FM}, se cumple que:
+		\begin{equation*}
+			u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0 
+		\end{equation*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.35\linewidth]{../figs/LKV_FM.pdf}
+			\caption{Segunda ley de Kirchhoff}
+			\label{fig.LKV_FM}
+		\end{figure}
+	\end{itemize}
+	
+% 	\subsection{Balance de tensiones: ecuación de una rama y ley de Ohm para un circuito cerrado}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=0.5\linewidth]{../figs/circuito_lkv.pdf}
+% 		\caption{Ecuación de una rama}
+% 		\label{fig.circuito_lkv}
+% 	\end{figure}
+% 	Escribir la ecuación de una rama implica \textbf{determinar la diferencia de potencial que tiene aplicada}. Considérese el circuito de la Figura~\ref{fig.circuito_lkv}. Se cumple que, en las ramas $AB$ y $CD$: 
+% 	\begin{equation*}
+% 		U_{AB} = U_{AA'} + U_{A'B'} + U_{B'B}; \qquad
+% 		U_{CD} = U_{CC'} + U_{C'D'} + U_{D'D}
+% 	\end{equation*}
+% 	y, aplicando la Ley de Ohm a cada resistencia:
+% 	\begin{equation*}
+% 		U_{A'A} = I \cdot R_g; \qquad
+% 		U_{AC} = I \cdot R_L; \qquad 
+% 		U_{CC'} = I \cdot R_m; \qquad
+% 		U_{DB} = I \cdot R_L
+% 	\end{equation*}
+% 	Las tensiones $U_{D'D}= U_{BB'} = 0$, dado que no hay ningún elemento conectado entre ellos y, por tanto, no hay diferencia de potencial. Por último, en los generadores $\epsilon_g$ y $\epsilon_m$, se cumple que:
+% 	\begin{equation*}
+% 		U_{C'D'} = \epsilon_m;\qquad
+% 		U_{B'A'} = -\epsilon_g
+% 	\end{equation*}
+% 	Por tanto: 
+% 	\begin{equation*}
+% 		U_{AB} = U_{AA'} + U_{A'B'} + \cancel{U_{B'B}}=-U_{A'A}-U_{A'B}=-I \cdot R_g-(-\epsilon_g)=\epsilon_g-I \cdot R_g% \rightarrow   {U_{AB} = \epsilon_g - I \cdot R_g}
+% 	\end{equation*}
+	
+% 	\begin{equation*}
+% 		U_{CD} = U_{CC'} + U_{C'D'} + \cancel{U_{D'D}}=I \cdot R_m +\varepsilon_m%\rightarrow {U_{CD} = \epsilon_m + I\cdot R_m}
+% 	\end{equation*}
+% 	En general, puede decirse que la diferencia de potencial de una rama es igual al producto de la intensidad que circula por ella por la suma de todas las resistencias que contiene, menos la suma algebraica de todas la
+% 	fuerzas electromotrices, consideradas positivas ($+$) las que tienden a crear corriente en el sentido que se recorre la rama y negativas ($-$) en caso contrario:
+% 	\begin{equation}\label{eq.ecuacion_rama}
+% 		\boxed{U=I\cdot \sum_{i=1}^n R_i-\sum_{j=1}^m \varepsilon_j}
+% 	\end{equation}
+	
+% 	Considerando ahora el circuito cerrado, tal como se muestra en la Figura~\ref{fig.circuito_lkv}, aplicando la 2LK: 
+% 	\begin{equation*}
+% 		U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + \cancel{U_{D'D}} + U_{DB} + \cancel{U_{BB'}} + U_{B'A'} = I \cdot R_g+I \cdot R_L+I \cdot R_m+\epsilon_m+I \cdot R_L-\epsilon_g=0
+% 	\end{equation*}
+% 	Por tanto, despejando la $I$ de la expresión anterior, se llega a:
+% 	\begin{equation*}
+% 		I=\dfrac{\epsilon_g-\epsilon_m}{R_g + 2\cdot R_L + R_m}
+% 	\end{equation*}
+% 	Generalizando esta ecuación, se obtiene la conocida Ley de Ohm para un circuito cerrado, considerando las f.e.m. positivas ($+$) si tienden a crear corriente en el sentido que se recorre la malla, y negativas ($-$) en caso contrario:
+% 	\begin{equation}
+% 		\boxed{I=\dfrac{\displaystyle\sum_{j=1}^m \varepsilon_j}{\displaystyle\sum_{i=1}^n R_i}}
+% 	\end{equation}
+	
+	\section{Elementos de los circuitos}
+	Como ya se mencionó en la Sección~\ref{sec.circuito_electrico}, en un circuito eléctrico existen dos tipos de elementos: los elementos activos y los pasivos.
+	
+	\subsection{Elementos activos}\label{sec.elementos_activos}
+	
+	\subsubsection{Generadores de tensión}
+	Un \textbf{generador de tensión} es un dispositivo físico, caracterizado por una fuerza electromotriz $\epsilon$ que proporciona una diferencia de potencial $U$ entre sus bornes de salida. Por tanto, \textbf{impone la tensión} a su salida, mientras que \emph{la corriente depende del circuito} (Figura~\ref{fig.fuentetension}).
+	\begin{itemize}
+		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la diferencia de potencial entre sus bornes toma siempre el mismo valor que su f.e.m. ($u_{AB}=\epsilon_g$). Además, se dice que un generador de tensión ideal es \textbf{dominante} sobre todo lo que está conectado en paralelo con él, ya que impone entre sus terminales la tensión que lo caracteriza. Así, a efectos de cálculo, puede prescindirse de las ramas que no interese estudiar.
+		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{serie}, $R_{\epsilon_g}$. Al circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la diferencia de potencial entre sus bornes sea inferior a la f.e.m. ($u_{AB}<\epsilon_g$). Con esto, la potencia generada será $P_g=\epsilon_g\cdot I$, la potencia disipada en la resistencia interna $P_p=R_{\epsilon_g}\cdot I^2$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
+		\begin{equation}
+			P_g=P_u+P_p\rightarrow \boxed{ \epsilon_g=U_{AB}+ R_{\epsilon_g}\cdot I}
+		\end{equation}
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteTensionIdealDC.pdf}}\hfil
+		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteTensionRealDC.pdf}}
+		\caption{Generador de tensión}
+		\label{fig.fuentetension}
+	\end{figure}
+	
+	\subsubsection{Generadores de corriente}
+	Un \textbf{generador de corriente} es un dispositivo físico, caracterizado por una intensidad $I_g$ que proporciona una corriente $I$. Por tanto, \textbf{impone la corriente} a su salida, mientras que \emph{la tensión depende del circuito} (Figura~\ref{fig.fuentecorriente}).
+	\begin{itemize}
+		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la corriente $I$ a su salida toma siempre el mismo valor que $I_g$ ($I=I_g$). Un generador de intensidad ideal es \textbf{dominante} sobre todo lo que está conectado en serie con él ya que impone en esa rama la corriente que lo caracteriza. A efectos de cálculo, puede prescindirse de los elementos en serie que no interese estudiar. 
+		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{paralelo}, $R_{I_g}$. Al producirse una derivación de corriente por esa resistencia, circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la corriente suministrada sea menor a la que caracteriza al generador ($I<I_g$). Con esto, la potencia generada será $P_g=U_{AB}\cdot I_g$, la potencia disipada en la resistencia interna $P_p=\frac{U_{AB}^2}{R_{I_g}}$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
+		\begin{equation}
+			P_g=P_u+P_p\rightarrow \boxed{I_g=I+ \dfrac{U_{AB}}{R_{I_g}}}
+		\end{equation}
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteIdeal.pdf}}\hfil
+		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteRealDC.pdf}}
+		\caption{Generador de corriente}
+		\label{fig.fuentecorriente}
+	\end{figure}
+	
+	\subsubsection{Dualidad de generadores}\label{sec.dualidad}
+	
+	Se dice que dos fuentes son equivalentes cuando suministran el \textbf{mismo valor de tensión y corriente} a un circuito externo, para cualquier circuito. Esta equivalencia solo puede darse entre \textbf{fuentes reales}.
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat[Fuente real de tensión]{\includegraphics[height=4.9cm]{../figs/FuenteTensionRealDC.pdf}}\hfil
+		\subfloat[Fuente real de corriente]{\includegraphics[height=4.9cm]{../figs/FuenteCorrienteRealDC.pdf}}
+		\caption{Equivalencia de generadores}
+		\label{fig.equivalencia_generadores}
+	\end{figure}
+	
+	Considérense las fuentes de tensión y corriente, reales, mostradas en la Figura~\ref{fig.equivalencia_generadores}
+	La salida de la fuente de tensión es:
+	\begin{equation*}
+		U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+	\end{equation*}
+	y la de la fuente de corriente:
+	\begin{equation*}
+		I = I_g - \frac{U_{AB}}{R_{I_g}} \rightarrow U_{AB} = R_{I_g} \cdot I_g - R_{I_g} \cdot I
+	\end{equation*} 
+	Por tanto, las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier combinación de $(U_{AB}, I)$, es decir, si $R_g = R_{\epsilon_g} = R_{I_g}$:
+	\begin{equation}\label{eq.equivalencia_fuentes}
+		\boxed{\epsilon_g = R_{\epsilon_g} \cdot I_g \Leftrightarrow {I_g = \frac{\epsilon_g}{R_g}}}  
+	\end{equation}
+	
+	\begin{remark}
+	    Nótese que el polo $+$ de la fuente de tensión queda en la misma posición que la flecha de la fuente de corriente
+	\end{remark}
+	
+	\begin{example}\label{ex.1-2}
+	    \textbf{Convertir en fuente de intensidad o de tensión, según corresponda, las fuentes mostradas en la Figura~\ref{fig.ejemplo1-2}.}
+	    \begin{figure}[H]
+	        \centering
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_2.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_3.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_4.pdf}}
+	        \caption{Ejemplo~\ref{ex.1-2}}
+	        \label{fig.ejemplo1-2}
+	    \end{figure}
+	    
+	    \textbf{GENERADOR (a)}
+	    
+	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $6\Omega$, y de intensidad de la fuente $I_g=\frac{18}{6}=3$ A, con la punta de flecha hacia arriba.
+	    
+	    \textbf{GENERADOR (b)}
+	    
+	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $2.2k\Omega$, y de intensidad de la fuente $I_g=\frac{9}{2.2\cdot10^3}=4.1$ mA, con la punta de flecha hacia abajo.
+	    
+	    \textbf{GENERADOR (c)}
+	    
+	    Se puede transformar en un generador de tensión con una resistencia en serie de $3\Omega$, y de fem de la fuente $\varepsilon_g=1.5\cdot 3=4.5$ V, con el polo $+$ arriba.
+	    
+	    \textbf{GENERADOR (d)}
+	    
+	    Se puede transformar en un generador de tensión con una resistencia en serie de $4.7k\Omega$, y de fem de la fuente $\varepsilon_g=6\cdot 10^{-3}\cdot 4.7\cdot 10^3=28.2$ V, con el polo $+$ abajo.
+	\end{example}
+	
+	\subsubsection{Generadores dependientes o generadores controlados}
+	Pese a no ser estrictamente elementos activos, se comportan como tales. Este tipo de generadores no tienen valores de $\epsilon$ o $i_g$ fijos, sino que dependen de la tensión o corriente en otros puntos de la red. Así, aparecen fundamentalmente cuatro tipos de generadores dependientes, dependiendo de que cada generador suministre una tensión o una corriente y según sea la variable de control una tensión o una corriente. Estos generadores suelen representarse mediante un rombo:
+	\begin{itemize}
+		\item \textbf{Generador de tensión controlado por tensión} (Figura~\ref{fig.tension-tension}): su tensión depende de la tensión entre otros puntos del circuito, siendo el parámetro $\alpha$ adimensional [--]
+		\item \textbf{Generador de tensión controlado por corriente} (Figura~\ref{fig.tension-corriente}): su tensión depende de alguna corriente del circuito, teniendo el parámetro $\beta$ unidades de resistencia [$\Omega$]
+		\item \textbf{Generador de corriente controlado por tensión} (Figura~\ref{fig.corriente-tension}): su intensidad depende de la tensión entre dos puntos del circuito, teniendo el parámetro $\gamma$ unidades de conductancia [S]
+		\item \textbf{Generador de corriente controlado por corriente} (Figura~\ref{fig.corriente-corriente}): su intensidad es función de la corriente en otra parte del circuito, siendo el parámetro $\sigma$ adimensional [--]
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Tensión--Tensión]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}}\hfill
+		\subfloat[Tensión--Corriente]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteCorriente.pdf}\label{fig.tension-corriente}}\hfill
+		\subfloat[Corriente--Tensión]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteTension.pdf}\label{fig.corriente-tension}}\hfill
+		\subfloat[Corriente--Corriente]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteCorriente.pdf}\label{fig.corriente-corriente}}
+		\caption{Fuentes dependientes}
+		\label{fig.fuentes_dependientes}
+	\end{figure}
+	
+	\begin{remark}
+		Si en un circuito \textbf{solo} existen generadores dependientes, el circuito \textbf{no está excitado}.
+	\end{remark} 
+	
+	
+	
+	
+	
+%	\subsection{Elementos pasivos}\label{sec.elementos_pasivos}
+	
+	% Los receptores son todos aquellos dispositivos capaces de transformar la energía eléctrica en otra forma de energía (por ejemplo, un motor transforma la energía eléctrica en energía mecánica). Se caracterizan por su fuerza contraelectromotriz
+	% (f.c.e.m., $E'$ o $e'(t)$), que es la energía por unidad de carga que transforman
+	% en otro tipo de energía (siempre que ésta no sea calor). Por su definición, la unidad en el SI es también el \textbf{voltio} [V].
+	
+	\subsection{Elementos pasivos ideales}
+	
+	En general, en teoría de circuitos se emplean tres tipos de elementos pasivos: resistencias, bobinas y condensadores. Se dice que un receptor es cualquier dispositivo capaz de transformar la energía eléctrica en otra forma de energía (que no sea solo calor); así, un ejemplo de receptor es un motor eléctrico (transforma parte de la energía eléctrica en mecánica).  
+	
+	\subsubsection{Resistencia} \label{sec.resistencia}
+	En el siglo XIX, Georg Simon Ohm descubrió la ley que lleva su nombre (\textbf{ley de Ohm}). Dicha ley obtiene que, \textit{a temperatura constante}, la relación existente entre la diferencia de potencial entre los bornes de un conductor y la intensidad de corriente que circula por él es una constante, denominada \textbf{resistencia eléctrica}:
+	\begin{equation*}
+		\boxed{u(t)=R\cdot i(t)}
+	\end{equation*}
+	Por tanto, la resistencia eléctrica representa la mayor o menor dificultad que ofrecen los diferentes materiales para ser recorridos por una corriente eléctrica. Su valor se mide en ohmios [$\Omega$]. El criterio de signos utilizado considerar que la tensión es positiva en el terminal por el que entra la corriente, esto es, las flechas de tensión y corriente tienen el mismo sentido (Figura~\ref{fig.resistencia}).
+	\begin{figure}[H]
+		\centering
+		\subfloat[Referencia mediante signo]{\includegraphics{../figs/Resistencia.pdf}}\hfil
+		\subfloat[Referencia mediante flecha]{\includegraphics{../figs/Resistencia_Flecha.pdf}}
+		\caption{Criterio de signos en una resistencia}
+		\label{fig.resistencia}
+	\end{figure}
+	
+	La magnitud que determina si un material es mejor o peor conductor se denomina \textbf{resistividad} ($\rho$), medida en [$\Omega\cdot$m] en el SI, aunque en las aplicaciones prácticas se suele utilizar el [$\Omega\cdot$m$^2/m$]. La resistividad de un material permanece constante si no varía la temperatura (suele expresarse a 20$^\circ$C). Para conductores homogéneos, de sección constante y pequeña comparada con su longitud, la resistencia $R$ que ofrece al paso de la corriente se puede determinar a partir de: 
+	\begin{equation*}\label{eq.resistencia_rho}
+		R=\rho\cdot \dfrac{l}{S}
+	\end{equation*}
+	siendo $l$ la longitud del conductor y $S$ el área de la sección transversal del mismo. Cabe destacar, por su importancia en la industria, la resistividad del cobre ($\rho_{Cu}=1/58\;\Omega \cdot$mm$^2/$m) y la del aluminio ($\rho_{Al}=1/36\;\Omega \cdot$mm$^2/$m).
+	
+	\vspace{4mm}
+	\begin{example}
+		\textbf{Calcular la resistencia de un conductor de cobre que tiene una longitud $l=10$~m y una sección $S=2$~mm$^2$.}\\
+		Aplicando la expresión anterior: 
+		\begin{equation*}
+			R=\rho\cdot \dfrac{l}{S}=(1/58)\cdot \dfrac{10}{2}=0.086\;\Omega
+		\end{equation*}
+	\end{example}
+	
+	Para temperaturas distintas de 20$^\circ$C, siempre que la temperatura final $T_f$ esté en torno a los 250$^\circ$, la resistividad y, por tanto, la resistencia pueden determinarse a partir de las siguientes expresiones:
+	\begin{equation*}
+		\rho_f=\rho_{20}\cdot (1+\alpha\cdot (T_f-20)); \qquad
+		R_f=R_{20}\cdot (1+\alpha\cdot (T_f-20))
+	\end{equation*}
+	donde $\rho_f$ y $R_f$ son la resistividad y la resistencia a la temperatura $T_f$ (respectivamente), $\rho_{20}$ y $R_{20}$ son la resistividad y la resistencia a 20$^\circ$C (respectivamente) y $\alpha$ es el coeficiente de temperatura. 
+	
+	La inversa de la resistencia se denomina \textbf{conductancia}, $G$, y se mide en el SI en \textbf{Siemens} [S]. Al ser lo opuesto de la resistencia, representa la facilidad de los conductores al paso de la corriente eléctrica:
+	\begin{equation}
+		\boxed{G=\dfrac{1}{R}}
+	\end{equation}
+	\begin{remark}
+		La unidad [S] se escribe en mayúsculas en honor a Ernst Werner M. von Siemens, inventor alemán del siglo XIX, pionero de la electrotecnia y fundador de la actual empresa Siemens.
+	\end{remark}
+	Asimismo, a la inversa de la resistividad se le denomina \textbf{conductividad} ($\gamma$), definida como la facilidad que ofrecen los materiales al paso de la corriente eléctrica, por unidad de longitud y sección:
+	\begin{equation*}
+		\gamma=\dfrac{1}{\rho}
+	\end{equation*}
+	
+	El desplazamiento de cargas a través de los conductores produce interacciones y choques entre ellas que, a su vez, dan
+	origen a un calentamiento del conductor. El físico británico James Prescott Joule, en 1841, fue quién cuantificó el valor del calor que se produce en un conductor por el paso de la corriente y enunció la ley que lleva su nombre (\textbf{ley de Joule}): toda la energía que absorbe un conductor homogéneo por el que circula una corriente eléctrica y en el que no existen f.e.m., se transforma íntegramente en calor. Por tanto, la energía ``perdida'' en forma de calor:
+	\begin{equation*}
+		W=P\cdot t=U\cdot I\cdot t=R\cdot I^2\cdot t
+	\end{equation*}
+	cuyo resultado viene expresado en [J]. Sin embargo, una unidad muy utilizada para medir el calor es la \textbf{caloría} [cal], cuya equivalencia con el [J] es:
+	\begin{equation*}
+		1\;J=0.24\;cal
+	\end{equation*}
+	En general, se dirá que una resistencia disipa energía eléctrica produciendo calor, siendo la potencia disipada: 
+	\begin{equation*}
+		p(t)=R\cdot i^{2}(t)
+	\end{equation*}
+	
+	El concepto de resistencia se utiliza también para definir dos términos muy comunes en teoría de circuitos:
+	\begin{itemize}
+		\item \textbf{Cortocircuito:} Conductor ideal que se une entre dos puntos, haciendo de este modo que su resistencia sea $R=0\;\Omega$. El cortocircuito puede llevar cualquier corriente, cuyo valor depende del resto del circuito, pero la tensión entre sus terminales (por la ley de Ohm) es de $u_{AB}(t)=0$~V (Figura~\ref{fig.cortocircuito}). 
+		\item \textbf{Circuito abierto:} Representa una ruptura del circuito en ese punto, por lo que no puede circular corriente ($i(t)=0$). Se puede considerar como un circuito con resistencia infinita ($R\rightarrow\infty$) y que puede tener cualquier tensión, que depende del resto de la red (Figura~\ref{fig.c_abierto}).
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Cortocircuito]{\includegraphics[width=0.25\linewidth]{../figs/cortocircuito.pdf}\label{fig.cortocircuito}}\hfil
+		\subfloat[Circuito abierto]{\includegraphics[width=0.25\linewidth]{../figs/CircuitoAbierto.pdf}\label{fig.c_abierto}}
+		\caption{Cortocircuito y circuito abierto}
+		
+	\end{figure}
+	
+	\subsubsection{Bobina}\label{sec.bobina}
+	
+	Una \textbf{bobina} es un conductor arrollado, con $N$ vueltas, alrededor de un núcleo (generalmente, de material ferromagnético). La tensión en bornes de la bobina es directamente proporcional a la variación de la corriente respecto al tiempo, con un factor de proporcionalidad $L$ conocido como \textbf{inductancia} o coeficiente de autoinducción, medido en \textbf{henrios} [H] (Figura~\ref{fig.bobina}):
+	\begin{equation}\label{eq.u_L}
+		\boxed{u(t)=L\cdot\frac{di(t)}{dt}}\,
+	\end{equation}
+	por lo que, en circuitos de corriente continua, una bobina se comporta como un \textbf{cortocircuito}:
+	\begin{equation*}
+		\dfrac{di(t)}{dt} = 0 \rightarrow u = 0
+	\end{equation*}
+	\begin{remark}
+		La unidad [H] se escribe en mayúsculas en honor a Joseph Henry, físico estadounidense del siglo XIX conocido por su trabajo acerca del electromagnetismo, electroimanes y relés.
+	\end{remark}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.15\linewidth]{../figs/Bobina.pdf}
+		\caption{Tensión y corriente en una bobina}
+		\label{fig.bobina}
+	\end{figure}
+	
+	La relación inversa de la expresión~\eqref{eq.u_L} se puede obtener por integración entre un tiempo inicial $t_i$ y un tiempo final $t_f$, resultando:
+	\begin{equation*}
+		\int_{t_i}^{t_f} \dfrac{di(t)}{dt}dt=\dfrac{1}{L}\int_{t_i}^{t_f}u(t)\cdot dt \rightarrow i(t_f)-i(t_i)=\dfrac{1}{L}\cdot\int_{t_i}^{t_f} u(t)\cdot dt\,
+	\end{equation*}
+	\begin{equation}
+		\boxed{i(t_f)=i(t_i)+\dfrac{1}{L}\cdot\int_{t_i}^{t_f} u(t)\cdot dt}
+	\end{equation}
+	Se observa que la bobina tiene un efecto de ``memoria'', ya que la corriente en un tiempo $t_f$ no depende solamente de la entrada $i(t)$ en ese momento, sino también del valor inicial de la entrada. Además, para establecer un flujo en una bobina, es necesario una energía de entrada, que queda almacenada después en forma de \textbf{campo magnético}. La potencia ``absorbida'' por la bobina será:
+	\begin{equation*}
+		p(t)=u(t)\cdot i(t)=L\cdot i(t)\cdot\dfrac{di(t)}{dt}
+	\end{equation*}
+	y la energía almacenada $w(t)$ en un periodo de tiempo entre $t_i$ y $t_f$ valdrá:
+	\begin{equation*}
+		w(t)=\int_{t_i}^{t_f}v(t)\cdot i(t)\cdot dt=\int_{t_i}^{t_f}L\cdot\dfrac{di(t)}{dt}\cdot i(t)\cdot dt=\dfrac{1}{2}\cdot L\cdot [i(t_f)-i(t_i)]^2
+	\end{equation*}
+	\begin{equation}
+		\boxed{w(t)=\dfrac{1}{2}\cdot L\cdot [i(t_f)-i(t_i)]^2}
+	\end{equation}
+	
+	\begin{remark}
+	    Para entender el concepto de inductancia, es necesario recordar algunos principios del electromagnetismo. 
+	\begin{itemize}
+		\item \textbf{Ley de Ampère.} Es la ley fundamental que relaciona corrientes eléctricas y campos magnéticos. Su versión más simple dice que el producto de $N$ veces una corriente $i$ da lugar a una intensidad de campo magnético $H$ proporcional a la longitud magnética media de las líneas de dicho campo $l$:
+		\begin{equation*}
+			\label{eq.ampere_mod}
+			H\cdot l=N\cdot i
+		\end{equation*}
+		\item \textbf{Densidad de flujo magnético.} La intensidad de campo $H$ origina, allá donde exista, una densidad de flujo $B$, cuyo valor es:
+		\begin{equation*}\label{eq.B}
+			B=\mu\cdot H,
+		\end{equation*}
+		siendo $\mu$ la permeabilidad del material. 
+		\item \textbf{Flujo magnético.} Un campo magnético $B$ (constante en magnitud y dirección) que atraviesa un área $S$, formando un ángulo $\theta$ con ésta, crea un flujo magnético que se puede calcular como: 
+		\begin{equation*}\label{eq.flujo1}
+			\phi=B\cdot S\cdot \cos (\theta)
+		\end{equation*}
+		\item \textbf{Ley de Lenz-Faraday.} Un flujo magnético variable en el tiempo induce una fuerza electro-motriz (fem, $e$) que es igual en magnitud a la variación por unidad de tiempo del flujo inducido en el circuito. Esta fem inducida tiene un sentido tal que sus efectos tienden a oponerse a las causas que lo producen, por lo que: 
+		\begin{equation*}\label{eq.lenz-faraday}
+			e=-\dfrac{d\phi(t)}{dt}.
+		\end{equation*}
+	\end{itemize}
+	A partir de esto, y con la ecuación~\eqref{eq.u_L}, es sencillo concluir que, cuando un circuito está formado únicamente por una bobina alimentada con una intensidad variable (es decir, corriente alterna) el flujo magnético también cambia y, por tanto, se induce una $fem$:
+	\begin{equation*}
+		e=\dfrac{d\phi(t)}{dt}=L\cdot \dfrac{di(t)}{dt} 
+	\end{equation*}
+	es decir, la $fem$ inducida es proporcional a la variación con el tiempo de la intensidad de corriente. Considerando esta expresión y despejando el valor de $L$, se tiene que: 
+	\begin{equation*}
+		L= \dfrac{d\phi(t)}{\cancel{dt}}\cdot\dfrac{\cancel{dt}}{di(t)}=\dfrac{d\phi(t)}{di(t)}
+	\end{equation*}
+	por lo que la inductancia $L$ expresa la relación entre el cambio de flujo y el cambio de corriente. 
+	\end{remark}
+	
+	
+	\subsubsection{Condensador}\label{sec.condensador}
+	
+	Un sistema de dos placas metálicas separadas por una capa dieléctrica constituye un \textbf{condensador}. Al aplicar tensión, produciendo una \textbf{separación de cargas opuestas} que se \textbf{acumulan} en cada placa (una de las placas queda con la carga $+Q$ y la otra con $-Q$). Del mismo modo que un elemento resistivo se distingue por el valor de su resistencia $R$, y una bobina por el valor de su inductancia $L$, un condensador se caracteriza por su \textbf{capacidad} $C$, que es la aptitud que tiene para acumular carga eléctrica. Así, la capacidad es la relación entre la carga $q(t)$ acumulada y la diferencia de potencial aplicada entre ellas $u(t)$, siendo:
+	\begin{equation}\label{eq.cqu}
+		\boxed{C=\dfrac{q(t)}{u(t)}}
+	\end{equation}
+	La unidad en el SI de la capacidad es el faradio [F]. Se trata de una unidad tremendamente grande, por lo que en la práctica se utilizan submúltiplos (mF, $\mu$F, pF...). 
+	\begin{remark}
+		La unidad [F] se escribe en mayúsculas en honor a Michael Faraday, científico británico de los siglos XVIII-XIX que estudió el electromagnetismo y la electroquímica. 
+	\end{remark}
+	
+	Durante la carga del condensador, se produce una corriente eléctrica entre las dos placas (Figura~\ref{fig.condensador}): 
+	\begin{equation}\label{eq.icu}
+		i(t)=\dfrac{dq(t)}{dt}\stackrel{\eqref{eq.cqu}}{=}\dfrac{d(C\cdot u(t))}{dt}=C\cdot \dfrac{du(t)}{dt} \Rightarrow \boxed{i(t)=C\cdot \dfrac{du(t)}{dt}}
+	\end{equation}
+	por lo que, en circuitos de corriente continua, un condensador se comporta como un \textbf{circuito abierto}.
+	\begin{equation*}
+		\frac{du(t)}{dt} = 0 \rightarrow i = 0
+	\end{equation*}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.15\linewidth]{../figs/Condensador.pdf}
+		\caption{Tensión y corriente en un condensador}
+		\label{fig.condensador}
+	\end{figure}
+	
+	La relación inversa de la expresión~\eqref{eq.icu} se puede obtener por integración entre un tiempo inicial $t_i$ y un tiempo final $t_f$, resultando:
+	\begin{equation*}
+		\int_{t_i}^{t_f} \dfrac{du(t)}{dt}dt=\dfrac{1}{C}\int_{t_i}^{t_f}i(t)\cdot dt \rightarrow u(t_f)-u(t_i)=\dfrac{1}{C}\cdot\int_{t_i}^{t_f} i(t)\cdot dt
+	\end{equation*}
+	\begin{equation}\label{eq.u_C}
+		\boxed{u(t_f)=u(t_i)+\dfrac{1}{C}\cdot\int_{t_i}^{t_f} i(t)\cdot dt}
+	\end{equation}
+	Se observa que el condensador también tiene un efecto de ``memoria'', ya que la tensión en un tiempo $t_f$ no depende solamente de la entrada $u(t)$ en ese momento, sino también del valor inicial.
+	
+	Al aplicar tensión a un condensador se produce una separación de cargas entre ambas placas, lo que produce un \textbf{campo eléctrico}, quedando almacenada una energía de este tipo. La potencia ``absorbida'' por el condensador será:
+	\begin{equation*}
+		p(t)=u(t)\cdot i(t)=C\cdot u(t)\cdot\dfrac{du(t)}{dt}
+	\end{equation*}
+	y la energía almacenada $w(t)$ en un periodo de tiempo entre $t_i$ y $t_f$ valdrá:
+	\begin{equation*}
+		w(t)=\int_{t_i}^{t_f}v(t)\cdot i(t)\cdot dt=\int_{t_i}^{t_f}C\cdot\dfrac{du(t)}{dt}\cdot u(t)\cdot dt=\dfrac{1}{2}\cdot C\cdot [u(t_f)-u(t_i)]^2
+	\end{equation*}
+	\begin{equation}
+		\boxed{w(t)=\dfrac{1}{2}\cdot C\cdot [u(t_f)-u(t_i)]^2}
+	\end{equation}
+	
+	\subsubsection{Otros receptores}
+	En este apartado se incluyen aquellos receptores que están compuestos en su interior por combinaciones de los elementos básicos (resistencias, bobinas y condensadores). Estos receptores se caracterizan por su \textbf{fuerza contraelectromotriz} (f.c.e.m, E' o $\varepsilon'$), que es la energía por unidad de carga que transforman en otro tipo de energía que no sea calor. Al tener la misma naturaleza que la tensión eléctrica y la f.e.m., se mide en voltios [V]. Como en el caso de los elementos activos (Sección~\ref{sec.elementos_activos}), se distingue entre receptor ideal y real (Figura~\ref{fig.receptores}):
+	\begin{itemize}
+		\item Un \textbf{receptor ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la diferencia de potencial entre sus bornes toma siempre el mismo valor que su f.c.e.m. ($u_{AB}=\epsilon'$).
+		\item Un \textbf{receptor real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{serie}, $R_{\epsilon'}$. Al circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser consumida por el receptor. Las pérdidas internas son la causa de que la diferencia de potencial entre sus bornes sea superior a la f.c.e.m. ($u_{AB}>\epsilon'$). Con esto, la potencia útil será $P_u=\epsilon'\cdot I$, la potencia disipada en la resistencia interna $P_p=R_{\epsilon'}\cdot I^2$ y la potencia absorbida $P_a=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
+		\begin{equation}
+			P_a=P_u+P_p\rightarrow \boxed{U_{AB}=\epsilon'+ R_{\epsilon'}\cdot I}\,
+		\end{equation}
+		\begin{figure}[H]
+			\centering
+			\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/receptor_ideal.pdf}}\hfil
+			\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/receptor_real.pdf}}
+			\caption{Otros receptores}
+			\label{fig.receptores}
+		\end{figure}
+	\end{itemize}
+	
+	\subsection{Eficiencia}
+	Cualquier máquina, dispositivo, etc., tiene una \textbf{eficiencia}\footnote{No deben confundirse los términos de \textbf{eficiencia} y \textbf{rendimiento}. Mientras que eficiencia es la relación entre potencias, el rendimiento es la relación entre energías.} %(o eficiencia), 
+	que expresa el cociente entre la potencia de salida y la potencia de entrada. Puesto que todos los dispositivos/máquinas tienen pérdidas, se cumple \textbf{siempre} que el rendimiento es menor del 100\% (o 1, si se expresa en tanto por uno). En general, para la teoría de circuitos, interesa conocer el rendimiento de:
+	\begin{itemize}
+		\item Generadores:
+		\begin{equation}
+			\boxed{\eta_g (\%) = \frac{P_{u}}{P_{g}}\cdot 100}
+		\end{equation}
+		\item Receptores (fundamentalmente, motores):
+		\begin{equation}
+			\boxed{\eta_m (\%) = \frac{P_{u}}{P_{a}}\cdot 100}
+		\end{equation}
+	\end{itemize}
+	
+	\begin{example}\label{ex.motor-bt1}
+	    \textbf{Un generador de corriente continua, $fem=500$ V y $0.75\Omega$ de resistencia, alimenta mediante una línea de cobre de 18 m$\Omega$ mm$^2$/m y 16 mm$^2$ de sección a un motor de 1 CV y rendimiento 74.49\%, situado a 1 km de distancia. Se pide determinar:
+	    \begin{itemize}
+	        \item Intensidad de corriente en el motor y densidad de corriente, sabiendo que ésta última no debe superar 2 A/mm$^2$
+	        \item Tensiones en bornes del generador y del motor, así como la caída de tensión en la línea
+	        \item $fcem$ del motor y su resistencia
+	    \end{itemize}}
+	    
+	    El circuito eléctrico se muestra en la Figura~\ref{fig.ejemplo_BT1_motor}.
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.5\linewidth]{../figs/ejemplo_BT1_motor.pdf}
+	        \caption{Circuito eléctrico equivalente del Ejemplo~\ref{ex.motor-bt1}}
+	        \label{fig.ejemplo_BT1_motor}
+	    \end{figure}
+	    La potencia útil del motor es 1 CV $=736$ W. La potencia absorbida, a partir del rendimiento: 
+	    \begin{equation*}
+	        P_{abs,M}=\dfrac{P_{u,M}}{\eta_M}=\dfrac{736}{0.7449}=988.05\;\text{W}=U_M\,I\Rightarrow U_M =\dfrac{988.05}{I}
+	    \end{equation*}
+	    siendo $U_M$ la tensión en el motor (motor + resistencia del motor). La resistencia de la línea es:
+	    \begin{equation*}
+	        R_l=2\,\rho\dfrac{l}{S}=2\cdot 18\cdot 10^{-3}\dfrac{1000}{16}= 2.25\Omega
+	    \end{equation*}
+	    Aplicando la 2LK al circuito completo, se obtiene que: 
+	    \begin{equation*}
+	        \epsilon_g-R_g\,I-R_l\,I-U_M=500-0.75\cdot I -2.25\cdot I-\dfrac{988.05}{I}=0\Rightarrow \begin{cases}
+	            I_1=164.67\,\text{A}\\
+	            I_2=2\,\text{A}
+	        \end{cases}
+	    \end{equation*}
+	    
+	    Con estos valores de corriente, se calcula la densidad para que cumpla la condición de densidad estipulada: 
+	    \begin{align*}
+	        \delta_1&=\dfrac{I_1}{S}=\dfrac{164.67}{16}=10.29\,\text{A/mm}^2>2\,\text{A/mm}^2\\
+	        \delta_2&=\dfrac{I_2}{S}=\dfrac{2}{16}={0.13\,\text{A/mm}^2 < 2\,\text{A/mm}^2}
+	    \end{align*}
+	    Por tanto:
+	    \begin{align*}
+	        I&=2\,\text{A}\\
+	        \delta&=0.13\,\text{A/mm}^2
+	    \end{align*}
+	    
+	    Una vez conocida la corriente, la tensión en bornes del generador y motor son:
+	    \begin{align*}
+	        U_M&=\dfrac{P_{abs,M}}{I}=\dfrac{988.05}{2}=494.03\,\text{V}\\
+	        U_l&=R_l\cdot I=2.25\cdot 2=4.5\,\text{V}\\
+	        U_g&=U_M+U_l=494.03+4.5=498.53\,\text{V}
+	    \end{align*}
+	    
+	    Por definición, la potencia útil del motor es:
+	    \begin{equation*}
+	        P_{u,M}=fcem\, I\Rightarrow {fcem=\dfrac{P_{u,M}}{I}=\dfrac{736}{2}=368\,\text{V}}
+	    \end{equation*}
+	    y la resistencia del mismo, a partir de la tensión $U_M$:
+	    \begin{equation*}
+	        U_M=fcem+R_M\,I\Rightarrow {R_M=\dfrac{U_M-fcem}{I}=\dfrac{494.03-368}{2}=63.02\;\Omega}
+	    \end{equation*}
+	    
+	\end{example}
+	
+	\section{Asociación de elementos}
+	
+	Los diferentes elementos (tanto los activos como los pasivos) se pueden asociar de diferentes formas según la conexión que se haga entre ellos. 
+	
+	\subsection{Conexión en serie}
+	Se dice que dos o más elementos están acoplados en \textbf{serie} cuando el final del primero se conecta al principio del segundo, el final del segundo al principio del tercero, y así sucesivamente. Es decir, varios elementos están conectados en serie cuando por ellos circula la \textbf{misma corriente}. 
+	
+	\subsubsection{Resistencias}
+	Siguiendo el circuito de la Figura~\ref{fig.serie}, se cumple que:
+		\begin{align*}
+			u_1(t) &= R_1 \cdot i(t)\\
+			u_2(t) &= R_2 \cdot i(t)\\
+			u_3(t) &= R_3 \cdot i(t)
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.2\linewidth]{../figs/AsociacionSerie.pdf}
+			\caption{Conexión de resistencias en serie}
+			\label{fig.serie}
+		\end{figure}
+		Al aplicar la 2LK, se obtiene que: 
+		\begin{equation*}
+			u(t) = u_1(t) + u_2(t) + u_3(t)
+		\end{equation*}
+		y sacando $i(t)$ como factor común, queda:
+		\begin{equation*}
+			u(t) = i(t) \cdot (R_1 + R_2 + R_3)
+		\end{equation*}
+		Por tanto, se puede definir la resistencia equivalente $R_{eq}$ de la conexión en serie como:
+		\begin{equation}
+			\boxed{R_{eq} = \sum_{i = 1}^n R_i}
+		\end{equation}
+		de modo que:
+		\begin{equation*}
+			u(t) = R_{eq} \cdot i(t)
+		\end{equation*}
+		
+		Además, de las ecuaciones anteriores se tiene:
+		\begin{align*}
+			i(t) = \dfrac{u(t)}{R_1 + R_2 + R_3}
+		\end{align*}
+		pudiendo calcular la tensión de cualquiera de las resistencias como: 
+		\begin{equation*}
+			u_i(t) = R_i \cdot i(t)
+		\end{equation*}
+		Por tanto, la tensión parcial $u_i(t)$ se puede expresar en función de la tensión total $u(t)$ como: 
+		\begin{equation*}
+			u_i(t) = u(t) \cdot \frac{R_i}{R_1 + R_2 + R_3}
+		\end{equation*}
+		conocido como \textbf{divisor de tensión}. En general, para un circuito en serie:
+		\begin{equation}
+			\boxed{u_i(t) = u(t) \cdot \frac{R_i}{R_{eq}}}
+		\end{equation}
+		\subsubsection{Bobinas}
+		Siguiendo el circuito de la Figura~\ref{fig.bobinas-serie}, se cumple que:
+		\begin{align*}
+			u_1(t) &= L_1 \cdot \dfrac{di(t)}{dt}\\
+			u_2(t) &= L_2 \cdot \dfrac{di(t)}{dt}\\
+			u_3(t) &= L_3 \cdot \dfrac{di(t)}{dt}\\
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.2\linewidth]{../figs/BobinasSerie.pdf}
+			\caption{Conexión de bobinas en serie}
+			\label{fig.bobinas-serie}
+		\end{figure}
+		De manera análoga a las resistencias, al aplicar la 2LK se obtiene que: 
+		\begin{equation*}
+			u(t) = u_1(t) + u_2(t) + u_3(t)
+		\end{equation*}
+		y sacando $\frac{di(t)}{dt}$ como factor común, queda:
+		\begin{equation*}
+			u(t) = \dfrac{di(t)}{dt} \cdot (L_1 + L_2 + L_3)
+		\end{equation*}
+		por lo que se puede definir la inductancia equivalente $L_{eq}$ de la conexión en serie como:
+		\begin{equation}
+			\boxed{L_{eq} = \sum_{i = 1}^n L_i}
+		\end{equation}
+		de modo que:
+		\begin{equation*}
+			u(t) = L_{eq} \cdot \dfrac{di(t)}{dt}
+		\end{equation*}
+		\subsubsection{Condensadores}
+		Con el circuito de la Figura~\ref{fig.condensadores-serie}, se cumple que:
+		\begin{align*}
+			i(t) &= C_1 \cdot \frac{du_1(t)}{dt}\\
+			i(t) &= C_2 \cdot \frac{du_2(t)}{dt}\\
+			i(t) &= C_3 \cdot \frac{du_3(t)}{dt}\\
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.2\linewidth]{../figs/CondensadoresSerie.pdf}
+			\caption{Conexión de condensadores en serie}
+			\label{fig.condensadores-serie}
+		\end{figure}
+		Al aplicar la 2LK se obtiene que: 
+		\begin{equation*}
+			u(t) = u_1(t) + u_2(t) + u_3(t)
+		\end{equation*}
+		Suponiendo que la carga sea nula en el instante inicial (para que las constantes de integración sean nulas) y sacando factor común $\int i(t)\,dt$, se tiene:
+		\begin{equation*}
+			u(t)=\left(\dfrac{1}{C_1}+\dfrac{1}{C_2}+\dfrac{1}{C_3} \right)\cdot \int i(t) dt
+		\end{equation*}
+		por lo que se puede definir la capacidad equivalente $C_{eq}$ de la conexión en serie como:
+		\begin{equation}
+			\boxed{\dfrac{1}{C_{eq}} = \sum_{i = 1}^n \dfrac{1}{C_i}}
+		\end{equation}
+		de modo que:
+		\begin{equation*}
+			i(t) = C_{eq} \cdot \frac{du(t)}{dt}
+		\end{equation*}
+		
+		\subsubsection{Fuentes de tensión}
+		
+		Pueden conectarse en serie sin que exista \textbf{ninguna restricción}, independientemente de que se considere su modelo ideal o real. Su f.e.m. equivalente será la suma de cada una de las f.e.m.s. (por la 2LK) y, la resistencia equivalente, la suma de las resistencias internas de cada generador (en caso de considerar el modelo real).
+		
+		\subsubsection{Fuentes de corriente} 
+		
+		Hay que hacer diferencia entre si se considera el modelo ideal o el real:
+		\begin{itemize}
+			\item \textbf{Ideal.} Las fuentes de corriente ideales pueden conectarse en serie si, y sólo si, todas las fuentes suministran \textbf{igual intensidad y en el mismo sentido} (por la 1LK).
+			\item \textbf{Real.} No existe ninguna restricción, llegando al generador equivalente mediante trasformación de fuentes (ver Sección~\ref{sec.dualidad}). 
+		\end{itemize}
+	
+	\subsection{Conexión en paralelo}
+	Se dice que dos o más elementos están acoplados en \textbf{paralelo} cuando todos los principios están conectados a un mismo punto, y todos los finales lo están en otro. Es decir, varios elementos están conectados en paralelo cuando todos ellos se encuentran sometidos a la \textbf{misma diferencia de potencial}.
+	
+			\subsubsection{Resistencias} 
+			
+			Con el circuito de la Figura~\ref{fig.resistencias-paralelo}, se cumple que:
+		\begin{align*}
+			i_1(t) &= \dfrac{u(t)}{R_1}\\
+			i_2(t) &= \dfrac{u(t)}{R_2}\\
+			i_3(t) &= \dfrac{u(t)}{R_3}\\
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.35\linewidth]{../figs/AsociacionParalelo.pdf}
+			\caption{Conexión de resistencias en paralelo}
+			\label{fig.resistencias-paralelo}
+		\end{figure}
+		Al aplicar la 1LK, se obtiene que: 
+		\begin{equation*}
+			i(t) = i_1(t) + i_2(t) + i_3(t)
+		\end{equation*}
+		y sacando $u(t)$ como factor común, queda:
+		\begin{equation*}
+			i(t) = u(t) \cdot \left(\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\right)
+		\end{equation*}
+		Por tanto, se puede definir la resistencia equivalente $R_{eq}$ de la conexión en paralelo como:
+		\begin{equation}
+			\boxed{\dfrac{1}{R_{eq}} = \sum_{i = 1}^n \dfrac{1}{R_i}}
+		\end{equation}
+		de modo que:
+		\begin{equation*}
+			u(t) = R_{eq} \cdot i(t)
+		\end{equation*}
+		
+		\begin{remark}
+			En el caso concreto de \textbf{dos resistencias} en paralelo, la expresión sería: 
+			\begin{equation*}
+				R_{eq}=\dfrac{1}{\frac{1}{R_1}+\frac{1}{R_2}}=\dfrac{1}{\frac{R_2+R_1}{R_1\cdot R_2}}=\dfrac{R_1\cdot R_2}{R_1+R_2}
+			\end{equation*}
+		\end{remark}
+		
+		Se define la \textbf{conductancia} $G$ [S] como la inversa de la resistencia. Así, en lugar de:
+		\begin{equation*}
+			\dfrac{1}{R_{eq}} = \sum_{i = 1}^n \dfrac{1}{R_i}
+		\end{equation*}
+		\begin{equation*}
+			u(t) = R_{eq} \cdot i(t)
+		\end{equation*}
+		se puede escribir:
+		\begin{equation}
+			\boxed{G_{eq} = \sum_{i = 1}^n G_i}
+		\end{equation}
+		\begin{equation*}
+			i(t) = G_{eq} \cdot u(t)
+		\end{equation*}
+		
+		Además, de las ecuaciones anteriores (usando la conductancia) se tiene:
+		\begin{align*}
+			u(t) = \dfrac{i(t)}{G_1 + G_2 + G_3}
+		\end{align*}
+		pudiendo calcular la corriente de cualquiera de las resistencias como: 
+		\begin{equation*}
+			i_i(t) = G_i \cdot u(t)
+		\end{equation*}
+		Por tanto, la corriente parcial $i_i(t)$ se puede expresar en función de la corriente total $i(t)$ como: 
+		\begin{equation*}
+			i_i(t) = i(t) \cdot \dfrac{G_i}{G_1 + G_2 + G_3}
+		\end{equation*}
+		conocido como \textbf{divisor de corriente}. En general, para un circuito en paralelo:
+		\begin{equation}
+			\boxed{i_i(t) = i(t) \cdot \frac{G_i}{G_{eq}}}
+		\end{equation}
+		
+		\subsubsection{Bobinas}
+		
+		Considerando el circuito de la Figura~\ref{fig.bobinas-paralelo}, se cumple que:
+		\begin{align*}
+			u(t) &= L_1 \cdot \frac{di_1(t)}{dt}\\
+			u(t) &= L_2 \cdot \frac{di_2(t)}{dt}\\
+			u(t) &= L_3 \cdot \frac{di_3(t)}{dt}\\
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.35\linewidth]{../figs/BobinasParalelo.pdf}
+			\caption{Conexión de bobinas en paralelo}
+			\label{fig.bobinas-paralelo}
+		\end{figure}
+		Al aplicar la 1LK, se obtiene que: 
+		\begin{equation*}
+			i(t) = i_1(t) + i_2(t) + i_3(t)
+		\end{equation*}
+		y, suponiendo que la carga sea nula en el instante inicial (para que las constantes de integración sean nulas) y sacando factor común $\int u(t)\,dt$, se tiene:
+		\begin{equation*}
+			i(t)=\left(\dfrac{1}{L_1}+\dfrac{1}{L_2}+\dfrac{1}{L_3} \right)\cdot \int u(t) dt
+		\end{equation*}
+		Por tanto, se puede definir la inductancia equivalente $L_{eq}$ de la conexión en paralelo como:
+		\begin{equation}
+			\boxed{\dfrac{1}{L_{eq}} = \sum_{i = 1}^n \dfrac{1}{L_i}}
+		\end{equation}
+		de manera que:
+		\begin{equation*}
+			u(t) = L_{eq} \cdot \dfrac{di(t)}{dt}
+		\end{equation*}
+		\subsubsection{Condensadores} 
+		Con el circuito de la Figura~\ref{fig.condensadores-paralelo}, se cumple que:
+		\begin{align*}
+			i_1(t) &= C_1 \cdot \frac{du(t)}{dt}\\
+			i_2(t) &= C_2 \cdot \frac{du(t)}{dt}\\
+			i_3(t) &= C_3 \cdot \frac{du(t)}{dt}\\
+		\end{align*}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.4\linewidth]{../figs/CondensadoresParalelo.pdf}
+			\caption{Conexión de condensadores en paralelo}
+			\label{fig.condensadores-paralelo}
+		\end{figure}
+		Al aplicar la 1LK se obtiene que: 
+		\begin{equation*}
+			i(t) = i_1(t) + i_2(t) + i_3(t)
+		\end{equation*}
+		por lo que, sacando factor común $\frac{du(t)}{dt}$, se tiene:
+		\begin{equation*}
+			i(t)=C_1\cdot \dfrac{du(t)}{dt}+ C_2\cdot \dfrac{du(t)}{dt}+ C_3\cdot \dfrac{du(t)}{dt}=(C_1+C_2+C_3)\cdot\dfrac{du(t)}{dt}
+		\end{equation*}
+		por lo que se puede definir la capacidad equivalente $C_{eq}$ de la conexión en paralelo como:
+		\begin{equation}
+			\boxed{C_{eq} = \sum_{i = 1}^n C_i}
+		\end{equation}
+		de modo que:
+		\begin{equation*}
+			i(t) = C_{eq} \cdot \frac{du(t)}{dt}
+		\end{equation*}
+		
+		\subsubsection{Fuentes de tensión}
+		
+		Hay que hacer diferencia entre si se considera el modelo ideal o el real:
+		\begin{itemize}
+			\item \textbf{Ideal.} Las fuentes de tensión ideales pueden conectarse en paralelo si, y sólo si, todas las fuentes tienen \textbf{igual f.e.m. y ésta actúa en el mismo sentido}.
+			\item \textbf{Real.} No existe \textbf{ninguna restricción}, llegando al generador equivalente mediante trasformación de fuentes (ver Sección~\ref{sec.dualidad}). 
+		\end{itemize}
+		
+		\subsubsection{Fuentes de corriente}
+		
+		Pueden conectarse en paralelo sin que exista ninguna restricción, independientemente de que se considere su modelo ideal o real. Su intensidad equivalente será la suma de cada una de las intensidades, y la resistencia equivalente se calculará a partir del paralelo entre varias resistencias (en caso de considerar el modelo real).
+	
+	
+	\begin{example}\label{ex.serie-paralelo}
+	    \textbf{Calcular la corriente que pasa por la fuente de tensión de la Figura \ref{fig.ejercicio1_tema1}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics{../figs/ej1_BT1.pdf}
+			\caption{Ejemplo~\ref{ex.serie-paralelo}}
+			\label{fig.ejercicio1_tema1}
+		\end{figure}
+		
+		Se pide calcular la corriente $I_1$. Se empiezan asociando las tres resistencias en paralelo de 12, 6 y 18~$\Omega$:
+\begin{equation*}
+    R_{eq,||}=\dfrac{1}{\frac{1}{R_{12}}+\frac{1}{R_{6}}+\frac{1}{R_{18}}}=\dfrac{1}{\frac{1}{12}+\frac{1}{6}+\frac{1}{18}}=3.273\,\Omega
+\end{equation*}
+La resistencia equivalente total:
+\begin{equation*}
+    R_{eq}=R_5+R_{eq,||}=5+3.273=8.273\,\Omega
+\end{equation*}
+Por la ley de Ohm: 
+\begin{equation*}
+    I_1=\dfrac{U}{R_{eq}}=\dfrac{50}{8.273}={6.04\,\text{A}}
+\end{equation*}
+	\end{example}
+	
+	
+	
+	\subsection{Conexión estrella-triángulo}
+	Estas dos configuraciones tienen una importancia fundamental en la teoría de circuitos, ya que son las dos posibilidades de conexión de cargas trifásicas. En la Figura~\ref{fig.estrella-triangulo} se muestran estas redes pasivas, cuyos terminales de acceso exterior
+	se han denominado $A$, $B$ y $C$ y que tienen la misma situación ``topográfica''. La conexión triángulo está
+	formada por tres resistencias $R_{ab}$, $R_{bc}$ y $R_{ca}$, que unen los diversos nudos, dando la apariencia
+	geométrica de un triángulo. Por su parte, la conexión
+	estrella representa tres resistencias $R_a$, $R_b$ y $R_c$, que parten de los tres nudos de acceso
+	externo $A$, $B$ y $C$, y que se unen en un punto común $N$. 
+	\begin{figure}[H]
+		\centering
+		\subfloat[Conexión triángulo]{\includegraphics[width=0.3\linewidth]{../figs/Conexion_Triangulo.pdf}}\hfil
+		\subfloat[Conexión estrella]{\includegraphics[width=0.3\linewidth]{../figs/Conexion_Estrella.pdf}}
+		\caption{Conexión en estrella y en triángulo}
+		\label{fig.estrella-triangulo}
+	\end{figure}
+	
+	Lo interesante es buscar las leyes de transformación de una red a la otra, de tal modo que ambos circuitos sean equivalentes desde el punto de vista externo (es decir,
+	desde los nudos $A$, $B$ y $C$). Está claro que, si las dos redes son equivalentes, deberán consumir las mismas
+	corrientes cuando se aplican las mismas tensiones externas, lo que equivale a decir que las resistencias que se observan entre los diferentes terminales $A-B$, $B-C$ y $C-A$ deben ser idénticas para ambos montajes y, por consiguiente, se
+	deben satisfacer las igualdades mostradas en la Tabla~\ref{tab.igualdades_estrellatriangulo}. 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{c|c|c} \textbf{Resistencia} & \textbf{Estrella} & \textbf{Triángulo}\\\hline
+			&&        \\[-0.75em]
+			$R_{AB}$ & $R_a+R_b$ & $\dfrac{R_{ab} \cdot (R_{bc} + R_{ca})}{R_{ab} + R_{bc} + R_{ca}}$\\
+			&&         \\[-0.75em]
+			$R_{AB}$ & $R_b+R_c$ & $\dfrac{R_{bc} \cdot (R_{ab} + R_{ca})}{R_{ab} + R_{bc} + R_{ca}}$\\
+			&& \\[-0.75em]
+			$R_{CA}$ & $R_a+R_c$ & $\dfrac{R_{ca} \cdot (R_{ab} + R_{bc})}{R_{ab} + R_{bc} + R_{ca}}$\\
+		\end{tabular}
+		\caption{Igualdades que se deben satisfacer para la equivalencia estrella-triángulo}
+		\label{tab.igualdades_estrellatriangulo}
+	\end{table}
+	
+	A partir de la Tabla~\ref{tab.igualdades_estrellatriangulo}, se obtiene que las resistencias vistas desde los diferentes nudos, en la conexión triángulo, son:
+	\begin{align*}
+		R_{AB} &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
+		\\
+		R_{BC} &= \frac{R_{bc} \cdot R_{ab}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}\\
+		\\
+		R_{CA} &= \frac{R_{ca} \cdot R_{ab}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{ca} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}
+	\end{align*}
+	que deben ser igual a las de estrella:
+	\begin{align*}
+		\dfrac{R_{a{\color{magenta}b}} \cdot R_{{\color{magenta}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \dfrac{R_{{\color{teal}a}b} \cdot R_{c{\color{teal}a}}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{teal}a} + R_{\color{magenta}b}\\
+		\\
+		\dfrac{R_{a{\color{magenta}b}} \cdot R_{{\color{magenta}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \dfrac{R_{b{\color{orange}c}} \cdot R_{{\color{orange}c}a}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{magenta}b} + R_{\color{orange}c}\\
+		\\
+		\dfrac{R_{{\color{teal}a}b} \cdot R_{c{\color{teal}a}}}{R_{ab} + R_{bc} + R_{ca}} + \dfrac{R_{b{\color{orange}c}} \cdot R_{{\color{orange}c}a}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{orange}c} + R_{\color{teal}a}
+	\end{align*}
+	Igualando y operando, se llega a las siguientes relaciones: 
+	\begin{itemize}
+		\item \textbf{Conversión de triángulo a estrella:} 
+		\begin{align}
+			\Aboxed{R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}}\\[10pt]
+			\Aboxed{R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}}\\[10pt]
+			\Aboxed{R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}}
+		\end{align}
+		\item \textbf{Conversión de estrella a triángulo:}
+		\begin{align}
+			\Aboxed{G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}}\\[10pt]
+			\Aboxed{G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}}\\[10pt]
+			\Aboxed{G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}}
+		\end{align}
+	\end{itemize}
+	
+	Las transformaciones anteriores se utilizan con gran frecuencia en el análisis de circuitos, ya que permiten simplificar ciertas redes en las que las resistencias no están
+	conectadas de forma simple (en serie o en paralelo). Quiere destacarse que, en caso de que las resistencias sean iguales ($R_a=R_b=R_c=R_Y$ para la estrella y $R_{ab}=R_{bc}=R_{ca}=R_D$ para el triángulo), se cumple que: 
+	\begin{equation}\label{eq.triangulo-estrella-igual}
+		\boxed{R_D=3\cdot R_Y}
+	\end{equation}
+	
+	%\newpage
+	\begin{example}\label{ex.estrella-triangulo}
+	\textbf{Convertir los circuitos de la Figura~\ref{fig.ejercicio7-bt1} en triángulo o estrella equivalente, según corresponda. }
+ \begin{figure}[H]
+ 		\centering
+\includegraphics[height=3.5cm]{../figs/ej7_BT1.pdf}
+ 		\caption{Ejemplo~\ref{ex.estrella-triangulo}}
+ 		\label{fig.ejercicio7-bt1}
+ 	\end{figure}
+ 	
+ 	Se calcula primero el cambio de estrella a triángulo. Puesto que las tres resistencias tienen un valor de 60 $\Omega$ ($R_a=R_b=R_c=R_Y=60\Omega$), se cumple que, según~\eqref{eq.triangulo-estrella-igual}: 
+	\begin{equation*}
+		R_D=3\cdot R_Y=3\cdot 60=180\Omega
+	\end{equation*}
+	Puede comprobarse que se llegaría a la misma solución empleando las expresiones completas, donde $G_i=\frac{1}{R_i}=\frac{1}{60}$ S: 
+	\begin{align*}
+			G_{ab} &= \frac{G_a \cdot G_b}{G_a + G_b + G_c}=\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{ab}=\dfrac{1}{G_{ab}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega\\[10pt]
+			G_{bc} &= \frac{G_b \cdot G_c}{G_a + G_b + G_c}=\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{bc}=\dfrac{1}{G_{bc}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega\\[10pt]
+			G_{ca} &= \frac{G_c \cdot G_a}{G_a + G_b + G_c}\frac{\frac{1}{60} \cdot \frac{1}{60}}{\frac{1}{60} + \frac{1}{60} + \frac{1}{60}}=5.55\cdot 10^{-3}\,\text{S}\Rightarrow R_{ca}=\dfrac{1}{G_{ca}}=\dfrac{1}{5.55\cdot 10^{-3}}=180\Omega
+		\end{align*}
+
+El cambio de triángulo a estrella debe hacerse a partir de las ecuaciones completas, puesto que sus resistencias son todas diferentes: 
+\begin{align*}
+			R_a &= \frac{R_{ab} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}=\frac{10 \cdot 20}{10 + 30 + 20}=\frac{10}{3}\Omega\\
+			\\
+			R_b &= \frac{R_{ab} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}=\frac{10 \cdot 30}{10+30+20}=5\Omega\\
+			\\
+			R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}=\frac{30 \cdot 20}{10+30+20}=10\Omega
+		\end{align*}
+
+Los circuitos equivalentes son los mostrados en la Figura~\ref{fig.ejercicio7-bt1-sol}.
+ \begin{figure}[H]
+ 		\centering
+\includegraphics[height=3.5cm]{../figs/ej7_BT1_sol.pdf}% 
+ 		\caption{Ejemplo~\ref{ex.estrella-triangulo} -- Solución}
+ 		\label{fig.ejercicio7-bt1-sol}
+ 	\end{figure}
+	    
+	\end{example}
+	
+	\section{Aplicación de las leyes de Kirchhoff: métodos de análisis} \label{sec.metodos_analisis_cc}
+	Para resolver un circuito, se debe conocer $U$ e $I$ en cada una de sus ramas. Por tanto, si se tiene un circuito formado por $r$ ramas, el número de incógnitas será $2\cdot r$ (una de tensión y otra de intensidad). Por tanto, para resolver el circuito se deben disponer de $2\cdot r$ ecuaciones linealmente independientes. Para ello, basta con aplicar las leyes de Kirchhoff a los nudos y mallas del circuito. 
+	
+	\begin{example}
+		\label{ej.1-4}
+		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.mallas1}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{../figs/mallas1.pdf}
+			\caption{Ejemplo~\ref{ej.1-4}}
+			\label{fig.mallas1}
+		\end{figure}
+		
+		\begin{enumerate}
+			\item {Se aplica la 1LK:} 
+			\begin{itemize}
+				\item {Nudo A:} $I_6 = I_1 + I_2$
+				\item {Nudo B:} $I_1 + I_3 + I_5 = 0$
+				\item {Nudo C:} $I_2 = I_3 + I_4$
+				\item {Nudo D:} $I_4 = I_5 + I_6$
+			\end{itemize}
+			Sin embargo, se observa que no son ecuaciones linealmente independientes, puesto que $C=A+B+D$.
+			\item {Se aplica la 2LK:}
+			\begin{itemize}
+				\item {Malla ABCA:} $I_1 \cdot R_1 - \epsilon_1 + \epsilon_2 - I_3 \cdot R_3 - I_2 \cdot R_2 = 0$
+				\item {Malla BDCB:} $-I_5 \cdot R_5 - I_4 \cdot R_4 + I_3 \cdot R_3 - \epsilon_2 = 0$
+				\item {Malla ACDA:} $I_2 \cdot R_2 + I_4 \cdot R_4 + I_6 \cdot R_6 - \epsilon_3 = 0$
+			\end{itemize}
+			\item {Se combinan las ecuaciones:}
+			\begin{align*}
+				- I_1 -  I_2 + I_6  &= 0\\
+				I_1 + I_3 + I_5 &= 0\\
+				I_4 - I_5 - I_6 &= 0\\
+				I_1 \cdot R_1 - I_2 \cdot R_2 - I_3 \cdot R_3 &= \epsilon_1 - \epsilon_2\\
+				I_3 \cdot R_3 - I_4 \cdot R_4 -I_5 \cdot R_5 &= \epsilon_2\\
+				I_2 \cdot R_2 + I_4 \cdot R_4 + I_6 \cdot R_6 &= \epsilon_3
+			\end{align*}
+			\item {Se expresan en forma matricial:}
+			\begin{equation*}
+				\begin{bmatrix}
+					-1 & -1 & 0 & 0 & 0 & 1\\
+					1 & 0 & 1 & 0 & 1 & 0\\
+					0 & 0 & 0 & 1 & -1 & -1\\
+					R_1 & -R_2 & - R_3 & 0 & 0 & 0\\
+					0 & 0 & R_3 & - R_4 & - R_5 & 0\\
+					0 & R_2 & 0 & R_4 & 0 & R_6
+				\end{bmatrix} \cdot %
+				\begin{bmatrix}
+					I_1\\
+					I_2\\
+					I_3\\
+					I_4\\
+					I_5\\
+					I_6    
+				\end{bmatrix} = %
+				\begin{bmatrix}
+					0\\
+					0\\
+					0\\
+					\epsilon_1 - \epsilon_2\\
+					\epsilon_2\\
+					\epsilon_3
+				\end{bmatrix}
+			\end{equation*}
+		\end{enumerate}
+		Se observa que es necesario resolver un sistema lineal de 6 ecuaciones en las que las incógnitas son las corrientes de cada rama. 
+	\end{example}
+	
+	Esta forma de resolución de circuitos eléctricos, aunque es válida, no es útil por el número de ecuaciones a resolver. Por ello, lo más habitual es utilizar otros métodos que permiten la resolución de los circuitos con un número menor de ecuaciones. Aunque existen diferentes métodos, se van a presentar dos: el método de las mallas y el método de los nudos, explicando posteriormente una modificación de este último.
+	
+	\subsection{Método de las mallas}
+	El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes \emph{ficticias} denominadas \textbf{corrientes de malla}, aprovechando las relaciones entre tensiones de la 2LK. El procedimiento general de aplicación de este método es el siguiente:
+	\begin{enumerate}
+		\item Identificar las corrientes de rama.
+		\item Asignar un sentido a las corrientes de malla, teniendo en cuenta que hay un total de:
+		\begin{equation*}
+			{Mallas=Ramas-Nudos+1}
+		\end{equation*}
+		\item Relacionar corrientes de rama con corrientes de malla.
+		\item Escribir ecuaciones de mallas.
+		\item Resolver la ecuación, obteniendo las corrientes de malla.
+		\item Obtener las corrientes de rama con las relaciones del punto 3.
+	\end{enumerate}
+	
+	\begin{example}
+		\label{ej.1-5}
+		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.mallas1}.}
+		
+		Se sigue el procedimiento indicado anteriormente, donde el punto 1 ya está indicado en el circuito de la Figura~\ref{fig.mallas1}: 
+		\begin{enumerate}
+			\item[2.] Asignar un sentido a las corrientes de malla: se muestra en la Figura~\ref{fig.mallas1_corrientes}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.5\linewidth]{../figs/mallas1_corrientes.pdf}
+				\caption{Corrientes de malla del circuito del Ejemplo~\ref{ej.1-5}}
+				\label{fig.mallas1_corrientes}
+			\end{figure}
+			\item[3.] Relacionar corrientes de rama con corrientes de malla:
+			\begin{align*}
+				I_1 &= I_a\\
+				I_5 &= -I_b\\
+				I_6 &= I_c\\
+				I_2 &= I_c -I_a\\
+				I_3 &= I_b - I_a\\
+				I_4 &= I_c - I_b
+			\end{align*}
+			\item[4.] Escribir ecuaciones de mallas: 
+			
+			Malla ABCA: $I_a \cdot R_1 - \epsilon_1 + \epsilon_2 + (I_a - I_b) \cdot R_3 + (I_a - I_c) \cdot R_2 = 0$
+			
+			Malla BDCB: $I_b \cdot R_5 + (I_b - I_c) \cdot R_4 + (I_b - I_a) \cdot R_3 - \epsilon_2 = 0$
+			
+			Malla ACDA: $(I_c - I_a) \cdot R_2 + (I_c - I_b) \cdot R_4 + I_c \cdot R_6 - \epsilon_3 = 0$
+			
+			Se reagrupan las corrientes en las ecuaciones anteriores, obteniéndose que: 
+			\begin{align*}
+				I_a \cdot (R_1 + R_3 + R_2)  - I_b\cdot R_3 - I_c \cdot R_2 &= \epsilon_1 - \epsilon_2\\
+				- I_a \cdot R_3 + I_b \cdot (R_5 + R_4 + R_3) - I_c \cdot R_4 &=  \epsilon_2\\
+				- I_a \cdot R_2 - I_b \cdot R_4 + I_c \cdot (R_2 + R_4 + R_6) &= \epsilon_3
+			\end{align*}
+			que, en forma matricial: 
+			\begin{equation*}
+				\begin{bmatrix}
+					(R_1 + R_3 + R_2) &  - R_3 & - R_2 \\
+					- R_3 & (R_5 + R_4 + R_3) & - R_4 \\
+					- R_2 & - R_4 &  (R_2 + R_4 + R_6)
+				\end{bmatrix} \cdot %
+				\begin{bmatrix}
+					I_a\\
+					I_b\\
+					I_c\\
+				\end{bmatrix} = %
+				\begin{bmatrix}
+					\epsilon_1 - \epsilon_2\\
+					\epsilon_2\\
+					\epsilon_3
+				\end{bmatrix}
+			\end{equation*}
+		\end{enumerate}
+	\end{example}
+	
+	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un circuito de $n$ mallas, siendo esta: 
+	\begin{equation*}
+		\begin{bmatrix}
+			{\color{magenta}\sum R_{11}} &  {\color{teal}\pm\sum R_{12}} & {\color{teal}{\dots}} & {\color{teal}\pm\sum R_{1n}} \\
+			{\color{teal}\pm\sum R_{21}} & {\color{magenta}\sum R_{22}} & {{\dots}} & {\color{teal}\pm\sum R_{2n}} \\
+			{\vdots} & {\vdots} &  {\ddots} & \vdots\\
+			{\color{teal}\pm\sum R_{n1}} & {\color{teal}\pm\sum R_{n2}} & \dots & {\color{magenta}\sum R_{nn}}
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			I_1\\
+			I_2\\
+			\vdots\\
+			I_n
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			{\color{orange}\sum\epsilon_1}\\
+			{\color{orange}\sum\epsilon_2}\\
+			{\color{orange}\vdots}\\
+			{\color{orange}\sum\epsilon_n}
+		\end{bmatrix}
+	\end{equation*}
+	donde cada {\color{magenta}$R_{ii}$} se corresponde con la suma de resistencias incluidas en la malla $i$; cada {\color{teal}$\pm R_{ij}$} se corresponde con la suma de las resistencias incluidas en las ramas compartidas por las mallas $i$ y $j$, con signo positivo ($+$) si las corrientes van en el mismo sentido, y negativo ($-$) en caso contrario; y cada {\color{orange} $\sum \epsilon_i$} es la suma algebraica de las fuerzas electromotrices de los generadores de la malla $i$, considerando un signo positivo ($+$) si contribuyen al giro de la corriente, y negativo ($-$) en caso contrario (es decir, si la corriente sale por el polo $+$ de la fuente, se considera positivo; si sale por el polo $-$, se considera negativo). Debe tenerse en cuenta que, para aplicar este método, \textbf{todos los generadores deben ser fuentes de tensión}. 
+	
+	\begin{example}\label{ex.ejemplo_mallas}
+	    \textbf{Calcular las tres intensidades de malla del circuito de la Figura \ref{fig.ejercicio5_tema1}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.4\linewidth]{../figs/ej5_BT1.pdf}
+			\caption{Ejemplo~\ref{ex.ejemplo_mallas}}
+			\label{fig.ejercicio5_tema1}
+		\end{figure}
+		
+		Se plantea el sistema de ecuaciones en forma matricial:
+\begin{equation*}
+		\begin{bmatrix}
+			7 & 0 & 5 \\
+			0 & 6 & -4 \\
+			5 & -4 & 12
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			I_1\\
+			I_2\\
+			I_3
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			10 \\
+			-10\\
+			0
+		\end{bmatrix}
+	\end{equation*}
+	cuya solución es:
+	\begin{align*}
+	    I_1&=3.55\,\text{A}\\
+	    I_2&=-1.98\,\text{A}\\
+	    I_3&=-2.98\,\text{A}
+	\end{align*}
+	\end{example}
+	
+	\begin{remark}
+	    El Ejemplo~\ref{ex.mallas_dependiente} incluye contenido avanzado que queda fuera del alcance de la asignatura.
+	\end{remark}
+	
+	\begin{example}\label{ex.mallas_dependiente}
+	    \textbf{Calcular la corriente $I$ en el circuito de la Figura~\ref{fig.ejemplo_mallas_dependiente}.}
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.35\linewidth]{../figs/ejemplo_mallas_dependiente.pdf}
+	        \caption{Ejemplo~\ref{ex.mallas_dependiente}}
+	        \label{fig.ejemplo_mallas_dependiente}
+	    \end{figure}
+	    
+	    En este caso, no se puede transformar el generador de intensidad en uno de tensión, por lo que  se le asigna una caída de tensión arbitraria (y desconocida), $U_{g1}$, considerándolo como un generador de tensión. Posteriormente, al plantear el sistema de ecuaciones, se añadirá una ecuación adicional, puesto que la intensidad de esa rama es conocida (2 A). El circuito queda como se muestra en la Figura~\ref{fig.mallas_dpendiente_sol}.
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[width=0.35\linewidth]{../figs/ejemplo_mallas_dependiente_sol.pdf}
+	        \caption{Ejemplo~\ref{ex.mallas_dependiente} -- Mallas}
+	        \label{fig.mallas_dpendiente_sol}
+	    \end{figure}
+	    
+	    Se plantea el método de mallas en forma matricial: 
+	    \begin{equation*}
+		\begin{bmatrix}
+			5 & -2 \\
+			-2 & 7 
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			I_a\\
+			I_b
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			-4-U_{g1} \\
+			4-3\cdot U_r
+		\end{bmatrix}
+	\end{equation*}
+	donde se sabe que $I_a=-2$ A. Además, la tensión $U_r$ se puede expresar, a partir d ela ley de Ohm y las relaciones entre las corrientes de malla como:
+	\begin{equation*}
+	    U_r=(I_a-I_b)\cdot R_{2\Omega}=(I_a-I_b)\cdot 2 = (-2-I_b)\cdot 2=-4-2\, I_b
+	\end{equation*}
+	Reemplazando en la segunda ecuación del sistema:
+	\begin{equation*}
+	    -2\, I_a+7\,I_b=4-3\,U_r; -2\,(-2)+7\, I_b=4-3\,(-4-2\,I_b); 4+7\,I_b=4+12+6\,I_b\Rightarrow I_b=12\, A 
+	\end{equation*}
+	    Por lo que $I=-I_b=-12$ A
+	\end{example}
+	
+
+	
+	\subsection{Método de los nudos}
+	El método de los nudos es otro de los procedimientos de análisis utilizados en teoría de circuitos, aprovechando las relaciones entre corrientes de la 1LK. El procedimiento general de aplicación de este método es el siguiente:
+	\begin{enumerate}
+		\item Identificar las corrientes de rama.
+		\item Identificar los nudos independientes, que son:
+		\begin{equation*}
+			{Nudos\;\;Independientes=Nudos-1}
+		\end{equation*}
+		\item Aplicar la 1LK a cada nudo independiente.
+		\item Determinar las tensiones en los receptores a partir de la Ley de Ohm (considerando la resistencia y, después, la conductancia).
+		\item Combinar las ecuaciones de los puntos 3 y 4.
+		\item Resolver la ecuación.
+	\end{enumerate}
+	
+	\begin{example}\label{ej.1-6}
+		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.nudos}.}
+		\begin{figure}[H]
+			\centering
+			\includegraphics{../figs/nudos.pdf}
+			\caption{Ejemplo~\ref{ej.1-6}}
+			\label{fig.nudos}
+		\end{figure}
+		
+		Se sigue el procedimiento indicado anteriormente, llegando únicamente hasta el punto 5: 
+		
+		\begin{enumerate}
+			\item Identificar las corrientes de rama: identificadas en la Figura~\ref{fig.nudos}
+			\item Identificar los nudos independientes, que son $A$ y $B$ en la Figura~\ref{fig.nudos}.
+			\item Aplicar la 1LK a cada nudo independiente:
+			
+			Nudo A
+			\begin{equation*}
+				I_{g1} - I_a - I_{ab} = 0
+			\end{equation*}
+			
+			Nudo B
+			\begin{equation*}
+				I_{ab} - I_{g2} - I_b = 0
+			\end{equation*}
+			\item Determinar las tensiones en los receptores a partir de la Ley de Ohm (considerando la resistencia y, después, la conductancia):
+			\begin{align*}
+				U_A = U_{R_1} &= I_a \cdot R_1\rightarrow I_a=U_A\cdot G_1\\
+				U_B = U_{R_3} &= I_b \cdot R_3\rightarrow I_b=U_B\cdot G_3\\
+				U_{AB}=U_{R_2} &= I_{ab} \cdot R_2\rightarrow I_{ab}=(U_A-U_B)\cdot G_2\\
+			\end{align*}
+			\item Combinar las ecuaciones de los puntos 3 y 4:
+			
+			Nudo A
+			\begin{equation*}
+				I_{g1} - U_A \cdot G_1 - (U_A - U_B) \cdot G_2 = 0\rightarrow I_{g1} = U_A \cdot (G_1 + G_2) - U_B \cdot G_2 
+			\end{equation*}
+			
+			Nudo B
+			\begin{equation*}
+				(U_A - U_B) \cdot G_2 - I_{g2} - U_B \cdot G_3 = 0 \rightarrow  - I_{g2} = - U_A \cdot G_2 + U_B \cdot (G_2 + G_3)
+			\end{equation*}
+			
+			Estas ecuaciones se pueden expresar en forma matricial de la siguiente manera: 
+			\begin{equation*}
+				\begin{bmatrix}
+					G_1 + G_2 & - G_2\\
+					-G_2 & G_2 + G_3
+				\end{bmatrix} \cdot%
+				\begin{bmatrix}
+					U_A\\
+					U_B
+				\end{bmatrix} = %
+				\begin{bmatrix}
+					I_{g1}\\
+					-I_{g2}
+				\end{bmatrix}
+			\end{equation*}
+		\end{enumerate}
+	\end{example}
+	
+	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un circuito de $n$ nudos, siendo esta: 
+	\begin{equation*}
+		\begin{bmatrix}
+			{\color{magenta}\sum G_{1}} &  {\color{teal}-\sum G_{12}} & {\color{teal}{\dots}} & {\color{teal}-\sum G_{1n}} \\
+			{\color{teal}-\sum G_{21}} & {\color{magenta}\sum G_{2}} & {{\dots}} & {\color{teal}-\sum G_{2n}} \\
+			{\vdots} & {\vdots} &  {\ddots} & \vdots\\
+			{\color{teal}-\sum G_{n1}} & {\color{teal}-\sum G_{n2}} & \dots & {\color{magenta}\sum G_{n}}
+		\end{bmatrix} \cdot 
+		\begin{bmatrix}
+			U_1\\
+			U_2\\
+			\vdots\\
+			U_n
+		\end{bmatrix} = %
+		\begin{bmatrix}
+			{\color{orange}\sum I_{g1}}\\
+			{\color{orange}\sum I_{g2}}\\
+			{\color{orange}\vdots}\\
+			{\color{orange}\sum I_{gn}}
+		\end{bmatrix}
+	\end{equation*}
+	donde cada {\color{magenta}$G_{i}$} se corresponde con la suma de conductancias conectadas al nudo $i$; cada {\color{teal}$ G_{ij}$} se corresponde con la suma de las conductancias conectadas entre los nudos $i$ y $j$; y cada {\color{orange} $\sum I_{gi}$} es la suma algebraica de las corrientes de los generadores conectados al nudo $i$, considerando un signo positivo ($+$) si el generador inyecta corriente en el nudo, y negativo ($-$) en caso contrario. Debe tenerse en cuenta que para aplicar este método \textbf{todos los generadores deben ser fuentes de corriente}. 
+	
+	\begin{example}\label{ex.nudos}
+	\textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes} se debe emplear el método de los nudos para determinar:
+\begin{itemize}
+\item Las tensiones en los nudos A y B
+\item Las corrientes de rama señaladas
+\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos
+\end{itemize}
+Datos: $\epsilon_1=6V;\;\epsilon_2={12} V;\; \epsilon_3={24}V;\;I_{g1}= {15}A;\;I_{g2} ={9}A;\; I_{g3}= 6A;\; R_{1}= R_3 = R_4 = R_5 = {2}\Omega;\;R_{2}= 1\Omega$}
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/nudos_fuentes.pdf}
+    \caption{Ejemplo~\ref{ex.nudos}}
+    \label{fig.nudos_fuentes}
+\end{figure}
+
+Hay tres fuentes de tensión en serie con resistencias, que se deben transformar en fuentes de corriente para poder aplicar el método de nudos:
+\begin{align*}
+    I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=3\,\text{A}\\
+    I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=12\,\text{A}\\
+    I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=12\,\text{A}\\
+\end{align*}
+
+El sistema en forma matricial queda:
+\begin{equation*}
+    \begin{bmatrix}
+        \frac{1}{2}+\frac{1}{2}+\frac{1}{1} & -\frac{1}{1}\\
+        -\frac{1}{1} & \frac{1}{1}+\frac{1}{2}+\frac{1}{2}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        U_A\\
+        U_B
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        3+12-15-6\\
+        15+9+12-12
+    \end{bmatrix}
+\end{equation*}
+cuya solución es: 
+\begin{align*}
+    U_A&=4\,V\\
+    U_B&=14\,V
+\end{align*}
+
+A partir de las tensiones, se determinan las corrientes de rama señaladas:
+
+% \begin{align*}
+% V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
+% V_{AB} &= E_2 - I_{R2} R_2\\
+% V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
+% \end{align*}
+
+\begin{align*}
+  U_A=\epsilon_1-I_{R1}\,R_1&\Rightarrow {I_{R1}=\dfrac{6-4}{2}=1\,A}\\
+  U_{AB}=U_A-U_B=-10=\epsilon_2 - I_{R2}\, R_2&\Rightarrow I_{R2} = \dfrac{12-(-10)}{1}=22\,A\\
+  U_B=\epsilon_3-I_{R3}\,R_3 &\Rightarrow I_{R3}=\dfrac{24-14}{2}=5\,A\\
+  I_{R4}=\dfrac{U_A}{R_4}&=\dfrac{4}{2}=2\,A\\
+  I_{R5}=\dfrac{U_B}{R_5}&=\dfrac{14}{2}=7\,A
+\end{align*}
+
+\begin{itemize}
+    \item \textbf{Potencia de los generadores:}
+    \begin{itemize}
+        \item Generador $\epsilon_1$: $P_{g,\epsilon1}=-\epsilon_1\,I_{R1}=-6\cdot 1=-6$ W (G)
+        \item Generador $\epsilon_2$:  $P_{g,\epsilon2}=-\epsilon_2\,I_{R2}=-12\cdot 22=-264$ W (G)
+        \item Generador $\epsilon_3$:  $P_{g,\epsilon3}=-\epsilon_3\,I_{R3}=-24\cdot 5=-120$ W (G)
+        \item Generador $I_{g1}$: $P_{Ig1}=U_{AB}\,I_{g1}=(4-14)\cdot 15=-150$ W (G)
+        \item Generador $I_{g2}$:  $P_{Ig2}=-U_B\,I_{g2}=-14\cdot 9=-126$ W (G)
+        \item Generador $I_{g3}$:  $P_{Ig3}=U_{A}\,I_{g3}=4\cdot 6=24$ W (R)
+    \end{itemize}
+    \item \textbf{Potencia de las resistencias:}
+    \begin{itemize}
+        \item Resistencia 1: $P_{R1}=R_1\,I_{R1}^2=2\cdot 1^2=2$ W (R)
+        \item Resistencia 2: $P_{R2}=R_2\,I_{R2}^2=1\cdot 22^2=484$ W (R)
+        \item Resistencia 3: $P_{R3}=R_3\,I_{R3}^2=2\cdot 5^2=50$ W (R)
+        \item Resistencia 4: $P_{R4}=R_4\,I_{R4}^2=2\cdot 2^2=8$ W (R)
+        \item Resistencia 5: $P_{R5}=R_5\,I_{R5}^2=2\cdot 7^2=98$ W (R)
+    \end{itemize}
+\end{itemize}
+donde se cumple que la suma es 0.
+	\end{example}
+	
+	\subsubsection{Método de los nudos modificados}\label{sec.nudos_modificados}
+	
+	\begin{remark}
+	    Este método constituye contenido avanzado de la asignatura.
+	\end{remark}
+	
+	Otra manera de plantear el método de los nudos es mediante el conocido como método de los nudos modificados, que permite que en el circuito haya \textbf{fuentes de tensión y de corriente}. En este caso, tras elegir el nudo de referencia ($U_{ref}=0$), se aplica la 1LK a cada uno de los nudos independientes ($N-1$) del siguiente modo:
+	\begin{enumerate}
+	    \item Se supone que, en cada nudo independiente, las corrientes \textbf{salen} de él
+	    \item Cada nudo debe cumplir con la 1LK: $\sum I=0$
+	    \item En cada nudo, aplicar la siguiente expresión:
+	    \begin{equation*}
+	        I_{i,j}=\dfrac{U_i-U_j+\sum\pm \epsilon_g}{\sum R}
+	    \end{equation*}
+	    siendo $I_{i,j}$ la corriente que va del nudo $i$ al $j$, $U_i$ la tensión del nudo del que se sale, $U_j$ la tensión del nudo al que se llega, $\epsilon_g$ son las $fem$ de los generadores, considerando el signo $+$ si la corriente de la rama sale por el polo positivo y el signo $-$ si la corriente sale por el negativo.
+	\end{enumerate}
+	
+	\newpage
+	\begin{example}\label{ex.nudos_modificados}
+	    \textbf{Determinar las tensiones en los nudos A y B en el circuito de la Figura~\ref{fig.nudos_fuentes}.}
+	    
+	    Se trabaja con el circuito original. 
+	    
+	    \textbf{Nudo A}
+	    \begin{align*}
+	        I_{R1}& + I_{R2} + I_{R4} + I_{g1} + I_{g3} = 0\\
+	        I_{R1}&=\dfrac{U_A-0-\epsilon_1}{R_1}=\dfrac{U_A-6}{2}\\
+	        I_{R2}&=\dfrac{U_A-U_B-\epsilon_2}{R_2}=\dfrac{U_A-U_B-12}{1}\\
+	        I_{R4}&=\dfrac{U_A-0}{R_4}=\dfrac{U_A}{2}\\
+	        I_{g1}&=15\,A\\
+	        I_{g3}&=6\,A
+	    \end{align*}
+	    
+	    \textbf{Nudo B}
+	    \begin{align*}
+	        I_{R2}& + I_{R3} + I_{R5} + I_{g1} + I_{g2} = 0\\
+	        I_{R2}&=\dfrac{U_B-U_A+\epsilon_2}{R_2}=\dfrac{U_B-U_A+12}{1}\\
+	        I_{R3}&=\dfrac{U_B-0-\epsilon_3}{R_3}=\dfrac{U_B-24}{2}\\
+	        I_{R5}&=\dfrac{U_B-0}{R_5}=\dfrac{U_B}{2}\\
+	        I_{g1}&=-15\,A\\
+	        I_{g2}&=-9\,A
+	    \end{align*}
+	    
+	    Combinando las ecuaciones del nudo A, se obtiene que:
+	    \begin{equation*}
+	        \dfrac{U_A-6}{2}+\dfrac{U_A-U_B-12}{1}+\dfrac{U_A}{2}+15+6=0\Rightarrow 2\,U_A-U_B=-6
+	    \end{equation*}
+	    De manera análoga, con el nudo B: 
+	    \begin{equation*}
+	        \dfrac{U_B-U_A+6}{1}+\dfrac{U_B-24}{2}+\dfrac{U_B}{2}-15-6=0\Rightarrow -U_A+2\,U_B=24
+	    \end{equation*}
+	    Resolviendo el sistema de ecuaciones, se llega a la conclusión de que: 
+	    \begin{align*}
+	        U_A&=4\,V\\
+	        U_B&=14\,V
+	    \end{align*}
+
+	\end{example}
+	
+	\begin{example}\label{ex.nudos_mod_fdep}
+	    \textbf{Calcular la corriente $I$ en el circuito de la Figura~\ref{fig.ejemplo_mallas_dependiente}.}
+	    
+	    Se considera como referencia (masa) el nudo de abajo. La 1LK aplicada al nudo de arriba queda: 
+	    \begin{equation*}
+	        2+\dfrac{U_A-0-4}{2}+\dfrac{U_A-0-3\,U_r}{5}=2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_r}{5}
+	    \end{equation*}
+	    Además, el valor de $U_r$ se puede obtener a partir de la ley de Ohm:
+	    \begin{equation*}
+	        U_r=2\, I_{R_2}=2\cdot \left( \dfrac{U_A-4}{2} \right)=U_A-4
+	    \end{equation*}
+	    Y, reemplazando este valor en la ecuación de la 1LK se obtiene que: 
+	    \begin{equation*}
+	        2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_A+12}{5}=0\Rightarrow U_A=-24\,V
+	    \end{equation*}
+	    por lo que $I$:
+	    \begin{equation*}
+	        I=-\left(\dfrac{U_A-3\,U_r}{5} \right)=-\left(\dfrac{24-3\,(-24-4)}{5}\right)=-12\,A
+	    \end{equation*}
+	\end{example}
+	
+	\section{Teoremas}\label{sec.teoremas_CC}
+	
+	\subsection{Circuitos lineales}
+	
+	Un circuito eléctrico es lineal si los elementos pasivos y activos que incluye son lineales:
+	\begin{itemize}
+	    \item Un elemento pasivo es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: resistencias, condensadores y bobinas.
+        \item Una fuente dependiente es lineal si su salida (tensión o corriente) tiene una relación
+lineal con la magnitud del circuito de la que depende.
+	\end{itemize}
+Un circuito lineal tiene dos propiedades:
+\begin{itemize}
+    \item Homogeneidad o \textbf{proporcionalidad}: Sea $y(t)$ la respuesta de un circuito lineal a una excitación $x(t)$. Si la excitación es multiplicada por una constante, $K\cdot x(t)$, la respuesta del circuito será modificada por la misma constante, $K \cdot y(t)$.
+    \item Aditividad o \textbf{superposición}: La respuesta de un circuito lineal a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado:
+    \begin{equation*}
+        y(t)=\sum_i y_i(t)
+    \end{equation*}
+\end{itemize}
+
+	
+	\subsection{Teoremas de Thévenin y Norton}
+Cuando el interés en el estudio de un circuito se fija en una parte del mismo (por ejemplo, en una rama), es interesante poder separar esta rama del resto de la red para no tener que resolver el circuito completo cada vez que se modifican los parámetros de dicha rama.  Los teoremas de Thévenin y Norton constituyen dos procedimientos para sustituir el resto de la red, y hacer más simple el cálculo de tensiones, corrientes, etc. en la rama que se desea estudiar de un modo específico. Por tanto, resuelve el problema de sustituir una red compleja por un circuito equivalente más simple, evitando así cálculos repetitivos innecesarios. 
+
+\subsubsection{Teorema de Thévenin}
+Enunciado por León Charles Thévenin en 1883, un ingeniero de telégrafos francés, este teorema dice lo siguiente:  \textit{Cualquier \textbf{red lineal} compuesta por elementos pasivos y activos (dependientes o independientes) se puede sustituir, desde el punto de vista de unos terminales externos $A-B$, por una fuente de tensión $\epsilon_{th}$ (generador de Thévenin) y una resistencia en \textbf{serie} $R_{th}$ (resistencia de Thévenin)}. 
+    
+     La Figura~\ref{fig.thevenin} muestra el circuito equivalente Thévenin de una red lineal. Si ambos circuitos han de ser equivalentes, deberán dar los mismos valores de tensión y corriente a la resistencia de carga $R_L$. Entre todos los valores posibles de $R_L$, se analizan los dos casos extremos ($R_L=\infty$ y $R_L=0$):
+     \begin{itemize}
+         \item $R_L=\infty$: Hacer $R_L=\infty$ significa físicamente \textbf{desconectar} la resistencia de carga del circuito. En esta situación, el dipolo de la red lineal dará una tensión en vacío o en circuito abierto ($U_0$) siendo $I=0$, que deberá ser idéntica a la que debe dar el circuito del equivalente Thévenin, donde la tensión entre los terminales $A-B$ es igual a $\epsilon_{th}$, ya que la caída de tensión en $R_{th}$ será nula. Por consiguiente, \textbf{el valor de $\epsilon_{th}$ de la red equivalente es igual a la magnitud $U_0$ de la red lineal que se obtiene entre los terminales de salida $A-B$ al desconectar la carga y dejar el circuito abierto}.
+         \item $R_L=0$: Este caso representa un cortocircuito entre los terminales externos $A-B$. Denominando $I_{cc}$ a la corriente que circula por este cortocircuito, debe obtenerse la misma $I_{cc}$ en el equivalente Thévenin, resultando, por tanto:
+         \begin{equation}\label{eq.Zth} I_{cc}=\dfrac{\epsilon_{th}}{R_{th}}\Rightarrow \boxed{R_{th}=\dfrac{\epsilon_{th}}{I_{cc}}}
+         \end{equation}
+         es decir, \textbf{el valor de $R_{th}$ se obtiene como el cociente entre la tensión que da la red en vacío y la corriente de cortocircuito}. Si los generadores del circuito son todos independientes, el cálculo de la resistencia Thévenin es más simple que lo expresado en la fórmula~\eqref{eq.Zth}, y representa el \textbf{valor de la resistencia que se observa entre los terminales $A-B$} de salida cuando se anulan los generadores internos del circuito (es decir, se cortocircuitan las fuentes de tensión y se abren las de corriente). Téngase en cuenta que, si se anulan los generadores, al no existir fuentes de excitación, darán lugar a una tensión de Thévenin $\epsilon_{th}=0$ y, si se anula $\epsilon_{th}$, la resistencia que se observa entre los terminales $A-B$, quitando la carga, coincide con $R_{th}$. 
+         \begin{remark}
+             En ocasiones, calcular $I_{cc}$ puede ser complicado. Otra manera de determinar el valor de $R_{th}$  es incluyendo entre $A-B$ una fuente de prueba, de fem $\epsilon_0$, y haciendo el cociente entre:
+             \begin{equation*}
+                 R_{th}=\dfrac{\epsilon_0}{I_{0}}
+             \end{equation*}
+             donde $I_{0}$ es la corriente suministrada por la fuente de prueba, que será función de $\epsilon_0$.
+         \end{remark}
+     \end{itemize}
+     
+     \begin{figure}[H]
+        \centering
+        \subfloat[Red lineal]{\includegraphics[width=0.28\linewidth]{../figs/thevenin_continua_red.pdf}}\hfil
+        \subfloat[Equivalente Thévenin]{\includegraphics[width=0.26\linewidth]{../figs/thevenin_continua.pdf}}
+        \caption{Equivalente de Thévenin}
+        \label{fig.thevenin}
+    \end{figure}
+     
+\subsubsection{Teorema de Norton}
+Enunciado por el ingeniero estadounidense Edward Lawry Norton, de los Laboratorios Bell, que lo publicó en un informe interno en el año 1926, se trata de la versión dual del teorema de Thévenin, diciendo lo siguiente: \textit{Cualquier \textbf{red lineal} compuesta por elementos pasivos y activos (dependientes o independientes) se puede sustituir, desde el punto de vista de unos terminales externos $A-B$, por una fuente de corriente $I_{N}$ (generador de Norton) y una resistencia en \textbf{paralelo} $R_{N}$ (resistencia de Norton)}. 
+\begin{figure}[H]
+        \centering
+        \subfloat[Red lineal]{\includegraphics[width=0.28\linewidth]{../figs/thevenin_continua_red.pdf}}\hfil
+        \subfloat[Equivalente Norton]{\includegraphics[width=0.26\linewidth]{../figs/norton_continua.pdf}\label{fig.norton}}
+        \caption{Equivalente de Norton}
+        \label{fig.norton_continua}
+    \end{figure}
+
+Al circuito de la Figura~\ref{fig.norton_continua} se le denomina equivalente Norton, y si se compara con el equivalente Thévenin, se observa que no es más que el que resulta de sustituir una fuente de tensión por una de corriente donde se cumple que: 
+\begin{equation}
+    \boxed{I_N=\dfrac{\epsilon_{th}}{R_{th}}= I_{cc}} \qquad\qquad \boxed{R_N=R_{th}}
+\end{equation}
+de donde se deduce que el generador de corriente de Norton es igual a la corriente que se obtiene en la red lineal al juntar sus terminales ($R_L=0$) y que la resistencia de Norton es el cociente entre la tensión de vacío ($R_L=\infty$) y la corriente de cortocircuito de la red (al igual que la resistencia Thévenin).
+\begin{remark}
+    Gracias a la equivalencia de fuentes (expresión~\eqref{eq.equivalencia_fuentes}), una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
+\end{remark}
+
+\begin{example}\label{ex.Th_cc}
+    \textbf{Determinar el equivalente de Thévenin del circuito de la Figura~\ref{fig.ej_Th_cc} visto desde los terminales $A-B$, y la potencia que se disiparía si se conectase una resistencia de 5$\Omega$.}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{../figs/ej_Th_cc1.pdf}
+        \caption{Ejemplo~\ref{ex.Th_cc}}
+        \label{fig.ej_Th_cc}
+    \end{figure}
+    
+    \underline{Cálculo de $\epsilon_{th}$}
+    
+    Se corresponde con la caída de tensión en vacío que habría entre esos terminales $A-B$. Resolviendo el circuito, se obtiene que las corrientes son:
+    \begin{align*}
+        I_1&=1\,A\\
+        I_2&=I_3=-14/23\,A\\
+        I_4&=I_5=-9/23\,A
+    \end{align*}
+    y, por la 2LK:
+    \begin{equation*}
+        \epsilon_{th}=-I_4\,\dfrac{2}{3}+I_2\,2=\dfrac{9}{23}\cdot\dfrac{2}{3}-\dfrac{14}{23}\cdot 2=-\dfrac{22}{23}\,V
+    \end{equation*}
+    
+    \underline{Cálculo de $R_{th}$}
+    
+    Al no haber fuentes dependientes, se puede obtener directamente calculando la resistencia equivalente vista desde los terminales desde los que se calcula el equivalente Thévenin cuando se ``anulan'' todas las fuentes. En este caso, dicha resistencia es:
+    \begin{equation*}
+        R_{th}=\dfrac{(\frac{2}{3}+2)\cdot(1+4)}{(\frac{2}{3}+2)+(1+4)}=\dfrac{40}{23}\Omega
+    \end{equation*}
+    
+    \underline{Potencia de una $R=5\Omega$}
+    
+    Si se conecta una resistencia de 2 $\Omega$, la resistencia equivalente es:
+    \begin{equation*}
+        R_{eq}=\dfrac{40}{23}+2=\dfrac{155}{23}\Omega
+    \end{equation*}
+    por lo que la intensidad que circula por el circuito (alternando la polaridad de la fuente):
+    \begin{equation*}
+        I=\dfrac{\epsilon_{th}}{R_{eq}}=\dfrac{\frac{22}{23}}{\frac{155}{23}}=\dfrac{22}{155} A
+    \end{equation*}
+    siendo la potencia disipada por la resistencia: 
+    \begin{equation*}
+        P=R\, I^2=5\cdot \left( \dfrac{22}{155}\right)^2=0.10\,W
+    \end{equation*}
+\end{example}
+
+% \begin{example}\label{ex.th_cc_dep}
+%     \textbf{Determinar el equivalente de Thévenin del circuito de la Figura~\ref{fig.eq_Th_cc_dep} entre los terminales $A-B$; a partir de él, hallar el valor de $U_0$.}
+%     \begin{figure}[H]
+%         \centering
+%         \includegraphics{../figs/eq_Th_cc_dep.pdf}
+%         \caption{Ejemplo~\ref{ex.th_cc_dep}}
+%         \label{fig.eq_Th_cc_dep}
+%     \end{figure}
+    
+%     \underline{Cálculo de $\epsilon_{th}$}
+    
+%     Se corresponde con la caída de tensión en vacío entre los terminales $A-B$, correspondiente al circuito de la Figura~\ref{fig.eq_Th_cc_dep1}. Planteando el método de nudos:
+%     \begin{figure}[H]
+%         \centering
+%         \includegraphics{../figs/eq_Th_cc_dep1.pdf}
+%         \caption{Cálculo de $\epsilon_{th}$}
+%         \label{fig.eq_Th_cc_dep1}
+%     \end{figure}
+    
+%     \begin{equation*}
+%     \dfrac{U_C-2\,I_x}{1}+\dfrac{U_C}{2}+\dfrac{U_C-12}{2}=0
+%     \end{equation*}
+%     de donde se sabe que $I_x=\frac{U_C-12}{2}$, se obtiene que:
+%     \begin{equation*}
+%         U_C=-6\,V
+%     \end{equation*}
+%     por lo que la tensión $U_{AB}=\epsilon_{th}$:
+%     \begin{equation*}
+%         \epsilon_{th}=U_{AB}=U_C-12=-6-12=-18\,V
+%     \end{equation*}
+    
+%     \underline{Cálculo de $R_{th}$}
+    
+%     Al existir un generador dependiente, se debe determinar $R_{th}$ mediante un generador de prueba de valor $\epsilon_0$ situado en los terminales $A-B$, y ``anulando'' la fuente dependiente, como en la Figura~\ref{fig.eq_Th_cc_dep2}.
+%     \begin{figure}[H]
+%         \centering
+%         \includegraphics{../figs/eq_Th_cc_dep2.pdf}
+%         \caption{Cálculo de $R_{th}$}
+%         \label{fig.eq_Th_cc_dep2}
+%     \end{figure}
+    
+%     E
+    
+    
+% \end{example}
+
+\subsection{Teorema de la máxima transferencia de potencia}
+En equipos de transmisión--recepción, en sistemas de telecomunicación, en amplificadores, etc., interesa que la potencia de la señal a la salida sea máxima, es decir, que se entregue la máxima potencia a la carga conectada en los terminales de salida. Considérese el caso de un circuito lineal que entrega energía a un receptor representado por una resistencia $R_L$ (Figura~\ref{fig.planteamiento_mtp_cc}). ¿\textbf{Cuál es el valor de $R_L$ para que, al conectarla entre los terminales $A-B$, el circuito entregue la máxima potencia disponible}?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\linewidth]{../figs/thevenin_continua_red.pdf}
+    \caption{Planteamiento del teorema de la máxima transferencia de potencia}
+    \label{fig.planteamiento_mtp_cc}
+\end{figure}
+
+Aplicando el teorema de Thévenin (se llegaría a la misma conclusión si se hiciera con Norton), se convierte el circuito activo en un generador de fem $\epsilon_{th}$ en serie con una resistencia ${R_{th}}$ y la resistencia de la carga ${R_L}$ conectada entre $A-B$, como se muestra en la Figura~\ref{fig.equivalenteThevenin0_cc}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/thevenin_continua.pdf}
+    \caption{Ecuaciones del teorema de la máxima transferencia de potencia}
+    \label{fig.equivalenteThevenin0_cc}
+\end{figure}
+
+La corriente que circula por el circuito es: 
+\begin{equation*}
+{I} = \frac{{\epsilon}_{th}}{R_{th} + {R}_L}
+\end{equation*}
+Por definición, la potencia consumida por la carga $R_L$ (la que hay que maximizar), es: 
+\begin{equation*}
+   P_L= I^2 \cdot R_L\Rightarrow P_L = \dfrac{\epsilon_{th}^2}{(R_L+R_{th})^2} \cdot R_L
+\end{equation*}
+y, teniendo en cuenta la condición para obtener el valor máximo $\left(\diffp{P_L}{R_L} = 0\right)$, se obtiene que:
+    \begin{equation*}%\label{eq.R_maxpotencia}
+        \diffp{P_L}{R_L} = \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}=0\Rightarrow \boxed{R_L = R_{th}}
+    \end{equation*}
+Por tanto, la resistencia de carga que hay que conectar entre los terminales $A-B$ del equivalente de Thévenin del circuito lineal para obtener la máxima potencia disponible es:
+\begin{equation}
+    \boxed{R_L = R_{th}}
+\end{equation}
+siendo la máxima potencia disponible en la carga:
+\begin{equation}
+  \left.
+    \begin{matrix}
+      R_L = R_{th}\\
+      P_L = \dfrac{\epsilon_{th}^2}{{(R_L+R_{th})^2}} \cdot R_L
+    \end{matrix} \right\}\rightarrow
+  \boxed{P_L = \frac{\epsilon^2_{th}}{4 R_{th}}}
+\end{equation}
+
+% \begin{remark}
+%     Los generadores equivalentes de Thévenin, Norton y los resultados del teorema de la máxima transferencia de potencia solo son válidos para la frecuencia a la que se obtienen.
+% \end{remark}
+
+\begin{example}\label{ex.tmp_cc}
+    \textbf{A partir del circuito del Ejemplo~\ref{ex.Th_cc}, determinar la resistencia y la máxima potencia transferida a la misma.}
+    
+    Puesto que ya se determinó el equivalente de Thévenin en el Ejemplo~\ref{ex.Th_cc}, según el T. Máxima Transferencia de Potencia, la resistencia a conectar es:
+    \begin{equation*}
+        R_{max}=R_{th}=\dfrac{40}{23}\Omega
+    \end{equation*}
+    siendo la máxima potencia disipada:
+    \begin{equation*}
+        P_{max}=\dfrac{\epsilon_{th}^2}{4\,R_{th}}=\dfrac{(\frac{22}{23})^2}{4\cdot \frac{40}{23}}=0.14\,W
+    \end{equation*}
+    
+\end{example}
+	
+	\subsection{Teorema de superposición}\label{sec.superposicion_CC}
+	
+% 	Una función $y=f(x)$ se dice que es \textbf{lineal} cuando cumple: 
+% 	\begin{itemize}
+% 	    \item Aditividad o \textbf{superposición}: $f(x_1+x_2+...+x_3)=f(x_1)+f(x_2)+...+f(x_n)$
+% 	    \item Homogeneidad o \textbf{proporcionalidad}: $f(K\cdot x)=a\cdot f(x)$, siendo $K$ una constante.
+% 	\end{itemize}
+% 	Se dice que un circuito eléctrico es \textbf{lineal} si los elementos pasivos y activos que incluye son lineales:
+% 	\begin{itemize}
+% 	    \item Un \textbf{elemento pasivo} es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: \textbf{resistencias, condensadores y bobinas}.
+%         \item Una \textbf{fuente dependiente} es lineal si su salida (tensión o corriente) tiene una relación lineal con la magnitud del circuito de la que depende.
+% 	\end{itemize}
+%     Si se cumplen estas condiciones, el circuito será lineal, y tendrá las propiedades de una función lineal. Sea $y(t)$ la respuesta de un circuito lineal a una excitación $x(t)$, entonces se cumplirá que:
+%     \begin{itemize}
+%     \item \textbf{Superposición}: la respuesta total debida a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado:
+%     \begin{equation*}
+%         y(t) = \sum_i y_i(t)
+%     \end{equation*}
+%     \item \textbf{Proporcionalidad}: si una excitación se multiplica por una constante, $K\cdot x(t)$, la respuesta del circuito vendrá multiplicada por dicha constante, $K\cdot y(t)$. 
+%     \end{itemize}
+    
+%     De estas propiedades, surgen dos teoremas que pueden servir para resolver circuitos eléctricos, siempre que estos sean lineales.
+    
+%    \subsection{Teorema de superposición}
+    Es consecuencia de la propiedad de superposición de los circuitos lineales, es decir: la respuesta total debida a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado:
+    \begin{equation*}
+        y(t) = \sum_i y_i(t)
+    \end{equation*}
+    
+    El teorema dice así: \textit{En una red formada por generadores (dependientes e independientes) y resistencias, la corriente en una rama o la tensión en un  nudo, cuando todos los generadores actúan simultáneamente, es la suma de las corrientes o las tensiones que crearía cada generador INDEPENDIENTE si actuase solo (individualmente) sobre el circuito} (Figura~\ref{fig.superposicion_cc}).
+    \begin{figure}[H]
+        \centering
+        \subfloat[Respuesta total]{\includegraphics{../figs/superposicion.pdf}}\hfil
+        \subfloat[Respuestsa individual]{\includegraphics{../figs/superposicion2.pdf}}
+        \caption{Superposición}
+        \label{fig.superposicion_cc}
+    \end{figure}
+    
+El procedimiento para analizar un circuito eléctrico mediante superposición es el siguiente: 
+\begin{enumerate}
+\item Se ``apagan'' todas las fuentes \textbf{independientes} del circuito menos una:
+    \begin{itemize}
+    \item Las fuentes de tensión se sustituyen por un cortocircuito ($U = 0$)
+    \item Las fuentes de corriente se sustituyen por un circuito abierto ($I = 0$)
+    \item Las fuentes \textbf{dependientes} \textbf{no} se modifican
+    \end{itemize}
+\item Se analiza el circuito, obteniendo la respuesta individual a la fuente que permanece activa.
+\item Se repite este procedimiento para cada una de las fuentes \textbf{independientes} del circuito.
+\item La respuesta total del circuito es la suma de las respuestas individuales.
+\end{enumerate}
+
+\begin{example}\label{ex.superposicion_CC}
+    \textbf{Usar el principio de superposición para encontrar $U_0$ en el circuito de la Figura~\ref{fig.ej_superposicion_cc}.}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc.pdf}
+        \caption{Ejemplo~\ref{ex.superposicion_CC}}
+        \label{fig.ej_superposicion_cc}
+    \end{figure}
+    
+    \underline{Contribución del generador de tensión}
+    
+    La fuente de corriente queda como un circuito abierto, siendo el circuito equivalente el mostrado en la Figura~\ref{fig.ej_superposicion_cc_tension}. 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc_tension.pdf}
+        \caption{Contribución del generador de tensión}
+        \label{fig.ej_superposicion_cc_tension}
+    \end{figure}
+    
+    Aplicando el método de mallas con las corrientes indicadas:
+    \begin{equation*}
+        \begin{bmatrix}
+            6000 & -4000\\
+            -4000 & 12000
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            I_a'\\
+            I_b'
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            6\\
+            0
+        \end{bmatrix}
+    \end{equation*}
+    cuya solución es:
+    \begin{align*}
+        I_a'&=1.29\,mA\\
+        I_b'&=0.43\,mA
+    \end{align*}
+    por lo que $U_{0,1}$:
+    \begin{equation*}
+        U_{0,1}=U_{6k\Omega}=I_b'\, R_{6k\Omega}=0.43\cdot 10^{-3}\cdot 6000= 2.58\,V
+    \end{equation*}
+    
+    \underline{Contribución del generador de corriente}
+    
+    La fuente de tensión queda como un cortocircuito, siendo el circuito equivalente el mostrado en la Figura~\ref{fig.ej_superposicion_cc_corriente}. 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc_corriente.pdf}
+        \caption{Contribución del generador de corriente}
+        \label{fig.ej_superposicion_cc_corriente}
+    \end{figure}
+    
+    Aplicando el método de mallas con las corrientes indicadas:
+    \begin{equation*}
+        \begin{bmatrix}
+            6000 & -4000 & -2000\\
+            -4000 & 12000 & -2000\\
+            -2000 & -2000 & 4000
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            I_a''\\
+            I_b''\\
+            I_c''
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\
+            0\\
+            U_{I_g}
+        \end{bmatrix}
+    \end{equation*}
+    Se sabe que $I_c''=2$ mA. Resolviendo el sistema, se obtiene que:
+    \begin{align*}
+        I_a''&=1.14\,mA\\
+        I_b''&=0.71\,mA\\
+        U_{I_g}&=4.29\,V
+    \end{align*}
+    por lo que $U_{0,2}$:
+    \begin{equation*}
+        U_{0,2}=U_{6k\Omega}=I_b''\, R_{6k\Omega}=0.71\cdot 10^{-3}\cdot 6000= 4.28\,V
+    \end{equation*}
+    
+    \underline{Valor de $U_0$}
+    
+    Aplicando el principio de superposición, se obtiene que el valor de $U_0$ es:
+    \begin{equation*}
+        U_0=U_{0,1}+U_{0,2}=2.58+4.28=6.86\, V
+    \end{equation*}
+\end{example}
+
+
+
+
+
+	
+	
+% 	\section{Formas de onda}
+	
+% 	En los circuitos eléctricos, las funciones de excitación y respuesta son tensiones
+% 	e intensidades que varían con el tiempo:
+% 	\begin{equation*}
+% 		u=u(t)
+% 	\end{equation*}
+% 	\begin{equation*}
+% 		i=i(t)
+% 	\end{equation*}
+% 	Estas funciones pueden representarse de forma gráfica o analítica. En ambos
+% 	casos, esa relación funcional se conoce mediante el nombre de \textbf{forma de onda}. Las formas de onda pueden clasificarse según (de manera análoga a lo indicado en la Sección~\ref{sec.cc-ca}):
+% 	\begin{itemize}
+% 		\item \textbf{Signo de la magnitud}:
+% 		\begin{itemize}
+% 			\item \textbf{Unidireccionales}: la magnitud que la representa siempre tiene una única polaridad (signo constante, aunque el valor puede ser constante o variable)
+% 			\item \textbf{Bidireccionales}: la magnitud toma valores positivos y negativos (signo variable con el tiempo)
+% 		\end{itemize}
+% 		\item \textbf{Repetición del valor de la magnitud}:
+% 		\begin{itemize}
+% 			\item \textbf{Periódicas}: el valor de la magnitud se repite de forma regular
+% 			\item \textbf{No periódicas}: el valor de la magnitud varía de forma arbitraria con el tiempo
+% 		\end{itemize}
+% 	\end{itemize}
+	
+% 	\subsection{Formas de onda básicas}
+% 	En el estudio de la teoría de circuitos, son de especial interés las formas de onda en escalón, rampa, pulsos y triangular.
+	
+% 	\subsubsection{Función escalón} 
+% 	Esta función vale 0 para tiempos negativos ($t<0$) y un valor constante $K$ para tiempos positivos ($t>0$), como se muestra en la Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es: 
+% 	\begin{equation}
+% 		\boxed{f(t) = %
+% 			\begin{cases}
+% 				0 & t < 0\\
+% 				K & t \geq 0
+% 		\end{cases}}
+% 	\end{equation}
+	
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=.35\linewidth]{../figs/escalon.pdf}
+% 		\caption{Función escalón en el origen de tiempos}
+% 		\label{fig.escalon}
+% 	\end{figure}
+	
+% 	Cuando $K = 1$, la función recibe el nombre de \textbf{escalón unitario}. En general, se puede considerar cualquier función escalón como el producto de una constante (denominada \textit{amplitud}) por la función escalón unitario.
+% 	En general, multiplicar una función por la función escalón unitario se asocia a asignar el valor 0 para $t<0$ y no modifica la función para $t>0$.
+	
+% 	\subsubsection{Función pulso rectangular}
+	
+% 	Esta forma de onda es muy habitual en electrónica, y se representa en la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
+% 	\begin{equation}
+% 		\boxed{f(t) = %
+% 			\begin{cases}
+% 				0 & t < 0\\
+% 				K & 0 \leq t \leq W\\
+% 				0 & t>W
+% 		\end{cases}}
+% 	\end{equation}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=.35\linewidth]{../figs/pulso.pdf}
+% 		\caption{Función pulso rectangular}
+% 		\label{fig.pulso}
+% 	\end{figure}
+	
+% 	El valor $W$ se conoce como \textbf{anchura/duración del pulso}. 
+	
+% 	\subsubsection{Función rampa}
+% 	La forma de esta función es la indicada en la Figura~\ref{fig.rampa}, expresada de manera matemática de la siguiente forma: 
+% 	\begin{equation}
+% 		\boxed{f(t) = %
+% 			\begin{cases}
+% 				0 & t < 0\\
+% 				m \cdot t  & t \geq 0
+% 		\end{cases}}
+% 	\end{equation}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=0.35\linewidth]{../figs/rampa.pdf}
+% 		\caption{Función rampa}
+% 		\label{fig.rampa}
+% 	\end{figure}
+% 	El valor de $m$ es la pendiente de la rampa.
+	
+% 	\subsubsection{Función triangular}
+% 	La forma de esta función es la indicada en la Figura~\ref{fig.triangular}, expresada de manera matemática de la siguiente forma: 
+% 	\begin{equation}
+% 		\boxed{
+% 			f(t) = %
+% 			\begin{cases}
+% 				0 & t < -W/2\\
+% 				m \cdot (t + W/2)  & -W/2 \leq t \leq 0\\
+% 				-m \cdot (t - W/2)  & 0 \leq t \leq W/2\\
+% 				0  & t > W/2
+% 		\end{cases}}
+% 	\end{equation}
+% 	\begin{figure}[H]
+% 		\centering
+% 		\includegraphics[width=0.35\linewidth]{../figs/triangular.pdf}
+% 		\caption{Función triangular}
+% 		\label{fig.triangular}
+% 	\end{figure}
+	
+% 	\subsubsection{Retraso del origen de tiempos}
+% 	Una forma de onda puede retrasarse en el tiempo si se desplaza el eje de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig.retraso} muestra diversos ejemplos de las formas de onda básicas. 
+% 	\begin{figure}[H]
+% 		\centering
+% 		\subfloat[Escalón retrasado]{\includegraphics[width=.35\linewidth]{../figs/escalon_t0.pdf}}\hfil
+% 		\subfloat[Pulso retrasado]{\includegraphics[width=.35\linewidth]{../figs/pulso_t0.pdf}}\\
+% 		\subfloat[Rampa retrasada]{\includegraphics[width=.35\linewidth]{../figs/rampa_t0.pdf}}\hfil
+% 		\subfloat[Triangular retrasada]{\includegraphics[width=.35\linewidth]{../figs/triangular_t0.pdf}}
+% 		\caption{Formas de onda básicas retrasadas}
+% 		\label{fig.retraso}
+% 	\end{figure}
+	
+	
+% % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Calcular las corrientes de malla mostradas en el circuito de la Figura \ref{fig.ejercicio2_tema1}.
+		\begin{figure}[H]
+			\centering	\includegraphics[height=3.7cm]{../figs/ej2_BT1.pdf}
+			\caption{Ejercicio 1}
+			\label{fig.ejercicio2_tema1}
+		\end{figure}
+		\emph{Sol.: $I_1=-1.31$ A; $I_2=3.17$ A; $I_3=10.45$ A}
+		
+\item Calcular el valor de $U_s$ que hace que $I_0=7.5$ mA en el circuito de la Figura \ref{fig.ejercicio3_tema1}. 
+		\begin{figure}[H]
+			\centering	\includegraphics[height=5.5cm]{../figs/ej3_BT1.pdf}
+			\caption{Ejercicio 2}
+			\label{fig.ejercicio3_tema1}
+		\end{figure}
+		\emph{Sol.: $U_s=0.705$ V}    
+		
+\item Calcular la intensidad $I$ en el circuito de la Figura \ref{fig.ejercicio4_tema1}. \\
+\emph{Sol.: $I=-8.77 $ A}
+		\begin{figure}[H]
+			\centering
+			\includegraphics{../figs/ej4_BT1.pdf}
+			\caption{Ejercicio 3}
+			\label{fig.ejercicio4_tema1}
+		\end{figure}
+		
+		\item En el circuito de la Figura~\ref{fig.ejercicio8-bt1} obtener las intensidades de corriente señaladas primero mediante un análisis por el método de las mallas y posteriormente mediante un análisis por el método de los nudos.
+ \begin{figure}[H]
+ 		\centering
+\includegraphics{../figs/ej8_BT1.pdf}
+ 		\caption{Ejercicio 4}
+ 		\label{fig.ejercicio8-bt1}
+ 	\end{figure}
+ 	\emph{Sol.: $I_1=-3.31\,A;\;I_2=3.37\,{A};\; I_3=-0.06\,{A};\; I_4=0.73\,{A};\; I_5=-0.79\,A$}
+ 	
+ 	\item Analizar el circuito de la Figura~\ref{fig.mallas2} mediante el método de las mallas, obteniendo la corriente de cada una de las ramas. Con este resultado, calcular la diferencia de potencial entre A y B, y realizar un balance de potencias comparando la potencia de los elementos activos y la de los elementos pasivos. Datos: $R_1 = R_2 = {1}\Omega; R_3 = {2}\Omega; R_4 = {3}\Omega; R_5={4}\Omega; \epsilon_1={118} V; \epsilon_2 = 236V; \epsilon_3 = {118}V$.\\
+ 	\begin{figure}[H]
+ 	    \centering
+ 	    \includegraphics{../figs/mallas2.pdf}
+ 	    \caption{Ejercicio 5}
+ 	    \label{fig.mallas2}
+ 	\end{figure}
+ 	\emph{Sol. $I_1 = {32}A; I_2 = {-86} A; I_3 ={54}A; I_4 = {14}A; I_5 = {40}A; U_{AB}=150V; \sum P=0$}
+ 	
+\item En el circuito de la Figura~\ref{fig.ej9_BT1}, determinar:
+\begin{itemize}
+    \item Todas las intensidades de rama señaladas
+    \item Carga, polaridad y energía almacenada en los condensadores
+    \item Balance de potencias
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=6cm]{../figs/ej9_BT1.pdf}
+    \caption{Ejercicio 6}
+    \label{fig.ej9_BT1}
+\end{figure}
+\emph{Sol.: $I_1=I_2=I_3=-I_4=1\,A;\; I_5=I_6=I_7=0\,A;\;Q_{1\mu F}=-7\,\mu\text{C};\;Q_{2\mu F}=-4\,\mu\text{C};\;Q_{3\mu F}=3\,\mu\text{C};\;E_{1\mu F}=24.5\,\mu\text{J};\;E_{2\mu F}=4\,\mu\text{J};\; E_{3\mu F}=1.5\,\mu\text{J}$}
+\item Aplicar el método de los nudos en el circuito de la Figura~\ref{fig.nudos_condensadores} para determinar:
+\begin{itemize}
+\item Los potenciales de los nudos A, B, C y D.
+\item Las intensidades de corriente señaladas.
+\item Carga, polaridad y energía almacenada en los condensadores, supuestos sin carga inicial.
+\end{itemize}
+Datos: $R_i = \mathrm{i\ } \Omega; C_i = \mathrm{i\ } \mu F; E_1 = 6V; E_2 = 18 V; E_3 = {6} V$
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{../figs/nudos_condensadores.pdf}
+    \caption{Ejercicio 7}
+    \label{fig.nudos_condensadores}
+\end{figure}
+\emph{Sol.: $U_A=15V; U_B=11V; U_C=U_D=0V; I_1=I_6=0A;I_2=I_4=-1A; I_3=I_5=1A; q_1=9\mu C; q_2=30\mu C; q_3=33\mu C; E_{C1}=40.5\mu J; E_{C2}=225\mu J;E_{C2}=181.5\mu J$}
+\item En el circuito de la Figura~\ref{fig.ej10_BT1}, donde se sabe que la carga inicial de los condensadores era 10 $\mu$C (para el de 10 $\mu$F) y 20 $\mu$C (para el de 20 $\mu$F) con las polaridades indicadas, se pide determinar:
+\begin{itemize}
+    \item Intensidades de corriente señaladas
+    \item Potenciales en los puntos A, B, C, D, E y F
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{../figs/ej10_BT1.pdf}
+    \caption{Ejercicio 8}
+    \label{fig.ej10_BT1}
+\end{figure}
+\emph{Sol. $I_1=4A; I_2=5A; I_3=-1A;I_4=I_8=1A; I_5=I_7=0A; U_A=30V; U_B=0V; U_C=1V; U_D=61V;U_E=101V; U_F=11V$}
+
+\item En el circuito de la Figura~\ref{fig.mallas_condensadores}, los condensadores se conectaron sin
+carga. Mediante el método de las mallas determina:
+\begin{itemize}
+\item Intensidades de corriente señaladas
+\item Potenciales en los puntos A, B, C y D
+\item Polaridades, cargas, y energías de los condensadores
+\item Balance de potencias
+\end{itemize}
+Datos: $ \epsilon_{1}={118}V; \epsilon_{2}={236} V; \epsilon_{3}=118V; R_{1}= {4}\Omega; R_{2}=R_{3}={1}{\Omega}; R_{4}= {3}{\Omega}; R_{5}={2}{\Omega}; C_{1}=C_{2}=C_{3}={2}{\mu F}; X_1 = X_2 = X_3 = {1}{\Omega}$
+\begin{figure}[H]
+        \centering
+        \includegraphics{../figs/mallas_condensadores.pdf}
+        \caption{Ejercicio 9}
+        \label{fig.mallas_condensadores}
+    \end{figure}
+    \emph{Sol.: $I_1=40A; I_2=-86A; I_3=32A; I_4=14A; I_5=54A; U_A=U_B=0V; U_C=41V; U_D=150V; U_{C1}=0V; q_1=0\mu F; E_{C1}=0J; U_{C2}=-42V; q_2=84\mu F; E_{C2}=1.76 mJ; U_{C3}=-42V; q_3=84\mu F; E_{C3}=1.76 mJ; \sum P = 0$}
+
+\item En el circuito de la Figura~\ref{fig.ej11_BT1}, determinar:
+\begin{itemize}
+    \item Las ecuaciones para el cálculo de las intensidades
+    \item Todas las intensidades indicadas
+    \item Potenciales en todos los nudos
+    \item Carga y energía almacenada en los condensadores
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=8cm]{../figs/ej11_BT1.pdf}
+    \caption{Ejercicio 10}
+    \label{fig.ej11_BT1}
+\end{figure}
+\emph{Sol.: $I_1=I_6=-6.5A; I_2=-4A; I_3=-2.5A; I_4=3A; I_5=0.5A; U_A=-8V; U_B=2V; U_C=0.5V; U_D=0V;Q_{1\mu F}=8\mu C; Q_{2\mu F}=Q_{3\mu F}=0\mu C; Q_{4\mu F}=-2\mu C; E_{1\mu F}=32\mu F; E_{2\mu F}=E_{3\mu F}=0 J; E_{4\mu F}=0.5\mu C$}
+
+\item En el circuito de la Figura~\ref{fig.mallas_agrupacion_condensadores} se debe determinar:
+\begin{itemize}
+\item Las corrientes señaladas.
+\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos.
+\item Los potenciales en los puntos A, B y C.
+\item La carga y polaridad en los condensadores, supuestos sin carga inicial.
+\end{itemize}
+Datos: $\epsilon_1 ={1}V; \epsilon_2 ={7}V; R_i  = {1}\Omega; C_i = {i}{\mu F}$
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{../figs/mallas_agrupacion_condensadores.pdf}
+    \caption{Ejercicio 11}
+    \label{fig.mallas_agrupacion_condensadores}
+\end{figure}
+\emph{Sol.: $I_1=I_2=1 A; I_3=I_4=0 A; I_5=-2 A; \sum P = 0; U_A=-1 V; U_B=-5 V; U_C=-3 V; q_1=0.5 \mu C; q_2 = 1\mu F; q_3=1.5\mu F; q_4=12\mu C$}
+
+\item El circuito de la Figura~\ref{fig.mallas_condensadores_bobinas} está funcionando en régimen estacionario. Los condensadores estaban inicialmente descargados. Resuelve el circuito mediante el método que consideres conveniente para obtener los siguientes resultados:
+\begin{itemize}
+\item Las intensidades señaladas.
+\item Polaridad y energía almacenada en los condensadores.
+\item Balance de potencias.
+\end{itemize}
+Datos: $\epsilon_{1}={40}V; \epsilon_{2}={22}V; \epsilon_{3}={20}V; C_{1}=C_{2}=C_{3}={2}{\mu F}; R_{g1}=R_{g2}=R_{g3}={4}{\Omega}; R_{1}=R_{2}=R_{3}=R_{4}={2}{\Omega}; R_{5}=R_{6}=R_{7}={1}{\Omega}$
+  \begin{figure}[H]
+      \centering
+      \includegraphics[height=8cm]{../figs/mallas_condensadores_bobinas.pdf}
+      \caption{Ejercicio 12}
+      \label{fig.mallas_condensadores_bobinas}
+  \end{figure}
+ \emph{Sol.: $I_1=I_5=2A; I_2=I_3=I_8=I_{10}=-1A; I_4=I_7=I_{11}=I_{12}=I_{13}=0A; I_6=I_{14}=1A; E_{C1}=0.676 mJ; E_{C2}=0.576 mJ; E_{C3}=1\mu J; \sum P = 0$}
+ 
+\item En el circuito de la Figura~\ref{fig.ej12_BT1}, obtener las intensidades de
+corriente señaladas mediante un análisis por el método de
+las mallas y mediante un análisis por el método de los nudos.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/ej12_BT1.pdf}
+    \caption{Ejercicio 13}
+    \label{fig.ej12_BT1}
+\end{figure}
+
+\emph{Sol.: $I_1=-0.74\,A;\,I_2=-1.33\,A;\,I_3=0.07\,A;\,I_4=-0.39\,A;\;I_5=0.46\,A;\,I_6=-0.87\,A;\,I_7=1.26\,A$}
+
+\item Calcular la intensidad que circula por la resistencia de 30 $\Omega$ del circuito de la Figura~\ref{fig.ej16_BT1} aplicando el principio de superposición. 
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/ej16_BT1.pdf}
+    \caption{Ejercicio 14}
+    \label{fig.ej16_BT1}
+\end{figure}
+
+\emph{Sol.: $I=2.2\,A$}
+\item Determinar el equivalente Thévenin del circuito de la Figura~\ref{fig.ej17_BT1} entre los nudos $A-B$. ¿Qué resistencia habría que conectar en dichos terminales para transferir la máxima potencia? ¿Cuál sería dicha potencia?
+\begin{figure}[H]
+    \centering
+    \includegraphics{../figs/ej17_BT1.pdf}
+    \caption{Ejercicio 15}
+    \label{fig.ej17_BT1}
+\end{figure}
+
+\emph{Sol.: $\epsilon_{th}=5-16=-11\,V;\; R_{th}=4\Omega;\; R_L=4\Omega;\;P_{max}=7.56$ W}
+
+\item Obtener el generador equivalente de Thévenin del circuito de la Figura~\ref{fig.ej18_BT1} respecto de A y B.\\
+Datos: $I_g=10\,A; R_1=1\Omega;\; \alpha=5$
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4.5cm]{../figs/Thevenin1.pdf}
+    \caption{Ejercicio 16}
+    \label{fig.ej18_BT1}
+\end{figure}
+\emph{Sol.: $\epsilon_{th}=60\,V;\;R_{th}=6\Omega$}
+
+\item En el circuito de la Figura~\ref{fig.norton_ej}, calcular:
+\begin{itemize}
+\item La corriente del generador equivalente de Norton respecto de A y B, $I_N$.
+\item La resistencia del generador equivalente de Norton respecto de A y B, $R_N$.
+\item La resistencia de carga que se debe conectar entre A y B para conseguir la máxima potencia disponible, y el valor de esta potencia.
+\end{itemize}
+
+Datos: $R = {1}{\Omega};\; \epsilon_g = {10}{V};\; \alpha = \beta = 1$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=4.5cm]{../figs/norton.pdf}
+    \caption{Ejercicio 17}
+    \label{fig.norton_ej}
+\end{figure}
+
+\emph{Sol.: $I_N=\frac{10}{3}\,A;\; R_N=2\,\Omega;\; R_L=2\Omega;\; P_L=5.56\,W$}
+
+
+\begin{remark}
+    Los ejercicios 18 y 19 constituyen contenido avanzado.
+\end{remark}
+
+\item Determinar las corrientes marcadas en la Figura~\ref{fig.ej13_BT1}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{../figs/ej13_BT1.pdf}
+    \caption{Ejercicio 18}
+    \label{fig.ej13_BT1}
+\end{figure}
+\emph{Sol.: $I_1=I_a=5.38\,A;\;I_2=2.07\,A; I_3=6.62\,A\; I_4=3.31\,A\;     I_5=-1.24\,A$}
+
+\item Determinar las tensiones en los nudos $A$ y $B$ del circuito de la Figura~\ref{fig.ej14_BT1}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{../figs/ej14_BT1.pdf}
+    \caption{Ejercicio 19}
+    \label{fig.ej14_BT1}
+\end{figure}
+\emph{Sol.: $U_A=30\,V;\;U_B=20\,V$}
+
+
+% \item En el circuito de la Figura~\ref{fig:formas_onda1} hay que determinar:
+
+% \begin{itemize}
+% \item La corriente $i_1(t)$
+% \item La potencia entregada por $e(t)$
+% \item La potencia disipada por $R$
+% \end{itemize}
+% Datos: $R = {5}{\Omega}$, $C = {0.2}{F}$
+
+% \emph{Sol.: $i_1(t) =   \begin{cases}
+%     5 & 0 \leq t < 1\\
+%     -5 & 1 \leq t < 2 
+%   \end{cases};\,p_E(t) =                \begin{cases}
+%                  50\cdot t & 0 \leq t < 1\\
+%                  50 \cdot t - 100 & 1 \leq t < 2 
+%               \end{cases};\,P_R = {45} W$}
+
+% \begin{figure}[H]
+%     \includegraphics[width=0.23\linewidth]{../figs/tren_pulsos.pdf}
+%     \includegraphics[width=0.45\linewidth]{../figs/formas_onda1.pdf}
+%     \includegraphics[width=0.25\linewidth]{../figs/onda_triangular.pdf}
+%     \caption{Ejercicio 16}
+%     \label{fig:formas_onda1}
+% \end{figure}
+
+% \item En el circuito de la Figura~\ref{fig:formas_onda2} se pide:
+
+% \begin{itemize}
+% \item Obtener la expresión analítica y la representación gráfica de las corrientes $i_L(t)$ e $i_R(t)$.
+% \item Calcular los valores medios y eficaces de las corrientes $i_L(t)$ e $i_R(t)$.
+% \item Obtener la expresión analítica de la corriente $i(t)$ y de la potencia del generador $e(t)$.
+% \end{itemize}
+% Datos: $R = {6}{\Omega}$, $L = {4}{mH}$, $E = {12}{V}$
+
+% \emph{Sol.: $i_R(t) = 
+%       \begin{cases}
+%         2 & 0 \leq t < 10^{-3} \\
+%         -2 & 10^{-3} \leq t < 2 \cdot 10^{-3}
+%       \end{cases};\; i_L(t) = 
+%       \begin{cases}
+%         3\cdot 10^3 \cdot t & 0 \leq t < 10^{-3} \\
+%         6- 3 \cdot 10^3 \cdot t & 10^{-3} \leq t < 2 \cdot 10^{-3}
+%       \end{cases};\;I_{Rm}=2A;\;I_R=2A;\;I_{Lm}=1.5\,A;\;I_L=\sqrt{3} A$}
+% \begin{figure}[H]
+%  \centering
+%     \includegraphics[width=0.35\linewidth]{../figs/formas_onda2.pdf}\hfil
+%     \includegraphics[width=0.25\linewidth]{../figs/tren_pulsos2.pdf}
+%     \caption{Ejercicio 17}
+%     \label{fig:formas_onda2}
+% \end{figure}
+
+
+
+\end{enumerate}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "TC"
+%%% ispell-local-dictionary: "castellano"
+%%% End:
