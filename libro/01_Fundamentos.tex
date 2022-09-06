@@ -1331,39 +1331,61 @@ Los circuitos equivalentes son los mostrados en la Figura~\ref{fig.ejercicio7-bt
 	donde cada {\color{magenta}$R_{ii}$} se corresponde con la suma de resistencias incluidas en la malla $i$; cada {\color{teal}$\pm R_{ij}$} se corresponde con la suma de las resistencias incluidas en las ramas compartidas por las mallas $i$ y $j$, con signo positivo ($+$) si las corrientes van en el mismo sentido, y negativo ($-$) en caso contrario; y cada {\color{orange} $\sum \epsilon_i$} es la suma algebraica de las fuerzas electromotrices de los generadores de la malla $i$, considerando un signo positivo ($+$) si contribuyen al giro de la corriente, y negativo ($-$) en caso contrario (es decir, si la corriente sale por el polo $+$ de la fuente, se considera positivo; si sale por el polo $-$, se considera negativo). Debe tenerse en cuenta que, para aplicar este método, \textbf{todos los generadores deben ser fuentes de tensión}. 
 	
 	\begin{example}\label{ex.ejemplo_mallas}
-	    \textbf{Calcular las tres intensidades de malla del circuito de la Figura \ref{fig.ejercicio5_tema1}.}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.4\linewidth]{../figs/ej5_BT1.pdf}
-			\caption{Ejemplo~\ref{ex.ejemplo_mallas}}
-			\label{fig.ejercicio5_tema1}
-		\end{figure}
-		
-		Se plantea el sistema de ecuaciones en forma matricial:
-\begin{equation*}
-		\begin{bmatrix}
-			7 & 0 & 5 \\
-			0 & 6 & -4 \\
-			5 & -4 & 12
-		\end{bmatrix} \cdot 
-		\begin{bmatrix}
-			I_1\\
-			I_2\\
-			I_3
-		\end{bmatrix} = %
-		\begin{bmatrix}
-			10 \\
-			-10\\
-			0
-		\end{bmatrix}
-	\end{equation*}
-	cuya solución es:
-	\begin{align*}
-	    I_1&=3.55\,\text{A}\\
-	    I_2&=-1.98\,\text{A}\\
-	    I_3&=-2.98\,\text{A}
-	\end{align*}
-	\end{example}
+          \textbf{Resolver el circuito del ejemplo \ref{ej.1-5} con
+            los siguientes valores numéricos.}
+
+          \begin{minipage}{0.35\linewidth}
+            Datos:
+            \begin{align*}
+              R_1 = R_3 = R_6 &= \SI{3}{\ohm}\\
+              R_2 = R_4 = R_5 &= \SI{2}{\ohm}\\
+              \epsilon_1 &= \SI{245}{\volt}\\
+              \epsilon_2 &= \SI{490}{\volt}\\
+              \epsilon_3 &= \SI{735}{\volt}\\
+            \end{align*}
+          \end{minipage}
+          \begin{minipage}{0.55\linewidth}
+            \includegraphics{../figs/mallas1_corrientes.pdf}
+          \end{minipage}
+
+          Sustituyendo los valores numéricos en las ecuaciones
+          obtenidas en el ejemplo anterior obtenemos:
+          \[
+            \left[\begin{array}{ccc}
+                    8 & -3 & -2 \\
+                    -3 & 7 & -2 \\
+                    -2 & -2 & 7\\
+                  \end{array}\right]%
+                \cdot \left[\begin{array}{c}
+                              I_a\\
+                              I_b\\
+                              I_c\\
+                            \end{array}\right]%
+                          = \left[\begin{array}{c}
+                                    -245\\
+                                    490\\
+                                    735
+                                  \end{array}\right]
+                              \]
+                              cuya solución es:
+
+\begin{align*}
+  I_a &= \SI{65}{\ampere}\\
+  I_b &= \SI{145}{\ampere}\\
+  I_c &= \SI{165}{\ampere}
+\end{align*}
+
+Por tanto, los valores de las corrientes de rama son:
+
+\begin{align*}
+  I_1 &= \SI{65}{\ampere}\\
+  I_2 &= \SI{100}{\ampere}\\
+  I_3 &= \SI{80}{\ampere}\\
+  I_4 &= \SI{20}{\ampere}\\
+  I_5 &= \SI{-145}{\ampere}\\
+  I_6 &= \SI{165}{\ampere}
+\end{align*}
+\end{example}
 	
 	\begin{remark}
 	    El Ejemplo~\ref{ex.mallas_dependiente} incluye contenido avanzado que queda fuera del alcance de la asignatura.
@@ -1612,7 +1634,6 @@ donde se cumple que la suma es 0.
 	    siendo $I_{i,j}$ la corriente que va del nudo $i$ al $j$, $U_i$ la tensión del nudo del que se sale, $U_j$ la tensión del nudo al que se llega, $\epsilon_g$ son las $fem$ de los generadores, considerando el signo $+$ si la corriente de la rama sale por el polo positivo y el signo $-$ si la corriente sale por el negativo.
 	\end{enumerate}
 	
-	\newpage
 	\begin{example}\label{ex.nudos_modificados}
 	    \textbf{Determinar las tensiones en los nudos A y B en el circuito de la Figura~\ref{fig.nudos_fuentes}.}
 	    
@@ -2239,17 +2260,22 @@ Datos: $R_i = \mathrm{i\ } \Omega; C_i = \mathrm{i\ } \mu F; E_1 = 6V; E_2 = 18 
     \label{fig.nudos_condensadores}
 \end{figure}
 \emph{Sol.: $U_A=15V; U_B=11V; U_C=U_D=0V; I_1=I_6=0A;I_2=I_4=-1A; I_3=I_5=1A; q_1=9\mu C; q_2=30\mu C; q_3=33\mu C; E_{C1}=40.5\mu J; E_{C2}=225\mu J;E_{C2}=181.5\mu J$}
-\item En el circuito de la Figura~\ref{fig.ej10_BT1}, donde se sabe que la carga inicial de los condensadores era 10 $\mu$C (para el de 10 $\mu$F) y 20 $\mu$C (para el de 20 $\mu$F) con las polaridades indicadas, se pide determinar:
+
+\item En el circuito de la Figura~\ref{fig.ej10_BT1}, donde se sabe que la carga inicial de los condensadores era de $\qty{10}{\micro\coulomb}$ para $C_1$ y de $\qty{20}{\micro\coulomb}$ para $C_2$ con las polaridades indicadas, se pide determinar:
 \begin{itemize}
     \item Intensidades de corriente señaladas
     \item Potenciales en los puntos A, B, C, D, E y F
 \end{itemize}
+
+Datos: $\epsilon_{A}=\SI{90}{\volt};\quad    \epsilon_{B}=\SI{60}{\volt};\quad    \epsilon_{C}=\SI{30}{\volt};\quad    R_{1}= R_2 = R_3 = \SI{10}{\ohm};\quad    R_{4}= R_5 = \SI{30}{\ohm};\quad    C_{1}= \SI{10}{\micro\farad};\quad    C_{2}= \SI{20}{\micro\farad};\quad    L_1 = \SI{1}{\micro\henry}$
+
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{../figs/ej10_BT1.pdf}
+  \centering
+  \includegraphics[scale = 0.8]{../figs/mallas_carga_inicial.pdf}
     \caption{Ejercicio 8}
     \label{fig.ej10_BT1}
 \end{figure}
+
 \emph{Sol. $I_1=4A; I_2=5A; I_3=-1A;I_4=I_8=1A; I_5=I_7=0A; U_A=30V; U_B=0V; U_C=1V; U_D=61V;U_E=101V; U_F=11V$}
 
 \item En el circuito de la Figura~\ref{fig.mallas_condensadores}, los condensadores se conectaron sin
@@ -2334,24 +2360,39 @@ las mallas y mediante un análisis por el método de los nudos.
     \caption{Ejercicio 14}
     \label{fig.ej16_BT1}
 \end{figure}
-
 \emph{Sol.: $I=2.2\,A$}
+
+\item Obtener el generador equivalente de Thévenin del circuito de la Figura~\ref{fig.ejTheveninRAB_BT1} respecto de A y B. A partir de este generador, calcula la resistencia a colocar en AB para obtener la máxima potencia, calculando esta potencia y la potencia entregada por el generador $\epsilon$.
+
+  Datos: $\epsilon = \qty{54}{\volt};\quad R_1 = R_4 = \qty{8}{\ohm};\quad R_2 = R_3 = \qty{10}{\ohm}$
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics{../figs/Thevenin2}
+      \caption{Ejercicio 15}
+      \label{fig.ejTheveninRAB_BT1}
+    \end{figure}
+
+    \emph{Sol.: $R_{AB} = 80/9\si{\ohm}; \quad   P_R = \qty{1.0125}{\watt}; \quad
+    P_\epsilon = \qty{2.025}{\watt}$}
+
 \item Determinar el equivalente Thévenin del circuito de la Figura~\ref{fig.ej17_BT1} entre los nudos $A-B$. ¿Qué resistencia habría que conectar en dichos terminales para transferir la máxima potencia? ¿Cuál sería dicha potencia?
 \begin{figure}[H]
     \centering
     \includegraphics{../figs/ej17_BT1.pdf}
-    \caption{Ejercicio 15}
+    \caption{Ejercicio 16}
     \label{fig.ej17_BT1}
 \end{figure}
 
 \emph{Sol.: $\epsilon_{th}=5-16=-11\,V;\; R_{th}=4\Omega;\; R_L=4\Omega;\;P_{max}=7.56$ W}
+
 
 \item Obtener el generador equivalente de Thévenin del circuito de la Figura~\ref{fig.ej18_BT1} respecto de A y B.\\
 Datos: $I_g=10\,A; R_1=1\Omega;\; \alpha=5$
 \begin{figure}[H]
     \centering
     \includegraphics[height=4.5cm]{../figs/Thevenin1.pdf}
-    \caption{Ejercicio 16}
+    \caption{Ejercicio 17}
     \label{fig.ej18_BT1}
 \end{figure}
 \emph{Sol.: $\epsilon_{th}=60\,V;\;R_{th}=6\Omega$}
@@ -2368,7 +2409,7 @@ Datos: $R = {1}{\Omega};\; \epsilon_g = {10}{V};\; \alpha = \beta = 1$
 \begin{figure}[H]
     \centering
     \includegraphics[height=4.5cm]{../figs/norton.pdf}
-    \caption{Ejercicio 17}
+    \caption{Ejercicio 18}
     \label{fig.norton_ej}
 \end{figure}
 
@@ -2376,14 +2417,14 @@ Datos: $R = {1}{\Omega};\; \epsilon_g = {10}{V};\; \alpha = \beta = 1$
 
 
 \begin{remark}
-    Los ejercicios 18 y 19 constituyen contenido avanzado.
+    Los ejercicios 19 y 20 constituyen contenido avanzado.
 \end{remark}
 
 \item Determinar las corrientes marcadas en la Figura~\ref{fig.ej13_BT1}.
 \begin{figure}[H]
     \centering
     \includegraphics[height=5cm]{../figs/ej13_BT1.pdf}
-    \caption{Ejercicio 18}
+    \caption{Ejercicio 19}
     \label{fig.ej13_BT1}
 \end{figure}
 \emph{Sol.: $I_1=I_a=5.38\,A;\;I_2=2.07\,A; I_3=6.62\,A\; I_4=3.31\,A\;     I_5=-1.24\,A$}
@@ -2392,7 +2433,7 @@ Datos: $R = {1}{\Omega};\; \epsilon_g = {10}{V};\; \alpha = \beta = 1$
 \begin{figure}[H]
     \centering
     \includegraphics[height=5cm]{../figs/ej14_BT1.pdf}
-    \caption{Ejercicio 19}
+    \caption{Ejercicio 20}
     \label{fig.ej14_BT1}
 \end{figure}
 \emph{Sol.: $U_A=30\,V;\;U_B=20\,V$}
