@@ -22,7 +22,7 @@
 
 * Circuito RLC serie
 ** Circuito básico
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RLC_serie.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -32,7 +32,7 @@
 #+END_EXPORT
 
 ** Ecuación diferencial (respuesta natural)
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RLC_serie.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -130,7 +130,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
   i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Sobreamortiguado_HKD.pdf]]
 
 ** Amortiguamiento Crítico ($\alpha = \omega_0$)
@@ -139,7 +139,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
   i_n(t) = (A_1 + A_2 t) e^{s t} 
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/AmortiguamientoCritico_HKD.pdf]]
 
 
@@ -149,7 +149,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
   i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/Subamortiguado_AS.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -159,11 +159,11 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 #+END_EXPORT
 
 ** Comparación
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/DampingRatio.pdf]]
 
 ** Valores Importantes
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/RespuestaEscalon_SegundoOrden.png]]
 
 ** Valores Importantes
@@ -178,7 +178,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 
 * Circuito RLC paralelo
 ** Circuito básico
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/RLC_paralelo.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -188,7 +188,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 #+END_EXPORT
 
 ** Ecuación diferencial (respuesta natural)
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/RLC_paralelo0.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -322,6 +322,7 @@ Son necesarias dos tipos de condiciones iniciales:
 Para obtener valores de las derivadas en el origen hay que resolver el circuito en $t = 0^+$ empleando las condiciones de continuidad.
 
 ** Circuitos Equivalentes
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/CondicionesIniciales_CircuitosEquivalentes.pdf]]
 - Sustituir fuentes de tensión $u_g(t)$ por $u_g(0^+)$.
 - Sustituir fuentes de corriente $i_g(t)$ por $i_g(0^+)$.
@@ -330,7 +331,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 - Calcular tensiones y corrientes en circuito.
 
 ** Derivadas en $t = 0^+$: ejemplo RLC serie
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RLC_serie.pdf]]
 
 #+BEGIN_EXPORT latex

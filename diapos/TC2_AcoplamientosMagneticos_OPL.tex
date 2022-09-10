@@ -1,6 +1,6 @@
-% Created 2019-04-01 lun 10:34
+% Created 2022-09-10 sáb 19:10
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -19,46 +19,51 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
-\usepackage{esdiff}
+\usepackage{diffcoeff}
 \usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 \newcommand{\atan}{\mathrm{atan}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\usetheme[hideothersubsections]{Boadilla}
+\parskip=5pt
+\usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
-\date{Abril 2019}
+\date{}
 \title{Acoplamientos Magnéticos}
 \subtitle{Teoría de Circuitos II}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Acoplamientos Magnéticos},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Bobina}
-\label{sec:org1fdc5e0}
+\label{sec:orgced3f10}
 
-\begin{frame}[label={sec:orge4ab99d}]{Ley de Ampere}
+\begin{frame}[label={sec:org6a45598}]{Ley de Ampere}
 Una corriente eléctrica circulando por un conductor crea un campo magnético en torno al conductor (\emph{regla de la mano derecha})
 
 \begin{center}
@@ -67,7 +72,7 @@ Una corriente eléctrica circulando por un conductor crea un campo magnético en
 \end{frame}
 
 
-\begin{frame}[label={sec:orgcb1f78b}]{Ley de Faraday}
+\begin{frame}[label={sec:org96d3236}]{Ley de Faraday}
 Cuando un \alert{campo magnético variable} atraviesa una espira \alert{estática} aparece una \alert{tensión inducida} \alert{proporcional al flujo} y opuesta a su variación.
 
 \[
@@ -91,7 +96,7 @@ El flujo magnético es la cantidad de líneas de fuerza magnética que atraviesa
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgb792fc2}]{Bobina}
+\begin{frame}[label={sec:org7624e74}]{Bobina}
 Una bobina es un arrollamiento de un conductor (\emph{conjunto de \(N\) espiras conectadas en serie}) alrededor de un material ferromagnético:
 \begin{itemize}
 \item Al circular corriente se produce un campo magnético.
@@ -102,7 +107,7 @@ Una bobina es un arrollamiento de un conductor (\emph{conjunto de \(N\) espiras 
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org1ca188b}]{Bobina}
+\begin{frame}[label={sec:orgc9fd93c}]{Bobina}
 \begin{itemize}
 \item Tensión inducida en \(N\) espiras
 \end{itemize}
@@ -138,19 +143,42 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \end{columns}
 \end{frame}
 \section{Acoplamiento magnético}
-\label{sec:org2bd5032}
-\begin{frame}[label={sec:org8c40340},plain]{}
+\label{sec:org0549261}
+\begin{frame}[label={sec:orgf7d5e41},plain]{}
 \begin{center}
-\includegraphics[height=0.8\textheight]{../figs/Acoplamiento1.png}
+\includegraphics[height=0.9\textheight]{../figs/acoplamientoTikz.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgcc091ef},plain]{}
+\begin{center}
+\includegraphics[height=0.55\textheight]{../figs/acoplamientoTikz.pdf}
+\end{center}
+\begin{center}
+\(\phi_{ii}\): flujo producido por la bobina \(i\)
+
+\(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
+
+\(\phi_{i}\): flujo total que atraviesa la bobina \(i\)
 \end{center}
 
-\(\Phi_{ii}\): flujo producido por la bobina \(i\)
-
-\(\Phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
-
-\(\Phi_{i}\): flujo total que atraviesa la bobina \(i\)
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+{\color{blue}\begin{align*}
+  \phi_{11} &= \phi_{d1} + \phi_{21}\\
+  \phi_{1} &= \phi_{11} + \phi_{12}
+\end{align*}}
+\end{column}
+\begin{column}{0.5\columnwidth}
+{\color{red}\begin{align*}
+  \phi_{22} &= \phi_{d2} + \phi_{12}\\
+  \phi_{2} &= \phi_{22} + \phi_{21}
+\end{align*}}
+\end{column}
+\end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgcc0b447},plain]{}
+
+\begin{frame}[label={sec:orgf1c2166},plain]{}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -168,14 +196,14 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \end{columns}
 
 \begin{center}
-\includegraphics[height=0.65\textheight]{../figs/Acoplamiento1.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 
 \begin{center}
-\(\Phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
+\(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org79aea4b},plain]{}
+\begin{frame}[label={sec:org4f1457b},plain]{}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \[
@@ -196,31 +224,31 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \end{columns}
 
 \begin{center}
-\includegraphics[height=0.65\textheight]{../figs/Acoplamiento1.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 
 \begin{center}
-\(\Phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
+\(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orga4c712f}]{Coeficiente de acoplamiento magnético}
+\begin{frame}[label={sec:org191798d}]{Coeficiente de acoplamiento magnético}
 \begin{center}
-\includegraphics[height=0.58\textheight]{../figs/Acoplamiento1.png}
+\includegraphics[height=0.4\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 
+Coeficiente de acoplamiento de la bobina 1:
 \[
-  k_{21} = \frac{\phi_{21}}{\phi_{11}} = 1 - \frac{\phi_{d1}}{\phi_{11}} \leq 1
+  k_1 = \frac{\phi_{21}}{\phi_{11}} = 1 - \frac{\phi_{d1}}{\phi_{11}} \leq 1
 \]
 
+Coeficiente de acoplamiento de la bobina 2:
 \[
-  k_{12} = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
+  k_2 = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
 \]
 \end{frame}
 
-
-
-\begin{frame}[label={sec:orge45a45a}]{Coeficiente de inducción mutua}
+\begin{frame}[label={sec:org625a8ec}]{Coeficiente de inducción mutua}
 \begin{itemize}
 \item Mediante un balance energético puede demostrarse que:
 \end{itemize}
@@ -229,7 +257,7 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \]
 
 \[
-  k_{12} = k_{21} = k
+  k_1 = k_2 = k
 \]
 
 \[
@@ -248,7 +276,7 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgaad0a13}]{Resumen}
+\begin{frame}[label={sec:org98d3d44}]{Resumen}
 \[
   L_1 = N_1 \frac{\phi_{11}}{i_1}
 \]
@@ -269,18 +297,18 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \end{frame}
 
 \section{Representación Circuital}
-\label{sec:org57596c8}
-\begin{frame}[label={sec:org7586d4f}]{Flujos del mismo sentido}
+\label{sec:org8682d1e}
+\begin{frame}[label={sec:orgf87a705}]{Flujos del mismo sentido}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Acoplamiento1.png}
+\includegraphics[width=.9\linewidth]{../figs/acoplamientoTikz.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Acoplamiento1_circuito.png}
+\includegraphics[width=.9\linewidth]{../figs/acoplamiento_circuito.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -290,17 +318,17 @@ bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
 \end{frame}
-\begin{frame}[label={sec:org61b823a}]{Flujos del mismo sentido}
+\begin{frame}[label={sec:orgf5f2065}]{Flujos del mismo sentido}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Acoplamiento1.png}
+\includegraphics[width=.9\linewidth]{../figs/acoplamientoTikz.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Acoplamiento1_circuito.png}
+\includegraphics[width=.9\linewidth]{../figs/acoplamiento_circuito.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -310,24 +338,25 @@ induce una tensión positiva en el otro terminal con punto.
   u_2(t) &= M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org23401c7}]{Flujos contrapuestos}
+\begin{frame}[label={sec:orgcd489c9}]{Flujos contrapuestos}
 \begin{center}
-\includegraphics[height=0.9\textheight]{../figs/Acoplamiento2.png}
+\includegraphics[height=0.75\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 
 Las corrientes \(i_1\) e \(i_2\) producen flujos de sentido contrario.
 \end{frame}
-\begin{frame}[label={sec:orgcafe3e8}]{Representación Circuital}
+\begin{frame}[label={sec:org90cf2a3}]{Representación Circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 \end{column}
 
+
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2_circuito.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamiento_circuito_opuesto.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -336,17 +365,17 @@ bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
 \end{frame}
-\begin{frame}[label={sec:org8f01d7a}]{Representación Circuital}
+\begin{frame}[label={sec:orgddbd2f7}]{Representación Circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2_circuito.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamiento_circuito_opuesto.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -355,39 +384,18 @@ induce una tensión positiva en el otro terminal con punto.
   u_2(t) &= - M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgfdb5351}]{Criterio del punto}
-\begin{center}
-\includegraphics[width=.9\linewidth]{../figs/punto1.png}
-\end{center}
-\end{frame}
 
-\begin{frame}[label={sec:org7c327e6}]{Criterio del punto}
-\begin{center}
-\includegraphics[width=.9\linewidth]{../figs/punto2.png}
-\end{center}
-\end{frame}
-
-\begin{frame}[label={sec:org0cedcf0}]{Criterio del punto}
-\begin{center}
-\includegraphics[width=.9\linewidth]{../figs/punto3.png}
-\end{center}
-\end{frame}
-\begin{frame}[label={sec:orgb489ea9}]{Criterio del punto}
-\begin{center}
-\includegraphics[width=.9\linewidth]{../figs/punto4.png}
-\end{center}
-\end{frame}
-\begin{frame}[label={sec:org409ff05}]{Corriente Alterna Sinusoidal}
+\begin{frame}[label={sec:orga5838f5}]{Corriente Alterna Sinusoidal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento1.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento1_circuito.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamiento_circuito.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -396,17 +404,17 @@ induce una tensión positiva en el otro terminal con punto.
   \overline{U}_2 &= j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org81fd55d}]{Corriente Alterna Sinusoidal}
+\begin{frame}[label={sec:org8542897}]{Corriente Alterna Sinusoidal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/Acoplamiento2_circuito.png}
+\includegraphics[height=0.45\textheight]{../figs/acoplamiento_circuito_opuesto.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -415,9 +423,9 @@ induce una tensión positiva en el otro terminal con punto.
   \overline{U}_2 &= - j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org5ac560c}]{Ejemplo: acoplamiento de bobinas en serie}
+\begin{frame}[label={sec:org67c46f5}]{Ejemplo: acoplamiento de bobinas en serie}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/bobinas_serie1.png}
+\includegraphics[height=0.2\textheight]{../figs/bobinas_serie.pdf}
 \end{center}
 \[
   \overline{U}_1 = (j \omega L_1 + j \omega M) \overline{I}
@@ -431,9 +439,9 @@ induce una tensión positiva en el otro terminal con punto.
  \overline{U} = \overline{U}_1 + \overline{U}_2 \rightarrow \boxed{L = L_1 + L_2 + 2M}
 \]
 \end{frame}
-\begin{frame}[label={sec:org0bda34d}]{Ejemplo: acoplamiento de bobinas en serie}
+\begin{frame}[label={sec:org64d7063}]{Ejemplo: acoplamiento de bobinas en serie}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/bobinas_serie2.png}
+\includegraphics[height=0.2\textheight]{../figs/bobinas_serie_opuesto.pdf}
 \end{center}
 \[
   \overline{U}_1 = (j \omega L_1 - j \omega M) \overline{I}

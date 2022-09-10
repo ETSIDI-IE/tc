@@ -10,7 +10,7 @@
 * Introducción
 
 *** Cuadripolo
-
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/cuadripolo.pdf]]
 
 #+BEGIN_CENTER
@@ -25,7 +25,7 @@
 ** Parámetros de Impedancia
 
 *** Definición
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_fuentes_corriente.pdf]]
 
 Mediante teorema de superposición:
@@ -41,6 +41,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$.
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_fuentes_corriente.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -67,7 +68,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{I}_2$
 #+END_EXPORT
 
 *** Circuito Equivalente
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/circuitoEquivalenteZ.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -259,10 +260,11 @@ Las impedancias de transferencia son idénticas
 
 **** Ejercicio
 Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la figura.
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/circuitoEquivalenteZReciproco.pdf]]
 
 *** Cuadripolo Simétrico
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/circuitoEquivalenteZSimetrico.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -300,7 +302,7 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la fig
 
 ** Parámetros de Admitancia
 *** Definición
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_fuentes_tension.pdf]]
 
 Mediante teorema de superposición:
@@ -316,6 +318,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$.
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_fuentes_tension.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -342,7 +345,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{V}_2$
 #+END_EXPORT
 
 *** Circuito Equivalente
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/circuitoEquivalenteY.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -535,12 +538,12 @@ Las admitancias de transferencia son idénticas
 
 **** Ejercicio
 Demostrar que un cuadripolo recíproco es equivalente al circuito en $\pi$ de la figura.
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/circuitoEquivalenteYReciproco.pdf]]
 
 *** Cuadripolo Simétrico
 
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/circuitoEquivalenteYSimetrico.pdf]]
 
 
@@ -579,7 +582,7 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en $\pi$ de la
 
 ** Parámetros Híbridos
 *** Definición
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_hibrido.pdf]]
 
 Mediante teorema de superposición:
@@ -596,6 +599,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_hibrido.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -622,7 +626,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 #+END_EXPORT
 
 *** Circuito Equivalente
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/circuitoEquivalenteH.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -740,7 +744,7 @@ Las variables independientes (/generadores/) son $\mathbf{I}_1$ e $\mathbf{V}_2$
 ** Parámetros Híbridos Inversos
 
 *** Definición
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_hibrido_inverso.pdf]]
 
 Mediante teorema de superposición:
@@ -756,6 +760,7 @@ Mediante teorema de superposición:
 Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$.
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_hibrido_inverso.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -782,7 +787,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 #+END_EXPORT
 
 *** Circuito Equivalente
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/circuitoEquivalenteG.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -900,7 +905,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 ** Parámetros de Transmisión
 
 *** Definición
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_transmision.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -918,6 +923,7 @@ Las variables independientes (/generadores/) son $\mathbf{V}_1$ e $\mathbf{I}_2$
 #+END_CENTER
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_transmision.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -963,6 +969,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/cuadripolo_transmision.pdf]]
 
 ****                                                               :BMCOL:
@@ -983,7 +990,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 ** Parámetros de Transmisión Inversa
 
 *** Definición
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -1000,6 +1007,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 #+END_CENTER
 
 *** Expresión Matricial
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -1044,6 +1052,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/cuadripolo_transmision_inversa.pdf]]
 
 ****                                                               :BMCOL:
@@ -1235,7 +1244,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 :PROPERTIES:
 :BEAMER_opt: plain
 :END:
-#+ATTR_LATEX: :width 1.15\textwidth
+#+ATTR_LATEX: :height \textheight
 [[file:../figs/Tabla_Parametros.pdf]]
 
 *** Reciprocidad
@@ -1294,7 +1303,7 @@ Además:
 
 ** Situación General
 *** 
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -1305,7 +1314,7 @@ Además:
 #+END_EXPORT
 
 *** 
-
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -1321,9 +1330,9 @@ Además:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
@@ -1349,9 +1358,9 @@ Además:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
@@ -1379,9 +1388,9 @@ Además:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
-
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/cuadripolo_cargado_fuente_corriente.pdf]]
 
 
@@ -1423,7 +1432,7 @@ Demuestra que la impedancia de entrada del circuito a la derecha de la fuente re
 
 ¿Qué impedancia de carga $\mathbf{Z}_L$ hay que conectar a la salida del cuadripolo para obtener la máxima transferencia de potencia?
 
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/cuadripolo_cargado_fuente_tension.pdf]]
 
 ** Parámetros Imagen
@@ -1440,14 +1449,14 @@ Para un cuadripolo *recíproco* y *simétrico* se definen los parámetros imagen
 
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.7
+:BEAMER_col: 0.5
 :END:
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_impedancia_caracteristica.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.4
+:BEAMER_col: 0.5
 :END:
 
 #+BEGIN_EXPORT latex 
@@ -1483,14 +1492,14 @@ Para un cuadripolo *recíproco* y *simétrico* se definen los parámetros imagen
 
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.6
+:BEAMER_col: 0.5
 :END:
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cuadripolo_impedancia_caracteristica.pdf]]
 
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.4
+:BEAMER_col: 0.5
 :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -1749,12 +1758,13 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 :END:
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.9
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-serie-interaccion.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.3
+:BEAMER_col: 0.5
 :END:
 - Entrada
 #+BEGIN_EXPORT latex
@@ -1783,13 +1793,15 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 Si no hay interacción, al aplicar superposición la corriente de circulación debe ser nula *en ambos casos*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-serie-superposicion-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-serie-superposicion-salida.pdf]]
 
 *** Test de Brune
@@ -1799,13 +1811,15 @@ Si no hay interacción, al aplicar superposición la corriente de circulación d
 Aplicando superposición desconectamos los cuadripolos: *si no hay interacción, no habrá cambio de tensión*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-serie-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-serie-brune-salida.pdf]]
 
 
@@ -1886,13 +1900,15 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 Si no hay interacción, al aplicar superposición la corriente de circulación debe ser nula *en ambos casos*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-superposicion-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-superposicion-salida.pdf]]
 
 *** Test de Brune
@@ -1902,13 +1918,15 @@ Si no hay interacción, al aplicar superposición la corriente de circulación d
 Aplicando superposición desconectamos los cuadripolos: *si no hay interacción, no habrá cambio de tensión*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-brune-salida.pdf]]
 
 *** Test de Brune
@@ -1918,13 +1936,15 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 Aplicando superposición desconectamos los cuadripolos: *si no hay interacción, no habrá cambio de tensión*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-brune-entrada2.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-paralelo-brune-salida2.pdf]]
 
 *** Métodos para evitar interacción
@@ -1937,13 +1957,13 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 *** Conexión
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.7
+:BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.75\textheight
 [[file:../figs/serie-paralelo.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.35
+:BEAMER_col: 0.5
 :END:
 
 ***** Relaciones
@@ -1967,26 +1987,28 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 Aplicando superposición desconectamos los cuadripolos: *si no hay interacción, no habrá cambio de tensión*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-paralelo-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/serie-paralelo-brune-salida.pdf]]
 
 ** Asociación Paralelo-Serie
 *** Conexión
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.7
+:BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.75\textheight
 [[file:../figs/paralelo-serie.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.35
+:BEAMER_col: 0.5
 :END:
 ***** Relaciones
 #+BEGIN_EXPORT latex
@@ -2010,17 +2032,20 @@ Aplicando superposición desconectamos los cuadripolos: *si no hay interacción,
 Aplicando superposición desconectamos los cuadripolos: *si no hay interacción, no habrá cambio de tensión*.
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-serie-brune-entrada.pdf]]
 ****                                                               :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.65
+:BEAMER_col: 0.5
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/paralelo-serie-brune-salida.pdf]]
 ** Asociación Cascada
 
 *** Conexión
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/cascada.pdf]]
 
 #+BEGIN_EXPORT latex

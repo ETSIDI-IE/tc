@@ -1,6 +1,6 @@
-% Created 2020-04-30 jue 16:59
+% Created 2022-09-10 sáb 18:54
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -19,46 +19,50 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
-\usepackage{esdiff}
+\usepackage{diffcoeff}
 \usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 \newcommand{\atan}{\mathrm{atan}}
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\usetheme[hideothersubsections]{Goettingen}
+\parskip=5pt
+\usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
-\date{Septiembre 2018}
+\date{}
 \title{Introducción al Régimen Transitorio}
 \subtitle{Teoría de Circuitos III}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Introducción al Régimen Transitorio},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.3.6)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{¿Qué es el régimen transitorio?}
-\label{sec:orgeab92ea}
-\begin{frame}[label={sec:org8fae7e5}]{Permanente y Estacionario}
+\label{sec:org4e587a8}
+\begin{frame}[label={sec:org55c3c52}]{Permanente y Estacionario}
 \begin{block}{Régimen permanente o estacionario}
 Las tensiones y corrientes de un circuito son constantes (continua) o periódicas (alterna) (circuito estabilizado)
 \end{block}
@@ -71,7 +75,7 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgb7fd69d}]{Acumulación de Energía}
+\begin{frame}[label={sec:orga5fc571}]{Acumulación de Energía}
 \begin{block}{Régimen Permanente}
 \alert{Energía acumulada} en \alert{bobinas} y \alert{condensadores}
 \end{block}
@@ -85,9 +89,9 @@ Las tensiones y corrientes de un circuito son constantes (continua) o periódica
 \end{frame}
 
 \section{Métodos de resolución}
-\label{sec:orgea131ae}
+\label{sec:org8dcb18e}
 
-\begin{frame}[label={sec:org51ccf0a}]{Análisis Clásico}
+\begin{frame}[label={sec:org43fe6a8}]{Análisis Clásico}
 \begin{itemize}
 \item Formulación de las ecuaciones integro-diferenciales y resolución \alert{directa}.
 \end{itemize}
@@ -101,7 +105,7 @@ LC \diff[2]{u_c}{t} + RC \diff{u_c}{t} + u_c = 0
 \item Permite comprensión del funcionamiento del circuito.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orga8b652c}]{Transformada de Laplace}
+\begin{frame}[label={sec:org1f4d94f}]{Transformada de Laplace}
 \begin{itemize}
 \item Transforma las ecuaciones integro-diferenciales en ecuaciones algebraicas de una variable compleja.
 \end{itemize}
@@ -113,7 +117,7 @@ LC s^2 + RC s + 1 = 0
 \item Método sistemático y potente, adecuado para cualquier tipo de circuito.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org67b92a8}]{Variables de estado}
+\begin{frame}[label={sec:org4db4efe}]{Variables de estado}
 \begin{itemize}
 \item Método proveniente de la ingeniería de control.
 \item Las variables de estado son aquellas que definen la evolución de un sistema.
@@ -131,8 +135,8 @@ LC s^2 + RC s + 1 = 0
 \end{itemize}
 \end{frame}
 \section{Condiciones iniciales}
-\label{sec:org099a045}
-\begin{frame}[label={sec:orgf6de9cd}]{Respuesta completa de una red lineal}
+\label{sec:org047c190}
+\begin{frame}[label={sec:org4317e9c}]{Respuesta completa de una red lineal}
 \begin{itemize}
 \item La respuesta completa de una red lineal a un cambio tiene dos componentes:
 \begin{itemize}
@@ -141,20 +145,20 @@ LC s^2 + RC s + 1 = 0
 \end{itemize}
 \end{itemize}
 \[
- f(t) = f_n(t) + f_\infty(t) 
+ \boxed{f(t) = f_n(t) + f_\infty(t) }
  \]
 \begin{itemize}
 \item Las constantes de integración de la respuesta natural se determinan con las condiciones iniciales del circuito.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org1019cbe}]{Condiciones iniciales}
+\begin{frame}[label={sec:org5552178}]{Condiciones iniciales}
 \begin{itemize}
 \item \alert{Condiciones Iniciales}: estado del circuito en el instante temporal en el que se produce el cambio (p.ej. apertura de interruptor).
 \item Este instante temporal se representa habitualmente con \(t = 0\).
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgfcee067}]{\(t = 0^+\) y \(t = 0^-\)}
+\begin{frame}[label={sec:org4c166d3}]{\(t = 0^+\) y \(t = 0^-\)}
 \begin{itemize}
 \item El estado previo a la conmutación es \(t = 0^-\) 
 \begin{itemize}
@@ -166,7 +170,7 @@ LC s^2 + RC s + 1 = 0
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org9438a2c}]{Resistencia}
+\begin{frame}[label={sec:orge3930cc}]{Resistencia}
 \[
 u(t) = R i(t)
 \]
@@ -176,7 +180,7 @@ u(t) = R i(t)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgb1b746b}]{Inductancia}
+\begin{frame}[label={sec:orgce14b8c}]{Inductancia}
 \[
 u(t) = L \diff{i_L(t)}{t}
 \]
@@ -193,7 +197,7 @@ i_L(0^-) = i_L(0^+)
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org667007a}]{Capacidad}
+\begin{frame}[label={sec:orge9e766b}]{Capacidad}
 \[
 i(t) = C \diff{u_C(t)}{t}
 \]
@@ -209,7 +213,7 @@ u(t) = \frac{1}{C} \int^t_{-\infty}i(t) \mathrm{d}t
 u_C(0^-) = u_C(0^+)
 \]
 \end{frame}
-\begin{frame}[label={sec:orgc10d556}]{Circuitos Equivalentes}
+\begin{frame}[label={sec:orgc327838}]{Circuitos Equivalentes en \(t = 0^+\)}
 \begin{itemize}
 \item Sustituir fuentes de tensión \(u_g(t)\) por \(u_g(0^+)\).
 \item Sustituir fuentes de corriente \(i_g(t)\) por \(i_g(0^+)\).
@@ -222,8 +226,8 @@ u_C(0^-) = u_C(0^+)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org1755650}]{Ejemplo}
-\begin{block}{(Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito, pasa a la posición (2)}
+\begin{frame}[label={sec:org3c1442b}]{Ejemplo}
+\begin{block}{(Sep 2010) El interruptor lleva en la posición (1) desde un tiempo infinito y pasa a la posición (2) en \(t = 0\).}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/ejemplo_condiciones_iniciales.pdf}
 \end{center}
@@ -231,8 +235,8 @@ u_C(0^-) = u_C(0^+)
 \end{frame}
 
 \section{Funciones importantes}
-\label{sec:orgda71b82}
-\begin{frame}[label={sec:orgcbc688f}]{Función Escalón}
+\label{sec:org3d429cb}
+\begin{frame}[label={sec:org6bb6fc0}]{Función Escalón}
 \[   
 u(t - t_0) = 
      \begin{cases}
@@ -241,11 +245,11 @@ u(t - t_0) =
      \end{cases}
 \]
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/funcion_escalon.pdf}
+\includegraphics[height=0.5\textheight]{../figs/funcion_escalon.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org14585dc}]{Función Escalón (\(t_0 = 0\))}
+\begin{frame}[label={sec:orgc8adc3e}]{Función Escalón (\(t_0 = 0\))}
 \[   
 u(t) = 
      \begin{cases}
@@ -253,13 +257,12 @@ u(t) =
        1 &\quad t > 0\\
      \end{cases}
 \]
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/funcion_escalon0.pdf}
+\includegraphics[height=0.5\textheight]{../figs/funcion_escalon0.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org17e1c22}]{Función Exponencial}
+\begin{frame}[label={sec:orgfdaee4d}]{Función Exponencial}
 \begin{itemize}
 \item Es igual a su derivada.
 \end{itemize}
@@ -275,13 +278,13 @@ u(t) =
   \diff{f(t)}{t} = b f(t) \Rightarrow f(t) = A e^{bt}
 \]
 \end{frame}
-\begin{frame}[label={sec:org9ac680c}]{Función Exponencial}
+\begin{frame}[label={sec:org9f654a2}]{Función Exponencial}
 \begin{itemize}
 \item Cuando el exponente es positivo la respuesta crece indefinidamente (circuito inestable).
 \item Cuando el exponente es negativo la respuesta decae hasta 0 (circuito estable).
 \end{itemize}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/exp_decreciente.pdf}
+\includegraphics[height=0.5\textheight]{../figs/exp_decreciente.pdf}
 \end{center}
 \end{frame}
 \end{document}

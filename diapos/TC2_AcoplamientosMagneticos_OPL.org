@@ -96,7 +96,7 @@ u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 :PROPERTIES:
 :beamer_opt: plain
 :END: 
-
+#+ATTR_LATEX: :height 0.9\textheight
 [[file:../figs/acoplamientoTikz.pdf]]
 
 ** 
@@ -167,7 +167,7 @@ $\phi_{i}$: flujo total que atraviesa la bobina $i$
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
-#+ATTR_LATEX: :height 0.65\textheight
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:../figs/acoplamientoTikz.pdf]]
 
 #+begin_center
@@ -207,7 +207,7 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
-#+ATTR_LATEX: :height 0.65\textheight
+#+ATTR_LATEX: :height 0.45\textheight
 [[file:../figs/acoplamientoTikz.pdf]]
 
 #+begin_center
@@ -215,7 +215,7 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 #+end_center
 
 ** Coeficiente de acoplamiento magnético
-#+ATTR_LATEX: :height 0.5\textheight
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/acoplamientoTikz.pdf]]
 
 Coeficiente de acoplamiento de la bobina 1:
@@ -330,7 +330,7 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 #+end_export
 ** Flujos contrapuestos
-#+ATTR_LATEX: :height 0.8\textheight
+#+ATTR_LATEX: :height 0.75\textheight
 [[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
@@ -431,6 +431,7 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
+#+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/bobinas_serie.pdf]]
 #+begin_export latex
 \[
@@ -446,6 +447,7 @@ induce una tensión positiva en el otro terminal con punto.
 \]
 #+end_export
 ** Ejemplo: acoplamiento de bobinas en serie
+#+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/bobinas_serie_opuesto.pdf]]
 #+begin_export latex
 \[

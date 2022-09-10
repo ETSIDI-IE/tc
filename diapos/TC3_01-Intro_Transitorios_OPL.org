@@ -147,6 +147,7 @@ u(t - t_0) =
      \end{cases}
 \]
 #+END_EXPORT
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/funcion_escalon.pdf]]
 
 ** Función Escalón ($t_0 = 0$)
@@ -160,7 +161,7 @@ u(t) =
      \end{cases}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/funcion_escalon0.pdf]]
 
 ** Función Exponencial
@@ -181,5 +182,6 @@ u(t) =
 ** Función Exponencial
 - Cuando el exponente es positivo la respuesta crece indefinidamente (circuito inestable).
 - Cuando el exponente es negativo la respuesta decae hasta 0 (circuito estable).
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/exp_decreciente.pdf]]
 

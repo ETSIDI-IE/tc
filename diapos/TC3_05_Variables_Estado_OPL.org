@@ -77,7 +77,7 @@ El comportamiento de un circuito puede ser descrito con ecuaciones diferenciales
 - La curva comenzará en el punto de condiciones iniciales, $[i_L(0^+), v_C(0^+)]$, y finalizará en el régimen permanente $[i_L(\infty), v_C(\infty)]$.
 
 ** Trayectoria
-
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/trayectoria.pdf]]
 
 * Topología de Redes
@@ -85,26 +85,27 @@ El comportamiento de un circuito puede ser descrito con ecuaciones diferenciales
 ** Definiciones
 
 - *Grafo*: representación simplificada de un circuito eléctrico.
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Árbol*: conjunto de ramas que unen todos los nudos sin formar caminos cerrados.
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Cuerdas* o *Eslabones*: ramas no incluidas en el árbol.
-- *Lazos básicos*: lazos de un árbol con sólo un eslabón. 
+- *Lazos básicos*: lazos de un árbol con sólo un eslabón.
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/grafo.pdf]]
 
 ** Definiciones
 
 - *Grupos de corte*: conjunto de ramas al que aplica la LKC.
 - *Grupos de corte básicos*: grupo de corte que contiene sólo una rama del árbol.
-
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/grafo.pdf]]
 
 ** LKC y LKV

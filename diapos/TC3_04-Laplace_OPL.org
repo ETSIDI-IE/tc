@@ -291,7 +291,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/Resistencia_Laplace.pdf]]
 
 ** Bobina
@@ -400,6 +400,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
 * Diagramas Polos y Ceros
 
 ** Función de Transferencia
+#+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/TransferFunction.pdf]]
 
 #+BEGIN_EXPORT latex
@@ -472,6 +473,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
 [[file:../figs/InterpretacionGeometrica0.pdf]]
 
 ** Significado Diagrama Polos y Ceros
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/PoleZero.pdf]]
 
 # 1. A real pole p i = −σ in the left-half of the s-plane defines an exponentially decaying component
@@ -497,7 +499,7 @@ Nuevamente calculamos con el método algebraico, y terminamos "completando cuadr
   y_n(t) = A_1 e^{-3t} + A_2 e^{-0.1 t} + A_3 e^{-t} \sin(2 t + \theta)
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/Ejemplo_Polos.pdf]]
 
 

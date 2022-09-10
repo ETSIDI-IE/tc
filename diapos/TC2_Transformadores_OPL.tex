@@ -1,6 +1,6 @@
-% Created 2019-05-07 mar 21:43
+% Created 2022-09-10 sáb 19:07
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -19,47 +19,52 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
-\usepackage{esdiff}
+\usepackage{diffcoeff}
 \usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 \newcommand{\atan}{\mathrm{atan}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\usetheme[hideothersubsections]{Boadilla}
+\parskip=5pt
+\usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
-\date{Mayo 2019}
+\date{}
 \title{Transformadores}
 \subtitle{Teoría de Circuitos II}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Transformadores},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
-\begin{frame}[label={sec:orgdec4f88}]{Recordatorio}
+\begin{frame}[label={sec:org0ef0085}]{Recordatorio}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Acoplamiento1.png}
+\includegraphics[width=.9\linewidth]{../figs/acoplamientoTikz.pdf}
 \end{center}
 \end{column}
 \begin{column}{0.3\columnwidth}
@@ -85,9 +90,9 @@
 \end{frame}
 
 \section{Transformador Real}
-\label{sec:orgc079ccb}
+\label{sec:orgf452604}
 
-\begin{frame}[label={sec:orgc068016}]{Ecuaciones del Transformador Real}
+\begin{frame}[label={sec:orgcd79e08}]{Ecuaciones del Transformador Real}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/Trafo_Real.pdf}
 \end{center}
@@ -98,7 +103,7 @@
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgc605a54}]{Ejemplo: impedancia de entrada desde primario}
+\begin{frame}[label={sec:org5ed13a3}]{Ejemplo: impedancia de entrada desde primario}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/Trafo_Real_ImpSec.pdf}
 \end{center}
@@ -113,7 +118,7 @@ Ecuación de la carga
   \overline{U}_2 = - \overline{I}_2 \cdot \overline{Z}_L
 \]
 \end{frame}
-\begin{frame}[label={sec:orgb2ac225}]{Ejemplo: impedancia de entrada desde primario}
+\begin{frame}[label={sec:orge5cad87}]{Ejemplo: impedancia de entrada desde primario}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/Trafo_Real_ImpSec.pdf}
 \end{center}
@@ -123,7 +128,7 @@ Combinando la ecuación del secundario con la ecuación de la carga:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgcb657e2}]{Ejemplo: impedancia de entrada desde primario}
+\begin{frame}[label={sec:org01ae704}]{Ejemplo: impedancia de entrada desde primario}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/Trafo_Real_ImpSec.pdf}
 \end{center}
@@ -134,8 +139,8 @@ Combinando con la ecuación del primario:
 \end{frame}
 
 \section{Transformador Perfecto}
-\label{sec:org95a9495}
-\begin{frame}[label={sec:orgf6bc4e0}]{Definición}
+\label{sec:orgc2f171c}
+\begin{frame}[label={sec:org28fd918}]{Definición}
 \begin{center}
 \includegraphics[height=0.35\textheight]{../figs/Trafo_Perfecto.pdf}
 \end{center}
@@ -156,7 +161,7 @@ El acoplamiento es perfecto.
 \end{array} \right.
 \]
 \end{frame}
-\begin{frame}[label={sec:orge68ed92}]{Relación de Transformación}
+\begin{frame}[label={sec:orgd1ae28c}]{Relación de Transformación}
 Retomamos las ecuaciones de \(M_{12} = M_{21} = M\):
 \[
   N_1 \frac{\phi_{12}}{i_2} = N_2 \frac{\phi_{21}}{i_1}
@@ -177,7 +182,7 @@ Obtenemos la relación de transformación:
   \boxed{\frac{L_1}{L_2} = \left(\frac{N_1}{N_2}\right)^2 = a^2}
 \]
 \end{frame}
-\begin{frame}[label={sec:orgc9329b0}]{Ecuaciones del Transformador Perfecto}
+\begin{frame}[label={sec:org0003fb9}]{Ecuaciones del Transformador Perfecto}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/Trafo_Perfecto.pdf}
 \end{center}
@@ -187,7 +192,7 @@ Obtenemos la relación de transformación:
   \overline{U}_2 &= j \omega M \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org933d811}]{Relación de Tensiones}
+\begin{frame}[label={sec:org4b8da8f}]{Relación de Tensiones}
 Dividiendo las ecuaciones:
 \[
   \frac{\overline{U}_1}{\overline{U}_2} = \frac{j \omega L_1 \cdot \overline{I}_1 + j \omega M \cdot \overline{I}_2}{j \omega M \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2}
@@ -211,7 +216,7 @@ Obtenemos:
   \boxed{\frac{\overline{U}_1}{\overline{U}_2} = a = \frac{N_1}{N_2}}
 \]
 \end{frame}
-\begin{frame}[label={sec:org9ca8fe8}]{Ejemplo: Impedancia de Entrada}
+\begin{frame}[label={sec:orga90c7c5}]{Ejemplo: Impedancia de Entrada}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/TrafoPerfecto_ImpedanciaSecundario.pdf}
 \end{center}
@@ -226,7 +231,7 @@ Ecuación de la impedancia:
   \overline{U}_2 = \overline{Z}_L \cdot \overline{I}_2
 \]
 \end{frame}
-\begin{frame}[label={sec:org8d0d838}]{Ejemplo: Impedancia de Entrada}
+\begin{frame}[label={sec:orgbcefa30}]{Ejemplo: Impedancia de Entrada}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/TrafoPerfecto_ImpedanciaSecundario.pdf}
 \end{center}
@@ -239,7 +244,7 @@ Y sustituimos:
   \overline{Z}_{in} = \frac{\overline{U}_1}{\overline{I}_1} = j\omega L_1 + \frac{j \omega M}{j\omega L_2 + \overline{Z}_L}
 \]
 \end{frame}
-\begin{frame}[label={sec:orge7b54b6}]{Ejemplo: Impedancia de Entrada}
+\begin{frame}[label={sec:org8d82843}]{Ejemplo: Impedancia de Entrada}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/TrafoPerfecto_ImpedanciaSecundario.pdf}
 \end{center}
@@ -253,16 +258,16 @@ Teniendo en cuenta la relación entre \(L_1\), \(L_2\) y \(M\):
   \boxed{\overline{Z}_{in} = a^2 \cdot \frac{j \omega L_2 \cdot \overline{Z}_L}{j\omega L_2 + \overline{Z}_L}}
 \]
 \end{frame}
-\begin{frame}[label={sec:org962a332}]{Ejemplo: Equivalente de Thévenin desde secundario}
+\begin{frame}[label={sec:orgb48a231}]{Ejemplo: Equivalente de Thévenin desde secundario}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
+\includegraphics[height=0.8\textheight]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:orgcc8429b}]{Tensión de Thévenin}
+\begin{frame}[label={sec:org3e22c9b}]{Tensión de Thévenin}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
+\includegraphics[height=0.5\textheight]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
 \end{center}
 \end{column}
 \begin{column}{0.6\columnwidth}
@@ -291,12 +296,12 @@ Teniendo en cuenta que \(M = L_1/a\):
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org58da8ce}]{Impedancia de Thévenin}
+\begin{frame}[label={sec:orgdc97ec3}]{Impedancia de Thévenin}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/Trafo_Perfecto_ImpedanciaPrimario.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org91a9d47}]{Impedancia de Thévenin}
+\begin{frame}[label={sec:org62462de}]{Impedancia de Thévenin}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -324,7 +329,7 @@ Con \(L_2 = L_1/a^2\) y \(M = L_1/a\):
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgb6da8ca}]{Resumen: Equivalente de Thévenin}
+\begin{frame}[label={sec:orge59f227}]{Resumen: Equivalente de Thévenin}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
 \end{center}
@@ -340,8 +345,8 @@ Con \(L_2 = L_1/a^2\) y \(M = L_1/a\):
 
 
 \section{Transformador Ideal}
-\label{sec:orgd188875}
-\begin{frame}[label={sec:orgc0b1cf1}]{Definición}
+\label{sec:org34fb9ec}
+\begin{frame}[label={sec:org4625ccb}]{Definición}
 \begin{center}
 \includegraphics[height=0.35\textheight]{../figs/Trafo_Ideal.pdf}
 \end{center}
@@ -357,13 +362,12 @@ El acoplamiento es perfecto.
 \]
 
 Las bobinas tienen un número muy elevado de espiras.
-
 \begin{align*}
   N_1 &\to \infty\\
   N_2 &\to \infty
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org56961e6}]{El flujo en cada bobina es nulo}
+\begin{frame}[label={sec:org024b582}]{El flujo en cada bobina es nulo}
 Para que las tensiones inducidas sean finitas\ldots{} 
 
 \begin{align*}
@@ -381,7 +385,7 @@ Siendo:
   \overline{\phi}_2 &= \overline{\phi}_{22} + \overline{\phi}_{21}
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org9df338c}]{El flujo mutuo es nulo}
+\begin{frame}[label={sec:org233b397}]{El flujo mutuo es nulo}
 Teniendo en cuenta que el acoplamiento es perfecto, \(k = 1\):
 \[
   \left.
@@ -403,7 +407,7 @@ O también:
   \boxed{\overline{\phi}_{11} + \overline{\phi}_{22} = 0}
 \]
 \end{frame}
-\begin{frame}[label={sec:orge8b9149}]{Relación de Transformación}
+\begin{frame}[label={sec:orgbc93898}]{Relación de Transformación}
 Hemos obtenido:
 \[
   \overline{\phi}_{11} + \overline{\phi}_{22} = 0
@@ -426,7 +430,7 @@ Y con la relación entre ambas obtenemos
   \boxed{\frac{\overline{I}_1}{\overline{I}_2} = \mp \frac{1}{a} = \mp \frac{N_2}{N_1}}
 \]
 \end{frame}
-\begin{frame}[label={sec:orgeffb330}]{Un transformador ideal no consume potencia}
+\begin{frame}[label={sec:org00c5da6}]{Un transformador ideal no consume potencia}
 \[
   \overline{S}_1 = \overline{V}_1 \cdot \overline{I}_1^*
 \]
@@ -448,8 +452,8 @@ Y con la relación entre ambas obtenemos
 \]
 \end{frame}
 \section{Transferencia de Circuitos}
-\label{sec:orge19d3d9}
-\begin{frame}[label={sec:orgb01253f}]{Fuente de Tensión de Secundario a Primario}
+\label{sec:org45ab9c9}
+\begin{frame}[label={sec:org8d63bb3}]{Fuente de Tensión de Secundario a Primario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_VSec.pdf}
 \end{center}
@@ -458,7 +462,7 @@ Y con la relación entre ambas obtenemos
   \overline{V}_1 = a \cdot \overline{V}_2 \rightarrow \boxed{\overline{\epsilon}_{g1} = a \cdot \overline{\epsilon}_g}
 \]
 \end{frame}
-\begin{frame}[label={sec:orgc0f2aec}]{Fuente de Tensión de Primario a Secundario}
+\begin{frame}[label={sec:orgecf4893}]{Fuente de Tensión de Primario a Secundario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_VPrim.pdf}
 \end{center}
@@ -467,7 +471,7 @@ Y con la relación entre ambas obtenemos
   \overline{V}_2 = \overline{V}_1 / a \rightarrow \boxed{\overline{\epsilon}_{g2} = \overline{\epsilon}_g / a}
 \]
 \end{frame}
-\begin{frame}[label={sec:org361efd4}]{Fuente de Corriente de Secundario a Primario}
+\begin{frame}[label={sec:org2b98aae}]{Fuente de Corriente de Secundario a Primario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_ISec.pdf}
 \end{center}
@@ -476,20 +480,18 @@ Y con la relación entre ambas obtenemos
   \overline{I}_1 = \overline{I}_2 / a \rightarrow \boxed{\overline{I}_{g1} = \overline{I}_g / a} 
 \]
 \end{frame}
-\begin{frame}[label={sec:org1140e9c}]{Fuente de Corriente de Primario a Secundario}
+\begin{frame}[label={sec:orgd2ed657}]{Fuente de Corriente de Primario a Secundario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_IPrim.pdf}
 \end{center}
-
 \[
   \overline{I}_2 = a \cdot \overline{I}_1 \rightarrow \boxed{\overline{I}_{g2} = a \cdot \overline{I}_g}
 \]
 \end{frame}
-\begin{frame}[label={sec:org6a81459}]{Impedancia de Secundario a Primario}
+\begin{frame}[label={sec:orgde915be}]{Impedancia de Secundario a Primario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_ZSec.pdf}
 \end{center}
-
 \[
   \left.
     \begin{array}{ll}
@@ -499,11 +501,10 @@ Y con la relación entre ambas obtenemos
    \rightarrow \boxed{\overline{Z}_1 = \frac{\overline{V}_1}{\overline{I}_1} = a^2 \cdot \overline{Z}} 
 \]
 \end{frame}
-\begin{frame}[label={sec:org6f9a461}]{Impedancia de Primario a Secundario}
+\begin{frame}[label={sec:orgcfb9175}]{Impedancia de Primario a Secundario}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrafoIdeal_ZPrim.pdf}
 \end{center}
-
 \[
   \left.
     \begin{array}{ll}
@@ -514,8 +515,8 @@ Y con la relación entre ambas obtenemos
 \]
 \end{frame}
 \section{Transformador Perfecto vs. Transformador Ideal}
-\label{sec:orgfc0e37d}
-\begin{frame}[label={sec:orgad0c699}]{Recordatorio: impedancia de entrada de un T. Perfecto}
+\label{sec:org1b63a2d}
+\begin{frame}[label={sec:org193763a}]{Recordatorio: impedancia de entrada de un T. Perfecto}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/TrafoPerfecto_ImpedanciaSecundario.pdf}
 \end{center}
@@ -528,7 +529,7 @@ Y con la relación entre ambas obtenemos
   \boxed{\overline{Z}_{in} = a^2 \cdot \frac{j \omega L_2 \cdot \overline{Z}_L}{j\omega L_2 + \overline{Z}_L}}
 \]
 \end{frame}
-\begin{frame}[label={sec:org54cf8a2}]{Circuito equivalente con transformador ideal}
+\begin{frame}[label={sec:org75b4417}]{Circuito equivalente con transformador ideal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -551,7 +552,7 @@ Y con la relación entre ambas obtenemos
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org39a62a1}]{Recordatorio: Equivalente de Thévenin}
+\begin{frame}[label={sec:org3ec8e1e}]{Recordatorio: Equivalente de Thévenin}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/Trafo_Perfecto_FuentePrimario.pdf}
 \end{center}
@@ -565,7 +566,7 @@ Y con la relación entre ambas obtenemos
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org5575a21}]{Equivalente en primario con transformador ideal}
+\begin{frame}[label={sec:orgac13de6}]{Equivalente en primario con transformador ideal}
 \[
   \overline{Z}_{th} = \frac{1}{a^2} \cdot \frac{j \omega L_1 \cdot \overline{Z}_g}{j\omega L_1 + \overline{Z}_g}
 \]
@@ -578,7 +579,7 @@ Y con la relación entre ambas obtenemos
 \includegraphics[height=0.5\textheight]{../figs/TrafoPerfecto_Ideal_FuentePrim.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org3c4df0d}]{Equivalente en secundario con transformador ideal}
+\begin{frame}[label={sec:org156c2a3}]{Equivalente en secundario con transformador ideal}
 \[
   \overline{Z}_{th} = a^2 \cdot \frac{j \omega L_2 \cdot \overline{Z}_g}{j\omega L_2 + \overline{Z}_g}
 \]
@@ -592,16 +593,16 @@ Y con la relación entre ambas obtenemos
 \end{center}
 \end{frame}
 \section{Transformador de Varios Devanados}
-\label{sec:orgb428816}
-\begin{frame}[label={sec:org42eee8f}]{Transformador Real de Varios Devanados}
+\label{sec:org215f07a}
+\begin{frame}[label={sec:orgefbe2c3}]{Transformador Real de Varios Devanados}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/TrafoVariosDevanados.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org36d9744}]{Ecuaciones del Transformador Real}
+\begin{frame}[label={sec:org3edc356}]{Ecuaciones del Transformador Real}
 \begin{center}
-\includegraphics[height=0.6\textheight]{../figs/TrafoVariosDevanados.pdf}
+\includegraphics[height=0.5\textheight]{../figs/TrafoVariosDevanados.pdf}
 \end{center}
 
 \begin{align*}
@@ -611,7 +612,7 @@ Y con la relación entre ambas obtenemos
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org7860964}]{Transformador Perfecto}
+\begin{frame}[label={sec:org44eda4a}]{Transformador Perfecto}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -633,9 +634,9 @@ El acoplamiento es perfecto.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org69ec244}]{Ecuaciones del Transformador Perfecto}
+\begin{frame}[label={sec:org2e1ceca}]{Ecuaciones del Transformador Perfecto}
 \begin{center}
-\includegraphics[height=0.6\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
+\includegraphics[height=0.5\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
 \end{center}
 
 \begin{align*}
@@ -645,7 +646,7 @@ El acoplamiento es perfecto.
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgf35a579}]{Relaciones de Transformación}
+\begin{frame}[label={sec:org98f4efd}]{Relaciones de Transformación}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -667,15 +668,15 @@ El acoplamiento es perfecto.
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc630a92}]{Transformador Ideal}
+\begin{frame}[label={sec:org12ed323}]{Transformador Ideal}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org39608ba}]{Relación de Transformación del Transformador Ideal}
+\begin{frame}[label={sec:orgbfad91f}]{Relación de Transformación del Transformador Ideal}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
+\includegraphics[height=0.35\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
 \end{center}
 
 Debido a las condiciones de idealidad:
@@ -694,14 +695,14 @@ En términos de corriente:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org054798d}]{Impedancia de Entrada}
+\begin{frame}[label={sec:org7ae2ac9}]{Impedancia de Entrada}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia.pdf}
 \end{center}
 \end{frame}
 
 
-\begin{frame}[label={sec:org66ddb48}]{Impedancia de Entrada}
+\begin{frame}[label={sec:org6d8291f}]{Impedancia de Entrada}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -731,7 +732,7 @@ Resultado:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org4b54d05}]{Circuito Equivalente}
+\begin{frame}[label={sec:org42cc4aa}]{Circuito Equivalente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -748,24 +749,24 @@ Resultado:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd00c043}]{Circuito Equivalente de un Transformador Perfecto}
+\begin{frame}[label={sec:orgf5c0ae4}]{Circuito Equivalente de un Transformador Perfecto}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
-Transformador Perfecto
 \begin{center}
 \includegraphics[width=\textwidth]{../figs/TrafoPerfectoVariosDevanados_Impedancia.pdf}
 \end{center}
+Transformador Perfecto
 \end{column}
 \begin{column}{0.5\columnwidth}
-Equivalente Ideal
 \begin{center}
 \includegraphics[width=\textwidth]{../figs/TrafoPerfectoIdealVariosDevanados_Impedancia.pdf}
 \end{center}
+Equivalente Ideal
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org812aaea}]{Circuito Equivalente de un Transformador Perfecto}
+\begin{frame}[label={sec:org7d358cf}]{Circuito Equivalente de un Transformador Perfecto}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -781,14 +782,14 @@ Equivalente Ideal
 \end{columns}
 \end{frame}
 \section{Autotransformador}
-\label{sec:org55f6364}
-\begin{frame}[label={sec:orgbec2e6e}]{Autotransformador Perfecto}
+\label{sec:org73d7a84}
+\begin{frame}[label={sec:org641a1d3}]{Autotransformador Perfecto}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/AutotrafoPerfecto.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8a09574}]{Ecuaciones del Autotransformador Perfecto}
+\begin{frame}[label={sec:orgee2c02c}]{Ecuaciones del Autotransformador Perfecto}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/AutotrafoPerfecto.pdf}
 \end{center}
@@ -798,13 +799,13 @@ Equivalente Ideal
   \overline{U}_2 &= j \omega (M + L_2) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org353c37d}]{Circuito Alternativo del Autotransformador Perfecto}
+\begin{frame}[label={sec:org8ba0d0e}]{Circuito Alternativo del Autotransformador Perfecto}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/AutotrafoPerfecto2.pdf}
+\includegraphics[height=0.8\textheight]{../figs/AutotrafoPerfecto2.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org235db51}]{Ecuaciones del Circuito Alternativo}
+\begin{frame}[label={sec:orgf7aa12d}]{Ecuaciones del Circuito Alternativo}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/AutotrafoPerfecto2.pdf}
 \end{center}
@@ -814,7 +815,7 @@ Equivalente Ideal
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgcacfa1d}]{Ecuaciones Comparadas}
+\begin{frame}[label={sec:org2156d47}]{Ecuaciones Comparadas}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -840,9 +841,9 @@ Equivalente Ideal
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgf9eb022}]{Transformador Perfecto Equivalente}
+\begin{frame}[label={sec:org7cfa4c7}]{Transformador Perfecto Equivalente}
 \begin{center}
-\includegraphics[height=0.6\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
+\includegraphics[height=0.5\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
 \end{center}
 
 \begin{align*}
@@ -851,9 +852,9 @@ Equivalente Ideal
   M' &= M + L_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org906b343}]{Transformador Perfecto Equivalente}
+\begin{frame}[label={sec:org8c8cb32}]{Transformador Perfecto Equivalente}
 \begin{center}
-\includegraphics[height=0.4\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
+\includegraphics[height=0.35\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
 \end{center}
 Comprobamos:
 \begin{align*}
@@ -864,7 +865,7 @@ Comprobamos:
      &= M + L_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org5704dc0}]{Autotransformador Ideal}
+\begin{frame}[label={sec:org33c90aa}]{Autotransformador Ideal}
 \begin{columns}
 \begin{column}[b]{0.5\columnwidth}
 \begin{center}

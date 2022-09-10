@@ -25,10 +25,11 @@
 ** Circuito básico
 - En $t < 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
 - En $t = 0$ la fuente se desconecta (la bobina se descarga en la resistencia)
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/transitorio_circuitoRL.pdf]]
 
 ** Respuesta natural
-
+#+ATTR_LATEX: :height 0.5\textheight
 file:../figs/transitorio_circuitoRL.pdf
 
 *** Ecuaciones
@@ -82,13 +83,13 @@ file:../figs/transitorio_circuitoRL.pdf
   i(t) = I_0 e^{-t/\tau}  
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RespuestaNatural_RL.pdf]]
 
 ** Constante de tiempo
 - Valores altos de $\tau$ implican decrecimiento lento.
 - La respuesta natural "desaparece" tras $\simeq 5\tau$.
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/constante_tiempo.pdf]]
 
 ** Balance Energético
@@ -104,6 +105,7 @@ La energía acumulada en la bobina en $t < 0$ se disipa en la resistencia en $t 
 
 ** Respuesta forzada
 Cambia el funcionamiento del interruptor: en $t > 0$ la fuente alimenta el circuito RL.
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RL_forzada.pdf]]
 
 ** Respuesta forzada
@@ -143,7 +145,7 @@ Suponiendo que la bobina está inicialmente descargada, $i(0^-) = 0 \Rightarrow 
   i(t) &= \frac{U_0}{R}(1 - e^{-\frac{t}{\tau}})  
 \end{align*}
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/RespuestaCompleta_RL.pdf]]
 
 
@@ -164,9 +166,11 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
 ** Circuito básico
 - En $t <0$ la fuente alimenta el circuito RC (el condensador se carga).
 - En $t = 0$ se desconecta la fuente (el condensador comienza a descargarse en la resistencia).
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/transitorio_circuitoRC.pdf]]
 
 ** Respuesta natural
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/transitorio_circuitoRC.pdf]]
 
 *** Ecuaciones
@@ -210,7 +214,7 @@ i(t) = \left(i(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)
   u(t) = U_0 e^{-t/\tau}  
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/constante_tiempo.pdf]]
 
 ** Balance Energético
@@ -248,7 +252,7 @@ Suponiendo que el condensador está inicialmente descargado, $u(0^-) = 0 \Righta
 * Análisis Sistemático
 
 ** Equivalente de Thévenin (Norton)
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/Thevenin_PrimerOrden.pdf]]
 
 ** Procedimiento General

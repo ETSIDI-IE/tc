@@ -63,7 +63,7 @@
 
 ** Admitancia
 
-#+ATTR_LATEX: :height 0.35\textheight
+#+ATTR_LATEX: :height 0.25\textheight
 [[file:../figs/RLC_paralelo_resonante.pdf]]
 
 - Admitancia:
@@ -214,6 +214,7 @@ P_R = \frac{U^2}{R} \rightarrow w_R = T_0 \cdot \frac{U^2}{R}
   
 ** La curva de resonancia *no* es simétrica
 La frecuencia de resonancia no está en el centro del ancho de banda
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/CurvaResonancia.pdf]]
 
 ** La curva de resonancia *no* es simétrica
@@ -347,6 +348,7 @@ x = Q_0 \cdot \epsilon
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/CUR.pdf]]
 
 ** Puntos de potencia mitad en la CUR
@@ -367,6 +369,7 @@ x = Q_0 \cdot \epsilon
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/CUR.pdf]]
 
 *** :B_ignoreheading:
@@ -698,11 +701,10 @@ Empleando ecuaciones similares se puede demostrar la siguiente transformación p
 :BEAMER_col: 0.3
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
-
 [[file:../figs/CondensadorParalelo.pdf]]
 
 ** Aplicación: transformación de circuito RLC
-
+#+ATTR_LATEX: :height 0.8\textheight
 [[file:../figs/resonante_real.pdf]]
 
 ** Ejercicios Recomendados

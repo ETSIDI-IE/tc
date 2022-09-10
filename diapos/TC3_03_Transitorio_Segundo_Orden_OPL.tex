@@ -1,6 +1,6 @@
-% Created 2018-09-18 mar 14:01
+% Created 2022-09-10 sáb 18:51
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -19,42 +19,51 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
-\usepackage{esdiff}
+\usepackage{diffcoeff}
+\usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\usetheme[hideothersubsections]{Goettingen}
+\newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
+\newcommand{\slp}{\mathbf{s}}
+\newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
+\newcommand{\atan}{\mathrm{atan}}
+\parskip=5pt
+\usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
-\date{Septiembre 2018}
+\date{}
 \title{Análisis Clásico de Circuitos de Segundo Orden}
 \subtitle{Teoría de Circuitos III}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Análisis Clásico de Circuitos de Segundo Orden},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.2 (Org mode 9.1.13)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Introducción}
-\label{sec:org2345c92}
+\label{sec:org6a1924a}
 
-\begin{frame}[label={sec:org421ecc1}]{Circuitos de Segundo Orden}
+\begin{frame}[label={sec:orgfb16cc7}]{Circuitos de Segundo Orden}
 \begin{itemize}
 \item Circuitos que tienen \alert{dos elementos de acumulación} que intercambian energía, y parte resistiva que disipa energía.
 \item \alert{Ecuación diferencial de segundo orden}: la respuesta natural incluye exponenciales decrecientes y quizás señal sinusoidal.
@@ -65,7 +74,7 @@
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgc496cf5}]{Respuesta natural y forzada}
+\begin{frame}[label={sec:org38d1728}]{Respuesta natural y forzada}
 \begin{itemize}
 \item El método de resolución analiza el circuito en dos etapas:
 \begin{itemize}
@@ -76,10 +85,10 @@
 \end{frame}
 
 \section{Circuito RLC serie}
-\label{sec:org63bc792}
-\begin{frame}[label={sec:org4c902c1}]{Circuito básico}
+\label{sec:orgcba1ba3}
+\begin{frame}[label={sec:org9c91ddb}]{Circuito básico}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RLC_serie.pdf}
+\includegraphics[height=0.5\textheight]{../figs/RLC_serie.pdf}
 \end{center}
 
 \[
@@ -87,9 +96,9 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org8fe12ec}]{Ecuación diferencial (respuesta natural)}
+\begin{frame}[label={sec:orgba4d652}]{Ecuación diferencial (respuesta natural)}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RLC_serie.pdf}
+\includegraphics[height=0.5\textheight]{../figs/RLC_serie.pdf}
 \end{center}
 
 \begin{align*}
@@ -98,7 +107,7 @@
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgb27d37d}]{Solución}
+\begin{frame}[label={sec:org1dc4601}]{Solución}
 \begin{block}{Ecuación característica}
 \[
 s^2 + \frac{R}{L} s + \frac{1}{LC} = 0  
@@ -113,7 +122,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \end{frame}
 
 
-\begin{frame}[label={sec:org34626aa}]{Solución con parámetros}
+\begin{frame}[label={sec:org617a75b}]{Solución con parámetros}
 \begin{block}{Ecuación característica}
 \begin{columns}
 \begin{column}{.5\columnwidth}
@@ -142,7 +151,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orge896e08}]{Posibles soluciones}
+\begin{frame}[label={sec:orgcebc1b4}]{Posibles soluciones}
 \begin{block}{\(\alpha > \omega\), \(\xi > 1\)}
 \begin{itemize}
 \item \(s_{1,2}\): dos soluciones reales (negativas) distintas
@@ -165,7 +174,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org3d81218}]{Tipos de Respuesta}
+\begin{frame}[label={sec:orgf8eb64a}]{Tipos de Respuesta}
 \begin{itemize}
 \item Tipo de respuesta determinado por relación entre \(R\) y \(L\), \(C\) (disipación y almacenamiento).
 \item Resistencia crítica (\(\alpha = \omega_0\), \(\xi = 1\)):
@@ -184,34 +193,31 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org013dcec}]{Circuito Sobreamortiguado (\(\alpha > \omega_0\))}
+\begin{frame}[label={sec:org21ef0d9}]{Circuito Sobreamortiguado (\(\alpha > \omega_0\))}
 \[
   i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Sobreamortiguado_HKD.pdf}
+\includegraphics[height=0.7\textheight]{../figs/Sobreamortiguado_HKD.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgf5d9b6e}]{Amortiguamiento Crítico (\(\alpha = \omega_0\))}
+\begin{frame}[label={sec:orgd8c1e43}]{Amortiguamiento Crítico (\(\alpha = \omega_0\))}
 \[
   i_n(t) = (A_1 + A_2 t) e^{s t} 
 \]
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/AmortiguamientoCritico_HKD.pdf}
+\includegraphics[height=0.7\textheight]{../figs/AmortiguamientoCritico_HKD.pdf}
 \end{center}
 \end{frame}
 
 
-\begin{frame}[label={sec:orgb804b73}]{Circuito Subamortiguado (\(\alpha < \omega\))}
+\begin{frame}[label={sec:orgb2597ab}]{Circuito Subamortiguado (\(\alpha < \omega\))}
 \[
   i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}
 \]
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Subamortiguado_AS.pdf}
+\includegraphics[height=0.5\textheight]{../figs/Subamortiguado_AS.pdf}
 \end{center}
 
 \[
@@ -219,19 +225,19 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgbb4ced6}]{Comparación}
+\begin{frame}[label={sec:org63b4545}]{Comparación}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/DampingRatio.pdf}
+\includegraphics[height=0.7\textheight]{../figs/DampingRatio.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge16b534}]{Valores Importantes}
+\begin{frame}[label={sec:org7865035}]{Valores Importantes}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RespuestaEscalon_SegundoOrden.png}
+\includegraphics[height=0.7\textheight]{../figs/RespuestaEscalon_SegundoOrden.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgaa8dcee}]{Valores Importantes}
+\begin{frame}[label={sec:org6903ca4}]{Valores Importantes}
 \begin{itemize}
 \item \alert{Tiempo de Subida}: tiempo para subir de 10\% al 90\% del valor en régimen permanente.
 
@@ -244,10 +250,10 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \end{frame}
 
 \section{Circuito RLC paralelo}
-\label{sec:org000e9ae}
-\begin{frame}[label={sec:org2b12d18}]{Circuito básico}
+\label{sec:org80397f5}
+\begin{frame}[label={sec:orgd92a473}]{Circuito básico}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RLC_paralelo.pdf}
+\includegraphics[height=0.6\textheight]{../figs/RLC_paralelo.pdf}
 \end{center}
 
 \[
@@ -255,9 +261,9 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org1cb91d6}]{Ecuación diferencial (respuesta natural)}
+\begin{frame}[label={sec:org42ee1f6}]{Ecuación diferencial (respuesta natural)}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RLC_paralelo0.pdf}
+\includegraphics[height=0.6\textheight]{../figs/RLC_paralelo0.pdf}
 \end{center}
 
 \[
@@ -265,7 +271,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org9788531}]{Solución}
+\begin{frame}[label={sec:org44b6729}]{Solución}
 \begin{block}{Ecuación característica}
 \[
 s^2 + \frac{G}{C} s + \frac{1}{LC} = 0  
@@ -280,7 +286,7 @@ s^2 + \frac{G}{C} s + \frac{1}{LC} = 0
 \end{frame}
 
 
-\begin{frame}[label={sec:org9914205}]{Solución con parámetros}
+\begin{frame}[label={sec:orga253304}]{Solución con parámetros}
 \begin{block}{Ecuación característica}
 \begin{columns}
 \begin{column}{.5\columnwidth}
@@ -311,7 +317,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 
 
 
-\begin{frame}[label={sec:org23510ea}]{Tipos de Respuesta}
+\begin{frame}[label={sec:orge3df067}]{Tipos de Respuesta}
 \begin{itemize}
 \item Tipo de respuesta determinado por relación entre \(G\) y \(L\), \(C\) (disipación y almacenamiento).
 \item Conductancia crítica (\(\alpha = \omega_0\), \(\xi = 1\)):
@@ -330,7 +336,7 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org5c8ba92}]{Tipos de Respuesta}
+\begin{frame}[label={sec:orgef97b10}]{Tipos de Respuesta}
 \begin{itemize}
 \item Circuito Sobreamortiguado (\(\alpha > \omega_0\))
 \end{itemize}
@@ -354,8 +360,8 @@ s^2 + 2\alpha s + \omega_0^2 = 0
 
 
 \section{Respuesta Completa}
-\label{sec:org8d7320e}
-\begin{frame}[label={sec:org6c70bc2}]{Condiciones Iniciales}
+\label{sec:org836db29}
+\begin{frame}[label={sec:org342be1b}]{Condiciones Iniciales}
 \begin{block}{Dos constantes a determinar}
 Son necesarias dos tipos de condiciones iniciales:
 
@@ -381,9 +387,9 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org520f9a0}]{Circuitos Equivalentes}
+\begin{frame}[label={sec:orgd69642b}]{Circuitos Equivalentes}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/CondicionesIniciales_CircuitosEquivalentes.pdf}
+\includegraphics[height=0.5\textheight]{../figs/CondicionesIniciales_CircuitosEquivalentes.pdf}
 \end{center}
 \begin{itemize}
 \item Sustituir fuentes de tensión \(u_g(t)\) por \(u_g(0^+)\).
@@ -394,9 +400,9 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0c31e5d}]{Derivadas en \(t = 0^+\): ejemplo RLC serie}
+\begin{frame}[label={sec:orgf653ba7}]{Derivadas en \(t = 0^+\): ejemplo RLC serie}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/RLC_serie.pdf}
+\includegraphics[height=0.5\textheight]{../figs/RLC_serie.pdf}
 \end{center}
 
 \begin{align*}
@@ -406,7 +412,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org4b9c15e}]{Derivadas en \(t = 0^+\): ejemplo RLC paralelo}
+\begin{frame}[label={sec:org40ae392}]{Derivadas en \(t = 0^+\): ejemplo RLC paralelo}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/RLC_paralelo0.pdf}
 \end{center}
@@ -419,7 +425,7 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 \end{frame}
 
 
-\begin{frame}[label={sec:org633d955}]{Respuesta Completa}
+\begin{frame}[label={sec:org9009ed0}]{Respuesta Completa}
 Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzada (si existe).
 \begin{align*}
   f(0^+) &= f_n(0^+) + f_{\infty}(0^+)\\
@@ -427,7 +433,7 @@ Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzad
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orge3b7ad2}]{Ejemplo}
+\begin{frame}[label={sec:org4136da1}]{Ejemplo}
 Circuito RLC paralelo sobreamortiguado con generador de corriente DC funcionando en \(t > 0\). 
 
 \begin{block}{Respuesta Completa}
@@ -446,9 +452,9 @@ u_c(0^+) &= U_\infty + A_1 + A_2\\
 
 
 \section{Ejercicios Recomendados}
-\label{sec:org344abc5}
+\label{sec:orgb827876}
 
-\begin{frame}[label={sec:orgc84541e}]{Ejercicios}
+\begin{frame}[label={sec:orgc63df1c}]{Ejercicios}
 \begin{itemize}
 \item AS: Ejemplos 8.5, 8.7, 8.8 y 8.9
 \item HKD: Ejemplos 9.3, 9.7, 9.8, y 9.9 + 9.10

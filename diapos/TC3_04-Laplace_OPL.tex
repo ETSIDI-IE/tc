@@ -1,6 +1,6 @@
-% Created 2020-08-30 dom 10:33
+% Created 2022-09-10 sáb 18:48
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -21,18 +21,18 @@
 \usepackage{amsmath}
 \usepackage{diffcoeff}
 \usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 \newcommand{\atan}{\mathrm{atan}}
+\parskip=5pt
 \usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
@@ -46,6 +46,7 @@
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[frame number]
 \setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
 \setbeamertemplate{section in toc}[circle]
 \setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
@@ -53,15 +54,15 @@
  pdftitle={Análisis del Transitorio con la Transformada de Laplace},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.3.6)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Introducción}
-\label{sec:org5d55db9}
-\begin{frame}[label={sec:org31ffa9a}]{Motivación}
+\label{sec:org356ea2a}
+\begin{frame}[label={sec:orga229ff0}]{Motivación}
 \begin{itemize}
 \item La resolución directa de las ecuaciones diferenciales (análisis clásico) exige esfuerzo y no se puede sistematizar fácilmente.
 \item La transformada de Laplace convierte las ecuaciones integrodiferenciales en \alert{ecuaciones algebraicas} basadas en una variable compleja:
@@ -76,8 +77,8 @@
 \end{frame}
 
 \section{Transformada de Laplace}
-\label{sec:orgbf3224b}
-\begin{frame}[label={sec:org7c71fc6}]{Definición}
+\label{sec:org06c2739}
+\begin{frame}[label={sec:orgda0a503}]{Definición}
 \[
   \mathcal{L}\{f(t)\} = \int_{0^-}^\infty e^{-\slp t} f(t) \mathrm{d}t = \laplace{F}
 \]
@@ -87,7 +88,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org775477c}]{Motivación: transformada de derivadas e integrales}
+\begin{frame}[label={sec:org61de9b7}]{Motivación: transformada de derivadas e integrales}
 \[
   \mathcal{L}\{\diff{f(t)}{t}\} =  \slp \mathbf{F}(\slp) - f(0^-)
 \]
@@ -102,7 +103,7 @@
 \end{frame}
 
 
-\begin{frame}[label={sec:org23f6648}]{Ejemplo: ecuación de un RLC serie}
+\begin{frame}[label={sec:org5d5ee07}]{Ejemplo: ecuación de un RLC serie}
 \begin{block}{Ecuación diferencial}
 \[
   \diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0
@@ -122,7 +123,7 @@
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org5ca0ea5}]{Propiedades básicas}
+\begin{frame}[label={sec:org9053afd}]{Propiedades básicas}
 \begin{block}{Linealidad}
 \[
 \mathcal{L}\{f_1(t) + f_2(t)\} = \laplace{F_1} + \laplace{F_2}
@@ -146,7 +147,7 @@
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org5904135}]{Teoremas de valor inicial y final}
+\begin{frame}[label={sec:org51e323c}]{Teoremas de valor inicial y final}
 \begin{itemize}
 \item Útiles para comprobar una transformada o una transformada inversa.
 \end{itemize}
@@ -162,7 +163,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org0d39d7b}]{Transformadas importantes}
+\begin{frame}[label={sec:orgdd476a0}]{Transformadas importantes}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \[
@@ -195,7 +196,7 @@ f(0^+) = \lim_{\slp \to \infty} \slp \laplace{F}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org7d485e2}]{Transformada Inversa}
+\begin{frame}[label={sec:orgbb4332f}]{Transformada Inversa}
 Expresamos la transformada como una fracción de polinomios:
 
 \[
@@ -217,7 +218,7 @@ Para obtener la transformada inversa diferenciamos tres casos (o una combinació
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2d9da01}]{Transformada Inversa}
+\begin{frame}[label={sec:orgb0ac888}]{Transformada Inversa}
 \begin{block}{Polos reales únicos}
 Reescribimos la transformada como suma de fracciones (descomposición en fracciones parciales):
 \[
@@ -241,7 +242,7 @@ Reescribimos la transformada como suma de fracciones (descomposición en fraccio
 \end{frame}
 
 
-\begin{frame}[label={sec:org0eafa9e}]{Transformada Inversa}
+\begin{frame}[label={sec:org3e8c73b}]{Transformada Inversa}
 \begin{block}{Polos reales repetidos}
 Nuevamente descomposición de fracciones parciales, y calculamos coeficientes \(K_i\) con el método algebraico (véase ejemplo 15.9 de AS)
 \[
@@ -263,7 +264,7 @@ Nuevamente descomposición de fracciones parciales, y calculamos coeficientes \(
 \end{frame}
 
 
-\begin{frame}[label={sec:org3352c82}]{Transformada Inversa}
+\begin{frame}[label={sec:org25b0717}]{Transformada Inversa}
 \begin{block}{Polos complejos conjugados}
 Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}completando cuadrados\guillemotright{}.
 
@@ -288,8 +289,8 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{block}
 \end{frame}
 \section{Aplicación a Circuitos Eléctricos}
-\label{sec:orge595026}
-\begin{frame}[label={sec:orgee73aa3}]{Resistencia}
+\label{sec:orgfa32570}
+\begin{frame}[label={sec:orgcc6d64e}]{Resistencia}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \[
@@ -307,13 +308,13 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Resistencia_Laplace.pdf}
+\includegraphics[height=0.8\textheight]{../figs/Resistencia_Laplace.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2fd08a1}]{Bobina}
+\begin{frame}[label={sec:orgb5840b2}]{Bobina}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \[
@@ -346,7 +347,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{frame}
 
 
-\begin{frame}[label={sec:org0810fcf}]{Condensador}
+\begin{frame}[label={sec:org3ff0315}]{Condensador}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \[
@@ -381,7 +382,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 
 
 
-\begin{frame}[label={sec:orgfae0d41}]{Procedimiento}
+\begin{frame}[label={sec:orgea6a0d4}]{Procedimiento}
 \begin{enumerate}
 \item Determinar las \alert{condiciones iniciales} en los elementos que almacenan energía: \(i_L(0^-)\), \(u_C(0^-)\).
 \item \alert{Transformar} el circuito \alert{al dominio de Laplace}:
@@ -396,7 +397,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label={sec:org24341f7}]{Ejemplo (examen 2018-19)}
+\begin{frame}[label={sec:orgcbd8a49}]{Ejemplo (examen 2018-19)}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{align*}
@@ -417,11 +418,11 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{frame}
 
 \section{Diagramas Polos y Ceros}
-\label{sec:orgf2d716b}
+\label{sec:orgda63c9b}
 
-\begin{frame}[label={sec:org61aedc4}]{Función de Transferencia}
+\begin{frame}[label={sec:org76d2490}]{Función de Transferencia}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/TransferFunction.pdf}
+\includegraphics[height=0.2\textheight]{../figs/TransferFunction.pdf}
 \end{center}
 
 \[
@@ -430,7 +431,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd50bdfe}]{Polos y Ceros}
+\begin{frame}[label={sec:org6d156b0}]{Polos y Ceros}
 \begin{block}{Ceros}
 \begin{itemize}
 \item \(z_1 \ldots z_m\) son los ceros de \(\laplace{H}\)
@@ -450,7 +451,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org9e2dd8b}]{Polos y Ceros}
+\begin{frame}[label={sec:orge69f9d8}]{Polos y Ceros}
 \begin{block}{Polos}
 \begin{itemize}
 \item \(p_1 \ldots p_n\) son los polos de \(\laplace{H}\)
@@ -477,7 +478,7 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org70b213e}]{Ejemplo Diagrama Polos y Ceros}
+\begin{frame}[label={sec:orgede3593}]{Ejemplo Diagrama Polos y Ceros}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \[
@@ -492,27 +493,26 @@ Nuevamente calculamos con el método algebraico, y terminamos \guillemotleft{}co
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org8ab5cb9}]{Significado Diagrama Polos y Ceros}
+\begin{frame}[label={sec:org3a5f8d9}]{Significado Diagrama Polos y Ceros}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/PoleZero.pdf}
+\includegraphics[height=0.8\textheight]{../figs/PoleZero.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org175bc09}]{Ejemplo Polos y Respuesta Natural}
+\begin{frame}[label={sec:orga74b492}]{Ejemplo Polos y Respuesta Natural}
 \[
   y_n(t) = A_1 e^{-3t} + A_2 e^{-0.1 t} + A_3 e^{-t} \sin(2 t + \theta)
 \]
-
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/Ejemplo_Polos.pdf}
+\includegraphics[height=0.8\textheight]{../figs/Ejemplo_Polos.pdf}
 \end{center}
 \end{frame}
 
 
 \section{Ejercicios Recomendados}
-\label{sec:org00ee4f1}
+\label{sec:orgade1b6c}
 
-\begin{frame}[label={sec:orge2a3c52}]{Ejercicios}
+\begin{frame}[label={sec:orga9e1715}]{Ejercicios}
 \begin{itemize}
 \item AS: ejemplos 16.1, 16.3, 16.4, 16.6
 \item FM: ejemplos de aplicación 4.12, 4.13, 4.14 y 4.15

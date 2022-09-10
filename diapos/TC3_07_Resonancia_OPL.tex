@@ -1,6 +1,6 @@
-% Created 2018-11-13 mar 22:56
+% Created 2022-09-10 sáb 18:45
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -19,46 +19,50 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
-\usepackage{esdiff}
+\usepackage{diffcoeff}
 \usepackage{steinmetz}
+\usepackage{mathtools}
 \bibliographystyle{plain}
-\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
 \newcommand{\atan}{\mathrm{atan}}
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\usetheme[hideothersubsections]{Goettingen}
+\parskip=5pt
+\usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
-\date{Noviembre 2018}
+\date{}
 \title{Respuesta en Frecuencia: Resonancia}
 \subtitle{Teoría de Circuitos III}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Respuesta en Frecuencia: Resonancia},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.2 (Org mode 9.1.13)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Definiciones}
-\label{sec:org644ffc4}
-\begin{frame}[label={sec:org0ec125e}]{Definición}
+\label{sec:org98cdcd8}
+\begin{frame}[label={sec:org333bb7e}]{Definición}
 \begin{itemize}
 \item Cuando un circuito eléctrico está en resonancia:
 \begin{itemize}
@@ -71,7 +75,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgaf235d3}]{Ancho de Banda y Factor de Calidad}
+\begin{frame}[label={sec:org3dfa997}]{Ancho de Banda y Factor de Calidad}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
@@ -104,18 +108,18 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org0a6f6ff}]{Ancho de Banda y Factor de Calidad}
+\begin{frame}[label={sec:orge613060}]{Ancho de Banda y Factor de Calidad}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/Q_B.pdf}
 \end{center}
 \end{frame}
 \section{Circuito RLC paralelo}
-\label{sec:org525b08c}
+\label{sec:org23d9e92}
 
 
-\begin{frame}[label={sec:orgf7fa7e6}]{Admitancia}
+\begin{frame}[label={sec:org159bec2}]{Admitancia}
 \begin{center}
-\includegraphics[height=0.35\textheight]{../figs/RLC_paralelo_resonante.pdf}
+\includegraphics[height=0.25\textheight]{../figs/RLC_paralelo_resonante.pdf}
 \end{center}
 
 \begin{itemize}
@@ -136,7 +140,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org3c0ffb9}]{Puntos de Potencia Mitad}
+\begin{frame}[label={sec:orge15230b}]{Puntos de Potencia Mitad}
 \begin{itemize}
 \item Definición de Puntos de potencia mitad (\(\omega_1, \omega_2\))
 \end{itemize}
@@ -154,7 +158,7 @@
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org5a6f06e}]{Ancho de Banda y Factor de Calidad}
+\begin{frame}[label={sec:org2e070e7}]{Ancho de Banda y Factor de Calidad}
 \begin{itemize}
 \item Resultado
 \end{itemize}
@@ -178,7 +182,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org073073d}]{Balance de corrientes en resonancia}
+\begin{frame}[label={sec:orga32c3ef}]{Balance de corrientes en resonancia}
 \begin{center}
 \includegraphics[height=0.35\textheight]{../figs/RLC_paralelo_resonante.pdf}
 \end{center}
@@ -198,7 +202,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org129babc}]{Balance de corrientes en resonancia}
+\begin{frame}[label={sec:org4492b50}]{Balance de corrientes en resonancia}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/RLC_paralelo_resonante.pdf}
 \end{center}
@@ -219,7 +223,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org8d67999}]{Balance de Energías}
+\begin{frame}[label={sec:orgde480a4}]{Balance de Energías}
 \[
   u(t) = U_0 \sin(\omega t)
 \]
@@ -242,7 +246,7 @@
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgbbef801}]{Nueva definición del Factor de Calidad}
+\begin{frame}[label={sec:orgf324c59}]{Nueva definición del Factor de Calidad}
 \begin{itemize}
 \item Energía almacenada en resonancia:
 \end{itemize}
@@ -270,14 +274,14 @@ P_R = \frac{U^2}{R} \rightarrow w_R = T_0 \cdot \frac{U^2}{R}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org827464f}]{La curva de resonancia \alert{no} es simétrica}
+\begin{frame}[label={sec:org99f219b}]{La curva de resonancia \alert{no} es simétrica}
 La frecuencia de resonancia no está en el centro del ancho de banda
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/CurvaResonancia.pdf}
+\includegraphics[height=0.6\textheight]{../figs/CurvaResonancia.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgff33356}]{La curva de resonancia \alert{no} es simétrica}
+\begin{frame}[label={sec:org26128f0}]{La curva de resonancia \alert{no} es simétrica}
 \begin{itemize}
 \item Retomamos expresión de puntos de potencia mitad:
 \end{itemize}
@@ -301,7 +305,7 @@ La frecuencia de resonancia no está en el centro del ancho de banda
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org2c2788b}]{Aproximación para circuitos con alto \(Q_0\)}
+\begin{frame}[label={sec:org41c8c8d}]{Aproximación para circuitos con alto \(Q_0\)}
 \begin{itemize}
 \item Cuando \(Q \geq 10\) podemos escribir:
 \end{itemize}
@@ -319,7 +323,7 @@ La frecuencia de resonancia no está en el centro del ancho de banda
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orge3de197}]{Admitancia en función de \(\omega_0\) y \(Q_0\)}
+\begin{frame}[label={sec:orgc8ca99b}]{Admitancia en función de \(\omega_0\) y \(Q_0\)}
 \begin{itemize}
 \item Recordamos expresión de la admitancia:
 \end{itemize}
@@ -343,7 +347,7 @@ La frecuencia de resonancia no está en el centro del ancho de banda
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org0fa973a}]{Desintonización Relativa}
+\begin{frame}[label={sec:orgfbd1ab2}]{Desintonización Relativa}
 \begin{itemize}
 \item Definimos la desintonización relativa
 \end{itemize}
@@ -365,7 +369,7 @@ La frecuencia de resonancia no está en el centro del ancho de banda
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org3369129}]{Aproximación para cercanías de la resonancia}
+\begin{frame}[label={sec:orgb098d73}]{Aproximación para cercanías de la resonancia}
 \begin{itemize}
 \item Expresión exacta en función de \(\epsilon\):
 \end{itemize}
@@ -387,7 +391,7 @@ La frecuencia de resonancia no está en el centro del ancho de banda
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgd4cce10}]{Curva Universal de Resonancia}
+\begin{frame}[label={sec:orgb17d166}]{Curva Universal de Resonancia}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{itemize}
@@ -404,13 +408,13 @@ x = Q_0 \cdot \epsilon
 
 \begin{column}{0.3\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/CUR.pdf}
+\includegraphics[height=0.8\textheight]{../figs/CUR.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgb149261}]{Puntos de potencia mitad en la CUR}
+\begin{frame}[label={sec:orge4aeabd}]{Puntos de potencia mitad en la CUR}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{itemize}
@@ -424,7 +428,7 @@ x = Q_0 \cdot \epsilon
 
 \begin{column}{0.3\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/CUR.pdf}
+\includegraphics[height=0.8\textheight]{../figs/CUR.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -442,8 +446,8 @@ x = Q_0 \cdot \epsilon
 \end{frame}
 
 \section{Circuito RLC serie}
-\label{sec:orgef2f765}
-\begin{frame}[label={sec:org59d199e}]{Impedancia}
+\label{sec:org79c1b69}
+\begin{frame}[label={sec:org3a7f85a}]{Impedancia}
 \begin{itemize}
 \item Impedancia
 \end{itemize}
@@ -465,7 +469,7 @@ x = Q_0 \cdot \epsilon
 \]  
 \end{frame}
 
-\begin{frame}[label={sec:orgd22ea5c}]{Frecuencias}
+\begin{frame}[label={sec:org1185424}]{Frecuencias}
 \begin{itemize}
 \item Pulsación de Resonancia
 \end{itemize}
@@ -494,7 +498,7 @@ B = \omega_2 - \omega_1 = \frac{R}{L}
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org9dd4866}]{Tensiones y energías}
+\begin{frame}[label={sec:org41b4acb}]{Tensiones y energías}
 \begin{itemize}
 \item Tensiones en los elementos
 \end{itemize}
@@ -515,7 +519,7 @@ B = \omega_2 - \omega_1 = \frac{R}{L}
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org20844ba}]{Curva Universal de Resonancia}
+\begin{frame}[label={sec:org3fff8b8}]{Curva Universal de Resonancia}
 \begin{itemize}
 \item Aproximación para cercanías de la resonancia
 \end{itemize}
@@ -534,9 +538,9 @@ B = \omega_2 - \omega_1 = \frac{R}{L}
 \]
 \end{frame}
 \section{Otros circuitos}
-\label{sec:orgf2cb45b}
+\label{sec:org0b356d1}
 
-\begin{frame}[label={sec:orgf03f39e}]{Circuito RLC con bobina real}
+\begin{frame}[label={sec:org9931200}]{Circuito RLC con bobina real}
 \begin{center}
 \includegraphics[height=0.4\textheight]{../figs/resonante_real.pdf}
 \end{center}
@@ -548,7 +552,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org2fc64e7}]{Impedancia}
+\begin{frame}[label={sec:orgcae43fd}]{Impedancia}
 \[
 \fasor{Y} = \left(\frac{1}{R} + \frac{R_B}{R_B^2 + \omega^2 L_B^2}\right) + j \left(\omega C - \frac{\omega L_B}{R_B^2 + \omega^2 L_B^2}\right)
 \]
@@ -566,7 +570,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 \omega_0 = \sqrt{\frac{1}{L_BC} - \left(\frac{R_B}{L_B}\right)^2}
 \]
 \end{frame}
-\begin{frame}[label={sec:orge8f118c}]{Comparación con RLC paralelo}
+\begin{frame}[label={sec:org26bb3f7}]{Comparación con RLC paralelo}
 \begin{itemize}
 \item La frecuencia de resonancia es diferente a un RLC serie/paralelo:
 \end{itemize}
@@ -582,8 +586,8 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 \end{itemize}
 \end{frame}
 \section{Factor de Calidad de Componentes}
-\label{sec:orgdb8ecf6}
-\begin{frame}[label={sec:org489261c}]{Factor de Calidad}
+\label{sec:org5472f63}
+\begin{frame}[label={sec:org1bd2d2e}]{Factor de Calidad}
 \begin{itemize}
 \item Retomamos la definición del factor de calidad como ratio entre la \alert{máxima energía almacenada} y la \alert{energía disipada en un período}.
 \end{itemize}
@@ -593,7 +597,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org844650f}]{Bobina Real}
+\begin{frame}[label={sec:org7e5e634}]{Bobina Real}
 \begin{itemize}
 \item Una bobina real tiene pérdidas resistivas debidas al hilo conductor\footnote{En algunos textos se emplea la tangente de pérdidas para caracterizar a la bobina real, siendo \(\tan{\delta} = 1/Q\).}.
 \item Se modela como una conexión serie de una bobina ideal y una resistencia.
@@ -612,7 +616,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
   \boxed{Q(\omega) = \frac{\omega L_B}{R_B}}
 \]
 \end{frame}
-\begin{frame}[label={sec:org50867d3}]{Condensador Real}
+\begin{frame}[label={sec:org866ef6d}]{Condensador Real}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/CondensadorReal.pdf}
 \end{center}
@@ -627,7 +631,7 @@ La figura representa un circuito paralelo con una bobina real (con pérdidas). L
   \boxed{Q(\omega) = \omega C R_C}
 \]
 \end{frame}
-\begin{frame}[label={sec:org2423db7}]{Ejercicio}
+\begin{frame}[label={sec:org8d8ae9f}]{Ejercicio}
 Demuestra que la expresión del factor de calidad de una bobina con pérdidas modelada como un circuito paralelo es:
 \begin{columns}
 \begin{column}{0.3\columnwidth}
@@ -644,7 +648,7 @@ Demuestra que la expresión del factor de calidad de una bobina con pérdidas mo
 \end{frame}
 
 
-\begin{frame}[label={sec:org5317f0b}]{Conversión serie-paralelo}
+\begin{frame}[label={sec:orgef99df9}]{Conversión serie-paralelo}
 \begin{columns}
 \begin{column}[t]{0.5\columnwidth}
 \[
@@ -677,7 +681,7 @@ Demuestra que la expresión del factor de calidad de una bobina con pérdidas mo
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org6dfa41a}]{Conversión serie-paralelo}
+\begin{frame}[label={sec:org105ad51}]{Conversión serie-paralelo}
 \[
   \begin{array}{l}
       R_p = R_s + \frac{(\omega L_s)^2}{R_s} \xrightarrow{\omega L_s= Q_s \cdot R_s} \boxed{R_p = R_s ( 1 + Q_S^2)}\\
@@ -712,7 +716,7 @@ Para bobinas con alto factor de calidad (\(Q \geq 10\))
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgd09bf73}]{Conversión Serie-Paralelo}
+\begin{frame}[label={sec:orgd2c90c1}]{Conversión Serie-Paralelo}
 Empleando ecuaciones similares se puede demostrar la siguiente transformación para un condensador de alto factor de calidad:
 \begin{columns}
 \begin{column}{0.3\columnwidth}
@@ -732,19 +736,19 @@ Empleando ecuaciones similares se puede demostrar la siguiente transformación p
 
 \begin{column}{0.3\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/CondensadorParalelo.pdf}
+\includegraphics[height=0.4\textheight]{../figs/CondensadorParalelo.pdf}
 \end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org37699af}]{Aplicación: transformación de circuito RLC}
+\begin{frame}[label={sec:org05fbfcd}]{Aplicación: transformación de circuito RLC}
 \begin{center}
-\includegraphics[width=.9\linewidth]{../figs/resonante_real.pdf}
+\includegraphics[height=0.8\textheight]{../figs/resonante_real.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgadd65f6}]{Ejercicios Recomendados}
+\begin{frame}[label={sec:org160d785}]{Ejercicios Recomendados}
 \begin{itemize}
 \item AS: ejemplos 14.7 y 14.8
 \item HKD: página 641 (voltímetro), y práctica 16.8
