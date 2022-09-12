@@ -26,8 +26,7 @@
 - BT1: Capítulo 1
 - BT2: Capítulo 2
 - BT3: Capítulo 3
-- BT4: Secciones 1.14 y 1.15
-- BT5: Capítulo 5
+- BT4: Capítulo 5
 
 
 * Análisis de Circuitos en Ingeniería (*HKD*)
@@ -39,11 +38,10 @@
 - Soluciones numéricas a problemas [[http://highered.mheducation.com/sites/0073529575/student_view0/answers_to_selected_problems.html][online]].
 
 ** Capítulos
-- BT1: Capítulos 1 al 4
+- BT1: Capítulos 1 al 5
 - BT2: Capítulos 10 y 11
 - BT3: Capítulo 12
-- BT4: Capítulo 5
-- BT5: Capítulos 8 y 9
+- BT4: Capítulos 8 y 9
 
 * Fundamentos de Circuitos Eléctricos (*AS*)
 
@@ -54,11 +52,10 @@
 - Soluciones numéricas a problemas en apéndice.
 
 ** Capítulos
-- BT1: Capítulos 1 al 3
+- BT1: Capítulos 1 al 4
 - BT2: Capítulos 9 al 11
 - BT3: Capítulo 12
-- BT4: Capítulo 4
-- BT5: Capítulos 7 y 8
+- BT4: Capítulos 7 y 8
 
 
 * Circuitos Eléctricos (*PO*)
@@ -70,8 +67,7 @@
 - Problemas resueltos al final de cada capítulo.
 
 ** Capítulos
-- BT1: Capítulos 1 al 5
-- BT2: Capítulos 9 y 10
+- BT1: Capítulos 1 al 5, y 8.
+- BT2: Capítulos 9 y 10, y 8.
 - BT3: Capítulo 12 y 13
-- BT4: Capítulo 8
-- BT5: Capítulos 14
+- BT4: Capítulos 14

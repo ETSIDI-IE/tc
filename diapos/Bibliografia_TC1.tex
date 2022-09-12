@@ -1,6 +1,6 @@
-% Created 2021-02-12 vie 08:25
+% Created 2022-09-12 lun 12:14
 % Intended LaTeX compiler: pdflatex
-\documentclass[aspectratio=169, xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -23,11 +23,9 @@
 \usepackage{steinmetz}
 \usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
@@ -55,14 +53,14 @@
  pdftitle={Bibliografía},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.3.6)}, 
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 
-\begin{frame}[label={sec:org96b7143}]{Bibliografía}
+\begin{frame}[label={sec:org0c468d1}]{Bibliografía}
 \begin{itemize}
 \item Circuitos eléctricos (\alert{FM})
 \item Análisis de circuitos en ingeniería (\alert{HKD})
@@ -72,7 +70,7 @@
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd4f499a}]{Circuitos Eléctricos (\alert{FM})}
+\begin{frame}[label={sec:orgd7caf70}]{Circuitos Eléctricos (\alert{FM})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autor: J. Fraile Mora
@@ -87,14 +85,13 @@
 \item BT1: Capítulo 1
 \item BT2: Capítulo 2
 \item BT3: Capítulo 3
-\item BT4: Secciones 1.14 y 1.15
-\item BT5: Capítulo 5
+\item BT4: Capítulo 5
 \end{itemize}
 \end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org11bd2d3}]{Análisis de Circuitos en Ingeniería (\alert{HKD})}
+\begin{frame}[label={sec:org73f4552}]{Análisis de Circuitos en Ingeniería (\alert{HKD})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: W.H. Hayt; J.E. Kemmerly; S.M. Durbin
@@ -106,16 +103,15 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 4
+\item BT1: Capítulos 1 al 5
 \item BT2: Capítulos 10 y 11
 \item BT3: Capítulo 12
-\item BT4: Capítulo 5
-\item BT5: Capítulos 8 y 9
+\item BT4: Capítulos 8 y 9
 \end{itemize}
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org4e9fe9f}]{Fundamentos de Circuitos Eléctricos (\alert{AS})}
+\begin{frame}[label={sec:orgd897b99}]{Fundamentos de Circuitos Eléctricos (\alert{AS})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: C. K. Alexander; M. N. O. Sadiku
@@ -127,17 +123,16 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 3
+\item BT1: Capítulos 1 al 4
 \item BT2: Capítulos 9 al 11
 \item BT3: Capítulo 12
-\item BT4: Capítulo 4
-\item BT5: Capítulos 7 y 8
+\item BT4: Capítulos 7 y 8
 \end{itemize}
 \end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org92d8f03}]{Circuitos Eléctricos (\alert{PO})}
+\begin{frame}[label={sec:orgc2ffd24}]{Circuitos Eléctricos (\alert{PO})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: A. Pastor y J. Ortega
@@ -149,11 +144,10 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 5
-\item BT2: Capítulos 9 y 10
+\item BT1: Capítulos 1 al 5, y 8.
+\item BT2: Capítulos 9 y 10, y 8.
 \item BT3: Capítulo 12 y 13
-\item BT4: Capítulo 8
-\item BT5: Capítulos 14
+\item BT4: Capítulos 14
 \end{itemize}
 \end{block}
 \end{frame}
