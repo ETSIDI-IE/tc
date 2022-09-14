@@ -369,7 +369,7 @@ x = Q_0 \cdot \epsilon
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-#+ATTR_LATEX: :height 0.8\textheight
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/CUR.pdf]]
 
 *** :B_ignoreheading:
