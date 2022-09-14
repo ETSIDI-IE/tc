@@ -25,7 +25,7 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
   \fasor{H} = \frac{\fasor{Y}}{\fasor{X}}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/TransferFunction.pdf]]
 
 
@@ -33,12 +33,14 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.3\textheight
 [[file:../figs/sinX.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.3\textheight    
 [[file:../figs/sinY.pdf]]
 
 ** Funciones de Transferencia
@@ -115,7 +117,7 @@ La respuesta en frecuencia de un circuito es la variación del comportamiento de
 :PROPERTIES:
 :BEAMER_col: 0.7
 :END:
-#+ATTR_LATEX: :height 0.7\textheight
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/InterpretacionGeometrica0.pdf]]
 
 ** Interpretación Geométrica
@@ -124,7 +126,7 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
-:BEAMER_opt: [t]
+:BEAMER_opt: [c]
 :END:
 #+BEGIN_EXPORT latex
 \[
@@ -134,9 +136,9 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.7
-:BEAMER_opt: [t]
+:BEAMER_opt: [c]
 :END:
-#+ATTR_LATEX: :height 0.8\textheight
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:../figs/InterpretacionGeometrica.pdf]]
 
 ** Interpretación Geométrica: cero simple
@@ -151,13 +153,14 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/CeroGeometrica.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.75\textheight
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/CeroGeometricaPlot.pdf]]
 
 ** Interpretación Geométrica: polo simple
@@ -172,13 +175,14 @@ Cada uno de los factores de $\fasor{H}$ es un número complejo que conecta un ce
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/PoloGeometrica.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.75\textheight
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/PoloGeometricaPlot.pdf]]
 
 ** Forma normalizada o estándar
@@ -238,7 +242,7 @@ El *decibelio* ($\si{\decibel}$) se emplea para medir la ganancia de potencia o 
 G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/Red_Ganancia.pdf]]
 
 
@@ -251,7 +255,7 @@ Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/co
 G_{dB} = 10 \log \frac{V_2^2}{V_1^2} = 20 \log \frac{V_2}{V_1}
 \]
 #+END_EXPORT
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/Red_Ganancia.pdf]]
 
 ** Valores importantes
@@ -569,6 +573,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/BodePoloCuadratico.pdf]]
 
 ** Ejercicios Recomendados
@@ -594,6 +599,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Filtro_PasoBajo.pdf]]
 
 ** Filtro Paso Alto
@@ -613,6 +619,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Filtro_PasoAlto.pdf]]
 
 ** Filtro Paso Banda
@@ -632,7 +639,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
-
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Filtro_PasoBanda.pdf]]
 
 ** Filtro Banda Eliminada
@@ -652,6 +659,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.7
     :END:
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Filtro_BandaEliminada.pdf]]
 
 ** Ejemplo: circuito RC
@@ -660,6 +668,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/filtroRC.pdf]]
 
 # #+BEGIN_EXPORT latex
@@ -676,12 +685,14 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/Hw_RC.pdf]]
 
 *** :B_ignoreheading:BMCOL:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :END:
+    
 #+BEGIN_EXPORT latex
 \[
 \laplace{H} = \frac{\laplace{U_c}}{\laplace{E_g}} \Rightarrow |\fasor{H}| = \frac{1}{\sqrt{1 + (\omega/\omega_c)^2}} 
@@ -693,6 +704,7 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/filtroRL.pdf]]
 
 # #+BEGIN_EXPORT latex
@@ -709,12 +721,14 @@ Sea $\laplace{H}\rvert_{\slp = j\omega}  = \slp^2 + 2\alpha \slp + \omega_0^2$, 
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
+#+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/Hw_RL.pdf]]
 
 *** :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :END:
+    
 #+BEGIN_EXPORT latex
 \[
 \laplace{H} = \frac{\laplace{U_L}}{\laplace{E_g}} \Rightarrow |\fasor{H}| = \frac{\omega/\omega_c}{\sqrt{1 + (\omega/\omega_c)^2}} 
