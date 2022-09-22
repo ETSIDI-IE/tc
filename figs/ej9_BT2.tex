@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{steinmetz}
+
+\begin{document}
+\begin{circuitikz}[american]
+\coordinate (A) at (-2,3);
+\coordinate (C) at (-2,-1);
+\coordinate (B) at (4,3);
+  \draw
+  (-3,3) to [sV, v>=$ $, l_=$E$] (-3,-1)
+  (-1.5,3) to [rmeter, n=wattmeter1,t=$W$] (0,3)
+  (-3,3) to [short, -] (-1.5,3)
+  (0,3) to [generic,l=$Z$] (2,3)
+  (2,3) to [rmeter,t=$V$] (2,-1)
+  (2,3) to [short,-] (4,3)
+  (4,3) to [rmeter,t=$A_1$] (4,1)
+  (4,1) to [R,l=$R$] (4,-1)
+  (4,3) to [short,-] (6,3)
+  (6,3) to [rmeter, t=$A_2$] (6,1)
+  (6,1) to [C, l=$C$] (6,-1)
+  (6,-1) to [short,-] (-3,-1)
+  (0,3) to [short,-]++(0,1)-|(wattmeter1.north)
+  (wattmeter1.south) to [short,-]++(0,-0.5)-| (2,3);
+   \node[label=above:A] (A) at ($(A)$) {};
+   \node[label=above:B] (B) at ($(B)$) {};
+   \node[label=below:C] (C) at ($(C)$) {};
+\end{circuitikz}
+
+\end{document}

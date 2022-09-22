@@ -1,0 +1,43 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american currents, american voltages]
+  
+  
+  \coordinate(E) at (0,0);
+  \coordinate(E') at ($(E) + (.3, .3)$);
+  \coordinate(F) at (2,4);
+  \coordinate(F') at ($(F) + (0, -.3)$);
+  \coordinate(G) at (4,0);
+  \coordinate(G') at ($(G) + (-.3, .3)$);
+  \draw
+  (E) node[left] {$A$} to [short, o-*] (E')
+  (F) node[above] {$B$} to [short, o-*] (F')
+  (G) node[right] {$C$} to [short, o-*] (G')
+  (E') to [R, l = $180\Omega$] (F')
+  (F') to [R, l = $180\Omega$] (G')
+  (G') to [R, l = $180\Omega$] (E');
+  
+  \coordinate(A) at (6,0);
+  \coordinate(A') at ($(A) + (.3, .3)$);
+  \coordinate(B) at (8,4);
+  \coordinate(B') at ($(B) + (0, -.3)$);
+  \coordinate(C) at (10,0);
+  \coordinate(C') at ($(C) + (-.3, .3)$);
+  \coordinate(N) at (8,2);
+  \draw
+  (A) node[left] {$A$} to [short, o-] (A')
+  (B) node[above] {$B$} to [short, o-] (B')
+  (C) node[right] {$C$} to [short, o-] (C')
+  (A') to [R, l = $\frac{10}{3}\Omega$, -*] (N) node[right] {$N$}
+  (B') to [R, l = $5\Omega$] (N)
+  (C') to [R, l = $10\Omega$] (N);
+\end{circuitikz}
+
+\end{document}

@@ -1,0 +1,22 @@
+
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usepackage{steinmetz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages]
+  \draw
+  (0,0) to [generic, l= $\overline{Z}$] (0,5)
+  (2,0) to [R, l=$10\Omega$] (2,5)
+  (4,0) to [L, l=$\mathrm{j}3\Omega$] (4,2.5)
+  (4,2.5) to [R, l=$4\Omega$] (4,5)
+  (-2,5) to [sV, v>=$ $, l_=$50\phase{60^\circ} V$] (-2,0)
+  (-2,0) to [short,-] (4,0)
+  (0,5) to [short,-] (4,5)
+  (-2,5) to [short,-, i=$31.5\phase{24^\circ}\,A$] (0,5);
+\end{circuitikz}
+
+\end{document}

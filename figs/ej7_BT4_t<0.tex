@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages, american currents]
+\coordinate(A) at (6,3.5);
+  \draw
+  (-3,0) to [R, l=$1\Omega$] (-3,1.5)
+  (-3,3.95) to [esource, v_=$10$ V] (-3,1.5)
+ % (-3,3) to [short,-] (0,3)
+ % (0,3.1) to [esource, v=$5$ V] (0,1.5)
+ % (0,1.5) to [R, l=$1\Omega$] (0,0)
+  (3,0) to [cI, l_=$(3/4)\,U
+  _C$] (3,3.5)
+  (3,3.5) to [R, l=$2\Omega$] (6,3.5)
+  (6,3.5) to [R, l={$2\Omega$}] (6,0)
+  (3,0) to [short,*-*] (6,0)
+  (0.5,3.5) to [short, -] (3,3.5)
+  (-3,3.95) to [short, -] (0,3.95)
+  (-3,0) to [short,-] (3,0);
+ %  \draw[thin, <-] (1.5,1.5)node{$I_a$}  ++(-60:0.5) arc (-60:170:0.5);
+ %  \draw[thin, <-] (4.5,1.5)node{$I_2$}  ++(-60:0.5) arc (-60:170:0.5);
+%   \draw[thin, <-] (7.5,2)node{$I_3$}  ++(-60:0.5) arc (-60:170:0.5);
+\draw (0.3,3.5) node[cute spdt down arrow,rotate=180] (S1) {} (S1.in) node[left] {} (S1.out 1) node[right] {};
+\node[label=above:$U_C$] (A) at ($(A)$) {};
+\end{circuitikz}
+
+\end{document}

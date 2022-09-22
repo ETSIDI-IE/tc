@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{steinmetz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \draw
+  (-3,3) to [sV, v>=$ $, l_=$u_1(t)$] (-3,0)
+  (0,3) to [C, l= $-\mathrm{j}2\Omega$, v=$u_C$, i=$\overline{I_1}$] (0,0)
+  (0,3) to [L, l= $1 mH$, i^<=$\overline{I_2}$] (3,3)
+  (-3,3) to [R, l=$1\Omega$, i=$\overline{I}$] (0,3)
+  (3,3) to [sV, v=$u_2(t)$] (3,0)
+   (3,0) to [short, -] (-3,0); 
+   \draw[thin, <-] (-1.65,1.55)node{$I_a$}  ++(-60:0.5) arc (-60:170:0.5);
+   \draw[thin, <-] (1.65,1.65)node{$I_b$}  ++(-60:0.5) arc (-60:170:0.5);
+%   (0,2) to [short, -] (0,0)
+%   (0,0) to [R, l_= $2\Omega$, ] (6,0)
+%   (6,0) to [short, -] (6,2);
+\end{circuitikz}
+
+\end{document}

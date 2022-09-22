@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages, american currents]
+\coordinate(A) at (8,6);
+  \coordinate(B) at (8,0);
+  \coordinate(C) at (8,2.5);
+  \draw
+  (-6,3) to [esource, v_= $1\,V$] (-6,0)
+  (-6,3) to [R, l=$1\Omega$] (-3,3)
+  (-3,3) to [cogsw] (-3,1.75)
+  (-3,1.75) to [R, l=$2\Omega$] (-3,0)
+  (0,3) to [R, l=$2\Omega$, i=$i(t)$] (0,1)
+  (0,1) to [C, l= $4$ mF] (0,0)
+  (-3,3) to [short,-] (0,3)
+  (-6,0) to [short,-] (0,0);
+%   \draw[thin, <-] (7.5,2)node{$I_3$}  ++(-60:0.5) arc (-60:170:0.5);
+\end{circuitikz}
+
+\end{document}

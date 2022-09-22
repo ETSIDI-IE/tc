@@ -1,0 +1,61 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{steinmetz}
+
+\begin{document}
+\begin{circuitikz}[american]
+\coordinate (A) at (2.35,0);
+\coordinate (B) at (2.35,-2);
+\coordinate (C) at (2.35,-4);
+  \draw
+   (3,0) to [rmeter,n=wattmeter1,t=$W_A$] (4,0)
+   (4,0) to [rmeter, t=$A$] (12,0)
+   (3,-2) to [rmeter,n=wattmeter2,t=$W_B$] (7,-2)
+   (3,-4) to [rmeter,n=wattmeter3,t=$W_C$] (10,-4)
+   (15,0) to [generic,l=$\overline{Z_2}$] (17,0)
+   (15,-2) to [generic,l=$\overline{Z_2}$] (17,-2)
+   (15,-4) to [generic,l=$\overline{Z_2}$] (17,-4)
+   (10,-5) to [generic,l=$\overline{Z_1}$] (10,-7)
+   (12,-5) to [generic,l=$\overline{Z_1}$] (12,-7)
+   (14,-5) to [generic,l=$\overline{Z_1}$] (14,-7)
+   (10,-7) to [short,-] (14,-7)
+   (12,0) to [rmeter, t=$A_2$] (15,0)
+   (2.4,0) to [short,-] (3,0)
+   (10,0) to [rmeter, t=$A_1$] (10,-5)
+   (12,-2) to [short,-] (12,-5)
+   (14,-4) to [short,-] (14,-5)
+   (2.4,-2) to [short,-] (3,-2)
+   (7,-2) to [short,-] (15,-2)
+   (2.4,-4) to [short,-] (3,-4)
+   (10,-4) to [short,-] (15,-4)
+   (17,0) to [short,-] (17,-0.5)
+   (17,-0.5) to [short,-] (15,-1.5)
+   (15,-1.5) to [short,-] (15,-2)
+   (17,-2) to [short,-] (17,-2.5)
+   (17,-2.5) to [short,-] (15,-3.5)
+   (15,-3.5) to [short,-] (15,-4)
+   (17,-4) to [short,-] (17.5,-4)
+   (17.5,-4) to [short,-] (17.5,1)
+   (17.5,1) to [short,-] (15,1)
+   (15,1) to [short,-] (15,0)
+%   (9,3) to [rmeter, t=$A_2$] (9,1)
+%   (9,1) to [R, l=$R_2$] (9,-3)
+%   (11,3) to [rmeter, t=$A_3$] (11,1)
+%   (11,1) to [R, l=$R_3$] (11,-1)
+%   (11,-1) to [C, l=$X_3$] (11,-3)
+%   (-3,-3) to [short,-] (11,-3)
+   (2.5,0) to [short,-]++(0,1)-|(wattmeter1.north)
+   (wattmeter1.south) to (3.5,-2)
+   (5,0) to [short,-]++(0,-1.5)--(wattmeter2.north)
+   (wattmeter2.south) to (5,-4)
+   (5.5,-4) to [short,-]++(0,1)-|(wattmeter3.north)
+   (7.5,-2) to [short,-]++(0,-3)-|(wattmeter3.south);
+   \node[label=left:A] (A) at ($(A)$) {};
+   \node[label=left:B] (B) at ($(B)$) {};
+   \node[label=left:C] (C) at ($(C)$) {};
+\end{circuitikz}
+
+\end{document}
