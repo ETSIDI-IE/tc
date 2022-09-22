@@ -2,6 +2,8 @@
 
 \input{preambulo.tex} 
 
+\setcounter{tocdepth}{0}
+
 \begin{document}
 
 
@@ -21,12 +23,33 @@
 
 \frontmatter
 
+\cleardoublepage{}
+
+\tableofcontents*
+% \clearpage
+% \listoffigures*
+% \clearpage
+% \listoftables*
+
+\cleardoublepage{}
 
 \mainmatter
 
 \chapter{Fundamentos. Corriente continua}
 
 \include{ejercicios01}
+
+\chapter{Corriente alterna monofásica}
+
+\include{ejercicios02}
+
+\chapter{Sistemas trifásicos}
+
+\include{ejercicios03}
+
+\chapter{Introducción al régimen transitorio}
+
+\include{ejercicios04}
 
 
 \backmatter
