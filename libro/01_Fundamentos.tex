@@ -187,7 +187,7 @@
 	\end{figure}
 	
 	\begin{remark}
-	    Téngase en cuenta, que por el principio de conservación de la energía, la potencia generada y consumida en un circuito, debe ser igual. O, si se trabaja con potencias positivas y negativas, el balance de potencias de un circuito debe cumplir que $\sum P=0$
+	    Téngase en cuenta, que por el principio de conservación de la energía, la potencia generada y la potencia consumida en un circuito deben ser iguales.
 	\end{remark}
 	
 	\subsubsection{Energía y potencia}
@@ -1437,155 +1437,185 @@ Por tanto, los valores de las corrientes de rama son:
 
 	
 	\subsection{Método de los nudos}
-	El método de los nudos es otro de los procedimientos de análisis utilizados en teoría de circuitos, aprovechando las relaciones entre corrientes de la 1LK. El procedimiento general de aplicación de este método es el siguiente:
+	El método de los nudos es otro de los procedimientos de
+        análisis utilizados en teoría de circuitos, aprovechando las
+        relaciones entre corrientes de la 1LK. El procedimiento
+        general de aplicación de este método es el siguiente:
 	\begin{enumerate}
-		\item Identificar las corrientes de rama.
-		\item Identificar los nudos independientes, que son:
-		\begin{equation*}
-			{Nudos\;\;Independientes=Nudos-1}
-		\end{equation*}
-		\item Aplicar la 1LK a cada nudo independiente.
-		\item Determinar las tensiones en los receptores a partir de la Ley de Ohm (considerando la resistencia y, después, la conductancia).
-		\item Combinar las ecuaciones de los puntos 3 y 4.
-		\item Resolver la ecuación.
+        \item Identificar las corrientes de rama.
+        \item Identificar los nudos independientes, que son:
+          \begin{equation*}
+            {Nudos\;\;Independientes=Nudos-1}
+          \end{equation*}
+        \item Aplicar la 1LK a cada nudo independiente.
+        \item Determinar las tensiones en los receptores a partir de
+          la Ley de Ohm (considerando la resistencia y, después, la
+          conductancia).
+        \item Combinar las ecuaciones de los puntos 3 y 4.
+        \item Resolver la ecuación.
 	\end{enumerate}
 	
 	\begin{example}\label{ej.1-6}
-		\textbf{Plantear el sistema de ecuaciones para resolver el circuito de la Figura~\ref{fig.nudos}.}
-		\begin{figure}[H]
-			\centering
-			\includegraphics{../figs/nudos.pdf}
-			\caption{Ejemplo~\ref{ej.1-6}}
-			\label{fig.nudos}
-		\end{figure}
+          \textbf{Plantear el sistema de ecuaciones para resolver el
+            circuito de la Figura~\ref{fig.nudos}.}
+          \begin{figure}[H]
+            \centering \includegraphics{../figs/nudos.pdf}
+            \caption{Ejemplo~\ref{ej.1-6}}
+            \label{fig.nudos}
+          \end{figure}
 		
-		Se sigue el procedimiento indicado anteriormente, llegando únicamente hasta el punto 5: 
+          Se sigue el procedimiento indicado anteriormente, llegando
+          únicamente hasta el punto 5:
 		
-		\begin{enumerate}
-			\item Identificar las corrientes de rama: identificadas en la Figura~\ref{fig.nudos}
-			\item Identificar los nudos independientes, que son $A$ y $B$ en la Figura~\ref{fig.nudos}.
-			\item Aplicar la 1LK a cada nudo independiente:
+          \begin{enumerate}
+          \item Identificar las corrientes de rama: identificadas en
+            la Figura~\ref{fig.nudos}
+          \item Identificar los nudos independientes, que son $A$ y
+            $B$ en la Figura~\ref{fig.nudos}.
+          \item Aplicar la 1LK a cada nudo independiente:
 			
-			Nudo A
-			\begin{equation*}
-				I_{g1} - I_a - I_{ab} = 0
-			\end{equation*}
+            Nudo A
+            \begin{equation*}
+              I_{g1} - I_a - I_{ab} = 0
+            \end{equation*}
 			
-			Nudo B
-			\begin{equation*}
-				I_{ab} - I_{g2} - I_b = 0
-			\end{equation*}
-			\item Determinar las tensiones en los receptores a partir de la Ley de Ohm (considerando la resistencia y, después, la conductancia):
-			\begin{align*}
-				U_A = U_{R_1} &= I_a \cdot R_1\rightarrow I_a=U_A\cdot G_1\\
-				U_B = U_{R_3} &= I_b \cdot R_3\rightarrow I_b=U_B\cdot G_3\\
-				U_{AB}=U_{R_2} &= I_{ab} \cdot R_2\rightarrow I_{ab}=(U_A-U_B)\cdot G_2\\
-			\end{align*}
-			\item Combinar las ecuaciones de los puntos 3 y 4:
+            Nudo B
+            \begin{equation*}
+              I_{ab} - I_{g2} - I_b = 0
+            \end{equation*}
+          \item Determinar las tensiones en los receptores a partir de
+            la Ley de Ohm (considerando la resistencia y, después, la
+            conductancia):
+            \begin{align*}
+              U_A = U_{R_1} &= I_a \cdot R_1\rightarrow I_a=U_A\cdot G_1\\
+              U_B = U_{R_3} &= I_b \cdot R_3\rightarrow I_b=U_B\cdot G_3\\
+              U_{AB}=U_{R_2} &= I_{ab} \cdot R_2\rightarrow I_{ab}=(U_A-U_B)\cdot G_2\\
+            \end{align*}
+          \item Combinar las ecuaciones de los puntos 3 y 4:
 			
-			Nudo A
-			\begin{equation*}
-				I_{g1} - U_A \cdot G_1 - (U_A - U_B) \cdot G_2 = 0\rightarrow I_{g1} = U_A \cdot (G_1 + G_2) - U_B \cdot G_2 
-			\end{equation*}
+            Nudo A
+            \begin{equation*}
+              I_{g1} - U_A \cdot G_1 - (U_A - U_B) \cdot G_2 = 0\rightarrow I_{g1} = U_A \cdot (G_1 + G_2) - U_B \cdot G_2 
+            \end{equation*}
 			
-			Nudo B
-			\begin{equation*}
-				(U_A - U_B) \cdot G_2 - I_{g2} - U_B \cdot G_3 = 0 \rightarrow  - I_{g2} = - U_A \cdot G_2 + U_B \cdot (G_2 + G_3)
-			\end{equation*}
+            Nudo B
+            \begin{equation*}
+              (U_A - U_B) \cdot G_2 - I_{g2} - U_B \cdot G_3 = 0 \rightarrow  - I_{g2} = - U_A \cdot G_2 + U_B \cdot (G_2 + G_3)
+            \end{equation*}
 			
-			Estas ecuaciones se pueden expresar en forma matricial de la siguiente manera: 
-			\begin{equation*}
-				\begin{bmatrix}
-					G_1 + G_2 & - G_2\\
-					-G_2 & G_2 + G_3
-				\end{bmatrix} \cdot%
-				\begin{bmatrix}
-					U_A\\
-					U_B
-				\end{bmatrix} = %
-				\begin{bmatrix}
-					I_{g1}\\
-					-I_{g2}
-				\end{bmatrix}
-			\end{equation*}
-		\end{enumerate}
+            Estas ecuaciones se pueden expresar en forma matricial de
+            la siguiente manera:
+            \begin{equation*}
+              \begin{bmatrix}
+                G_1 + G_2 & - G_2\\
+                -G_2 & G_2 + G_3
+              \end{bmatrix} \cdot%
+              \begin{bmatrix}
+                U_A\\
+                U_B
+              \end{bmatrix} = %
+              \begin{bmatrix}
+                I_{g1}\\
+                -I_{g2}
+              \end{bmatrix}
+            \end{equation*}
+          \end{enumerate}
 	\end{example}
 	
-	A partir de este ejemplo, se llega a la ecuación general que permite determinar el sistema de ecuaciones de un circuito de $n$ nudos, siendo esta: 
+	A partir de este ejemplo, se llega a la ecuación general que
+        permite determinar el sistema de ecuaciones de un circuito de
+        $n$ nudos, siendo esta:
 	\begin{equation*}
-		\begin{bmatrix}
-			{\color{magenta}\sum G_{1}} &  {\color{teal}-\sum G_{12}} & {\color{teal}{\dots}} & {\color{teal}-\sum G_{1n}} \\
-			{\color{teal}-\sum G_{21}} & {\color{magenta}\sum G_{2}} & {{\dots}} & {\color{teal}-\sum G_{2n}} \\
-			{\vdots} & {\vdots} &  {\ddots} & \vdots\\
-			{\color{teal}-\sum G_{n1}} & {\color{teal}-\sum G_{n2}} & \dots & {\color{magenta}\sum G_{n}}
-		\end{bmatrix} \cdot 
-		\begin{bmatrix}
-			U_1\\
-			U_2\\
-			\vdots\\
-			U_n
-		\end{bmatrix} = %
-		\begin{bmatrix}
-			{\color{orange}\sum I_{g1}}\\
-			{\color{orange}\sum I_{g2}}\\
-			{\color{orange}\vdots}\\
-			{\color{orange}\sum I_{gn}}
-		\end{bmatrix}
+          \begin{bmatrix}
+            {\color{magenta}\sum G_{1}} &  {\color{teal}-\sum G_{12}} & {\color{teal}{\dots}} & {\color{teal}-\sum G_{1n}} \\
+            {\color{teal}-\sum G_{21}} & {\color{magenta}\sum G_{2}} & {{\dots}} & {\color{teal}-\sum G_{2n}} \\
+            {\vdots} & {\vdots} &  {\ddots} & \vdots\\
+            {\color{teal}-\sum G_{n1}} & {\color{teal}-\sum G_{n2}} & \dots & {\color{magenta}\sum G_{n}}
+          \end{bmatrix} \cdot 
+          \begin{bmatrix}
+            U_1\\
+            U_2\\
+            \vdots\\
+            U_n
+          \end{bmatrix} = %
+          \begin{bmatrix}
+            {\color{orange}\sum I_{g1}}\\
+            {\color{orange}\sum I_{g2}}\\
+            {\color{orange}\vdots}\\
+            {\color{orange}\sum I_{gn}}
+          \end{bmatrix}
 	\end{equation*}
-	donde cada {\color{magenta}$G_{i}$} se corresponde con la suma de conductancias conectadas al nudo $i$; cada {\color{teal}$ G_{ij}$} se corresponde con la suma de las conductancias conectadas entre los nudos $i$ y $j$; y cada {\color{orange} $\sum I_{gi}$} es la suma algebraica de las corrientes de los generadores conectados al nudo $i$, considerando un signo positivo ($+$) si el generador inyecta corriente en el nudo, y negativo ($-$) en caso contrario. Debe tenerse en cuenta que para aplicar este método \textbf{todos los generadores deben ser fuentes de corriente}. 
+	donde cada {\color{magenta}$G_{i}$} se corresponde con la suma
+        de conductancias conectadas al nudo $i$; cada
+        {\color{teal}$ G_{ij}$} se corresponde con la suma de las
+        conductancias conectadas entre los nudos $i$ y $j$; y cada
+        {\color{orange} $\sum I_{gi}$} es la suma algebraica de las
+        corrientes de los generadores conectados al nudo $i$,
+        considerando un signo positivo ($+$) si el generador inyecta
+        corriente en el nudo, y negativo ($-$) en caso contrario. Debe
+        tenerse en cuenta que para aplicar este método \textbf{todos
+          los generadores deben ser fuentes de corriente}.
 	
 	\begin{example}\label{ex.nudos}
-	\textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes} se debe emplear el método de los nudos para determinar:
-\begin{itemize}
-\item Las tensiones en los nudos A y B
-\item Las corrientes de rama señaladas
-\item El balance de potencias, diferenciando entre elementos activos y elementos pasivos
-\end{itemize}
-Datos: $\epsilon_1=6V;\;\epsilon_2={12} V;\; \epsilon_3={24}V;\;I_{g1}= {15}A;\;I_{g2} ={9}A;\; I_{g3}= 6A;\; R_{1}= R_3 = R_4 = R_5 = {2}\Omega;\;R_{2}= 1\Omega$}
-\begin{figure}[H]
-    \centering
-    \includegraphics{../figs/nudos_fuentes.pdf}
-    \caption{Ejemplo~\ref{ex.nudos}}
-    \label{fig.nudos_fuentes}
-\end{figure}
+          \textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes}
+            se debe emplear el método de los nudos para determinar:
+            \begin{itemize}
+            \item Las tensiones en los nudos A y B
+            \item Las corrientes de rama señaladas
+            \item El balance de potencias, diferenciando entre
+              elementos activos y elementos pasivos
+            \end{itemize}
+            Datos:
+            $\epsilon_1=6V;\;\epsilon_2={12} V;\;
+            \epsilon_3={24}V;\;I_{g1}= {15}A;\;I_{g2} ={9}A;\; I_{g3}=
+            6A;\; R_{1}= R_3 = R_4 = R_5 = {2}\Omega;\;R_{2}=
+            1\Omega$}
+          \begin{figure}[H]
+            \centering \includegraphics{../figs/nudos_fuentes.pdf}
+            \caption{Ejemplo~\ref{ex.nudos}}
+            \label{fig.nudos_fuentes}
+          \end{figure}
 
-Hay tres fuentes de tensión en serie con resistencias, que se deben transformar en fuentes de corriente para poder aplicar el método de nudos:
-\begin{align*}
-    I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=3\,\text{A}\\
-    I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=12\,\text{A}\\
-    I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=12\,\text{A}\\
-\end{align*}
+          Hay tres fuentes de tensión en serie con resistencias, que
+          se deben transformar en fuentes de corriente para poder
+          aplicar el método de nudos:
+          \begin{align*}
+            I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=3\,\text{A}\\
+            I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=12\,\text{A}\\
+            I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=12\,\text{A}\\
+          \end{align*}
 
-El sistema en forma matricial queda:
-\begin{equation*}
-    \begin{bmatrix}
-        \frac{1}{2}+\frac{1}{2}+\frac{1}{1} & -\frac{1}{1}\\
-        -\frac{1}{1} & \frac{1}{1}+\frac{1}{2}+\frac{1}{2}
-    \end{bmatrix}
-    \cdot
-    \begin{bmatrix}
-        U_A\\
-        U_B
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        3+12-15-6\\
-        15+9+12-12
-    \end{bmatrix}
-\end{equation*}
-cuya solución es: 
-\begin{align*}
-    U_A&=4\,V\\
-    U_B&=14\,V
-\end{align*}
+          El sistema en forma matricial queda:
+          \begin{equation*}
+            \begin{bmatrix}
+              \frac{1}{2}+\frac{1}{2}+\frac{1}{1} & -\frac{1}{1}\\
+              -\frac{1}{1} & \frac{1}{1}+\frac{1}{2}+\frac{1}{2}
+            \end{bmatrix}
+            \cdot
+            \begin{bmatrix}
+              U_A\\
+              U_B
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              3+12-15-6\\
+              15+9+12-12
+            \end{bmatrix}
+          \end{equation*}
+          cuya solución es:
+          \begin{align*}
+            U_A&=4\,V\\
+            U_B&=14\,V
+          \end{align*}
 
-A partir de las tensiones, se determinan las corrientes de rama señaladas:
+          A partir de las tensiones, se determinan las corrientes de
+          rama señaladas:
 
-% \begin{align*}
-% V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
-% V_{AB} &= E_2 - I_{R2} R_2\\
-% V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
-% \end{align*}
+          % \begin{align*}
+          %   V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
+          %   V_{AB} &= E_2 - I_{R2} R_2\\
+          %   V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
+          % \end{align*}
 
 \begin{align*}
   U_A=\epsilon_1-I_{R1}\,R_1&\Rightarrow {I_{R1}=\dfrac{6-4}{2}=1\,A}\\
@@ -1596,104 +1626,127 @@ A partir de las tensiones, se determinan las corrientes de rama señaladas:
 \end{align*}
 
 \begin{itemize}
-    \item \textbf{Potencia de los generadores:}
-    \begin{itemize}
-        \item Generador $\epsilon_1$: $P_{g,\epsilon1}=-\epsilon_1\,I_{R1}=-6\cdot 1=-6$ W (G)
-        \item Generador $\epsilon_2$:  $P_{g,\epsilon2}=-\epsilon_2\,I_{R2}=-12\cdot 22=-264$ W (G)
-        \item Generador $\epsilon_3$:  $P_{g,\epsilon3}=-\epsilon_3\,I_{R3}=-24\cdot 5=-120$ W (G)
-        \item Generador $I_{g1}$: $P_{Ig1}=U_{AB}\,I_{g1}=(4-14)\cdot 15=-150$ W (G)
-        \item Generador $I_{g2}$:  $P_{Ig2}=-U_B\,I_{g2}=-14\cdot 9=-126$ W (G)
-        \item Generador $I_{g3}$:  $P_{Ig3}=U_{A}\,I_{g3}=4\cdot 6=24$ W (R)
-    \end{itemize}
-    \item \textbf{Potencia de las resistencias:}
-    \begin{itemize}
-        \item Resistencia 1: $P_{R1}=R_1\,I_{R1}^2=2\cdot 1^2=2$ W (R)
-        \item Resistencia 2: $P_{R2}=R_2\,I_{R2}^2=1\cdot 22^2=484$ W (R)
-        \item Resistencia 3: $P_{R3}=R_3\,I_{R3}^2=2\cdot 5^2=50$ W (R)
-        \item Resistencia 4: $P_{R4}=R_4\,I_{R4}^2=2\cdot 2^2=8$ W (R)
-        \item Resistencia 5: $P_{R5}=R_5\,I_{R5}^2=2\cdot 7^2=98$ W (R)
-    \end{itemize}
+\item \textbf{Potencia de los generadores:}
+  \begin{align*}
+    P_{Ig1} &= I_1 U_{BA} = \qty{150}{\watt}\\
+    P_{Ig2} &= I_2 V_{B} = \qty{126}{\watt}\\
+    P_{Ig3} &= I_3 (-V_{A}) = - \qty{24}{\watt}\\
+    P_{\epsilon_1} &= \epsilon_1 I_{R1} = \qty{6}{\watt}\\
+    P_{\epsilon_2} &= \epsilon_2 I_{R2} = \qty{264}{\watt}\\
+    P_{\epsilon_3} &= \epsilon_3 I_{R3} = \qty{120}{\watt}
+  \end{align*}
+  Los elementos activos aportan un total de \qty{642}{\watt}.
+\item \textbf{Potencia de las resistencias:}
+  \begin{align*}
+    P_{R1} &= I^2_{R1} R_1 = \qty{2}{\watt}\\
+    P_{R2} &= I^2_{R2} R_2 = \qty{484}{\watt}\\
+    P_{R3} &= I^2_{R3} R_3 = \qty{50}{\watt}\\
+    P_{R4} &= I^2_{R4} R_4 = \qty{8}{\watt}\\
+    P_{R5} &= I^2_{R5} R_5 = \qty{98}{\watt}
+  \end{align*}
+  Las resistencias consumen un total de \SI{642}{\watt}.
 \end{itemize}
-donde se cumple que la suma es 0.
-	\end{example}
+
+Comprobamos que la potencia total entregada por los generadores iguala
+a la potencia total consumida por las resistencias.
+
+\end{example}
 	
-	\subsubsection{Método de los nudos modificados}\label{sec.nudos_modificados}
+\subsubsection{Método de los nudos
+  modificados}\label{sec.nudos_modificados}
 	
 	\begin{remark}
-	    Este método constituye contenido avanzado de la asignatura.
+          Este método constituye contenido avanzado de la asignatura.
 	\end{remark}
 	
-	Otra manera de plantear el método de los nudos es mediante el conocido como método de los nudos modificados, que permite que en el circuito haya \textbf{fuentes de tensión y de corriente}. En este caso, tras elegir el nudo de referencia ($U_{ref}=0$), se aplica la 1LK a cada uno de los nudos independientes ($N-1$) del siguiente modo:
+	Otra manera de plantear el método de los nudos es mediante el
+        conocido como método de los nudos modificados, que permite que
+        en el circuito haya \textbf{fuentes de tensión y de
+          corriente}. En este caso, tras elegir el nudo de referencia
+        ($U_{ref}=0$), se aplica la 1LK a cada uno de los nudos
+        independientes ($N-1$) del siguiente modo:
 	\begin{enumerate}
-	    \item Se supone que, en cada nudo independiente, las corrientes \textbf{salen} de él
-	    \item Cada nudo debe cumplir con la 1LK: $\sum I=0$
-	    \item En cada nudo, aplicar la siguiente expresión:
-	    \begin{equation*}
-	        I_{i,j}=\dfrac{U_i-U_j+\sum\pm \epsilon_g}{\sum R}
-	    \end{equation*}
-	    siendo $I_{i,j}$ la corriente que va del nudo $i$ al $j$, $U_i$ la tensión del nudo del que se sale, $U_j$ la tensión del nudo al que se llega, $\epsilon_g$ son las $fem$ de los generadores, considerando el signo $+$ si la corriente de la rama sale por el polo positivo y el signo $-$ si la corriente sale por el negativo.
+        \item Se supone que, en cada nudo independiente, las
+          corrientes \textbf{salen} de él
+        \item Cada nudo debe cumplir con la 1LK: $\sum I=0$
+        \item En cada nudo, aplicar la siguiente expresión:
+          \begin{equation*}
+            I_{i,j}=\dfrac{U_i-U_j+\sum\pm \epsilon_g}{\sum R}
+          \end{equation*}
+          siendo $I_{i,j}$ la corriente que va del nudo $i$ al $j$,
+          $U_i$ la tensión del nudo del que se sale, $U_j$ la tensión
+          del nudo al que se llega, $\epsilon_g$ son las $fem$ de los
+          generadores, considerando el signo $+$ si la corriente de la
+          rama sale por el polo positivo y el signo $-$ si la
+          corriente sale por el negativo.
 	\end{enumerate}
 	
 	\begin{example}\label{ex.nudos_modificados}
-	    \textbf{Determinar las tensiones en los nudos A y B en el circuito de la Figura~\ref{fig.nudos_fuentes}.}
+          \textbf{Determinar las tensiones en los nudos A y B en el
+            circuito de la Figura~\ref{fig.nudos_fuentes}.}
 	    
-	    Se trabaja con el circuito original. 
+          Se trabaja con el circuito original.
 	    
-	    \textbf{Nudo A}
-	    \begin{align*}
-	        I_{R1}& + I_{R2} + I_{R4} + I_{g1} + I_{g3} = 0\\
-	        I_{R1}&=\dfrac{U_A-0-\epsilon_1}{R_1}=\dfrac{U_A-6}{2}\\
-	        I_{R2}&=\dfrac{U_A-U_B-\epsilon_2}{R_2}=\dfrac{U_A-U_B-12}{1}\\
-	        I_{R4}&=\dfrac{U_A-0}{R_4}=\dfrac{U_A}{2}\\
-	        I_{g1}&=15\,A\\
-	        I_{g3}&=6\,A
-	    \end{align*}
+          \textbf{Nudo A}
+          \begin{align*}
+            I_{R1}& + I_{R2} + I_{R4} + I_{g1} + I_{g3} = 0\\
+            I_{R1}&=\dfrac{U_A-0-\epsilon_1}{R_1}=\dfrac{U_A-6}{2}\\
+            I_{R2}&=\dfrac{U_A-U_B-\epsilon_2}{R_2}=\dfrac{U_A-U_B-12}{1}\\
+            I_{R4}&=\dfrac{U_A-0}{R_4}=\dfrac{U_A}{2}\\
+            I_{g1}&=15\,A\\
+            I_{g3}&=6\,A
+          \end{align*}
 	    
-	    \textbf{Nudo B}
-	    \begin{align*}
-	        I_{R2}& + I_{R3} + I_{R5} + I_{g1} + I_{g2} = 0\\
-	        I_{R2}&=\dfrac{U_B-U_A+\epsilon_2}{R_2}=\dfrac{U_B-U_A+12}{1}\\
-	        I_{R3}&=\dfrac{U_B-0-\epsilon_3}{R_3}=\dfrac{U_B-24}{2}\\
-	        I_{R5}&=\dfrac{U_B-0}{R_5}=\dfrac{U_B}{2}\\
-	        I_{g1}&=-15\,A\\
-	        I_{g2}&=-9\,A
-	    \end{align*}
+          \textbf{Nudo B}
+          \begin{align*}
+            I_{R2}& + I_{R3} + I_{R5} + I_{g1} + I_{g2} = 0\\
+            I_{R2}&=\dfrac{U_B-U_A+\epsilon_2}{R_2}=\dfrac{U_B-U_A+12}{1}\\
+            I_{R3}&=\dfrac{U_B-0-\epsilon_3}{R_3}=\dfrac{U_B-24}{2}\\
+            I_{R5}&=\dfrac{U_B-0}{R_5}=\dfrac{U_B}{2}\\
+            I_{g1}&=-15\,A\\
+            I_{g2}&=-9\,A
+          \end{align*}
 	    
-	    Combinando las ecuaciones del nudo A, se obtiene que:
-	    \begin{equation*}
-	        \dfrac{U_A-6}{2}+\dfrac{U_A-U_B-12}{1}+\dfrac{U_A}{2}+15+6=0\Rightarrow 2\,U_A-U_B=-6
-	    \end{equation*}
-	    De manera análoga, con el nudo B: 
-	    \begin{equation*}
-	        \dfrac{U_B-U_A+6}{1}+\dfrac{U_B-24}{2}+\dfrac{U_B}{2}-15-6=0\Rightarrow -U_A+2\,U_B=24
-	    \end{equation*}
-	    Resolviendo el sistema de ecuaciones, se llega a la conclusión de que: 
-	    \begin{align*}
-	        U_A&=4\,V\\
-	        U_B&=14\,V
-	    \end{align*}
+          Combinando las ecuaciones del nudo A, se obtiene que:
+          \begin{equation*}
+            \dfrac{U_A-6}{2}+\dfrac{U_A-U_B-12}{1}+\dfrac{U_A}{2}+15+6=0\Rightarrow 2\,U_A-U_B=-6
+          \end{equation*}
+          De manera análoga, con el nudo B:
+          \begin{equation*}
+            \dfrac{U_B-U_A+6}{1}+\dfrac{U_B-24}{2}+\dfrac{U_B}{2}-15-6=0\Rightarrow -U_A+2\,U_B=24
+          \end{equation*}
+          Resolviendo el sistema de ecuaciones, se llega a la
+          conclusión de que:
+          \begin{align*}
+            U_A&=4\,V\\
+            U_B&=14\,V
+          \end{align*}
 
 	\end{example}
 	
 	\begin{example}\label{ex.nudos_mod_fdep}
-	    \textbf{Calcular la corriente $I$ en el circuito de la Figura~\ref{fig.ejemplo_mallas_dependiente}.}
+          \textbf{Calcular la corriente $I$ en el circuito de la
+            Figura~\ref{fig.ejemplo_mallas_dependiente}.}
 	    
-	    Se considera como referencia (masa) el nudo de abajo. La 1LK aplicada al nudo de arriba queda: 
-	    \begin{equation*}
-	        2+\dfrac{U_A-0-4}{2}+\dfrac{U_A-0-3\,U_r}{5}=2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_r}{5}
-	    \end{equation*}
-	    Además, el valor de $U_r$ se puede obtener a partir de la ley de Ohm:
-	    \begin{equation*}
-	        U_r=2\, I_{R_2}=2\cdot \left( \dfrac{U_A-4}{2} \right)=U_A-4
-	    \end{equation*}
-	    Y, reemplazando este valor en la ecuación de la 1LK se obtiene que: 
-	    \begin{equation*}
-	        2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_A+12}{5}=0\Rightarrow U_A=-24\,V
-	    \end{equation*}
-	    por lo que $I$:
-	    \begin{equation*}
-	        I=-\left(\dfrac{U_A-3\,U_r}{5} \right)=-\left(\dfrac{24-3\,(-24-4)}{5}\right)=-12\,A
-	    \end{equation*}
+          Se considera como referencia (masa) el nudo de abajo. La 1LK
+          aplicada al nudo de arriba queda:
+          \begin{equation*}
+            2+\dfrac{U_A-0-4}{2}+\dfrac{U_A-0-3\,U_r}{5}=2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_r}{5}
+          \end{equation*}
+          Además, el valor de $U_r$ se puede obtener a partir de la
+          ley de Ohm:
+          \begin{equation*}
+            U_r=2\, I_{R_2}=2\cdot \left( \dfrac{U_A-4}{2} \right)=U_A-4
+          \end{equation*}
+          Y, reemplazando este valor en la ecuación de la 1LK se
+          obtiene que:
+          \begin{equation*}
+            2+\dfrac{U_A-4}{2}+\dfrac{U_A-3\,U_A+12}{5}=0\Rightarrow U_A=-24\,V
+          \end{equation*}
+          por lo que $I$:
+          \begin{equation*}
+            I=-\left(\dfrac{U_A-3\,U_r}{5} \right)=-\left(\dfrac{24-3\,(-24-4)}{5}\right)=-12\,A
+          \end{equation*}
 	\end{example}
 	
 	\section{Teoremas}\label{sec.teoremas_CC}
