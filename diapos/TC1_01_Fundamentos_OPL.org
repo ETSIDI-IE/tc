@@ -1496,15 +1496,15 @@ Si la excitación es multiplicada por una *constante*, $K \cdot x(t)$, la respue
 #+ATTR_LATEX: :width 0.6\textwidth
 [[file:../figs/proporcionalidad.pdf]]
 
-*** Análisis de un circuito mediante proporcionalidad
+*** COMMENT Análisis de un circuito mediante proporcionalidad
 
 **** ¿Qué excitación debo aplicar a un circuito para obtener una determinada respuesta?
  - Aplicamos una excitación de valor unidad.
  - Resolvemos el circuito, obteniendo la respuesta del circuito a la excitación unidad.
  - Hallamos la constante de proporcionalidad entre la respuesta obtenida y la respuesta deseada.
- - La excitación que se debe aplicar es esta constante de proporcionalidad (puede ser un número complejo).
+ - La excitación que se debe aplicar es esta constante de proporcionalidad.
 
-*** Análisis de un circuito mediante proporcionalidad
+*** COMMENT Análisis de un circuito mediante proporcionalidad
 
 **** ¿Qué respuesta proporciona un circuito ante una determinada excitación?
  - Suponemos una respuesta de valor unidad.
