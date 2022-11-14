@@ -290,6 +290,53 @@
 	\end{figure}
 	
 	Si se tiene un sistema a tres hilos, no se puede seguir el procedimiento anterior, y se deberá aplicar el método de las mallas. 
+
+        \vspace{4mm}
+        \begin{example}\label{ej.estrella-deseq}
+\textbf{          Un sistema trifásico de cuatro conductores, de secuencia de fases
+directa y $\SI[parse-numbers=false]{200\sqrt{3}}{\volt}$ alimenta a
+tres impedancias:
+$\overline{Z}_{A} =
+{10\phase{\ang{60}}}\unit{\ohm}$,
+$\overline{Z}_{B} = {10\phase{\ang{0}}}\unit{\ohm}$
+y
+$\overline{Z}_{C} =
+{10\phase{\ang{-30}}}\unit{\ohm}$. Determina las
+corrientes de línea.}
+
+Se trata de una conexión en estrella desequilibrada. Las tensiones de línea y fase son, respectivamente:
+\[ U = \SI[parse-numbers=false]{200\sqrt{3}}{\volt} \rightarrow U_f =
+  \SI{200}{\volt}
+\]
+
+Los fasores correspondientes, teniendo en cuenta que se trata de una secuencia de fases directa, son:
+\begin{align*}
+  \overline{U}_A &= {200\phase{\ang{90}}}\unit{\volt}\\
+  \overline{U}_B &= {200\phase{\ang{-30}}}\unit{\volt}\\
+  \overline{U}_C &= {200\phase{\ang{-150}}}\unit{\volt}\\
+\end{align*}
+
+Con estos fasores y las impedancias podemos calcular las corrientes de línea:
+\begin{align*}
+  \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A} = \frac{200}{10}\phase{\ang{90} - \ang{60}} \\
+  \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B} = \frac{200}{10}\phase{\ang{-30} - \ang{0}}\\
+  \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C} = \frac{200}{10}\phase{\ang{-150} - (\ang{-30})}
+\end{align*}
+
+ \begin{align*}
+   \overline{I}_A &= {20\phase{\ang{30}}}\unit{\ampere}\\
+   \overline{I}_B &= {20\phase{\ang{-30}}}\unit{\ampere}\\
+   \overline{I}_C &= {20\phase{\ang{-120}}}\unit{\ampere}
+ \end{align*}
+
+ La corriente que circula por el neutro es:
+ \[
+   \overline{I}_N = -(\overline{I}_A + \overline{I}_B +
+   \overline{I}_C) = {30.12\phase{\ang{144.89}}}\unit{\ampere}
+ \]
+
+
+\end{example}
 	
 	\subsection{Conexión en triángulo}\label{sec.triangulo}
 	
