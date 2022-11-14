@@ -154,11 +154,11 @@ $R_2=4\Omega$; $\omega\,L_1=3\Omega$; $\omega L_2=4\Omega$.
   \end{center}
   \emph{Sol.
     $\overline{I} =
-    \qty[parse-numbers=false]{4\phase{\ang{0}}}{\ampere};
+    4\phase{\ang{0}}\unit{\ampere};
     \overline{I}_1 =
-    \qty[parse-numbers=false]{2\sqrt{5}\phase{\ang{-26.56}}}{\ampere}
+    2\sqrt{5}\phase{\ang{-26.56}}\unit{\ampere}
     ; \overline{I}_2 =
-    \qty[parse-numbers=false]{1\phase{\ang{-90}}}{\ampere} ; X_1 =
+    1\phase{\ang{-90}}\unit{\ampere} ; X_1 =
     \qty{5}{\ohm}; X_3 =
     \qty[parse-numbers=false]{\frac{50}{3}}{\ohm}; \overline{Z} =
     \qty[parse-numbers=false]{10 - j5}{\ohm}; $ }
@@ -203,11 +203,10 @@ $R_2=4\Omega$; $\omega\,L_1=3\Omega$; $\omega L_2=4\Omega$.
   \end{itemize}
   \emph{Sol.:
     $P_1=7000W;\;
-    Q_1=8183.91VAr;\;S_1=10769.23VA;\;P_2=5000W;\;Q_2=5882.35VAr;\;S_2=3098.72VA;\;P_T=12000W;\;Q_T=11282.63VAr;\;S_T=16471.12VA;\,
-    I_1=46.82\,A;\;I_2=25.58\,A;\;I_T=71.62\,A;\,P_g=13333.65
-    W;\;Q_g=11282.63 VAr;\,S_g=17466.65 VA;\;U_g=243.88 V;\; C=441.66
-    \mu F;\,I'=54.92 A;\;P_g'=12784.21 W;\;Q_g'=3944.21
-    VAr;\;S_g'=13378.82 VA$}
+    Q_1=8183.91VAr;\;S_1=10769.23VA;\;P_2=5000W;\;Q_2=3098.72VAr;\;S_2=5882.35VA;\;P_T=12000W;\;Q_T=11282.63VAr;\;S_T=16471.12VA;\,
+    I_1=46.82\,A;\;I_2=25.58\,A;\;I_T=71.62\,A;\,P_g=13346.23W;\;Q_g=11282.63 VAr;\,S_g=17476.26 VA;\;U_g=244.4 V;\; C=441.66
+    \mu F;\,I'=54.92 A;\;P_g'=12791.75 W;\;Q_g'=3944.21
+    VAr;\;S_g'=13386.02 VA$}
 
 \item Un generador de corriente alterna monofásica ($f = {50}{Hz}$)
   alimenta a dos cargas a través de una línea de cobre. Esta línea, de
@@ -286,10 +285,15 @@ $R_2=4\Omega$; $\omega\,L_1=3\Omega$; $\omega L_2=4\Omega$.
     \SI{10350.1}{\voltampere}; I' = \SI{45}{\ampere}; S'_g =
     \SI{10599.2}{\voltampere}; U'_g = \SI{235.5}{\volt} $}
 
-\item Calcular la corriente $i(t)$ del circuito de la figura.
+\item
+Calcular la corriente $i(t)$ del circuito de la figura.
+
   \begin{center}
     \includegraphics[width=\linewidth]{../figs/BT2_13.pdf}
   \end{center}
+
+Datos: $i_g(t) = 10\sqrt{2}\sin(100t)\unit{\ampere}$; $R_1 = R_2 = \qty{1}{\ohm}$; $L_1 = L_2 = \qty{0.01}{\henry}$; $C_1 = \qty{0.01}{\farad}$; $u_g(t) = 10\sqrt{2}\cos(100t)\unit{\volt}$
+
 
   \emph{Sol.: $i(t)=\sqrt{2}\,10\,\cos(100\,t) A$}
 
@@ -357,7 +361,7 @@ Datos:
   \alpha = 2
 \end{equation*}
 \emph{Sol.
-  $ \overline{\epsilon}_{th} = 11.66\phase{\ang{-59.04}}\si{\volt};
+  $ \overline{\epsilon}_{th} = 11.66\phase{\ang{-59.04}}\unit{\volt};
   \overline{Z}_{th} = 0.64 + 0.52j\si{\ohm}$}
 
 \item Obtén el generador equivalente de Thévenin del circuito de la figura respecto de A y B. A partir de este generador, calcula la impedancia a colocar en AB para obtener la máxima potencia, calculando esta potencia.
@@ -378,8 +382,8 @@ Datos:
 \end{minipage}
 
 \emph{Sol. $
-  \overline{\epsilon}_{th} = 11.66\phase{\ang{-59.04}}\si{\volt};
-  \overline{Z}_{th} = 0.64 + 0.52j\si{\ohm}
+  \overline{\epsilon}_{th} =  10 - 10j \unit{\volt};
+  \overline{Z}_{th} = 4 - 3j \unit{\ohm}
   $}
 
 \end{enumerate}
