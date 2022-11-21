@@ -1253,113 +1253,141 @@
 	\end{itemize}
 	
 	\subsection{Teorema de Boucherot}\label{sec.boucherot}
-	El teorema de Boucherot es una consecuencia del principio de conservación de la energía y, de hecho, puede encontrarse también como \textit{principio de conservación de la potencia compleja}. Se demuestra aquí para el caso de un circuito en serie. 
+	El teorema de Boucherot es una consecuencia del principio de
+        conservación de la energía y, de hecho, puede encontrarse
+        también como \textit{principio de conservación de la potencia
+          compleja}. Se demuestra aquí para el caso de un circuito en
+        serie.
 	
-	Sea un circuito en serie formado por 3 impedancias: $\overline{Z_1}=R_1+\mathrm{j}\,X_1$, $\overline{Z_2}=R_2+\mathrm{j}\,X_2$ y $\overline{Z_3}=R_3-\mathrm{j}\,X_3$ (es decir, $\overline{Z_1}$ y $\overline{Z_2}$ tienen carácter inductivo y $\overline{Z_3}$ tiene carácter capacitivo). Por comodidad, se supondrá que $\overline{I}=I\phase{0^\circ}$. Por la 2LK se cumple que:
+	Sea un circuito en serie formado por 3 impedancias:
+        $\overline{Z_1}=R_1+\mathrm{j}\,X_1$,
+        $\overline{Z_2}=R_2+\mathrm{j}\,X_2$ y
+        $\overline{Z_3}=R_3-\mathrm{j}\,X_3$ (es decir,
+        $\overline{Z_1}$ y $\overline{Z_2}$ tienen carácter inductivo
+        y $\overline{Z_3}$ tiene carácter capacitivo). Por comodidad,
+        se supondrá que $\overline{I}=I\phase{0^\circ}$. Por la 2LK se
+        cumple que:
 	\begin{equation*}
-		\overline{U}=\sum_{i=1}^3 \overline{U_i}\Rightarrow
-		\begin{cases}
-			U\,\cos(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\cos(\theta_i)\\
-			U\,\sin(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\sin(\theta_i)
-		\end{cases}
+          \overline{U}=\sum_{i=1}^3 \overline{U_i}\Rightarrow
+          \begin{cases}
+            U\,\cos(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\cos(\theta_i)\\
+            U\,\sin(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\sin(\theta_i)
+          \end{cases}
 	\end{equation*}
-	Multiplicando las dos expresiones anteriores por la corriente (la misma en todo el circuito, al tratarse de una conexión en serie), se obtienen las relaciones entre las potencias, que puede verse gráficamente en la Figura~\ref{fig.boucherot}: 
+	Multiplicando las dos expresiones anteriores por la corriente
+        (la misma en todo el circuito, al tratarse de una conexión en
+        serie), se obtienen las relaciones entre las potencias, que
+        puede verse gráficamente en la Figura~\ref{fig.boucherot}:
 	\begin{align*}
-		U\,I\,\cos(\theta)&=P_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\cos(\theta_i)=\displaystyle\sum_{i=1}^3 P_i=\displaystyle\sum_{i=1}^3 R_i\cdot I^2\\
-		U\,I\,\sin(\theta)&=Q_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\sin(\theta_i)=\displaystyle\sum_{i=1}^3 Q_i=\displaystyle\sum_{i=1}^3 X_i\cdot I^2\\
+          U\,I\,\cos(\theta)&=P_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\cos(\theta_i)=\displaystyle\sum_{i=1}^3 P_i=\displaystyle\sum_{i=1}^3 R_i\cdot I^2\\
+          U\,I\,\sin(\theta)&=Q_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\sin(\theta_i)=\displaystyle\sum_{i=1}^3 Q_i=\displaystyle\sum_{i=1}^3 X_i\cdot I^2\\
 	\end{align*}
 	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\linewidth]{../figs/boucherot.pdf}
-		\caption{Teorema de Boucherot}
-		\label{fig.boucherot}
+          \centering
+          \includegraphics[width=0.7\linewidth]{../figs/boucherot.pdf}
+          \caption{Teorema de Boucherot}
+          \label{fig.boucherot}
 	\end{figure}
 	
 	Es decir, se cumple que:
 	\begin{itemize}
-		\item La potencia activa total es la suma aritmética (suma de números naturales) de las potencias activas de cada receptor
-		\item La potencia reactiva total es la suma algebraica (suma de números enteros, considerando el signo) de las potencias reactivas de cada receptor
+        \item La potencia activa total es la suma aritmética (suma de
+          números naturales) de las potencias activas de cada receptor
+        \item La potencia reactiva total es la suma algebraica (suma
+          de números enteros, considerando el signo) de las potencias
+          reactivas de cada receptor
 	\end{itemize}
-	Estas dos afirmaciones expresan el teorema de Boucherot, de manera que se cumple que la potencia activa y reactiva total es la suma de las potencias activas y reactivas individuales (respectivamente) y, por tanto, que la potencia compleja total es la suma de las potencias aparentes individuales: 
+	Estas dos afirmaciones expresan el teorema de Boucherot, de
+        manera que se cumple que la potencia activa y reactiva total
+        es la suma de las potencias activas y reactivas individuales
+        (respectivamente) y, por tanto, que la potencia compleja total
+        es la suma de las potencias aparentes individuales:
 	\begin{equation}\label{eq.S_compleja_mono}
-		\boxed{\overline{S} =P+\mathrm{j}\,Q= \sum^n_{i = 1} (P_i + jQ_i)=\sum_{i = 1}^{n} \overline{S}_i}
+          \boxed{\overline{S} =P+\mathrm{j}\,Q= \sum^n_{i = 1} (P_i + jQ_i)=\sum_{i = 1}^{n} \overline{S}_i}
 	\end{equation}
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.2-7}
-		\textbf{Sabiendo que las fuentes de tensión del circuito de la Figura \ref{fig.problema9_garri} vienen definidas por las formas de onda $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V, calcular las potencias de cada elemento, así como el balance de potencias del circuito. }
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.6\linewidth]{../figs/ej7_BT2.pdf}
-			\caption{Ejemplo \ref{ej.2-7}}
-			\label{fig.problema9_garri}
-		\end{figure}
+          \textbf{Sabiendo que las fuentes de tensión del circuito de
+            la Figura \ref{fig.problema9_garri} vienen definidas por
+            las formas de onda
+            $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y
+            $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V, calcular las
+            potencias de cada elemento, así como el balance de
+            potencias del circuito. }
+          \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\linewidth]{../figs/ej7_BT2.pdf}
+            \caption{Ejemplo \ref{ej.2-7}}
+            \label{fig.problema9_garri}
+          \end{figure}
 		
-		Se pasa $u_1(t)$ a función senoidal, obteniéndose $u_1(t)=10\sqrt{2}\cdot \sin(1000\cdot t+\frac{\pi}{2})$. Así, los fasores de $\overline{U_1}$ y $\overline{U_2}$ son:
-		\begin{align*}
-			\overline{U_1}&=10\phase{90^\circ}\;V\\
-			\overline{U_2}&=5\phase{0^\circ}\;V
-		\end{align*}
+          Se pasa $u_1(t)$ a función senoidal, obteniéndose
+          $u_1(t)=10\sqrt{2}\cdot \sin(1000\cdot
+          t+\frac{\pi}{2})$. Así, los fasores de $\overline{U_1}$ y
+          $\overline{U_2}$ son:
+          \begin{align*}
+            \overline{U_1}&=10\phase{90^\circ}\;V\\
+            \overline{U_2}&=5\phase{0^\circ}\;V
+          \end{align*}
 		
-		Se calcula también el valor de $\overline{X_L}$:
-		\begin{equation*}
-			\overline{X_L}=\mathrm{j}\,\omega\, L=\mathrm{j} 1\,\Omega
-		\end{equation*}
+          Se calcula también el valor de $\overline{X_L}$:
+          \begin{equation*}
+            \overline{X_L}=\mathrm{j}\,\omega\, L=\mathrm{j} 1\,\Omega
+          \end{equation*}
 		
-		Con esto, el sistema matricial por el método de mallas es: 
-		\begin{equation*}
-			\begin{bmatrix}
-				10\phase{90^\circ} \\
-				5\phase{0^\circ} 
-			\end{bmatrix}
-			=
-			\begin{bmatrix}
-				1-\mathrm{j}\,2 & -\mathrm{j}\,2 \\
-				-\mathrm{j}\,2 & -\mathrm{j}\,1 \\
-			\end{bmatrix}
-			\cdot 
-			\begin{bmatrix}
-				\overline{I_a}\\
-				\overline{I_b}
-			\end{bmatrix}
-		\end{equation*}
-		Resolviendo el sistema se obtiene que:
-		\begin{align*}
-			\overline{I_a}&= 6.32\phase{71.5651^\circ}\;A\\
-			\overline{I_b}&= 8.05\phase{-119.7449^\circ}\;A
-		\end{align*}
-		y reemplazando en el circuito: 
-		\begin{align*}
-			\overline{I}&=\overline{I_a}=6.32\phase{71.5651^\circ}\;A\\
-			\overline{I_1}&=\overline{I_a}+\overline{I_b}=2.23\phase{-153.5271^\circ}\;A\\
-			\overline{I_2}&=\overline{I_b}=8.05\phase{-119.7449^\circ}\;A
-		\end{align*}
+          Con esto, el sistema matricial por el método de mallas es:
+          \begin{equation*}
+            \begin{bmatrix}
+              10\phase{90^\circ} \\
+              -5\phase{0^\circ} 
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              1-\mathrm{j}\,2 & \mathrm{j}\,2 \\
+              \mathrm{j}\,2 & -\mathrm{j}\,1 \\
+            \end{bmatrix}
+            \cdot 
+            \begin{bmatrix}
+              \overline{I_a}\\
+              \overline{I_b}
+            \end{bmatrix}
+          \end{equation*}
+          Resolviendo el sistema se obtiene que:
+          \begin{align*}
+            \overline{I_a}&= 2 + 6j\unit{\ampere}\\
+            \overline{I_b}&= 4 + 7j\unit{\ampere}
+          \end{align*}
+          y reemplazando en el circuito:
+          \begin{align*}
+            \overline{I}&=\overline{I_a}= 2 + 6j\unit{\ampere}\\
+            \overline{I}_1&=\overline{I_a} - \overline{I_b}= -2 -j\unit{\ampere}\\
+            \overline{I}_2&=-\overline{I_b}= -4 - 7j\unit{\ampere}\\
+          \end{align*}
 		
 		
-		Con las corrientes, y los valores de las impedancias, se calculan las potencias activas y reactivas:
-		\begin{align*}
-			P_R&=R\cdot I^2=39.94\;W\\
-			Q_L &= X_L\cdot I_2^2=64.80\;VAr\\
-			Q_C&=X_C\cdot I_1^2=-9.95\;VAr
-		\end{align*}
-		siendo la potencia aparente total consumida por los receptores:
-		\begin{equation*}
-			\overline{S}=P+\mathrm{j}\;Q=39.94+\mathrm{j}\,54.85\;VA
-		\end{equation*}
+          Con las corrientes, y los valores de las impedancias, se
+          calculan las potencias activas y reactivas:
+          \begin{align*}
+            P_R&=R\cdot I^2=\qty{40}{\watt}\\
+            Q_L &= X_L\cdot I_2^2=\qty{65}{\voltamperer}\\
+            Q_C&=X_C\cdot I_1^2=-\qty{10}{\voltamperer}
+          \end{align*}
+          siendo la potencia aparente total consumida por los
+          receptores:
+          \begin{equation*}
+            \overline{S}=P+\mathrm{j}\;Q= 40 + 55j\unit{\voltampere}
+          \end{equation*}
 		
-		Se calcula también la potencia aparente de las fuentes de alimentación:
-		\begin{align*}
-			    \overline{S_{u1}}&=-U_1\cdot I^*=-(10\phase {90^\circ})\cdot (6.32\phase {-71.57^\circ})=-59.96-\mathrm{j}\,19.98\;VA\\
-			    \overline{S_{u2}}&=-U_2\cdot I_2^*=-(5\phase{0^\circ})\cdot (8.05\phase{119.75^\circ})=19.92-\mathrm{j}\,34.95\;VA
-			\end{align*}
-		
-		Haciendo el balance de potencias, se cumple que:
-		\begin{equation*}
-			    \sum P = 39.94-59.96+19.92=0
-			\end{equation*}
-		\begin{equation*}
-			    \sum Q = 64.8-9.95-34.95=0
-			\end{equation*}
+          Se calcula también la potencia aparente entregada por las
+          fuentes de alimentación:
+          \begin{align*}
+            \overline{S}_{u1}&=\overline{U}_1\cdot \overline{I}^*= 60 + 20j\unit{\voltampere}\\
+            \overline{S}_{u2}&=\overline{U}_2\cdot \overline{I}_2^*= -20 + 35j\unit{\voltampere}\\
+            \overline{S}_g &= \overline{S}_{u1} + \overline{S}_{u2} = 40 + 55j\unit{\voltampere}
+          \end{align*}
+          Comprobamos que coincide con el triángulo de potencias de los receptores.
+                        
 	\end{example}
 	
 	\subsection{Medida de potencia: vatímetro}\label{sec.medida_potencia}
