@@ -1641,7 +1641,7 @@ Calculamos la potencia en la resistencia de carga $R_L$:
    \begin{align*}
    I &= \frac{\epsilon_{th}}{R_{th} + R_L}\\
    P_L &= I^2 \cdot R_L\\
-   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{R_{th} + R_L^2} \cdot R_L}
+   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L}
    \end{align*}
  #+end_export
 
