@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[domain = 0:8, samples = 1000]
+  \draw[->] (-0.2,0) -- (8.1,0) node[below] {$R_L/R_g$};
+  \draw[->] (0,-0.2) -- (0,10) node[above] {${\color{blue!80!black}P_L}  \quad {\color{red!80!black}\mu}$};
+  \node[below] at (1,0) {$R_L = R_g$};
+  \draw[dashed, color=blue!80!black] (1,0) -- (1, 10);
+  \draw[thick, color=red!80!black] plot[id=mu] function{10 * x/(1 + x)};
+  \draw[thick, color=blue!80!black] plot[id=Pl] function{10 * 4 * x/(1 + x)**2};
+\end{tikzpicture}
+
+\end{document}

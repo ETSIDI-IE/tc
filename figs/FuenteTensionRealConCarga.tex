@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages]
+  \coordinate (Ag) at (0,4);
+  \coordinate (Bg) at (0,0);
+  \node[label=above right:A] (A) at ($(Ag) + (2,0)$) {};
+  \node[label=below right:B] (B) at ($(Bg) + (2,0)$) {};
+  \draw
+  (Ag) to [R, l_= $R_g$] (A)
+  (Ag) to [V, v_= $\epsilon_g$] (Bg)
+  (Bg) to [short] (B)
+  (A) to [open, *-*, v^= $U_{AB}$] (B);
+  \draw
+  (A) to [short] ++(1.5,0)
+  to [R, l = $R_L$, i = $I$] ($(B) + (1.5,0)$)
+  to [short] ++(-1.5,0)
+  to [short,*-] (B);
+\end{circuitikz}
+
+\end{document}
