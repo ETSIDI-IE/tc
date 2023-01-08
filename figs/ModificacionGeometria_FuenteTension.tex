@@ -1,0 +1,22 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american currents, american voltages, european resistors]
+  \coordinate (A) at (0, 0);
+  \coordinate (A4) at ($(A) + (-2,-2)$);
+  \coordinate (A3) at ($(A) + (2,-2)$);
+  \coordinate (B) at (0, 2);
+  \coordinate (B1) at ($(B) + (-2,2)$);
+  \coordinate (B2) at ($(B) + (2,2)$);
+  \draw
+  (B) to [V, l = $\epsilon_g$] (A)
+  (B1) to [R, l = $Z_1$, -*] (B)
+  (B2) to [R, l = $Z_2$] (B)
+  (A3) to [R, l = $Z_3$, -*] (A)
+  (A4) to [R, l = $Z_4$] (A);
+\end{circuitikz}
+\end{document}

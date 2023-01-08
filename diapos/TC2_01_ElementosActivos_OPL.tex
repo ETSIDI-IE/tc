@@ -1,4 +1,4 @@
-% Created 2023-01-07 sáb 19:04
+% Created 2023-01-08 dom 12:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -59,8 +59,8 @@
 \maketitle
 
 \section{Clasificación}
-\label{sec:org0c08b84}
-\begin{frame}[label={sec:org7e0905d}]{Tabla de Clasificación}
+\label{sec:orgba15ff5}
+\begin{frame}[label={sec:org9f5ea4c}]{Clasificación}
 \begin{itemize}
 \item Tensión o Corriente
 \item Ideal o Real
@@ -68,7 +68,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orga576bad}]{Generador Ideal}
+\begin{frame}[label={sec:org4d0f859}]{Generador Ideal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -86,7 +86,7 @@ Un \alert{generador de corriente ideal} impone la corriente a la salida (\emph{l
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org09de0ec}]{Generador Real CC}
+\begin{frame}[label={sec:orgdf1e781}]{Generador Real CC}
 Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
 
 \begin{columns}
@@ -103,7 +103,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org9810986}]{Generador Real AC}
+\begin{frame}[label={sec:org0306f2e}]{Generador Real AC}
 Los generadores reales tienen pérdidas que se modelan con una impedancia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
 
 \begin{columns}
@@ -127,7 +127,7 @@ Los generadores reales tienen pérdidas que se modelan con una impedancia en \al
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf08f71f}]{Generadores Dependientes}
+\begin{frame}[label={sec:orgb4c2314}]{Generadores Dependientes}
 \begin{block}{Generadores de Tensión}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -164,9 +164,9 @@ Los generadores reales tienen pérdidas que se modelan con una impedancia en \al
 
 
 \section{Generadores Independientes Reales}
-\label{sec:org9487f2a}
+\label{sec:org830c98e}
 
-\begin{frame}[label={sec:org14afe6b}]{Ecuación del generador CC}
+\begin{frame}[label={sec:org237d130}]{Ecuación del generador CC}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -186,7 +186,7 @@ Los generadores reales tienen pérdidas que se modelan con una impedancia en \al
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org4109791}]{Ecuación del generador AC}
+\begin{frame}[label={sec:org0cc45b5}]{Ecuación del generador AC}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -207,7 +207,7 @@ Los generadores reales tienen pérdidas que se modelan con una impedancia en \al
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org5808ff1}]{Diagramas Tensión - Corriente}
+\begin{frame}[label={sec:org30edede}]{Diagramas Tensión - Corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 Fuente de tensión
@@ -229,7 +229,7 @@ Fuente de corriente
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgb4cfaad}]{Potencia y rendimiento de una fuente}
+\begin{frame}[label={sec:org22c8c36}]{Potencia y rendimiento de una fuente}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -260,7 +260,7 @@ Fuente de corriente
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgfd8f8a1}]{Potencia y rendimiento de una fuente}
+\begin{frame}[label={sec:org281db19}]{Potencia y rendimiento de una fuente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
@@ -284,7 +284,7 @@ Fuente de corriente
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org76d924d}]{Potencia y rendimiento de una fuente}
+\begin{frame}[label={sec:orgebc25a9}]{Potencia y rendimiento de una fuente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
@@ -305,10 +305,59 @@ Fuente de corriente
 \end{columns}
 \end{frame}
 
+\begin{frame}[label={sec:orgf032576}]{Potencia de una fuente AC}
+Calculamos la potencia activa en la impedancia de carga \(Z_L\):
+\begin{columns}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin0.pdf}
+\end{center}
+\end{column}
+
+\begin{column}{0.2\columnwidth}
+\begin{align*}
+  \overline{Z}_{th} &= R_{th} + jX_{th}\\
+  \overline{Z}_L &= R_L + jX_L\\
+\end{align*}
+\end{column}
+
+\begin{column}{0.4\columnwidth}
+\begin{align*}
+\overline{I} &= \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}\\
+P_L &= I^2 \cdot R_L\\
+\Aboxed{P_L &= \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L}
+\end{align*}
+\end{column}
+\end{columns}
+
+Las condiciones de máximo son: 
+\[
+  \boxed{%
+    \diffp{P_L}{X_L} = 0 \quad%
+    \diffp{P_L}{R_L} = 0%
+  }
+\]
+\end{frame}
+
+\begin{frame}[label={sec:org4893f72}]{Potencia AC}
+La máxima potencia disponible en la carga es:
+\begin{center}
+\includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin.pdf}
+\end{center}
+
+\begin{equation*}
+  \left.
+    \begin{matrix}
+      \overline{Z}_L = \overline{Z}_g^*\\
+      P_L = \frac{\epsilon^2_g}{|\overline{Z}_g + \overline{Z}_L|^2} \cdot R_L
+    \end{matrix} \right\}\rightarrow
+  \boxed{P_L = \frac{\epsilon^2_g}{4 R_g}}
+\end{equation*}
+\end{frame}
 
 \section{Transformación y Asociación}
-\label{sec:org7e62417}
-\begin{frame}[label={sec:orgc06db2f}]{Equivalencia de fuentes}
+\label{sec:org18d34c1}
+\begin{frame}[label={sec:org97f1b0d}]{Equivalencia de fuentes}
 Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \begin{columns}
 \begin{column}{0.33\columnwidth}
@@ -338,16 +387,25 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{frame}
 
 
-\begin{frame}[label={sec:org9799bf0}]{Conexión en serie de generadores}
+\begin{frame}[label={sec:orgb2f4263}]{Conexión en serie de generadores}
 \begin{block}{Generadores de Tensión}
-\begin{itemize}
-\item Pueden conectarse en serie sin restricción.
+Pueden conectarse en serie sin restricción.
 
+\begin{columns}
+\begin{column}{0.5\columnwidth}
 \begin{align*}
-  \epsilon_T &= \sum_{i = 1}^N \epsilon_i\\
-  R_{gT} &= \sum_{i = 1}^N R_{gi}\\ 
+  \epsilon_t &= \sum_{i = 1}^N \epsilon_i\\
+  R_{gt} &= \sum_{i = 1}^N R_{gi}\\ 
 \end{align*}
-\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  \overline{\epsilon}_t &= \sum_{i = 1}^N \overline{\epsilon}_i\\
+  \overline{Z}_{gt} &= \sum_{i = 1}^N \overline{Z}_{gi}\\ 
+\end{align*}
+\end{column}
+\end{columns}
 \end{block}
 
 \begin{block}{Generadores de Corriente}
@@ -359,7 +417,7 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{frame}
 
 
-\begin{frame}[label={sec:org942c707}]{Conexión en paralelo de generadores}
+\begin{frame}[label={sec:orgdae3d97}]{Conexión en paralelo de generadores}
 \begin{block}{Generadores de Tensión}
 \begin{itemize}
 \item Ideal: todas las fuentes deben ser idénticas (valor y polaridad).
@@ -369,24 +427,84 @@ Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 
 
 \begin{block}{Generadores de Corriente}
-\begin{itemize}
-\item Pueden conectarse en paralelo sin restricción.
-
+Pueden conectarse en paralelo sin restricción.
+\begin{columns}
+\begin{column}{0.5\columnwidth}
 \begin{align*}
   I_{gT} &= \sum_{i = 1}^N I_{gi}\\
   G_{gT} &= \sum_{i = 1}^N G_{gi}\\ 
 \end{align*}
-\end{itemize}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{align*}
+  \overline{I}_{gt} &= \sum_{i = 1}^N \overline{I}_{gi}\\
+  \overline{Y}_{gt} &= \sum_{i = 1}^N \overline{Y}_{gi}\\ 
+\end{align*}
+\end{column}
+\end{columns}
 \end{block}
 \end{frame}
 
 
-
-
-\begin{frame}[label={sec:orgb21fa58}]{Fuentes dominantes}
+\begin{frame}[label={sec:orgd700a56}]{Fuentes dominantes}
+Una fuente de tensión es dominante sobre las ramas conectadas en paralelo.
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/FuenteTensionDominante.pdf}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgbfba0f9}]{Modificación de la geometría de un circuito}
-Apartado 6 (p. 185) Pastor
+\begin{frame}[label={sec:orgea1d197}]{Fuentes dominantes}
+Una fuente de corriente es dominante sobre los elementos conectados en serie.
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/FuenteCorrienteDominante.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgb28dbea}]{Modificación de la geometría de un circuito}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteCorriente.pdf}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteCorriente2.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org750e397}]{Modificación de la geometría de un circuito}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteTension.pdf}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteTension2.pdf}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org97b2925}]{Modificación de la geometría de un circuito}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteTension.pdf}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight]{../figs/ModificacionGeometria_FuenteTension3.pdf}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 \end{document}

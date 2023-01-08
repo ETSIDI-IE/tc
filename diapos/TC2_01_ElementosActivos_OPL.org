@@ -8,7 +8,7 @@
 #+OPTIONS: H:2
 
 * Clasificación
-** Tabla de Clasificación
+** Clasificación
 
 - Tensión o Corriente
 - Ideal o Real
@@ -262,6 +262,72 @@ Fuente de corriente
 #+ATTR_LATEX: :height 0.85\textheight
  file:../figs/FuenteReal_DifPotencia.pdf
 
+** TODO Potencia de una fuente AC
+# Apartado 3.9 Pastor (¿Aquí o en Teoremas?)
+
+Calculamos la potencia activa en la impedancia de carga $Z_L$:
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    #+ATTR_LATEX: :height 0.45\textheight
+    [[file:../figs/EquivalenteThevenin0.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.2
+    :END:
+   #+begin_export latex
+   \begin{align*}
+     \overline{Z}_{th} &= R_{th} + jX_{th}\\
+     \overline{Z}_L &= R_L + jX_L\\
+   \end{align*}
+ #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+   #+begin_export latex
+   \begin{align*}
+   \overline{I} &= \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}\\
+   P_L &= I^2 \cdot R_L\\
+   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L}
+   \end{align*}
+ #+end_export
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+
+Las condiciones de máximo son: 
+#+begin_export latex
+\[
+  \boxed{%
+    \diffp{P_L}{X_L} = 0 \quad%
+    \diffp{P_L}{R_L} = 0%
+  }
+\]
+
+ #+end_export
+
+** Potencia AC
+La máxima potencia disponible en la carga es:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+#+begin_export latex
+\begin{equation*}
+  \left.
+    \begin{matrix}
+      \overline{Z}_L = \overline{Z}_g^*\\
+      P_L = \frac{\epsilon^2_g}{|\overline{Z}_g + \overline{Z}_L|^2} \cdot R_L
+    \end{matrix} \right\}\rightarrow
+  \boxed{P_L = \frac{\epsilon^2_g}{4 R_g}}
+\end{equation*}
+#+end_export
 
 * Transformación y Asociación
 # Apartado 1.10 Fraile
@@ -306,12 +372,28 @@ Sólo es posible establecer equivalencia entre *fuentes reales*.
 ** Conexión en serie de generadores
 *** Generadores de Tensión
 
-- Pueden conectarse en serie sin restricción.
+Pueden conectarse en serie sin restricción.
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 
   #+begin_export latex
+    \begin{align*}
+      \epsilon_t &= \sum_{i = 1}^N \epsilon_i\\
+      R_{gt} &= \sum_{i = 1}^N R_{gi}\\ 
+    \end{align*}
+#+end_export
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
   \begin{align*}
-    \epsilon_T &= \sum_{i = 1}^N \epsilon_i\\
-    R_{gT} &= \sum_{i = 1}^N R_{gi}\\ 
+    \overline{\epsilon}_t &= \sum_{i = 1}^N \overline{\epsilon}_i\\
+    \overline{Z}_{gt} &= \sum_{i = 1}^N \overline{Z}_{gi}\\ 
   \end{align*}
 #+end_export
 
@@ -329,19 +411,91 @@ Sólo es posible establecer equivalencia entre *fuentes reales*.
 
 
 *** Generadores de Corriente
-- Pueden conectarse en paralelo sin restricción.
-
+Pueden conectarse en paralelo sin restricción.
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
   #+begin_export latex
   \begin{align*}
     I_{gT} &= \sum_{i = 1}^N I_{gi}\\
     G_{gT} &= \sum_{i = 1}^N G_{gi}\\ 
   \end{align*}
 #+end_export
-
-
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+  \begin{align*}
+    \overline{I}_{gt} &= \sum_{i = 1}^N \overline{I}_{gi}\\
+    \overline{Y}_{gt} &= \sum_{i = 1}^N \overline{Y}_{gi}\\ 
+  \end{align*}
+#+end_export
 
 
 ** Fuentes dominantes
 
+ Una fuente de tensión es dominante sobre las ramas conectadas en paralelo.
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/FuenteTensionDominante.pdf]]
+
+** Fuentes dominantes
+
+Una fuente de corriente es dominante sobre los elementos conectados en serie.
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/FuenteCorrienteDominante.pdf]]
+   
 ** Modificación de la geometría de un circuito
-   Apartado 6 (p. 185) Pastor
+ # Apartado 6 (p. 185) Pastor
+
+ 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteCorriente.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteCorriente2.pdf]]
+
+** Modificación de la geometría de un circuito
+ # Apartado 6 (p. 185) Pastor
+
+ 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteTension.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteTension2.pdf]]
+
+** Modificación de la geometría de un circuito
+ # Apartado 6 (p. 185) Pastor
+
+ 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteTension.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/ModificacionGeometria_FuenteTension3.pdf]]

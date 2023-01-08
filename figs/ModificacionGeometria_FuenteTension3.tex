@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american currents, american voltages, european resistors]
+  \coordinate (A) at (0, 0);
+  \coordinate (A4) at ($(A) + (-3,-3)$);
+  \coordinate (A3) at ($(A) + (3,-3)$);
+  \coordinate (B) at (0, 1);
+  \coordinate (B1) at ($(B) + (-3,3)$);
+  \coordinate (B2) at ($(B) + (3,3)$);
+  \draw
+  (B) to [short, *-*] (A)
+  (B1) to [R, l = $Z_1$] (B)
+  (B2) to [R, l = $Z_2$] (B)
+  (A3) to [R, l = $Z_3$] ++(-1.5,1.5)
+  to [V, l_= $\epsilon_g$, invert] (A)
+  (A4) to [R, l = $Z_2$] ++(1.5,1.5)
+  to [V, l = $\epsilon_g$, invert] (A);
+\end{circuitikz}
+\end{document}
