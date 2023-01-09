@@ -1,0 +1,244 @@
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{mathpazo}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{diffcoeff}
+\usepackage{steinmetz}
+\usepackage{mathtools}
+\bibliographystyle{plain}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
+\hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
+\newcommand{\slp}{\mathbf{s}}
+\newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
+\newcommand{\atan}{\mathrm{atan}}
+\parskip=5pt
+\usetheme{Boadilla}
+\usecolortheme{rose}
+\usefonttheme{serif}
+%\author{Autor: \hspace{2mm} Luis Badesa Bernardo}
+\date{}
+\title{\LARGE Información práctica sobre la asignatura \vspace{5mm}}
+\subtitle{Teoría de Circuitos}
+\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Información práctica sobre la asignatura},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+
+\section*{Datos del profesor}
+
+\begin{frame}{Datos del profesor}
+    
+    Luis Badesa Bernardo
+        \begin{itemize}
+        \item \href{mailto:luis.badesa@upm.es}{luis.badesa@upm.es}
+        \item Web: \url{https://badber.github.io/}
+        \item Despacho A-139-5 (al lado del laboratorio)
+        \item Ver horario de tutorías 
+        \href{http://programas.etsidi.upm.es/SOA/tutorias/}{aquí}            
+    \end{itemize}
+    \vspace{6mm}
+    Horario de clases, \href{https://www.etsidi.upm.es/Estudiantes/AgendaAcademica/AAHorarioClases}{aquí}.
+    
+    %\vspace{5mm}
+    %
+    %\center{\large \alert{Encuesta en Moodle para \underline{elegir grupo de laboratorio}} }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Temario}
+
+\begin{frame}{Temario}
+    \begin{enumerate}
+        \item Conceptos básicos. Circuitos de corriente continua
+        \item Corriente alterna monofásica
+        \item Sistemas trifásicos
+        \item Introducción al régimen transitorio de los circuitos
+    \end{enumerate}
+    \hspace{7mm} $+$
+    
+    \hspace{7mm} Laboratorio (6 prácticas)
+
+    \vspace{7mm}
+
+    \hspace{7mm} \alert{Material de la asignatura} (diapositivas, problemas, exámenes, bibliografía): 
+    \vspace{1mm}
+    \hspace{7mm} disponible en Moodle.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\section*{Convocatoria ordinaria}
+
+\begin{frame}{Convocatoria ordinaria}
+
+    \begin{minipage}[t]{0.34\linewidth}
+    \alert{Evaluación}
+    \vspace{3mm}
+    \begin{itemize}
+    \item \alert{Progresiva}, exámenes:
+        \begin{itemize}
+        \item Tema 1
+        \item Tema 2
+        \item Tema 3
+        \item Global
+        \item Laboratorio
+        \end{itemize}
+    \end{itemize}
+    (fechas de examen en Moodle)
+    \begin{itemize}
+    \item \alert{Global}, exámenes:
+        \begin{itemize}
+        \item Global
+        \item Laboratorio
+        \end{itemize}
+    \end{itemize}
+    \end{minipage}
+    %
+    \hfill%
+    %
+    \begin{minipage}[t]{0.65\linewidth}
+    \pause
+    \vspace{13.2mm}
+        \begin{itemize}
+        \item Cada examen parcial (T1–T3) se califica de 0 a 10
+            \begin{itemize}
+            \item {\normalsize Si `nota $\geq$ 5', ese \alert{tema queda liberado} del global}
+            \end{itemize}
+        \vspace{1.2mm}
+        \item Global solo de temas no liberados 
+        
+        ($+$ \alert{opción subir nota}): para cada tema, cuenta la nota más alta entre parcial y global
+        \end{itemize}    
+    \end{minipage}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Laboratorio}
+
+\begin{frame}{Convocatoria ordinaria}
+
+    %\alert{Evaluación del laboratorio}
+    %\vspace{1mm}
+    
+    \begin{itemize}
+        \item \alert{Prácticas obligatorias} (asistencia $+$ entrega de informes)
+        \vspace{1mm}
+        \begin{itemize}
+            \item 
+            {\normalsize Laboratorio A-139-L1}
+            \vspace{2mm}
+            \item {\normalsize Las prácticas comienzan un par de semanas después del comienzo del cuatrimestre (se avisará por Moodle)}
+            \vspace{2mm}
+            \item {\normalsize Se ofertarán grupos por Moodle para elegir horario}
+            \end{itemize}
+        
+        \vspace{2.5mm}
+        \item \alert{Examen de laboratorio} (mismo día que el global, ver fecha \href{https://www.etsidi.upm.es/Estudiantes/AgendaAcademica/AAFechaExamenes}{aquí}):
+        \vspace{1mm}
+            \begin{itemize}           
+            \item {\normalsize Si \alert{asistencia a todas las prácticas} $\rightarrow$ examen escrito (tipo test)}
+            \vspace{2mm}
+            \item {\normalsize Si no $\rightarrow$ examen escrito $+$ práctico}
+
+            {\normalsize (opción \underline{no recomendada}, es mucho más díficil aprobar el examen práctico que ir haciendo las prácticas durante el cuatrimestre)}
+            \vspace{2mm}
+            \item {\normalsize Calificación: ``\alert{Apto/a}'' o ``\alert{No apto/a}'' (no hay calificación numérica)}
+            \end{itemize}
+        \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%
+
+\section*{Convocatoria extraordinaria}
+
+\begin{frame}{Convocatoria extraordinaria (junio/julio)}
+
+    \vspace{-18mm}
+    \begin{itemize}
+        \item Fecha del examen en la \href{https://www.etsidi.upm.es/Estudiantes/AgendaAcademica/AAFechaExamenes}{web} de la ETSIDI
+        \item Ejercicios agrupados por temas: cada tema se califica de 0 a 10
+        \item Examen de laboratorio: mismas condiciones que en la convocatoria ordinaria
+
+        \vspace{6mm}
+
+        \item Los temas liberados en la evaluación progresiva \alert{NO} se conservan para la convocatoria extraordinaria
+    \end{itemize}
+
+\end{frame}
+        
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Condiciones para aprobar}
+
+\begin{frame}{Condiciones para aprobar}
+    \begin{itemize}
+    \item \alert{Condiciones para aprobar Teoría y Problemas}  (TyP):
+        \vspace{1mm}
+        \begin{itemize}
+        \item {\normalsize Obtener una calificación $\geq$ 5 en, al menos, 2 de los 4 temas}
+        \vspace{1mm}
+        \item {\normalsize Obtener una calificación promedio $\geq$ 5} 
+            \vspace{1mm}
+            \begin{itemize}
+            \item {\normalsize Si se cumple esta, pero no la condición anterior $\rightarrow$ nota de TyP $=$ 4,5}
+            \end{itemize}
+        \end{itemize}
+    \vspace{3mm}
+    \item \alert{Condiciones para aprobar la asignatura} (i.e.,~TyP $+$ Laboratorio):
+        \vspace{1mm}
+        \begin{itemize}
+        \item {\normalsize \textbf{if} $\;$ nota\_TyP $\geq$ 5 $\;$ \textbf{and} $\;$ laboratorio $=$ Apto $\; \rightarrow \;$ nota\_Acta = nota\_TyP} (\textcolor{green}{aprobada})
+        
+        \vspace{1mm}
+        \item {\normalsize \textbf{else if} $\;$ nota\_TyP $\geq$ 5 $\;$ \textbf{and} $\;$ laboratorio $=$ No\_Apto $\; \rightarrow \;$ nota\_Acta $=$ 4,5}
+        \vspace{1mm}
+        \item {\normalsize \textbf{else} $\; \rightarrow \;$ nota\_Acta $=$ nota\_TyP}
+        \end{itemize}
+    \vspace{6mm}
+    Si se aprueba TyP o Laboratorio, se guarda la califación para convocatorias futuras
+    \end{itemize}
+
+\end{frame}
+
+
+\end{document}
