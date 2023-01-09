@@ -93,6 +93,7 @@ Los generadores reales tienen pérdidas que se modelan con una impedancia en *se
   #+ATTR_LATEX: :height 0.7\textheight
   [[file:../figs/FuenteTensionDependienteCorriente.pdf]]
 ... de Corriente
+** Generadores Dependientes 
 *** Generadores de Corriente  
 ****                                                               :BMCOL:
     :PROPERTIES:
@@ -227,7 +228,7 @@ Fuente de corriente
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-- La potencia entregada por la fuente es máxima cuando $R_L = R_g$.
+- Suponiendo $R_g$ constante, la potencia entregada por la fuente es máxima cuando $R_L = R_g$.
 
 #+begin_export latex
 \begin{equation*}
@@ -262,8 +263,8 @@ Fuente de corriente
 #+ATTR_LATEX: :height 0.85\textheight
  file:../figs/FuenteReal_DifPotencia.pdf
 
-** TODO Potencia de una fuente AC
-# Apartado 3.9 Pastor (¿Aquí o en Teoremas?)
+** Potencia de una fuente AC
+# Apartado 3.9 Pastor 
 
 Calculamos la potencia activa en la impedancia de carga $Z_L$:
 ***                                                                   :BMCOL:
@@ -271,7 +272,7 @@ Calculamos la potencia activa en la impedancia de carga $Z_L$:
     :BEAMER_col: 0.3
     :END:
     #+ATTR_LATEX: :height 0.45\textheight
-    [[file:../figs/EquivalenteThevenin0.pdf]]
+    [[file:../figs/FuenteTensionRealACConCarga.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -279,7 +280,7 @@ Calculamos la potencia activa en la impedancia de carga $Z_L$:
     :END:
    #+begin_export latex
    \begin{align*}
-     \overline{Z}_{th} &= R_{th} + jX_{th}\\
+     \overline{Z}_g &= R_g + jX_g\\
      \overline{Z}_L &= R_L + jX_L\\
    \end{align*}
  #+end_export
@@ -290,33 +291,39 @@ Calculamos la potencia activa en la impedancia de carga $Z_L$:
     :END:
    #+begin_export latex
    \begin{align*}
-   \overline{I} &= \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}\\
+   \overline{I} &= \frac{\overline{\epsilon}_g}{\overline{Z}_g + \overline{Z}_L}\\
    P_L &= I^2 \cdot R_L\\
-   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L}
+   P_L &= \frac{\epsilon^2_g}{|\overline{Z}_g + \overline{Z}_L|^2} \cdot R_L
    \end{align*}
  #+end_export
 
-***                                                         :B_ignoreheading:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
+** Máxima potencia de una fuente AC
 
-
-Las condiciones de máximo son: 
+Suponiendo $\overline{Z}_g$ constante, las condiciones de máximo son: 
 #+begin_export latex
 \[
-  \boxed{%
     \diffp{P_L}{X_L} = 0 \quad%
     \diffp{P_L}{R_L} = 0%
-  }
 \]
-
  #+end_export
 
-** Potencia AC
-La máxima potencia disponible en la carga es:
+Los resultados son:
+   #+begin_export latex
+   \[
+      \diffp{P_L}{X_L} = 0 \Rightarrow \boxed{X_L = - X_{g}}
+   \]
+   #+end_export
+
+      #+begin_export latex
+   \[
+      \diffp{P_L}{R_L} = 0 \Rightarrow \boxed{R_L = R_{g}}
+   \]
+   #+end_export
+ 
+** Máxima potencia de una fuente AC
+En estas condiciones, la máxima potencia disponible en la carga es:
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:../figs/EquivalenteThevenin.pdf]]
+[[file:../figs/FuenteTensionRealACConCarga.pdf]]
 
 #+begin_export latex
 \begin{equation*}
@@ -327,6 +334,20 @@ La máxima potencia disponible en la carga es:
     \end{matrix} \right\}\rightarrow
   \boxed{P_L = \frac{\epsilon^2_g}{4 R_g}}
 \end{equation*}
+#+end_export
+
+** Máxima potencia de una fuente AC
+# Más posibilidades en apartado 3.9 de Pastor, pág. 523
+Si la impedancia de carga es resistiva pura, únicamente se puede cumplir la segunda condición del máximo, $\diffp{P_L}{R_L} = 0$.
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:../figs/FuenteTensionRealACConCargaR.pdf]]
+
+En este caso, el resultado es:
+#+begin_export latex
+\begin{align*}
+      R_L &= \sqrt{R_g^2 + X_g^2}\\
+      P_L &= \frac{\epsilon^2_g}{2(R_L + R_g)}
+\end{align*}
 #+end_export
 
 * Transformación y Asociación
