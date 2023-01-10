@@ -1,4 +1,4 @@
-% Created 2023-01-10 mar 20:37
+% Created 2023-01-10 mar 21:47
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@
 \maketitle
 
 \section{Teoremas de linealidad}
-\label{sec:orgd43b806}
+\label{sec:orgd25980b}
 
-\begin{frame}[label={sec:org1c54921}]{Elementos lineales}
+\begin{frame}[label={sec:org5e727f5}]{Elementos lineales}
 \begin{itemize}
 \item Un circuito eléctrico es lineal si los elementos pasivos y activos que incluye son lineales.
 \item Un \alert{elemento pasivo} es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: \alert{resistencias, condensadores y bobinas}.
@@ -74,7 +74,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org28c467d}]{Homogeneidad o Proporcionalidad}
+\begin{frame}[label={sec:org783f8f5}]{Homogeneidad o Proporcionalidad}
 Sea \(y(t)\) la respuesta de un \alert{circuito lineal} a una excitación \(x(t)\). 
 
 Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), la respuesta del circuito será modificada por la misma constante, \(K \cdot y(t)\).
@@ -84,7 +84,7 @@ Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), l
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6d1faf5}]{Teorema de superposición}
+\begin{frame}[label={sec:org8e33f5a}]{Teorema de superposición}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 La respuesta de un \alert{circuito lineal} a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado
@@ -102,7 +102,7 @@ y(t) = \sum_i y_i(t)
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org674c8dc}]{Análisis de un circuito mediante superposición}
+\begin{frame}[label={sec:orgd41f0a1}]{Análisis de un circuito mediante superposición}
 \begin{block}{Procedimiento}
 \begin{enumerate}
 \item Se apagan todas las fuentes \alert{independientes} del circuito menos una.
@@ -118,7 +118,7 @@ y(t) = \sum_i y_i(t)
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org5198e8c}]{Análisis de un circuito mediante superposición}
+\begin{frame}[label={sec:orge7e6155}]{Análisis de un circuito mediante superposición}
 \begin{block}{Observaciones}
 \begin{itemize}
 \item \alert{Siempre} hay que aplicar este método cuando en un circuito conviven fuentes de \alert{diferente frecuencia} (o fuentes de corriente continua y corriente alterna).
@@ -128,7 +128,7 @@ y(t) = \sum_i y_i(t)
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org91d09a6}]{Cálculo de potencia con superposición}
+\begin{frame}[label={sec:orgacf75ff}]{Cálculo de potencia con superposición}
 El principio de superposición aplica a tensiones y corrientes, pero \alert{no} a potencias. Supongamos \(i(t) = i_1(t) + i_2(t)\):
 \begin{align*}
   p(t) &= R \cdot i^2(t) =\\
@@ -137,7 +137,7 @@ El principio de superposición aplica a tensiones y corrientes, pero \alert{no} 
   p(t) &\neq p_1(t) + p_2(t)
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orge42b4b5}]{Cálculo de potencia con superposición}
+\begin{frame}[label={sec:org8469406}]{Cálculo de potencia con superposición}
 \begin{itemize}
 \item Cuando las señales son \alert{ortogonales en un período}\footnote{Dos señales son ortogonales si cumplen la siguiente ecuación: \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\]} se pueden sumar las potencias \alert{medias} de cada circuito.
 \end{itemize}
@@ -149,13 +149,13 @@ El principio de superposición aplica a tensiones y corrientes, pero \alert{no} 
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org58621c2}]{Cálculo de potencia}
+\begin{frame}[label={sec:org10e8e60}]{Cálculo de potencia}
 \end{frame}
 
-\section{Teoremas de reciprocidad, sustitución y compensación}
-\label{sec:org5586669}
+\section{Teoremas de reciprocidad y sustitución}
+\label{sec:orga592f53}
 
-\begin{frame}[label={sec:orgff6db1e}]{Teorema de reciprocidad}
+\begin{frame}[label={sec:orgc4ca62a}]{Teorema de reciprocidad}
 La matriz de impedancias de un circuito pasivo es simétrica. En
 consecuencia, al intercambiar la posición de una fuente de tensión, la
 corriente de cortocircuito en la otra rama no cambia.
@@ -165,7 +165,7 @@ corriente de cortocircuito en la otra rama no cambia.
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgcf788e0}]{Teorema de reciprocidad}
+\begin{frame}[label={sec:org346dc02}]{Teorema de reciprocidad}
 La matriz de admitancias de un circuito pasivo es simétrica. En
 consecuencia, al intercambiar la posición de una fuente de corriente, la
 tensión de circuito abierto en la otra posición no cambia.
@@ -175,22 +175,76 @@ tensión de circuito abierto en la otra posición no cambia.
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orge68dc0e}]{Teorema de sustitución}
+\begin{frame}[label={sec:orgf7bf13e}]{Teorema de sustitución}
+\begin{center}
+\includegraphics[height=0.9\textheight]{../figs/TeoremaSustitucion.pdf}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgc604534}]{Teorema de compensación}
+\section{Teorema de compensación}
+\label{sec:org4181184}
+
+\begin{frame}[label={sec:orgee77aa1}]{Planteamiento}
+¿Cuál es la variación en la respuesta \(I_k\) debida a una variación en la impedancia \(Z\)?
+
+\begin{center}
+\includegraphics[width=0.95\textwidth]{../figs/TeoremaCompensacion0.pdf}
+\end{center}
 \end{frame}
+
+
+\begin{frame}[label={sec:org3782983}]{Aplicamos teorema de sustitución}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{../figs/TeoremaCompensacion1.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orga58c5d9}]{A continuación, teorema de superposición}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{../figs/TeoremaCompensacion2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org1d27543}]{Nuevamente teorema de sustitución}
+En el último circuito, expresamos la fuente como:
+
+\[
+  \Delta Z \cdot (I_Z + \Delta I_Z) = \Delta Z \cdot I_Z + \Delta Z \cdot \Delta I_Z
+\]
+
+El último sumando representa la tensión en la impedancia \(\Delta Z\) recorrida por la corriente de la rama, \(\Delta I_z\). Esta observación nos permite volver a utilizar el teorema de sustitución.
+
+
+\begin{center}
+\includegraphics[width=0.95\textwidth]{../figs/TeoremaCompensacion2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org3184024}]{Solución}
+Para determinar el cambio en la respuesta, \(\Delta I_k\), debido a una variación en la impedancia, \(\Delta Z\):
+
+\begin{enumerate}
+\item Se calcula la corriente \(I_z\) en el circuito original.
+\item Se apagan las fuentes independientes y se sustituye la impedancia \(Z\) por una impedancia de valor \(Z + \Delta Z\) en serie con una fuente de tensión de valor \(\Delta Z \cdot I_z\).
+\item En el circuito resultante se calcula la respuesta, \(\Delta I_k\).
+\end{enumerate}
+
+\begin{center}
+\includegraphics[height=0.45\textheight]{../figs/TeoremaCompensacion.pdf}
+\end{center}
+\end{frame}
+
 
 \section{Teorema de Rosen}
-\label{sec:orgd70509a}
+\label{sec:org66f6047}
 
 \section{Teorema de Millman}
-\label{sec:org1d8efe9}
+\label{sec:org832f962}
 
 \section{Teoremas de Thévenin/Norton}
-\label{sec:org068e731}
+\label{sec:orgc135cf7}
 
-\begin{frame}[label={sec:org6694ae6}]{Teoremas de Thévenin/Norton}
+\begin{frame}[label={sec:org1a0f137}]{Teoremas de Thévenin/Norton}
 \framesubtitle{Thévenin}
 
 Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una impedancia (impedancia de Thévenin, \(Z_{th}\)).
@@ -200,7 +254,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgc23c134}]{Teoremas de Thévenin/Norton}
+\begin{frame}[label={sec:orge796aeb}]{Teoremas de Thévenin/Norton}
 \framesubtitle{Norton}
 Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una impedancia (impedancia de Norton, \(Z_N\)).
 
@@ -209,7 +263,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb3bfea6}]{Teoremas de Thévenin/Norton}
+\begin{frame}[label={sec:orgca834ca}]{Teoremas de Thévenin/Norton}
 \framesubtitle{Cálculo del equivalente de Thévenin}
 \begin{center}
 \includegraphics[height=0.38\textheight]{../figs/EquivalenteThevenin.pdf}
@@ -229,7 +283,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org0328d34}]{Teoremas de Thévenin/Norton}
+\begin{frame}[label={sec:org8b0727c}]{Teoremas de Thévenin/Norton}
 \framesubtitle{Cálculo del equivalente de Norton}
 \begin{center}
 \includegraphics[height=0.38\textheight]{../figs/EquivalenteNorton.pdf}
@@ -249,7 +303,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org507ab26}]{Teoremas de Thévenin/Norton}
+\begin{frame}[label={sec:orge530030}]{Teoremas de Thévenin/Norton}
 \framesubtitle{Cálculo de Thévenin/Norton}
 
 \begin{block}{Observaciones}
@@ -265,7 +319,7 @@ Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sus
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org864c06e}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:org98a7dc6}]{Máxima Transferencia de Potencia}
 \framesubtitle{Planteamiento}
 Sea el circuito lineal de la figura. ¿Qué impedancia \(Z_L\) hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
 
@@ -278,7 +332,7 @@ Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
 
 
 
-\begin{frame}[label={sec:orga49ae72}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:org4b955ab}]{Máxima Transferencia de Potencia}
 \framesubtitle{Ecuaciones}
 Calculamos la potencia activa en la impedancia de carga \(Z_L\):
 \begin{columns}
@@ -313,7 +367,7 @@ Las condiciones de máximo son:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org3d2b1ba}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:orgf86dc89}]{Máxima Transferencia de Potencia}
 \framesubtitle{Reactancia}
 A partir de la expresión de potencia en la carga\ldots{}
 \[
@@ -329,7 +383,7 @@ Aplicamos la condición de máximo y obtenemos un resultado parcial:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org992cf60}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:orgc4e2ddf}]{Máxima Transferencia de Potencia}
 \framesubtitle{Resistencia}
 Simplificamos la expresión de la potencia teniendo en cuenta el resultado anterior (\(X_L = - X_{th}\)):
 \[
@@ -346,7 +400,7 @@ Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org747f2dc}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:orgc297458}]{Máxima Transferencia de Potencia}
 \framesubtitle{Impedancia de carga}
 
 Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) \ldots{}
@@ -360,7 +414,7 @@ Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) \
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org46581b7}]{Máxima Transferencia de Potencia}
+\begin{frame}[label={sec:orgf79bc2d}]{Máxima Transferencia de Potencia}
 \framesubtitle{Máxima potencia disponible}
 
 La máxima potencia disponible en la carga es:
@@ -381,8 +435,8 @@ La máxima potencia disponible en la carga es:
 
 
 \section{Teorema de Everitt}
-\label{sec:org3b5d277}
+\label{sec:org358a1e4}
 
 \section{Teorema de Tellegen}
-\label{sec:org448dd34}
+\label{sec:org46d148d}
 \end{document}

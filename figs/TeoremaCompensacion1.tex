@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents, european resistors]
+  % Original
+  \draw[fill=lightgray] (2,-1) rectangle (6,5) node[midway]{Circuito Lineal};
+  \draw (8,4) to [short, -] (6,4)
+  (8,4) to [R, l=$Z$, i = $I_Z + \Delta I_Z$] ++(0, -2)
+  to [R, l=$\Delta Z$] (8,0)
+  (6,0) to [short, -] (8,0)
+  (2.5,-1) to [short] ++(0,-1) to [short, i = $I_k + \Delta I_K$] ++(3, 0) to [short] (5.5, -1);
+  % Modificado
+  \draw[fill=lightgray] (12,-1) rectangle (16,5) node[midway]{Circuito Lineal};
+  \draw (18,4) to [short, -] (16,4)
+  (18,4) to [R, l=$Z$, i = $I_Z + \Delta I_Z$] ++(0, -2)
+  to [V, l=$\Delta Z \cdot (I_Z + \Delta I_Z)$] (18,0)
+  (16,0) to [short, -] (18,0)
+  (12.5,-1) to [short] ++(0,-1) to [short, i = $I_k + \Delta I_k$] ++(3, 0) to [short] (15.5, -1);
+\end{circuitikz}
+\end{document}

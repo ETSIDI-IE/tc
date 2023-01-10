@@ -84,7 +84,7 @@ El principio de superposición aplica a tensiones y corrientes, pero *no* a pote
 
 ** TODO Cálculo de potencia
 
-* Teoremas de reciprocidad, sustitución y compensación
+* Teoremas de reciprocidad y sustitución
 
 ** Teorema de reciprocidad
 
@@ -104,7 +104,55 @@ tensión de circuito abierto en la otra posición no cambia.
 
 ** Teorema de sustitución
 
-** Teorema de compensación
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:../figs/TeoremaSustitucion.pdf]]
+
+* Teorema de compensación
+
+** Planteamiento
+
+¿Cuál es la variación en la respuesta $I_k$ debida a una variación en la impedancia $Z$?
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion0.pdf]]
+
+
+** Aplicamos teorema de sustitución
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion1.pdf]]
+
+** A continuación, teorema de superposición
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion2.pdf]]
+
+** Nuevamente, teorema de sustitución
+
+En el último circuito, expresamos la fuente como:
+
+#+begin_export latex
+\[
+  \Delta Z \cdot (I_Z + \Delta I_Z) = \Delta Z \cdot I_Z + \Delta Z \cdot \Delta I_Z
+\]
+#+end_export
+
+El último sumando representa la tensión en la impedancia $\Delta Z$ recorrida por la corriente de la rama, $\Delta I_z$. Esta observación nos permite volver a utilizar el teorema de sustitución.
+
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion2.pdf]]
+
+** Solución
+Para determinar el cambio en la respuesta, $\Delta I_k$, debido a una variación en la impedancia, $\Delta Z$:
+
+1. Se calcula la corriente $I_z$ en el circuito original.
+2. Se apagan las fuentes independientes y se sustituye la impedancia $Z$ por una impedancia de valor $Z + \Delta Z$ en serie con una fuente de tensión de valor $\Delta Z \cdot I_z$.
+3. En el circuito resultante se calcula la respuesta, $\Delta I_k$.
+
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/TeoremaCompensacion.pdf]]
+
 
 * Teorema de Rosen
 
