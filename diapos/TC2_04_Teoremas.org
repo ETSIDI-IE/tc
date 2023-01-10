@@ -26,22 +26,6 @@ Si la excitación es multiplicada por una *constante*, $K \cdot x(t)$, la respue
 #+ATTR_LATEX: :width 0.6\textwidth
 [[file:../figs/proporcionalidad.pdf]]
 
-** COMMENT Análisis de un circuito mediante proporcionalidad
-
-**** ¿Qué excitación debo aplicar a un circuito para obtener una determinada respuesta?
- - Aplicamos una excitación de valor unidad.
- - Resolvemos el circuito, obteniendo la respuesta del circuito a la excitación unidad.
- - Hallamos la constante de proporcionalidad entre la respuesta obtenida y la respuesta deseada.
- - La excitación que se debe aplicar es esta constante de proporcionalidad.
-
-** COMMENT Análisis de un circuito mediante proporcionalidad
-
-**** ¿Qué respuesta proporciona un circuito ante una determinada excitación?
- - Suponemos una respuesta de valor unidad.
- - Resolvemos el circuito a la inversa, obteniendo la excitación que provoca la respuesta unidad.
- - Hallamos la constante de proporcionalidad entre la excitación obtenida y la excitación deseada.
- - La respuesta que entrega el circuito es esta constante de proporcionalidad (puede ser un número complejo).
-
 ** Teorema de superposición
 
 ***                                                                   :BMCOL:
@@ -101,7 +85,27 @@ El principio de superposición aplica a tensiones y corrientes, pero *no* a pote
 ** TODO Cálculo de potencia
 
 * Teoremas de reciprocidad, sustitución y compensación
-     
+
+** Teorema de reciprocidad
+
+La matriz de impedancias de un circuito pasivo es simétrica. En
+consecuencia, al intercambiar la posición de una fuente de tensión, la
+corriente de cortocircuito en la otra rama no cambia.
+
+[[file:../figs/TeoremaReciprocidadTension.pdf]]
+
+** Teorema de reciprocidad
+
+La matriz de admitancias de un circuito pasivo es simétrica. En
+consecuencia, al intercambiar la posición de una fuente de corriente, la
+tensión de circuito abierto en la otra posición no cambia.
+
+[[file:../figs/TeoremaReciprocidadCorriente.pdf]]
+
+** Teorema de sustitución
+
+** Teorema de compensación
+
 * Teorema de Rosen
 
 * Teorema de Millman
@@ -310,3 +314,7 @@ La máxima potencia disponible en la carga es:
 * Teorema de Everitt
 
 * Teorema de Tellegen
+
+* Footnotes
+
+[fn:1] Dos señales son ortogonales si cumplen la siguiente ecuación: \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\] 
