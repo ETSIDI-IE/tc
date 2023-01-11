@@ -154,9 +154,61 @@ Para determinar el cambio en la respuesta, $\Delta I_k$, debido a una variación
 [[file:../figs/TeoremaCompensacion.pdf]]
 
 
-* Teorema de Rosen
-
 * Teorema de Millman
+
+** Planteamiento
+
+El Teorema de Millman permite resolver la tensión entre dos puntos A y O, siendo éste un punto común de un conjunto de impedancias, y siendo conocidas las tensiones con el punto A y las impedancias.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Millman.pdf]]
+
+** Resolución
+
+La tensión $u_{AO}$ es:
+#+begin_export latex
+\[
+  u_{AO} = u_{Aj} + i_j/Y_j
+\]
+#+end_export
+
+Despejando $i_j$:
+
+#+begin_export latex
+\[
+  i_j = Y_j \cdot (u_{AO} - u_{Aj})
+\]
+#+end_export
+
+En el nudo O se puede plantear LKC:
+
+#+begin_export latex
+\[
+  \sum_{j = 1}^n i_j = 0
+\]
+#+end_export
+
+Por tanto:
+#+begin_export latex
+\[
+  \sum_{j = 1}^n Y_j \cdot (u_{AO} - u_{Aj}) = 0 \rightarrow \boxed{u_{AO} = \frac{\sum_{j = 1}^n Y_j u_{Aj}}{\sum_{i = 1}^n Y_j}}
+\]
+#+end_export
+
+** Aplicación
+
+Este teorema permite resolver rápidamente circuitos como el siguiente:
+
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/Millman_aplicacion.pdf]]
+
+#+begin_export latex
+\[
+  u_{AO} = \frac{\sum_{j = 1}^n u_{Aj}/Z_j}{{\color{red} 1/Z_L} + \sum_{i = 1}^n 1/Z_j}
+\]
+#+end_export
+
+* Teorema de Rosen
 
 * Teoremas de Thévenin/Norton
   
