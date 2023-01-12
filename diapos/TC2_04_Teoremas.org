@@ -413,6 +413,176 @@ La máxima potencia disponible en la carga es:
 
 * Teorema de Everitt
 
+** Planteamiento
+Si a la entrada de un circuito no disipativo (LC) existe adaptación de impedancias, a la salida de este circuito también hay adaptación. Dado que $\overline{Z}_L \neq \overline{Z}^*_g$, el circuito LC es una red adaptadora.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt.pdf]]
+
+** Potencia
+
+Dado que el circuito LC no consume potencia activa, la potencia a la entrada es la potencia consumida por la carga. Por tanto, si la potencia a la entrada es máxima (adaptación en la entrada), también lo será a la salida (adaptación a la salida).
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt_potencia.pdf]]
+
+** Redes en cascada
+
+** Diseño de redes adaptadoras
+
+Emplearemos redes en L compuestas por dos elementos reactivos.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt_LC.pdf]]
+
+Esta adaptación es selectiva: si varía la frecuencia, no habrá adaptación.
+
+** Diseño de redes adaptadoras
+
+La red debe diseñarse con el elemento paralelo en el extremo de la impedancia que tenga parte real mayor.
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \textwidth
+[[file:../figs/Everitt_XY1.pdf]]
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \textwidth
+[[file:../figs/Everitt_XY2.pdf]]
+
+** Diseño de redes adaptadoras: $R_g > R_L$
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+Condición:
+#+begin_export latex
+\[
+  \overline{Z}^*_L = jX + (jY || \overline{Z}_g) 
+\]
+#+end_export
+Ecuaciones:
+#+begin_export latex
+\begin{align*}
+  R_L &= \Re\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)\\
+  X_L &= -X - \Im\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)
+\end{align*}
+#+end_export
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/Everitt_XY2.pdf]]
+
+** Diseño de redes adaptadoras: $R_L > R_g$
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+Condición:
+#+begin_export latex
+\[
+  \overline{Z}^*_g = jX + (jY || \overline{Z}_L) 
+\]
+#+end_export
+Ecuaciones:
+#+begin_export latex
+\begin{align*}
+  R_g &= \Re\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)\\
+  X_g &= -X - \Im\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)
+\end{align*}
+#+end_export
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/Everitt_XY1.pdf]]
+
+** Pérdidas de transmisión e inserción
+
+*** Decibelio: potencias
+
+El *decibelio* ($\si{\decibel}$) se emplea para medir la ganancia de potencia o la ratio de dos niveles de potencia:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
+\]
+#+END_EXPORT
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Red_Ganancia.pdf]]
+
+** Pérdidas de transmisión e inserción
+
+*** Decibelio: tensiones
+
+Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/corriente:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log \frac{U_2^2}{U_1^2} = 20 \log \frac{U_2}{U_1}
+\]
+#+END_EXPORT
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Red_Ganancia.pdf]]
+
+** Pérdidas de transmisión
+
+Las pérdidas de transmisión, $\alpha_T$, asociadas a una red miden la relación entre la potencia de entrada, $P_{in}$, y la potencia de salida, $P_{out}$.
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/PerdidasTransmision.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+begin_export latex
+\[
+  \alpha_T = 10 \log \frac{P_{in}}{P_{out}} \unit{\decibel}
+\]
+#+end_export
+
+***                                                       :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+#+begin_center
+Si la red es no disipativa (LC), $P_{in} = P_{out} \rightarrow \alpha_T = \qty{0}{\decibel}$.
+#+end_center
+
+** Pérdidas de inserción
+
+Las pérdidas de inserción, $\alpha_I$, asociadas a una red miden la relación entre la potencia entregada a la carga sin la red, $P_L$, y la potencia entregada a la carga con la red insertada.
+
+#+begin_export latex
+\[
+  \alpha_I = 10 \log \frac{P_L}{P_{out}} \unit{\decibel}
+\]
+#+end_export
+
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/PerdidasInsercion.pdf]]
+
+En el caso de una red adaptadora, $P_{out} > P_L$, por lo que $\alpha_I < 0$ (ganancia de inserción).
+
 * Teorema de Tellegen
 
 * Footnotes
