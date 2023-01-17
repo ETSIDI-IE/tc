@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\newcommand{\equal}{=}
+
+\begin{document}
+
+\begin{circuitikz}[european resistors, american voltages]
+  \coordinate (A) at (90:4);
+  \coordinate (B) at (18:4);
+  \coordinate (C) at (-54:4);
+  \coordinate (D) at (-126:4);
+  \coordinate (E) at (162:4);
+  \draw
+  (A) to [R, l = $Y_{12}$, *-*] (B)
+  (A) to [R, l = $Y_{13}$, *-*] (C)
+  (A) to [R, l = $Y_{14}$, *-*] (D)
+  (A) to [R, l = $Y_{15}$, *-*] (E)
+  (B) to [R, l = $Y_{23}$, *-*] (C)
+  (B) to [R, l = $Y_{24}$, *-*] (D)
+  (B) to [R, l = $Y_{25}$, *-*] (E)
+  (C) to [R, l = $Y_{34}$, *-*] (D)
+  (C) to [R, l = $Y_{35}$, *-*] (E)
+  (D) to [R, l = $Y_{45}$, *-*] (E);
+  
+  \draw
+  (A) node[above right] {1}
+  (B) node[above] {2}
+  (C) node[below] {3}
+  (D) node[below] {4}
+  (E) node[above] {5};
+
+  \draw
+  (A) to [short, -o, i = $i_1$] ++(90:1)
+  (B) to [short, -o, i = $i_2$] ++(0:1)
+  (C) to [short, -o, i = $i_3$] ++(-30:1)
+  (D) to [short, -o, i = $i_4$] ++(210:1)
+  (E) to [short, -o, i = $i_5$] ++(180:1);
+\end{circuitikz}
+
+\end{document}

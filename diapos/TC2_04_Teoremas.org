@@ -82,7 +82,7 @@ El principio de superposición aplica a tensiones y corrientes, pero *no* a pote
 #+end_export
 - Ejemplos de señales ortogonales: sinusoidales con diferente frecuencia, una sinusoide con una continua, ...
 
-** TODO Cálculo de potencia
+** TODO COMMENT Cálculo de potencia
 
 * Teoremas de reciprocidad y sustitución
 
@@ -209,6 +209,104 @@ Este teorema permite resolver rápidamente circuitos como el siguiente:
 #+end_export
 
 * Teorema de Rosen
+
+** Planteamiento
+
+Una estrella se puede transformar en un polígono (pero no al revés si $n > 3$):
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_Y.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_D.pdf]]
+
+
+** Corrientes en el polígono
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_D.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+Podemos calcular la corriente que sale por cada terminal:
+#+begin_export latex
+\[
+  i_j = \sum_{\substack{k = 1\\k \neq j}}^n i_{kj} = \sum_{\substack{k = 1\\k \neq j}}^n u_{kj} \cdot Y_{kj} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+teniendo en cuenta que $u_{kk} = 0$.
+
+** Corrientes en la estrella
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_Y.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+La corriente en cada rama es:
+#+begin_export latex
+\[
+  i_j = Y_j \cdot u_{jN}
+\]
+#+end_export
+La tensión $u_{jN}$ se puede calcular con el Teorema de Millman:
+
+#+begin_export latex
+\[
+  u_{jN} = \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\]
+#+end_export
+
+Por tanto:
+#+begin_export latex
+\[
+  i_j = Y_j \cdot \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\]
+#+end_export
+
+** Resolución
+
+Para que los dos circuitos sean equivalentes, las ecuaciones de las corrientes deben dar el mismo resultado:
+
+#+begin_export latex
+\[
+  \frac{\sum_{k = 1}^n u_{kj} Y_k Y_j}{\sum_{k  = 1}^n Y_k} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+Denominando $Y_Y = \sum_{k  = 1}^n Y_k$ y agrupando dentro del sumatorio:
+#+begin_export latex
+\[
+  \sum_{k = 1}^n u_{kj} \frac{Y_k Y_j}{Y_Y} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+
+Por tanto:
+
+#+begin_export latex
+\[
+  \boxed{Y_{kj} = \frac{Y_k Y_j}{\sum_{k  = 1}^n Y_k}}
+\]
+#+end_export
+
+
 
 * Teoremas de Thévenin/Norton
   
@@ -426,7 +524,7 @@ Dado que el circuito LC no consume potencia activa, la potencia a la entrada es 
 #+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/Everitt_potencia.pdf]]
 
-** Redes en cascada
+** TODO COMMENT Redes en cascada
 
 ** Diseño de redes adaptadoras
 
@@ -583,7 +681,7 @@ Las pérdidas de inserción, $\alpha_I$, asociadas a una red miden la relación 
 
 En el caso de una red adaptadora, $P_{out} > P_L$, por lo que $\alpha_I < 0$ (ganancia de inserción).
 
-* Teorema de Tellegen
+* TODO COMMENT Teorema de Tellegen
 
 * Footnotes
 
