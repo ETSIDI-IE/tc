@@ -1,0 +1,224 @@
+#+TITLE: Técnicas Generales de Análisis
+#+SUBTITLE: Teoría de Circuitos II
+#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+DATE: 
+#+STARTUP: beamer
+#+STARTUP: indent
+#+SETUPFILE: config.org
+#+OPTIONS: H:3
+
+* Leyes de Kirchhoff
+
+*** Nudo, rama, malla
+  - Nudo :: unión de *3* o más conductores.
+  - Rama :: elementos conectados entre dos nudos consecutivos.
+  - Lazo :: conjunto de ramas que forman un camino cerrado.
+  - Malla :: lazo que no contiene ningún otro en su interior.
+
+#+ATTR_LATEX: :height 0.5\textheight
+file:../figs/mallas.pdf
+
+*** Ley de Kirchhoff de las Corrientes (LKC)
+- La *LKC* es el principio de conservación de la carga aplicado a los circuitos eléctricos.
+
+- *LKC*: la suma de las corrientes que llegan a un nudo es igual a la suma de las que salen.
+
+  - Las lineas de corriente son cerradas (o solenoidales).
+
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:../figs/LKC_FM.pdf]]
+#+BEGIN_EXPORT latex
+\[
+i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
+\]
+#+END_EXPORT
+
+*** Ley de Kirchhoff de los Voltajes (LKV)
+- La *LKV* es el principio de conservación de la energía aplicado a los circuitos eléctricos.
+
+- *LKV*: la suma (con signo) de las tensiones a lo largo de un camino cerrado (circuito) es cero.
+
+  - La energía producida por un generador es consumida por los receptores del circuito para producir trabajo (mecánico, químico, etc.) o calor.
+
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:../figs/LKV_FM.pdf]]
+#+BEGIN_EXPORT latex
+\[
+u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
+\]
+#+END_EXPORT
+
+* Métodos de Análisis
+
+** Método de las mallas
+
+*** 
+#+ATTR_LATEX: :height 0.95\textheight
+[[file:../figs/mallas1_corrientes.pdf]]
+
+*** Ecuación General
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    {\color{BrickRed}\sum \overline{Z}_{aa}} &  - {\color{MidnightBlue}\sum \overline{Z}_{ab}} & - {\color{MidnightBlue}\sum \overline{Z}_{ca}} \\
+    - {\color{MidnightBlue}\sum \overline{Z}_{ab}} & {\color{BrickRed}\sum \overline{Z}_{bb}} & - {\color{MidnightBlue}\sum \overline{Z}_{bc}} \\
+    - {\color{MidnightBlue}\sum \overline{Z}_{ca}} & - {\color{MidnightBlue}\sum \overline{Z}_{bc}} &  {\color{BrickRed}\sum \overline{Z}_{cc}}
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    \overline{I}_a\\
+    \overline{I}_b\\
+    \overline{I}_c\\
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    {\color{OliveGreen}\sum\overline{\epsilon}_a}\\
+    {\color{OliveGreen}\sum\overline{\epsilon}_b}\\
+    {\color{OliveGreen}\sum\overline{\epsilon}_c}
+  \end{bmatrix}
+\end{equation*}
+#+end_export
+- ${\color{BrickRed}\sum \overline{Z}_{aa}}$ :: suma de las impedancias incluidas en la malla de $\overline{I}_a$.
+- ${\color{MidnightBlue}\sum \overline{Z}_{ab}}$ :: suma de las impedancias incluidas en las ramas compartidas por las mallas de $\overline{I}_a$ e $\overline{I}_b$.
+- ${\color{OliveGreen}\sum \overline{\epsilon}_a}$ :: suma algebraica de las fuerzas electromotrices de los generadores de la malla de $\overline{I}_a$. Su signo es positivo si contribuyen al giro de la corriente.
+*** Procedimiento
+
+1. Identificar las corrientes de rama.
+2. Asignar un sentido a las corrientes de malla.
+3. Relacionar corrientes de rama con corrientes de malla.
+4. Escribir ecuación de mallas.
+5. Resolver la ecuación, obteniendo las corrientes de malla.
+6. Obtener las corrientes de rama con las relaciones del punto 3.
+
+*Importante*: todos los generadores deben ser fuentes de tensión.
+
+*** Admitancia generalizada
+
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    \overline{Z}_{11} & \overline{Z}_{12} & \dots & \overline{Z}_{1n} \\
+    \overline{Z}_{21} & \overline{Z}_{22} & \dots & \overline{Z}_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \overline{Z}_{n1} & \overline{Z}_{n2} &  \dots & \overline{Z}_{nn}
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    \overline{I}_1\\
+    \overline{I}_2\\
+    \vdots \\
+    \overline{I}_n\\
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \overline{\epsilon}_1\\
+    \overline{\epsilon}_2\\
+    \vdots \\
+    \overline{\epsilon}_n
+  \end{bmatrix}
+\end{equation*}
+
+#+end_export
+Aplicando la regla de Cramer
+#+begin_export latex
+\[
+  \overline{I}_k = \overline{\epsilon}_1 \frac{\Delta_{1k}}{|Z|} + \overline{\epsilon}_2 \frac{\Delta_{2k}}{|Z|} + \dots + \overline{\epsilon}_n \frac{\Delta_{nk}}{|Z|}
+\]
+#+end_export
+siendo $\Delta_{ij}$ el adjunto del elemento $ij$ de la matriz $Z$:
+#+begin_export latex
+\[
+  \Delta_{ij} = (-1)^{i+j} \cdot |M_{ij}|
+\]
+#+end_export
+donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $k$ de la matriz $Z$.
+
+*** Admitancia generalizada
+
+Esta expresión indica que las respuestas del circuito ($I_k$) dependen de todas las excitaciones que existan ($\epsilon_i$):
+#+begin_export latex
+\[
+  \overline{I}_k = \overline{\epsilon}_1 \frac{\Delta_{1k}}{|Z|} + \overline{\epsilon}_2 \frac{\Delta_{2k}}{|Z|} + \dots + \overline{\epsilon}_n \frac{\Delta_{nk}}{|Z|}
+\]
+#+end_export
+También se puede definir la admitancia generalizada entre dos partes del circuito:
+#+begin_export latex
+\[
+  \overline{Y}_{ki} = \frac{\overline{I}_k}{\overline{\epsilon}_i} = \frac{\Delta_{ik}}{|Z|}
+\]
+#+end_export
+
+*** Impedancia de Entrada
+
+A partir de esta expresión se puede calcular la impedancia de entrada vista por una fuente que alimenta un circuito pasivo (todas las fuentes salvo la de entrada son nulas en la expresión anterior):
+
+#+begin_export latex
+\[
+  \overline{I}_1 = \overline{\epsilon}_1 \frac{\Delta_{11}}{|Z|} + 0 \cdot \frac{\Delta_{21}}{|Z|} + \dots + 0 \cdot \frac{\Delta_{n1}}{|Z|}
+\]
+#+end_export
+Por tanto:
+#+begin_export latex
+\[
+  \boxed{\overline{Z}_{in} = \frac{\overline{\epsilon}_1}{\overline{I}_1}=  \frac{|Z|}{\Delta_{11}}}
+\]
+#+end_export
+
+*** Impedancia de Transferencia
+
+También se puede calcular la impedancia de transferencia de un circuito pasivo, es decir, la impedancia entre dos partes del circuito en las que la primera está alimentada por una fuente, y la segunda está cortocircuitada.
+
+En este caso, todas las fuentes salvo la de interés están apagadas:
+
+#+begin_export latex
+\[
+  \overline{I}_k = 0 \cdot \frac{\Delta_{1k}}{|Z|} + 0 \cdot \frac{\Delta_{2k}}{|Z|} + \dots + \epsilon_j \cdot \frac{\Delta_{jk}}{|Z|} + 0 \cdot \frac{\Delta_{nk}}{|Z|}
+\]
+#+end_export
+Por tanto:
+#+begin_export latex
+\[
+  \boxed{\overline{Z}_{Tjk} = \frac{\overline{\epsilon}_j}{\overline{I}_k}=  \frac{|Z|}{\Delta_{jk}}}
+\]
+#+end_export
+
+
+*** Mallas con fuentes de intensidad
+*** Mallas con fuentes dependientes
+
+** Método de los nudos
+*** 
+[[file:../figs/nudosAC.pdf]]
+
+*** Ecuación general
+
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    {\color{BrickRed}\sum \overline{Y}_A} & - {\color{MidnightBlue}\sum \overline{Y}_{AB}} & - {\color{MidnightBlue}\sum \overline{Y}_{AC}}\\
+    -{\color{MidnightBlue}\sum \overline{Y}_{AB}} & {\color{BrickRed}\sum \overline{Y}_B} & -{\color{MidnightBlue}\sum \overline{Y}_{BC}}\\
+    -{\color{MidnightBlue}\sum \overline{Y}_{AC}} & -{\color{MidnightBlue}\sum \overline{Y}_{BC}} & {\color{BrickRed}\sum \overline{Y}_C}
+  \end{bmatrix} \cdot%
+  \begin{bmatrix}
+    \overline{V}_A\\
+    \overline{V}_B\\
+    \overline{V}_C
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    {\color{OliveGreen}\sum \overline{I}_{gA}}\\
+    {\color{OliveGreen}\sum \overline{I}_{gB}}\\
+    {\color{OliveGreen}\sum \overline{I}_{gC}}
+  \end{bmatrix}
+\end{equation*}
+#+end_export
+
+- ${\color{BrickRed}\sum \overline{Y}_A}$ :: Suma de las admitancias conectadas al nudo $A$.
+- ${\color{MidnightBlue}\sum \overline{Y}_{AB}}$ :: Suma de las admitancias conectadas entre los nudos $A$ y $B$.
+- ${\color{OliveGreen}\sum \overline{I}_{gA}}$ :: Suma de las corrientes de los generadores conectados en el nudo A. El signo es positivo si el generador inyecta corriente en el nudo.
+
+*Importante*: todos los generadores deben ser fuentes de corriente.
+
+
+*** Impedancia Generalizada
+
+*** Admitancia de Entrada
+
+*** Admitancia de Transferencia
+
+*** Supernudos
