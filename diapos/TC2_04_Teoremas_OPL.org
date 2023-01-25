@@ -305,7 +305,42 @@ Por tanto:
 \]
 #+end_export
 
+** Aplicación
 
+- Ejemplo para $n = 3$ (estrella $\rightarrow$ triángulo)
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Impedancia_Estrella.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+  #+begin_export latex
+  \[
+    \boxed{Y_{kj} = \frac{Y_k Y_j}{\sum_{k  = 1}^n Y_k}}
+  \]
+
+  \begin{align*}
+    Y_{ab} &= \frac{Y_a Y_b}{Y_a + Y_b + Y_c}\\
+    \\
+    Y_{bc} &= \frac{Y_b Y_c}{Y_a + Y_b + Y_c}\\
+    \\
+    Y_{ca} &= \frac{Y_c Y_a}{Y_a + Y_b + Y_c}\\
+  \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+  
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Impedancia_Triangulo.pdf]]
 
 * Teoremas de Thévenin/Norton
   
