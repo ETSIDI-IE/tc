@@ -179,8 +179,18 @@ Por tanto:
 #+end_export
 
 
-*** Mallas con fuentes de intensidad
+*** Mallas con fuentes de intensidad ideales
+
+- Si la fuente de corriente está en una rama que pertenece a una única malla, se fija la corriente de dicha malla igual a la corriente de la fuente (desaparece una incógnita del sistema).
+- Si la fuente de corriente está en una rama que pertenece a dos mallas:
+  - Se introduce la tensión en la fuente de corriente como variable adicional.
+  - Se plantean las ecuaciones del método de mallas.
+  - la variable adicional (tensión de la fuente) se elimina sumando las dos ecuaciones de las mallas afectadas.
+  - Se añade una ecuación que relaciona la corriente de la fuente con las dos corrientes de malla.
 *** Mallas con fuentes dependientes
+- Se plantean las ecuaciones de mallas como si no hubiese fuentes dependientes.
+- Se añade la ecuación de la fuente dependiente como una ecuación adicional.
+- La matriz de impedancias deja de ser simétrica.
 
 ** Método de los nudos
 *** 
@@ -214,11 +224,114 @@ Por tanto:
 
 *Importante*: todos los generadores deben ser fuentes de corriente.
 
+*** Impedancia generalizada
+#+begin_export latex
+\begin{equation*}
+  \begin{bmatrix}
+    \overline{Y}_{11} & \overline{Y}_{12} & \dots & \overline{Y}_{1n} \\
+    \overline{Y}_{21} & \overline{Y}_{22} & \dots & \overline{Y}_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \overline{Y}_{n1} & \overline{Y}_{n2} &  \dots & \overline{Y}_{nn}
+  \end{bmatrix} \cdot %
+  \begin{bmatrix}
+    \overline{V}_1\\
+    \overline{V}_2\\
+    \vdots \\
+    \overline{V}_n\\
+  \end{bmatrix} = %
+  \begin{bmatrix}
+    \overline{I}_{g1}\\
+    \overline{I}_{g2}\\
+    \vdots \\
+    \overline{I}_{gn}
+  \end{bmatrix}
+\end{equation*}
 
-*** Impedancia Generalizada
+#+end_export
+Aplicando la regla de Cramer
+#+begin_export latex
+\[
+  \overline{V}_k = \overline{I}_{g1} \frac{\Delta_{1k}}{|Y|} + \overline{I}_{g2} \frac{\Delta_{2k}}{|Y|} + \dots + \overline{I}_{gn} \frac{\Delta_{nk}}{|Y|}
+\]
+#+end_export
+siendo $\Delta_{ij}$ el adjunto del elemento $ij$ de la matriz $Y$:
+#+begin_export latex
+\[
+  \Delta_{ij} = (-1)^{i+j} \cdot |M_{ij}|
+\]
+#+end_export
+donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $k$ de la matriz $Y$.
+
+*** Impedancia generalizada
+
+Esta expresión indica que las respuestas del circuito ($V_k$) dependen de todas las excitaciones que existan ($I_{gi}$):
+#+begin_export latex
+\[
+  \overline{V}_k = \overline{I}_{g1} \frac{\Delta_{1k}}{|Y|} + \overline{I}_{g2} \frac{\Delta_{2k}}{|Y|} + \dots + \overline{I}_{gn} \frac{\Delta_{nk}}{|Y|}
+\]
+#+end_export
+También se puede definir la impedancia generalizada entre dos partes del circuito:
+#+begin_export latex
+\[
+  \overline{Z}_{ki} = \frac{\overline{V}_k}{\overline{I}_{gi}} = \frac{\Delta_{ik}}{|Y|}
+\]
+#+end_export
 
 *** Admitancia de Entrada
 
+A partir de esta expresión se puede calcular la admitancia de entrada vista por una fuente que alimenta un circuito pasivo (todas las fuentes salvo la de entrada son nulas en la expresión anterior):
+
+#+begin_export latex
+\[
+  \overline{V}_1 = \overline{I}_{g1} \frac{\Delta_{11}}{|Y|} + 0 \cdot \frac{\Delta_{21}}{|Y|} + \dots + 0 \cdot \frac{\Delta_{n1}}{|Y|}
+\]
+#+end_export
+Por tanto:
+#+begin_export latex
+\[
+  \boxed{\overline{Y}_{in} = \frac{\overline{I}_{g1}}{\overline{V}_1}=  \frac{|Y|}{\Delta_{11}}}
+\]
+#+end_export
+
 *** Admitancia de Transferencia
 
-*** Supernudos
+También se puede calcular la admitancia de transferencia de un circuito pasivo, es decir, la admitancia entre dos partes del circuito en las que la primera está alimentada por una fuente, y la segunda está en abierto.
+
+En este caso, todas las fuentes salvo la de interés están apagadas:
+
+#+begin_export latex
+\[
+  \overline{V}_k = 0 \cdot \frac{\Delta_{1k}}{|Y|} + 0 \cdot \frac{\Delta_{2k}}{|Y|} + \dots + I_{gj} \cdot \frac{\Delta_{jk}}{|Y|} + 0 \cdot \frac{\Delta_{nk}}{|Y|}
+\]
+#+end_export
+Por tanto:
+#+begin_export latex
+\[
+  \boxed{\overline{Y}_{Tjk} = \frac{\overline{I}_{gj}}{\overline{V}_k}=  \frac{|Y|}{\Delta_{jk}}}
+\]
+#+end_export
+
+
+*** Nudos con fuentes de tensión ideales
+
+- Si la fuente de tensión está conectada entre el nudo de referencia y otro nudo cualquiera, se fija la tensión de este último igual a la tensión de la fuente.
+- Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia:
+  - Se introduce la corriente que atraviesa la fuente como variable adicional.
+  - Se plantean las ecuaciones del método de nudos.
+  - Se elimina la variable adicional (corriente de la fuente de tensión) sumando las ecuaciones de nudos afectadas.
+  - Se añade una ecuación que relaciona la tensión de la fuente con las dos tensiones nodales.
+    
+*** Nudos con fuentes de tensión ideales: supernudos
+
+Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia, estos dos nudos se pueden considerar como un único supernudo:
+  - Este supernudo no tiene tensión propia.
+  - Se plantean las ecuaciones de nudos incluyendo el supernudo.
+  - El supernudo aporta una ecuación adicional, la tensión de la fuente que contiene.
+  
+
+*** Nudos con fuentes dependientes
+- Se plantean las ecuaciones de nudos como si no hubiese fuentes dependientes.
+- Se añade la ecuación de la fuente dependiente como una ecuación adicional.
+- La matriz de admitancias deja de ser simétrica.
+
+
