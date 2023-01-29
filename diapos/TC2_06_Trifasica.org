@@ -1,0 +1,934 @@
+#+TITLE: Sistemas Trifásicos
+#+SUBTITLE: Teoría de Circuitos II
+#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+DATE: 
+#+STARTUP: beamer
+#+STARTUP: indent
+#+SETUPFILE: config.org
+#+OPTIONS: H:2
+
+* Generadores
+** Tensiones de Fase y Línea
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+ #+ATTR_LATEX: :height 0.4\textheight
+ [[file:../figs/FasoresTrifasica_ABC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+Tensiones de *Fase*: $U_A$, $U_B$, $U_C$
+
+Tensiones de *Línea*: $U_{AB}$, $U_{BC}$, $U_{CA}$
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+     #+begin_export latex
+     \begin{align*}
+       \overline{U}_{AB} &= \overline{U}_A - \overline{U}_B\\
+       \overline{U}_{BC} &= \overline{U}_B - \overline{U}_C\\
+       \overline{U}_{CA} &= \overline{U}_C - \overline{U}_A\\
+\cline{1-2}
+       \overline{U}_{AB} + \overline{U}_{BC} + \overline{U}_{CA} &= 0     \end{align*}
+     #+end_export
+
+** Tensiones de Fase y Línea
+
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+   #+begin_export latex
+   \begin{align*}
+     \overline{U}_A &= U_f\phase{\theta_f}\\
+     \overline{U}_B &= U_f\phase{\theta_f - \ang{120}}
+   \end{align*}
+   #+end_export
+
+    #+begin_export latex
+    \begin{align*}
+    \overline{U}_{AB} &= \overline{U}_A - \overline{U}_B = \\
+		      &= U_f\phase{\theta_f} - U_f\phase{\theta_f - \ang{120}} = \\
+		      &= U_f\phase{\theta_f} + U_f\phase{\theta_f + \ang{60}}\\
+		      &= 2 \cdot U_f \cdot \cos(30) \phase{\theta_f + \ang{30}} = \\
+      &= \sqrt{3} U_f \phase{\theta_f + \ang{30}}
+    \end{align*}
+    #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/FasoresFaseLinea.pdf]]
+
+    #+begin_export latex
+    \[
+      \boxed{
+	\begin{array}{l}
+	  U = \sqrt{3}\cdot U_f\\
+	  \theta_l = \theta_f + \ang{30}\\
+	\end{array}
+      }
+    \]
+    #+end_export
+** Secuencia de Fases
+
+- Sentido en el que ocurren los máximos de cada fase.
+- Secuencia de Fases Directa (*SFD*): ABC
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:../figs/TensionesTrifasica_ABC.pdf]]
+- Secuencia de Fases Inversa (*SFI*): ACB
+#+ATTR_LATEX: :height 0.3\textheight
+[[file:../figs/TensionesTrifasica_ACB.pdf]]
+
+** Secuencia de Fases Directa (SFD)
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/FasoresTrifasica_ABC.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+  #+begin_export latex
+  \begin{align*}
+    \overline{U}_A &= \frac{U}{\sqrt{3}}\phase{{\color{blue}\ang{90}}}\\
+    \overline{U}_B &= \frac{U}{\sqrt{3}}\phase{\ang{-30}}\\
+    \overline{U}_C &= \frac{U}{\sqrt{3}}\phase{\ang{-150}}
+  \end{align*}
+  #+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.2
+    :END:
+[[file:../figs/ReglaSFD.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+  #+begin_export latex
+  \begin{align*}
+    \overline{U}_{AB} &= U\phase{\ang{120}}\\
+    \overline{U}_{BC} &= U\phase{{\color{blue}\ang{0}}}\\
+    \overline{U}_{CA} &= U\phase{\ang{-120}}
+  \end{align*}
+  #+end_export
+
+
+** Secuencia de Fases Inversa (SFI)
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/FasoresTrifasica_ACB.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+#+begin_export latex
+\begin{align*}
+  \overline{U}_A &= \frac{U}{\sqrt{3}}\phase{{\color{blue}\ang{-90}}}\\
+  \overline{U}_B &= \frac{U}{\sqrt{3}}\phase{\ang{30}}\\
+  \overline{U}_C &= \frac{U}{\sqrt{3}}\phase{\ang{150}}
+\end{align*}
+#+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.2
+    :END:
+[[file:../figs/ReglaSFI.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+ #+begin_export latex
+ \begin{align*}
+   \overline{U}_{AB} &= U\phase{\ang{-120}}\\
+   \overline{U}_{BC} &= U\phase{{\color{blue}\ang{0}}}\\
+   \overline{U}_{CA} &= U\phase{\ang{120}}
+ \end{align*}
+ #+end_export
+* Receptores
+** Tipos de Receptores
+*** Conexión
+    - *Estrella* (punto común) Y
+    - *Triángulo* $\triangle$
+
+*** Impedancias
+    - *Equilibrado* (las tres impedancias son idénticas en módulo *y* fase).
+    - *Desequilibrado*
+
+
+** Receptor en Estrella Equilibrado
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\pm 90} - \theta} \\
+   \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 30} - \theta}\\
+   \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 150} - \theta}
+ \end{align*}
+ #+end_export
+
+
+ #+begin_export latex
+ \[
+   \boxed{|\overline{I}_A| = |\overline{I}_B| = |\overline{I}_C| = \frac{U_f}{Z}}
+ \]
+ #+end_export
+
+ #+begin_export latex
+ \[
+   \overline{I}_A  + \overline{I}_B + \overline{I}_C + \overline{I}_N = 0
+ \]
+ #+end_export
+ #+begin_export latex
+\[
+   \overline{I}_A  + \overline{I}_B + \overline{I}_C  = 0 \rightarrow \boxed{\overline{I}_N = 0}
+\]
+ #+end_export
+** Receptor en Estrella Equilibrado
+[[file:../figs/EstrellaEquilibrado_SinNeutro.pdf]]
+
+** Receptor en Triángulo Equilibrado
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\pm 120} - \theta} \\
+   \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}} = \frac{U}{Z}\phase{0 - \theta}\\
+   \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\mp 120} - \theta}
+ \end{align*}
+ #+end_export
+
+ #+begin_export latex
+\[
+   \overline{I}_{AB}  + \overline{I}_{BC} + \overline{I}_{CA}  = 0 
+\]
+ #+end_export
+
+Corriente de Fase:
+ #+begin_export latex
+ \[
+   \boxed{I_f = |\overline{I}_{AB}| = |\overline{I}_{BC}| = |\overline{I}_{CA}| = \frac{U}{Z}}
+ \]
+ #+end_export
+
+
+** Receptor en Triángulo Equilibrado
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\pm 90} - \theta}\\
+   \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 30} - \theta}\\
+   \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 150} - \theta}\\
+ \end{align*}
+ #+end_export
+
+Corriente de Línea:
+ #+begin_export latex
+ \[
+   \boxed{I = |\overline{I}_A| = |\overline{I}_B| = |\overline{I}_C| = \sqrt{3} \cdot \frac{U}{Z}}
+ \]
+ #+end_export
+
+ #+begin_export latex
+ \[
+   \boxed{I = \sqrt{3} \cdot I_f}
+ \]
+ #+end_export
+
+** Receptor en Estrella Desequilibrado con Neutro
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A}\\
+   \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B}\\
+   \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C}
+ \end{align*}
+ #+end_export
+
+ #+begin_export latex
+ \[
+   \overline{I}_A  + \overline{I}_B + \overline{I}_C + \overline{I}_N = 0
+ \]
+ #+end_export
+ #+begin_export latex
+\[
+   \overline{I}_A  + \overline{I}_B + \overline{I}_C  \neq 0 \rightarrow \boxed{\overline{I}_N \neq 0}
+\]
+ #+end_export
+
+** Receptor en Estrella Desequilibrado sin Neutro
+[[file:../figs/EstrellaDesequilibrado_SinNeutro.pdf]]
+
+#+begin_export latex
+\[
+\overline{U}_N \neq \overline{U}_{N'}
+\]
+#+end_export
+
+** Método del desplazamiento del neutro
+
+Ecuaciones del receptor:
+#+begin_export latex
+  \begin{align*}
+    \overline{U}_{A'N'} &= \overline{I}_A \cdot \overline{Z}_A\\
+    \overline{U}_{B'N'} &= \overline{I}_B \cdot \overline{Z}_B\\
+    \overline{U}_{C'N'} &= \overline{I}_C \cdot \overline{Z}_C
+  \end{align*}
+#+end_export
+Ecuación del nudo $N'$:
+#+begin_export latex
+\[
+  \overline{I}_A + \overline{I}_B + \overline{I}_C = 0
+\]
+#+end_export
+
+** Método del desplazamiento del neutro
+Relacionamos las tensiones en el receptor con las tensiones del generador:
+#+begin_export latex
+\begin{align*}
+  \overline{U}_{A'N'} &= \overline{U}_{AN} - \overline{U}_{NN'}\\
+  \overline{U}_{B'N'} &= \overline{U}_{BN} - \overline{U}_{NN'}\\
+  \overline{U}_{C'N'} &= \overline{U}_{CN} - \overline{U}_{NN'}
+\end{align*}
+#+end_export
+
+Despejamos las corrientes teniendo en cuenta estas relaciones:
+#+begin_export latex
+  \begin{align*}
+    \overline{I}_A &= \frac{\overline{U}_{AN} - \overline{U}_{NN'}}{\overline{Z}_A}\\
+    \overline{I}_B &= \frac{\overline{U}_{AN} - \overline{U}_{NN'}}{\overline{Z}_B}\\
+    \overline{I}_C &= \frac{\overline{U}_{AN} - \overline{U}_{NN'}}{\overline{Z}_C}
+  \end{align*}
+#+end_export
+
+**  Método del desplazamiento del neutro
+Finalmente, usando la ecuación del nudo $N'$ despejamos la tensión $U_{N'N}$ (tensión de desplazamiento del neutro)[fn:1]:
+
+#+begin_export latex
+\[
+  \boxed{\overline{U}_{N'N} = \frac{\overline{U}_{AN} \cdot \overline{Y}_A + \overline{U}_{BN} \cdot \overline{Y}_B + \overline{U}_{CN} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}}
+\]
+#+end_export
+
+Una vez calculada esta tensión $\overline{U}_{N'N}$ se pueden calcular las corrientes de línea.
+** Receptor en Estrella con Carga Monofásica
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:../figs/Estrella_CargaMonofasica.pdf]]
+** Receptor en Triángulo Desequilibrado
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+    
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}_{AB}}\\
+   \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}_{BC}}\\
+   \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}_{CA}}
+ \end{align*}
+ #+end_export
+
+ #+begin_export latex
+ \begin{align*}
+   \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA}\\
+   \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB}\\
+   \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC}\\
+ \end{align*}
+ #+end_export
+
+* Potencia en Sistemas Trifásicos
+
+** Receptor en Estrella Equilibrado
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    
+[[file:../figs/EstrellaEquilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\theta)\\
+   Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\theta)
+ \end{align*}
+
+ \begin{align*}
+   I_Z &= I\\
+   U_Z &= U_F
+ \end{align*}
+
+
+ \begin{align*}
+   P &= 3 U_F I \cos(\theta) = \sqrt{3} U I \cos(\theta)\\
+   Q &= 3 U_F I \sin(\theta) = \sqrt{3} U I \sin(\theta)\\
+   S &= \sqrt{P^2 + Q^2} =  \sqrt{3} U I
+ \end{align*}
+ #+end_export
+
+
+** Receptor en Triángulo Equilibrado
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/TrianguloEquilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+begin_export latex
+ \begin{align*}
+   P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\theta)\\
+   Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\theta)
+ \end{align*}
+
+ \begin{align*}
+   I_Z &= I_F\\
+   U_Z &= U
+ \end{align*}
+
+
+ \begin{align*}
+   P &= 3 U I_F \cos(\theta) = \sqrt{3} U I \cos(\theta)\\
+   Q &= 3 U I_F \sin(\theta) = \sqrt{3} U I \sin(\theta)\\
+   S &= \sqrt{P^2 + Q^2} =  \sqrt{3} U I
+ \end{align*}
+ #+end_export
+
+** Receptor en Estrella Desequilibrado
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    
+[[file:../figs/EstrellaDesequilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ #+begin_export latex
+ \begin{align*}
+   P &= P_A + P_B + P_C\\
+   Q &= Q_A + Q_B + Q_C\\
+   \overline{S} &= P + jQ
+ \end{align*}
+ #+end_export
+
+** Receptor en Triángulo Desequilibrado
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+    
+[[file:../figs/TrianguloDesequilibrado_Receptor.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+ #+begin_export latex
+ \begin{align*}
+   P &= P_{AB} + P_{BC} + P_{CA}\\
+   Q &= Q_{AB} + Q_{BC} + Q_{CA}\\
+   \overline{S} &= P + jQ
+ \end{align*}
+ #+end_export
+
+* Compensación de Reactiva
+
+** Conexión en Triángulo
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+BEGIN_EXPORT latex
+  \begin{align*}
+    Q &= P\tan\theta\\
+    Q' &= P\tan\theta' =\\
+      &= Q - Q_c\\
+    Q_c &= 3 \cdot \omega C_\triangle \cdot U^2
+  \end{align*}
+  #+END_EXPORT
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3\omega U^2}}
+\]
+#+END_EXPORT
+
+** Conexión en Estrella
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+  #+BEGIN_EXPORT latex
+  \begin{align*}
+    Q &= P\tan\theta\\
+    Q' &= P\tan\theta' =\\
+      &= Q - Q_c\\
+    Q_c &= 3 \cdot \omega C_Y \cdot U_f^2
+  \end{align*}
+  #+END_EXPORT
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+\]
+#+END_EXPORT
+** Comparación Estrella-Triángulo
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.55\textheight
+ [[file:../figs/CircuitoTrifasica_CompensacionReactiva.pdf]]
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
+\]
+#+END_EXPORT
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+ATTR_LATEX: :height 0.55\textheight
+ [[file:../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf]]
+#+BEGIN_EXPORT latex
+\[
+  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+\]
+#+END_EXPORT
+
+\medskip
+
+*** :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triángulo*.
+* Medida de Potencia en Sistemas Trifásicos
+** Recordatorio: vatímetro
+#+ATTR_LATEX: :height 0.6\textheight
+ [[file:../figs/vatimetro.pdf]]
+
+*Vatímetro*: equipo de medida de 4 terminales (1 par para tensión, 1 par para corriente)
+
+#+begin_export latex
+\[
+  \boxed{W = \Re(\overline{U} \cdot \overline{I}^*)}
+\]
+#+end_export
+** Sistema de 4 Hilos
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.7
+    :END:
+    #+ATTR_LATEX: :height 0.85\textheight
+    [[file:../figs/Potencia4H.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    #+begin_export latex
+    \begin{align*}
+      W_1 &= \Re(\overline{U}_A \cdot \overline{I}_A^*) = P_A\\
+      W_2 &= \Re(\overline{U}_B \cdot \overline{I}_B^*) = P_B\\
+      W_3 &= \Re(\overline{U}_C \cdot \overline{I}_C^*) = P_C\\
+    \end{align*}
+
+    \[
+      \boxed{P = W_1 + W_2 + W_3}
+    \]
+    #+end_export
+
+
+** Sistema de 3 Hilos Equilibrado
+
+#+ATTR_LATEX: :height 0.3\textheight
+ [[file:../figs/Potencia3H_Equilibrado_AB.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+SFD
+    #+begin_export latex
+    \begin{align*}
+      W_1 &= UI\cos(\theta {\color{red}-} \ang{30})\\
+      W_2 &= UI\cos(\theta {\color{red}+} \ang{30})
+    \end{align*}
+    \begin{align*}
+      P &= W_1 + W_2\\
+      Q &= \sqrt{3}({\color{red}W_1 - W_2}) \\
+      \tan\theta &= \sqrt{3} \frac{{\color{red}W_1 - W_2}}{W_1 + W_2}
+    \end{align*}
+    #+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+SFI
+    #+begin_export latex
+    \begin{align*}
+      W_1 &= UI\cos(\theta {\color{red}+} \ang{30})\\
+      W_2 &= UI\cos(\theta {\color{red}-} \ang{30})
+    \end{align*}
+    \begin{align*}
+      P &= W_1 + W_2\\
+      Q &= \sqrt{3}({\color{red}W_2 - W_1}) \\
+      \tan\theta &= \sqrt{3} \frac{{\color{red}W_2 - W_1}}{W_1 + W_2}
+    \end{align*}
+#+end_export
+** Otras conexiones: 3H SFD
+   :PROPERTIES:
+   :beamer_opt: plain
+   :END:
+
+   #+begin_export latex
+   \[
+     \boxed{(ABC) :: A \triangleright B \triangleright C \Longrightarrow \{AB, BC, CA\}}
+   \]
+   #+end_export
+    #+begin_export latex
+    \begin{align*}
+      W_1 &= UI\cos(\theta - \ang{30}) & P &= W_1 + W_2\\
+      W_2 &= UI\cos(\theta + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
+    \end{align*}
+    #+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_AB.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: AC \notin SFD\\
+    W_2&: BC \in SFD\\
+  \end{align*}
+  #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_BC.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: BA \notin SFD\\
+    W_2&: CA \in SFD\\
+  \end{align*}
+  #+end_export
+
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_CA.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: CB \notin SFD\\
+    W_2&: AB \in SFD\\
+  \end{align*}
+  #+end_export
+
+** Otras conexiones: 3H SFI
+   :PROPERTIES:
+   :beamer_opt: plain
+   :END:
+
+   #+begin_export latex
+   \[
+     \boxed{(ACB) :: A \triangleright C \triangleright B \Longrightarrow \{AC, CB, BA\}}
+   \]
+   #+end_export
+    #+begin_export latex
+    \begin{align*}
+      W_1 &= UI\cos(\theta - \ang{30}) & P &= W_1 + W_2\\
+      W_2 &= UI\cos(\theta + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
+    \end{align*}
+    #+end_export
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_AB_SFI.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: BC \notin SFI\\
+    W_2&: AC \in SFI\\
+  \end{align*}
+  #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_BC_SFI.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: CA \notin SFI\\
+    W_2&: BA \in SFI\\
+  \end{align*}
+  #+end_export
+
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+  [[file:../figs/Potencia3H_Equilibrado_CA_SFI.pdf]]
+  #+begin_export latex
+  \begin{align*}
+    W_1&: AB \notin SFI\\
+    W_2&: CB \in SFI\\
+  \end{align*}
+  #+end_export
+
+
+** Conexiones para medida de reactiva
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_A-BC.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{BC} \cdot \overline{I}_A^*)
+    \]
+    \begin{align*}
+      BC &\in SFD\\
+      BC &\notin SFI
+    \end{align*}
+    #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_B-CA.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{CA} \cdot \overline{I}_B^*)
+    \]
+    \begin{align*}
+      CA &\in SFD\\
+      CA &\notin SFI
+    \end{align*}
+    #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_C-AB.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{AB} \cdot \overline{I}_C^*)
+    \]
+    \begin{align*}
+      AB &\in SFD\\
+      AB &\notin SFI
+    \end{align*}
+    #+end_export
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    #+begin_export latex
+    \begin{align*}
+    SFD &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}\\
+    SFI &\rightarrow \boxed{W =  - \frac{Q}{\sqrt{3}}}
+    \end{align*}
+    #+end_export
+
+** Conexiones para medida de reactiva
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_A-CB.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{CB} \cdot \overline{I}_A^*)
+    \]
+    \begin{align*}
+      CB &\notin SFD\\
+      CB &\in SFI
+    \end{align*}
+    #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_B-AC.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{AC} \cdot \overline{I}_B^*)
+    \]
+    \begin{align*}
+      AC &\notin SFD\\
+      AC &\in SFI
+    \end{align*}
+    #+end_export
+*** 
+    :PROPERTIES:
+    :BEAMER_col: 0.33
+    :END:
+    #+ATTR_LATEX: :height 0.25\textheight
+    [[file:../figs/Reactiva3H_C-BA.pdf]]
+    #+begin_export latex
+    \[
+      W = \Re(\overline{U}_{BA} \cdot \overline{I}_C^*)
+    \]
+    \begin{align*}
+      BA &\notin SFD\\
+      BA &\in SFI
+    \end{align*}
+    #+end_export
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    #+begin_export latex
+    \begin{align*}
+    SFD &\rightarrow \boxed{W = - \frac{Q}{\sqrt{3}}}\\
+    SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
+    \end{align*}
+    #+end_export
+
+** Medida de la reactiva con receptor desequilibrado
+
+    #+ATTR_LATEX: :height 0.5\textheight
+    [[file:../figs/Reactiva_3H_deseq.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+    #+begin_export latex
+    \begin{align*}
+      W_A &= \Re(\overline{U}_{BC} \cdot \overline{I}^*_A)\\
+      W_B &= \Re(\overline{U}_{CA} \cdot \overline{I}^*_B)\\
+      W_C &= \Re(\overline{U}_{AB} \cdot \overline{I}^*_C)        
+    \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+    #+begin_export latex
+    \begin{align*}
+      \overline{U}_{AB} &= \pm \sqrt{3} \cdot \overline{U}_C \cdot e^{j\pi/2}\\
+      \overline{U}_{BC} &= \pm \sqrt{3} \cdot \overline{U}_A \cdot e^{j\pi/2}\\
+      \overline{U}_{CA} &= \pm \sqrt{3} \cdot \overline{U}_B \cdot e^{j\pi/2}
+    \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+    #+begin_export latex
+    \[
+      \boxed{W_A + W_B + W_C = \pm Q/\sqrt{3}}
+    \]
+    #+end_export
+* COMMENT Equivalentes
+
+** Equivalente de un motor trifásico
+
+** Equivalencia de fuentes
+Estrella -> Triángulo
+** Equivalencia de fuentes
+ Triángulo -> Estrella
+** Estudio generalizado de los sistemas trifásicos
+
+* Footnotes
+
+[fn:1]Se puede llegar a este mismo resultado aplicando el teorema de Millman. 

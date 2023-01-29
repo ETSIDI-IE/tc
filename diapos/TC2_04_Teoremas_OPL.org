@@ -1,0 +1,726 @@
+#+TITLE: Teoremas Generales
+#+SUBTITLE: Teoría de Circuitos II
+#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+DATE: 
+#+STARTUP: beamer
+#+STARTUP: indent
+#+SETUPFILE: config.org
+#+OPTIONS: H:2
+
+* Teoremas de linealidad
+
+** Elementos lineales
+
+- Un circuito eléctrico es lineal si los elementos pasivos y activos que incluye son lineales.
+- Un *elemento pasivo* es lineal si la relación entre la tensión entre sus terminales y la corriente que lo recorre es lineal: *resistencias, condensadores y bobinas*.
+- Una *fuente dependiente* es lineal si su salida (tensión o corriente) tiene una relación lineal con la magnitud del circuito de la que depende.
+- Un circuito lineal tiene dos propiedades:
+  - Homogeneidad o *proporcionalidad*.
+  - Aditividad o *superposición*.
+
+** Homogeneidad o Proporcionalidad
+Sea $y(t)$ la respuesta de un *circuito lineal* a una excitación $x(t)$. 
+
+Si la excitación es multiplicada por una *constante*, $K \cdot x(t)$, la respuesta del circuito será modificada por la misma constante, $K \cdot y(t)$.
+
+#+ATTR_LATEX: :width 0.6\textwidth
+[[file:../figs/proporcionalidad.pdf]]
+
+** Teorema de superposición
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+La respuesta de un *circuito lineal* a varias fuentes de excitación actuando simultáneamente es igual a la suma de las respuestas que se tendrían cuando actuase cada una de ellas por separado
+
+#+begin_export latex
+\[
+y(t) = \sum_i y_i(t)
+\]
+#+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ [[file:../figs/superposicion.pdf]]
+
+** Análisis de un circuito mediante superposición
+*** Procedimiento
+ 1. Se apagan todas las fuentes *independientes* del circuito menos una.
+    - Las fuentes de tensión se sustituyen por un cortocircuito ($U = 0$).
+    - Las fuentes de corriente se sustituyen por un circuito abierto ($I = 0$).
+    - Las fuentes *dependientes* *no* se modifican.
+ 2. Se analiza el circuito, obteniendo la respuesta individual a la fuente que permanece activa.
+ 3. Se repite este procedimiento para cada una de las fuentes *independientes* del circuito.
+ 4. La respuesta total del circuito es la suma de las respuestas individuales.
+    
+** Análisis de un circuito mediante superposición
+*** Observaciones
+- *Siempre* hay que aplicar este método cuando en un circuito conviven fuentes de *diferente frecuencia* (o fuentes de corriente continua y corriente alterna).
+- En el caso de fuentes de corriente alterna *sinusoidal*, la respuesta debe expresarse en el *dominio del tiempo*. *No* se pueden *sumar* los *fasores* que corresponden a *frecuencias diferentes*.
+- En el primer paso del procedimiento, se pueden agrupar las fuentes que funcionan a la misma frecuencia y calcular la respuesta del circuito en esa frecuencia.
+
+** Cálculo de potencia con superposición
+
+El principio de superposición aplica a tensiones y corrientes, pero *no* a potencias. Supongamos $i(t) = i_1(t) + i_2(t)$:
+#+begin_export latex
+\begin{align*}
+  p(t) &= R \cdot i^2(t) =\\
+       &= R \cdot (i_1(t) + i_2(t))^2 =\\
+       &=R \cdot (i_1^2(t) + i_2^2(t) + 2\cdot i_1(t) \cdot i_2(t))\\
+  p(t) &\neq p_1(t) + p_2(t)
+\end{align*}
+#+end_export
+** Cálculo de potencia con superposición
+- Cuando las señales son *ortogonales en un período*[fn:1] se pueden sumar las potencias *medias* de cada circuito.
+#+begin_export latex
+\begin{align*}
+  P = \sum_i P_i
+\end{align*}
+#+end_export
+- Ejemplos de señales ortogonales: sinusoidales con diferente frecuencia, una sinusoide con una continua, ...
+
+
+* Teoremas de reciprocidad y sustitución
+
+** Teorema de reciprocidad
+
+La matriz de impedancias de un circuito pasivo es simétrica. En
+consecuencia, al intercambiar la posición de una fuente de tensión, la
+corriente de cortocircuito en la otra rama no cambia.
+
+[[file:../figs/TeoremaReciprocidadTension.pdf]]
+
+** Teorema de reciprocidad
+
+La matriz de admitancias de un circuito pasivo es simétrica. En
+consecuencia, al intercambiar la posición de una fuente de corriente, la
+tensión de circuito abierto en la otra posición no cambia.
+
+[[file:../figs/TeoremaReciprocidadCorriente.pdf]]
+
+** Teorema de sustitución
+
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:../figs/TeoremaSustitucion.pdf]]
+
+* Teorema de compensación
+
+** Planteamiento
+
+¿Cuál es la variación en la respuesta $I_k$ debida a una variación en la impedancia $Z$?
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion0.pdf]]
+
+
+** Aplicamos teorema de sustitución
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion1.pdf]]
+
+** A continuación, teorema de superposición
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion2.pdf]]
+
+** Nuevamente, teorema de sustitución
+
+En el último circuito, expresamos la fuente como:
+
+#+begin_export latex
+\[
+  \Delta Z \cdot (I_Z + \Delta I_Z) = \Delta Z \cdot I_Z + \Delta Z \cdot \Delta I_Z
+\]
+#+end_export
+
+El último sumando representa la tensión en la impedancia $\Delta Z$ recorrida por la corriente de la rama, $\Delta I_z$. Esta observación nos permite volver a utilizar el teorema de sustitución.
+
+
+#+ATTR_LATEX: :width 0.95\textwidth
+[[file:../figs/TeoremaCompensacion2.pdf]]
+
+** Solución
+Para determinar el cambio en la respuesta, $\Delta I_k$, debido a una variación en la impedancia, $\Delta Z$:
+
+1. Se calcula la corriente $I_z$ en el circuito original.
+2. Se apagan las fuentes independientes y se sustituye la impedancia $Z$ por una impedancia de valor $Z + \Delta Z$ en serie con una fuente de tensión de valor $\Delta Z \cdot I_z$.
+3. En el circuito resultante se calcula la respuesta, $\Delta I_k$.
+
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/TeoremaCompensacion.pdf]]
+
+
+* Teorema de Millman
+
+** Planteamiento
+
+El Teorema de Millman permite resolver la tensión entre dos puntos A y O, siendo éste un punto común de un conjunto de impedancias, y siendo conocidas las tensiones con el punto A y las impedancias.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Millman.pdf]]
+
+** Resolución
+
+La tensión $u_{AO}$ es:
+#+begin_export latex
+\[
+  u_{AO} = u_{Aj} + i_j/Y_j
+\]
+#+end_export
+
+Despejando $i_j$:
+
+#+begin_export latex
+\[
+  i_j = Y_j \cdot (u_{AO} - u_{Aj})
+\]
+#+end_export
+
+En el nudo O se puede plantear LKC:
+
+#+begin_export latex
+\[
+  \sum_{j = 1}^n i_j = 0
+\]
+#+end_export
+
+Por tanto:
+#+begin_export latex
+\[
+  \sum_{j = 1}^n Y_j \cdot (u_{AO} - u_{Aj}) = 0 \rightarrow \boxed{u_{AO} = \frac{\sum_{j = 1}^n Y_j u_{Aj}}{\sum_{i = 1}^n Y_j}}
+\]
+#+end_export
+
+** Aplicación
+
+Este teorema permite resolver rápidamente circuitos como el siguiente:
+
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/Millman_aplicacion.pdf]]
+
+#+begin_export latex
+\[
+  u_{AO} = \frac{\sum_{j = 1}^n u_{Aj}/Z_j}{{\color{red} 1/Z_L} + \sum_{i = 1}^n 1/Z_j}
+\]
+#+end_export
+
+* Teorema de Rosen
+
+** Planteamiento
+
+Una estrella se puede transformar en un polígono (pero no al revés si $n > 3$):
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_Y.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_D.pdf]]
+
+
+** Corrientes en el polígono
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_D.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+Podemos calcular la corriente que sale por cada terminal:
+#+begin_export latex
+\[
+  i_j = \sum_{\substack{k = 1\\k \neq j}}^n i_{kj} = \sum_{\substack{k = 1\\k \neq j}}^n u_{kj} \cdot Y_{kj} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+teniendo en cuenta que $u_{kk} = 0$.
+
+** Corrientes en la estrella
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:../figs/Rosen_Y.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+La corriente en cada rama es:
+#+begin_export latex
+\[
+  i_j = Y_j \cdot u_{jN}
+\]
+#+end_export
+La tensión $u_{jN}$ se puede calcular con el Teorema de Millman:
+
+#+begin_export latex
+\[
+  u_{jN} = \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\]
+#+end_export
+
+Por tanto:
+#+begin_export latex
+\[
+  i_j = Y_j \cdot \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\]
+#+end_export
+
+** Resolución
+
+Para que los dos circuitos sean equivalentes, las ecuaciones de las corrientes deben dar el mismo resultado:
+
+#+begin_export latex
+\[
+  \frac{\sum_{k = 1}^n u_{kj} Y_k Y_j}{\sum_{k  = 1}^n Y_k} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+Denominando $Y_Y = \sum_{k  = 1}^n Y_k$ y agrupando dentro del sumatorio:
+#+begin_export latex
+\[
+  \sum_{k = 1}^n u_{kj} \frac{Y_k Y_j}{Y_Y} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+
+Por tanto:
+
+#+begin_export latex
+\[
+  \boxed{Y_{kj} = \frac{Y_k Y_j}{\sum_{k  = 1}^n Y_k}}
+\]
+#+end_export
+
+** Aplicación
+
+- Ejemplo para $n = 3$ (estrella $\rightarrow$ triángulo)
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Impedancia_Estrella.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+  #+begin_export latex
+  \[
+    \boxed{Y_{kj} = \frac{Y_k Y_j}{\sum_{k  = 1}^n Y_k}}
+  \]
+
+  \begin{align*}
+    Y_{ab} &= \frac{Y_a Y_b}{Y_a + Y_b + Y_c}\\
+    \\
+    Y_{bc} &= \frac{Y_b Y_c}{Y_a + Y_b + Y_c}\\
+    \\
+    Y_{ca} &= \frac{Y_c Y_a}{Y_a + Y_b + Y_c}\\
+  \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+  
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Impedancia_Triangulo.pdf]]
+
+* Teoremas de Thévenin/Norton
+  
+** Teoremas de Thévenin/Norton
+#+BEAMER: \framesubtitle{Thévenin}
+
+Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de tensión* (generador de Thévenin, $\epsilon_{th}$) en *serie* con una impedancia (impedancia de Thévenin, $Z_{th}$).
+
+ #+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+** Teoremas de Thévenin/Norton
+#+BEAMER: \framesubtitle{Norton}
+Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de corriente* (generador de Norton, $I_N$) en *paralelo* con una impedancia (impedancia de Norton, $Z_N$).
+
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/EquivalenteNorton.pdf]]
+
+** Teoremas de Thévenin/Norton
+#+BEAMER: \framesubtitle{Cálculo del equivalente de Thévenin}
+#+ATTR_LATEX: :height 0.38\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+- Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{\epsilon_{th} = U_{oc}}
+\]
+#+END_EXPORT
+- Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{Z_{th} = \frac{\epsilon_{th}}{I_{sc}} = \frac{U_{oc}}{I_{sc}}}
+\]
+#+END_EXPORT
+
+** Teoremas de Thévenin/Norton
+#+BEAMER: \framesubtitle{Cálculo del equivalente de Norton}
+#+ATTR_LATEX: :height 0.38\textheight
+[[file:../figs/EquivalenteNorton.pdf]]
+
+- Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{I_N = I_{sc}}
+\]
+#+END_EXPORT
+- Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
+#+BEGIN_EXPORT latex
+\[
+\boxed{Z_N = \frac{U_{oc}}{I_N} = \frac{U_{oc}}{I_{sc}}}
+\]
+#+END_EXPORT
+
+** Teoremas de Thévenin/Norton
+#+BEAMER: \framesubtitle{Cálculo de Thévenin/Norton}
+
+*** Observaciones
+- Cálculo de la impedancia:
+  - Si el circuito *no* contiene fuentes dependientes, se puede realizar *apagando* todos los *generadores* y obteniendo la impedancia equivalente.
+  - Si el circuito contiene fuentes dependientes, es necesario conectar un *generador de prueba* a la salida del circuito y obtener la relación entre la tensión y corriente de este generador.
+
+- Gracias a la equivalencia de fuentes, una vez obtenido uno de los equivalentes se puede obtener el otro mediante una transformación.
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Planteamiento}
+Sea el circuito lineal de la figura. ¿Qué impedancia $Z_L$ hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
+
+#+ATTR_LATEX: :height 0.55\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
+
+
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Ecuaciones}
+Calculamos la potencia activa en la impedancia de carga $Z_L$:
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    #+ATTR_LATEX: :height 0.45\textheight
+    [[file:../figs/EquivalenteThevenin0.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.2
+    :END:
+   #+begin_export latex
+   \begin{align*}
+     \overline{Z}_{th} &= R_{th} + jX_{th}\\
+     \overline{Z}_L &= R_L + jX_L\\
+   \end{align*}
+ #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+   #+begin_export latex
+   \begin{align*}
+   \overline{I} &= \frac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}\\
+   P_L &= I^2 \cdot R_L\\
+   \Aboxed{P_L &= \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L}
+   \end{align*}
+ #+end_export
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+
+Las condiciones de máximo son: 
+#+begin_export latex
+\[
+  \boxed{%
+    \diffp{P_L}{X_L} = 0 \quad%
+    \diffp{P_L}{R_L} = 0%
+  }
+\]
+
+ #+end_export
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Reactancia}
+A partir de la expresión de potencia en la carga...
+   #+begin_export latex
+   \[
+     P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
+   \]
+   #+end_export
+calculamos la derivada parcial respecto de la reactancia:
+   #+begin_export latex
+   \[
+     \diffp{P_L}{X_L} = \epsilon^2_{th} \cdot R_L \cdot \left[\frac{-1}{\left((R_L + R_{th})^2 + (X_L + X_{th})^2\right)^2} \cdot 2 \cdot (X_L + X_{th})\right]
+   \]
+   #+end_export
+Aplicamos la condición de máximo y obtenemos un resultado parcial:
+   #+begin_export latex
+   \[
+      \diffp{P_L}{X_L} = 0 \Rightarrow \boxed{X_L = - X_{th}}
+   \]
+   #+end_export
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Resistencia}
+Simplificamos la expresión de la potencia teniendo en cuenta el resultado anterior ($X_L = - X_{th}$):
+   #+begin_export latex
+   \[
+     P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L
+   \]
+   #+end_export
+Calculamos la derivada parcial respecto de la resistencia:
+   #+begin_export latex
+   \begin{align*}
+     \diffp{P_L}{R_L} &= \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]\\
+		      &= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}
+   \end{align*}
+   #+end_export
+Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
+   #+begin_export latex
+   \[
+      \diffp{P_L}{R_L} = 0 \Rightarrow \boxed{R_L = R_{th}}
+   \]
+   #+end_export
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Impedancia de carga}
+
+Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) ...
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+... la impedancia de carga que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
+#+begin_export latex
+\[
+  \boxed{\overline{Z}_L = \overline{Z}_{th}^*}
+\]
+#+end_export
+
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Máxima potencia disponible}
+
+La máxima potencia disponible en la carga es:
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+#+begin_export latex
+\begin{equation*}
+  \left.
+    \begin{matrix}
+      \overline{Z}_L = \overline{Z}_{th}^*\\
+      P_L = \frac{\epsilon^2_{th}}{|\overline{Z}_{th} + \overline{Z}_L|^2} \cdot R_L
+    \end{matrix} \right\}\rightarrow
+  \boxed{P_L = \frac{\epsilon^2_{th}}{4 R_{th}}}
+\end{equation*}
+#+end_export
+
+
+
+* Teorema de Everitt
+
+** Planteamiento
+Si a la entrada de un circuito no disipativo (LC) existe adaptación de impedancias, a la salida de este circuito también hay adaptación. Dado que $\overline{Z}_L \neq \overline{Z}^*_g$, el circuito LC es una red adaptadora.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt.pdf]]
+
+** Potencia
+
+Dado que el circuito LC no consume potencia activa, la potencia a la entrada es la potencia consumida por la carga. Por tanto, si la potencia a la entrada es máxima (adaptación en la entrada), también lo será a la salida (adaptación a la salida).
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt_potencia.pdf]]
+
+** Redes en cascada
+
+Si en una cascada de circuitos LC existe adaptación de impedancias en un punto de la cadena, existirá adaptación en cualquier punto de la misma.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt_cascada.pdf]]
+
+
+** Diseño de redes adaptadoras
+
+Emplearemos redes en L compuestas por dos elementos reactivos.
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/Everitt_LC.pdf]]
+
+Esta adaptación es selectiva: si varía la frecuencia, no habrá adaptación.
+
+** Diseño de redes adaptadoras
+
+La red debe diseñarse con el elemento paralelo en el extremo de la impedancia que tenga parte real mayor.
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \textwidth
+[[file:../figs/Everitt_XY1.pdf]]
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :width \textwidth
+[[file:../figs/Everitt_XY2.pdf]]
+
+** Diseño de redes adaptadoras: $R_g > R_L$
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+Condición:
+#+begin_export latex
+\[
+  \overline{Z}^*_L = jX + (jY || \overline{Z}_g) 
+\]
+#+end_export
+Ecuaciones:
+#+begin_export latex
+\begin{align*}
+  R_L &= \Re\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)\\
+  X_L &= -X - \Im\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)
+\end{align*}
+#+end_export
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/Everitt_XY2.pdf]]
+
+** Diseño de redes adaptadoras: $R_L > R_g$
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+Condición:
+#+begin_export latex
+\[
+  \overline{Z}^*_g = jX + (jY || \overline{Z}_L) 
+\]
+#+end_export
+Ecuaciones:
+#+begin_export latex
+\begin{align*}
+  R_g &= \Re\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)\\
+  X_g &= -X - \Im\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)
+\end{align*}
+#+end_export
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/Everitt_XY1.pdf]]
+
+** Pérdidas de transmisión e inserción
+
+*** Decibelio: potencias
+
+El *decibelio* ($\si{\decibel}$) se emplea para medir la ganancia de potencia o la ratio de dos niveles de potencia:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
+\]
+#+END_EXPORT
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Red_Ganancia.pdf]]
+
+** Pérdidas de transmisión e inserción
+
+*** Decibelio: tensiones
+
+Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/corriente:
+
+#+BEGIN_EXPORT latex
+\[
+G_{dB} = 10 \log \frac{U_2^2}{U_1^2} = 20 \log \frac{U_2}{U_1}
+\]
+#+END_EXPORT
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/Red_Ganancia.pdf]]
+
+** Pérdidas de transmisión
+
+Las pérdidas de transmisión, $\alpha_T$, asociadas a una red miden la relación entre la potencia de entrada, $P_{in}$, y la potencia de salida, $P_{out}$.
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/PerdidasTransmision.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+begin_export latex
+\[
+  \alpha_T = 10 \log \frac{P_{in}}{P_{out}} \unit{\decibel}
+\]
+#+end_export
+
+***                                                       :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+#+begin_center
+Si la red es no disipativa (LC), $P_{in} = P_{out} \rightarrow \alpha_T = \qty{0}{\decibel}$.
+#+end_center
+
+** Pérdidas de inserción
+
+Las pérdidas de inserción, $\alpha_I$, asociadas a una red miden la relación entre la potencia entregada a la carga sin la red, $P_L$, y la potencia entregada a la carga con la red insertada.
+
+#+begin_export latex
+\[
+  \alpha_I = 10 \log \frac{P_L}{P_{out}} \unit{\decibel}
+\]
+#+end_export
+
+#+ATTR_LATEX: :height 0.45\textheight
+[[file:../figs/PerdidasInsercion.pdf]]
+
+En el caso de una red adaptadora, $P_{out} > P_L$, por lo que $\alpha_I < 0$ (ganancia de inserción).
+
+* Footnotes
+
+[fn:1] Dos señales son ortogonales si cumplen la siguiente ecuación: \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\] 

@@ -1,0 +1,39 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\newcommand{\equal}{=}
+
+\begin{document}
+
+\begin{circuitikz}[european voltages, european resistors, straight voltages]
+  \draw
+  (0,-0.5) node[below] {O} to [short, *-] (0,0)
+  to [R, l = $Y_3$, i<= $i_3$, *-*] ++(0, 3)
+  to [open, v<= $u_{A3}$] ++(0, 2);
+  \draw
+  (0,0) to [short] ++(-2, 0)
+  to [R, l = $Y_2$, i<= $i_2$, *-*] ++(0, 3)
+  to [open, v^<= $u_{A2}$] ++(0, 2);
+  \draw
+  (0,0) to [short] ++(-4, 0)
+  to [R, l = $Y_1$, i<= $i_1$, *-*] ++(0, 3)
+  to [open, v^<= $u_{A1}$] ++(0, 2);
+  \draw
+  (0,0) to [short] ++(2, 0)
+  to [R, l = $Y_4$, i<= $i_4$, *-*] ++(0, 3)
+  to [open, v<= $u_{A4}$] ++(0, 2);
+  \draw
+  (0,0) to [short] ++(4, 0)
+  to [R, l = $Y_5$, i<= $i_5$, *-*] ++(0, 3)
+  to [open, v<= $u_{A5}$] ++(0, 2);
+  \draw
+  (0, 5.5) node[above] {A}
+  to [short, *-*] ++(0,-0.5)
+  to [short, -*] ++(2,0)
+  to [short, -*] ++(2,0)
+  (0,5) to [short, -*] ++(-2,0)
+  to [short, -*] ++(-2,0);
+\end{circuitikz}
+
+\end{document}
