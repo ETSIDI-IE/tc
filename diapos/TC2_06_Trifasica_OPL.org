@@ -919,14 +919,150 @@ SFI
       \boxed{W_A + W_B + W_C = \pm Q/\sqrt{3}}
     \]
     #+end_export
-* COMMENT Equivalentes
+* Conversión de Fuentes Reales
 
-** Equivalente de un motor trifásico
+** Estrella a Triángulo
 
-** Equivalencia de fuentes
-Estrella -> Triángulo
-** Equivalencia de fuentes
- Triángulo -> Estrella
+    #+ATTR_LATEX: :height 0.9\textheight
+    [[file:../figs/GeneradorRealEstrella.pdf]]
+
+** Transformamos impedancia
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella.pdf]]
+    
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella_ZTriangulo.pdf]]
+
+** Aplicamos movilidad de fuentes
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella_ZTriangulo.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella_Transformado1.pdf]]
+
+** Asociamos fuentes
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella_Transformado1.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealEstrella_Transformado2.pdf]]
+
+
+** Triángulo a Estrella
+
+    #+ATTR_LATEX: :height 0.9\textheight
+    [[file:../figs/GeneradorRealTriangulo.pdf]]
+
+** Transformamos fuentes
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_I.pdf]]
+
+** Transformamos impedancias
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_I.pdf]]
+  
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_I_ZEstrella.pdf]]
+
+** Aplicamos movilidad de fuentes
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_I_ZEstrella.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_Transformado1.pdf]]
+    
+** Asociamos fuentes
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_Transformado1.pdf]]
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_Transformado2.pdf]]
+
+** Transformamos fuentes
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_Transformado2.pdf]]
+
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+    #+ATTR_LATEX: :width \textwidth
+    [[file:../figs/GeneradorRealTriangulo_Transformado3.pdf]]
+
+
 ** Estudio generalizado de los sistemas trifásicos
 
 * Footnotes

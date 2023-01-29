@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[american voltages, american currents, european resistors]{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{circuitikz}
+  \coordinate (N) at (0,0);
+  \coordinate (A) at (90:4);
+  \coordinate (Az) at (90:2);  
+  \coordinate (B) at (210:4);
+  \coordinate (Bz) at (210:2);
+  \coordinate (C) at (-30:4);
+  \coordinate (Cz) at (-30:2);
+  \draw
+  (N) node[above right] {N}
+  to [R, *-, l = $Z_A$] (Az) 
+  to [sV, -*, v<=$\overline{Z}_A(\overline{I}_{AB} - \overline{I}_{CA})$] (A) node[above] {A}
+  (N) to [R, l = $Z_B$] (Bz)
+  to [sV, -*, v_<=$\overline{Z}_B(\overline{I}_{BC} - \overline{I}_{AB})$] (B) node[above] {B}
+  (N)  to [R, l = $Z_C$] (Cz)
+  to [sV, -*, v_<=$\overline{Z}_C(\overline{I}_{CA} - \overline{I}_{BC})$] (C) node[above] {C};
+\end{circuitikz}
+\end{document}

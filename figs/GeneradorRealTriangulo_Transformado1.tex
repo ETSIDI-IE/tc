@@ -1,0 +1,46 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[american voltages, american currents, european resistors]{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{circuitikz}
+  \coordinate (N) at (0,0);
+  \coordinate (A) at (90:3);
+  \coordinate (B) at (210:3);
+  \coordinate (C) at (-30:3);
+  \coordinate (AB) at ($(A)!0.5!(B)$);
+  \coordinate (BC) at ($(B)!0.5!(C)$);
+  \coordinate (CA) at ($(A)!0.5!(C)$);
+  \draw 
+  (A) node[above] {A} to [R, -*, n = Za] (N) node[above right] {N}
+  
+  (B) node[below left] {B} to [R, n = Zb] (N) 
+  (C) node[below right] {C} to [R, n = Zc] (N);
+  \draw
+  node[font=\small] at (Za) {$Z_A$}
+  node[font=\small] at (Zb) {$Z_B$}
+  node[font=\small] at (Zc) {$Z_C$};
+  \draw
+  (B) to [short, *-] ($(B)!.4!40:(N)$) coordinate (Bn)
+  (N) to [short, *-] ($(N)!.4!-40:(B)$) coordinate (Nb)
+  (Bn) to [I, l = $I_{AB}$] (Nb)
+  (N) to [short, *-] ($(N)!.4!40:(A)$) coordinate (Na)
+  (A) to [short, *-] ($(A)!.4!-40:(N)$) coordinate (An)
+  (Na) to [I, l = $I_{AB}$] (An);
+  \draw
+  (B) to [short, *-] ($(B)!.4!-40:(N)$) coordinate (Bn2)
+  (N) to [short, *-] ($(N)!.4!+40:(B)$) coordinate (Nb2)
+  (Nb2) to [I, l= $I_{BC}$] (Bn2)
+  (N) to [short, *-] ($(N)!.4!-40:(C)$) coordinate (Nc)
+  (C) to [short, *-] ($(C)!.4!+40:(N)$) coordinate (Cn)
+  (Cn) to [I, l= $I_{BC}$] (Nc);
+  \draw
+  (C) to [short, *-] ($(C)!.4!-40:(N)$) coordinate (Cn2)
+  (N) to [short, *-] ($(N)!.4!+40:(C)$) coordinate (Nc2)
+  (Nc2) to [I, l= $I_{CA}$] (Cn2)
+  (N) to [short, *-] ($(N)!.4!-40:(A)$) coordinate (Na2)
+  (A) to [short, *-] ($(A)!.4!+40:(N)$) coordinate (An2)
+  (An2) to [I, l= $I_{CA}$] (Na2);
+\end{circuitikz}
+\end{document}
