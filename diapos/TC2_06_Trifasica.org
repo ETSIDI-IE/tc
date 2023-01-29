@@ -883,8 +883,43 @@ SFI
 
 ** Medida de la reactiva con receptor desequilibrado
 
+    #+ATTR_LATEX: :height 0.5\textheight
+    [[file:../figs/Reactiva_3H_deseq.pdf]]
 
-* Equivalentes
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+    #+begin_export latex
+    \begin{align*}
+      W_A &= \Re(\overline{U}_{BC} \cdot \overline{I}^*_A)\\
+      W_B &= \Re(\overline{U}_{CA} \cdot \overline{I}^*_B)\\
+      W_C &= \Re(\overline{U}_{AB} \cdot \overline{I}^*_C)        
+    \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+    #+begin_export latex
+    \begin{align*}
+      \overline{U}_{AB} &= \pm \sqrt{3} \cdot \overline{U}_C \cdot e^{j\pi/2}\\
+      \overline{U}_{BC} &= \pm \sqrt{3} \cdot \overline{U}_A \cdot e^{j\pi/2}\\
+      \overline{U}_{CA} &= \pm \sqrt{3} \cdot \overline{U}_B \cdot e^{j\pi/2}
+    \end{align*}
+    #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+    #+begin_export latex
+    \[
+      \boxed{W_A + W_B + W_C = \pm Q/\sqrt{3}}
+    \]
+    #+end_export
+* COMMENT Equivalentes
 
 ** Equivalente de un motor trifásico
 
