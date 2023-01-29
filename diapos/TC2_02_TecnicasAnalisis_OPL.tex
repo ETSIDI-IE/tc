@@ -1,4 +1,4 @@
-% Created 2023-01-28 sáb 17:00
+% Created 2023-01-29 dom 12:20
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -59,9 +59,9 @@
 \maketitle
 
 \section{Leyes de Kirchhoff}
-\label{sec:org8688fcc}
+\label{sec:org6a211a8}
 
-\begin{frame}[label={sec:org2863255}]{Nudo, rama, malla}
+\begin{frame}[label={sec:org726a607}]{Nudo, rama, malla}
 \begin{description}
 \item[{Nudo}] unión de \alert{3} o más conductores.
 \item[{Rama}] elementos conectados entre dos nudos consecutivos.
@@ -74,7 +74,7 @@
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org405e571}]{Ley de Kirchhoff de las Corrientes (LKC)}
+\begin{frame}[label={sec:orgdfcfe8a}]{Ley de Kirchhoff de las Corrientes (LKC)}
 \begin{itemize}
 \item La \alert{LKC} es el principio de conservación de la carga aplicado a los circuitos eléctricos.
 
@@ -93,7 +93,7 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org2522970}]{Ley de Kirchhoff de los Voltajes (LKV)}
+\begin{frame}[label={sec:org9dabe04}]{Ley de Kirchhoff de los Voltajes (LKV)}
 \begin{itemize}
 \item La \alert{LKV} es el principio de conservación de la energía aplicado a los circuitos eléctricos.
 
@@ -113,18 +113,18 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{frame}
 
 \section{Métodos de Análisis}
-\label{sec:org1b4d047}
+\label{sec:org54d7d7e}
 
 \subsection{Método de las mallas}
-\label{sec:org0bbb80c}
+\label{sec:org104853d}
 
-\begin{frame}[label={sec:org7cab64d}]{}
+\begin{frame}[label={sec:orgaa64699}]{}
 \begin{center}
 \includegraphics[height=0.95\textheight]{../figs/mallas1_corrientes.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org92f7e7c}]{Ecuación General}
+\begin{frame}[label={sec:org5786719}]{Ecuación General}
 \begin{equation*}
   \begin{bmatrix}
     {\color{BrickRed}\sum \overline{Z}_{aa}} &  - {\color{MidnightBlue}\sum \overline{Z}_{ab}} & - {\color{MidnightBlue}\sum \overline{Z}_{ca}} \\
@@ -148,7 +148,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \item[{\({\color{OliveGreen}\sum \overline{\epsilon}_a}\)}] suma algebraica de las fuerzas electromotrices de los generadores de la malla de \(\overline{I}_a\). Su signo es positivo si contribuyen al giro de la corriente.
 \end{description}
 \end{frame}
-\begin{frame}[label={sec:orgc956d84}]{Procedimiento}
+\begin{frame}[label={sec:org5db926f}]{Procedimiento}
 \begin{enumerate}
 \item Identificar las corrientes de rama.
 \item Asignar un sentido a las corrientes de malla.
@@ -161,7 +161,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \alert{Importante}: todos los generadores deben ser fuentes de tensión.
 \end{frame}
 
-\begin{frame}[label={sec:orga054c58}]{Admitancia generalizada}
+\begin{frame}[label={sec:org6c7fcd2}]{Admitancia generalizada}
 \begin{equation*}
   \begin{bmatrix}
     \overline{Z}_{11} & \overline{Z}_{12} & \dots & \overline{Z}_{1n} \\
@@ -193,7 +193,7 @@ siendo \(\Delta_{ij}\) el adjunto del elemento \(ij\) de la matriz \(Z\):
 donde \(M_{ij}\) es la matriz resultante de eliminar la fila \(i\) y la columna \(k\) de la matriz \(Z\).
 \end{frame}
 
-\begin{frame}[label={sec:orga03b324}]{Admitancia generalizada}
+\begin{frame}[label={sec:org068ede4}]{Admitancia generalizada}
 Esta expresión indica que las respuestas del circuito (\(I_k\)) dependen de todas las excitaciones que existan (\(\epsilon_i\)):
 \[
   \overline{I}_k = \overline{\epsilon}_1 \frac{\Delta_{1k}}{|Z|} + \overline{\epsilon}_2 \frac{\Delta_{2k}}{|Z|} + \dots + \overline{\epsilon}_n \frac{\Delta_{nk}}{|Z|}
@@ -204,7 +204,7 @@ También se puede definir la admitancia generalizada entre dos partes del circui
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgca8e540}]{Impedancia de Entrada}
+\begin{frame}[label={sec:org49c45b8}]{Impedancia de Entrada}
 A partir de esta expresión se puede calcular la impedancia de entrada vista por una fuente que alimenta un circuito pasivo (todas las fuentes salvo la de entrada son nulas en la expresión anterior):
 
 \[
@@ -216,7 +216,7 @@ Por tanto:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org03ffcb3}]{Impedancia de Transferencia}
+\begin{frame}[label={sec:org6c95628}]{Impedancia de Transferencia}
 También se puede calcular la impedancia de transferencia de un circuito pasivo, es decir, la impedancia entre dos partes del circuito en las que la primera está alimentada por una fuente, y la segunda está cortocircuitada.
 
 En este caso, todas las fuentes salvo la de interés están apagadas:
@@ -231,7 +231,7 @@ Por tanto:
 \end{frame}
 
 
-\begin{frame}[label={sec:org9b89a33}]{Mallas con fuentes de intensidad ideales}
+\begin{frame}[label={sec:orgc896abe}]{Mallas con fuentes de intensidad ideales}
 \begin{itemize}
 \item Si la fuente de corriente está en una rama que pertenece a una única malla, se fija la corriente de dicha malla igual a la corriente de la fuente (desaparece una incógnita del sistema).
 \item Si la fuente de corriente está en una rama que pertenece a dos mallas:
@@ -243,7 +243,7 @@ Por tanto:
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org9d20287}]{Mallas con fuentes dependientes}
+\begin{frame}[label={sec:org97d192a}]{Mallas con fuentes dependientes}
 \begin{itemize}
 \item Se plantean las ecuaciones de mallas como si no hubiese fuentes dependientes.
 \item Se añade la ecuación de la fuente dependiente como una ecuación adicional.
@@ -252,14 +252,14 @@ Por tanto:
 \end{frame}
 
 \subsection{Método de los nudos}
-\label{sec:org456bb62}
-\begin{frame}[label={sec:orge64f2c6}]{}
+\label{sec:orgb3e2a2c}
+\begin{frame}[label={sec:org3bf8f5a}]{}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudosAC.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org798721a}]{Ecuación general}
+\begin{frame}[label={sec:orgc25ac8f}]{Ecuación general}
 \begin{equation*}
   \begin{bmatrix}
     {\color{BrickRed}\sum \overline{Y}_A} & - {\color{MidnightBlue}\sum \overline{Y}_{AB}} & - {\color{MidnightBlue}\sum \overline{Y}_{AC}}\\
@@ -287,7 +287,7 @@ Por tanto:
 \alert{Importante}: todos los generadores deben ser fuentes de corriente.
 \end{frame}
 
-\begin{frame}[label={sec:org85de74a}]{Impedancia generalizada}
+\begin{frame}[label={sec:org19538c2}]{Impedancia generalizada}
 \begin{equation*}
   \begin{bmatrix}
     \overline{Y}_{11} & \overline{Y}_{12} & \dots & \overline{Y}_{1n} \\
@@ -319,7 +319,7 @@ siendo \(\Delta_{ij}\) el adjunto del elemento \(ij\) de la matriz \(Y\):
 donde \(M_{ij}\) es la matriz resultante de eliminar la fila \(i\) y la columna \(k\) de la matriz \(Y\).
 \end{frame}
 
-\begin{frame}[label={sec:orgd7523e3}]{Impedancia generalizada}
+\begin{frame}[label={sec:org2db759e}]{Impedancia generalizada}
 Esta expresión indica que las respuestas del circuito (\(V_k\)) dependen de todas las excitaciones que existan (\(I_{gi}\)):
 \[
   \overline{V}_k = \overline{I}_{g1} \frac{\Delta_{1k}}{|Y|} + \overline{I}_{g2} \frac{\Delta_{2k}}{|Y|} + \dots + \overline{I}_{gn} \frac{\Delta_{nk}}{|Y|}
@@ -330,7 +330,7 @@ También se puede definir la impedancia generalizada entre dos partes del circui
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org3950366}]{Admitancia de Entrada}
+\begin{frame}[label={sec:orgf22f73a}]{Admitancia de Entrada}
 A partir de esta expresión se puede calcular la admitancia de entrada vista por una fuente que alimenta un circuito pasivo (todas las fuentes salvo la de entrada son nulas en la expresión anterior):
 
 \[
@@ -342,7 +342,7 @@ Por tanto:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org3969108}]{Admitancia de Transferencia}
+\begin{frame}[label={sec:org8a312ba}]{Admitancia de Transferencia}
 También se puede calcular la admitancia de transferencia de un circuito pasivo, es decir, la admitancia entre dos partes del circuito en las que la primera está alimentada por una fuente, y la segunda está en abierto.
 
 En este caso, todas las fuentes salvo la de interés están apagadas:
@@ -357,7 +357,7 @@ Por tanto:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgb187786}]{Nudos con fuentes de tensión ideales}
+\begin{frame}[label={sec:orgb12292a}]{Nudos con fuentes de tensión ideales}
 \begin{itemize}
 \item Si la fuente de tensión está conectada entre el nudo de referencia y otro nudo cualquiera, se fija la tensión de este último igual a la tensión de la fuente.
 \item Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia:
@@ -370,7 +370,7 @@ Por tanto:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd2c9194}]{Nudos con fuentes de tensión ideales: supernudos}
+\begin{frame}[label={sec:orgd7deb94}]{Nudos con fuentes de tensión ideales: supernudos}
 Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia, estos dos nudos se pueden considerar como un único supernudo:
 \begin{itemize}
 \item Este supernudo no tiene tensión propia.
@@ -380,7 +380,7 @@ Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de e
 \end{frame}
 
 
-\begin{frame}[label={sec:org11bf276}]{Nudos con fuentes dependientes}
+\begin{frame}[label={sec:org7c6ca2b}]{Nudos con fuentes dependientes}
 \begin{itemize}
 \item Se plantean las ecuaciones de nudos como si no hubiese fuentes dependientes.
 \item Se añade la ecuación de la fuente dependiente como una ecuación adicional.
