@@ -48,6 +48,81 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \]
 #+END_EXPORT
 
+** Asociación de condensadores
+
+*** Zona aislada
+
+En una asociación de 3 o más condensadores pueden aparecer zonas aisladas (puntos a los que no se puede llegar sin atravesar un condensador.)
+
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/CondensadoresZonaAislada.pdf]]
+
+La tensión en estas zonas aisladas no se puede determinar de forma directa a partir del resto del circuito.
+
+*** Método de resolución (1)
+
+Se asignan polaridades arbitrarias a los condensadores.
+
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:../figs/CondensadoresZonaAislada_Tensiones.pdf]]
+
+*** Método de resolución (2)
+
+La suma de cargas en una zona aislada es nula si los condensadores no tienen carga inicial, o igual a la suma total de las cargas iniciales.
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.75\textheight
+[[file:../figs/CondensadoresZonaAislada_Tensiones.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+\begin{align*}
+  (C) &\quad q_1 + q_5 + q_3 = 0\\
+  (D) &\quad q_5 - q_2 - q_4 = 0
+\end{align*}
+#+end_export
+
+*** Método de resolución (3)
+
+Se aplica la LKV a las mallas que sean necesarias para completar el sistema de ecuaciones (usando $u_{Ci} = q_i/C_i$).
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.75\textheight
+[[file:../figs/CondensadoresZonaAislada_Tensiones.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+\begin{align*}
+  (ACDA) &\quad \frac{q_1}{C_1} - \frac{q_5}{C_5} - \frac{q_2}{C_2} = 0\\
+  (CBDC) &\quad -\frac{q_3}{C_3} + \frac{q_4}{C_4} + \frac{q_5}{C_5} = 0\\
+  (ACBA) &\quad \frac{q_1}{C_1} - \frac{q_3}{C_3} - u_{AB} = 0
+\end{align*}
+#+end_export
+
+*** Método de resolución (y 4)
+
+Se resuelve el sistema de ecuaciones para obtener los valores de $q_i$.
+
+#+begin_export latex
+\begin{align*}
+  q_1 + q_5 + q_3 &= 0\\
+  q_5 - q_2 - q_4 &= 0\\
+  \frac{q_1}{C_1} - \frac{q_5}{C_5} - \frac{q_2}{C_2} &= 0\\
+  -\frac{q_3}{C_3} + \frac{q_4}{C_4} + \frac{q_5}{C_5} &= 0\\
+  \frac{q_1}{C_1} - \frac{q_3}{C_3} &= u_{AB}
+\end{align*}
+#+end_export
+
+
+
 * Métodos de Análisis
 
 ** Método de las mallas
