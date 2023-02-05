@@ -171,9 +171,10 @@ Fuente de tensión
 #+ATTR_LATEX: :height 0.5\textheight
  file:../figs/FuenteTension_DiagramaTensionCorriente.pdf
 #+begin_export latex
-\[
-  u(t) = \epsilon_g - R_{\epsilon_g} \cdot i(t)
-\]
+\begin{align*}
+  u(t) &= \epsilon_g - R_{\epsilon_g} \cdot i(t)\\
+  i(t) &= 1/R_{\epsilon_g} \cdot (\epsilon_g - u(t))
+\end{align*}
 #+end_export
 ***                                              :BMCOL:
     :PROPERTIES:
@@ -183,9 +184,11 @@ Fuente de corriente
 #+ATTR_LATEX: :height 0.5\textheight
  file:../figs/FuenteCorriente_DiagramaTensionCorriente.pdf
 #+begin_export latex
-\[
-  u(t) = R_{I_g} \cdot I_g - R_{I_g} \cdot i(t)
-\]
+\begin{align*}
+  i(t) &= I_g - u(t)/R_{Ig}\\
+  u(t) &= R_{Ig} \cdot (I_g - i(t))
+\end{align*}
+  
 #+end_export
 ** Potencia y rendimiento de una fuente
 ***                                                                 :BMCOL:
@@ -253,9 +256,9 @@ Fuente de corriente
 :END:
 - En la zona a la derecha del punto de máxima potencia ($R_L > R_g$), la función de potencia tiene una variación suave: los cambios en $R_L$ tienen un impacto pequeño en $P_L$.
 - Por ejemplo:
-  - Para $R_L = R_g$ se obtiene $\mu = 0'5$
-  - Para $R_L = 2\cdot R_g$, se obtiene $P_L = 0'89 \cdot P_{max}$ y $\mu = 0'67$.
-  - Para $R_L = 3\cdot R_g$, se obtiene $P_L = 0'75 \cdot P_{max}$ y $\mu = 0'75$.
+  - Para $R_L = R_g$ se obtiene $\eta = 0'5$
+  - Para $R_L = 2\cdot R_g$, se obtiene $P_L = 0'89 \cdot P_{max}$ y $\eta = 0'67$.
+  - Para $R_L = 3\cdot R_g$, se obtiene $P_L = 0'75 \cdot P_{max}$ y $\eta = 0'75$.
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -345,7 +348,7 @@ Si la impedancia de carga es resistiva pura, únicamente se puede cumplir la seg
 En este caso, el resultado es:
 #+begin_export latex
 \begin{align*}
-      R_L &= \sqrt{R_g^2 + X_g^2}\\
+      R_L &= |\overline{Z}_g| = \sqrt{R_g^2 + X_g^2}\\
       P_L &= \frac{\epsilon^2_g}{2(R_L + R_g)}
 \end{align*}
 #+end_export
