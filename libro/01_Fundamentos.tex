@@ -289,57 +289,7 @@
 		\end{figure}
 	\end{itemize}
 	
-% 	\subsection{Balance de tensiones: ecuación de una rama y ley de Ohm para un circuito cerrado}
-% 	\begin{figure}[H]
-% 		\centering
-% 		\includegraphics[width=0.5\linewidth]{../figs/circuito_lkv.pdf}
-% 		\caption{Ecuación de una rama}
-% 		\label{fig.circuito_lkv}
-% 	\end{figure}
-% 	Escribir la ecuación de una rama implica \textbf{determinar la diferencia de potencial que tiene aplicada}. Considérese el circuito de la Figura~\ref{fig.circuito_lkv}. Se cumple que, en las ramas $AB$ y $CD$: 
-% 	\begin{equation*}
-% 		U_{AB} = U_{AA'} + U_{A'B'} + U_{B'B}; \qquad
-% 		U_{CD} = U_{CC'} + U_{C'D'} + U_{D'D}
-% 	\end{equation*}
-% 	y, aplicando la Ley de Ohm a cada resistencia:
-% 	\begin{equation*}
-% 		U_{A'A} = I \cdot R_g; \qquad
-% 		U_{AC} = I \cdot R_L; \qquad 
-% 		U_{CC'} = I \cdot R_m; \qquad
-% 		U_{DB} = I \cdot R_L
-% 	\end{equation*}
-% 	Las tensiones $U_{D'D}= U_{BB'} = 0$, dado que no hay ningún elemento conectado entre ellos y, por tanto, no hay diferencia de potencial. Por último, en los generadores $\epsilon_g$ y $\epsilon_m$, se cumple que:
-% 	\begin{equation*}
-% 		U_{C'D'} = \epsilon_m;\qquad
-% 		U_{B'A'} = -\epsilon_g
-% 	\end{equation*}
-% 	Por tanto: 
-% 	\begin{equation*}
-% 		U_{AB} = U_{AA'} + U_{A'B'} + \cancel{U_{B'B}}=-U_{A'A}-U_{A'B}=-I \cdot R_g-(-\epsilon_g)=\epsilon_g-I \cdot R_g% \rightarrow   {U_{AB} = \epsilon_g - I \cdot R_g}
-% 	\end{equation*}
-	
-% 	\begin{equation*}
-% 		U_{CD} = U_{CC'} + U_{C'D'} + \cancel{U_{D'D}}=I \cdot R_m +\varepsilon_m%\rightarrow {U_{CD} = \epsilon_m + I\cdot R_m}
-% 	\end{equation*}
-% 	En general, puede decirse que la diferencia de potencial de una rama es igual al producto de la intensidad que circula por ella por la suma de todas las resistencias que contiene, menos la suma algebraica de todas la
-% 	fuerzas electromotrices, consideradas positivas ($+$) las que tienden a crear corriente en el sentido que se recorre la rama y negativas ($-$) en caso contrario:
-% 	\begin{equation}\label{eq.ecuacion_rama}
-% 		\boxed{U=I\cdot \sum_{i=1}^n R_i-\sum_{j=1}^m \varepsilon_j}
-% 	\end{equation}
-	
-% 	Considerando ahora el circuito cerrado, tal como se muestra en la Figura~\ref{fig.circuito_lkv}, aplicando la 2LK: 
-% 	\begin{equation*}
-% 		U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + \cancel{U_{D'D}} + U_{DB} + \cancel{U_{BB'}} + U_{B'A'} = I \cdot R_g+I \cdot R_L+I \cdot R_m+\epsilon_m+I \cdot R_L-\epsilon_g=0
-% 	\end{equation*}
-% 	Por tanto, despejando la $I$ de la expresión anterior, se llega a:
-% 	\begin{equation*}
-% 		I=\dfrac{\epsilon_g-\epsilon_m}{R_g + 2\cdot R_L + R_m}
-% 	\end{equation*}
-% 	Generalizando esta ecuación, se obtiene la conocida Ley de Ohm para un circuito cerrado, considerando las f.e.m. positivas ($+$) si tienden a crear corriente en el sentido que se recorre la malla, y negativas ($-$) en caso contrario:
-% 	\begin{equation}
-% 		\boxed{I=\dfrac{\displaystyle\sum_{j=1}^m \varepsilon_j}{\displaystyle\sum_{i=1}^n R_i}}
-% 	\end{equation}
-	
+
 	\section{Elementos de los circuitos}
 	Como ya se mencionó en la Sección~\ref{sec.circuito_electrico}, en un circuito eléctrico existen dos tipos de elementos: los elementos activos y los pasivos.
 	
@@ -687,78 +637,245 @@
 	\end{itemize}
 	
 	\subsection{Eficiencia}
-	Cualquier máquina, dispositivo, etc., tiene una \textbf{eficiencia}\footnote{No deben confundirse los términos de \textbf{eficiencia} y \textbf{rendimiento}. Mientras que eficiencia es la relación entre potencias, el rendimiento es la relación entre energías.} %(o eficiencia), 
-	que expresa el cociente entre la potencia de salida y la potencia de entrada. Puesto que todos los dispositivos/máquinas tienen pérdidas, se cumple \textbf{siempre} que el rendimiento es menor del 100\% (o 1, si se expresa en tanto por uno). En general, para la teoría de circuitos, interesa conocer el rendimiento de:
+	Cualquier máquina, dispositivo, etc., tiene una
+        \textbf{eficiencia}\footnote{No deben confundirse los términos
+          de \textbf{eficiencia} y \textbf{rendimiento}. Mientras que
+          eficiencia es la relación entre potencias, el rendimiento es
+          la relación entre energías.} %(o eficiencia),
+	que expresa el cociente entre la potencia de salida y la
+        potencia de entrada. Puesto que todos los
+        dispositivos/máquinas tienen pérdidas, se cumple
+        \textbf{siempre} que el rendimiento es menor del 100\% (o 1,
+        si se expresa en tanto por uno). En general, para la teoría de
+        circuitos, interesa conocer el rendimiento de:
 	\begin{itemize}
-		\item Generadores:
-		\begin{equation}
-			\boxed{\eta_g (\%) = \frac{P_{u}}{P_{g}}\cdot 100}
-		\end{equation}
-		\item Receptores (fundamentalmente, motores):
-		\begin{equation}
-			\boxed{\eta_m (\%) = \frac{P_{u}}{P_{a}}\cdot 100}
-		\end{equation}
+        \item Generadores:
+          \begin{equation}
+            \boxed{\eta_g (\%) = \frac{P_{u}}{P_{g}}\cdot 100}
+          \end{equation}
+        \item Receptores (fundamentalmente, motores):
+          \begin{equation}
+            \boxed{\eta_m (\%) = \frac{P_{u}}{P_{a}}\cdot 100}
+          \end{equation}
 	\end{itemize}
 	
 	\begin{example}\label{ex.motor-bt1}
-	    \textbf{Un generador de corriente continua, $fem=500$ V y $0.75\Omega$ de resistencia, alimenta mediante una línea de cobre de 18 m$\Omega$ mm$^2$/m y 16 mm$^2$ de sección a un motor de 1 CV y rendimiento 74.49\%, situado a 1 km de distancia. Se pide determinar:
-	    \begin{itemize}
-	        \item Intensidad de corriente en el motor y densidad de corriente, sabiendo que ésta última no debe superar 2 A/mm$^2$
-	        \item Tensiones en bornes del generador y del motor, así como la caída de tensión en la línea
-	        \item $fcem$ del motor y su resistencia
-	    \end{itemize}}
+          Un generador cuya \textit{fem} es de \qty{120}{\volt} y
+          resistencia de \qty{0.2}{\ohm}, da una corriente de
+          \qty{20}{\ampere} a un motor situado a \qty{300}{\meter} de
+          distancia y de resistencia \qty{0.5}{\ohm}. La línea que los
+          conecta es de cobre, de resistividad
+          \qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}. Sabiendo
+          que el motor absorbe \qty{10.2}{\kWh} en \qty{5}{\hour}, se
+          debe hallar: \vspace{3mm}
+
+          \begin{enumerate}
+          \item La fuerza contraelectromotriz (\textit{fcem}) del
+            motor
+          \item La sección de los conductores de la línea
+          \item Los rendimientos de: motor, generador, línea y
+            rendimiento total
+          \item El balance general de potencias
+          \end{enumerate}
+
+
+          \hrulefill
+
+          \vspace{5mm} \textbf{Solución}: \vspace{4mm}
+
+          Empezamos dibujando el esquema del circuito y organizando
+          los datos disponibles: \vspace{6mm}
+
+\begin{minipage}{0.73\linewidth}
+  \includegraphics[scale=1.25]{../figs/circuito_lkv.pdf}
+\end{minipage}
+\begin{minipage}{0.27\linewidth}
+  \textbf{Datos}: \vspace{2mm}
+  
+  $\epsilon_g = \qty{120}{\volt}$\\
+  $R_g = \qty{0.2}{\ohm}$\\
+  $I = \qty{20}{\ampere}$\\
+  $R_m = \qty{0.5}{\ohm}$\\
+  $E_m = \qty{10.2}{\kWh}$ (en $\qty{5}{\hour}$)\\
+  $l = \qty{300}{\meter}$\\
+  $\rho = \qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}$
+\end{minipage}
+
+\vspace{6mm}
+
+Donde la resistencia de la línea se divide en dos elementos, para
+distinguir entre el conductor de aporte y el de retorno de corriente.
+
+\vspace{6mm}
+
+\underline{Apartado 1}
+
+\vspace{4mm}
+
+Para calcular $\epsilon_m$, podemos formular el balance de tensiones
+(2LK) en la parte del motor:
+\[
+  U_{CD} = \underbrace{I \cdot R_m}_{= 20 \cdot 0.5} + \epsilon_m
+\]
+
+Pero para despejar $\epsilon_m$ en la expresión anterior, necesitamos
+calcular $U_{CD}$.
+\begin{itemize}
+\item Opción 1: aplicar el balance de tensiones en la ``parte
+  izquierda'' del circuito (a la izquierda de $U_{CD}$ en el
+  diagrama).
+    
+  \underline{Problema}: no conocemos el valor de $R_L$ (y no podemos
+  calcularlo usando la resistividad, porque desconocemos la sección de
+  los conductores), luego no podemos calcular la caída de tensión en
+  la línea.
+    
+\item Opción 2: leyendo de nuevo la información que tenemos sobre el
+  punto de operación del motor, vemos que es conocida la potencia
+  absorbida por este.
+
+    \[
+      P_{CD} = \frac{10.2 \cdot 10^{-3} \, \si{\kWh}}{\qty{5}{\hour}}
+      = \qty{2040}{\watt}
+    \]
+
+    Luego:
+    \[
+      P_{CD} = U_{CD} \cdot I \quad \rightarrow \quad U_{CD} =
+      \frac{2040}{20} = \qty{102}{\volt}
+    \]
+
+    Sustituyendo en la primera expresión:
+    \[
+      \epsilon_m = U_{CD} - 10 = \boxed{ \qty{92}{\volt} }
+    \]
+
+  \item Opción 3 (forma alternativa de llegar al resultado anterior):
+    aplicar balance de potencias en el motor.
+    \[
+      P_{\textrm{útil}} = P_{\textrm{absorbida}} -
+      P_{\textrm{pérdidas}} \quad \rightarrow \quad P_{\epsilon_m} =
+      P_{CD} - \hspace{-6mm} \underbrace{P_{R_m}}_{\substack{= R_m
+          \cdot I^2 \\[3pt] \text{(ley de Joule)}}}
+    \]
+    
+    $P_{CD}$ se calcula de la forma descrita en la Opción 2, luego
+    $P_{\epsilon_m}$ se obtiene como:
+    \[
+      P_{\epsilon_m} = 2040 - 0.5 \cdot 20^2 = \qty{1840}{\watt}
+    \]
+
+    Finalmente:
+    \[
+      P_{\epsilon_m} = \epsilon_m \cdot I \quad \rightarrow \quad
+      \epsilon_m = \frac{1840}{20} = \boxed{ \qty{92}{\volt} }
+    \]
+  \end{itemize}
+
+  \vspace{3mm}
+
+  \underline{Apartado 2}
+
+  \vspace{5mm}
+
+  Para calcular la sección de la línea:
+  \[
+    R_L = \rho \cdot \frac{l}{S} = {17.24 \cdot
+      10^{-3}}\si{\ohm\milli\meter\squared\per\meter} \cdot
+    \frac{\qty{300}{\meter}}{S}
+  \]
+  (dado que ambos conductores, tanto el de aporte como el de retorno
+  de corriente, tienen una $l=\qty{300}{\meter}$ cada uno)
+
+  \vspace{3mm} Luego debemos calcular el valor de $R_L$ para poder
+  despejar $S$.
+  \begin{itemize}
+  \item Opción 1: aplicar el balance de tensiones en todo el circuito
+    (2LK). Comenzando en el punto $A$, y retornando al mismo punto:
+    
+    \[
+      R_L \cdot I + U_{CD} + R_L \cdot I - \epsilon_g + R_g \cdot I =
+      0
+    \]
+    Despejando $R_L$:
+    \[
+      2 R_L \cdot I = \underbrace{\epsilon_g}_{=\qty{120}{\volt}} -
+      \underbrace{R_g \cdot I}_{=0.2 \cdot 20} -
+      \underbrace{U_{CD}}_{=\qty{102}{\volt}} \quad \rightarrow \quad
+      \boxed{ R_L = {\frac{7}{20}}\si{\ohm} }
+    \]
+
+  \item Opción 2: aplicar balance de potencias en la línea.
+
+    \vspace{2mm}
+    \begin{minipage}{0.4\linewidth}
+      \begin{center}
+        \includegraphics[scale=1.2]{../figs/linea_lkv.pdf}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}{0.6\linewidth}
+      \begin{align*}
+        P_{\textrm{entrada}} &= P_{\textrm{pérdidas línea}} + P_{\textrm{salida}}\\[10pt]
+        U_{AB} \cdot I &= 2 \cdot R_L \cdot I^2 + U_{CD} \cdot I\\[10pt] 
+        R_L &= \frac{U_{AB}-U_{CD}}{2 \cdot I} \underarrow[=][\uparrow]{\small 2LK para \ensuremath{U_{AB}} } \frac{\epsilon_g - I\cdot R_g - 102}{2 \cdot 20} = \Aboxed{ {\frac{7}{20}}\si{\ohm} }
+        % Flecha, sacada de aquí:
+        % https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+        % Sin "\ensuremath" da error al meter un símbolo matemático
+      \end{align*}
+    \end{minipage}
+  \end{itemize}
+
+  Una vez conocemos el valor de $R_L$, despejamos $S$ en la primera
+  expresión:
+
+\[
+  S = \rho \cdot \frac{l}{R_L} = \boxed{
+    \qty{14.78}{\milli\meter\squared} }
+\]
+
+Dado que este valor no corresponde a una sección normalizada de cable,
+en la práctica este circuito contendría un cable de sección
+normalizada inmediatamente superior a este valor, es decir, de
+$S = \qty{16}{\milli\meter\squared}$.
+
+\vspace{6mm}
+
+\underline{Apartado 3}
+
+\vspace{5mm}
+
+Los rendimientos pedidos se calculan de la siguiente forma:
+\begin{align*}
+  \eta_m &= \frac{P_{\textrm{útil}}}{P_{\textrm{absorbida}}} = \frac{\epsilon_m \cdot \bcancel{I}}{U_{CD} \cdot \bcancel{I}} = \frac{\qty{92}{\volt}}{\qty{102}{\volt}} \hspace{22mm} = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.902\\[10pt]
+  \eta_g &= \frac{P_{\textrm{entregada}}}{P_{\textrm{producida}}} = \frac{U_{AB}}{\epsilon_g} = \frac{\qty{116}{\volt}}{\qty{120}{\volt}} \hspace{26.1mm}= \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.967\\[10pt]
+  \eta_{\textrm{línea}} &= \frac{P_{\textrm{salida}}}{P_{\textrm{entrada}}} = \frac{U_{CD}}{U_{AB}} = \frac{\qty{102}{\volt}}{\qty{116}{\volt}} \hspace{29.5mm} = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.879\\[10pt]
+  \eta_{\textrm{total}} &= \frac{P_{\textrm{útil}}}{P_{\textrm{producida}}} = \frac{\epsilon_m}{\epsilon_g} = \frac{\qty{92}{\volt}}{\qty{120}{\volt}} = \eta_g \cdot \eta_{\textrm{línea}} \cdot \eta_g = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.767
+\end{align*}
+% Uso "\rlap" porque, por alguna razón, "\Aboxed" mueve los resultados
+% muy a la derecha. Idea para usar "\rlap" sacada de aquí:
+% https://tex.stackexchange.com/questions/223511/aboxed-with-multiple-in-align-environment
+
+\vspace{6mm}
+
+\underline{Apartado 4}
+
+\vspace{5mm}
+
+El balance de potencias del circuito es:
+
+\[
+  P_{g} = P_{\textrm{línea}} + P_{m}
+\]
+
+Donde:
+
+\begin{align*}
+  P_{g} &= P_{\textrm{útil}, \, g} + P_{\textrm{pérdidas}, \, g} &\rightarrow  \qquad &\epsilon_g \cdot I = U_{AB} \cdot I + R_g \cdot I^2 \\[10pt]
+  P_{\textrm{línea}} &= P_{\textrm{útil, línea}} + P_{\textrm{pérdidas, línea}} \hspace{-20mm} &\rightarrow \qquad &U_{AB} \cdot I = U_{CD} \cdot I + 2 R_L \cdot I^2\\[10pt]
+  P_{m} &= P_{\textrm{útil}, \, m} + P_{\textrm{pérdidas}, \, m} &\rightarrow  \qquad &U_{CD} \cdot I = \epsilon_m \cdot I + R_m \cdot I^2 
+\end{align*}
 	    
-	    El circuito eléctrico se muestra en la Figura~\ref{fig.ejemplo_BT1_motor}.
-	    \begin{figure}[H]
-	        \centering
-	        \includegraphics[width=0.5\linewidth]{../figs/ejemplo_BT1_motor.pdf}
-	        \caption{Circuito eléctrico equivalente del Ejemplo~\ref{ex.motor-bt1}}
-	        \label{fig.ejemplo_BT1_motor}
-	    \end{figure}
-	    La potencia útil del motor es 1 CV $=736$ W. La potencia absorbida, a partir del rendimiento: 
-	    \begin{equation*}
-	        P_{abs,M}=\dfrac{P_{u,M}}{\eta_M}=\dfrac{736}{0.7449}=988.05\;\text{W}=U_M\,I\Rightarrow U_M =\dfrac{988.05}{I}
-	    \end{equation*}
-	    siendo $U_M$ la tensión en el motor (motor + resistencia del motor). La resistencia de la línea es:
-	    \begin{equation*}
-	        R_l=2\,\rho\dfrac{l}{S}=2\cdot 18\cdot 10^{-3}\dfrac{1000}{16}= 2.25\Omega
-	    \end{equation*}
-	    Aplicando la 2LK al circuito completo, se obtiene que: 
-	    \begin{equation*}
-	        \epsilon_g-R_g\,I-R_l\,I-U_M=500-0.75\cdot I -2.25\cdot I-\dfrac{988.05}{I}=0\Rightarrow \begin{cases}
-	            I_1=164.67\,\text{A}\\
-	            I_2=2\,\text{A}
-	        \end{cases}
-	    \end{equation*}
-	    
-	    Con estos valores de corriente, se calcula la densidad para que cumpla la condición de densidad estipulada: 
-	    \begin{align*}
-	        \delta_1&=\dfrac{I_1}{S}=\dfrac{164.67}{16}=10.29\,\text{A/mm}^2>2\,\text{A/mm}^2\\
-	        \delta_2&=\dfrac{I_2}{S}=\dfrac{2}{16}={0.13\,\text{A/mm}^2 < 2\,\text{A/mm}^2}
-	    \end{align*}
-	    Por tanto:
-	    \begin{align*}
-	        I&=2\,\text{A}\\
-	        \delta&=0.13\,\text{A/mm}^2
-	    \end{align*}
-	    
-	    Una vez conocida la corriente, la tensión en bornes del generador y motor son:
-	    \begin{align*}
-	        U_M&=\dfrac{P_{abs,M}}{I}=\dfrac{988.05}{2}=494.03\,\text{V}\\
-	        U_l&=R_l\cdot I=2.25\cdot 2=4.5\,\text{V}\\
-	        U_g&=U_M+U_l=494.03+4.5=498.53\,\text{V}
-	    \end{align*}
-	    
-	    Por definición, la potencia útil del motor es:
-	    \begin{equation*}
-	        P_{u,M}=fcem\, I\Rightarrow {fcem=\dfrac{P_{u,M}}{I}=\dfrac{736}{2}=368\,\text{V}}
-	    \end{equation*}
-	    y la resistencia del mismo, a partir de la tensión $U_M$:
-	    \begin{equation*}
-	        U_M=fcem+R_M\,I\Rightarrow {R_M=\dfrac{U_M-fcem}{I}=\dfrac{494.03-368}{2}=63.02\;\Omega}
-	    \end{equation*}
-	    
-	\end{example}
+\end{example}
 	
 	\section{Asociación de elementos}
 	
