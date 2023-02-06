@@ -190,6 +190,14 @@ Fuente de corriente
 \end{align*}
   
 #+end_export
+
+** Potencia: criterio de signos
+- Un *circuito receptor absorbe potencia* y la corriente /entra/ por el terminal de mayor potencial,
+- Un *circuito generador entrega potencia* y la corriente /sale/ por el terminal de mayor potencial.
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/receptor_generador.pdf]]
+
 ** Potencia y rendimiento de una fuente
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -225,7 +233,7 @@ Fuente de corriente
    \]
  #+end_export
 
-** Potencia y rendimiento de una fuente
+** Potencia y rendimiento de una fuente CC
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -248,7 +256,7 @@ Fuente de corriente
 #+ATTR_LATEX: :height 0.85\textheight
  file:../figs/FuenteReal_PotenciaRendimiento.pdf
 
-** Potencia y rendimiento de una fuente
+** Potencia y rendimiento de una fuente CC
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
