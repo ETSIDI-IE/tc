@@ -1,0 +1,40 @@
+\documentclass{standalone}
+
+\usepackage{mathpazo}
+
+\usepackage[american]{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw
+  (0,0) coordinate (A') to [R, l = $R_g$, -*] ++(2,0) coordinate (A) node[above]{A}
+  to [R, l = $R_{L_1}$, *-*] ++(2,0)  
+  coordinate (C) node[above] {C}
+  to [R, l = $R_{L_2}$, *-*] ++(2,0)  
+  coordinate (E) node[above] {E}  
+  to [R, l = $R_{m_2}$, *-,  i = $I_2$] ++(2,0) 
+  to [short] ++(.5,0)
+  to [V, v_= $\epsilon_{m_2}$] ++(0,-3) coordinate (D')
+  to [short] ++(-.5,0)  
+  to [short, -] ++(-2,0) coordinate (F) node[below] {F}
+  to [R, l = $R_{L_2}$, *-*] ++(-2,0) 
+  coordinate (D) node[below] {D}
+  to [R, l = $R_{L_1}$, *-*] ++(-2,0) 
+  coordinate (B) node[below] {B}
+  to [short, *-] ++(-2,0) coordinate (B') 
+  (A') to [short] ++(-.5,0)
+  to [V, v= $\epsilon_g$, i = $I_g$] ++(0,-3)
+  to [short] (B')
+  (0,0) ++(2,0) ++(2,0) to [R, l = $R_1$, -*, i>^ = $I_1$] ++(0,-3); 
+  \draw
+  (A) to [open, v = $U_{AB}$] (B)
+  (E) to [open, v = $U_{EF}$] (F);
+  \draw[stealth-stealth, gray] ($(B) + (0,-.9)$) -- ($(D) + (-.1,-.9)$);
+  \draw[stealth-stealth, gray] ($(D) + (.1,-.9)$) -- ($(F) + (0,-.9)$);
+  \node[gray] (M) at ($(B)!0.5!(D) + (0,-1.25)$) {2100 m};
+  \node[gray] (G) at ($(D)!0.5!(F) + (0,-1.25)$) {270 m};
+\end{circuitikz}
+
+\end{document}
