@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[american voltages, european resistors]{circuitikz}
+
+\begin{document}
+\begin{circuitikz}
+  \coordinate (N) at (0,0);
+  \coordinate (A) at (0,6);
+  \coordinate (B) at (0,4);
+  \coordinate (C) at (0,2);
+  \coordinate (N2) at ($(N) + (6,0)$);
+  \coordinate (A2) at ($(A) + (6,0)$);
+  \coordinate (C2) at ($(C) + (6,0)$);
+  \coordinate (B2) at ($(B) + (6,0)$);
+  \draw
+  (N) node[above left] {N} to [short] (A) node[above left] {A}
+  to [sV, *-, v<=$\overline{\epsilon}_A$] ++(2, 0)
+  to [R, -*, l = $Z_A$, i = $I_A$] (A2) node[above right] {A'}
+  (N) to [short] (B) node[above left] {B}
+  to [sV, *-, v<=$\overline{\epsilon}_B$] ++(2, 0)
+  to [R, -*, l = $Z_B$, i = $I_B$] (B2) node[above right] {B'}
+  (N) to [short] (C) node[above left] {C}
+  to [sV, *-, v<=$\overline{\epsilon}_C$] ++(2, 0)
+  to [R, -*, l = $Z_C$, i = $I_C$] (C2) node[above right] {C'}
+  (N) to [R, *-*, l = $Z_{lN}$, i = $I_N$] (N2) node[above right] {O}
+  (A2) to [short] (N2);
+\end{circuitikz}
+\end{document}
