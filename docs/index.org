@@ -2,6 +2,7 @@
 #+EMAIL:     oscar.perpinan@upm.es
 #+TITLE:     Teoría de Circuitos
 #+LANGUAGE:  es
+#+OPTIONS: toc:nil num:nil
 
 #+SETUPFILE: theme/solarized_tc.theme
 
