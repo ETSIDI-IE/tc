@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \coordinate(A) at (0,8);
+  \coordinate(A1) at (-5, 6);
+  \coordinate(B) at (0,0);
+  \coordinate(B1) at (-5, 2);
+  \coordinate(C) at (-4, 4);
+  \coordinate(D) at (4, 4);
+  \draw
+  (A) node[above] {A} to [C, l = $C_1$, v=$u_1(t)$, *-] (C) node[left] {C}
+  (A) to [C, l = $C_2$, v=$u_2(t)$, *-] (D) node[right] {D}
+  (B) node[below] {B} to [C, l = $C_3$, v=$u_3(t)$, *-] (C)
+  (B) to [C, l = $C_4$, v=$u_4(t)$, *-] (D)
+  (D) to [C, l = $C_5$, v=$u_5(t)$, *-*] (C);
+  \draw
+  (A) -| (A1)
+  (B) -| (B1)
+  (A1) to [open, v = $U_{AB}$, *-*] (B1);
+\end{circuitikz}
+
+\end{document}

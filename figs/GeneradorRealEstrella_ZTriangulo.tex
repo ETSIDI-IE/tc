@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[american voltages, european resistors]{circuitikz}
+
+\begin{document}
+\begin{circuitikz}
+  \coordinate (N) at (0,0);
+  \coordinate (A) at (90:4);
+  \coordinate (Az) at (90:2);  
+  \coordinate (B) at (210:4);
+  \coordinate (Bz) at (210:2);
+  \coordinate (C) at (-30:4);
+  \coordinate (Cz) at (-30:2);
+  \draw
+  (Az) to [sV, -*, v<=$\overline{\epsilon}_A$] (A) node[above] {A}
+  (Bz) to [sV, -*, v_<=$\overline{\epsilon}_B$] (B) node[above] {B}
+  (Cz) to [sV, -*, v_<=$\overline{\epsilon}_C$] (C) node[above] {C};
+  \draw
+  (Az) to [R, l = $Z_{AB}$, -*] (Bz)
+  (Az) to [R, l = $Z_{CA}$, *-] (Cz)
+  (Bz) to [R, l = $Z_{BC}$, -*] (Cz);
+\end{circuitikz}
+\end{document}
