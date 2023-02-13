@@ -1,4 +1,4 @@
-#+AUTHOR:    Oscar Perpiñán Lamigueiro
+#+AUTHOR:    Luis Badesa Bernardo (LBB), Ana Fernández Guillamón (AFG), Oscar Perpiñán Lamigueiro (OPL)
 #+EMAIL:     oscar.perpinan@upm.es
 #+TITLE:     Teoría de Circuitos
 #+LANGUAGE:  es
