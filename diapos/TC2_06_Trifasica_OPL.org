@@ -318,7 +318,7 @@ Corriente de Línea:
 
 #+begin_export latex
 \[
-\overline{U}_N \neq \overline{U}_{N'}
+\overline{U}_N \neq \overline{U}_{O}
 \]
 #+end_export
 
@@ -327,12 +327,12 @@ Corriente de Línea:
 Ecuaciones del receptor:
 #+begin_export latex
   \begin{align*}
-    \overline{U}_{A'N'} &= \overline{I}_A \cdot \overline{Z}_A\\
-    \overline{U}_{B'N'} &= \overline{I}_B \cdot \overline{Z}_B\\
-    \overline{U}_{C'N'} &= \overline{I}_C \cdot \overline{Z}_C
+    \overline{U}_{A'O} &= \overline{I}_A \cdot \overline{Z}_A\\
+    \overline{U}_{B'O} &= \overline{I}_B \cdot \overline{Z}_B\\
+    \overline{U}_{C'O} &= \overline{I}_C \cdot \overline{Z}_C
   \end{align*}
 #+end_export
-Ecuación del nudo $N'$:
+Ecuación del nudo $O$:
 #+begin_export latex
 \[
   \overline{I}_A + \overline{I}_B + \overline{I}_C = 0
@@ -343,36 +343,36 @@ Ecuación del nudo $N'$:
 Relacionamos las tensiones en el receptor con las tensiones del generador:
 #+begin_export latex
 \begin{align*}
-  \overline{U}_{A'N'} &= \overline{U}_{AN} - \overline{U}_{N'N}\\
-  \overline{U}_{B'N'} &= \overline{U}_{BN} - \overline{U}_{N'N}\\
-  \overline{U}_{C'N'} &= \overline{U}_{CN} - \overline{U}_{N'N}
+  \overline{U}_{A'O} &= \overline{U}_{AN} - \overline{U}_{ON}\\
+  \overline{U}_{B'O} &= \overline{U}_{BN} - \overline{U}_{ON}\\
+  \overline{U}_{C'O} &= \overline{U}_{CN} - \overline{U}_{ON}
 \end{align*}
 #+end_export
 
 Despejamos las corrientes teniendo en cuenta estas relaciones:
 #+begin_export latex
   \begin{align*}
-    \overline{I}_A &= \frac{\overline{U}_{AN} - \overline{U}_{N'N}}{\overline{Z}_A}\\
-    \overline{I}_B &= \frac{\overline{U}_{AN} - \overline{U}_{N'N}}{\overline{Z}_B}\\
-    \overline{I}_C &= \frac{\overline{U}_{AN} - \overline{U}_{N'N}}{\overline{Z}_C}
+    \overline{I}_A &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_A}\\
+    \overline{I}_B &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_B}\\
+    \overline{I}_C &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_C}
   \end{align*}
 #+end_export
 
 **  Método del desplazamiento del neutro
-Finalmente, usando la ecuación del nudo $N'$ despejamos la tensión $U_{N'N}$ (tensión de desplazamiento del neutro)[fn:1]:
+Finalmente, usando la ecuación del nudo $O$ despejamos la tensión $U_{ON}$ (tensión de desplazamiento del neutro)[fn:1]:
 
 #+begin_export latex
 \[
-  \boxed{\overline{U}_{N'N} = \frac{\overline{U}_{AN} \cdot \overline{Y}_A + \overline{U}_{BN} \cdot \overline{Y}_B + \overline{U}_{CN} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}}
+  \boxed{\overline{U}_{ON} = \frac{\overline{U}_{AN} \cdot \overline{Y}_A + \overline{U}_{BN} \cdot \overline{Y}_B + \overline{U}_{CN} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}}
 \]
 #+end_export
 
-Una vez calculada esta tensión $\overline{U}_{N'N}$ se pueden calcular las corrientes de línea:
+Una vez calculada esta tensión $\overline{U}_{ON}$ se pueden calcular las corrientes de línea:
 #+begin_export latex
   \begin{align*}
-    \overline{I}_A &= (\overline{U}_{AN} - \overline{U}_{N'N})\cdot{\overline{Y}_A}\\
-    \overline{I}_B &= (\overline{U}_{AN} - \overline{U}_{N'N})\cdot{\overline{Y}_B}\\
-    \overline{I}_C &= (\overline{U}_{AN} - \overline{U}_{N'N})\cdot{\overline{Y}_C}
+    \overline{I}_A &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_A}\\
+    \overline{I}_B &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_B}\\
+    \overline{I}_C &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_C}
   \end{align*}
 #+end_export
 

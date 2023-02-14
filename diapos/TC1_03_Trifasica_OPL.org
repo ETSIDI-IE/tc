@@ -406,7 +406,7 @@ Corriente de Línea:
 
 #+begin_export latex
 \[
-\overline{U}_N \neq \overline{U}_{N'}
+\overline{U}_N \neq \overline{U}_{O}
 \]
 #+end_export
 ** Receptor en Estrella con Carga Monofásica
