@@ -1,0 +1,53 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at ($(A) + (2, 0)$) ;
+  \coordinate (C) at ($(B) + (4, 0)$) ;
+  \coordinate (D) at ($(C) + (2, 0)$) ;
+  \coordinate (E) at (-2,0) ;
+  \coordinate (F) at (-2,-6) ;
+  \coordinate (G) at (10,0) ;
+  \coordinate (H) at (10,-6) ;
+  \coordinate (N) at ($(B) + (2, -2)$);
+  \coordinate (A') at ($(A) + (0, -4)$) ;
+  \coordinate (B') at ($(A') + (2, 0)$) ;
+  \coordinate (C') at ($(B') + (4, 0)$) ;
+  \coordinate (D') at ($(C') + (2, 0)$) ;
+  \draw
+  (A) node[above] {A} to [short, *-*] (B)
+  %to [C, l = $C_1$, -*] (C)
+  (C) to [short, *-*] (D)
+  (A') to [short, -*, i<= $I_1$] (B') node[below] {C}
+  to [R, l = $R_5$, i<= $I_5$] (C') node[below] {D}
+  to [short, *-] (D')
+  (A) to [V, v=$\epsilon_1$] ++(0, -2)
+  to [R, l = $R_1$] (A')
+  (B) to [R, l= $R_4$, i<= $I_4$] (B')
+  (C') to [R, l = $R_2$, i = $I_2$] ++(0, 2)
+  to [V, v_=$\epsilon_2$] (C)
+  (D') to [R, l = $R_3$, i = $I_3$] ++(0, 2)
+  to [V, v_=$\epsilon_3$] (D) node[above] {B}
+  (A) to [short,-] (E)
+  (E) to ++(-0.75,0) node[ground] {}
+  (E) to [short,-] (F)
+  (D) to [short,-] (G)
+  (G) to [short,-] (H)
+  (F) to [short,-] (H)
+  %(B) to [C, l = $C_2$, -*] (N)
+  (B') to [short,-] (N);
+  %(C) to [C, l_= $C_3$] (N);
+  \draw[thin, <-] (1,-2)node{$I_a$}  ++(-60:0.5) arc (-60:170:0.5);
+   \draw[thin, <-] (4,-1.7)node{$I_b$}  ++(-60:0.5) arc (-60:170:0.5);
+   \draw[thin, <-] (7,-2)node{$I_c$}  ++(-60:0.5) arc (-60:170:0.5);
+  \end{circuitikz}
+
+\end{document}
