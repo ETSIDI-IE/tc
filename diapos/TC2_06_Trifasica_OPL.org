@@ -353,8 +353,8 @@ Despejamos las corrientes teniendo en cuenta estas relaciones:
 #+begin_export latex
   \begin{align*}
     \overline{I}_A &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_A}\\
-    \overline{I}_B &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_B}\\
-    \overline{I}_C &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_C}
+    \overline{I}_B &= \frac{\overline{U}_{BN} - \overline{U}_{ON}}{\overline{Z}_B}\\
+    \overline{I}_C &= \frac{\overline{U}_{CN} - \overline{U}_{ON}}{\overline{Z}_C}
   \end{align*}
 #+end_export
 
@@ -371,8 +371,8 @@ Una vez calculada esta tensión $\overline{U}_{ON}$ se pueden calcular las corri
 #+begin_export latex
   \begin{align*}
     \overline{I}_A &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_A}\\
-    \overline{I}_B &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_B}\\
-    \overline{I}_C &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_C}
+    \overline{I}_B &= (\overline{U}_{BN} - \overline{U}_{ON})\cdot{\overline{Y}_B}\\
+    \overline{I}_C &= (\overline{U}_{CN} - \overline{U}_{ON})\cdot{\overline{Y}_C}
   \end{align*}
 #+end_export
 
@@ -424,9 +424,9 @@ Una vez calculada esta tensión $\overline{U}_{ON}$ se pueden calcular las corri
   \begin{align*}
     \overline{Z}_a &= \frac{\overline{Z}_{ab} \cdot \overline{Z}_{ca}}{\overline{Z}_{ab} + \overline{Z}_{bc} + \overline{Z}_{ca}}\\
     \\
-    \overline{Z}_b &= \frac{\overline{Z}_{bc} \cdot \overline{Z}_{ca}}{\overline{Z}_{ab} + \overline{Z}_{bc} + \overline{Z}_{ca}}\\
+    \overline{Z}_b &= \frac{\overline{Z}_{bc} \cdot \overline{Z}_{ab}}{\overline{Z}_{ab} + \overline{Z}_{bc} + \overline{Z}_{ca}}\\
     \\
-    \overline{Z}_c &= \frac{\overline{Z}_{ca} \cdot \overline{Z}_{ab}}{\overline{Z}_{ab} + \overline{Z}_{bc} + \overline{Z}_{ca}}\\
+    \overline{Z}_c &= \frac{\overline{Z}_{ca} \cdot \overline{Z}_{bc}}{\overline{Z}_{ab} + \overline{Z}_{bc} + \overline{Z}_{ca}}\\
   \end{align*}
     #+end_export
 ***                                                                 :BMCOL:
