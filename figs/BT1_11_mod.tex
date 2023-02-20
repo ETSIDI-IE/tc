@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usetikzlibrary{calc}
+\usepackage{siunitx}
 
 \begin{document}
 
@@ -12,21 +13,21 @@
 \coordinate (B) at (6,5);
 \coordinate (A) at (0,5);
   \draw
-   (0,0) to [esource, v= $8\,V$] (0,5)
+   (0,0) to [esource, v= $\qty{8}{\volt}$] (0,5)
    (0,5) to [short,-] (-3,5)
    %(-3,5) to [C, l=$1\mu$F, i^<=$I_9$] (-3,0)
    (-3,0) to [short,-] (0,0)
    (0,0) to [short, -] (0,-3) %node[ground] {}
    (0,5) to [short,-, i=$I_1$] (3,5)
-   (3,5) to [R, l=$2\Omega$, i=$I_2$] (3,0)
+   (3,5) to [R, l=$\qty{2}{\ohm}$, i=$I_2$] (3,0)
    (3,0) to [short,-, i=$I_8$] (0,0)
-   (3,5) to [R, l=$4\Omega$, i=$I_3$] (6,5)
-   (6,5) to [R, l=$2\Omega$] (6,2)
-   (6,2) to [esource, v=$8\,V$, i=$I_4$] (6,0)
+   (3,5) to [R, l=$\qty{4}{\ohm}$, i=$I_3$] (6,5)
+   (6,5) to [R, l=$\qty{2}{\ohm}$] (6,2)
+   (6,2) to [esource, v=$\qty{8}{\volt}$, i=$I_4$] (6,0)
    (3,0) to [short,-, i^<=$I_7$] (6,0)
-   (6,0) to [R, l=$1\Omega$, i^<=$I_6$] (9,0)
-   (9,0) to [R, l=$2\Omega$] (9,5)
-   (6,5) to [R, l=$1\Omega$, i=$I_5$] (9,5)
+   (6,0) to [R, l=$\qty{1}{\ohm}$, i^<=$I_6$] (9,0)
+   (9,0) to [R, l=$\qty{2}{\ohm}$] (9,5)
+   (6,5) to [R, l=$\qty{1}{\ohm}$, i=$I_5$] (9,5)
    %(D) to [C, l=$2\mu$F, i=$I_0^1$] (3,-3)
    (3,-3) to [short,-] (6,-3)
    (0,-3) to [short, -] (6,-3) %node[ground] {}
