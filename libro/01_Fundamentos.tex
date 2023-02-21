@@ -258,7 +258,7 @@
 	\begin{itemize}
 		\item \textbf{Primera ley de Kirchhoff}. Esta ley es el resultado directo del \textbf{principio de conservación de la carga} aplicado a los circuitos eléctricos. Se conoce como primera ley de Kirchhoff (1LK) o ley de Kirchhoff de las corrientes (LKC), y dice que la suma algebráica de las intensidades de corriente que concurren en un nudo es cero. Esto es igual a decir que la suma de las corrientes que llegan a un nudo es igual a la suma de las que salen: 
 		\begin{equation}
-			\boxed{\sum_{i=1}^n i_i(t)=0}
+			\boxed{\sum_{j=1}^n i_j(t)=0}
 		\end{equation}
 		Así, en la Figura~\ref{fig.LKC_FM} se cumple que:
 		\begin{equation*}
@@ -275,7 +275,7 @@
 		denomina segunda ley de Kirchhoff (2LK) o ley de Kirchhoff de los voltajes (LKV), y dice que la suma (con signo) de las tensiones a lo largo de un circuito cerrado es cero. Esto quiere decir que la energía producida por un generador es consumida por los receptores del circuito
 		para producir algún tipo trabajo (mecánico, químico, etc.) o calor:
 		\begin{equation}
-			\boxed{\sum_{j=1}^m u_j(t)=0}
+			\boxed{\sum_{i=1}^m u_i(t)=0}
 		\end{equation}
 		Así, en el circuito de la Figura~\ref{fig.LKV_FM}, se cumple que:
 		\begin{equation*}
@@ -2139,20 +2139,24 @@ El procedimiento para analizar un circuito eléctrico mediante superposición es
 \end{enumerate}
 
 \begin{example}\label{ex.superposicion_CC}
-    \textbf{Usar el principio de superposición para encontrar $U_0$ en el circuito de la Figura~\ref{fig.ej_superposicion_cc}.}
+    \textbf{Usar el principio de superposición para determinar $U_0$ en el circuito de la Figura~\ref{fig.ej_superposicion_cc}.}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc.pdf}
+        \includegraphics[width=0.6\linewidth]{../figs/ej_superposicion_cc.pdf}
         \caption{Ejemplo~\ref{ex.superposicion_CC}}
         \label{fig.ej_superposicion_cc}
     \end{figure}
-    
+
+    Al contener el circuito fuentes ideales de corriente y tensión, no puede analizarse ni por el método de las mallas, ni por el de los nudos, dado que no podemos aplicar transformación de fuentes. Aplicamos por tanto el principio de superposición:
+
+    \vspace{3mm}
     \underline{Contribución del generador de tensión}
-    
-    La fuente de corriente queda como un circuito abierto, siendo el circuito equivalente el mostrado en la Figura~\ref{fig.ej_superposicion_cc_tension}. 
+
+    \vspace{2mm}
+    La fuente de corriente queda como un circuito abierto, siendo el circuito resultante el mostrado en la Figura~\ref{fig.ej_superposicion_cc_tension}. 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc_tension.pdf}
+        \includegraphics[width=0.6\linewidth]{../figs/ej_superposicion_cc_tension.pdf}
         \caption{Contribución del generador de tensión}
         \label{fig.ej_superposicion_cc_tension}
     \end{figure}
@@ -2160,76 +2164,75 @@ El procedimiento para analizar un circuito eléctrico mediante superposición es
     Aplicando el método de mallas con las corrientes indicadas:
     \begin{equation*}
         \begin{bmatrix}
-            6000 & -4000\\
+            6000 & -4000\\[4pt]
             -4000 & 12000
         \end{bmatrix}
         \cdot
         \begin{bmatrix}
-            I_a'\\
-            I_b'
+            I_a\\[4pt]
+            I_b
         \end{bmatrix}
         =
         \begin{bmatrix}
-            6\\
+            6\\[4pt]
             0
         \end{bmatrix}
     \end{equation*}
     cuya solución es:
     \begin{align*}
-        I_a'&=1.29\,mA\\
-        I_b'&=0.43\,mA
+        I_a &= \qty{1.29}{\milli\ampere}\\
+        I_b &= \qty{0.43}{\milli\ampere}
     \end{align*}
     por lo que $U_{0,1}$:
     \begin{equation*}
-        U_{0,1}=U_{6k\Omega}=I_b'\, R_{6k\Omega}=0.43\cdot 10^{-3}\cdot 6000= 2.58\,V
+        U_{0,1} 
+        = U_{6k\Omega}
+        = I_b\cdot R_{6k\Omega}
+        = 0.43\cdot 10^{-3}\cdot 6000
+        = \qty{2.58}{\volt}
     \end{equation*}
-    
+
+    \vspace{2mm}
     \underline{Contribución del generador de corriente}
-    
-    La fuente de tensión queda como un cortocircuito, siendo el circuito equivalente el mostrado en la Figura~\ref{fig.ej_superposicion_cc_corriente}. 
+
+    \vspace{2mm}
+    La fuente de tensión queda como un cortocircuito, siendo el circuito resultante el mostrado en la Figura~\ref{fig.ej_superposicion_cc_corriente}. 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.4\linewidth]{../figs/ej_superposicion_cc_corriente.pdf}
+        \includegraphics[width=0.6\linewidth]{../figs/ej_superposicion_cc_corriente.pdf}
         \caption{Contribución del generador de corriente}
         \label{fig.ej_superposicion_cc_corriente}
     \end{figure}
     
-    Aplicando el método de mallas con las corrientes indicadas:
+    Aplicando el método de los nudos, usando la referencia de potenciales indicada en la figura superior:
     \begin{equation*}
         \begin{bmatrix}
-            6000 & -4000 & -2000\\
-            -4000 & 12000 & -2000\\
-            -2000 & -2000 & 4000
+            \dfrac{1}{2000} + \dfrac{1}{4000} + \dfrac{1}{6000} & -\dfrac{1}{2000} -\dfrac{1}{4000}\\[12pt]
+            -\dfrac{1}{2000} -\dfrac{1}{4000} & \dfrac{1}{2000} + \dfrac{1}{4000} + \dfrac{1}{2000}
         \end{bmatrix}
         \cdot
         \begin{bmatrix}
-            I_a''\\
-            I_b''\\
-            I_c''
+            \vphantom{\dfrac{1}{2000}} U_A\\[12pt]
+            \vphantom{\dfrac{1}{2000}} U_B
         \end{bmatrix}
         =
         \begin{bmatrix}
-            0\\
-            0\\
-            U_{I_g}
+            \vphantom{\dfrac{1}{2000}} 2\cdot 10^{-3}\\[12pt]
+            \vphantom{\dfrac{1}{2000}} 0
         \end{bmatrix}
     \end{equation*}
-    Se sabe que $I_c''=2$ mA. Resolviendo el sistema, se obtiene que:
+
+    \vspace{3mm}
+    cuya solución es:
     \begin{align*}
-        I_a''&=1.14\,mA\\
-        I_b''&=0.71\,mA\\
-        U_{I_g}&=4.29\,V
+        U_A &= \qty{4.29}{\volt} = U_{0,2}\\
+        U_B &= \qty{2.57}{\volt}
     \end{align*}
-    por lo que $U_{0,2}$:
-    \begin{equation*}
-        U_{0,2}=U_{6k\Omega}=I_b''\, R_{6k\Omega}=0.71\cdot 10^{-3}\cdot 6000= 4.28\,V
-    \end{equation*}
     
-    \underline{Valor de $U_0$}
-    
-    Aplicando el principio de superposición, se obtiene que el valor de $U_0$ es:
+    \vspace{1mm}
+    Finalmente, aplicando el principio de superposición, se obtiene que el valor de $U_0$ es:
     \begin{equation*}
-        U_0=U_{0,1}+U_{0,2}=2.58+4.28=6.86\, V
+        U_0 = U_{0,1} + U_{0,2} = 2.58 + 4.29 = \boxed{\qty{6.87}{\volt}}
     \end{equation*}
 \end{example}
 
