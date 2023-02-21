@@ -686,10 +686,12 @@
           Empezamos dibujando el esquema del circuito y organizando
           los datos disponibles: \vspace{6mm}
 
-\begin{minipage}{0.73\linewidth}
-  \includegraphics[scale=1.25]{../figs/circuito_lkv.pdf}
+\begin{minipage}{0.68\linewidth}
+  \begin{center}
+    \includegraphics[scale=1]{../figs/circuito_lkv.pdf}
+  \end{center}
 \end{minipage}
-\begin{minipage}{0.27\linewidth}
+\begin{minipage}{0.3\linewidth}
   \textbf{Datos}: \vspace{2mm}
   
   $\epsilon_g = \qty{120}{\volt}$\\
@@ -755,7 +757,7 @@ calcular $U_{CD}$.
     \[
       P_{\textrm{útil}} = P_{\textrm{absorbida}} -
       P_{\textrm{pérdidas}} \quad \rightarrow \quad P_{\epsilon_m} =
-      P_{CD} - \hspace{-6mm} \underbrace{P_{R_m}}_{\substack{= R_m
+      P_{CD} - \hspace{-3mm} \underbrace{P_{R_m}}_{\substack{= R_m
           \cdot I^2 \\[3pt] \text{(ley de Joule)}}}
     \]
     
@@ -810,7 +812,7 @@ calcular $U_{CD}$.
     \vspace{2mm}
     \begin{minipage}{0.4\linewidth}
       \begin{center}
-        \includegraphics[scale=1.2]{../figs/linea_lkv.pdf}
+        \includegraphics[scale=1]{../figs/linea_lkv.pdf}
       \end{center}
     \end{minipage}
     \begin{minipage}{0.6\linewidth}
@@ -846,16 +848,13 @@ $S = \qty{16}{\milli\meter\squared}$.
 
 Los rendimientos pedidos se calculan de la siguiente forma:
 \begin{align*}
-  \eta_m &= \frac{P_{\textrm{útil}}}{P_{\textrm{absorbida}}} = \frac{\epsilon_m \cdot \bcancel{I}}{U_{CD} \cdot \bcancel{I}} = \frac{\qty{92}{\volt}}{\qty{102}{\volt}} \hspace{22mm} = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.902\\[10pt]
-  \eta_g &= \frac{P_{\textrm{entregada}}}{P_{\textrm{producida}}} = \frac{U_{AB}}{\epsilon_g} = \frac{\qty{116}{\volt}}{\qty{120}{\volt}} \hspace{26.1mm}= \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.967\\[10pt]
-  \eta_{\textrm{línea}} &= \frac{P_{\textrm{salida}}}{P_{\textrm{entrada}}} = \frac{U_{CD}}{U_{AB}} = \frac{\qty{102}{\volt}}{\qty{116}{\volt}} \hspace{29.5mm} = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.879\\[10pt]
-  \eta_{\textrm{total}} &= \frac{P_{\textrm{útil}}}{P_{\textrm{producida}}} = \frac{\epsilon_m}{\epsilon_g} = \frac{\qty{92}{\volt}}{\qty{120}{\volt}} = \eta_g \cdot \eta_{\textrm{línea}} \cdot \eta_g = \rlap{\kern-0.5ex\fbox{\rule[-2.5pt]{0pt}{12pt}\rule{27pt}{0pt}}} 0.767
+    \eta_m &= \frac{P_{\textrm{útil}}}{P_{\textrm{absorbida}}} = \frac{\epsilon_m \cdot \bcancel{I}}{U_{CD} \cdot \bcancel{I}} = \frac{\qty{92}{\volt}}{\qty{102}{\volt}}  = \boxed{0.902}\\[10pt]
+    \eta_g &= \frac{P_{\textrm{entregada}}}{P_{\textrm{producida}}} = \frac{U_{AB}}{\epsilon_g} = \frac{\qty{116}{\volt}}{\qty{120}{\volt}} = \boxed{0.967}\\[10pt]
+    \eta_{\textrm{línea}} &= \frac{P_{\textrm{salida}}}{P_{\textrm{entrada}}} = \frac{U_{CD}}{U_{AB}} = \frac{\qty{102}{\volt}}{\qty{116}{\volt}} = \boxed{0.879}\\[10pt]
+    \eta_{\textrm{total}} &= \frac{P_{\textrm{útil}}}{P_{\textrm{producida}}} = \frac{\epsilon_m}{\epsilon_g} = \frac{\qty{92}{\volt}}{\qty{120}{\volt}} = \eta_g \cdot \eta_{\textrm{línea}} \cdot \eta_m = \boxed{0.767}
 \end{align*}
-% Uso "\rlap" porque, por alguna razón, "\Aboxed" mueve los resultados
-% muy a la derecha. Idea para usar "\rlap" sacada de aquí:
-% https://tex.stackexchange.com/questions/223511/aboxed-with-multiple-in-align-environment
 
-\vspace{6mm}
+\vspace{2mm}
 
 \underline{Apartado 4}
 
@@ -869,10 +868,11 @@ El balance de potencias del circuito es:
 
 Donde:
 
+\vspace{-3mm}
 \begin{align*}
-  P_{g} &= P_{\textrm{útil}, \, g} + P_{\textrm{pérdidas}, \, g} &\rightarrow  \qquad &\epsilon_g \cdot I = U_{AB} \cdot I + R_g \cdot I^2 \\[10pt]
-  P_{\textrm{línea}} &= P_{\textrm{útil, línea}} + P_{\textrm{pérdidas, línea}} \hspace{-20mm} &\rightarrow \qquad &U_{AB} \cdot I = U_{CD} \cdot I + 2 R_L \cdot I^2\\[10pt]
-  P_{m} &= P_{\textrm{útil}, \, m} + P_{\textrm{pérdidas}, \, m} &\rightarrow  \qquad &U_{CD} \cdot I = \epsilon_m \cdot I + R_m \cdot I^2 
+  & P_{g} = P_{\textrm{útil}, \, g} + P_{\textrm{pérdidas}, \, g} & \rightarrow \qquad & \epsilon_g \cdot I = U_{AB} \cdot I + R_g \cdot I^2 \\[10pt]
+  & P_{\textrm{línea}} = P_{\textrm{útil, línea}} + P_{\textrm{pérdidas, línea}} \hspace{-20mm} & \rightarrow \qquad & U_{AB} \cdot I = U_{CD} \cdot I + 2 R_L \cdot I^2\\[10pt]
+  & P_{m} = P_{\textrm{útil}, \, m} + P_{\textrm{pérdidas}, \, m} & \rightarrow \qquad & U_{CD} \cdot I = \epsilon_m \cdot I + R_m \cdot I^2 
 \end{align*}
 	    
 \end{example}
@@ -1674,7 +1674,7 @@ Por tanto, los valores de las corrientes de rama son:
           los generadores deben ser fuentes de corriente}.
 	
 	\begin{example}\label{ex.nudos}
-          \textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes}
+          \textbf{En el circuito de la Figura~\ref{fig.nudos_fuentes},
             se debe emplear el método de los nudos para determinar:
             \begin{itemize}
             \item Las tensiones en los nudos A y B
@@ -1683,50 +1683,58 @@ Por tanto, los valores de las corrientes de rama son:
               elementos activos y elementos pasivos
             \end{itemize}
             Datos:
-            $\epsilon_1=6V;\;\epsilon_2={12} V;\;
-            \epsilon_3={24}V;\;I_{g1}= {15}A;\;I_{g2} ={9}A;\; I_{g3}=
-            6A;\; R_{1}= R_3 = R_4 = R_5 = {2}\Omega;\;R_{2}=
-            1\Omega$}
+            $\epsilon_1=\qty{6}{\volt};\; \epsilon_2=\qty{12}{\volt};\;
+            \epsilon_3=\qty{24}{\volt};\; I_{g1}= \qty{15}{\ampere};\; I_{g2} = \qty{9}{\ampere};\; I_{g3}=
+            \qty{6}{\ampere};\; R_{1}= R_3 = R_4 = R_5 = \qty{2}{\ohm};\; R_{2}=
+            \qty{1}{\ohm}$}
           \begin{figure}[H]
             \centering \includegraphics{../figs/nudos_fuentes.pdf}
             \caption{Ejemplo~\ref{ex.nudos}}
             \label{fig.nudos_fuentes}
           \end{figure}
 
-          Hay tres fuentes de tensión en serie con resistencias, que
-          se deben transformar en fuentes de corriente para poder
-          aplicar el método de nudos:
+          En el circuito hay tres fuentes de tensión en serie con resistencias, que se deben transformar en fuentes de corriente para poder aplicar el método de nudos:
+
+          \begin{figure}[H]
+            \centering \includegraphics[scale=0.9]{../figs/nudos_fuentes2.pdf}
+          \end{figure}
+
+          \vspace{-3mm}
           \begin{align*}
-            I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=3\,\text{A}\\
-            I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=12\,\text{A}\\
-            I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=12\,\text{A}\\
+            I_{\epsilon,1}&=\dfrac{\epsilon_1}{R_1}=\dfrac{6}{2}=\qty{3}{\ampere}\\
+            I_{\epsilon,2}&=\dfrac{\epsilon_2}{R_2}=\dfrac{12}{1}=\qty{12}{\ampere}\\
+            I_{\epsilon,3}&=\dfrac{\epsilon_3}{R_3}=\dfrac{24}{2}=\qty{12}{\ampere}
           \end{align*}
 
-          El sistema en forma matricial queda:
-          \begin{equation*}
-            \begin{bmatrix}
-              \frac{1}{2}+\frac{1}{2}+\frac{1}{1} & -\frac{1}{1}\\
-              -\frac{1}{1} & \frac{1}{1}+\frac{1}{2}+\frac{1}{2}
-            \end{bmatrix}
-            \cdot
-            \begin{bmatrix}
-              U_A\\
-              U_B
-            \end{bmatrix}
-            =
-            \begin{bmatrix}
-              3+12-15-6\\
-              15+9+12-12
-            \end{bmatrix}
-          \end{equation*}
-          cuya solución es:
+          \vspace{2mm}
+        Aplicamos ahora la ecuación general de método de los nudos al circuito, que consta únicamente de 2 nudos independientes:
+        \begin{equation*}
+        \begin{bmatrix}
+          \dfrac{1}{2}+\dfrac{1}{2}+\dfrac{1}{1} & -\dfrac{1}{1}\\[10pt]
+          -\dfrac{1}{1} & \dfrac{1}{1}+\dfrac{1}{2}+\dfrac{1}{2}
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+          \vphantom{\dfrac{1}{1}} U_A\\[10pt]
+          \vphantom{\dfrac{1}{1}} U_B
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          \vphantom{\dfrac{1}{1}} 3+12-15-6\\[10pt]
+          \vphantom{\dfrac{1}{1}} 15+9+12-12
+        \end{bmatrix}
+        \end{equation*}
+    
+        \vspace{5mm}
+        Cuya solución es:
+
+        \vspace{-5mm}
           \begin{align*}
-            U_A&=4\,V\\
-            U_B&=14\,V
+            U_A&=\qty{4}{\volt}\\
+            U_B&=\qty{14}{\volt}
           \end{align*}
 
-          A partir de las tensiones, se determinan las corrientes de
-          rama señaladas:
+          A partir de las tensiones, se determinan las corrientes de rama señaladas, aplicando 2LK:
 
           % \begin{align*}
           %   V_A &= E_1 - I_{R1} R_1 = I_{R4} \cdot R_4\\
@@ -1734,13 +1742,20 @@ Por tanto, los valores de las corrientes de rama son:
           %   V_B &= E_3 - I_{R3} R_3 = I_{R5} \cdot R_5\\
           % \end{align*}
 
+\vspace{-5mm}
 \begin{align*}
-  U_A=\epsilon_1-I_{R1}\,R_1&\Rightarrow {I_{R1}=\dfrac{6-4}{2}=1\,A}\\
-  U_{AB}=U_A-U_B=-10=\epsilon_2 - I_{R2}\, R_2&\Rightarrow I_{R2} = \dfrac{12-(-10)}{1}=22\,A\\
-  U_B=\epsilon_3-I_{R3}\,R_3 &\Rightarrow I_{R3}=\dfrac{24-14}{2}=5\,A\\
-  I_{R4}=\dfrac{U_A}{R_4}&=\dfrac{4}{2}=2\,A\\
-  I_{R5}=\dfrac{U_B}{R_5}&=\dfrac{14}{2}=7\,A
+  U_A=\epsilon_1-I_{R1}\,R_1 \quad &\Rightarrow \quad {I_{R1}=\dfrac{6-4}{2}= \qty{1}{\ampere}}\\
+  U_{AB}=U_A-U_B=-10=\epsilon_2 - I_{R2}\, R_2 \quad &\Rightarrow \quad I_{R2} = \dfrac{12-(-10)}{1}= \qty{22}{\ampere}\\
+  U_B=\epsilon_3-I_{R3}\,R_3 \quad &\Rightarrow \quad I_{R3}=\dfrac{24-14}{2}= \qty{5}{\ampere}\\
+  I_{R4}=\dfrac{U_A}{R_4}&=\dfrac{4}{2}= \qty{2}{\ampere}\\
+  I_{R5}=\dfrac{U_B}{R_5}&=\dfrac{14}{2}= \qty{7}{\ampere}
 \end{align*}
+
+\vspace{2mm}
+Se recomienda comprobar que estos resultados cumplen la 1LK en cada uno de los 2 nudos independientes del \underline{circuito original} (antes de transformar las fuentes de tensión, porque tambien podríais haber cometido errores al transformar las fuentes), para asegurarse de que la resolución es correcta.
+
+\vspace{4mm}
+Ya tenemos toda la información necesaria para formular el balance de potencias pedido en el último apartado:
 
 \begin{itemize}
 \item \textbf{Potencia de los generadores:}
@@ -1755,17 +1770,16 @@ Por tanto, los valores de las corrientes de rama son:
   Los elementos activos aportan un total de \qty{642}{\watt}.
 \item \textbf{Potencia de las resistencias:}
   \begin{align*}
-    P_{R1} &= I^2_{R1} R_1 = \qty{2}{\watt}\\
-    P_{R2} &= I^2_{R2} R_2 = \qty{484}{\watt}\\
-    P_{R3} &= I^2_{R3} R_3 = \qty{50}{\watt}\\
-    P_{R4} &= I^2_{R4} R_4 = \qty{8}{\watt}\\
-    P_{R5} &= I^2_{R5} R_5 = \qty{98}{\watt}
+    P_{R1} &= (I_{R1})^2 R_1 = \qty{2}{\watt}\\
+    P_{R2} &= (I_{R2})^2 R_2 = \qty{484}{\watt}\\
+    P_{R3} &= (I_{R3})^2 R_3 = \qty{50}{\watt}\\
+    P_{R4} &= (I_{R4})^2 R_4 = \qty{8}{\watt}\\
+    P_{R5} &= (I_{R5})^2 R_5 = \qty{98}{\watt}
   \end{align*}
-  Las resistencias consumen un total de \SI{642}{\watt}.
+  Las resistencias disipan un total de \SI{642}{\watt}.
 \end{itemize}
 
-Comprobamos que la potencia total entregada por los generadores iguala
-a la potencia total consumida por las resistencias.
+Comprobamos que la potencia total entregada por los generadores es igual a la potencia total consumida por las resistencias.
 
 \end{example}
 	
