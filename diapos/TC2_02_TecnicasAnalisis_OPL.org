@@ -202,7 +202,7 @@ siendo $\Delta_{ij}$ el adjunto del elemento $ij$ de la matriz $Z$:
   \Delta_{ij} = (-1)^{i+j} \cdot |M_{ij}|
 \]
 #+end_export
-donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $k$ de la matriz $Z$.
+donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $j$ de la matriz $Z$.
 
 *** Admitancia generalizada
 
@@ -335,7 +335,7 @@ siendo $\Delta_{ij}$ el adjunto del elemento $ij$ de la matriz $Y$:
   \Delta_{ij} = (-1)^{i+j} \cdot |M_{ij}|
 \]
 #+end_export
-donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $k$ de la matriz $Y$.
+donde $M_{ij}$ es la matriz resultante de eliminar la fila $i$ y la columna $j$ de la matriz $Y$.
 
 *** Impedancia generalizada
 
