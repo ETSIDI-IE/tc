@@ -1034,6 +1034,11 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
     [[file:../figs/GeneradorRealEstrella_Transformado2.pdf]]
 
 
+** Triángulo a Estrella
+
+    #+ATTR_LATEX: :height 0.9\textheight
+    [[file:../figs/GeneradorRealTriangulo.pdf]]
+
 ** Transformamos fuentes
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -1214,6 +1219,113 @@ Dado que $C_Y = 3 \cdot C_\triangle$ la *configuración recomendada* es *triáng
   \overline{I}_N &= -\overline{I}_A -\overline{I}_B -\overline{I}_C
 \end{align*}
 #+end_export
+
+** Aplicación a sistemas equilibrados
+
+La suma de las fuerzas electromotrices es 0
+  #+begin_export latex
+  \[
+    \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC} = 0
+  \]
+  #+end_export
+Las tres impedancias son iguales
+  #+begin_export latex
+  \[
+    \overline{Y}_A = \overline{Y}_B = \overline{Y}_C
+  \]
+  #+end_export
+Por tanto,
+  #+begin_export latex
+  \[
+    \overline{U}_{ON} = \frac{3 \cdot \overline{Y} \cdot \left(  \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC}\right)}{3 \cdot \overline{Y} + \overline{Y}_{lN}} = 0
+  \]
+#+end_export
+Este resultado es independiente de la existencia del neutro y de su impedancia.
+
+** Aplicación a sistemas desequilibrados
+
+- Sistemas con neutro de impedancia no nula
+  #+begin_export latex
+  \[
+    \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
+  \]
+  #+end_export
+
+- Sistemas con neutro de impedancia nula ($\overline{Z}_{lN} = 0,  \quad \overline{Y}_{lN} \to \infty$)
+  #+begin_export latex
+  \[
+    \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}} = 0
+  \]
+  #+end_export
+
+- Sistemas sin neutro ($\overline{Z}_{lN} \to \infty, \quad \overline{Y}_{lN} = 0$)
+
+  #+begin_export latex
+  \[
+    \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+  \]
+  #+end_export
+
+** Sistema sin neutro
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/CircuitoTrifasicaGeneralizado_sinNeutro.pdf]]
+#+begin_export latex
+\[
+  \begin{rcases}
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow%
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+#+end_export
+
+
+** Receptor en triángulo
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/CircuitoTrifasicaGeneralizado_RT.pdf]]
+#+begin_export latex
+\[
+  \begin{rcases}
+    \text{Transformación de Receptor}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+#+end_export
+
+
+
+** Generador en triángulo
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/CircuitoTrifasicaGeneralizado_GT.pdf]]
+#+begin_export latex
+\[
+  \begin{rcases}
+    \text{Transformación de Generador}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+#+end_export
+
+** Generador y Receptor en triángulo
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/CircuitoTrifasicaGeneralizado_GTRT.pdf]]
+#+begin_export latex
+\[
+  \begin{rcases}
+    \text{Transformación de Generador}\\
+    \text{Transformación de Receptor}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+#+end_export
+
+
 * Footnotes
 
 [fn:1]Se puede llegar a este mismo resultado aplicando el teorema de Millman. 
