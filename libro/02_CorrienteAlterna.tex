@@ -550,7 +550,7 @@
 	\begin{align*}
 		R&=Z\cdot\cos(\theta)\\
 		X_L&=Z\cdot\sin(\theta)
-	\end{align*}. 
+	\end{align*} 
 	\begin{figure}[H]
 		\centering
 		\includegraphics{../figs/fasorInductanciaReal.pdf}
@@ -612,7 +612,7 @@
 	\begin{align*}
 		R&=Z\cdot\cos(\theta)\\
 		X_C&=Z\cdot\sin(\theta)
-	\end{align*}. 
+	\end{align*} 
 	\begin{figure}[H]
 		\centering
 		\includegraphics{../figs/fasorCondensadorReal.pdf}
@@ -675,7 +675,7 @@
 	\begin{align*}
 		R&=Z\cdot\cos(\theta)\\
 		X&=Z\cdot\sin(\theta)
-	\end{align*}. 
+	\end{align*} 
 	\begin{figure}[H]
 		\centering
 		\includegraphics{../figs/fasorRLC.pdf}
@@ -737,24 +737,25 @@
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.2-3}
-		\textbf{Un circuito en serie formado por $R=10\,\Omega$, $L=20$ mH y $C=100\,\mu$F se conecta a una tensión $u(t)=200\cdot\sin(1000t+\frac{\pi}{4})$ V. Calcular $\overline{I}$, ${u_R(t)}$, $u_L(t)$ y $u_C(t)$ y dibujar el diagrama fasorial.}
-		
+		\textbf{Un circuito serie formado por $R=\qty{10}{\ohm}$, $L=\qty{20}{\milli\henry}$ y $C=\qty{100}{\micro\farad}$ es alimentado con una tensión $u(t)=200\cdot\sin(1000t+\frac{\pi}{4})\,\si{\volt}$. Calcular $\overline{I}$, ${u_R(t)}$, $u_L(t)$ y $u_C(t)$, y dibujar el diagrama fasorial de tensiones y corrientes.}
+
+  \vspace{4mm}
 		El valor eficaz de la tensión y su fase inicial son:
 		\begin{equation*}
-			U=\dfrac{U_{max}}{\sqrt{2}}=\dfrac{200}{\sqrt{2}}\approx 141.42\;\text{V};\;\;\theta_U=\dfrac{\pi}{4}=45^\circ \Rightarrow \overline{U}=141.42\phase{45^\circ}
+			U = \dfrac{U_{max}}{\sqrt{2}} =\dfrac{200}{\sqrt{2}} = 100\sqrt2\,\si{\volt} \;;\;\;\;\theta_U=\dfrac{\pi}{4}=45^\circ \quad \Rightarrow \quad\overline{U}=100\sqrt2\phase{\ang{45}}
 		\end{equation*}
-		El valor de las impedancias $X_L$ y $X_C$ y la impedancia equivalente son:
+		Los valores de las impedancias $X_L$, $X_C$ y la impedancia equivalente son:
 		\begin{align*}
-			\overline{X_L}&=\mathrm{j}\,\omega\,L=\mathrm{j}\,1000\cdot20\cdot 10^{-3}= \mathrm{j}\,20\;\Omega=20\phase{90^\circ}\;\Omega\\
-			\overline{X_C}&=-\mathrm{j}\,\dfrac{1}{\omega\,C}=\dfrac{1}{1000\cdot100\cdot 10^{-6}}= -\mathrm{j}\,10\;\Omega=10\phase{-90^\circ}\;\Omega		\\
-			\overline{Z_{eq}}&=R+\overline{X_L}+\overline{X_C}=10+\mathrm{j}\,20-\mathrm{j}\,10=10+\mathrm{j}\,10\;\Omega\approx 14.14\phase{45^\circ}
+			\overline{X}_L&=\mathrm{j}\,\omega\,L=\mathrm{j}\,1000\cdot20\cdot 10^{-3}= \mathrm{j}\,\qty{20}{\ohm}=20\phase{\ang{90}}\,\si{\ohm}\\
+			\overline{X}_C&=-\mathrm{j}\,\dfrac{1}{\omega\,C}=\dfrac{1}{1000\cdot100\cdot 10^{-6}}= -\mathrm{j}\,\qty{10}{\ohm}=10\phase{\ang{-90}}\,\si{\ohm}		\\
+			\overline{Z}_{eq}&=R+\overline{X}_L+\overline{X}_C=10+\mathrm{j}\,20-\mathrm{j}\,10=10+\mathrm{j}\,10\,\si{\ohm}=10\sqrt2 \phase{\ang{45}}\,\si{\ohm}
 		\end{align*}
 		Aplicando la ley de Ohm, se obtiene la corriente y, con ella, las tensiones de cada elemento:
 		\begin{align*}
-			\overline{I}&=\dfrac{\overline{U}}{\overline{Z_{eq}}}=\dfrac{141.42\phase{45^\circ}}{14.14\phase{45^\circ}}=10\phase{0^\circ}\\
-			\overline{U_R}&=\overline{I}\cdot R=10\phase{0^\circ}\cdot 10=100\phase{0^\circ}\,\text{V}\Rightarrow u_R(t)=100\sqrt{2}\cdot\sin(1000t)\;\text{V}\\
-			\overline{U_L}&=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 20\phase{90^\circ}=200\phase{90^\circ}\,\text{V}\Rightarrow u_L(t)=200\sqrt{2}\cdot\sin(1000t+\frac{\pi}{2})\;\text{V}\\
-			\overline{U_C}&=\overline{I}\cdot \overline{X_L}=10\phase{0^\circ}\cdot 10\phase{-90^\circ} =100\phase{-90^\circ}\,\text{V}\Rightarrow u_C(t)=100\sqrt{2}\cdot\sin(1000t-\frac{\pi}{2})\;\text{V}
+			\overline{I}&=\dfrac{\overline{U}}{\overline{Z}_{eq}}=\dfrac{100\sqrt2\phase{45^\circ}}{10\sqrt2\phase{45^\circ}}=10\phase{0^\circ}\,\si{\ampere}\\
+			\overline{U}_R&=\overline{I}\cdot R=10\phase{0^\circ}\cdot 10=100\phase{0^\circ}\,\si{\volt} \quad \Rightarrow \quad u_R(t)=100\sqrt{2}\cdot\sin(1000t)\,\si{\volt}\\
+			\overline{U}_L&=\overline{I}\cdot \overline{X}_L=10\phase{0^\circ}\cdot 20\phase{90^\circ}=200\phase{90^\circ}\,\si{\volt} \quad \Rightarrow \quad u_L(t)=200\sqrt{2}\cdot\sin\left(1000t+\tfrac{\pi}{2}\right)\,\si{\volt}\\
+			\overline{U}_C&=\overline{I}\cdot \overline{X}_L=10\phase{0^\circ}\cdot 10\phase{-90^\circ} =100\phase{-90^\circ}\,\si{\volt} \quad \Rightarrow \quad u_C(t)=100\sqrt{2}\cdot\sin\left(1000t-\tfrac{\pi}{2}\right)\,\si{\volt}
 		\end{align*}
 		\begin{figure}[H]
 			\centering
@@ -783,28 +784,31 @@
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.2-4}
-		\textbf{Un circuito en serie formado por $R=1\,\Omega$, ${X_L}=100\,\Omega$ y ${X_C}=-100\,\Omega$ se conecta a una tensión alterna $\overline{U}=100\phase{0^\circ}$ V. Calcular las tensiones de cada elemento.}
-		
-		La impedancia total $\overline{X}$ es:
+		\textbf{Un circuito en serie formado por $R=1\,\Omega$, ${X_L}=100\,\Omega$ y ${X_C}=-100\,\Omega$ se conecta a una tensión alterna $\overline{U}=100\phase{0^\circ}\,\si{\volt}$. Calcular las tensiones de cada elemento.}
+
+  \vspace{4mm}
+		La reactancia total $\overline{X}$ es:
 		\begin{equation*}
-			\overline{X}= \overline{X_L}+\overline{X_C}=\mathrm{j}\,100-\mathrm{j}\,100=0
+			\overline{X}= \overline{X}_L+\overline{X}_C=\mathrm{j}\,100-\mathrm{j}\,100=0
 		\end{equation*}
 		
 		Se trata de un circuito resonante, siendo la impedancia equivalente:
 		\begin{equation*}
-			\overline{Z}=R+\mathrm{j}\,X=1+\mathrm{j}\,0=1\;\Omega
+			\overline{Z}=R+\mathrm{j}\,X=1+\mathrm{j}\,0=1\,\Omega
 		\end{equation*}
 		
-		Por la ley de Ohm, la corriente vale:
+		Por la ley de Ohm, la corriente resulta:
+
+        \vspace{-2mm}
 		\begin{equation*}
-			\overline{I}=\dfrac{\overline{U}}{\overline{Z}}=\dfrac{100\phase{0^\circ}}{1\phase{0^\circ}}=100\phase{0^\circ}\;\text{A}
+			\overline{I}=\dfrac{\overline{U}}{\overline{Z}}=\dfrac{100\phase{0^\circ}}{1\phase{0^\circ}}=100\phase{0^\circ}\,\si{\ampere}
 		\end{equation*}
 		
 		Por tanto, la tensión en cada elemento es: 
 		\begin{align*}
-			\overline{U_R}&=R\cdot\overline{I}=1\cdot 100\phase{0^\circ}=100\phase{0^\circ}\,\text{V}\\
-			\overline{U_L}&=\overline{X_L}\cdot\overline{I}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{V}\\
-			\overline{U_C}&=\overline{X_C}\cdot\overline{I}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\text{V}
+			\overline{U}_R&=R\cdot\overline{I}=1\cdot 100\phase{0^\circ}=100\phase{0^\circ}\,\si{\volt}\\
+			\overline{U}_L&=\overline{X}_L\cdot\overline{I}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10^4\phase{90^\circ}\,\si{\volt}=10\phase{90^\circ}\,\si{\kilo\volt}\\
+			\overline{U}_C&=\overline{X}_C\cdot\overline{I}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10^4\phase{-90^\circ}\,\si{\volt}=10\phase{-90^\circ}\,\si{\kilo\volt}
 		\end{align*}
 	\end{example}
 	
@@ -915,7 +919,7 @@
 	\end{remark}
 	
 	\begin{example}\label{ex.impedancia_admitancia_eq}
-	    \textbf{Calcular la impedancia y admitancia compleja equivalente del circuito de la Figura~\ref{fig.impedancia_admitancia_eq}.}
+	    \textbf{Calcular la impedancia y admitancia compleja equivalentes del circuito de la Figura~\ref{fig.impedancia_admitancia_eq}.}
 	    \begin{figure}[H]
 	        \centering
 	        \includegraphics{../figs/impedancia_admitancia_eq.pdf}
@@ -925,20 +929,20 @@
 	    
 	    La impedancia equivalente de la resistencia y la bobina es:
 	    \begin{equation*}
-	        \overline{Z_{R,L}}=R+\overline{X_L}=10+\mathrm{j}20\,\Omega
+	        \overline{Z}_{R,L}=R+\overline{X}_L=10+\mathrm{j}20\,\Omega
 	    \end{equation*}
 	    y la de la resistencia y el condensador: 
 	    \begin{equation*}
-	        \overline{Z_{R,C}}=R+\overline{X_C}=15-\mathrm{j}15\,\Omega
+	        \overline{Z}_{R,C}=R+\overline{X}_C=15-\mathrm{j}15\,\Omega
 	    \end{equation*}
 	    siendo por tanto la impedancia equivalente total: 
 	    \begin{equation*}
-	        \overline{Z_{eq}}=\dfrac{1}{\dfrac{1}{\overline{Z_{R,L}}}+\dfrac{1}{\overline{Z_{R,C}}}}= \dfrac{1}{\dfrac{1}{10+\mathrm{j}20}+\dfrac{1}{15-\mathrm{j}15}}=18.61\phase{7.1250^\circ}\Omega
+	        \overline{Z}_{eq}=\dfrac{1}{\dfrac{1}{\overline{Z}_{R,L}}+\dfrac{1}{\overline{Z}_{R,C}}}= \dfrac{1}{\dfrac{1}{10+\mathrm{j}20}+\dfrac{1}{15-\mathrm{j}15}}=18.61\phase{7.1250^\circ}\,\Omega
 	    \end{equation*}
 	    
 	    A partir de la impedancia equivalente se determina la admitancia: 
 	    \begin{equation*}
-	        \overline{Y_{eq}}=\dfrac{1}{\overline{Z_{eq}}}=\dfrac{1}{18.61\phase{7.1250^\circ}}=0.05\phase{-7.1250^\circ} S
+	        \overline{Y}_{eq}=\dfrac{1}{\overline{Z}_{eq}}=\dfrac{1}{18.61\phase{7.1250^\circ}}=0.05\phase{-7.1250^\circ}\,\si{\siemens}
 	    \end{equation*}
 	\end{example}
 	
@@ -1574,7 +1578,6 @@ En este caso, el teorema se generaliza, de manera que \textit{cualquier \textbf{
         \subfloat[Red lineal]{\includegraphics[width=0.35\linewidth]{../figs/EquivalenteThevenin.pdf}}\hfil
         \subfloat[Equivalente Norton]{\includegraphics[width=0.3\linewidth]{../figs/EquivalenteNorton.pdf}\label{fig.norton1}}
         \caption{Equivalente de Norton}
-        \label{fig.norton}
     \end{figure}
 
 \subsection{Teorema de la máxima transferencia de potencia}
