@@ -52,12 +52,22 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 
 *** Zona aislada
 
-En una asociación de 3 o más condensadores pueden aparecer zonas aisladas (puntos a los que no se puede llegar sin atravesar un condensador.)
+En una asociación de condensadores aparecen zonas aisladas (puntos a los que no se puede llegar sin atravesar un condensador.)
 
 #+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/CondensadoresZonaAislada.pdf]]
 
-La tensión en estas zonas aisladas no se puede determinar de forma directa a partir del resto del circuito.
+*** Zona aislada
+- La tensión en estas zonas aisladas *no se puede determinar de forma directa* a partir del resto del circuito.
+- Cuando la carga inicial de todos los condensadores es nula *y* la asociación se puede sustituir por un condensador equivalente $C_{eq}$ (serie, paralelo):
+  - La carga de $C_{eq}$ se calcula a partir de la tensión de la asociación.
+  - *Asociaciones serie*:
+    - La carga de los condensadores individuales es igual a la de  $C_{eq}$.
+    - La tensión de $C_{eq}$ es la suma de las tensiones individuales.
+  - *Asociaciones paralelo*:
+    - La carga de $C_{eq}$ se reparte entre los condensadores individuales.
+    - La tensión de $C_{eq}$ es igual a la de los condensadores individuales.
+- El resto de casos se resuelven combinando ecuaciones de nudos y mallas.
 
 *** Método de resolución (1)
 
@@ -68,7 +78,7 @@ Se asignan polaridades arbitrarias a los condensadores.
 
 *** Método de resolución (2)
 
-La suma de cargas en una zona aislada es nula si los condensadores no tienen carga inicial, o igual a la suma total de las cargas iniciales.
+La suma de cargas en una zona aislada es igual a la suma total de las cargas iniciales (nula si los condensadores no tienen carga inicial).
 ****                                                               :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -254,19 +264,20 @@ Por tanto:
 #+end_export
 
 
-*** Mallas con fuentes de intensidad ideales
-
-- Si la fuente de corriente está en una rama que pertenece a una única malla, se fija la corriente de dicha malla igual a la corriente de la fuente (desaparece una incógnita del sistema).
-- Si la fuente de corriente está en una rama que pertenece a dos mallas:
-  - Se introduce la tensión en la fuente de corriente como variable adicional.
-  - Se plantean las ecuaciones del método de mallas.
-  - la variable adicional (tensión de la fuente) se elimina sumando las dos ecuaciones de las mallas afectadas.
-  - Se añade una ecuación que relaciona la corriente de la fuente con las dos corrientes de malla.
 *** Mallas con fuentes dependientes
 - Se plantean las ecuaciones de mallas como si no hubiese fuentes dependientes.
 - Se añade la ecuación de la fuente dependiente como una ecuación adicional.
-- La matriz de impedancias deja de ser simétrica.
+- La matriz de impedancias *deja de ser simétrica*.
 
+*** Mallas con fuentes de intensidad ideales
+
+- Si la fuente de corriente está en una *rama que pertenece a una única malla*, se fija la corriente de dicha malla igual a la corriente de la fuente (desaparece una incógnita del sistema).
+- Si la fuente de corriente está en una *rama que pertenece a dos mallas*:
+  - Se introduce la tensión en la fuente de corriente como variable adicional.
+  - Se plantean las ecuaciones del método de mallas.
+  - La variable adicional (tensión de la fuente) se elimina sumando las dos ecuaciones de las mallas afectadas.
+  - Se añade una ecuación que relaciona la corriente de la fuente con las dos corrientes de malla.
+    
 ** Método de los nudos
 *** 
 [[file:../figs/nudosAC.pdf]]
@@ -387,10 +398,16 @@ Por tanto:
 #+end_export
 
 
+*** Nudos con fuentes dependientes
+- Se plantean las ecuaciones de nudos como si no hubiese fuentes dependientes.
+- Se añade la ecuación de la fuente dependiente como una ecuación adicional.
+- La matriz de admitancias deja de ser simétrica.
+
+
 *** Nudos con fuentes de tensión ideales
 
-- Si la fuente de tensión está conectada entre el nudo de referencia y otro nudo cualquiera, se fija la tensión de este último igual a la tensión de la fuente.
-- Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia:
+- Si la fuente de tensión está *conectada entre el nudo de referencia y otro nudo cualquiera*, se fija la tensión de este último igual a la tensión de la fuente.
+- Si la fuente de tensión está *conectada entre dos nudos*, no siendo ninguno de ellos de referencia:
   - Se introduce la corriente que atraviesa la fuente como variable adicional.
   - Se plantean las ecuaciones del método de nudos.
   - Se elimina la variable adicional (corriente de la fuente de tensión) sumando las ecuaciones de nudos afectadas.
@@ -403,10 +420,4 @@ Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de e
   - Se plantean las ecuaciones de nudos incluyendo el supernudo.
   - El supernudo aporta una ecuación adicional, la tensión de la fuente que contiene.
   
-
-*** Nudos con fuentes dependientes
-- Se plantean las ecuaciones de nudos como si no hubiese fuentes dependientes.
-- Se añade la ecuación de la fuente dependiente como una ecuación adicional.
-- La matriz de admitancias deja de ser simétrica.
-
 
