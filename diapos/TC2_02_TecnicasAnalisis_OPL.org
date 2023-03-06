@@ -359,7 +359,7 @@ Esta expresión indica que las respuestas del circuito ($V_k$) dependen de todas
 También se puede definir la impedancia generalizada entre dos partes del circuito:
 #+begin_export latex
 \[
-  \overline{Z}_{ki} = \frac{\overline{V}_k}{\overline{I}_{gi}} = \frac{\Delta_{ik}}{|Y|}
+  \overline{Z}_{ik} = \frac{\overline{V}_k}{\overline{I}_{gi}} = \frac{\Delta_{ik}}{|Y|}
 \]
 #+end_export
 
