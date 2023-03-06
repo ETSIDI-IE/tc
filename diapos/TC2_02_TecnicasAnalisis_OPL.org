@@ -225,7 +225,7 @@ Esta expresión indica que las respuestas del circuito ($I_k$) dependen de todas
 También se puede definir la admitancia generalizada entre dos partes del circuito:
 #+begin_export latex
 \[
-  \overline{Y}_{ki} = \frac{\overline{I}_k}{\overline{\epsilon}_i} = \frac{\Delta_{ik}}{|Z|}
+  \overline{Y}_{ik} = \frac{\overline{I}_k}{\overline{\epsilon}_i} = \frac{\Delta_{ik}}{|Z|}
 \]
 #+end_export
 
