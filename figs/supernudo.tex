@@ -1,0 +1,41 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at ($(A) + (3, 0)$);
+  \coordinate (C) at ($(B) + (3, 0)$);
+  \coordinate (A2) at ($(A) + (0, -3)$);
+  \coordinate (B2) at ($(B) + (0, -3)$);
+  \coordinate (C2) at ($(C) + (0, -3)$);
+  \draw
+  (A) node[left] {A} to [R, l = $R_2$] (B);
+  \draw[color = red]
+  (C) node[above right] {C} to [V, *-*, l = $\epsilon_g$] (B) node[above right] {B};
+  \draw
+  (A) to [I, l = $I_{g2}$] (A2)
+  (B) to [R, l = $R_3$, -*] (B2) node[ground] {}
+  (C) to [R, l = $R_4$] (C2)
+  (A2) to [short] (B2) to [short] (C2);
+  \draw
+  (A) to [short, *-] ++(0,3) coordinate (X)
+  to [R, l = $R_1$] (X-|C)
+  to [short] (C);
+  \draw
+  (A) to [short] ++(0,1.5) coordinate (Y)
+  to [I, l = $I_{g1}$, *-] (Y-|B)
+  to [short] (B);
+  \draw
+  (C2) to [short, *-] ++(1.5, 0) coordinate (Z)
+  to [I, l_= $I_{g3}$] (Z|-C)
+  to [short] (C);
+\end{circuitikz}
+
+\end{document}
