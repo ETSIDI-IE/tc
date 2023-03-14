@@ -225,7 +225,7 @@ Esta expresión indica que las respuestas del circuito ($I_k$) dependen de todas
 También se puede definir la admitancia generalizada entre dos partes del circuito:
 #+begin_export latex
 \[
-  \overline{Y}_{ki} = \frac{\overline{I}_k}{\overline{\epsilon}_i} = \frac{\Delta_{ik}}{|Z|}
+  \overline{Y}_{ik} = \frac{\overline{I}_k}{\overline{\epsilon}_i} = \frac{\Delta_{ik}}{|Z|}
 \]
 #+end_export
 
@@ -359,7 +359,7 @@ Esta expresión indica que las respuestas del circuito ($V_k$) dependen de todas
 También se puede definir la impedancia generalizada entre dos partes del circuito:
 #+begin_export latex
 \[
-  \overline{Z}_{ki} = \frac{\overline{V}_k}{\overline{I}_{gi}} = \frac{\Delta_{ik}}{|Y|}
+  \overline{Z}_{ik} = \frac{\overline{V}_k}{\overline{I}_{gi}} = \frac{\Delta_{ik}}{|Y|}
 \]
 #+end_export
 
@@ -415,9 +415,21 @@ Por tanto:
     
 *** Nudos con fuentes de tensión ideales: supernudos
 
-Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia, estos dos nudos se pueden considerar como un único supernudo:
+Si la fuente de tensión está conectada entre dos nudos, no siendo ninguno de ellos de referencia, estos dos nudos se pueden considerar como un único *supernudo*:
   - Este supernudo no tiene tensión propia.
-  - Se plantean las ecuaciones de nudos incluyendo el supernudo.
+  - Se plantean las ecuaciones de nudos incluyendo el supernudo (pero diferenciando los nudos implicados en el supernudo).
   - El supernudo aporta una ecuación adicional, la tensión de la fuente que contiene.
-  
 
+    
+*** Ejemplo de supernudo
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/supernudo.pdf]]
+
+#+begin_export latex
+\begin{align*}
+  V_a\cdot (\frac{1}{R_1} + \frac{1}{R_2}) - V_b \cdot \frac{1}{R_2} - V_c \cdot \frac{1}{R_1} &= -I_{g1} - I_{g2} \quad (A)\\
+  - V_a\cdot (\frac{1}{R_1} + \frac{1}{R_2}) + V_b \cdot (\frac{1}{R_2} + \frac{1}{R_3}) + V_c \cdot (\frac{1}{R_1} + \frac{1}{R_4}) &= I_{g1} + I_{g3} \quad (BC)\\
+  V_c - V_b &= \epsilon_g
+\end{align*}
+#+end_export
