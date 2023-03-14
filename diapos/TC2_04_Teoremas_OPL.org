@@ -139,8 +139,8 @@ En el último circuito, expresamos la fuente como:
 El último sumando representa la tensión en la impedancia $\Delta Z$ recorrida por la corriente de la rama, $\Delta I_z$. Esta observación nos permite volver a utilizar el teorema de sustitución.
 
 
-#+ATTR_LATEX: :width 0.95\textwidth
-[[file:../figs/TeoremaCompensacion2.pdf]]
+#+ATTR_LATEX: :width 0.75\textwidth
+[[file:../figs/TeoremaCompensacion3.pdf]]
 
 ** Solución
 Para determinar el cambio en la respuesta, $\Delta I_k$, debido a una variación en la impedancia, $\Delta Z$:
