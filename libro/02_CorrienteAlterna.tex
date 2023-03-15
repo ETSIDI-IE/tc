@@ -1315,8 +1315,8 @@
           \textbf{Sabiendo que las fuentes de tensión del circuito de
             la Figura \ref{fig.problema9_garri} vienen definidas por
             las formas de onda
-            $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t)$ V y
-            $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t)$ V, calcular las
+            $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t) \,\si{\volt}$ y
+            $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t) \,\si{\volt}$, calcular las
             potencias de cada elemento, así como el balance de
             potencias del circuito. }
           \begin{figure}[H]
@@ -1326,49 +1326,48 @@
             \label{fig.problema9_garri}
           \end{figure}
 		
-          Se pasa $u_1(t)$ a función senoidal, obteniéndose
+          Se convierte $u_1(t)$ en función senoidal, obteniéndose
           $u_1(t)=10\sqrt{2}\cdot \sin(1000\cdot
-          t+\frac{\pi}{2})$. Así, los fasores de $\overline{U_1}$ y
-          $\overline{U_2}$ son:
+          t+\frac{\pi}{2}) \,\si{\volt}$. Así, los fasores de $\overline{U}_1$ y
+          $\overline{U}_2$ son:
           \begin{align*}
-            \overline{U_1}&=10\phase{90^\circ}\;V\\
-            \overline{U_2}&=5\phase{0^\circ}\;V
+            \overline{U}_1&=10\phase{90^\circ}\,\si{\volt}\\
+            \overline{U}_2&=5\phase{0^\circ}\,\si{\volt}
           \end{align*}
 		
-          Se calcula también el valor de $\overline{X_L}$:
+          Se calcula también el valor de $\overline{X}_L$:
           \begin{equation*}
-            \overline{X_L}=\mathrm{j}\,\omega\, L=\mathrm{j} 1\,\Omega
+            \overline{X}_L=\mathrm{j}\,\omega L=\mathrm{j}\,\Omega
           \end{equation*}
 		
           Con esto, el sistema matricial por el método de mallas es:
           \begin{equation*}
             \begin{bmatrix}
-              10\phase{90^\circ} \\
-              -5\phase{0^\circ} 
+              \vphantom{\dfrac{1}{1}}10\phase{90^\circ} \\[4pt]
+              \vphantom{\dfrac{1}{1}}-5\phase{0^\circ} 
             \end{bmatrix}
             =
             \begin{bmatrix}
-              1-\mathrm{j}\,2 & \mathrm{j}\,2 \\
-              \mathrm{j}\,2 & -\mathrm{j}\,1 \\
+              \vphantom{\dfrac{1}{1}}1-\mathrm{j}\,2 & \quad\mathrm{j}\,2 \\[4pt]
+              \vphantom{\dfrac{1}{1}}\mathrm{j}\,2 & -\mathrm{j} \\
             \end{bmatrix}
             \cdot 
             \begin{bmatrix}
-              \overline{I_a}\\
-              \overline{I_b}
+              \vphantom{\dfrac{1}{1}}\overline{I_a}\\[4pt]
+              \vphantom{\dfrac{1}{1}}\overline{I_b}
             \end{bmatrix}
           \end{equation*}
           Resolviendo el sistema se obtiene que:
           \begin{align*}
-            \overline{I_a}&= 2 + 6j\unit{\ampere}\\
-            \overline{I_b}&= 4 + 7j\unit{\ampere}
+            \overline{I}_a&= 2 + 6\mathrm{j}\,\unit{\ampere}\\
+            \overline{I}_b&= 4 + 7\mathrm{j}\,\unit{\ampere}
           \end{align*}
           y reemplazando en el circuito:
           \begin{align*}
-            \overline{I}&=\overline{I_a}= 2 + 6j\unit{\ampere}\\
-            \overline{I}_1&=\overline{I_a} - \overline{I_b}= -2 -j\unit{\ampere}\\
-            \overline{I}_2&=-\overline{I_b}= -4 - 7j\unit{\ampere}\\
-          \end{align*}
-		
+            \overline{I}&=\overline{I}_a= 2 + 6\mathrm{j}\,\unit{\ampere}\\
+            \overline{I}_1&=\overline{I}_a - \overline{I}_b= -2 -\mathrm{j}\,\unit{\ampere}\\
+            \overline{I}_2&=-\overline{I}_b= -4 - 7\mathrm{j}\,\unit{\ampere}\\
+          \end{align*}		
 		
           Con las corrientes, y los valores de las impedancias, se
           calculan las potencias activas y reactivas:
@@ -1380,15 +1379,15 @@
           siendo la potencia aparente total consumida por los
           receptores:
           \begin{equation*}
-            \overline{S}=P+\mathrm{j}\;Q= 40 + 55j\unit{\voltampere}
+            \overline{S}=P+\mathrm{j}\,Q= 40 + 55\mathrm{j}\,\unit{\voltampere}
           \end{equation*}
 		
           Se calcula también la potencia aparente entregada por las
           fuentes de alimentación:
           \begin{align*}
-            \overline{S}_{u1}&=\overline{U}_1\cdot \overline{I}^*= 60 + 20j\unit{\voltampere}\\
-            \overline{S}_{u2}&=\overline{U}_2\cdot \overline{I}_2^*= -20 + 35j\unit{\voltampere}\\
-            \overline{S}_g &= \overline{S}_{u1} + \overline{S}_{u2} = 40 + 55j\unit{\voltampere}
+            \overline{S}_{u1}&=\overline{U}_1\cdot \overline{I}^*= 60 + 20\mathrm{j}\,\unit{\voltampere}\\
+            \overline{S}_{u2}&=\overline{U}_2\cdot \overline{I}_2^*= -20 + 35\mathrm{j}\,\unit{\voltampere}\\
+            \overline{S}_g &= \overline{S}_{u1} + \overline{S}_{u2} = 40 + 55\mathrm{j}\,\unit{\voltampere}
           \end{align*}
           Comprobamos que coincide con el triángulo de potencias de los receptores.
                         
