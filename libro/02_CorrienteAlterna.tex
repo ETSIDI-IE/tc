@@ -1344,7 +1344,7 @@
           \begin{equation*}
             \begin{bmatrix}
               \vphantom{\dfrac{1}{1}}10\phase{90^\circ} \\[4pt]
-              \vphantom{\dfrac{1}{1}}-5\phase{0^\circ} 
+              \vphantom{\dfrac{1}{1}}5\phase{180^\circ} 
             \end{bmatrix}
             =
             \begin{bmatrix}
@@ -1353,24 +1353,28 @@
             \end{bmatrix}
             \cdot 
             \begin{bmatrix}
-              \vphantom{\dfrac{1}{1}}\overline{I_a}\\[4pt]
-              \vphantom{\dfrac{1}{1}}\overline{I_b}
+              \vphantom{\dfrac{1}{1}}\overline{I}_a\\[4pt]
+              \vphantom{\dfrac{1}{1}}\overline{I}_b
             \end{bmatrix}
-          \end{equation*}
-          Resolviendo el sistema se obtiene que:
+          \end{equation*}          
+          donde el valor de $5\phase{\ang{180}}$ resulta de tomar el negativo del fasor $\overline{U}_2$, dado que la corriente de malla $\overline{I}_b$ ``entra'' por el polo $+$ de la fuente $u_2$ (tomar el negativo de un número complejo en forma polar equivale a adelantar su ángulo en $180^\circ$)
+
+          \vspace{3mm}
+          Resolviendo el sistema, se obtiene:
           \begin{align*}
             \overline{I}_a&= 2 + 6\mathrm{j}\,\unit{\ampere}\\
             \overline{I}_b&= 4 + 7\mathrm{j}\,\unit{\ampere}
-          \end{align*}
+          \end{align*}          
           y reemplazando en el circuito:
           \begin{align*}
             \overline{I}&=\overline{I}_a= 2 + 6\mathrm{j}\,\unit{\ampere}\\
             \overline{I}_1&=\overline{I}_a - \overline{I}_b= -2 -\mathrm{j}\,\unit{\ampere}\\
             \overline{I}_2&=-\overline{I}_b= -4 - 7\mathrm{j}\,\unit{\ampere}\\
-          \end{align*}		
-		
-          Con las corrientes, y los valores de las impedancias, se
-          calculan las potencias activas y reactivas:
+          \end{align*}	
+
+          \vspace{-3mm}
+          Con las corrientes y los valores de las impedancias, se
+          calculan las potencias activas y reactivas en los elementos pasivos:
           \begin{align*}
             P_R&=R\cdot I^2=\qty{40}{\watt}\\
             Q_L &= X_L\cdot I_2^2=\qty{65}{\voltamperer}\\
