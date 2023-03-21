@@ -355,7 +355,7 @@ Por tanto:
 Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de tensión* (generador de Thévenin, $\epsilon_{th}$) en *serie* con una impedancia (impedancia de Thévenin, $Z_{th}$).
 
  #+ATTR_LATEX: :height 0.6\textheight
-[[file:../figs/EquivalenteThevenin.pdf]]
+[[file:../figs/EquivalenteThevenin0.pdf]]
 
 ** Teoremas de Thévenin/Norton
 #+BEAMER: \framesubtitle{Norton}
@@ -367,7 +367,7 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 ** Teoremas de Thévenin/Norton
 #+BEAMER: \framesubtitle{Cálculo del equivalente de Thévenin}
 #+ATTR_LATEX: :height 0.38\textheight
-[[file:../figs/EquivalenteThevenin.pdf]]
+[[file:../figs/EquivalenteThevenin0.pdf]]
 
 - Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
 #+BEGIN_EXPORT latex
@@ -546,6 +546,35 @@ La máxima potencia disponible en la carga es:
 \end{equation*}
 #+end_export
 
+** Máxima Transferencia de Potencia
+#+BEAMER: \framesubtitle{Carga Resistiva}
+
+Si la impedancia de carga es resistiva pura:
+#+begin_export latex
+\[
+  P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2 + X_{th}^2} \cdot R_L
+\]
+ #+end_export
+
+Aplicando $\diff{P_L}{R_L} = 0$ obtenemos:
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:../figs/EquivalenteThevenin0_RL.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+begin_export latex
+\begin{align*}
+      R_L &= |\overline{Z}_{th}| = \sqrt{R_{th}^2 + X_{th}^2}\\
+      P_L &= \frac{\epsilon^2_{th}}{2(R_L + R_{th})}
+\end{align*}
+#+end_export
 
 
 * Teorema de Everitt
