@@ -266,20 +266,6 @@ La corriente en cada rama es:
   i_j = Y_j \cdot u_{jN}
 \]
 #+end_export
-La tensión $u_{jN}$ se puede calcular con el Teorema de Millman:
-
-#+begin_export latex
-\[
-  u_{jN} = \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
-\]
-#+end_export
-
-Por tanto:
-#+begin_export latex
-\[
-  i_j = Y_j \cdot \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
-\]
-#+end_export
 
 ** Resolución
 
@@ -287,9 +273,28 @@ Para que los dos circuitos sean equivalentes, las ecuaciones de las corrientes d
 
 #+begin_export latex
 \[
+  Y_j \cdot u_{jN} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\]
+#+end_export
+
+La tensión $u_{jN}$ de la estrella se puede relacionar con las tensiones entre terminales $u_{kj}$ a través del Teorema de Millman:
+
+#+begin_export latex
+\[
+  u_{jN} = \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\]
+#+end_export
+
+La relación entre estrella y polígono queda:
+#+begin_export latex
+\[
   \frac{\sum_{k = 1}^n u_{kj} Y_k Y_j}{\sum_{k  = 1}^n Y_k} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
 \]
 #+end_export
+
+
+** Resolución
+
 Denominando $Y_Y = \sum_{k  = 1}^n Y_k$ y agrupando dentro del sumatorio:
 #+begin_export latex
 \[
@@ -301,7 +306,7 @@ Por tanto:
 
 #+begin_export latex
 \[
-  \boxed{Y_{kj} = \frac{Y_k Y_j}{\sum_{k  = 1}^n Y_k}}
+  \boxed{Y_{kj} = \frac{Y_k Y_j}{Y_Y}}
 \]
 #+end_export
 
