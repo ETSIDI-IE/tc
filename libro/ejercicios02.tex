@@ -305,36 +305,38 @@ $R_1=R_2=2\,\Omega$; \hspace{2mm} $R_3=7\,\Omega$; \hspace{2mm} $L_1=L_2=\qty{1}
   las resistencias $R_1$ y $R_2$.
 
   Datos:
-  $e_1(t) = {50 \sin(1000 t)} V;\; e_2(t) = {30}{V};\; R_1 =
-  {6}{\Omega};\; R_2 = {6}{\Omega};\; L = {8}{mH};\; C = {10}{\mu F}$
+  $\; e_1(t) = \qty[parse-numbers=false]{50 \sin(1000 t)}{\volt};\;
+  e_2(t) = \qty{30}{\volt};\;
+  R_1 = \qty{6}{\ohm};\;
+  R_2 = \qty{6}{\ohm};\;
+  L = \qty{8}{\milli\henry};\;
+  C = \qty{10}{\micro\farad}$
 
   \begin{center}
     \includegraphics{../figs/superposicion1_ej.pdf}
   \end{center}
-  \emph{Sol.:
+  \emph{Sol.:\;
     $i(t) = 5 + 5\sin(1000t - 0.9273){A};\; P_{R1} = {225}{W}; P_{R2}
     = {0}{W}; P_{\epsilon} = {225}{W}$}
 
-\item   Obtén el generador equivalente de Thévenin del circuito de la figura
-  respecto de A y B.
+\item   Obtén el equivalente de Thévenin del circuito de la figura
+  respecto de A y B, así como la impedancia a conectar en estos terminales para obtener la máxima potencia posible.
 
+Datos: $\; \overline{\epsilon}_g = \qty[parse-numbers=false]{12 - 16j}{\volt};\;
+  \overline{Z}_1 = \qty[parse-numbers=false]{1 - j}{\ohm};\;
+  \overline{Z}_2 = \qty[parse-numbers=false]{1 + j}{\ohm};\;
+  \overline{Z}_3 = \qty[parse-numbers=false]{5 + 3j}{\ohm};\;
+  \alpha = 2 $
+  
 \begin{center}
   \includegraphics{../figs/Thevenin4}
 \end{center}
 
-Datos:
-\begin{equation*}
-  \overline{\epsilon_g} = \qty[parse-numbers=false]{12 - 16j}{\volt};
-  \overline{Z}_1 = \qty[parse-numbers=false]{1 - j}{\ohm};
-  \overline{Z}_2 = \qty[parse-numbers=false]{1 + j}{\ohm};
-  \overline{Z}_3 = \qty[parse-numbers=false]{5 + 3j}{\ohm}
-  \alpha = 2
-\end{equation*}
-\emph{Sol.
-  $ \overline{\epsilon}_{th} = 11.66\phase{\ang{-59.04}}\unit{\volt};
-  \overline{Z}_{th} = 0.64 + 0.52j\si{\ohm}$}
+\emph{Sol.:\;
+  $ \overline{\epsilon}_{th} = 11.66\phase{\ang{-59.04}}\,\si{\volt};\;
+  \overline{Z}_{th} = 0.64 + 0.52j\,\si{\ohm};\; \overline{Z}_L = 0.64-0.52j\,\si{\ohm};\; P_L = \qty{53.11}{\watt}$}
 
-\item Obtén el generador equivalente de Thévenin del circuito de la figura respecto de A y B. A partir de este generador, calcula la impedancia a colocar en AB para obtener la máxima potencia, calculando esta potencia.
+\item Obtén el equivalente de Thévenin del circuito de la figura respecto de A y B. A partir de este equivalente, calcula la impedancia a colocar en AB para obtener la máxima potencia, calculando también dicha potencia.
 
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -342,18 +344,20 @@ Datos:
 \end{center}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
+\hspace{20mm}Datos:
   \begin{align*}
-    \overline{\epsilon_1} &= \SI[parse-numbers=false]{10\phase{0}}{\volt}\\
-    \overline{\epsilon_2} &= \SI[parse-numbers=false]{10j}{\volt}\\
+    \overline{\epsilon}_1 &= \SI[parse-numbers=false]{10\phase{0}}{\volt}\\
+    \overline{\epsilon}_2 &= \SI[parse-numbers=false]{10j}{\volt}\\
     \overline{Z}_1 &= \SI[parse-numbers=false]{4 - 3j}{\ohm}\\
     \overline{Z}_2 &= \SI[parse-numbers=false]{3 + 4j}{\ohm}\\
     \alpha &= 2
   \end{align*}
 \end{minipage}
 
-\emph{Sol. $
-  \overline{\epsilon}_{th} =  10 - 10j \unit{\volt};
-  \overline{Z}_{th} = 4 - 3j \unit{\ohm}
+\vspace{2mm}
+\emph{Sol.:\; $
+  \overline{\epsilon}_{th} =  10 - 10j \,\si{\volt};\;
+  \overline{Z}_{th} = 4 - 3j \,\si{\ohm};\; \overline{Z}_L = 4 + 3j\,\si{\ohm};\; P_L = \qty{12.5}{\watt}
   $}
 
 \end{enumerate}
