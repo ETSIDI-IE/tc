@@ -1637,19 +1637,19 @@ siendo la máxima potencia disponible en la carga:
 \begin{example}\label{ex.th_ca}
         \textbf{En el circuito de la Figura~\ref{fig.thevenin6}, calcular:
 \begin{itemize}
-\item La fuerza electromotriz del generador equivalente de Thévenin respecto de A y B,  \(\overline{\epsilon_{th}}\)
-\item La impedancia del generador equivalente de Thévenin respecto de A y B, \(\overline{Z_{th}}\)
+\item La fuerza electromotriz del generador equivalente de Thévenin respecto de A y B,  \(\overline{\epsilon}_{th}\)
+\item La impedancia del generador equivalente de Thévenin respecto de A y B, \(\overline{Z}_{th}\)
 \item La impedancia de carga que se debe conectar entre A y B para conseguir la máxima potencia disponible
 \item La potencia activa entregada entre A y B cuando se conecta cada una de las siguientes impedancias de carga:
 \begin{itemize}
-\item $\overline{Z_L} = \overline{Z_{th}}$
-\item $\overline{Z_L} = R_{th}$ (parte resistiva de $\overline{Z_{th}}$)
-\item $\overline{Z_L} = \mathrm{j} X_{th}$ (parte reactiva de $\overline{Z_{th}}$)
+\item $\overline{Z}_L = \overline{Z}_{th}$
+\item $\overline{Z}_L = R_{th}$ (parte resistiva de $\overline{Z}_{th}$)
+\item $\overline{Z}_L = \mathrm{j} X_{th}$ (parte reactiva de $\overline{Z}_{th}$)
 \item Impedancia calculada en el apartado anterior
 \end{itemize}
 \end{itemize}}
 
-Datos: $\overline{Z_1} = 3 + \mathrm{j}4\Omega;\; \overline{Z_2} = 2 + \mathrm{j}\Omega;\; \overline{\epsilon_g} = 10\phase{30^{\circ}}\;V; \; \overline{I_g} = 2\phase{15^{\circ}}\, A;\; \beta = 5 \Omega$ 
+    Datos: $\; \overline{Z}_1 = 3 + \mathrm{j}4\,\Omega;\; \overline{Z}_2 = 2 + \mathrm{j}\,\Omega;\; \overline{\epsilon}_g = 10\phase{30^{\circ}}\,\si{\volt}; \; \overline{I}_g = 2\phase{15^{\circ}}\,\si{\ampere};\; \beta = 5\,\Omega$ 
 
 \begin{figure}[H]
     \centering
@@ -1658,60 +1658,54 @@ Datos: $\overline{Z_1} = 3 + \mathrm{j}4\Omega;\; \overline{Z_2} = 2 + \mathrm{j
     \label{fig.thevenin6}
 \end{figure}
 
-\underline{Tensión de Thévenin}
-
-Se calcula la tensión en circuito abierto. Por 1LK, se sabe que:
+Para calcular la \textit{fem} del generador equivalente de Thévenin, se calcula la tensión en circuito abierto. Por 1LK, se tiene que:
 \begin{equation*}
-    \overline{I_g} + \overline{I_Z} + \overline{I_{Z1}} = 0 
+    \overline{I}_g + \overline{I}_Z + \overline{I}_{Z1} = 0 
 \end{equation*}
-y, aplicando la 2LK: 
+y, aplicando 2LK: 
 \begin{align*}
-    &- \overline{I_Z} \cdot \overline{Z_2} = \overline{\epsilon_g} - \overline{I_{Z1}} \cdot \overline{Z_1}\\
-   &\overline{U_{AB}} = - \beta \cdot \overline{I_Z} - \overline{I_Z} \cdot \overline{Z_2}
+    &- \overline{I}_Z \cdot \overline{Z}_2 = \overline{\epsilon}_g - \overline{I}_{Z1} \cdot \overline{Z}_1\\
+   &\overline{U}_{AB} = - \beta \cdot \overline{I}_Z - \overline{I}_Z \cdot \overline{Z}_2
 \end{align*}
 Combinando estas ecuaciones, se obtiene:
 \begin{equation*}
-  \overline{U_{AB}}=\overline{\epsilon_{th}} = (\beta + \overline{Z_2}) \, \dfrac{\overline{\epsilon_g} + \overline{I_g} \cdot \overline{Z_1}}{\overline{Z_1} + \overline{Z_2}} = (5+2+\mathrm{j})\cdot\dfrac{10\phase{30^\circ}+((2\phase{15^\circ})\cdot (3+\mathrm{j}4))}{3 + \mathrm{j}4+2 + \mathrm{j}}= 18.90\phase{12.195^\circ}\,V 
+  \overline{U}_{AB}=\overline{\epsilon}_{th} = (\beta + \overline{Z}_2) \, \dfrac{\overline{\epsilon}_g + \overline{I}_g \cdot \overline{Z}_1}{\overline{Z}_1 + \overline{Z}_2} = (5+2+\mathrm{j})\cdot\dfrac{10\phase{30^\circ}+[(2\phase{15^\circ})\cdot (3+\mathrm{j}4)]}{3 + \mathrm{j}4+2 + \mathrm{j}}= \boxed{\vphantom{\frac{a}{a}} 18.90\phase{12.195^\circ}\,\si{\volt}} 
 \end{equation*}
 
-\underline{Impedancia de Thévenin}
-
-Para calcular la impedancia, se apagan las fuentes independientes y se conecta un generador de prueba en $A-B$, como en la Figura~\ref{fig.thevenin6_zth}:
+Para calcular la impedancia equivalente de Thévenin, se apagan las fuentes independientes y se conecta un generador de prueba en A-B, como en la Figura~\ref{fig.thevenin6_zth}:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{../figs/thevenin6_fuenteprueba.pdf}
-    \caption{Cálculo de $\overline{Z_{th}}$}
+    \caption{Cálculo de $\overline{Z}_{th}$}
     \label{fig.thevenin6_zth}
 \end{figure}
 
 Por la 1LK:
 \begin{equation*}
-    \overline{I_0} + \overline{I_Z} + \overline{I_{Z1}} = 0
+    \overline{I}_0 + \overline{I}_Z + \overline{I}_{Z1} = 0
 \end{equation*}
 y por la 2LK:
 \begin{align*}
-    &\overline{I_Z} \cdot \overline{Z_2} = \overline{I_{Z1}} \cdot \overline{Z_1}\\
-    &\overline{\epsilon_0} = - \beta \cdot \overline{I_Z} - \overline{I_Z} \cdot \overline{Z_2}
+    &\overline{I}_Z \cdot \overline{Z}_2 = \overline{I}_{Z1} \cdot \overline{Z}_1\\
+    &\overline{\epsilon}_0 = - \beta \cdot \overline{I}_Z - \overline{I}_Z \cdot \overline{Z}_2
   \end{align*}
 
 Combinando las ecuaciones, se llega a que:
 \begin{equation*}
-  \overline{Z_{th}} = \dfrac{\overline{\epsilon_0}}{\overline{I_0}} = \dfrac{\overline{Z_1}\,(\beta + \overline{Z_2})}{\overline{Z_1}+\overline{Z_2}}=\dfrac{(3+\mathrm{j}4)\cdot (5+1+\mathrm{j})}{3+\mathrm{j}4+1+\mathrm{j}} = 5\phase{16.2602^\circ}\,\Omega
+  \overline{Z}_{th} = \dfrac{\overline{\epsilon}_0}{\overline{I}_0} = \dfrac{\overline{Z}_1\,(\beta + \overline{Z}_2)}{\overline{Z}_1+\overline{Z}_2}=\dfrac{(3+\mathrm{j}4)\cdot (5+1+\mathrm{j})}{3+\mathrm{j}4+1+\mathrm{j}} = \boxed{\vphantom{\frac{a}{a}} 5\phase{16.2602^\circ}\,\Omega}
 \end{equation*}
 
-\underline{Potencia en la carga $A-B$}
-
-La potencia en $A-B$ depende de la carga conectada:
+Finalmente, para calcular la potencia en la carga A-B, esta depende de la carga conectada:
 
 \begin{equation*}
   P_{AB} = \dfrac{\epsilon_{th}^2}{{(R_L+R_{th})^2+(X_L+X_{th})^2}} \cdot R_L
 \end{equation*}
 
 \begin{itemize}
-\item Cuando $\overline{Z_L} = \overline{Z_{th}}$, $P_{AB} = {17.15}$ W
-\item Cuando $\overline{Z_L} = R_{th}$, $P_{AB} = {18.22}$ W
-\item Cuando $\overline{Z_L} = \mathrm{j}\,X_{th}$, $P_{AB} = {0}$ W
-\item Cuando $\overline{Z_L} = \overline{Z_{th}}^*$, $P_{AB} = {18.61}$ W
+\item Para $\overline{Z}_L = \overline{Z}_{th}$, $\;P_{AB} = \qty{17.15}{\watt}$
+\item Para $\overline{Z}_L = R_{th}$, $\;P_{AB} = \qty{18.22}{\watt}$
+\item Para $\overline{Z}_L = \mathrm{j}X_{th}$, $\;P_{AB} = \qty{0}{\watt}$
+\item Para $\overline{Z}_L = \overline{Z}_{th}^*$, $\;P_{AB} = \qty{18.61}{\watt}$
 \end{itemize}
 
 Se comprueba que el máximo valor se obtiene cuando se conecta la impedancia de Thévenin conjugada.
