@@ -5,6 +5,7 @@
 \usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
+\usepackage{cancel} % https://tex.stackexchange.com/questions/537955/how-do-cross-out-text-in-math-mode
 \usepackage{rotating,stackengine,scalerel}
 \newcommand\wye{\scalerel*{\stackengine{-1pt}{%
   \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
@@ -21,6 +22,8 @@
 \usepackage{mathpazo}
 \usepackage{gensymb}
 \usepackage{amsmath}
+\usepackage{xparse} % For "overbrace/underbrace but with an arrow instead", from https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+\usepackage{minibox} % Para poder partir el texto en 2 líneas usando "underbrace" u "overbrace", info aquí: https://tex.stackexchange.com/questions/8680/how-can-i-insert-a-newline-in-a-framebox
 \usepackage{diffcoeff}
 \usepackage{steinmetz}
 \usepackage{mathtools}
@@ -64,6 +67,15 @@
  pdflang={Spanish}
 } 
 
+% Para poner flechas sobre los signos de igual, de aquí: https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+\NewDocumentCommand{\overarrow}{O{=} O{\uparrow} m}{%
+  \overset{\makebox[0pt]{\begin{tabular}{@{}c@{}}#3\\[0pt]\ensuremath{#2}\end{tabular}}}{#1}
+}
+\NewDocumentCommand{\underarrow}{O{=} O{\downarrow} m}{%
+  \underset{\makebox[0pt]{\begin{tabular}{@{}c@{}}\ensuremath{#2}\\[0pt]#3\end{tabular}}}{#1}
+}
+
+
 \begin{document}
 
 \maketitle
@@ -73,7 +85,7 @@
     \begin{itemize}
         \item La electricidad es el conjunto de fenómenos físicos relacionados con la \alert{presencia y flujo} de \alert{cargas eléctricas}
 
-        \vspace{5mm}
+        \vspace{8mm}
         
         \item Un fenómeno de particular interés es la \alert{corriente eléctrica}: es el movimiento de electrones de los átomos a través de un material conductor (por ejemplo, un cable de cobre) 
     \end{itemize}
@@ -101,8 +113,6 @@
         \includegraphics[height=0.9\textheight]{../figs/analogia_gravedad1.pdf}
     \end{column}
     \end{columns}
-    
-    
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%
@@ -166,8 +176,6 @@
 
 \section{Conceptos fundamentales}
 
-\subsection{Circuito eléctrico}
-
 \begin{frame}{}
 \vspace{15mm}
     \begin{center}
@@ -188,13 +196,17 @@
 %%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Circuito eléctrico}
-    \begin{minipage}[c]{0.58\linewidth}
-        Un \alert{circuito eléctrico} es un conjunto de componentes eléctricos interconectados que crean un camino cerrado por el que puede circular corriente eléctrica 
+    \begin{minipage}[c]{0.62\linewidth}
+        Un \alert{circuito eléctrico} es un conjunto de componentes eléctricos interconectados que crean un \alert{camino cerrado} por el que puede circular corriente eléctrica 
         \vspace{6mm}
         
-        Incluye: 
+        Incluye:
+        
+        \vspace{3mm}
         \begin{itemize}
         \item \alert{Elementos activos} (generadores): motivan la circulación de corriente
+
+        \vspace{2mm}
         \item \alert{Elementos pasivos} (receptores): transforman o almacenan la energía eléctrica
         \end{itemize}
     \end{minipage}
@@ -210,6 +222,8 @@
     El \alert{análisis} (o resolución) de un circuito eléctrico existente persigue determinar sus condiciones de funcionamiento:
     \begin{enumerate}
     \item Definir las \underline{ecuaciones correspondientes} al circuito
+
+    \vspace{2mm}
     \item Obtener los \underline{valores de determinadas variables} importantes, a partir de dichas ecuaciones
     \end{enumerate}
     
@@ -291,6 +305,7 @@
 
 \begin{frame}{Parámetros concentrados: \hspace{5mm} ¿cuándo puede aplicarse?}
 
+    \vspace{2mm}
     \begin{itemize}
         \item El modelo de parámetros concentrados nos permite simplificar las ecuaciones del electromagnetismo de Maxwell (lo que \alert{simplifica mucho los cálculos})
         \vspace{2mm}
@@ -298,6 +313,7 @@
         \vspace{5mm}
     \end{itemize}
 
+    \vspace{-1mm}
     \begin{columns}[T]
     \begin{column}{0.4\columnwidth}
         \alert{Válido} en redes eléctricas
@@ -368,7 +384,7 @@
     \vspace{7mm}
     Se produce por el \alert{movimiento de electrones} (de $-$ a $+$)
     
-    Sin embargo, por convenio se considera el \alert{movimiento de cargas positivas} (de $+$ a $-$)
+    Sin embargo, por razones históricas, el convenio es considerar el \alert{movimiento de cargas positivas} (de $+$ a $-$)
     
     \vspace{3mm}
     La \alert{unidad} de la corriente es el \alert{amperio} [A] (culombios/segundo)
@@ -378,18 +394,21 @@
 %%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Corriente Continua (CC) y Corriente Alterna (CA)}
+    \vspace{1mm}
     \begin{itemize}
-        \item \alert{Corriente Continua}: siempre en el mismo sentido. 
-        
-        Caso particular, corriente constante (\(\frac{d}{dt} = 0\)):
+        \item \alert{Corriente Continua}: siempre en el mismo sentido 
+
+        \vspace{1mm}
+        Caso particular, corriente constante \hspace{2mm}(\(\frac{d}{dt} = 0\)):
     \end{itemize}
     \begin{center}
         \includegraphics[height=0.25\textheight]{../figs/continua.pdf}
     \end{center}
     \vspace{-4mm}
     \begin{itemize}
-        \item \alert{Corriente Alterna}: sentido cambiante. 
-        
+        \item \alert{Corriente Alterna}: sentido cambiante 
+
+        \vspace{1mm}
         Caso particular, corriente senoidal:
     \end{itemize}
     \begin{center}
@@ -401,6 +420,8 @@
 
 \begin{frame}{Corriente Continua (CC) y Corriente Alterna (CA)}
 {Otros casos particulares (no estudiados en esta asignatura)}
+
+    \vspace{1mm}
     \begin{itemize}
         \item Corriente \alert{Continua con rizado} (obtenida a partir de alterna trifásica rectificada):
     \end{itemize}
@@ -437,7 +458,7 @@
     
     La \alert{fuerza electromotriz} (f.e.m.) es la causa que mantiene a los electrones en movimiento (energía cedida por unidad de carga), y la proporcionan los elementos activos (\alert{generadores})
     
-    La \alert{unidad} tanto de tensión eléctrica como de f.e.m es el \alert{voltio} [V]
+    La \alert{unidad} tanto de tensión eléctrica como de f.e.m. es el \alert{voltio} [V]
 \end{frame}
 
 %%%%%%%%%%%
@@ -511,12 +532,18 @@
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Receptores y generadores}
-    Es habitual \alert{interpretar} el signo de la potencia en términos de potencia absorbida o potencia entregada 
+    \vspace{2mm}
+    Es habitual \alert{interpretar} el signo de la potencia en términos de potencia absorbida o potencia entregada
+    
+    \vspace{1mm}
     \begin{itemize}
         \item Un \alert{circuito receptor absorbe potencia} y la corriente \emph{entra} por el terminal de mayor potencial
+
+        \vspace{2mm}
         \item Un \alert{circuito generador entrega potencia} y la corriente \emph{sale} por el terminal de mayor potencial
     \end{itemize}
-    
+
+    \vspace{-4mm}
     \begin{center}
         \includegraphics[height=0.5\textheight]{../figs/receptor_generador.pdf}
     \end{center}
@@ -616,6 +643,10 @@
         \vspace{2mm}
         \begin{itemize}
             \item \normalsize{Cobre a 20ºC: \(\qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}\)}
+            \vspace{2mm}
+            \item La resistividad \alert{aumenta con la temperatura}: 
+            
+            los átomos del material vibran con mayor virulencia al subir la temperatura, y por tanto dificultan el flujo de electrones a través del material 
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -659,7 +690,40 @@
 
 %%%%%%%%%%%%%%%%
 
+
+
+
+\begin{frame}{Bobina o inductancia} \label{diapo:bobina_inicio}
+    \begin{minipage}[c]{0.47\linewidth}     
+
+        \vspace{5mm}
+        Cualquier \alert{corriente} (ya sea constante o variable) \alert{crea un campo magnético} a su alrededor (ley de Ampère)
+        
+        \vspace{3mm}
+        
+        \begin{center}
+            \includegraphics[height=0.5\textheight]{../figs/Electromagnetism.png}
+        \end{center}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{0.47\linewidth}
+    
+        \vspace{3mm}
+        Un \alert{conductor arrollado} crea una campo magnético más intenso: \alert{electroimán}
+        % (cuantas más espiras, más intenso el campo magnético)
+        % Un electroimán es una bobina por la que se hace circular una corriente. Con DC, también se crea un electroimán (lo que no hay es tensión inducida)
+        \begin{center}
+            \includegraphics[height=0.5\textheight]{../figs/Solenoide.jpg}
+        \end{center}
+        % Las líneas de campo se suman para crear un campo magnético más intenso en el interior de la bobina
+    \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Bobina o inductancia}
+
+    \vspace{3mm}
     \alert{Bobina:} conductor arrollado alrededor de un núcleo
     \begin{center}
     \includegraphics[height=0.2\textheight]{../figs/Bobina.pdf}
@@ -704,14 +768,38 @@
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Condensador}
+    \vspace{3mm}
+    Material \alert{dieléctrico}: 
+    
+    %\vspace{1mm}
+    \begin{itemize}
+        \item Aislante eléctrico (material con baja conductividad), pero con una propiedad particular: sus \alert{moléculas se polarizan} en presencia de un campo eléctrico 
+        % Debido a la polarización dieléctrica, se crea un campo eléctrico interno que reduce el campo general dentro del propio dieléctrico
+    \end{itemize}
+
+    \vspace{1mm}
+    \alert{Ejemplos} de dieléctricos: aire, vidrio, papel
+    
+    \vspace{1mm}
+    
+    \begin{center}
+        \includegraphics[height=0.55\textheight]{../figs/capacitor_dielectric.png}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+\begin{frame}{Condensador}
+
+    \vspace{2mm}
     \alert{Condensador}: dos placas metálicas separadas por un material dieléctrico 
     
     Al aplicar tensión se produce una \alert{separación de cargas opuestas} que se \alert{acumulan} en cada placa
+    \vspace{-2mm}
     \begin{center}
     \includegraphics[height=0.2\textheight]{../figs/Condensador.pdf}
     \end{center}
 
-    La \alert{carga acumulada} en un instante es \alert{proporcional} a la \alert{diferencia de potencial} en ese instante: la constante de proporcionalidad es la \alert{capacidad} (unidades: faradios [F])
+    La \alert{carga acumulada} en un instante es \alert{proporcional} a la \alert{diferencia de potencial} en ese instante: la constante de proporcionalidad es la \alert{capacidad} (unidades: faradios [F]) % La capacidad depende de la geometría de las placas y del material dieléctrico usado
     \[
     q(t) = C \cdot u(t)
     \]
@@ -744,6 +832,9 @@
     \begin{equation*}
       \frac{du(t)}{dt} = 0 \quad \Rightarrow \quad I_c = 0
     \end{equation*}
+
+    \vspace{-3mm}
+    \hyperlink{diapo:bobinas_serie}{.} % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -918,8 +1009,8 @@
     \vspace{3mm}
     
     \[
-        I_{SC}=I_g=\frac{\epsilon_g}{R_{\epsilon_g}} , \quad 
-        U_{OC}=\epsilon_g=I_g \cdot R_{I_g} \quad \rightarrow \quad \boxed{R_{\epsilon_g} = R_{I_g}}
+        I_{sc}=I_g=\frac{\epsilon_g}{R_{\epsilon_g}} , \quad 
+        U_{oc}=\epsilon_g=I_g \cdot R_{I_g} \quad \rightarrow \quad \boxed{R_{\epsilon_g} = R_{I_g}}
     \]
     \hspace*{29mm}(\small{SC$\equiv$\textit{short circuit}, \hspace*{4mm}OC$\equiv$\textit{open circuit}})
 
@@ -927,7 +1018,7 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Equivalencia de fuentes}
+\begin{frame}{Equivalencia de fuentes} \label{diapo:transformacion_fuentes}
     \begin{columns}
     \begin{column}{0.25\columnwidth}
         \begin{center}
@@ -961,7 +1052,7 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Generadores dependientes}
+\begin{frame}{Generadores dependientes} \label{diapo:fuentes_dependientes}
     No tienen valores de $\epsilon_g$ o $I_g$ fijos, sino que estos \alert{dependen de la tensión o corriente en otros puntos de la red}:
 	\begin{center}
 		\includegraphics[height=4.6cm]{../figs/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}\hfill
@@ -1037,6 +1128,40 @@
 
 %%%%%%%%%%%%%%%%
 
+\begin{frame}{Balance de potencias}
+    \begin{itemize}
+        \item Ejemplo: \alert{motor}
+
+        \vspace{1mm}
+        Caracterizado por su \alert{fuerza contraelectromotriz} (f.c.e.m., $\epsilon'$): energía por unidad de carga, que transforma en otro tipo de energía (mecánica, química, etc.)
+    \end{itemize}
+    \begin{columns}
+    \begin{column}{0.3\columnwidth}
+        \begin{center}
+        \includegraphics[height=0.5\textheight]{../figs/receptor_real.pdf}
+        
+        \alert{Real} (con pérdidas)
+        \begin{equation*}
+            U_{AB}>\epsilon'
+        \end{equation*}
+        \end{center}
+    \end{column}
+    \begin{column}{0.4\columnwidth}
+    \vspace{-4mm}
+    \begin{align*}
+        \Aboxed{ P_{\textrm{útil}} &= P_{\textrm{absorbida}} - P_{\textrm{pérdidas}} }\\[7pt]
+        P_{\textrm{útil}} &= \epsilon'\cdot I\\[7pt]
+        P_{\textrm{pérdidas}} &= R_{\epsilon'}\cdot I^2 \;\; \text{\small{(ley de Joule)}}\\[7pt]
+        P_{\textrm{absorbida}} &= U_{AB}\cdot I\\[15pt]
+        & \hspace{-25mm}\text{Dado que } U_{AB}>\epsilon', \;\eta_m < 1:\\[7pt]
+        \eta_m &= \frac{P_{\textrm{útil}}}{P_{\textrm{absorbida}}} = \frac{\epsilon' \cdot \bcancel{I}}{U_{AB} \cdot \bcancel{I}} < 1
+    \end{align*}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
 \section{Leyes de Kirchhoff}
 
 \begin{frame}{Definiciones} \label{definiciones_mallas}
@@ -1061,14 +1186,14 @@
 
 \begin{frame}{Primera Ley de Kirchhoff (1LK)}
     \begin{itemize}
-        \item La \alert{1LK} es el principio de conservación de la carga aplicado a los circuitos eléctricos:
+        \item La \alert{1LK} es el principio de \alert{conservación de la carga} aplicado a los circuitos eléctricos:
         \vspace{2mm}
         
         La suma de las corrientes que llegan a un nudo es igual a la suma de las que salen      
     \end{itemize}
     \vspace{2mm}
     \begin{equation*}
-            \large{\boxed{\sum_{i=1}^n i_i(t)=0}}
+            \large{\boxed{\sum_{j=1}^n i_j(t)=0}}
         \end{equation*}
     \begin{center}
         \includegraphics[height=0.4\textheight]{../figs/LKC_FM.pdf}
@@ -1082,14 +1207,14 @@
 
 \begin{frame}{Segunda Ley de Kirchhoff (2LK)}
     \begin{itemize}
-        \item La \alert{2LK} es el principio de conservación de la energía aplicado a los circuitos:
+        \item La \alert{2LK} es el principio de \alert{conservación de la energía} aplicado a los circuitos:
         \vspace{2mm}
         
         La suma (con signo) de las tensiones a lo largo de un camino cerrado es cero        
     \end{itemize}
     \vspace{2mm}
     \begin{equation*}
-            \large{\boxed{\sum_{j=1}^m u_i(t)=0}}
+            \large{\boxed{\sum_{j=1}^m u_j(t)=0}}
         \end{equation*}
     
     \begin{center}
@@ -1102,16 +1227,81 @@
     % La energía producida por un generador es consumida por los receptores del circuito para producir trabajo (mecánico, químico, etc.) o calor.
 \end{frame}
 
+%%%%%%%%%%%%%%%%
 
+\begin{frame}{2LK a partir de balance de potencias}
+    \begin{itemize}
+        \item Ejemplo: \alert{motor} real (con pérdidas)
+    \end{itemize}
+    \begin{columns}
+    \begin{column}{0.3\columnwidth}
+        \begin{center}
+        \includegraphics[height=0.6\textheight]{../figs/receptor_real.pdf}        
+        \end{center}
+    \end{column}
+    \begin{column}{0.4\columnwidth}
+    \begin{align*}
+        P_{\textrm{útil}} &= P_{\textrm{absorbida}} - P_{\textrm{pérdidas}}\\[7pt]
+        P_{\textrm{útil}} &= \epsilon'\cdot I\\[7pt]
+        P_{\textrm{pérdidas}} &= R_{\epsilon'}\cdot I^2 \;\; \text{\small{(ley de Joule)}}\\[7pt]
+        P_{\textrm{absorbida}} &= U_{AB}\cdot I\\[15pt]
+        & \hspace{-25mm}\text{Dividiendo en ambos lados por } I, \text{ se obtiene 2LK:}\\[7pt]
+        \Aboxed{U_{AB}&=\epsilon'+R_{\epsilon'}\cdot I}
+    \end{align*}
+    \end{column}
+    \end{columns}
+\end{frame}
 
+%%%%%%%%%%%%%%%%
 
+\begin{frame}{Ejercicio}
+    \vspace{5mm}
+    Un generador cuya \textit{fem} es de \qty{120}{\volt} y resistencia de \qty{0.2}{\ohm}, da una corriente de \qty{20}{\ampere} a un motor situado a \qty{300}{\meter} de distancia y de resistencia \qty{0.5}{\ohm}. 
+    
+    La línea que los conecta es de cobre, de resistividad \qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}. 
+    
+    Sabiendo que el motor absorbe \qty{10.2}{\kWh} en \qty{5}{\hour}, se debe hallar:
+    \vspace{3mm}
+    
+    \begin{enumerate}
+        \item La fuerza contraelectromotriz (\textit{fcem}) del motor
+        \item La sección de los conductores de la línea
+        \item Los rendimientos de: motor, generador, línea y rendimiento total
+        \item El balance general de potencias
+    \end{enumerate}
+    \vspace{5mm}
+    \alert{Solución}: \href{https://raw.githubusercontent.com/ETSIDI-IE/tc/master/docs/ejercicios_clase/TC1_01_Ejercicio_clase_LBB.pdf}{aquí}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejercicio}
+    \vspace{5mm}
+    Un generador de corriente continua alimenta dos cargas. La primera de estas cargas está situada a \qty{2100}{\meter} del generador, tiene una resistencia de \qty{215}{\ohm} y rendimiento unidad. La segunda carga está situada \qty{270}{\meter} después de la primera, tiene una potencia de \qty{4662}{\watt}, un rendimiento del 75\% y una tensión aplicada de \qty{420}{\volt}.
+
+    La línea es de cobre, de \qty{6}{\milli\meter\squared} de sección y con una resistividad de \qty{17.24}{\milli\ohm\milli\meter\squared\per\meter}.
+    
+    \vspace{4mm}
+    
+    Con esta información, se debe calcular:
+    
+    \vspace{1mm}
+    
+    \begin{enumerate}
+        \item La tensión en bornes del generador
+        \item La corriente entregada por el generador
+        \item El rendimiento de la instalación
+    \end{enumerate}
+    \vspace{5mm}
+    \alert{Solución}: \href{https://raw.githubusercontent.com/ETSIDI-IE/tc/master/docs/ejercicios_clase/TC1_01_Ejercicio_clase2_LBB.pdf}{aquí}
+\end{frame}
 
 %%%%%%%%%%%%%%%%
 
 \subsection{Asociación de elementos}
 
 \begin{frame}{Asociación de elementos}
-    Las asociaciones principales de los elementos son:
+    Las principales formas de asociar elementos en un circuito son:
     \vspace{3mm}
     \begin{itemize}
         \item \alert{Serie}: \textit{final}  de un elemento conectado con \textit{principio} del siguiente $\rightarrow$ \alert{misma corriente}
@@ -1184,14 +1374,14 @@
         \begin{equation*}
           \boxed{u_i(t) = u(t) \cdot \frac{R_i}{R_{eq}}}
         \end{equation*}
-        \centering \small{(expresión muy útil para resolver algunos problemas)}
+        \centering \small{(expresión útil para agilizar la resolución de algunos ejercicios)}
     \end{column}
     \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión en serie de bobinas}
+\begin{frame}{Conexión en serie de bobinas} \label{diapo:bobinas_serie}
     \begin{columns}
     \begin{column}{0.3\columnwidth}
     \begin{center}
@@ -1233,6 +1423,7 @@
     \end{align*}
     \end{column}
     \end{columns}
+    \hyperlink{diapo:condensadores_paralelo}{.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1245,7 +1436,7 @@
     \vspace{-5mm}
     \begin{align*}
       \epsilon_T &= \sum_{i = 1}^N \epsilon_i\\
-      R_{gT} &= \sum_{i = 1}^N R_{gi}
+      R_{\epsilon_T} &= \sum_{i = 1}^N R_{\epsilon_i}
     \end{align*}
     \end{itemize}
     \vspace{-3mm}
@@ -1262,6 +1453,106 @@
         \end{itemize}
     \end{itemize}
     \end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo: \hspace{3mm}fuentes de corriente reales en serie}
+
+    \vspace{2mm}
+    Se \hyperlink{diapo:transformacion_fuentes}{transforman} primero cada una de las fuentes de corriente en fuentes de tensión:
+    % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text
+
+    \vspace{1mm}
+    \begin{minipage}[c]{0.05\linewidth}
+        \hfill
+    \end{minipage}
+    \begin{minipage}[c]{0.15\linewidth}
+        \begin{center}
+        \includegraphics[height=0.8\textheight]{../figs/FuentesCorrienteReales_serie.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}
+        \begin{center}
+        $\LARGE \xrightarrow{\hspace*{0.5cm}}$ % https://latex.org/forum/viewtopic.php?t=3894
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.15\linewidth}
+        \begin{center}
+        \includegraphics[height=0.8\textheight]{../figs/FuentesTensionReales_serie.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.05\linewidth}
+        \hfill
+    \end{minipage}
+    \begin{minipage}[c]{0.45\linewidth}
+        Donde:
+        \[
+          \epsilon_1 = I_{g_1} \cdot R_{I_{g_1}}
+        \]  
+        \[
+          \epsilon_2 = I_{g_2} \cdot R_{I_{g_2}}
+        \] 
+          
+        \[
+          R_{\epsilon_1} = R_{I_{g_1}}
+        \]
+        \[
+          R_{\epsilon_2} = R_{I_{g_2}}
+        \]
+
+        \vspace{6mm}
+        \centering \small{(continúa en la siguiente diapositiva)}
+    \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo: \hspace{3mm}fuentes de corriente reales en serie \hspace{3mm}(continuación)}
+
+    \vspace{1mm}
+    Las fuentes de tensión en serie se transforman directamente en una fuente equivalente, y esta se transforma de vuelta en una fuente de corriente:
+
+    %\vspace{4mm}
+    \begin{minipage}[c]{0.15\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuenteTensionReal_totalSerie.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}
+        $\LARGE \xrightarrow{\hspace*{0.5cm}}$ % https://latex.org/forum/viewtopic.php?t=3894
+    \end{minipage}
+    \begin{minipage}[c]{0.15\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuenteCorrienteReal_totalSerie.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}
+        \hfill
+    \end{minipage}
+    \begin{minipage}[c]{0.47\linewidth}
+        \vspace{4mm}
+        Donde:
+        \[
+          \epsilon_T = \epsilon_1 + \epsilon_2 = I_{g_1} \cdot R_{I_{g_1}} + I_{g_2} \cdot R_{I_{g_2}}
+        \]  
+        \[
+          R_{\epsilon_T} = R_{\epsilon_1} + R_{\epsilon_2} = R_{I_{g_1}} + R_{I_{g_2}}
+        \] 
+
+        \vspace{2mm}
+        Y finalmente:
+        \[
+          \boxed{
+          I_{g_T} = \frac{\epsilon_T}{R_{I_{g_T}}} = \frac{I_{g_1} \cdot R_{I_{g_1}} + I_{g_2} \cdot R_{I_{g_2}}}{R_{I_{g_1}} + R_{I_{g_2}}}
+          }
+        \]
+        \[
+          \boxed{
+          R_{I_{g_T}} = R_{\epsilon_T} = R_{I_{g_1}} + R_{I_{g_2}}
+          }
+        \]
+    \end{minipage}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1299,8 +1590,10 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión en paralelo: \hspace{3mm} caso particular de dos resistencias}
-    En el caso concreto de \alert{dos} resistencias en paralelo, la expresión es:
+\begin{frame}{Conexión en paralelo: \hspace{3mm} caso particular de dos resistencias}  \label{diapo:2R_paralelo}
+
+    \vspace{5mm}
+    En el caso concreto de \alert{dos resistencias en paralelo}, la expresión es:
     
     \begin{equation*}
       \frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}
@@ -1310,7 +1603,18 @@
       \boxed{R_{eq} = \frac{R_1 \cdot R_2}{R_1 + R_2}}
     \end{equation*}
     
-    \centering \small{(conveniente recordarla para agilizar la resolución de algunos problemas)}
+    \centering \small{(conveniente recordarla para agilizar la resolución de algunos ejercicios)}
+
+    \vspace{2mm}
+    
+    \noindent\rule{\textwidth}{0.5pt}
+
+    \vspace{2mm}
+
+    Para `$N$' \alert{resistencias iguales} asociadas en paralelo, cada una de valor `$R$': 
+    \[
+        R_{eq} = \frac{R}{N}
+    \]
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1318,7 +1622,8 @@
 \begin{frame}{Conductancia}
 
     \vspace{4mm}
-    Para \alert{simplificar las operaciones} en convexiones en paralelo, es conveniente utilizar el inverso de la resistencia, la \alert{conductancia} $G$:
+    Para \alert{simplificar las operaciones} en conexiones en paralelo, es conveniente utilizar el inverso de la resistencia, la \alert{conductancia} $G$:
+    \vspace{2mm}
     \begin{equation*}
       G = \frac{1}{R}
     \end{equation*}
@@ -1326,12 +1631,12 @@
     Así, en lugar de\ldots{}
     \vspace{-2mm}
     \begin{align*}
-      \frac{1}{R_{eq}} &= \sum_{i = 1}^n \frac{1}{R_i}\\[4pt]
+      \frac{1}{R_{eq}} &= \sum_{i = 1}^n \frac{1}{R_i}\\[7pt]
       u(t) &= R_{eq} \cdot i(t)
     \end{align*}
-    \ldots{} se puede escribir:
+    \ldots{}se puede escribir:
     \begin{equation*}
-      \hspace{43mm} \boxed{G_{eq} = \sum_{i = 1}^n G_i} \quad \textrm{y usar} \;\; i(t) = G_{eq} \cdot u(t)
+      \hspace{43mm} \boxed{G_{eq} = \sum_{i = 1}^n G_i} \quad \textrm{y usar} \;\; \underbrace{i(t) = G_{eq} \cdot u(t)}_{\text{ley de Ohm}}
     \end{equation*}
 \end{frame}
 
@@ -1366,14 +1671,43 @@
         \end{equation*}
 
         \vspace{-1mm}
-        \centering \small{(expresión muy útil para resolver algunos problemas)}
+        \centering \small{(expresión útil para agilizar la resolución de ejercicios)}
     \end{column}
     \end{columns}    
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión en paralelo de condensadores}
+\begin{frame}{Divisor de corriente: \hspace{3mm} caso particular de dos resistencias}
+
+    \vspace{5mm}
+    En el caso concreto de \alert{dos resistencias en paralelo}, la expresión es:
+    
+    \begin{equation*}
+      i_1(t) = i(t) \cdot \frac{G_1}{G_1 + G_2} = i(t) \cdot \frac{\hyperlink{diapo:2R_paralelo}{R_1 \parallel R_2}}{R_1} = i(t) \cdot \frac{\cancel{R_1} \cdot R_2}{R_1 + R_2} \cdot \frac{1}{\cancel{R_1}}
+    \end{equation*} % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text
+    
+    \begin{equation*}
+      \boxed{i_1(t) = i(t) \cdot \frac{R_2}{R_1 + R_2}}
+    \end{equation*}
+    
+    \centering \small{(conveniente recordarla para agilizar la resolución de algunos ejercicios)} 
+
+    \vspace{2mm}
+    
+    \noindent\rule{\textwidth}{0.5pt}
+
+    \vspace{2mm}
+
+    Para `$N$' \alert{resistencias iguales} asociadas en paralelo: 
+    \[
+        i_j(t) = \frac{i(t)}{N}
+    \]
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conexión en paralelo de condensadores} \label{diapo:condensadores_paralelo}
     \begin{columns}
     \begin{column}{0.4\columnwidth}
         \vspace{-10mm}
@@ -1382,7 +1716,11 @@
         \end{center}
     \end{column}
     \begin{column}{0.6\columnwidth}
+    
+    \vspace{2mm}
     Mismos pasos que en el caso de las resistencias:
+
+    \vspace{-5mm}
     \begin{align*}
       i(t) & = i_1(t) + i_2(t) + i_3(t)\\
       i_1(t) &= C_1 \cdot \frac{du(t)}{dt}\\
@@ -1398,6 +1736,7 @@
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Conexión en paralelo de bobinas}
+    \vspace{2mm}
     \begin{columns}
     \begin{column}{0.4\columnwidth}
         \vspace{-10mm}
@@ -1417,6 +1756,7 @@
     \end{align*}
     \end{column}
     \end{columns}
+    \hyperlink{diapo:Teoremas}{.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1441,8 +1781,8 @@
 
     \vspace{-5mm}
     \begin{align*}
-      I_{gT} &= \sum_{i = 1}^N I_{gi}\\
-      G_{gT} &= \sum_{i = 1}^N G_{gi}
+      I_{g_T} &= \sum_{i = 1}^N I_{g_i}\\
+      G_{g_T} &= \sum_{i = 1}^N G_{g_i}
     \end{align*}
     \end{itemize}
     \vspace{-3mm}
@@ -1451,12 +1791,108 @@
 
 %%%%%%%%%%%%%%%%
 
+\begin{frame}{Ejemplo: \hspace{3mm}fuentes de tensión reales en paralelo}
+
+    \vspace{2mm}
+    Se \hyperlink{diapo:transformacion_fuentes}{transforman} primero cada una de las fuentes de tensión en fuentes de corriente:
+    % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text
+
+    \vspace{2mm}
+    \begin{minipage}[c]{0.38\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuentesTensionReales_paralelo.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}
+        \begin{center}
+        $\LARGE \xrightarrow{\hspace*{0.5cm}}$ % https://latex.org/forum/viewtopic.php?t=3894
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.4\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuentesCorrienteReales_paralelo.pdf}
+        \end{center}
+    \end{minipage}
+
+    \vspace{4mm}
+    
+    Donde:
+    \[
+      I_{g_1} = \frac{\epsilon_1}{R_{\epsilon_1}} \qquad I_{g_2} = \frac{\epsilon_2}{R_{\epsilon_2}} \qquad R_{I_{g_1}} = R_{\epsilon_1} \qquad R_{I_{g_2}} = R_{\epsilon_2}
+    \]
+
+    \vspace{2mm}
+    \centering \small{(continúa en la siguiente diapositiva)}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo: \hspace{3mm}fuentes de tensión reales en paralelo \hspace{3mm}(continuación)}
+
+    \vspace{2mm}
+    Las fuentes de corriente en paralelo se transforman directamente en una fuente equivalente, y esta se transforma de vuelta en una fuente de tensión:
+
+    \begin{minipage}[c]{0.45\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuenteCorrienteReal_total.pdf}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}        
+        $\LARGE \xrightarrow{\hspace*{0.5cm}}$        
+    \end{minipage}
+    \begin{minipage}[c]{0.3\linewidth}
+        \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/FuenteTensionReal_total.pdf}
+        \end{center}
+    \end{minipage}
+
+    \vspace{-2mm}
+    \begin{minipage}[c]{0.45\linewidth}
+        \begin{center}
+            \begin{align*}
+            I_{g_T} &= I_{g_1} + I_{g_2} = \frac{\epsilon_1}{R_{\epsilon_1}} + \frac{\epsilon_2}{R_{\epsilon_2}} \\[2pt]
+            R_{I_{g_T}} &= R_{I_{g_1}} \parallel R_{I_{g_2}} = R_{\epsilon_1} \parallel R_{\epsilon_2}
+            \end{align*}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[c]{0.08\linewidth}  
+        \hfill
+    \end{minipage}
+    \begin{minipage}[c]{0.3\linewidth}
+        \[
+            \boxed{ \epsilon_T = R_{\epsilon_T} \cdot I_{g_T} =  \frac{\epsilon_1 \cdot R_{\epsilon_2} + \epsilon_2 \cdot R_{\epsilon_1}}{R_{\epsilon_1} + R_{\epsilon_2}}}
+            % Paso intermedio despues de "R_{\epsilon_T} \cdot I_{g_T}":
+            % R_{\epsilon_T} \cdot \left( \frac{\epsilon_1}{R_{\epsilon_1}} + \frac{\epsilon_2}{R_{\epsilon_2}
+        \]
+        \vspace{-3mm}
+        \[
+            \boxed{ R_{\epsilon_T} = R_{I_{g_T}} = R_{\epsilon_1} \parallel R_{\epsilon_2} }
+        \]
+    \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Interludio: \hspace{3mm}aplicaciones del efecto Joule}
+    \vspace{1mm}
+    La empresa Manitoba Hydro, en Canadá, usa picos de corriente controlados para deshielo de líneas de transmisión eléctrica (\alert{clica en la imagen}):
+		\begin{figure}[H]
+			\centering
+			\href{https://twitter.com/manitobahydro/status/1616529065879666688?t=zpgrdypQRYD2SJVQbOHkeg&s=19}{\includegraphics[width=.39\linewidth]{../figs/Joule_Manitoba.png}}
+		\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
 \begin{frame}{Conexión mixta}{Ejemplo}
+    \vspace{5mm}
     Calcular la corriente que aporta la fuente de tensión del siguiente circuito:
 		\begin{figure}[H]
 			\centering
 			\includegraphics{../figs/ej1_BT1.pdf}
 		\end{figure}
+    \vspace{5mm}
+    \alert{Solución}: \qty{6.04}{\ampere}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1478,8 +1914,15 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión estrella - triángulo}  
-    Existen acomplamientos que no se simplifican mediante reducciones ``serie'' o ``paralelo''. Son necesarias \alert{otras transformaciones}:
+\begin{frame}{Conexión estrella - triángulo} 
+
+    \vspace{2mm}
+    Existen acomplamientos que no se simplifican mediante reducciones ``serie'' o ``paralelo''
+    
+    \vspace{1mm}
+    Son necesarias \alert{otras transformaciones}:
+    
+    \vspace{-2mm}
     \begin{center}              
         \includegraphics[width=.9\linewidth]{../figs/estrella_a_triangulo.pdf}
     \end{center}    
@@ -1500,6 +1943,7 @@
     \begin{equation*}
       R_{AB} = \frac{R_{ab} \cdot (R_{bc} + R_{ca})}{R_{ab} + R_{bc} + R_{ca}}
     \end{equation*}
+    % Dado que la equivalencia entre triángulo y estrella tiene que darse en todas las combinaciones de circuito externo posible, podemos centrarnos únicamente en este caso en el que dejamos uno de los terminales "al aire" y calculamos la resistencia vista desde los otros dos. Como veremos, con este caso ya tenemos suficientes ecuaciones para calcular la transformación triángulo-estrella.
 
     \vspace{3mm}
     De la misma forma, para los terminales B-C y C-A:
@@ -1532,6 +1976,11 @@
       \\
       R_{CA} &= \frac{R_{ca} \cdot R_{ab}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{ca} \cdot R_{bc}}{R_{ab} + R_{bc} + R_{ca}}
     \end{align*}
+    
+    \vspace*{3mm}
+    \centering \small{(en un momento veremos para qué 
+    
+    son útiles estas expresiones)}
     \end{column}
     \end{columns}
 \end{frame}
@@ -1565,7 +2014,7 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión estrella - triángulo: \hspace{3mm}equivalencia}
+\begin{frame}{Conexión triángulo-estrella: \hspace{3mm}equivalencia}
 Combinando las expresiones de las dos diapositivas anteriores:
     \begin{align*}
         \frac{R_{a{\color{red}b}} \cdot R_{{\color{red}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{blue}a} + R_{\color{red}b}\\
@@ -1588,6 +2037,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \end{center}
     \end{column}
     \begin{column}{0.4\columnwidth}
+    \vspace*{8mm}
     \begin{align*}
         R_{\color{blue}a} &= \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}}\\
         \\    
@@ -1595,6 +2045,11 @@ Combinando las expresiones de las dos diapositivas anteriores:
         \\
         R_{\color{green}c} &=  \frac{R_{b{\color{green}c}} \cdot R_{{\color{green}c}a}}{R_{ab} + R_{bc} + R_{ca}}
     \end{align*}
+
+    \vspace*{5mm}
+    \centering \footnotesize{\alert{Regla mnemotécnica}: 
+    
+    la expresión para $R_a$ tiene en el numerador el producto de las 2 resistencias conectadas al terminal A}
     \end{column}
     
     \begin{column}{0.3\columnwidth}
@@ -1628,7 +2083,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \vspace*{5mm}
     \centering \small{(si os interesa la demostración, 
     
-    está \href{https://spinningnumbers.org/a/delta-wye-derivations.html\#text-y-to-delta-derivation-with-conductance}{aquí})}
+    está \href{https://spinningnumbers.org/a/delta-wye-derivations.html\#text-y-to-delta-derivation-with-conductance}{aquí})} % Otra demostración, usando resistencias en lugar de conductancias, está en la diapositiva 13 de Carmelo, del tema 3 dentro del BT1.
     \end{column}
     \begin{column}{0.3\columnwidth}
     \begin{center}
@@ -1647,7 +2102,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
       &R_a=R_b=R_c=R_{\wye}\\
       & R_{ab}=R_{bc}=R_{ca}=R_{\Delta}
     \end{align*}
-    \ldots{} las expresiones anteriores se reducen a:
+    \ldots{}las expresiones anteriores se reducen a:
     \begin{equation*}
       \boxed{R_{\Delta} = 3\cdot R_{\wye}}
     \end{equation*}
@@ -1657,12 +2112,18 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Conexión estrella - triángulo}{Ejemplo}
+\begin{frame}{Ejercicio}
+    \vspace{3mm}
     Convertir los circuitos de la figura a triángulo o estrella equivalente, según corresponda:
      \begin{figure}[H]
      	\centering
         \includegraphics{../figs/ej7_BT1.pdf}
      \end{figure}
+
+    \vspace{5mm}
+    \small{\hspace{29mm}\alert{Solución}: $R_{\Delta} = \qty{180}{\ohm}$ 
+    \hspace{10mm}
+    \alert{Solución}: $R_a = \frac{10}{3} \, \ohm$, $R_b = \qty{5}{\ohm}$, $R_c = \qty{10}{\ohm}$} 
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1673,6 +2134,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \begin{center}
     \includegraphics[height=0.95\textheight]{../figs/mallas1.pdf}
     \end{center}
+    % Esto es un circuito más general en el que no se pueden reducir las asociaciones entre elementos a serie o paralelo
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1721,7 +2183,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \end{center}
     \vspace{-10pt} 
     \begin{itemize}\addtolength{\itemindent}{7mm}
-        \item Lo relevante son las \alert{diferencias de potencial}, así que uno de los nudos siempre \hspace*{7mm}es la referencia de potenciales (se puede tomar como potencial cero, o tierra).
+        \item Lo relevante son las \alert{diferencias de potencial}, así que uno de los nudos siempre \hspace*{7mm}es la referencia de potenciales (se puede tomar como potencial cero, o tierra)
     \end{itemize}
 \end{frame}
 
@@ -1792,6 +2254,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Paso 3, en forma matricial}
+    \vspace{4mm}
     \begin{equation*}
       \begin{bmatrix}
         -1 & -1 & 0 & 0 & 0 & 1\\
@@ -1823,7 +2286,21 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \begin{center}
         \begin{minipage}{0.8\linewidth} 
             \begin{center}
-                Resolver el circuito implica resolver un sistema lineal de \alert{6 ecuaciones}, en el que las incógnitas son las corrientes de cada rama
+                Analizar el circuito implica resolver un sistema lineal de \alert{6 ecuaciones}, en el que las incógnitas son las corrientes de cada rama
+            \end{center} 
+        \end{minipage}
+        
+        \vspace{2mm}
+    
+        \noindent\rule{\textwidth}{0.5pt}
+    
+        \vspace{4mm}
+
+        \begin{minipage}{0.8\linewidth} 
+            \begin{center}
+                \small{Pero existen estrategias más eficientes para resolver circuitos, usando 
+                
+                sistemas de ecuaciones de menores dimensiones, que veremos a continuación}
             \end{center} 
         \end{minipage}
     \end{center}    
@@ -1834,8 +2311,11 @@ Combinando las expresiones de las dos diapositivas anteriores:
 \subsection{Método de las mallas}
 
 \begin{frame}{Método de las mallas}
+
+    \vspace{2mm}
     El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes \emph{ficticias} denominadas \alert{corrientes de malla}, aprovechando las relaciones entre corrientes de la 1LK
-    
+
+    \vspace{-2mm}
     \begin{center}
     \includegraphics[height=0.7\textheight]{../figs/mallas1_corrientes.pdf}
     \end{center}
@@ -1928,38 +2408,50 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Ecuación general del método de las mallas}
+    \vspace{6mm}
     \begin{equation*}
 		\underbrace{\begin{bmatrix}
-			{\color{red}\sum R_{11}} &  {\color{blue}\pm\sum R_{12}} & {\color{blue}{\dots}} & {\color{blue}\pm\sum R_{1n}} \\
-			{\color{blue}\pm\sum R_{21}} & {\color{red}\sum R_{22}} & {{\dots}} & {\color{blue}\pm\sum R_{2n}} \\
+			{\color{red}\sum R_{a}} &  {\color{blue}\pm\sum R_{ab}} & {\color{blue}{\dots}} & {\color{blue}\pm\sum R_{an}} \\
+			{\color{blue}\pm\sum R_{ba}} & {\color{red}\sum R_{b}} & {{\dots}} & {\color{blue}\pm\sum R_{bn}} \\
 			{\vdots} & {\vdots} &  {\ddots} & \vdots\\
-			{\color{blue}\pm\sum R_{n1}} & {\color{blue}\pm\sum R_{n2}} & \dots & {\color{red}\sum R_{nn}}
+			{\color{blue}\pm\sum R_{na}} & {\color{blue}\pm\sum R_{nb}} & \dots & {\color{red}\sum R_{n}}
 		\end{bmatrix}}_{\textrm{matriz simétrica}, \; n\times n \; (n=\textrm{n° mallas)}} \cdot 
 		\begin{bmatrix}
-			I_1\\
-			I_2\\
+			I_a\\
+			I_b\\
 			\vdots\\
 			I_n
 		\end{bmatrix} = %
 		\begin{bmatrix}
-			{\color{green}\sum\epsilon_1}\\
-			{\color{green}\sum\epsilon_2}\\
+			{\color{green}\sum\epsilon_a}\\
+			{\color{green}\sum\epsilon_b}\\
 			{\color{green}\vdots}\\
 			{\color{green}\sum\epsilon_n}
 		\end{bmatrix}
 	\end{equation*}
-    \vspace{-3mm}
-    \begin{description}
-    \item[{\({\color{red}\sum R_{ii}}\)}] suma de las resistencias incluidas en la malla de \(I_i\)
+ 
+    \vspace{4mm}
     
-    \item[{\({\color{blue}\sum R_{ij}}\)}] suma de las resistencias incluidas en las ramas compartidas por las mallas de \(I_i\) e \(I_j\) 
-    
-    (`$+$' si las corrientes van en el mismo sentido, `$-$' en caso contrario)
-    
-    \item[{\({\color{green}\sum \epsilon_i}\)}] suma algebraica de las fuerzas electromotrices de los generadores de la malla de \(I_i\) 
-    
-    (`$+$' si $I_i$ sale por el $+$ de la fuente, `$-$' en caso contrario)
-    \end{description}
+    \begin{columns}
+    \hspace*{-0.8cm}
+    \begin{column}{1.07\textwidth} % Creo esta "column" para poder desplazar hacia la izquiera la lista
+        \begin{description}
+        \item[{\({\color{red}\sum R_{x}}\)}] suma de las resistencias incluidas en la malla de \(I_x\)
+
+        \vspace{2mm}
+        
+        \item[{\({\color{blue}\sum R_{xy}}\)}] suma de las resistencias incluidas en las ramas compartidas por las mallas de \(I_x\) e \(I_y\) 
+        
+        {\small (`$+$' si las corrientes \(I_x\) e \(I_y\) van en el mismo sentido en esa rama, `$-$' en caso contrario) }
+
+        \vspace{2mm}
+        
+        \item[{\({\color{green}\sum \epsilon_x}\)}] suma algebraica de las fuerzas electromotrices de los generadores de la malla de \(I_x\) 
+        
+        {\small (`$+$' si $I_x$ sale por el $+$ de la fuente, `$-$' en caso contrario) }
+        \end{description} 
+    \end{column}
+    \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -1972,9 +2464,9 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \vspace{1mm}
     \item Relacionar corrientes de rama con corrientes de malla
     \vspace{1mm}
-    \item Escribir ecuación de mallas
+    \item Escribir sistema de ecuaciones de mallas
     \vspace{1mm}
-    \item Resolver la ecuación, obteniendo las corrientes de malla
+    \item Resolver el sistema de ecs., obteniendo las corrientes de malla
     \vspace{1mm}
     \item Obtener las corrientes de rama a partir de las relaciones del punto 3
     \end{enumerate}
@@ -2009,10 +2501,20 @@ Combinando las expresiones de las dos diapositivas anteriores:
 \subsection{Método de los nudos}
 
 \begin{frame}{Método de los nudos}
+    \vspace{2mm}
     El \alert{método de los nudos} se basa en las relaciones entre corrientes de la 1LK
     \begin{center}
     \includegraphics[width=.8\linewidth]{../figs/nudos.pdf}
     \end{center}
+    % Esto es solo un ejempo, porque este ejercicio se resolvería muy fácil por mallas: si sustituimos las fuentes de corriente por fuentes de tensión, tendríamos una sola malla, así que también habría únicamente una ecuación
+
+    %\vspace{2mm}
+    \alert{Primer paso}: si no viene determinado en el enunciado, elegir \alert{nudo de referencia} de potenciales (nudo de tierra)
+
+    %\vspace{2mm}
+    \begin{itemize}
+        \item {\normalsize Conveniente elegir el nudo que conecte mayor número de elementos (porque simplifica ligeramente las ecuaciones)} 
+    \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2040,9 +2542,9 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \includegraphics[width=.7\linewidth]{../figs/nudos.pdf}
     \end{center}
     \begin{align*}
-      V_A &= I_a \cdot R_1 \quad \rightarrow \quad I_a = \frac{V_A}{R_1}\\
-      V_B &= I_b \cdot R_3 \quad \rightarrow \quad I_b = \frac{V_B}{R_3}\\
-      V_{AB} &= I_{ab} \cdot R_2  \quad \rightarrow \quad I_{ab} = \frac{V_A-V_B}{R_2}
+      U_A &= I_a \cdot R_1 \quad \rightarrow \quad I_a = \frac{U_A}{R_1}\\
+      U_B &= I_b \cdot R_3 \quad \rightarrow \quad I_b = \frac{U_B}{R_3}\\
+      U_{AB} &= I_{ab} \cdot R_2  \;\;\, \rightarrow \quad I_{ab} = \frac{U_A-U_B}{R_2}
     \end{align*}
 \end{frame}
 
@@ -2050,20 +2552,24 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 \begin{frame}{Combinando las ecuaciones de nudos con la Ley de Ohm}
 
-\alert{Objetivo}: despejar las \alert{tensiones en cada nudo}
+    \vspace{3mm}
+    \alert{Objetivo}: despejar las \alert{tensiones en cada nudo}
+    
+    \vspace{-2mm}
     \begin{center}
     \includegraphics[width=.7\linewidth]{../figs/nudos.pdf}
     \end{center}
-    \vspace{-6mm}
+    
+    \vspace{-4mm}
     
     Nudo A
     \begin{equation*}
-      I_{g1} - \dfrac{V_A}{R_1} - \dfrac{V_A - V_B}{R_2} = 0 \quad \rightarrow \quad I_{g1} = V_A\cdot\left(\dfrac{1}{R_1}+\dfrac{1}{R_2}\right) - \dfrac{V_B}{R_2} 
+      I_{g1} - \dfrac{U_A}{R_1} - \dfrac{U_A - U_B}{R_2} = 0 \quad \rightarrow \quad I_{g1} = U_A\cdot\left(\dfrac{1}{R_1}+\dfrac{1}{R_2}\right) - \dfrac{U_B}{R_2} 
     \end{equation*}
     
     Nudo B
     \begin{equation*}
-      \dfrac{V_A - V_B}{R_2} - I_{g2} - \dfrac{V_B}{R_3} = 0 \quad \rightarrow \quad - I_{g2} = - \dfrac{V_A}{R_2} + V_B \cdot\left(\dfrac{1}{R_2} + \dfrac{1}{R_3}\right)
+      \quad\;\; \dfrac{U_A - U_B}{R_2} - I_{g2} - \dfrac{U_B}{R_3} = 0 \quad \rightarrow \quad - I_{g2} = - \dfrac{U_A}{R_2} + U_B \cdot\left(\dfrac{1}{R_2} + \dfrac{1}{R_3}\right)
     \end{equation*}
 \end{frame}
 
@@ -2079,49 +2585,66 @@ Combinando las expresiones de las dos diapositivas anteriores:
         -\dfrac{1}{R_2} & \dfrac{1}{R_2}+\dfrac{1}{R_3}
       \end{bmatrix} \cdot%
       \begin{bmatrix}
-        V_A\\
-        V_B
+        \vphantom{\dfrac{1}{R_1}} U_A\\
+        \vphantom{\dfrac{1}{R_1}} U_B
       \end{bmatrix} = %
       \begin{bmatrix}
-        I_{g1}\\
-        -I_{g2}
+        \vphantom{\dfrac{1}{R_1}} I_{g1}\\
+        \vphantom{\dfrac{1}{R_1}} -I_{g2}
       \end{bmatrix}
     \end{equation*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Método de los nudos}{Ecuación general}
+\begin{frame}{Ecuación general del método de los nudos}
+    \vspace{3mm}
     \begin{equation*}
 		\underbrace{\begin{bmatrix}
-			{\color{red}\sum G_{11}} &  {\color{blue}-\sum G_{12}} & {\color{blue}{\dots}} & {\color{blue}-\sum G_{1n}} \\
-			{\color{blue}-\sum G_{21}} & {\color{red}\sum G_{22}} & {{\dots}} & {\color{blue}-\sum G_{2n}} \\
+			{\color{red}\sum G_{A}} &  {\color{blue}-\sum G_{AB}} & {\color{blue}{\dots}} & {\color{blue}-\sum G_{AN}} \\
+			{\color{blue}-\sum G_{BA}} & {\color{red}\sum G_{B}} & {{\dots}} & {\color{blue}-\sum G_{BN}} \\
 			{\vdots} & {\vdots} &  {\ddots} & \vdots\\
-			{\color{blue}-\sum G_{n1}} & {\color{blue}-\sum G_{n2}} & \dots & {\color{red}\sum G_{nn}}
-		\end{bmatrix}}_{\textrm{matriz simétrica}, \; n\times n \; (n=\textrm{n° nudos}-1)}  \cdot 
+			{\color{blue}-\sum G_{NA}} & {\color{blue}-\sum G_{NB}} & \dots & {\color{red}\sum G_{N}}
+		\end{bmatrix}}_{\textrm{matriz simétrica}, \; N\times N \; (N=\textrm{n° nudos}-1)}  \cdot 
 		\begin{bmatrix}
-			U_1\\
-			U_2\\
+			U_A\\
+			U_B\\
 			\vdots\\
-			U_n
+			U_N
 		\end{bmatrix} = %
 		\begin{bmatrix}
-			{\color{green}\sum I_{g1}}\\
-			{\color{green}\sum I_{g2}}\\
+			{\color{green}\sum I_{g_A}}\\
+			{\color{green}\sum I_{g_B}}\\
 			{\color{green}\vdots}\\
-			{\color{green}\sum I_{gn}}
+			{\color{green}\sum I_{g_N}}
 		\end{bmatrix}
 	\end{equation*}
 
-    \begin{description}
-    \item[{\({\color{red}\sum G_{ii}}\)}] Suma de las conductancias conectadas al nudo \(i\)
-    \item[{\({\color{blue}\sum G_{ij}}\)}] Suma de las conductancias conectadas entre los nudos \(i\) y \(j\)
-    \item[{\({\color{green}\sum I_{gi}}\)}] Suma algebraica de las corrientes de los generadores conectados en el nudo $i$ (`$+$' si el generador inyecta corriente en el nudo, `$-$' en caso contrario)
-    \end{description}
-
     \vspace{3mm}
     
-    \hspace{22mm}\alert{Importante}: todos los generadores deben ser fuentes de corriente
+    \begin{columns}
+    \hspace*{-0.1cm}
+    \begin{column}{1.01\textwidth} % Creo esta "column" para poder desplazar hacia la izquiera la lista
+        \begin{description}
+        \item[{\({\color{red}\sum G_{X}}\)}] Suma de las conductancias conectadas al nudo \(X\)
+    
+        \vspace{2mm}
+        
+        \item[{\({\color{blue}\sum G_{XY}}\)}] Suma de las conductancias conectadas entre los nudos \(X\) e \(Y\)
+    
+        \vspace{2mm}
+        
+        \item[{\({\color{green}\sum I_{g_X}}\)}] Suma algebraica de las corrientes de los generadores conectados al nudo $X$ (`$+$' si el generador inyecta corriente en el nudo, `$-$' en caso contrario)
+        \end{description}
+    \end{column}
+    \end{columns}
+
+    \vspace{2mm}
+
+    \noindent\rule{\textwidth}{0.5pt}
+    
+    \hyperlink{diapo:bobina_inicio}{.} % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text    
+    \hspace{19mm}\alert{Importante}: todos los generadores deben ser fuentes de corriente
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2194,6 +2717,31 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
+\begin{frame}{Interludio: \hspace{3mm}escenarios climáticos}
+
+    \begin{minipage}[c]{0.8\linewidth}
+        \vspace{2mm}
+        \centering
+			\includegraphics[width=1\linewidth]{../figs/Greenhouse_gas_emission_scenarios.PNG}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.18\linewidth}
+        \vspace{17mm}
+        \small{¿Cómo \alert{te va a afectar a tí}? 
+
+        \vspace{3mm}
+        Mira \href{https://elpais.com/especiales/2021/como-seria-el-planeta-con-un-calentamiento-de-4-grados/}{esto}}
+
+        \vspace{23mm}
+        \footnotesize{Fuente:
+        
+        ``\href{https://report.ipcc.ch/ar6syr/pdf/IPCC_AR6_SYR_SPM.pdf?__cf_chl_tk=ki6vfeXGNrQoeJa_mdHq7CCjQah5xUcEv_yD3Njm1_U-1679392056-0-gaNycGzNCfs}{Synthesis report} of the IPCC sixth assessment report (AR6)'', 2023}
+    \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\label{diapo:Teoremas}
 \section{Teoremas}
 
 \subsection{Circuitos lineales} 
@@ -2202,48 +2750,65 @@ Combinando las expresiones de las dos diapositivas anteriores:
     Un circuito eléctrico es \alert{lineal} si los elementos pasivos y activos que incluye son lineales:
 	\begin{itemize}
 	    \item \alert{Elemento pasivo}: la relación entre tensión y corriente es lineal ($R$, $L$, $C$)
-        \item \alert{Fuente dependiente}: su salida tiene una relación lineal con la magnitud del circuito de la que depende
+
+        \vspace{1mm}
+        \item \alert{Fuente dependiente}: su salida tiene una relación lineal con la magnitud del circuito de la que depende 
+        \hyperlink{diapo:fuentes_dependientes}{.} % Sobre la cross-reference usando "hyperlink": https://tex.stackexchange.com/questions/70143/cross-reference-with-custom-text
 	\end{itemize}
+ 
     \vspace{5mm}
     Propiedades:
     \begin{itemize}
         \item \alert{Proporcionalidad} u homogeneidad
+
+        \vspace{1mm}
         \item \alert{Superposición} o aditividad
     \end{itemize}    
-\end{frame}
+ \end{frame}
 
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Proporcionalidad}
+    \vspace{5mm}
+    
     Sea \(y(t)\) la respuesta de un \alert{circuito lineal} a una excitación \(x(t)\) 
     \vspace{5mm}
     
-    Si la excitación es multiplicada por una \alert{constante}, \(k \cdot x(t)\), la respuesta del circuito será modificada por la misma constante, \(k \cdot y(t)\)
-    \vspace{10mm}
+    Si la excitación es multiplicada por una \alert{constante}, \(K \cdot x(t)\), la respuesta del circuito será modificada por la misma constante, \(K \cdot y(t)\)
+    \vspace{4mm}
     
     \begin{center}
-        \includegraphics[width=0.5\textwidth]{../figs/proporcionalidad.pdf}
+        \includegraphics[width=0.45\textwidth]{../figs/proporcionalidad.pdf}
+        
+        \vspace{7mm}
+        \includegraphics[width=0.45\textwidth]{../figs/proporcionalidad2.pdf}
     \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Superposición}
-    \begin{columns}
-    \begin{column}{0.57\columnwidth}
+
+    \vspace{3mm}
     La respuesta de un \alert{circuito lineal} a varias fuentes de excitación actuando simultáneamente es igual a la \alert{suma de las respuestas} que se tendrían cuando actuase cada una de ellas por separado
-    
+
+    \vspace{-2mm}
     \[
-    y(t) = \sum_i y_i(t)
+        y(t) = \sum_i y_i(t)
     \]
-    \end{column}
-    
-    \begin{column}{0.42\columnwidth}
+
+    %\vspace{-2mm}
+    \begin{minipage}[c]{0.45\linewidth}
         \begin{center}
-            \includegraphics[width=1\linewidth]{../figs/superposicion.pdf}
+            \includegraphics[width=0.88\linewidth]{../figs/superposicion2.pdf}
         \end{center}
-    \end{column}
-    \end{columns}
+    \end{minipage}
+    \hfill%
+    \begin{minipage}[c]{0.45\linewidth}
+        \begin{center}
+            \includegraphics[width=0.95\linewidth]{../figs/superposicion.pdf}
+        \end{center}
+    \end{minipage}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2292,33 +2857,44 @@ Combinando las expresiones de las dos diapositivas anteriores:
     
     Supongamos \(I = I_1 + I_2\):
     \begin{align*}
-      P &= R \cdot I^2 =\\
-           &= R \cdot (I_1 + I_2)^2 =\\
-           &=R \cdot (I_1^2 + I_2^2 + 2\cdot I_1 \cdot I_2)\\
-      \Aboxed{P &\neq P_1 + P_2}
+      P &= R \cdot I^2 =\\[2pt]
+           &= R \cdot (I_1 + I_2)^2 =\\[4pt]
+           &=R \cdot (I_1^2 + I_2^2 + 2\cdot I_1 \cdot I_2)\\[4pt]
+      \Aboxed{\; P \; &\textcolor{red}{\neq} \; P_1 + P_2 \;}
     \end{align*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
-%\begin{frame}{Teorema de superposición}{Ejemplo}
-%    Usar el principio de superposición para encontrar $U_0$ en el circuito de la figura.
-%    \begin{figure}[H]
-%        \centering
-%        \includegraphics[width=0.5\linewidth]{../figs/ej_superposicion_cc.pdf}
-%    \end{figure}
-%\end{frame}
+\begin{frame}{Ejercicio}
+    \vspace{5mm}
+    Usar el principio de superposición para determinar $U_0$ en el circuito de la figura
+    
+    \vspace{3mm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{../figs/ej_superposicion_cc.pdf}
+    \end{figure}
+    
+    \vspace{-4mm}
+    \alert{Solución}: \href{https://raw.githubusercontent.com/ETSIDI-IE/tc/master/docs/ejercicios_clase/TC1_01_Ejercicio_clase3_LBB.pdf}{aquí}
+\end{frame}
 
 %%%%%%%%%%%%%%%%
 
 \subsection{Teoremas de Thévenin y Norton}
 
 \begin{frame}{Teoremas de Thévenin y Norton}
+
+    \vspace{2mm}
     \begin{itemize}
         \item Permiten transformar un circuito complejo en un equivalente \alert{más simple}
+
+        \vspace{2mm}
         \item Útiles cuando solo nos interesa la \alert{respuesta global de un circuito}, y no las intensidades y tensiones parciales        
     \end{itemize}
-    
+
+    \vspace{1mm}
     \begin{center}
     \includegraphics[width=.4\linewidth]{../figs/thevenin_continua_red.pdf}
     \end{center}
@@ -2327,8 +2903,10 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Teorema de Thévenin en corriente continua}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos $AB$, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una \alert{resistencia} (resistencia de Thévenin, \(R_{th}\))
-    
+    \vspace{3mm}
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una \alert{resistencia} (resistencia de Thévenin, \(R_{th}\))
+
+    \vspace{2mm}
     \begin{center}
         \includegraphics[height=0.6\textheight]{../figs/EquivalenteThevenin_R.pdf}
     \end{center}
@@ -2337,6 +2915,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Cálculo del equivalente de Thévenin}
+    \vspace{2mm}
     \begin{center}
     \includegraphics[height=0.43\textheight]{../figs/EquivalenteThevenin_R.pdf}
     \end{center}
@@ -2344,12 +2923,15 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \begin{itemize}
     \item Circuito abierto (\(R_L \to \infty, \quad U_{AB} = U_{oc}\))
     \end{itemize}
+
+    \vspace{-5mm}
     \[
     \hspace{65mm}
     \boxed{\epsilon_{th} = U_{oc}} 
     \qquad \textrm{(\small{SC$\equiv$\textit{short circuit}, \hspace*{4mm}OC$\equiv$\textit{open circuit}})}
     \] 
-    \vspace{-3mm}
+    
+    \vspace{-1mm}
     \begin{itemize}
     \item Cortocircuito (\(R_L = 0, \quad I = I_{sc}\))
     \end{itemize}
@@ -2361,8 +2943,10 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Teorema de Norton en corriente continua}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos $AB$, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una \alert{resistencia} (resistencia de Norton, \(R_N\))
-    
+    \vspace{3mm}
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una \alert{resistencia} (resistencia de Norton, \(R_N\))
+
+    \vspace{2mm}   
     \begin{center}
         \includegraphics[height=0.6\textheight]{../figs/EquivalenteNorton_R.pdf}
     \end{center}
@@ -2371,6 +2955,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Cálculo del equivalente de Norton}
+    \vspace{2mm}
     \begin{center}
     \includegraphics[height=0.43\textheight]{../figs/EquivalenteNorton_R.pdf}
     \end{center}
@@ -2378,15 +2963,20 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \begin{itemize}
     \item Cortocircuito (\(R_L = 0, \quad I = I_{sc}\))
     \end{itemize}
+
+    \vspace{-8mm}
     \[
     \hspace{65mm}
     \boxed{I_N = I_{sc}}
     \qquad \textrm{(\small{SC$\equiv$\textit{short circuit}, \hspace*{4mm}OC$\equiv$\textit{open circuit}})}
-    \] 
-    \vspace{-3mm}
+    \]  
+    
+    \vspace{1mm}
     \begin{itemize}
     \item Circuito abierto (\(R_L \to \infty, \quad U_{AB} = U_{oc}\))
     \end{itemize}
+
+    \vspace{-3mm}
     \[
     \boxed{R_N = \frac{U_{oc}}{I_N} = \frac{U_{oc}}{I_{sc}}}
     \]
@@ -2394,25 +2984,33 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Cálculo de Thévenin/Norton}
-    \begin{block}{Procedimiento}
+\begin{frame}{Cálculo de resistencia Thévenin/Norton}
+    \vspace{4mm}
     \begin{itemize}
-    \vspace{1mm}
-    \item Cálculo de la \alert{resistencia Thévenin/Norton}:
-        \vspace{1mm}
+    \item Siempre podemos calcular la resistencia Thévenin/Norton \alert{calculando tanto $U_{oc}$ como $I_{sc}$}, pero en ocasiones \alert{no es sencillo} calcular estas magnitudes
+
+    \vspace{5mm}
+    \item Existe un método alternativo:
+
+        \vspace{2mm}
         \begin{itemize}
         \normalsize{
-        \item Si el circuito \alert{no} contiene \alert{fuentes dependientes}, se puede realizar \alert{eliminando} todos los \alert{generadores} y obteniendo la resistencia equivalente
-        \vspace{1mm}
-        \item Si el circuito contiene \alert{fuentes dependientes}, es necesario conectar un \alert{generador de prueba} a la salida del circuito y obtener la relación entre tensión y corriente de este generador
+        \item Si el circuito \underline{\alert{NO} contiene \alert{fuentes dependientes}}:
+        
+        \vspace{2mm}
+        Se puede calcular \alert{apagando} todos los \alert{generadores} y obteniendo la resistencia equivalente
+        
+        \vspace{3mm}
+        \item Si el circuito \underline{contiene \alert{fuentes dependientes}}:
+
+        \vspace{2mm}
+        Una \alert{fuente dependiente no se puede apagar}, porque no tiene una excitación autónoma (depende de lo que está ocurriendo en otra parte del circuito)
+
+        \vspace{2mm}
+        Es \alert{necesario} conectar un \alert{generador de prueba} a la salida del circuito y obtener la relación entre tensión y corriente de este generador
         }
         \end{itemize}
-    \vspace{1mm}
-    
-    \item Mediante \alert{equivalencia de fuentes} de tensión y corriente, una vez obtenido el equivalente Thévenin o Norton, se puede obtener el otro mediante transformación
     \end{itemize}
-    \vspace{1mm}
-    \end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2443,13 +3041,13 @@ Combinando las expresiones de las dos diapositivas anteriores:
 \subsection{Teorema de máxima transferencia de potencia}
 
 \begin{frame}{Teorema de máxima transferencia de potencia: \hspace{4mm}planteamiento}
-    ¿Qué resistencia \(R_L\) hay que conectar en los terminales $AB$ para que el circuito entregue la \alert{máxima potencia posible}?
+    ¿Qué resistencia \(R_L\) hay que conectar en los terminales AB para que el circuito entregue la \alert{máxima potencia posible}?
     
     \begin{center}
         \includegraphics[height=0.55\textheight]{../figs/thevenin_continua_red.pdf}
     \end{center}
     
-    Se aplica el \alert{equivalente de Thévenin}
+    Se aplica el \alert{equivalente de Thévenin} (siguiente diapositiva)
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2460,14 +3058,14 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \begin{columns}
     \begin{column}{0.45\columnwidth}
     \begin{center}
-    \includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin0_R.pdf}
+    \includegraphics[height=0.52\textheight]{../figs/EquivalenteThevenin0_R.pdf}
     \end{center}
     \end{column}
     
     \begin{column}{0.45\columnwidth}
     \begin{align*}
-    I &= \frac{\epsilon_{th}}{R_{th} + R_L}\\
-    P_L &= I^2 \cdot R_L\\
+    I &= \frac{\epsilon_{th}}{R_{th} + R_L}\\[3pt]
+    P_L &= I^2 \cdot R_L\\[3pt]
     \Aboxed{P_L &= \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L}
     \end{align*}
     \end{column}
@@ -2477,34 +3075,50 @@ Combinando las expresiones de las dos diapositivas anteriores:
     La \alert{condición de máximo} es:
     \[
       \boxed{%
-        \diffp{P_L}{R_L} = 0%
+        \diff{P_L}{R_L} = 0%
       }
     \]
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Resistencia}
-    \begin{equation*}
-        \diffp{P_L}{R_L} = \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}
-    \end{equation*}
+\begin{frame}{Solución}
 
-    \vspace{5mm}
+    \vspace{-1mm}
+    \begin{center}
+        \includegraphics[height=0.45\textheight]{../figs/max_pot_R_L.pdf}
+    \end{center}
+
+    \vspace{-11mm}
+    \begin{equation*}
+        \diff{P_L}{R_L}\quad
+        \overarrow[=][\downarrow]{\minibox[c]{\footnotesize derivada de \\[-2pt] \footnotesize un cociente }}
+        \quad
+        \epsilon^2_{th} \cdot \left[\frac{(R_L + R_{th})^2-2\cdot(R_L + R_{th})\cdot R_L}{(R_L + R_{th})^4}\right]
+        = 
+        \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}
+    \end{equation*} 
+      % Flecha, sacada de aquí: https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+      % "Minibox", para poder partir el texto en 2 líneas: https://tex.stackexchange.com/questions/8680/how-can-i-insert-a-newline-in-a-framebox
+
+    
+
+    \vspace{3mm}
     Aplicando la \alert{condición de máximo}:
     \[
-       \diffp{P_L}{R_L} = 0 \quad \rightarrow \quad \boxed{R_L = R_{th}}
+       \diff{P_L}{R_L} = 0 \quad \rightarrow \quad \boxed{R_L = R_{th}}
     \]
 \end{frame}
 
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Resistencia de carga \hspace{3mm}(o resistencias ``adaptadas'')}
-    Dado un circuito lineal (del que se puede calcular su equivalente de Thévenin) \ldots{}
+    Dado un circuito lineal (del que se puede calcular su equivalente de Thévenin)\ldots{}
     \begin{center}
         \includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin_R.pdf}
     \end{center}
     
-    \ldots{} la \alert{resistencia de carga} o  que hay que conectar entre sus terminales $AB$ para obtener la máxima potencia disponible es:
+    \ldots{}la \alert{resistencia de carga} que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
     \[
       \boxed{R_L = R_{th}}
     \]
@@ -2513,30 +3127,53 @@ Combinando las expresiones de las dos diapositivas anteriores:
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Máxima potencia disponible}
+
+\vspace{3mm}
 La \alert{máxima potencia} que puede entregarse a la carga es:
 
-    \vspace{5mm}
+    \vspace{3mm}
     \begin{minipage}[c]{0.4\linewidth}
-        \begin{center}
-            \includegraphics[height=0.5\textheight]{../figs/thevenin_continua.pdf}
-        \end{center}
+        \includegraphics[height=0.62\textheight]{../figs/thevenin_continua.pdf}
     \end{minipage}
     \hfill
     \begin{minipage}[c]{0.58\linewidth}
         \begin{equation*}
           \left.
             \begin{matrix}
-              R_L = R_{th}\\
-              P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L
+              R_L = R_{th}\\[5pt]
+              P_L = \dfrac{\epsilon^2_{th}}{(R_{th} + R_L)^2} \cdot R_L
             \end{matrix} \right\}\rightarrow
-          \boxed{P_L = \frac{\epsilon^2_{th}}{4 R_{th}}}
+          \boxed{P_L = \frac{\epsilon^2_{th}}{4 \cdot R_{th}}}
         \end{equation*}
     
         \begin{block}{Importante}
             Esta expresión es \alert{válida únicamente} para calcular la \alert{máxima transferencia} de potencia
         \end{block}
-        \centering \small{(no aplica para calcular la potencia disipada por una resistencia genérica en un circuito cualquiera)}
+        \centering \small{(no aplica para calcular la potencia disipada por una resistencia genérica $R_L$, únicamente aplica para $R_L = R_{th}$)}
     \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Interludio: \hspace{3mm}descarbonización, ¿electrificación directa o $\textrm{H}_2$?}
+
+    \vspace{3mm}
+    Caso de la calefacción: ¿bombas de calor o calderas de $\textrm{H}_2$?
+    \begin{columns}
+    \begin{column}{0.4\columnwidth}
+        \vspace{-5mm}
+        \begin{center}
+            \includegraphics[height=0.55\textheight]{../figs/heat_pump_air.png}
+        \end{center}
+    \end{column}  
+    \begin{column}{0.4\columnwidth}
+        \begin{center}
+            \includegraphics[height=0.7\textheight]{../figs/H2_boiler.png}
+        \end{center}
+    \end{column}
+    \end{columns}
+    \vspace{2mm}
+    Si quieres saber más, \href{https://raw.githubusercontent.com/badber/Miscellany/master/GFC_Clean_Electrification-Future_Focus_2022.pdf}{aquí} (en inglés)
 \end{frame}
 
 
