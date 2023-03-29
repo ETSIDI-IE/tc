@@ -1,0 +1,213 @@
+\documentclass[article, a4paper]{memoir}
+\counterwithout{section}{chapter}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{verbatim}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}, retain-unity-mantissa = false}
+\usepackage{mathpazo}%Letra palatino con fuentes para matemáticas
+\usepackage{esdiff}
+\DeclareMathOperator{\di}{d\!}
+\DeclareMathOperator{\ji}{\mathrm{j}}
+\usepackage{steinmetz}
+
+%\author{Luis Badesa Bernardo}
+\author{}
+\date{}
+\title{\vspace{-20mm}
+
+Repaso de trigonometría y números complejos \vspace{-18mm}}
+
+\begin{document}
+
+\maketitle
+
+\section{Trigonometría}
+
+\subsection{Ecuación fundamental}
+
+\vspace{-5mm}
+\begin{equation*}
+  \sin^2(\alpha) + \cos^2(\alpha) = 1
+\end{equation*}
+
+\vspace{-5mm}
+\subsection{Cuadratura}
+
+\vspace{-7mm}
+\begin{equation*}
+  \quad \sin(\theta + \pi/2) = \cos(\theta) \qquad\qquad\quad \sin(\theta - \pi/2) = -\cos(\theta)
+\end{equation*}  
+
+\vspace{-5mm}
+\begin{equation*}
+  \cos(\theta + \pi/2) = -\sin(\theta) \qquad\qquad \cos(\theta - \pi/2) = \sin(\theta)
+\end{equation*}
+
+\vspace{-3mm}
+\subsection{Suma y resta de ángulos}
+
+\vspace{-9mm}
+\begin{align*}
+  \cos(\alpha - \beta) &= \cos(\alpha) \cdot \cos(\beta) + \sin(\alpha) \cdot \sin(\beta)\\
+  \cos(\alpha + \beta) &= \cos(\alpha) \cdot \cos(\beta) - \sin(\alpha) \cdot \sin(\beta)\\
+  \sin(\alpha - \beta) &= \sin(\alpha) \cdot \cos(\beta) - \cos(\alpha) \cdot \sin(\beta)\\
+  \sin(\alpha + \beta) &= \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta)
+\end{align*}
+
+\vspace{-5mm}
+\subsection{Productos y ángulo doble}
+
+\vspace{-10mm}
+\begin{align*}
+  \cos(\alpha) \cdot \cos(\beta) &= \frac{1}{2} \cdot [ \cos(\alpha+\beta) + \cos(\alpha-\beta) ]\\
+  \cos(2\alpha) &= 2 \cdot \cos^2(\alpha) - 1\\
+  \cos(2\alpha) &= 1- 2 \cdot \sin^2(\alpha)\\
+  \sin(2\alpha) &= 2 \cdot \sin(\alpha) \cdot \cos(\alpha)
+\end{align*}
+
+\vspace{-5mm}
+\subsection{Derivadas e integrales}
+
+\vspace{-10mm}
+\begin{align*}
+    \diff{\sin(\omega t + \theta)}{t} &= \omega \cdot \cos(\omega t + \theta)\\
+    \diff{\cos(\omega t + \theta)}{t} &= - \omega \cdot \sin(\omega t + \theta)\\
+    \int \sin(\omega t + \theta) \di t &= -\frac{1}{\omega} \cdot \cos(\omega t + \theta) + k\\
+    \int \cos(\omega t + \theta) \di t &= \frac{1}{\omega} \cdot \sin(\omega t + \theta) + k
+\end{align*}
+
+
+Aprovechando las relaciones de cuadratura, podemos comprobar que \textbf{\color{blue!50!black} las derivadas \underline{adelantan} $\pi/2$}:
+
+\vspace{-5mm}
+\begin{align*}
+  \diff{\sin(\omega t + \theta)}{t} = \omega \cdot \sin(\omega t + \theta + \pi/2)\\
+  \diff{\cos(\omega t + \theta)}{t} = \omega \cdot \cos(\omega t + \theta + \pi/2)
+\end{align*}
+
+\vspace{-3mm}
+Y \textbf{\color{blue!50!black}las integrales \underline{retrasan} $\pi/2$}:
+
+\vspace{-4mm}
+\begin{align*}
+  \int \sin(\omega t + \theta) \di t = \frac{1}{\omega} \cdot \sin(\omega t + \theta - \pi/2) + k\\
+  \int \cos(\omega t + \theta) \di t = \frac{1}{\omega} \cdot \cos(\omega t + \theta - \pi/2) + k
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\section{Números complejos}
+
+\subsection{Definición}
+
+\begin{minipage}{0.26\linewidth}
+  \hspace{-6mm}\includegraphics{../figs/fasor}  
+\end{minipage}
+\begin{minipage}{0.74\linewidth}
+    \begin{minipage}{0.24\linewidth}
+      Forma polar:
+      \begin{align*}
+        \overline{Y} &= Y\cdot e^{\ji\theta}\\
+                         &= Y\phase{\theta}
+      \end{align*}  
+    \end{minipage}
+    \begin{minipage}{0.29\linewidth}
+      Forma binómica:
+      \begin{align*}
+        \overline{Y} &= Y \cdot [ \cos(\theta)+\ji\cdot\sin(\theta) ]\\
+                     &= a_Y + \ji b_Y
+      \end{align*}  
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \begin{align*}
+          |\overline{Y}| &= \sqrt{a^2_Y + b^2_Y} \\
+              &=\sqrt{Y^2\cos^2(\theta) + Y^2\sin^2(\theta)}\\
+              &= Y
+        \end{align*}  
+    \end{minipage}  
+\end{minipage}
+
+
+\subsection{Fórmula de Euler}
+
+\vspace{-3mm}
+\begin{equation*}
+    e^{\ji \theta} = \cos(\theta)+\ji\cdot\sin(\theta)
+\end{equation*}
+
+\vspace{-2mm}
+\subsection{Complejo unitario}
+
+\vspace{2mm}
+\begin{minipage}{0.4\linewidth}
+  \hspace{-5mm}\includegraphics{../figs/circulo}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+  \begin{align*}
+    1\phase{0} &= e^{\ji 0} = 1\\
+    1\phase{\pi/2} &= e^{\ji \pi/2} = \ji\\
+    1\phase{\pi} &= e^{\ji \pi} = -1\\
+    1\phase{3\pi/2} &= e^{\ji 3\pi/2} = -\ji
+  \end{align*}
+  \begin{minipage}{0.5\linewidth}
+      \begin{align*}
+        \ji^2 &= e^{\ji \pi/2} \cdot e^{\ji \pi/2}\\
+              &= e^{\ji \pi}\\
+              &= -1
+      \end{align*}
+  \end{minipage}
+  \begin{minipage}{0.5\linewidth}
+      \begin{align*}
+        1/\ji &= 1/e^{\ji \pi/2} \\
+              &= e^{-\ji \pi/2} \\
+              &= e^{\ji 3\pi/2}\\
+              &= -\ji
+      \end{align*}
+  \end{minipage}
+\end{minipage}
+
+
+\vspace{6mm}
+\subsection{Operaciones}
+
+\vspace{-5mm}
+\begin{align*}
+  \overline{Y} + \overline{Z} &= \Big[Y \cos(\theta_Y) + Z \cos(\theta_Z)\Big] + \ji \cdot \Big[Y \sin(\theta_Y) + Z \sin(\theta_Z)\Big]\\
+  \overline{Y} - \overline{Z} &= \Big[Y \cos(\theta_Y) - Z \cos(\theta_Z)\Big] + \ji \cdot \Big[Y \sin(\theta_Y) - Z \sin(\theta_Z)\Big]
+\end{align*}
+
+\begin{align*}
+  \overline{Y} \cdot \overline{Z} &= (Y \cdot Z )\cdot e^{\theta_Y + \theta_Z}\\
+                                  &=(Y \cdot Z )\phase{\theta_Y + \theta_Z}\\
+  \\
+  \overline{Y}^2 &= Y^2\phase{2\theta_Y}\\
+  \\
+  \frac{\overline{Y}}{\overline{Z}} &= \frac{Y}{Z}\cdot e^{\theta_Y - \theta_Z}\\
+                                  &= \frac{Y}{Z}\phase{\theta_Y - \theta_Z}
+\end{align*}
+
+
+\subsection{Conjugado}
+
+\vspace{-7mm}
+\begin{align*}
+  \overline{Y}^* &= Y\cdot e^{-\ji\theta}\\
+                 &= Y\phase{-\theta}\\
+                 &= Y \cdot [ \cos(\theta) - \ji\cdot\sin(\theta) ]\\
+                 &= a_Y - \ji b_Y\\
+  \\
+  \overline{Y} \cdot \overline{Y}^* &= |Y|^2
+\end{align*}
+
+
+\end{document}
