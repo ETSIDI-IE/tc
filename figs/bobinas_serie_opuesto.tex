@@ -8,8 +8,8 @@
 
 \begin{circuitikz}[american voltages]
   \draw (0,0) to [short, *-, i_= $i(t)$] ++(1,0)
-  to[L, l_=$L1$, name = L1] ++(2,0)
-  to[L, l_=$L2$, name = L2, i>_= $i(t)$] ++(2,0)
+  to[L, l_=$L_1$, name = L1] ++(2,0)
+  to[L, l_=$L_2$, name = L2, i>_= $i(t)$] ++(2,0)
   to [short, -*] ++(1,0);
   \draw[fill=black] ($(L1.north west) + (0, .1)$) circle (1pt);
   \draw[fill=black] ($(L2.north east) + (0, .1)$) circle (1pt);

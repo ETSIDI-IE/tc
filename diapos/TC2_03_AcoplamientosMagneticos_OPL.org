@@ -54,43 +54,46 @@ Una bobina es un arrollamiento de un conductor (/conjunto de $N$ espiras conecta
 
 ** Bobina
 
-- Tensión inducida en $N$ espiras
+En un circuito magnético lineal el flujo es proporcional a la corriente:
+  #+begin_export latex
+  \[
+    \phi(t) = A \cdot i(t) \rightarrow   \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)}
+  \]
+  #+end_export
+En una bobina de $N$ espiras la tensión autoinducida es:
 #+begin_export latex
 \[
 u(t) = N \cdot \frac{\mathrm{d}\phi(t)}{\mathrm{d} t}
 \]
 #+end_export
-- En un circuito magnético lineal el flujo es proporcional a la corriente
-#+begin_export latex
-\[
-  \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)}
-\rightarrow
-u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
-\]
-#+end_export
 
-- Autoinductancia ($L$, [H])
-***                                                                 :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
+Combinando:
 #+begin_export latex
 \[
-  \boxed{L = N \cdot \frac{\phi(t)}{i(t)}}
-\]
-#+end_export
-#+begin_export latex
-\[
-  \boxed{u(t) = L \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}}
+u(t) = N \cdot \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} \cdot  \frac{\mathrm{d}i(t)}{\mathrm{d} t} \rightarrow u(t) = N \cdot \frac{\phi(t)}{i(t)} \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}
 \]
 #+end_export
 ***                                                                 :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.5
+:BEAMER_col: 0.7
 :END:
-
+Por tanto, la ecuación de la bobina (autoinductancia $L$, [H]):
+#+begin_export latex
+\[
+  \boxed{u(t) = L \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}} \quad \boxed{L = N \cdot \frac{\phi(t)}{i(t)}}
+\]
+#+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/Bobina.pdf]]
+
+
+
+
+
 * Acoplamiento magnético
 ** 
 :PROPERTIES:
@@ -113,7 +116,6 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 
 $\phi_{i}$: flujo total que atraviesa la bobina $i$
 #+end_center
-
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
