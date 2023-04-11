@@ -447,7 +447,7 @@ Con estos fasores y las impedancias podemos calcular las corrientes de línea:
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.3-3}
-	    Un sistema trifásico de SFI y tensión $\qty{200}{\volt}$ alimenta tres impedancias conectadas en triángulo, de valor $\overline{Z}_{AB}=10\phase{0^\circ}\,\Omega$, $\overline{Z}_{BC}=10\phase{30^\circ}\,\Omega$, $\overline{Z}_{AB}=10\phase{-45^\circ}\,\Omega$. Determinar las corrientes de fase y línea, y dibujar el diagrama fasorial.
+	    Un sistema trifásico de SFI y tensión $\qty{200}{\volt}$ alimenta tres impedancias conectadas en triángulo, de valor $\overline{Z}_{AB}=10\phase{0^\circ}\,\Omega$, $\overline{Z}_{BC}=10\phase{30^\circ}\,\Omega$, $\overline{Z}_{CA}=10\phase{-45^\circ}\,\Omega$. Determinar las corrientes de fase y línea, y dibujar el diagrama fasorial.
 
         \vspace{1mm}
 	    \hspace*{-5mm}\hrulefill
@@ -468,9 +468,10 @@ Con estos fasores y las impedancias podemos calcular las corrientes de línea:
 	    \end{align*}
 	    siendo las corrientes de línea, por 1LK:
 	    \begin{align*}
-	     \overline{I}_A&=(20\phase{-120^\circ})-(20\phase{165^\circ})=24.350\phase{-67.50^\circ}\,\si{\ampere}\\	        \overline{I}_B&=(20\phase{-30^\circ})-(20\phase{-120^\circ})=28.284\phase{15^\circ}\,\si{\ampere}\\
-	    \overline{I}_C&=(20\phase{165^\circ})-(20\phase{-30^\circ})=39.660\phase{157.5^\circ}\,\si{\ampere}
-	    \end{align*}
+         \overline{I}_A \; &= \; \overline{I}_{AB} - \overline{I}_{CA} \;=\; (20\phase{-120^\circ})-(20\phase{165^\circ}) \;=\; 24.35\phase{-67.50^\circ}\,\si{\ampere}\\	        
+         \overline{I}_B \; &= \; \overline{I}_{BC} - \overline{I}_{AB} \;=\; (20\phase{-30^\circ})-(20\phase{-120^\circ}) \;=\; 28.28\phase{15^\circ}\,\si{\ampere}\\
+        \overline{I}_C \; &= \; \overline{I}_{CA} - \overline{I}_{BC} \;=\; (20\phase{165^\circ})-(20\phase{-30^\circ}) \;=\; 39.66\phase{157.5^\circ}\,\si{\ampere}
+        \end{align*}
 	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-3}. 
 	    \begin{figure}[H]
 	        \centering
