@@ -236,23 +236,19 @@ Coeficiente de acoplamiento de la bobina 2:
 
 ** Coeficiente de inducción mutua
 
-- Mediante un balance energético puede demostrarse que:
+Cuando el circuito magnético es ideal:
 #+begin_export latex
 \[
-  M_{12} = M_{21} = M
+  \begin{rcases}
+  M_{12} = M_{21} &= M\\
+  k_1 = k_2 &= k    
+  \end{rcases}
+  \rightarrow \boxed{M = k \sqrt{L_1 \cdot L_2}} \qquad  k \leq 1
 \]
 
-\[
-  k_1 = k_2 = k
-\]
-
-\[
-  \boxed{M = k \sqrt{L_1 \cdot L_2}} \qquad  k \leq 1
-\]
 #+end_export
 
-- Cuando el acoplamiento entre las dos bobinas es perfecto:
-
+Cuando el acoplamiento entre las dos bobinas es perfecto:
 #+begin_export latex
 \[\left.
 \begin{array}{cc}
