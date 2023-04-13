@@ -236,7 +236,7 @@ Coeficiente de acoplamiento de la bobina 2:
 
 ** Coeficiente de inducción mutua
 
-Cuando el circuito magnético es ideal:
+Cuando el circuito magnético es *lineal*:
 #+begin_export latex
 \[
   \begin{rcases}
@@ -260,16 +260,38 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 
 ** Resumen
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
 #+begin_export latex
 \[
   L_1 = N_1 \frac{\phi_{11}}{i_1}
 \]
+#+end_export
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:../figs/acoplamientoTikz.pdf]]
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+begin_export latex
 \[
   L_2 = N_2 \frac{\phi_{22}}{i_2}
 \]
+#+end_export
 
-
+***                                                       :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+#+begin_export latex
 \begin{align*}
   M &= N_1 \frac{\phi_{12}}{i_2}\\
     &= N_2 \frac{\phi_{21}}{i_1}
