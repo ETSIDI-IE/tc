@@ -15,10 +15,10 @@
   \draw
   (T.A1) to[short, -*, i<=$I_1$] ++(-1,0) node (A) {}
   (T.A2) to[short, -*] ++(-1,0) node (B) {}
-  (A) to[open,v=$V_1$] (B)
+  (A) to[open,v=$U_1$] (B)
   (T.B1) to[short, -*, i=$I_2$] ++(1,0) node (C) {}
   (T.B2) to[short, -*] ++(1,0) node (D) {}
-  (C) to[open,v^=$V_2$] (D);
+  (C) to[open,v^=$U_2$] (D);
   \draw
   (A) to[short] ++(-1.5,0) node (Ag) {}
   (B) to[short] ++(-1.5,0) node (Bg) {}
@@ -29,6 +29,6 @@
   ([xshift=3.5cm]D.center) node(Z2') {}
   to[short, *-] ++(-1,0) node(Z2) {}
   (Z2) to[sV, voltage dir = RP, v= $\epsilon_g / a$, i=$I_2$] (Z1)
-  (Z1') to[open, v^=$V_2$] (Z2');
+  (Z1') to[open, v^=$U_2$] (Z2');
 \end{circuitikz}
 \end{document}
