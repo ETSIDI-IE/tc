@@ -62,6 +62,12 @@
   \underset{\makebox[0pt]{\begin{tabular}{@{}c@{}}\ensuremath{#2}\\[0pt]#3\end{tabular}}}{#1}
 }
 
+\usepackage{rotating,stackengine,scalerel}
+\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
+  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
+  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
+  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}} % https://tex.stackexchange.com/questions/481532/star-wye-electrical-connection-math-symbol
+  
 \raggedbottom
 \sloppybottom
 \clubpenalty=10000
