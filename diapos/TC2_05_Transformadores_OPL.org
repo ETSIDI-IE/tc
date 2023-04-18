@@ -88,7 +88,7 @@ Combinando la ecuación del secundario con la ecuación de la carga:
 Combinando con la ecuación del primario:
 #+begin_export latex
 \[
-  \overline{Z}_{in}  = \frac{\overline{U}_1}{\overline{I}_1} =  (R_1 + j \omega L_1) + \frac{\omega^2 M^2}{(R_2 + j \omega L_2) + \overline{Z}_L}
+  \overline{Z}_{in}  = \frac{\overline{U}_1}{\overline{I}_1} =  (R_1 + j \omega L_1) + \frac{\omega^2 M^2}{(R_2 + j \omega L_2) + \overline{Z}_L} = \overline{Z}_1 + \frac{\omega^2 M^2}{\overline{Z}_2 + \overline{Z}_L}
 \]
 #+end_export
 
