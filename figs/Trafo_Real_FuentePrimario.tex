@@ -1,0 +1,30 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+
+\usepackage[americaninductors, americanvoltages]{circuitikzgit}
+\usetikzlibrary{positioning, fit, calc}
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw
+  (0,0) node[transformer, yscale = 2] (T) {}
+  (T.base) node{$M$}
+  (T.inner dot A1) node[circ]{}
+  (T.inner dot B1) node[circ]{}
+  (T.west) node{$L_1$}
+  (T.east) node{$L_2$};
+  \draw
+  (T.A1) to[R, -*, l_=$R_1$, i<=$I_1$] ++(-2,0) node (A) {}
+  (T.A2) to[short, -*] ++(-2,0) node (B) {}
+  (A) to[open,v=$U_1$] (B)
+  (T.B1) to[R, -*,l^=$R_2$, i<=$I_2$] ++(2,0) node (C) {}
+  (T.B2) to[short, -*] ++(2,0) node (D) {}
+  (C) to[open,v^=$U_2$] (D);
+  \draw
+  (A) to[short] ++(-1,0) node (A') {}
+  (B) to[short] ++(-1,0) node (B') {}
+  (A') to[sV, voltage dir = old, v_=$\epsilon_g$] ++(0,-2)
+  to[european resistor, l_=$Z_g$] (B');
+\end{circuitikz}
+\end{document}
