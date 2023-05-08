@@ -935,14 +935,15 @@ Equivalente Ideal
 #+ATTR_LATEX: :height 0.9\textheight
 [[file:../figs/AutotrafoPerfecto.pdf]]
 
-** Ecuaciones del Autotransformador Perfecto
-#+ATTR_LATEX: :height 0.5\textheight
-[[file:../figs/AutotrafoPerfecto.pdf]]
 
+** Ecuaciones del Autotransformador Perfecto
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/AutotrafoPerfecto.pdf]]
 #+begin_export latex
 \begin{align*}
   \overline{U}_1 &= j \omega L_1 \cdot \overline{I}_1 + j \omega (M + L_2) \cdot \overline{I}_2\\
-  \overline{U}_2 &= j \omega (M + L_2) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
+  \overline{U}_2 &= j \omega (M + L_2) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2\\
+  M &= \sqrt{L' \cdot L_2}
 \end{align*}
 #+end_export
 ** Circuito Alternativo del Autotransformador Perfecto
@@ -967,44 +968,71 @@ Equivalente Ideal
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/AutotrafoPerfecto.pdf]]
+#+begin_export latex
+\begin{align*}
+  \overline{U}_1 &= j \omega{\color{blue} L_1} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2\\
+  \overline{U}_2 &= j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2 
+\end{align*}
 
+#+end_export
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.6
 :END:
 #+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/AutotrafoPerfecto2.pdf]]
+#+begin_export latex
+\begin{align*}
+  \overline{U}_1 &= j \omega{\color{blue} (L' + L_2 + 2M)} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2\\
+  \overline{U}_2 &= j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2
+\end{align*}
 
+#+end_export
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :END:
 #+begin_export latex
 \begin{align*}
-  \overline{U}_1 &= j \omega{\color{blue} L_1} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2 = j \omega{\color{blue} (L' + L_2 + 2M)} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2\\
-  \overline{U}_2 &= j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2 = j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2
-\end{align*}
-
-\begin{align*}
   L_1 &= L' + L_2 + 2M\\
-  M' &= M + L_2
+  M &= \sqrt{L' \cdot L_2}
 \end{align*}
 #+end_export
 
 ** Transformador Perfecto Equivalente
-#+ATTR_LATEX: :height 0.5\textheight
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/AutotrafoPerfecto.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/AutoTrafo_TrafoPerfecto.pdf]]
 
 #+begin_export latex
 \begin{align*}
   L_1 &= L' + L_2 + 2M\\
-  M &= \sqrt{L' \cdot L_2}\\
   M' &= M + L_2
 \end{align*}
 #+end_export
 ** Transformador Perfecto Equivalente
-#+ATTR_LATEX: :height 0.35\textheight
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/AutotrafoPerfecto.pdf]]
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.33\textheight
 [[file:../figs/AutoTrafo_TrafoPerfecto.pdf]]
+
 Comprobamos:
 #+begin_export latex
 \begin{align*}
