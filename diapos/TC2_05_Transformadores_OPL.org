@@ -537,14 +537,14 @@ Podemos escribir:
   \frac{L_1 \overline{I}_1}{N_1} + \frac{L_2 \overline{I}_2}{N_2} = 0
 \]
 #+end_export
-Y con la relación entre ambas obtenemos
+Y con la relación entre ambas obtenemos[fn:1]:
 #+begin_export latex
 \[
   L_1 = L_2 \cdot \left(\frac{N_1}{N_2}\right)^2
   \rightarrow
   \frac{N_1L_2 \overline{I}_1}{N^2_2} + \frac{L_2 \overline{I}_2}{N_2} = 0
   \rightarrow
-  \boxed{\frac{\overline{I}_1}{\overline{I}_2} = \mp \frac{1}{a} = \mp \frac{N_2}{N_1}}
+  \boxed{\frac{\overline{I}_1}{\overline{I}_2} = {\color{red}-} \frac{1}{a} = {\color{red}-} \frac{N_2}{N_1}}
 \]
 #+end_export
 ** Un transformador ideal no consume potencia
@@ -803,18 +803,20 @@ El acoplamiento es perfecto.
 [[file:../figs/TrafoIdealVariosDevanados.pdf]]
 
 ** Relación de Transformación del Transformador Ideal
-#+ATTR_LATEX: :height 0.35\textheight
-[[file:../figs/TrafoIdealVariosDevanados.pdf]]
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 Debido a las condiciones de idealidad:
 
 #+begin_export latex
 \[
-  \overline{\phi}_{11} \pm \overline{\phi}_{22} \pm \overline{\phi}_{33} = 0
+  \overline{\phi}_{11} + \overline{\phi}_{22} + \overline{\phi}_{33} = 0
 \]
 
 \[
-  N_1 \overline{I}_1 \pm N_ 2\overline{I}_2 \pm N_3 \overline{I}_{3} = 0
+  N_1 \overline{I}_1 + N_ 2\overline{I}_2 + N_3 \overline{I}_{3} = 0
 \]
 
 #+end_export
@@ -822,16 +824,24 @@ Debido a las condiciones de idealidad:
 En términos de corriente:
 #+begin_export latex
 \[
-  \boxed{\overline{I}_1 = \mp 1/a_{12} \cdot \overline{I}_2 \mp 1/a_{13} \cdot  \overline{I}_3}
+  \boxed{\overline{I}_1 = {\color{red}-} 1/a_{12} \cdot \overline{I}_2 {\color{red}-} 1/a_{13} \cdot  \overline{I}_3}
 \]
 #+end_export
+Si las corrientes $I_2$ e $I_3$ son salientes, en la ecuación anterior los signos serán positivos.
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+ATTR_LATEX: :height 0.9\textheight
+[[file:../figs/TrafoIdealVariosDevanados.pdf]]
+
 
 ** Impedancia de Entrada
 #+ATTR_LATEX: :height 0.9\textheight
 [[file:../figs/TrafoIdealVariosDevanados_Impedancia.pdf]]
 
 
-** Impedancia de Entrada
+** Impedancia de Entrada[fn:2]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -883,25 +893,27 @@ Resultado:
 
 
 ** Circuito Equivalente de un Transformador Perfecto
-
+\vspace{0.3cm}
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
+:BEAMER_opt: t
 :END:
 
-
+Transformador Perfecto
 #+ATTR_LATEX: :width \textwidth
 [[file:../figs/TrafoPerfectoVariosDevanados_Impedancia.pdf]]
-Transformador Perfecto
+
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
+:BEAMER_opt: t
 :END:
 
-
+Equivalente Ideal
 #+ATTR_LATEX: :width \textwidth
 [[file:../figs/TrafoPerfectoIdealVariosDevanados_Impedancia.pdf]]
-Equivalente Ideal
+
 
 ** Circuito Equivalente de un Transformador Perfecto
 
@@ -1016,3 +1028,8 @@ Comprobamos:
 :BEAMER_opt: [b]
 :END:
 [[file:../figs/Trafo_Ideal.pdf]]
+
+* Footnotes
+[fn:2]Las corrientes en 2 y 3 son salientes, y por tanto, en la ecuación de corrientes usamos el signo positivo. 
+
+[fn:1]Si las dos corrientes van en el mismo sentido, la ecuación tendrá un signo positivo.
