@@ -243,17 +243,21 @@
 %%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Sistemas lineales}
+
+    \vspace{2mm}
     Todos los circuitos eléctricos que se estudian en esta asignatura se comportan como \alert{sistemas lineales}: 
     
     \vspace{5mm}
     \begin{itemize}
     \item \(f(x + y) = f(x) + f(y)\)
-    
+
+    \vspace{2mm}
     La respuesta \(f\) a la suma de dos entradas \(x\) e \(y\) es igual a la suma de la respuesta individual a cada una de las entradas
     
     \vspace{5mm}
     \item \(f(k \cdot x) = k \cdot f(x)\)
-    
+
+    \vspace{2mm}
     La respuesta a una entrada que está multiplicada por un factor de escala \(k\) es igual a multiplicar por este factor a la respuesta a la entrada
     \end{itemize}
 \end{frame}
@@ -458,7 +462,7 @@
     
     La \alert{fuerza electromotriz} (f.e.m.) es la causa que mantiene a los electrones en movimiento (energía cedida por unidad de carga), y la proporcionan los elementos activos (\alert{generadores})
     
-    La \alert{unidad} tanto de tensión eléctrica como de f.e.m. es el \alert{voltio} [V]
+    La \alert{unidad} tanto de tensión eléctrica como de f.e.m.~es el \alert{voltio} [V]
 \end{frame}
 
 %%%%%%%%%%%
@@ -502,7 +506,7 @@
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{Signo de la potencia eléctrica}
-    Para determinar el \alert{signo de la potencia eléctrica} hay que tener en consideración los signos de las variables de las que depende, la tensión y la corriente
+    Para determinar el \alert{signo de la potencia eléctrica} hay que tener en cuenta los signos de las variables de las que depende, la tensión y la corriente
     \vspace{5mm}
     \begin{itemize}
         \item Flechas en \alert{mismo sentido}: potencia \alert{positiva} % (absorbe potencia) $\rightarrow$ \alert{receptor}
@@ -755,7 +759,7 @@
     \item Almacena \alert{energía magnética}:
     \end{itemize}
     \[
-      E_L(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) d\tau = \frac{1}{2} \cdot L \cdot i^2(t)
+      E_L(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) \; d\tau = \frac{1}{2} \cdot L \cdot i^2(t)
     \]
     \begin{itemize}
     \item En circuitos de CC es un \alert{cortocircuito}:
@@ -823,7 +827,7 @@
     \item Un condensador almacena \alert{energía eléctrica}:
     \end{itemize}
     \[
-      E_c(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) d\tau = \boxed{ \frac{1}{2} \cdot C \cdot u^2(t) }
+      E_c(t) = \int_{-\infty}^t u(\tau) \cdot i(\tau) \; d\tau = \boxed{ \frac{1}{2} \cdot C \cdot u^2(t) }
     \]
     
     \begin{itemize}
@@ -844,6 +848,7 @@
 \begin{frame}{Generadores de tensión}
     Proporcionan una diferencia de potencial $U$ entre sus bornes de salida
     \vspace{-5mm}
+    
     \begin{columns}[T]
     \begin{column}{0.4\columnwidth}
         \begin{center}
@@ -1243,7 +1248,7 @@
     \begin{align*}
         P_{\textrm{útil}} &= P_{\textrm{absorbida}} - P_{\textrm{pérdidas}}\\[7pt]
         P_{\textrm{útil}} &= \epsilon'\cdot I\\[7pt]
-        P_{\textrm{pérdidas}} &= R_{\epsilon'}\cdot I^2 \;\; \text{\small{(ley de Joule)}}\\[7pt]
+        P_{\textrm{pérdidas}} &= R_{\epsilon'}\cdot I^2 \quad\; \text{\small{(ley de Joule)}}\\[7pt]
         P_{\textrm{absorbida}} &= U_{AB}\cdot I\\[15pt]
         & \hspace{-25mm}\text{Dividiendo en ambos lados por } I, \text{ se obtiene 2LK:}\\[7pt]
         \Aboxed{U_{AB}&=\epsilon'+R_{\epsilon'}\cdot I}
@@ -1511,7 +1516,7 @@
 \begin{frame}{Ejemplo: \hspace{3mm}fuentes de corriente reales en serie \hspace{3mm}(continuación)}
 
     \vspace{1mm}
-    Las fuentes de tensión en serie se transforman directamente en una fuente equivalente, y esta se transforma de vuelta en una fuente de corriente:
+    Las fuentes de tensión en serie se asocian en una fuente equivalente, y esta se transforma de vuelta en una fuente de corriente:
 
     %\vspace{4mm}
     \begin{minipage}[c]{0.15\linewidth}
@@ -1603,7 +1608,7 @@
       \boxed{R_{eq} = \frac{R_1 \cdot R_2}{R_1 + R_2}}
     \end{equation*}
     
-    \centering \small{(conveniente recordarla para agilizar la resolución de algunos ejercicios)}
+    \centering \small{(conveniente \underline{recordarla} para agilizar la resolución de algunos ejercicios)}
 
     \vspace{2mm}
     
@@ -1691,7 +1696,7 @@
       \boxed{i_1(t) = i(t) \cdot \frac{R_2}{R_1 + R_2}}
     \end{equation*}
     
-    \centering \small{(conveniente recordarla para agilizar la resolución de algunos ejercicios)} 
+    \centering \small{(conveniente \underline{recordarla} para agilizar la resolución de algunos ejercicios)} 
 
     \vspace{2mm}
     
@@ -1830,7 +1835,7 @@
 \begin{frame}{Ejemplo: \hspace{3mm}fuentes de tensión reales en paralelo \hspace{3mm}(continuación)}
 
     \vspace{2mm}
-    Las fuentes de corriente en paralelo se transforman directamente en una fuente equivalente, y esta se transforma de vuelta en una fuente de tensión:
+    Las fuentes de corriente en paralelo se asocian en una fuente equivalente, y esta se transforma de vuelta en una fuente de tensión:
 
     \begin{minipage}[c]{0.45\linewidth}
         \begin{center}
@@ -2097,17 +2102,17 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 \begin{frame}{Conexión estrella - triángulo, \hspace{3mm}caso particular}
     
-    En el caso concreto de que las resistencias de la estrella/triángulo sean \alert{iguales}\ldots{}
+    En el caso concreto de que las \alert{resistencias} en estrella/triángulo sean \alert{iguales}\ldots{}
     \begin{align*}
-      &R_a=R_b=R_c=R_{\wye}\\
-      & R_{ab}=R_{bc}=R_{ca}=R_{\Delta}
+      R_a=R_b=R_c \; &= \; R_{\wye}\\
+      R_{ab}=R_{bc}=R_{ca} \; &= \; R_{\triangle}
     \end{align*}
     \ldots{}las expresiones anteriores se reducen a:
     \begin{equation*}
-      \boxed{R_{\Delta} = 3\cdot R_{\wye}}
+      \boxed{\; R_{\triangle} = 3\cdot R_{\wye} \;}
     \end{equation*}
     
-    \centering \small{(este resultado será muy útil en el tema 3, en \alert{corriente alterna trifásica} equilibrada)}
+    \centering \small{(este resultado será muy útil en el Tema 3, en \alert{corriente alterna trifásica} equilibrada)}
 \end{frame}
 
 %%%%%%%%%%%%%%%%
@@ -2121,7 +2126,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
      \end{figure}
 
     \vspace{5mm}
-    \small{\hspace{29mm}\alert{Solución}: $R_{\Delta} = \qty{180}{\ohm}$ 
+    \small{\hspace{29mm}\alert{Solución}: $R_{\triangle} = \qty{180}{\ohm}$ 
     \hspace{10mm}
     \alert{Solución}: $R_a = \frac{10}{3} \, \ohm$, $R_b = \qty{5}{\ohm}$, $R_c = \qty{10}{\ohm}$} 
 \end{frame}
@@ -2139,7 +2144,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Paso 1: aplicar 1LK}
+\begin{frame}{Paso 1: \hspace{3mm}aplicar 1LK}
     \begin{columns}
     \begin{column}{0.4\columnwidth}
     \vspace{-5mm}
@@ -2189,7 +2194,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Paso 2: aplicar 2LK}
+\begin{frame}{Paso 2: \hspace{3mm}aplicar 2LK}
     \begin{columns}
     \begin{column}{0.5\columnwidth}
     \begin{center}
@@ -2230,7 +2235,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Paso 3: combinar las ecuaciones}
+\begin{frame}{Paso 3: \hspace{3mm}combinar las ecuaciones}
     \begin{columns}
     \begin{column}{0.5\columnwidth}
     \begin{center}
@@ -2253,7 +2258,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Paso 3, en forma matricial}
+\begin{frame}{Paso 3, \hspace{3mm}en forma matricial}
     \vspace{4mm}
     \begin{equation*}
       \begin{bmatrix}
@@ -2346,7 +2351,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Ecuaciones de malla, aplicando 2LK}
+\begin{frame}{Ecuaciones de malla, \hspace{3mm}aplicando 2LK}
     \begin{center}
     \includegraphics[height=0.45\textheight]{../figs/mallas1_corrientes.pdf}
     \end{center}
@@ -2519,7 +2524,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Ecuaciones de nudo, aplicando 1LK}
+\begin{frame}{Ecuaciones de nudo, \hspace{3mm}aplicando 1LK}
     \begin{center}
     \includegraphics[width=.8\linewidth]{../figs/nudos.pdf}
     \end{center}
@@ -2537,7 +2542,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Tensiones en las resistencias, ley de Ohm}
+\begin{frame}{Tensiones en las resistencias, \hspace{3mm}ley de Ohm}
     \begin{center}
     \includegraphics[width=.7\linewidth]{../figs/nudos.pdf}
     \end{center}
@@ -2550,7 +2555,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Combinando las ecuaciones de nudos con la Ley de Ohm}
+\begin{frame}{Combinando las ecuaciones de nudos con la ley de Ohm}
 
     \vspace{3mm}
     \alert{Objetivo}: despejar las \alert{tensiones en cada nudo}
@@ -2581,15 +2586,15 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \end{center}
     \begin{equation*}
       \begin{bmatrix}
-        \dfrac{1}{R_1}+\dfrac{1}{R_2} & - \dfrac{1}{R_2}\\
-        -\dfrac{1}{R_2} & \dfrac{1}{R_2}+\dfrac{1}{R_3}
+        \dfrac{1}{R_1}+\dfrac{1}{R_2} & \quad - \dfrac{1}{R_2}\\[15pt]
+        -\dfrac{1}{R_2} & \quad \dfrac{1}{R_2}+\dfrac{1}{R_3}
       \end{bmatrix} \cdot%
       \begin{bmatrix}
-        \vphantom{\dfrac{1}{R_1}} U_A\\
+        \vphantom{\dfrac{1}{R_1}} U_A\\[15pt]
         \vphantom{\dfrac{1}{R_1}} U_B
       \end{bmatrix} = %
       \begin{bmatrix}
-        \vphantom{\dfrac{1}{R_1}} I_{g1}\\
+        \vphantom{\dfrac{1}{R_1}} I_{g1}\\[15pt]
         \vphantom{\dfrac{1}{R_1}} -I_{g2}
       \end{bmatrix}
     \end{equation*}
@@ -2891,7 +2896,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
         \item Permiten transformar un circuito complejo en un equivalente \alert{más simple}
 
         \vspace{2mm}
-        \item Útiles cuando solo nos interesa la \alert{respuesta global de un circuito}, y no las intensidades y tensiones parciales        
+        \item Útiles cuando solo nos interesa la \alert{respuesta global de un circuito}, y no las intensidades o tensiones parciales        
     \end{itemize}
 
     \vspace{1mm}
@@ -2904,7 +2909,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 \begin{frame}{Teorema de Thévenin en corriente continua}
     \vspace{3mm}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una \alert{resistencia} (resistencia de Thévenin, \(R_{th}\))
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos A-B, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una \alert{resistencia} (resistencia de Thévenin, \(R_{th}\))
 
     \vspace{2mm}
     \begin{center}
@@ -2944,7 +2949,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 
 \begin{frame}{Teorema de Norton en corriente continua}
     \vspace{3mm}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una \alert{resistencia} (resistencia de Norton, \(R_N\))
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos \alert{puede sustituirse}, desde el punto de vista de sus terminales externos A-B, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una \alert{resistencia} (resistencia de Norton, \(R_N\))
 
     \vspace{2mm}   
     \begin{center}
@@ -2987,7 +2992,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 \begin{frame}{Cálculo de resistencia Thévenin/Norton}
     \vspace{4mm}
     \begin{itemize}
-    \item Siempre podemos calcular la resistencia Thévenin/Norton \alert{calculando tanto $U_{oc}$ como $I_{sc}$}, pero en ocasiones \alert{no es sencillo} calcular estas magnitudes
+    \item Siempre podemos calcular la resistencia Thévenin/Norton \alert{calculando tanto $U_{oc}$ como $I_{sc}$}, pero en ocasiones \alert{no es sencillo} calcular ambas magnitudes
 
     \vspace{5mm}
     \item Existe un método alternativo:
@@ -3041,7 +3046,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
 \subsection{Teorema de máxima transferencia de potencia}
 
 \begin{frame}{Teorema de máxima transferencia de potencia: \hspace{4mm}planteamiento}
-    ¿Qué resistencia \(R_L\) hay que conectar en los terminales AB para que el circuito entregue la \alert{máxima potencia posible}?
+    ¿Qué resistencia \(R_L\) hay que conectar en los terminales A-B para que el circuito entregue la \alert{máxima potencia posible}?
     
     \begin{center}
         \includegraphics[height=0.55\textheight]{../figs/thevenin_continua_red.pdf}
@@ -3072,7 +3077,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
     \end{columns}
 
     \vspace{5mm}
-    La \alert{condición de máximo} es:
+    La \alert{condición} de \alert{máximo} es:
     \[
       \boxed{%
         \diff{P_L}{R_L} = 0%
@@ -3118,7 +3123,7 @@ Combinando las expresiones de las dos diapositivas anteriores:
         \includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin_R.pdf}
     \end{center}
     
-    \ldots{}la \alert{resistencia de carga} que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
+    \ldots{}la \alert{resistencia de carga} que hay que conectar entre sus terminales A-B para obtener la máxima potencia disponible es:
     \[
       \boxed{R_L = R_{th}}
     \]
@@ -3133,7 +3138,7 @@ La \alert{máxima potencia} que puede entregarse a la carga es:
 
     \vspace{3mm}
     \begin{minipage}[c]{0.4\linewidth}
-        \includegraphics[height=0.62\textheight]{../figs/thevenin_continua.pdf}
+        \includegraphics[height=0.62\textheight]{../figs/EquivalenteThevenin0_R.pdf}
     \end{minipage}
     \hfill
     \begin{minipage}[c]{0.58\linewidth}

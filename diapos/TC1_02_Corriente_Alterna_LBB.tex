@@ -163,16 +163,16 @@
 
 %%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Formas de onda periódicas: \hspace{3mm}valores característicos}
+\begin{frame}{Formas de onda periódicas: \hspace{3mm}valores característicos} \label{diapo:valorEficaz_definicion}
     \vspace{1mm}
     \begin{itemize}
         \item \alert{Valor medio ($Y_m$)}: media aritmética de los valores instantáneos que toma la función en un periodo (o semiperiodo, o cuarto de periodo) 
         \begin{equation*}
-            \boxed{Y_m=\frac{1}{T}\int_{a}^{a+T}y(t)\, dt}
+            \boxed{\; Y_m \; = \; \frac{1}{T}\int_{a}^{a+T}y(t)\, dt \;}
         \end{equation*}
         \item \alert{Valor eficaz ($Y_{ef}$)}: raíz cuadrada de la media de los cuadrados de los valores que toma la función en un periodo
         \begin{equation*}
-            \boxed{Y_{ef} = \sqrt{\frac{1}{T}\cdot\int_{a}^{a+T}y^{2}(t)\, dt}}
+            \boxed{\; Y_{ef} \, = \, \sqrt{\frac{1}{T}\cdot\int_{a}^{a+T}y^{2}(t)\, dt} \;}
         \end{equation*}
         También denominado ``valor RMS'', del inglés \textit{root mean square}
 
@@ -289,17 +289,34 @@
 \begin{frame}{Valor medio y valor eficaz de una onda senoidal}
     \begin{block}{Valor medio}
         En un periodo: \[
-        Y_m=\frac{1}{\boldsymbol{T}}\int_{0}^{\boldsymbol{T}}y(t)\, dt =\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega \cdot t +\theta)\, dt = \boxed{\boldsymbol{0}}
+        Y_m
+        \; = \;
+        \frac{1}{\boldsymbol{T}}\int_{0}^{\boldsymbol{T}}y(t)\, dt 
+        \; = \;
+        \frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega \cdot t +\theta)\, dt 
+        \; = \;
+        \boxed{\boldsymbol{0}}
         \]
         En un \href{https://raw.githubusercontent.com/ETSIDI-IE/tc/master/docs/ejercicios_clase/TC1_02_Ym_semiperiodo_senoidal_LBB.pdf}{semiperiodo positivo} ($\theta = \ang{0}$): \[
-        Y_m=\frac{1}{\boldsymbol{T/2}}\int_{0}^{\boldsymbol{T/2}}Y_{max}\cdot\sin(\omega \cdot t)\, dt = \dfrac{2\cdot Y_{max}}{\pi}\approx 0,637\cdot Y_{max}
+        Y_m
+        \; = \;
+        \frac{1}{\boldsymbol{T/2}}\int_{0}^{\boldsymbol{T/2}}Y_{max}\cdot\sin(\omega \cdot t)\, dt 
+        \; = \;
+        \dfrac{2\cdot Y_{max}}{\pi}
+        \; \approx \; 
+        0,637\cdot Y_{max}
         \]
     \end{block}
     
     \begin{block}{Valor eficaz}
         \[
-        Y = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)\, dt} 
-        =\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left[Y_{max}\cdot\sin(\omega\cdot t+\theta)\right]^{2}dt}=\boxed{\boldsymbol{\frac{Y_{max}}{\sqrt{2}}}}
+        Y 
+        \; = \; 
+        \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)\, dt} 
+        \; = \;
+        \sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left[Y_{max}\cdot\sin(\omega\cdot t+\theta)\right]^{2}dt}
+        \; = \;
+        \boxed{\boldsymbol{\frac{Y_{max}}{\sqrt{2}}}}
         \]
     \end{block}
 \end{frame}
@@ -530,6 +547,7 @@
     \animategraphics[loop,width=12cm]{10}{../figs/gifs/Sumafasores-}{0}{47}
     \end{center}
     % Info para insertar .gif: https://latex-beamer.com/tutorials/gif-latex-beamer/    
+    % Esta info también está en "figs\insert_GIF_Beamer.pdf"
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%
@@ -543,8 +561,13 @@
     \end{itemize}     
     \vspace*{-7mm}
     \begin{align*}
-        \overline{Y}_1&=\overbrace{Y_{ef_1}\,\cos(\theta_1)}^{a_1}+\mathrm{j}\,\overbrace{Y_{ef_1}\,\sin(\theta_1)}^{b_1}=Y_{ef_1}\phase{\theta_1}\\
-        \overline{Y}_2&=\underbrace{Y_{ef_2}\,\cos(\theta_2)}_{a_2}+\mathrm{j}\,\underbrace{Y_{ef_2}\,\sin(\theta_2)}_{b_2}=Y_{ef_2}\phase{\theta_2}
+        \overline{Y}_1 & \; = \; 
+        \overbrace{Y_{ef_1}\,\cos(\theta_1)}^{a_1}+\,\mathrm{j}\,\overbrace{Y_{ef_1}\;\sin(\theta_1)}^{b_1} 
+        \; = \; 
+        Y_{ef_1}\phase{\theta_1}\\
+        \overline{Y}_2 & \; = \; \underbrace{Y_{ef_2}\,\cos(\theta_2)}_{a_2}+\;\mathrm{j}\,\underbrace{Y_{ef_2}\,\sin(\theta_2)}_{b_2}
+        \; = \; 
+        Y_{ef_2}\phase{\theta_2}
     \end{align*}
     
     \vspace*{-6mm}
@@ -552,15 +575,15 @@
 
     \vspace*{-1mm}
     \begin{itemize}
-        \item Suma: $\overline{Y}_1+\overline{Y}_2=(a_1+a_2)+\mathrm{j}\,(b_1+b_2)$
+        \item Suma: $\quad \overline{Y}_1+\overline{Y}_2 \; = \; (a_1+a_2)+\mathrm{j}\,(b_1+b_2)$
 
         \vspace{2mm}
-        \item Resta: $\overline{Y}_1-\overline{Y}_2=(a_1-a_2)+\mathrm{j}\,(b_1-b_2)$
+        \item Resta: $\quad \overline{Y}_1-\overline{Y}_2 \; = \; (a_1-a_2)+\mathrm{j}\,(b_1-b_2)$
     \end{itemize}
     Forma polar:
     \begin{itemize}
-        \item Multiplicación: $\overline{Y}_1\cdot \overline{Y}_2=(Y_{ef_1}\cdot Y_{ef_2})\phase{\theta_1+\theta_2}$
-        \item División: $\dfrac{\overline{Y}_1}{\overline{Y}_2}=\dfrac{Y_{ef_1}}{Y_{ef_2}}\phase{\theta_1-\theta_2}$
+        \item Multiplicación: $\quad \overline{Y}_1\cdot \overline{Y}_2 \; = \; (Y_{ef_1}\cdot Y_{ef_2})\phase{\theta_1+\theta_2}$
+        \item División: $\quad \dfrac{\overline{Y}_1}{\overline{Y}_2} \; = \; \dfrac{Y_{ef_1}}{Y_{ef_2}}\phase{\theta_1-\theta_2}$
     \end{itemize}    
 \end{frame}
 
@@ -586,7 +609,7 @@
 
         \vspace{3mm} 
         \begin{align*}
-          \qquad\qquad\quad \overline{U} &= \overline{Z} \cdot \overline{I} \quad \text{(equiv. a ley de Ohm)}\\[10pt] 
+          \qquad\qquad\quad \overline{U} &= \overline{Z} \cdot \overline{I} \quad \text{(equiv. a \alert{ley de Ohm})}\\[10pt] 
           \qquad\qquad\quad \overline{Z} &= \frac{\overline{U}}{\overline{I}}
         \end{align*}
 
@@ -709,7 +732,8 @@
     \begin{center}
         \animategraphics[loop,width=9.4cm]{10}{../figs/gifs/inductance/}{1}{81}
     \end{center}
-    % Info para insertar .gif: https://latex-beamer.com/tutorials/gif-latex-beamer/      
+    % Info para insertar .gif: https://latex-beamer.com/tutorials/gif-latex-beamer/  
+    % Esta info también está en "figs\insert_GIF_Beamer.pdf"
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -882,10 +906,10 @@
 
 \vspace*{12mm}
 \begin{itemize}
-    \item La impedancia de una bobina ideal $\, X_L=\omega L \,$ se denomina ``reactancia inductiva''
+    \item La impedancia de una \alert{bobina ideal} $\, X_L=\omega L \,$ se denomina ``reactancia inductiva''
 
     \vspace{3mm}
-    \item La impedancia de un condensador $\, X_C=\dfrac{1}{\omega C} \,$ se denomina ``reactancia capacitiva''
+    \item La impedancia de un \alert{condensador} $\, X_C=\dfrac{1}{\omega C} \,$ se denomina ``reactancia capacitiva''
 \end{itemize}
 
 \end{frame}
@@ -1277,7 +1301,7 @@
     \boxed{\quad 
       \overline{Y} = \frac{1}{\overline{Z}} \quad \rightarrow \quad \left\{%
         \begin{array}{l}
-          |Y| = \dfrac{1}{|Z|}\\[12pt]
+          |\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
           \theta_Y = -\theta_Z \\
           \end{array}\right.
           }
@@ -1445,7 +1469,7 @@
         %Q es potencia almacenada en las reactancias del circuito (potencia reactiva)
 
         \vspace{1mm}
-        (Unidades: \si{\var})
+        (Unidades de $Q$: \si{\var})
     \end{itemize}    
 \end{frame}
 	
@@ -1485,13 +1509,13 @@
     \end{center}
     
     \begin{itemize}
-    \item Fluctúa al doble de frecuencia que la tensión y corriente
+    \item Fluctúa al \alert{doble} de \alert{frecuencia} que la tensión y corriente
 
     \vspace{2mm}
-    \item Es siempre positiva
+    \item Es siempre \alert{positiva}
 
     \vspace{2mm}
-    \item Su valor medio es $P = U\,I\cos\theta = U\,I$ 
+    \item Su \alert{valor medio} es $P = U\,I\cos\theta = U\,I$ 
     \end{itemize}
 \end{frame}
 
@@ -1533,13 +1557,13 @@
 
     \vspace{-1mm}
     \begin{itemize}
-    \item Fluctúa al doble de frecuencia que la tensión y corriente
+    \item Fluctúa al \alert{doble} de \alert{frecuencia} que la tensión y corriente
 
     \vspace{2mm}
     \item Pasa por los ceros de tensión y corriente
 
     \vspace{2mm}
-    \item Su valor medio es nulo
+    \item Su valor medio es \alert{nulo}
     \end{itemize}
 \end{frame}
 
@@ -1581,13 +1605,13 @@
     
     \vspace{-1mm}
     \begin{itemize}
-    \item Fluctúa al doble de frecuencia que la tensión y corriente
+    \item Fluctúa al \alert{doble} de \alert{frecuencia} que la tensión y corriente
 
     \vspace{2mm}
     \item Pasa por los ceros de tensión y corriente
 
     \vspace{2mm}
-    \item Su valor medio es nulo
+    \item Su valor medio es \alert{nulo}
     \end{itemize}
 \end{frame}
 
@@ -1672,21 +1696,21 @@
     \begin{column}{0.6\columnwidth}
     \vspace{2mm}
     \begin{itemize}
-        \item Potencia activa [W]
+        \item Potencia \alert{activa} [W]
     \end{itemize}
     \[  
         \boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
     \]
     
     \begin{itemize}
-        \item Potencia reactiva [VAr]
+        \item Potencia \alert{reactiva} [VAr]
     \end{itemize}
     \[
         \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
     \]
     
     \begin{itemize}
-        \item Potencia aparente [VA]
+        \item Potencia \alert{aparente} [VA]
     \end{itemize}
     \[
         \boxed{\overline{S} = P + \mathrm{j}Q = \overline{U} \cdot \overline{I}^*}
@@ -1735,21 +1759,21 @@
     \begin{column}{0.6\columnwidth}
     \vspace{2mm}
     \begin{itemize}
-        \item Potencia activa [W]
+        \item Potencia \alert{activa} [W]
     \end{itemize}
     \[  
         \boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
     \]
     
     \begin{itemize}
-        \item Potencia reactiva [VAr]
+        \item Potencia \alert{reactiva} [VAr]
     \end{itemize}
     \[
         \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
     \]
     
     \begin{itemize}
-        \item Potencia aparente [VA]
+        \item Potencia \alert{aparente} [VA]
     \end{itemize}
     \[
         \boxed{\overline{S} = P + \mathrm{j}Q = \overline{U} \cdot \overline{I}^*}
@@ -1864,25 +1888,25 @@
     \begin{columns}
     \begin{column}{0.3\columnwidth}
     
-        \vspace{-8mm}
+        \vspace{-11mm}
         
-        \begin{align*}
-          \overline{S} &= \sum_{i = 1}^{n} \overline{S}_i\\
-          P_T + \mathrm{j}Q_T &= \sum^n_{i = 1} (P_i + \mathrm{j}Q_i)
+        \begin{align*}          
+          P_T + \mathrm{j}Q_T &= \sum^n_{i = 1} (P_i + \mathrm{j}Q_i)\\
+          \overline{S}_T &= \sum_{i = 1}^{n} \overline{S}_i
         \end{align*}
 
         \vspace{-3mm}
         
         \begin{align*}
-            P &= \sum_{i = 1}^n P_i\\
-            Q &= \sum_{i = 1}^n Q_i
+            P_T &= \sum_{i = 1}^n P_i\\
+            Q_T &= \sum_{i = 1}^n Q_i
         \end{align*}
     \end{column}
     \begin{column}{0.7\linewidth}
         \begin{figure}
-        %\vspace{-2mm}
+        \vspace{-10mm}
     
-        \hspace*{-12mm}  \includegraphics[width=1.1\linewidth]{../figs/boucherot.pdf}
+        \hspace*{-18mm}  \includegraphics[width=1.18\linewidth]{../figs/boucherot.pdf}
         \end{figure}
     \end{column}
     \end{columns}
@@ -1930,15 +1954,20 @@
 
 %%%%%%%%%%%%%%%
 
-\begin{frame}{Medida de potencia: vatímetro}
+\begin{frame}{Medida de potencia: \hspace{3mm}vatímetro}
+    \vspace{3mm}
     \begin{center}
-    \includegraphics[height=0.5\textheight]{../figs/vatimetro_2.pdf}
+        \includegraphics[height=0.5\textheight]{../figs/vatimetro_2.pdf}
     \end{center}
+
+    \vspace{2mm}
     
-    \alert{Vatímetro}: equipo de medida de 4 terminales (un par para tensión, un par para corriente)
-    
+    \centering Equipo de medida de \alert{4 terminales} (un par para tensión, un par para corriente)
+
+    \vspace{-4mm}
     \begin{equation*}
-        W=\overline{I}_{1,2}\,\circ\,\overline{U}_{3,4}=I_{1,2}\cdot U_{3,4}\cdot \widehat{(I_{1,2}, U_{3,4})}
+        W \; = \; \hspace{-2mm} \underbrace{ \overline{I}_{1,2}\,\bullet\,\overline{U}_{3,4} }_{\substack{\text{producto escalar}}} \hspace{-2mm} \; = \;  
+        I_{1,2}\cdot U_{3,4}\cdot \cos\widehat{(\overline{I}_{1,2}, \overline{U}_{3,4})}
 	\end{equation*}
 \end{frame}
 
@@ -1948,10 +1977,14 @@
     \begin{center}
         \includegraphics[height=0.5\textheight]{../figs/vatimetro_Z.pdf}
     \end{center}
+
+    \vspace{2mm}
     
-    Habitualmente se emplea con 3 terminales, cortocircuitando terminales con *
+    \centering Habitualmente se emplea con 3 terminales, \alert{cortocircuitando} terminales con *
+
+    \vspace{-3mm}
     \[
-      \boxed{W = |V| |I| \cos(\theta_V - \theta_I) = P_Z}
+      \boxed{\; W \; = \; |\overline{V}| \cdot |\overline{I}| \cdot \cos(\theta_V - \theta_I) \; = \; P_Z \;}
     \]
 \end{frame}
 
@@ -1960,7 +1993,7 @@
 \subsection{Factor de potencia: importancia y mejora}
 
 \begin{frame}{Factor de potencia}
-    El factor de potencia (\textit{f.d.p.}), \(\cos(\theta)\), representa la aportación de potencia activa dentro de la potencia aparente:
+    El factor de potencia (\textit{\alert{f.d.p.}}), \(\cos(\theta)\), representa la aportación de potencia activa dentro de la potencia aparente:
     \[
         \cos (\theta)=\dfrac{P}{S}
     \]
@@ -2070,7 +2103,7 @@
 \begin{frame}{Equivalencia de fuentes}
 
     \vspace{3mm}
-    Sólo es posible establecer equivalencia entre \alert{fuentes reales}
+    Sólo es posible establecer \alert{equivalencia} entre \alert{fuentes reales}
 
     (la deducción es equivalente a la ya vista para corriente continua)
 
@@ -2172,7 +2205,7 @@
     \begin{block}{Observaciones}
     \begin{itemize}
         \vspace{2mm}
-        \item \alert{Siempre} hay que \alert{aplicar este método} cuando en un circuito conviven \alert{fuentes de diferente frecuencia} (o fuentes de corriente continua y corriente alterna)
+        \item \alert{Siempre} hay que \alert{aplicar este método} cuando en un circuito conviven \alert{fuentes de distinta frecuencia} (o fuentes de corriente continua y corriente alterna)
 
         \vspace{2mm}
         \item En el caso de fuentes de \alert{corriente alterna senoidal}:
@@ -2237,21 +2270,45 @@
 
 \begin{frame}{Principio de superposición y potencia}
     \begin{itemize}
-        \item Cuando las señales son \alert{ortogonales en un periodo}\footnote{Dos señales son ortogonales si cumplen la siguiente propiedad: \[<f_1, f_2>_T = \int_T f_1(t) \cdot f_2(t) dt = 0\]} se pueden sumar las \alert{potencias medias} de cada circuito
+        \item Cuando las señales son \alert{ortogonales en un periodo}\footnote{Dos señales son ortogonales si cumplen la siguiente propiedad: \[<f_1, f_2>_T \;\; = \int_T \; f_1(t) \cdot f_2(t) \; dt = 0\]} se pueden sumar las \alert{potencias medias} de cada circuito:
         % Si f1 y f2 son senoidales de distinta fecuencia, hay que calcular la integral en el periodo "T", siendo este "T" el periodo de la señal con mayor periodo de las dos
     \end{itemize}
     \begin{align*}
       P = \sum_i P_i
     \end{align*}
     \begin{itemize}
-        \item Ejemplos de señales ortogonales: senoidal con diferente frecuencia, una senoidal con una continua\ldots{}
+        \item Ejemplos de señales ortogonales: 
+        
+        senoidales con diferente frecuencia, una senoidal con una continua\ldots{}
     \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%
 
-\begin{frame}
-{Principio de superposición y potencia: \hspace{3mm}ejemplo}
+\begin{frame}{Principio de superposición y potencia}
+
+    \vspace{1mm}
+    \begin{itemize}
+        \item Cuando las señales son \alert{ortogonales en un periodo}, se pueden sumar las \alert{potencias medias} de cada circuito:
+        % Si f1 y f2 son senoidales de distinta fecuencia, hay que calcular la integral en el periodo "T", siendo este "T" el periodo de la señal con mayor periodo de las dos
+    \end{itemize}
+    \begin{align*}
+      P_m \;\; &= \;\; \dfrac{1}{T} \int_{T} p(t) \,dt 
+        \;\; = %\;\; \dfrac{1}{T} \int_{T} R \cdot i^2(t) \;dt \;\; = \;\; R \cdot \dfrac{1}{T} \int_{T} \; [i_1(t) + i_2(t)]^2 \;dt \;\; =
+        \\[2pt]
+           &= \;\; R \cdot \dfrac{1}{T} \bigg[ 
+           \int_{T} i_1^2(t) \;dt \;+\; 
+           \int_{T} i_2^2(t) \;dt \;+\;
+           \underbrace{\cancelto{0}{\int_{T} 2\cdot i_1(t) \cdot i_2(t) \;dt \;\;}}_{\text{señales ortogonales}}
+           \hspace*{-2.5mm}\bigg] \;\; = \\
+           &= \;\; R \cdot \big( \underbrace{I_1^2 + I_2^2}_{\substack{\text{valores} \\ \text{\hyperlink{diapo:valorEficaz_definicion}{eficaces}}}} \big) \;\; = \;\; \boxed{P_1 + P_2}
+    \end{align*}
+    % Para escribir el "underbrace" en varias líneas: https://tex.stackexchange.com/questions/7503/how-can-i-write-multiple-lines-in-a-subscript
+\end{frame} 
+
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Principio de superposición y potencia: \hspace{3mm}ejemplo}
 
     \vspace{3mm}
     Teniendo en cuenta la propiedad de ortogonalidad, si en un circuito actúan \alert{fuentes de continua} y \alert{varias fuentes de alterna} de \alert{distinta frecuencia} entre ellas:
@@ -2297,7 +2354,7 @@
 
 \begin{frame}{Teorema de Thévenin}
     \vspace{3mm}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una impedancia (impedancia de Thévenin, \(Z_{th}\)).
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos A-B, por una \alert{fuente de tensión} (generador de Thévenin, \(\epsilon_{th}\)) en \alert{serie} con una impedancia (impedancia de Thévenin, \(Z_{th}\))
     % Importante: los equivalentes de Thévenin y Norton, y los resultados del teorema de la máxima transferencia de potencia, solo son válidos para la frecuencia a la que han sido calculados.
 
     \vspace{2mm}
@@ -2311,7 +2368,7 @@
 \begin{frame}{Cálculo del equivalente de Thévenin}
     \vspace{2mm}
     \begin{center}
-        \includegraphics[height=0.43\textheight]{../figs/EquivalenteThevenin.pdf}
+        \includegraphics[height=0.43\textheight]{../figs/EquivalenteThevenin0.pdf}
     \end{center}
     
     \begin{itemize}
@@ -2338,7 +2395,7 @@
 
 \begin{frame}{Teorema de Norton}
     \vspace{3mm}
-    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una impedancia (impedancia de Norton, \(Z_N\)).
+    Cualquier \alert{red lineal} compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos A-B, por una \alert{fuente de corriente} (generador de Norton, \(I_N\)) en \alert{paralelo} con una impedancia (impedancia de Norton, \(Z_N\))
     % Importante: los equivalentes de Thévenin y Norton, y los resultados del teorema de la máxima transferencia de potencia, solo son válidos para la frecuencia a la que han sido calculados.
 
     \vspace{2mm}
@@ -2381,7 +2438,7 @@
 \begin{frame}{Cálculo de impedancia Thévenin/Norton}
     \vspace{4mm}
     \begin{itemize}
-    \item Siempre podemos calcular la impedancia Thévenin/Norton \alert{calculando tanto $U_{oc}$ como $I_{sc}$}, pero en ocasiones \alert{no es sencillo} calcular estas magnitudes
+    \item Siempre podemos calcular la impedancia Thévenin/Norton \alert{calculando tanto $U_{oc}$ como $I_{sc}$}, pero en ocasiones \alert{no es sencillo} calcular ambas magnitudes
 
     \vspace{5mm}
     \item Existe un método alternativo:
@@ -2413,7 +2470,7 @@
 
 \begin{frame}{Máxima transferencia de potencia}
     \vspace{2mm}
-    ¿Qué impedancia \(\overline{Z}_L\) hay que conectar en los terminales AB para que el circuito entregue la \alert{máxima potencia disponible}?
+    ¿Qué impedancia \(\overline{Z}_L\) hay que conectar en los terminales A-B para que el circuito entregue la \alert{máxima potencia posible}?
     
     \begin{center}
         \includegraphics[height=0.55\textheight]{../figs/EquivalenteThevenin.pdf}
@@ -2454,7 +2511,7 @@
     \end{columns}
 
     \vspace{5mm}
-    Las condiciones de máximo son: 
+    Las \alert{condiciones} de \alert{máximo} son: 
     \[
       \boxed{%
         \diffp{P_L}{X_L} = 0 \, , \qquad%
@@ -2484,7 +2541,7 @@ Ejemplo para $R_{th}=\qty{1,25}{\ohm}$ y $X_{th}=\qty{5}{\ohm}$:
 
 \vspace{3mm}
 
-Si tomamos la \alert{vista perpendicular al eje de `$R_L$'}, tenemos una gráfica cuyo límite superior es la curva que vimos en el tema 1:
+Si tomamos la \alert{vista perpendicular al eje de `$R_L$'}, tenemos una gráfica cuyo límite superior es la curva que vimos en el Tema 1:
 
     \vspace{1mm}
     
@@ -2563,7 +2620,7 @@ Si tomamos la \alert{vista perpendicular al eje de `$R_L$'}, tenemos una gráfic
         \includegraphics[height=0.45\textheight]{../figs/EquivalenteThevenin.pdf}
     \end{center}
     
-    \ldots{}la \alert{impedancia de carga} que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
+    \ldots{}la \alert{impedancia de carga} que hay que conectar entre sus terminales A-B para obtener la máxima potencia disponible es:
     \[
       \boxed{\overline{Z}_L = \overline{Z}_{th}^* = R_{th} - \mathrm{j}\,X_{th}}
     \]
