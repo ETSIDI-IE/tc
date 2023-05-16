@@ -547,7 +547,7 @@ impedancia del generador, aplicando previamente un factor de escala.
 
 
 \subsection{Transformador Ideal}
-\label{sec:trafoIdeal}
+\label{sec:trafo-ideal}
 
 Como siguiente y último paso en la simplificación del circuito que
 representa un transformador, vamos a considerar el transformador ideal
@@ -704,7 +704,7 @@ El modelo de transformador ideal permite transferir circuitos de primario a secu
   \]
 \end{itemize}
 
-\section{Transformador Perfecto y Transformador Ideal}
+\subsection{Transformador Perfecto y Transformador Ideal}
 \label{sec:perfecto-vs-ideal}
 
 En la ecuación \ref{eq:trafo-perfecto-impedancia-entrada} obteníamos dos expresiones para la impedancia de entrada vista desde el primario de un transformador perfecto. Teniendo en cuenta cómo realizar transferencia de circuitos con un transformador ideal, podemos volver a interpretar estas dos expresiones.
@@ -777,206 +777,118 @@ mientras que la tensión de Thévenin es:
   \end{figure}
 
   
-% \section{Transformador de Varios Devanados}
-% \label{sec:org307d3d0}
-% \begin{frame}[label={sec:org06465ee}]{Transformador Real de Varios
-%   Devanados}
-%   \begin{center}
-%     \includegraphics[height=0.9\textheight]{../figs/TrafoVariosDevanados.pdf}
-%   \end{center}
-% \end{frame}
+\subsection{Transformador de Varios Devanados}
+\label{sec:trafo-varios-devanados}
 
-% \begin{frame}[label={sec:orgdccada5}]{Ecuaciones del Transformador
-%   Real}
-%   \begin{center}
-%     \includegraphics[height=0.5\textheight]{../figs/TrafoVariosDevanados.pdf}
-%   \end{center}
+Hasta ahora hemos tratado con transformadores compuestos por dos bobinas acopladas. En esta sección ampliaremos el estudio a transformadores de tres devanados, y obtendremos ecuaciones y circuitos equivalentes que son aplicables a transformadores de varios devanados.
 
-%   \begin{align*}
-%   \overline{U}_1 &= (R_1 + j \omega L_1) \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega M_{13} \cdot\overline{I}_3\\
-%   \overline{U}_2 &= j \omega M_{12} \cdot \overline{I}_1 + (R_2 + j \omega L_2) \cdot \overline{I}_2 + j \omega M_{23} \cdot \overline{I}_3\\
-%   \overline{U}_3 &= j \omega M_{13} \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + (R_3 + j \omega L_3) \cdot \overline{I}_3
-% \end{align*}
-% \end{frame}
+Las ecuaciones de un transformador real de tres devanados, cuya representación circuital se muestra en la figura \ref{fig:trafo-varios-devanados}, son las siguientes:
+\begin{align*}
+  \overline{U}_1 &= (R_1 + j \omega L_1) \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega M_{13} \cdot\overline{I}_3\\
+  \overline{U}_2 &= j \omega M_{12} \cdot \overline{I}_1 + (R_2 + j \omega L_2) \cdot \overline{I}_2 + j \omega M_{23} \cdot \overline{I}_3\\
+  \overline{U}_3 &= j \omega M_{13} \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + (R_3 + j \omega L_3) \cdot \overline{I}_3
+\end{align*}
 
-% \begin{frame}[label={sec:org3799b6e}]{Transformador Perfecto}
-%   \begin{columns}
-%     \begin{column}{0.6\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=0.8\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
-%       \end{center}
-%     \end{column}
-
-%     \begin{column}{0.4\columnwidth}
-%       Las pérdidas resistivas son despreciables.
-%       \[
-%         R_1 = R_2 = R_3 = 0
-%       \]
-
-%       El acoplamiento es perfecto.
-%       \[
-%         k_{12} = k_{13} = k_{23} = 1
-%       \]
-%     \end{column}
-%   \end{columns}
-% \end{frame}
-
-% \begin{frame}[label={sec:orge5dab44}]{Ecuaciones del Transformador
-%   Perfecto}
-%   \begin{center}
-%     \includegraphics[height=0.5\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
-%   \end{center}
-
-%   \begin{align*}
-%   \overline{U}_1 &= j \omega L_1 \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega M_{13} \cdot\overline{I}_3\\
-%   \overline{U}_2 &= j \omega M_{12} \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2 + j \omega M_{23} \cdot \overline{I}_3\\
-%   \overline{U}_3 &= j \omega M_{13} \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega L_3 \cdot \overline{I}_3
-% \end{align*}
-% \end{frame}
-
-% \begin{frame}[label={sec:org7f5efb9}]{Relaciones de Transformación}
-%   \begin{columns}
-%     \begin{column}{0.6\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=0.6\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
-%       \end{center}
-%     \end{column}
-
-%     \begin{column}{0.4\columnwidth}
-%       \begin{align*}
-%   \frac{L_1}{L_2} &= \left(\frac{N_1}{N_2}\right)^2 = a^2_{12}\\
-%   \frac{L_1}{L_3} &= \left(\frac{N_1}{N_3}\right)^2 = a^2_{13}
-% \end{align*}
-
-% \begin{align*}
-%   \frac{\overline{U}_1}{\overline{U}_2} &= a_{12}\\
-%   \frac{\overline{U}_1}{\overline{U}_3} &= a_{13}
-% \end{align*}
-% \end{column}
-% \end{columns}
-% \end{frame}
-
-% \begin{frame}[label={sec:org271de00}]{Transformador Ideal}
-%   \begin{center}
-%     \includegraphics[height=0.9\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
-%   \end{center}
-% \end{frame}
-
-% \begin{frame}[label={sec:org04a7201}]{Relación de Transformación del
-%   Transformador Ideal}
-%   \begin{center}
-%     \includegraphics[height=0.35\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
-%   \end{center}
-
-%   Debido a las condiciones de idealidad:
-
-%   \[
-%     \overline{\phi}_{11} \pm \overline{\phi}_{22} \pm
-%     \overline{\phi}_{33} = 0
-%   \]
-
-%   \[
-%     N_1 \overline{I}_1 \pm N_ 2\overline{I}_2 \pm N_3
-%     \overline{I}_{3} = 0
-%   \]
-
-%   En términos de corriente:
-%   \[
-%     \boxed{\overline{I}_1 = \mp 1/a_{12} \cdot \overline{I}_2 \mp
-%     1/a_{13} \cdot \overline{I}_3}
-%   \]
-% \end{frame}
-
-% \begin{frame}[label={sec:orgeb1473f}]{Impedancia de Entrada}
-%   \begin{center}
-%     \includegraphics[height=0.9\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia.pdf}
-%   \end{center}
-% \end{frame}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoVariosDevanados.pdf}
+  \caption{Representación circuital de un transformador real de varios devanados.}
+  \label{fig:trafo-varios-devanados}
+\end{figure}
 
 
-% \begin{frame}[label={sec:orgef1200c}]{Impedancia de Entrada}
-%   \begin{columns}
-%     \begin{column}{0.4\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=.2\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia.pdf}
-%       \end{center}
-%     \end{column}
+Si aplicamos las condiciones de transformador perfecto (sección \ref{sec:trafo-perfecto}), la representación circuital es la de la figura \ref{fig:trafo-perfecto-varios-devanados} y las ecuaciones son:
+  \begin{align*}
+  \overline{U}_1 &= j \omega L_1 \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega M_{13} \cdot\overline{I}_3\\
+  \overline{U}_2 &= j \omega M_{12} \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2 + j \omega M_{23} \cdot \overline{I}_3\\
+  \overline{U}_3 &= j \omega M_{13} \cdot \overline{I}_1 + j \omega M_{12} \cdot\overline{I}_2 + j \omega L_3 \cdot \overline{I}_3
+\end{align*}
 
-%     \begin{column}{0.6\columnwidth}
-%       Ecuaciones del transformador:
-%       \begin{align*}
-%   \overline{U}_1 &= \overline{U}_2 \cdot a_{12}\\
-%   \overline{U}_1 &= \overline{U}_3 \cdot a_{13}\\
-%   \overline{I}_1 &= 1/a_{12} \cdot \overline{I}_2 + 1/a_{13} \cdot  \overline{I}_3
-% \end{align*}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoPerfectoVariosDevanados.pdf}
+  \caption{Representación circuital de un transformador perfecto de varios devanados.}
+  \label{fig:trafo-perfecto-varios-devanados}
+\end{figure}
 
-% Ecuaciones Terminales
-% \begin{align*}
-%   \overline{U}_2 &= \overline{Z}_2 \cdot \overline{I}_2\\
-%   \overline{U}_3 &= \overline{Z}_3 \cdot \overline{I}_3
-% \end{align*}
+Si empleamos las relaciones de transformación de un transformador perfecto:
+      \begin{align*}
+  \frac{L_1}{L_2} &= \left(\frac{N_1}{N_2}\right)^2 = a^2_{12}\\
+  \frac{L_1}{L_3} &= \left(\frac{N_1}{N_3}\right)^2 = a^2_{13}
+\end{align*}
+obtenemos las relaciones entre las tensiones de los devanados:
+\begin{align}
+  \frac{\overline{U}_1}{\overline{U}_2} &= a_{12}\\
+  \frac{\overline{U}_1}{\overline{U}_3} &= a_{13}\label{eq:trafo-ideal-varios-devanados-tensiones}
+\end{align}
 
-% Resultado:
-% \[
-%   \frac{\overline{I}_1}{\overline{U}_1} = \boxed{\overline{Y}_{in} =
-%   \frac{1}{a^2_{12} \overline{Z}_2} + \frac{1}{a^2_{13}
-%   \overline{Z}_3}}
-% \]
-% \end{column}
-% \end{columns}
-% \end{frame}
+Aplicando a continuación las condiciones de transformador ideal (sección \ref{sec:trafo-ideal}), las relaciones de corriente en el circuito de la figura \ref{fig:trafo-ideal-varios-devanados} son:
+\begin{equation}
+  \label{eq:trafo-ideal-varios-devanados-corrientes}
+    N_1 \overline{I}_1 \pm N_ 2\overline{I}_2 \pm N_3
+    \overline{I}_{3} = 0 \rightarrow
+    \overline{I}_1 = \mp 1/a_{12} \cdot \overline{I}_2 \mp
+    1/a_{13} \cdot \overline{I}_3
+\end{equation}
 
-% \begin{frame}[label={sec:orgb82f528}]{Circuito Equivalente}
-%   \begin{columns}
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=.2\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia.pdf}
-%       \end{center}
-%     \end{column}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoIdealVariosDevanados.pdf}
+  \caption{Representación circuital de un transformador ideal de varios devanados.}
+  \label{fig:trafo-ideal-varios-devanados}
+\end{figure}
 
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=.2\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia_Equivalente.pdf}
-%       \end{center}
-%     \end{column}
-%   \end{columns}
-% \end{frame}
+En la ecuación \ref{eq:trafo-ideal-varios-devanados-corrientes} emplearemos el signo positivo cuando las corrientes correspondientes tengan el mismo sentido y negativo con sentidos opuestos.
 
+Con estas relaciones de tensiones y corrientes podemos obtener la impedancia equivalente vista desde un devanado de impedancias conectadas en los otros devanados (figura \ref{fig:trafo-ideal-varios-devanados-impedancia}). Las ecuaciones que corresponden a los devanados con impedancias son:
+\begin{align*}
+  \overline{U}_2 &= \overline{Z}_2 \cdot \overline{I}_2\\
+  \overline{U}_3 &= \overline{Z}_3 \cdot \overline{I}_3
+\end{align*}
 
-% \begin{frame}[label={sec:org0ee8de8}]{Circuito Equivalente de un
-%   Transformador Perfecto}
-%   \begin{columns}
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[width=\textwidth]{../figs/TrafoPerfectoVariosDevanados_Impedancia.pdf}
-%       \end{center}
-%       Transformador Perfecto
-%     \end{column}
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[width=\textwidth]{../figs/TrafoPerfectoIdealVariosDevanados_Impedancia.pdf}
-%       \end{center}
-%       Equivalente Ideal
-%     \end{column}
-%   \end{columns}
-% \end{frame}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia.pdf}
+  \caption{Transformador ideal de varios devanados con una impedancia conectada en uno de ellos.}
+  \label{fig:trafo-ideal-varios-devanados-impedancia}
+\end{figure}
 
-% \begin{frame}[label={sec:orgd865c57}]{Circuito Equivalente de un
-%   Transformador Perfecto}
-%   \begin{columns}
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[width=\textwidth]{../figs/TrafoPerfectoIdealVariosDevanados_Impedancia.pdf}
-%       \end{center}
-%     \end{column}
+Combinando estas dos ecuaciones con las relaciones entre tensiones y corrientes (ecuaciones \ref{eq:trafo-ideal-varios-devanados-tensiones} y \ref{eq:trafo-ideal-varios-devanados-corrientes}) obtenemos la admitancia vista en el devanado sin carga. La ecuación \ref{eq:trafo-ideal-varios-devanados-impedancia} se puede interpretar como la admitancia equivalente de dos impedancias conectadas en paralelo y transferidas al devanado sin carga (figura \ref{fig:trafo-ideal-varios-devanados-impedancia-equivalente}).
 
-%     \begin{column}{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[width=\textwidth]{../figs/TrafoPerfectoVariosDevanados_Impedancia_Equivalente.pdf}
-%       \end{center}
-%     \end{column}
-%   \end{columns}
-% \end{frame}
+\begin{equation}
+  \label{eq:trafo-ideal-varios-devanados-impedancia}
+  \overline{Y}_{in} = \frac{\overline{I}_1}{\overline{U}_1} = 
+    \frac{1}{a^2_{12} \overline{Z}_2} + \frac{1}{a^2_{13}
+      \overline{Z}_3}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=.25\textheight]{../figs/TrafoIdealVariosDevanados_Impedancia_Equivalente.pdf}
+  \caption{Circuito equivalente de un transformador ideal de tres devanados con impedancias conectadas en dos devanados.}
+  \label{fig:trafo-ideal-varios-devanados-impedancia-equivalente}
+\end{figure}
+Ahora bien, ¿qué ocurre si el transformador no es ideal sino perfecto (figura \ref{fig:trafo-perfecto-varios-devanados-impedancia})? En este caso podemos sustituir el transformador perfecto por su equivalente de transformador ideal con una inductancia en paralelo (sección \ref{sec:perfecto-vs-ideal}), tal y como muestra la figura \ref{fig:trafo-perfecto-ideal-varios-devanados-impedancia}. En el circuito resultante podemos aplicar la relación obtenida en la ecuación \ref{eq:trafo-ideal-varios-devanados-impedancia} para concluir con el circuito equivalente de la figura \ref{fig:trafo-perfecto-ideal-varios-devanados-impedancia-equivalente}. En este circuito la inductancia del devanado sin carga está en paralelo con las impedancias de carga previamente transferidas a este devanado.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoPerfectoVariosDevanados_Impedancia.pdf}
+  \caption{Representación circuital de un transformador perfecto de tres devanados con impedancias conectadas en dos devanados.}
+  \label{fig:trafo-perfecto-varios-devanados-impedancia}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoPerfectoIdealVariosDevanados_Impedancia.pdf}
+  \caption{Representación circuital del transformador ideal equivalente de un transformador perfecto de tres devanados con impedancias conectadas en dos devanados.}
+  \label{fig:trafo-perfecto-ideal-varios-devanados-impedancia}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/TrafoPerfectoVariosDevanados_Impedancia_Equivalente.pdf}
+  \caption{Circuito equivalente de un transformador perfecto de tres devanados con impedancias conectadas en dos devanados.}
+  \label{fig:trafo-perfecto-ideal-varios-devanados-impedancia-equivalente}
+\end{figure}
+
 % \section{Autotransformador}
 % \label{sec:org5dd3c66}
 % \begin{frame}[label={sec:org962763f}]{Autotransformador Perfecto}
