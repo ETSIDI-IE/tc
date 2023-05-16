@@ -889,109 +889,74 @@ Ahora bien, ¿qué ocurre si el transformador no es ideal sino perfecto (figura 
   \label{fig:trafo-perfecto-ideal-varios-devanados-impedancia-equivalente}
 \end{figure}
 
-% \section{Autotransformador}
-% \label{sec:org5dd3c66}
-% \begin{frame}[label={sec:org962763f}]{Autotransformador Perfecto}
-%   \begin{center}
-%     \includegraphics[height=0.9\textheight]{../figs/AutotrafoPerfecto.pdf}
-%   \end{center}
-% \end{frame}
+\subsection{Autotransformador}
+\label{sec:autotrafo}
 
-% \begin{frame}[label={sec:org4f6aa8f}]{Ecuaciones del
-%   Autotransformador Perfecto}
-%   \begin{center}
-%     \includegraphics[height=0.5\textheight]{../figs/AutotrafoPerfecto.pdf}
-%   \end{center}
+Terminamos este capítulo con una sección dedicada al autotransformador. Este tipo de transformador posee un único devanado alrededor de un núcleo ferromagnético con tres terminales de conexión eléctrica (figura \ref{fig:autotrafo-perfecto}). Este tipo de transformador es más ligero que los anteriores, y permite regular la tensión de salida si el terminal intermedio es móvil. Sin embargo, el aislamiento galvánico que existía en los anteriores transformadores desaparece en esta configuración.
 
-%   \begin{align*}
-%   \overline{U}_1 &= j \omega L_1 \cdot \overline{I}_1 + j \omega (M + L_2) \cdot \overline{I}_2\\
-%   \overline{U}_2 &= j \omega (M + L_2) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
-% \end{align*}
-% \end{frame}
-% \begin{frame}[label={sec:org5642b2f}]{Circuito Alternativo del
-%   Autotransformador Perfecto}
-%   \begin{center}
-%     \includegraphics[height=0.8\textheight]{../figs/AutotrafoPerfecto2.pdf}
-%   \end{center}
-% \end{frame}
+Las ecuaciones de un autotransformador perfecto son:
+\begin{align*}
+  \overline{U}_1 &= j \omega L_1 \cdot \overline{I}_1 + j \omega (M + L_2) \cdot \overline{I}_2\\
+  \overline{U}_2 &= j \omega (M + L_2) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
+\end{align*}
+siendo $M = \sqrt{L' \cdot L_2}$.
 
-% \begin{frame}[label={sec:org8075218}]{Ecuaciones del Circuito
-%   Alternativo}
-%   \begin{center}
-%     \includegraphics[height=0.5\textheight]{../figs/AutotrafoPerfecto2.pdf}
-%   \end{center}
-%   \begin{align*}
-%   \overline{U}_1 &= j \omega (L' + L_2 + 2M) \cdot \overline{I}_1 + j \omega (L_2 + M) \cdot \overline{I}_2\\
-%   \overline{U}_2 &= j \omega (L_2 + M) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
-% \end{align*}
-% \end{frame}
+\begin{figure}\centering
+  \includegraphics[height=0.25\textheight]{../figs/AutotrafoPerfecto.pdf}
+  \caption{Representación circuital de un autotransformador perfecto.}
+  \label{fig:autotrafo-perfecto}
+\end{figure}
 
-% \begin{frame}[label={sec:org5055ac6}]{Ecuaciones Comparadas}
-%   \begin{columns}
-%     \begin{column}{0.4\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=0.4\textheight]{../figs/AutotrafoPerfecto.pdf}
-%       \end{center}
-%     \end{column}
+Una representación alternativa del autotransformador se muestra en la figura \ref{fig:autotrafo-perfecto2}, cuyas ecuaciones son:
+\begin{align*}
+  \overline{U}_1 &= j \omega (L' + L_2 + 2M) \cdot \overline{I}_1 + j \omega (L_2 + M) \cdot \overline{I}_2\\
+  \overline{U}_2 &= j \omega (L_2 + M) \cdot \overline{I}_1 + j \omega L_2 \cdot \overline{I}_2
+\end{align*}
 
-%     \begin{column}{0.6\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=0.4\textheight]{../figs/AutotrafoPerfecto2.pdf}
-%       \end{center}
-%     \end{column}
-%   \end{columns}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.25\textheight]{../figs/AutotrafoPerfecto2.pdf}
+  \caption{Representación alternativa de un autotransformador perfecto.}
+  \label{fig:autotrafo-perfecto2}
+\end{figure}
 
-%   \begin{align*}
-%   \overline{U}_1 &= j \omega{\color{blue} L_1} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2 = j \omega{\color{blue} (L' + L_2 + 2M)} \cdot \overline{I}_1 + j \omega{\color{red} (M + L_2)} \cdot \overline{I}_2\\
-%   \overline{U}_2 &= j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2 = j \omega{\color{red} (L_2 + M)} \cdot \overline{I}_1 + j \omega{\color{PineGreen} L_2} \cdot \overline{I}_2
-% \end{align*}
+Comparando las ecuaciones de ambas representaciones obtenemos la equivalencia $L_1 = L' + L_2 + 2M$. 
+Además, en estas ecuaciones podemos observar que el término $L_2 + M$ juega el papel de coeficiente de inducción mutua entre los dos terminales. Así pues, si sustituimos este término por $M' = L_2 + M$ tendremos las ecuaciones de un transformador perfecto equivalente (figura \ref{fig:autotrafo-perfecto-equivalente}). Comprobemos que $M'$ es realmente el coeficiente de inducción mutua entre $L_1$ y $L_2$:
+  \begin{align*}
+  M' &= \sqrt{L_1 \cdot L_2} = \\
+     &= \sqrt{(L' + L_2 + 2M) L_2} =\\
+     &= \sqrt{L'L_2 + L_2^2 + 2ML_2} =\\
+     &= \sqrt{M^2 + L_2^2 + 2ML_2} = \\
+     &= M + L_2
+\end{align*}
+En consecuencia, podemos sustituir un autotransformador perfecto por un transformador perfecto respetando las relaciones:
+\begin{align*}
+  L_1 &= L' + L_2 + 2M\\
+  M &= \sqrt{L' \cdot L_2}\\
+  M' &= M + L_2
+\end{align*}
 
-% \begin{align*}
-%   L_1 &= L' + L_2 + 2M\\
-%   M' &= M + L_2
-% \end{align*}
-% \end{frame}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.2\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
+  \caption{Transformador perfecto equivalente de un autotransformador perfecto.}
+  \label{fig:autotrafo-perfecto-equivalente}
+\end{figure}
 
-% \begin{frame}[label={sec:org63af0d4}]{Transformador Perfecto
-%   Equivalente}
-%   \begin{center}
-%     \includegraphics[height=0.5\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
-%   \end{center}
+En el caso de un autotransformador ideal (figura \ref{fig:autotrafo-ideal}), los terminales vendrán definidos por los números de vueltas de cada uno de ellos, $N_1$ y $N_2$. Así, la equivalencia es aún más sencilla, empleando únicamente la relación de transformación del transformador ideal $a = \frac{N_1}{N_2}$ (figura \ref{fig:autotrafo-ideal-equivalente}).
 
-%   \begin{align*}
-%   L_1 &= L' + L_2 + 2M\\
-%   M &= \sqrt{L' \cdot L_2}\\
-%   M' &= M + L_2
-% \end{align*}
-% \end{frame}
-% \begin{frame}[label={sec:org3722de7}]{Transformador Perfecto
-%   Equivalente}
-%   \begin{center}
-%     \includegraphics[height=0.35\textheight]{../figs/AutoTrafo_TrafoPerfecto.pdf}
-%   \end{center}
-%   Comprobamos:
-%   \begin{align*}
-%   M' &= \sqrt{L_1 \cdot L_2} = \\
-%      &= \sqrt{(L' + L_2 + 2M) L_2} =\\
-%      &= \sqrt{L'L_2 + L_2^2 + 2ML_2} =\\
-%      &= \sqrt{M^2 + L_2^2 + 2ML_2} = \\
-%      &= M + L_2
-% \end{align*}
-% \end{frame}
-% \begin{frame}[label={sec:org5f441d1}]{Autotransformador Ideal}
-%   \begin{columns}
-%     \begin{column}[b]{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=.2\textheight]{../figs/AutoTrafoIdeal.pdf}
-%       \end{center}
-%     \end{column}
-%     \begin{column}[b]{0.5\columnwidth}
-%       \begin{center}
-%         \includegraphics[height=.2\textheight]{../figs/Trafo_Ideal.pdf}
-%       \end{center}
-%     \end{column}
-%   \end{columns}
-% \end{frame}
+\begin{figure}
+  \centering
+  \includegraphics[height=.25\textheight]{../figs/AutoTrafoIdeal.pdf}
+  \caption{Representación circuital de un autotransformador ideal.}
+  \label{fig:autotrafo-ideal}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[height=.2\textheight]{../figs/Trafo_Ideal.pdf}
+  \caption{Transformador ideal equivalente de un autotransformador ideal.}
+  \label{fig:autotrafo-ideal-equivalente}
+\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
