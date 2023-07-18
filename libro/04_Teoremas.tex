@@ -1,4 +1,139 @@
 \chapter{Teoremas Generales}\label{chap:teoremas}
+
+\section{Formas de onda}
+	
+En los circuitos eléctricos, las funciones de excitación y respuesta
+son tensiones e intensidades que varían con el tiempo:
+\begin{equation*}
+  u=u(t)
+\end{equation*}
+\begin{equation*}
+  i=i(t)
+\end{equation*}
+Estas funciones pueden representarse de forma gráfica o analítica. En
+ambos casos, esa relación funcional se conoce mediante el nombre de
+\textbf{forma de onda}. Las formas de onda pueden clasificarse según
+(de manera análoga a lo indicado en la Sección~\ref{sec.cc-ca}):
+\begin{itemize}
+\item \textbf{Signo de la magnitud}:
+  \begin{itemize}
+  \item \textbf{Unidireccionales}: la magnitud que la representa
+    siempre tiene una única polaridad (signo constante, aunque el
+    valor puede ser constante o variable)
+  \item \textbf{Bidireccionales}: la magnitud toma valores positivos y
+    negativos (signo variable con el tiempo)
+  \end{itemize}
+\item \textbf{Repetición del valor de la magnitud}:
+  \begin{itemize}
+  \item \textbf{Periódicas}: el valor de la magnitud se repite de
+    forma regular
+  \item \textbf{No periódicas}: el valor de la magnitud varía de forma
+    arbitraria con el tiempo
+  \end{itemize}
+\end{itemize}
+
+\subsection{Formas de onda básicas}
+En el estudio de la teoría de circuitos, son de especial interés las
+formas de onda en escalón, rampa, pulsos y triangular.
+	
+\subsection{Función escalón}
+Esta función vale 0 para tiempos negativos ($t<0$) y un valor
+constante $K$ para tiempos positivos ($t>0$), como se muestra en la
+Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es:
+\begin{equation}
+  \boxed{f(t) = %
+    \begin{cases}
+      0 & t < 0\\
+      K & t \geq 0
+    \end{cases}}
+\end{equation}
+	
+\begin{figure}[H]
+  \centering \includegraphics[height=3cm]{../figs/escalon.pdf}
+  \caption{Función escalón en el origen de tiempos}
+  \label{fig.escalon}
+\end{figure}
+	
+Cuando $K = 1$, la función recibe el nombre de \textbf{escalón
+  unitario}. En general, se puede considerar cualquier función escalón
+como el producto de una constante (denominada \textit{amplitud}) por
+la función escalón unitario.  En general, multiplicar una función por
+la función escalón unitario se asocia a asignar el valor 0 para $t<0$
+y no modifica la función para $t>0$.
+	
+\subsection{Función pulso rectangular}
+	
+Esta forma de onda es muy habitual en electrónica, y se representa en
+la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
+\begin{equation}
+  \boxed{f(t) = %
+    \begin{cases}
+      0 & t < 0\\
+      K & 0 \leq t \leq W\\
+      0 & t>W
+    \end{cases}}
+\end{equation}
+\begin{figure}[H]
+  \centering \includegraphics[height=3cm]{../figs/pulso.pdf}
+  \caption{Función pulso rectangular}
+  \label{fig.pulso}
+\end{figure}
+	
+El valor $W$ se conoce como \textbf{anchura/duración del pulso}.
+	
+\subsection{Función rampa}
+La forma de esta función es la indicada en la Figura~\ref{fig.rampa},
+expresada de manera matemática de la siguiente forma:
+\begin{equation}
+  \boxed{f(t) = %
+    \begin{cases}
+      0 & t < 0\\
+      m \cdot t  & t \geq 0
+    \end{cases}}
+\end{equation}
+\begin{figure}[H]
+  \centering \includegraphics[height=3cm]{../figs/rampa.pdf}
+  \caption{Función rampa}
+  \label{fig.rampa}
+\end{figure}
+El valor de $m$ es la pendiente de la rampa.
+	
+\subsection{Función triangular}
+La forma de esta función es la indicada en la
+Figura~\ref{fig.triangular}, expresada de manera matemática de la
+siguiente forma:
+\begin{equation}
+  \boxed{
+    f(t) = %
+    \begin{cases}
+      0 & t < -W/2\\
+      m \cdot (t + W/2)  & -W/2 \leq t \leq 0\\
+      -m \cdot (t - W/2)  & 0 \leq t \leq W/2\\
+      0  & t > W/2
+    \end{cases}}
+\end{equation}
+\begin{figure}[H]
+  \centering \includegraphics[height=3cm]{../figs/triangular.pdf}
+  \caption{Función triangular}
+  \label{fig.triangular}
+\end{figure}
+	
+\subsection{Retraso del origen de tiempos}
+Una forma de onda puede retrasarse en el tiempo si se desplaza el eje
+de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig.retraso}
+muestra diversos ejemplos de las formas de onda básicas.
+\begin{figure}[H]
+  \centering \subfloat[Escalón
+  retrasado]{\includegraphics[height=3cm]{../figs/escalon_t0.pdf}}\hfil
+  \subfloat[Pulso retrasado]{\includegraphics[height=3cm]{../figs/pulso_t0.pdf}}\\
+  \subfloat[Rampa
+  retrasada]{\includegraphics[height=3cm]{../figs/rampa_t0.pdf}}\hfil
+  \subfloat[Triangular
+  retrasada]{\includegraphics[height=3cm]{../figs/triangular_t0.pdf}}
+  \caption{Formas de onda básicas retrasadas}
+  \label{fig.retraso}
+\end{figure}
+	
 	
 \section{Teoremas de linealidad}
 	
