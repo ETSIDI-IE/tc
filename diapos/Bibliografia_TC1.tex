@@ -1,16 +1,14 @@
- % Created 2022-09-12 lun 12:14
+% Created 2023-08-25 vie 19:49
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
-\usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
@@ -27,7 +25,7 @@
 \sisetup{output-decimal-marker={,}}
 \DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage[symbol, perpage]{footmisc}
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
@@ -36,7 +34,8 @@
 \usetheme{Boadilla}
 \usecolortheme{rose}
 \usefonttheme{serif}
-\date{}
+\author{Oscar Perpiñán Lamigueiro}
+\date{2023-24}
 \title{Bibliografía}
 \subtitle{Teoría de Circuitos}
 \setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
@@ -49,18 +48,18 @@
 \setbeamertemplate{section in toc}[circle]
 \setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
- pdfauthor={},
+ pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Bibliografía},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.1 (Org mode 9.4.6)}, 
+ pdfcreator={Emacs 28.2 (Org mode 9.6.7)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 
-\begin{frame}[label={sec:org0c468d1}]{Bibliografía}
+\begin{frame}[label={sec:orge9de42f}]{Bibliografía}
 \begin{itemize}
 \item Circuitos eléctricos (\alert{FM})
 \item Análisis de circuitos en ingeniería (\alert{HKD})
@@ -70,7 +69,7 @@
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd7caf70}]{Circuitos Eléctricos (\alert{FM})}
+\begin{frame}[label={sec:org42e6303}]{Circuitos Eléctricos (\alert{FM})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autor: J. Fraile Mora
@@ -85,13 +84,14 @@
 \item BT1: Capítulo 1
 \item BT2: Capítulo 2
 \item BT3: Capítulo 3
-\item BT4: Capítulo 5
+\item BT4: Secciones 1.14 y 1.15
+\item BT5: Capítulo 5
 \end{itemize}
 \end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org73f4552}]{Análisis de Circuitos en Ingeniería (\alert{HKD})}
+\begin{frame}[label={sec:org4ac6ff6}]{Análisis de Circuitos en Ingeniería (\alert{HKD})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: W.H. Hayt; J.E. Kemmerly; S.M. Durbin
@@ -103,15 +103,16 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 5
+\item BT1: Capítulos 1 al 4
 \item BT2: Capítulos 10 y 11
 \item BT3: Capítulo 12
-\item BT4: Capítulos 8 y 9
+\item BT4: Capítulo 5
+\item BT5: Capítulos 8 y 9
 \end{itemize}
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgd897b99}]{Fundamentos de Circuitos Eléctricos (\alert{AS})}
+\begin{frame}[label={sec:orgc790687}]{Fundamentos de Circuitos Eléctricos (\alert{AS})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: C. K. Alexander; M. N. O. Sadiku
@@ -123,16 +124,17 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 4
+\item BT1: Capítulos 1 al 3
 \item BT2: Capítulos 9 al 11
 \item BT3: Capítulo 12
-\item BT4: Capítulos 7 y 8
+\item BT4: Capítulo 4
+\item BT5: Capítulos 7 y 8
 \end{itemize}
 \end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:orgc2ffd24}]{Circuitos Eléctricos (\alert{PO})}
+\begin{frame}[label={sec:org8c495bb}]{Circuitos Eléctricos (\alert{PO})}
 \begin{block}{Datos}
 \begin{itemize}
 \item Autores: A. Pastor y J. Ortega
@@ -144,10 +146,11 @@
 
 \begin{block}{Capítulos}
 \begin{itemize}
-\item BT1: Capítulos 1 al 5, y 8.
-\item BT2: Capítulos 9 y 10, y 8.
+\item BT1: Capítulos 1 al 5
+\item BT2: Capítulos 9 y 10
 \item BT3: Capítulo 12 y 13
-\item BT4: Capítulos 14
+\item BT4: Capítulo 8
+\item BT5: Capítulos 14
 \end{itemize}
 \end{block}
 \end{frame}
