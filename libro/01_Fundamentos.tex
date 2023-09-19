@@ -291,136 +291,9 @@
 	
 
 	\section{Elementos de los circuitos}
-	Como ya se mencionó en la Sección~\ref{sec.circuito_electrico}, en un circuito eléctrico existen dos tipos de elementos: los elementos activos y los pasivos.
+	Como ya se mencionó en la Sección~\ref{sec.circuito_electrico}, en un circuito eléctrico existen dos tipos de elementos: los elementos pasivos y los activos.
 	
-	\subsection{Elementos activos}\label{sec.elementos_activos}
-	
-	\subsubsection{Generadores de tensión}
-	Un \textbf{generador de tensión} es un dispositivo físico, caracterizado por una fuerza electromotriz $\epsilon$ que proporciona una diferencia de potencial $U$ entre sus bornes de salida. Por tanto, \textbf{impone la tensión} a su salida, mientras que \emph{la corriente depende del circuito} (Figura~\ref{fig.fuentetension}).
-	\begin{itemize}
-		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la diferencia de potencial entre sus bornes toma siempre el mismo valor que su f.e.m. ($u_{AB}=\epsilon_g$). Además, se dice que un generador de tensión ideal es \textbf{dominante} sobre todo lo que está conectado en paralelo con él, ya que impone entre sus terminales la tensión que lo caracteriza. Así, a efectos de cálculo, puede prescindirse de las ramas que no interese estudiar.
-		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{serie}, $R_{\epsilon_g}$. Al circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la diferencia de potencial entre sus bornes sea inferior a la f.e.m. ($u_{AB}<\epsilon_g$). Con esto, la potencia generada será $P_g=\epsilon_g\cdot I$, la potencia disipada en la resistencia interna $P_p=R_{\epsilon_g}\cdot I^2$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
-		\begin{equation}
-			P_g=P_u+P_p\rightarrow \boxed{ \epsilon_g=U_{AB}+ R_{\epsilon_g}\cdot I}
-		\end{equation}
-	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteTensionIdealDC.pdf}}\hfil
-		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteTensionRealDC.pdf}}
-		\caption{Generador de tensión}
-		\label{fig.fuentetension}
-	\end{figure}
-	
-	\subsubsection{Generadores de corriente}
-	Un \textbf{generador de corriente} es un dispositivo físico, caracterizado por una intensidad $I_g$ que proporciona una corriente $I$. Por tanto, \textbf{impone la corriente} a su salida, mientras que \emph{la tensión depende del circuito} (Figura~\ref{fig.fuentecorriente}).
-	\begin{itemize}
-		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la corriente $I$ a su salida toma siempre el mismo valor que $I_g$ ($I=I_g$). Un generador de intensidad ideal es \textbf{dominante} sobre todo lo que está conectado en serie con él ya que impone en esa rama la corriente que lo caracteriza. A efectos de cálculo, puede prescindirse de los elementos en serie que no interese estudiar. 
-		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{paralelo}, $R_{I_g}$. Al producirse una derivación de corriente por esa resistencia, circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la corriente suministrada sea menor a la que caracteriza al generador ($I<I_g$). Con esto, la potencia generada será $P_g=U_{AB}\cdot I_g$, la potencia disipada en la resistencia interna $P_p=\frac{U_{AB}^2}{R_{I_g}}$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
-		\begin{equation}
-			P_g=P_u+P_p\rightarrow \boxed{I_g=I+ \dfrac{U_{AB}}{R_{I_g}}}
-		\end{equation}
-	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteIdeal.pdf}}\hfil
-		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteRealDC.pdf}}
-		\caption{Generador de corriente}
-		\label{fig.fuentecorriente}
-	\end{figure}
-	
-	\subsubsection{Dualidad de generadores}\label{sec.dualidad}
-	
-	Se dice que dos fuentes son equivalentes cuando suministran el \textbf{mismo valor de tensión y corriente} a un circuito externo, para cualquier circuito. Esta equivalencia solo puede darse entre \textbf{fuentes reales}.
-	
-	\begin{figure}[H]
-		\centering
-		\subfloat[Fuente real de tensión]{\includegraphics[height=4.9cm]{../figs/FuenteTensionRealDC.pdf}}\hfil
-		\subfloat[Fuente real de corriente]{\includegraphics[height=4.9cm]{../figs/FuenteCorrienteRealDC.pdf}}
-		\caption{Equivalencia de generadores}
-		\label{fig.equivalencia_generadores}
-	\end{figure}
-	
-	Considérense las fuentes de tensión y corriente, reales, mostradas en la Figura~\ref{fig.equivalencia_generadores}
-	La salida de la fuente de tensión es:
-	\begin{equation*}
-		U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
-	\end{equation*}
-	y la de la fuente de corriente:
-	\begin{equation*}
-		I = I_g - \frac{U_{AB}}{R_{I_g}} \rightarrow U_{AB} = R_{I_g} \cdot I_g - R_{I_g} \cdot I
-	\end{equation*} 
-	Por tanto, las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier combinación de $(U_{AB}, I)$, es decir, si $R_g = R_{\epsilon_g} = R_{I_g}$:
-	\begin{equation}\label{eq.equivalencia_fuentes}
-		\boxed{\epsilon_g = R_{\epsilon_g} \cdot I_g \Leftrightarrow {I_g = \frac{\epsilon_g}{R_g}}}  
-	\end{equation}
-	
-	\begin{remark}
-	    Nótese que el polo $+$ de la fuente de tensión queda en la misma posición que la flecha de la fuente de corriente
-	\end{remark}
-	
-	\begin{example}\label{ex.1-2}
-	    \textbf{Convertir en fuente de intensidad o de tensión, según corresponda, las fuentes mostradas en la Figura~\ref{fig.ejemplo1-2}.}
-	    \begin{figure}[H]
-	        \centering
-	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes.pdf}}\hfil
-	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_2.pdf}}\hfil
-	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_3.pdf}}\hfil
-	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_4.pdf}}
-	        \caption{Ejemplo~\ref{ex.1-2}}
-	        \label{fig.ejemplo1-2}
-	    \end{figure}
-	    
-	    \textbf{GENERADOR (a)}
-	    
-	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $6\Omega$, y de intensidad de la fuente $I_g=\frac{18}{6}=3$ A, con la punta de flecha hacia arriba.
-	    
-	    \textbf{GENERADOR (b)}
-	    
-	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $2.2k\Omega$, y de intensidad de la fuente $I_g=\frac{9}{2.2\cdot10^3}=4.1$ mA, con la punta de flecha hacia abajo.
-	    
-	    \textbf{GENERADOR (c)}
-	    
-	    Se puede transformar en un generador de tensión con una resistencia en serie de $3\Omega$, y de fem de la fuente $\varepsilon_g=1.5\cdot 3=4.5$ V, con el polo $+$ arriba.
-	    
-	    \textbf{GENERADOR (d)}
-	    
-	    Se puede transformar en un generador de tensión con una resistencia en serie de $4.7k\Omega$, y de fem de la fuente $\varepsilon_g=6\cdot 10^{-3}\cdot 4.7\cdot 10^3=28.2$ V, con el polo $+$ abajo.
-	\end{example}
-	
-	\subsubsection{Generadores dependientes o generadores controlados}
-	Pese a no ser estrictamente elementos activos, se comportan como tales. Este tipo de generadores no tienen valores de $\epsilon$ o $i_g$ fijos, sino que dependen de la tensión o corriente en otros puntos de la red. Así, aparecen fundamentalmente cuatro tipos de generadores dependientes, dependiendo de que cada generador suministre una tensión o una corriente y según sea la variable de control una tensión o una corriente. Estos generadores suelen representarse mediante un rombo:
-	\begin{itemize}
-		\item \textbf{Generador de tensión controlado por tensión} (Figura~\ref{fig.tension-tension}): su tensión depende de la tensión entre otros puntos del circuito, siendo el parámetro $\alpha$ adimensional [--]
-		\item \textbf{Generador de tensión controlado por corriente} (Figura~\ref{fig.tension-corriente}): su tensión depende de alguna corriente del circuito, teniendo el parámetro $\beta$ unidades de resistencia [$\Omega$]
-		\item \textbf{Generador de corriente controlado por tensión} (Figura~\ref{fig.corriente-tension}): su intensidad depende de la tensión entre dos puntos del circuito, teniendo el parámetro $\gamma$ unidades de conductancia [S]
-		\item \textbf{Generador de corriente controlado por corriente} (Figura~\ref{fig.corriente-corriente}): su intensidad es función de la corriente en otra parte del circuito, siendo el parámetro $\sigma$ adimensional [--]
-	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\subfloat[Tensión--Tensión]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}}\hfill
-		\subfloat[Tensión--Corriente]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteCorriente.pdf}\label{fig.tension-corriente}}\hfill
-		\subfloat[Corriente--Tensión]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteTension.pdf}\label{fig.corriente-tension}}\hfill
-		\subfloat[Corriente--Corriente]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteCorriente.pdf}\label{fig.corriente-corriente}}
-		\caption{Fuentes dependientes}
-		\label{fig.fuentes_dependientes}
-	\end{figure}
-	
-	\begin{remark}
-		Si en un circuito \textbf{solo} existen generadores dependientes, el circuito \textbf{no está excitado}.
-	\end{remark} 
-	
-	
-	
-	
-	
-%	\subsection{Elementos pasivos}\label{sec.elementos_pasivos}
-	
-	% Los receptores son todos aquellos dispositivos capaces de transformar la energía eléctrica en otra forma de energía (por ejemplo, un motor transforma la energía eléctrica en energía mecánica). Se caracterizan por su fuerza contraelectromotriz
-	% (f.c.e.m., $E'$ o $e'(t)$), que es la energía por unidad de carga que transforman
-	% en otro tipo de energía (siempre que ésta no sea calor). Por su definición, la unidad en el SI es también el \textbf{voltio} [V].
-	
-	\subsection{Elementos pasivos ideales}
+	\subsection{Elementos pasivos}
 	
 	En general, en teoría de circuitos se emplean tres tipos de elementos pasivos: resistencias, bobinas y condensadores. Se dice que un receptor es cualquier dispositivo capaz de transformar la energía eléctrica en otra forma de energía (que no sea solo calor); así, un ejemplo de receptor es un motor eléctrico (transforma parte de la energía eléctrica en mecánica).  
 	
@@ -618,9 +491,127 @@
 	\begin{equation}
 		\boxed{w(t)=\dfrac{1}{2}\cdot C\cdot [u(t_f)-u(t_i)]^2}
 	\end{equation}
+
+        	\subsection{Elementos activos}\label{sec.elementos_activos}
 	
-	\subsubsection{Otros receptores}
-	En este apartado se incluyen aquellos receptores que están compuestos en su interior por combinaciones de los elementos básicos (resistencias, bobinas y condensadores). Estos receptores se caracterizan por su \textbf{fuerza contraelectromotriz} (f.c.e.m, E' o $\varepsilon'$), que es la energía por unidad de carga que transforman en otro tipo de energía que no sea calor. Al tener la misma naturaleza que la tensión eléctrica y la f.e.m., se mide en voltios [V]. Como en el caso de los elementos activos (Sección~\ref{sec.elementos_activos}), se distingue entre receptor ideal y real (Figura~\ref{fig.receptores}):
+	\subsubsection{Generadores de tensión}
+	Un \textbf{generador de tensión} es un dispositivo físico, caracterizado por una fuerza electromotriz $\epsilon$ que proporciona una diferencia de potencial $U$ entre sus bornes de salida. Por tanto, \textbf{impone la tensión} a su salida, mientras que \emph{la corriente depende del circuito} (Figura~\ref{fig.fuentetension}).
+	\begin{itemize}
+		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la diferencia de potencial entre sus bornes toma siempre el mismo valor que su f.e.m. ($u_{AB}=\epsilon_g$). Además, se dice que un generador de tensión ideal es \textbf{dominante} sobre todo lo que está conectado en paralelo con él, ya que impone entre sus terminales la tensión que lo caracteriza. Así, a efectos de cálculo, puede prescindirse de las ramas que no interese estudiar.
+		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{serie}, $R_{\epsilon_g}$. Al circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la diferencia de potencial entre sus bornes sea inferior a la f.e.m. ($u_{AB}<\epsilon_g$). Con esto, la potencia generada será $P_g=\epsilon_g\cdot I$, la potencia disipada en la resistencia interna $P_p=R_{\epsilon_g}\cdot I^2$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
+		\begin{equation}
+			P_g=P_u+P_p\rightarrow \boxed{ \epsilon_g=U_{AB}+ R_{\epsilon_g}\cdot I}
+		\end{equation}
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteTensionIdealDC.pdf}}\hfil
+		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteTensionRealDC.pdf}}
+		\caption{Generador de tensión}
+		\label{fig.fuentetension}
+	\end{figure}
+	
+	\subsubsection{Generadores de corriente}
+	Un \textbf{generador de corriente} es un dispositivo físico, caracterizado por una intensidad $I_g$ que proporciona una corriente $I$. Por tanto, \textbf{impone la corriente} a su salida, mientras que \emph{la tensión depende del circuito} (Figura~\ref{fig.fuentecorriente}).
+	\begin{itemize}
+		\item Un \textbf{generador ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la corriente $I$ a su salida toma siempre el mismo valor que $I_g$ ($I=I_g$). Un generador de intensidad ideal es \textbf{dominante} sobre todo lo que está conectado en serie con él ya que impone en esa rama la corriente que lo caracteriza. A efectos de cálculo, puede prescindirse de los elementos en serie que no interese estudiar. 
+		\item Un \textbf{generador real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{paralelo}, $R_{I_g}$. Al producirse una derivación de corriente por esa resistencia, circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser entregada por el generador. Las pérdidas internas son la causa de que la corriente suministrada sea menor a la que caracteriza al generador ($I<I_g$). Con esto, la potencia generada será $P_g=U_{AB}\cdot I_g$, la potencia disipada en la resistencia interna $P_p=\frac{U_{AB}^2}{R_{I_g}}$ y la potencia útil $P_u=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
+		\begin{equation}
+			P_g=P_u+P_p\rightarrow \boxed{I_g=I+ \dfrac{U_{AB}}{R_{I_g}}}
+		\end{equation}
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Ideal]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteIdeal.pdf}}\hfil
+		\subfloat[Real]{\includegraphics[height=3.5cm]{../figs/FuenteCorrienteRealDC.pdf}}
+		\caption{Generador de corriente}
+		\label{fig.fuentecorriente}
+	\end{figure}
+	
+	\subsubsection{Dualidad de generadores}\label{sec.dualidad}
+	
+	Se dice que dos fuentes son equivalentes cuando suministran el \textbf{mismo valor de tensión y corriente} a un circuito externo, para cualquier circuito. Esta equivalencia solo puede darse entre \textbf{fuentes reales}.
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat[Fuente real de tensión]{\includegraphics[height=4.9cm]{../figs/FuenteTensionRealDC.pdf}}\hfil
+		\subfloat[Fuente real de corriente]{\includegraphics[height=4.9cm]{../figs/FuenteCorrienteRealDC.pdf}}
+		\caption{Equivalencia de generadores}
+		\label{fig.equivalencia_generadores}
+	\end{figure}
+	
+	Considérense las fuentes de tensión y corriente, reales, mostradas en la Figura~\ref{fig.equivalencia_generadores}
+	La salida de la fuente de tensión es:
+	\begin{equation*}
+		U_{AB} = \epsilon_g - R_{\epsilon_g} \cdot I
+	\end{equation*}
+	y la de la fuente de corriente:
+	\begin{equation*}
+		I = I_g - \frac{U_{AB}}{R_{I_g}} \rightarrow U_{AB} = R_{I_g} \cdot I_g - R_{I_g} \cdot I
+	\end{equation*} 
+	Por tanto, las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier combinación de $(U_{AB}, I)$, es decir, si $R_g = R_{\epsilon_g} = R_{I_g}$:
+	\begin{equation}\label{eq.equivalencia_fuentes}
+		\boxed{\epsilon_g = R_{\epsilon_g} \cdot I_g \Leftrightarrow {I_g = \frac{\epsilon_g}{R_g}}}  
+	\end{equation}
+	
+	\begin{remark}
+	    Nótese que el polo $+$ de la fuente de tensión queda en la misma posición que la flecha de la fuente de corriente
+	\end{remark}
+	
+	\begin{example}\label{ex.1-2}
+	    \textbf{Convertir en fuente de intensidad o de tensión, según corresponda, las fuentes mostradas en la Figura~\ref{fig.ejemplo1-2}.}
+	    \begin{figure}[H]
+	        \centering
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_2.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_3.pdf}}\hfil
+	        \subfloat[]{\includegraphics[height=3.5cm]{../figs/Conversion_Fuentes_4.pdf}}
+	        \caption{Ejemplo~\ref{ex.1-2}}
+	        \label{fig.ejemplo1-2}
+	    \end{figure}
+	    
+	    \textbf{GENERADOR (a)}
+	    
+	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $6\Omega$, y de intensidad de la fuente $I_g=\frac{18}{6}=3$ A, con la punta de flecha hacia arriba.
+	    
+	    \textbf{GENERADOR (b)}
+	    
+	    Se puede transformar en un generador de corriente con una resistencia en paralelo de $2.2k\Omega$, y de intensidad de la fuente $I_g=\frac{9}{2.2\cdot10^3}=4.1$ mA, con la punta de flecha hacia abajo.
+	    
+	    \textbf{GENERADOR (c)}
+	    
+	    Se puede transformar en un generador de tensión con una resistencia en serie de $3\Omega$, y de fem de la fuente $\varepsilon_g=1.5\cdot 3=4.5$ V, con el polo $+$ arriba.
+	    
+	    \textbf{GENERADOR (d)}
+	    
+	    Se puede transformar en un generador de tensión con una resistencia en serie de $4.7k\Omega$, y de fem de la fuente $\varepsilon_g=6\cdot 10^{-3}\cdot 4.7\cdot 10^3=28.2$ V, con el polo $+$ abajo.
+	\end{example}
+	
+	\subsubsection{Generadores dependientes o generadores controlados}
+	Pese a no ser estrictamente elementos activos, se comportan como tales. Este tipo de generadores no tienen valores de $\epsilon$ o $i_g$ fijos, sino que dependen de la tensión o corriente en otros puntos de la red. Así, aparecen fundamentalmente cuatro tipos de generadores dependientes, dependiendo de que cada generador suministre una tensión o una corriente y según sea la variable de control una tensión o una corriente. Estos generadores suelen representarse mediante un rombo:
+	\begin{itemize}
+		\item \textbf{Generador de tensión controlado por tensión} (Figura~\ref{fig.tension-tension}): su tensión depende de la tensión entre otros puntos del circuito, siendo el parámetro $\alpha$ adimensional [--]
+		\item \textbf{Generador de tensión controlado por corriente} (Figura~\ref{fig.tension-corriente}): su tensión depende de alguna corriente del circuito, teniendo el parámetro $\beta$ unidades de resistencia [$\Omega$]
+		\item \textbf{Generador de corriente controlado por tensión} (Figura~\ref{fig.corriente-tension}): su intensidad depende de la tensión entre dos puntos del circuito, teniendo el parámetro $\gamma$ unidades de conductancia [S]
+		\item \textbf{Generador de corriente controlado por corriente} (Figura~\ref{fig.corriente-corriente}): su intensidad es función de la corriente en otra parte del circuito, siendo el parámetro $\sigma$ adimensional [--]
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\subfloat[Tensión--Tensión]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteTension.pdf}\label{fig.tension-tension}}\hfill
+		\subfloat[Tensión--Corriente]{\includegraphics[height=4cm]{../figs/FuenteTensionDependienteCorriente.pdf}\label{fig.tension-corriente}}\hfill
+		\subfloat[Corriente--Tensión]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteTension.pdf}\label{fig.corriente-tension}}\hfill
+		\subfloat[Corriente--Corriente]{\includegraphics[height=4cm]{../figs/FuenteCorrienteDependienteCorriente.pdf}\label{fig.corriente-corriente}}
+		\caption{Fuentes dependientes}
+		\label{fig.fuentes_dependientes}
+	\end{figure}
+	
+	\begin{remark}
+		Si en un circuito \textbf{solo} existen generadores dependientes, el circuito \textbf{no está excitado}.
+	\end{remark} 
+	
+	
+	\subsubsection{Receptores}
+	En este apartado se incluyen aquellos elementos activos que funcionan como receptores (absorben potencia del circuito). Estos elementos se caracterizan por su \textbf{fuerza contraelectromotriz} (f.c.e.m, E' o $\varepsilon'$), que es la energía por unidad de carga que transforman en otro tipo de energía que no sea calor. Al tener la misma naturaleza que la tensión eléctrica y la f.e.m., también se mide en voltios [V]. Como en el caso de los generadores, se distingue entre receptor ideal y real (Figura~\ref{fig.receptores}):
 	\begin{itemize}
 		\item Un \textbf{receptor ideal} es aquel que \textbf{no tiene pérdidas}, de tal forma que la diferencia de potencial entre sus bornes toma siempre el mismo valor que su f.c.e.m. ($u_{AB}=\epsilon'$).
 		\item Un \textbf{receptor real} es aquel que \textbf{tiene pérdidas}, caracterizadas mediante una resistencia interna, en \textbf{serie}, $R_{\epsilon'}$. Al circular una corriente por dicha resistencia, se consume en ella una potencia que no puede ser consumida por el receptor. Las pérdidas internas son la causa de que la diferencia de potencial entre sus bornes sea superior a la f.c.e.m. ($u_{AB}>\epsilon'$). Con esto, la potencia útil será $P_u=\epsilon'\cdot I$, la potencia disipada en la resistencia interna $P_p=R_{\epsilon'}\cdot I^2$ y la potencia absorbida $P_a=U_{AB}\cdot I$ y, dado que tiene que cumplirse el principio de conservación de la energía:
