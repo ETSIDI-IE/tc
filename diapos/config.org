@@ -8,6 +8,7 @@
 #+BEAMER_FONT_THEME: serif
 #+LATEX_HEADER: \usepackage{mathpazo}
 #+BEAMER_HEADER: \setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
+#+LATEX_HEADER: \usepackage[spanish]{babel}
 #+LATEX_HEADER: \usepackage{gensymb}
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{diffcoeff}

@@ -35,8 +35,8 @@
 
 #+BEGIN_EXPORT latex
 \[
-U_m=\frac{1}{T}\int_{0}^{T}u(t)\, dt \qquad \qquad%
-I_m=\frac{1}{T}\int_{0}^{T}i(t)\, dt
+U_m=\frac{1}{T}\int_T u(t)\, dt \qquad \qquad%
+I_m=\frac{1}{T}\int_T i(t)\, dt
 \]
 #+END_EXPORT
 
@@ -44,8 +44,8 @@ I_m=\frac{1}{T}\int_{0}^{T}i(t)\, dt
 
 #+BEGIN_EXPORT latex
 \[
-U = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}u^{2}(t)\, dt} \qquad \qquad%
-I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
+U = \sqrt{\frac{1}{T}\cdot\int_{T} u^{2}(t)\, dt} \qquad \qquad%
+I = \sqrt{\frac{1}{T}\cdot\int_{T} i^{2}(t)\, dt}
 \]
 #+END_EXPORT
 
@@ -117,10 +117,10 @@ I = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}i^{2}(t)\, dt}
 
 
 \[
-y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
+y(t)=Y_{max}\cdot\sen(\omega\cdot t+\theta)
 \]
 
-- $Y_{o}$ valor máximo de la onda.
+- $Y_{max}$ valor máximo de la onda.
 
 - T: periodo de la onda (segundos)
 
@@ -137,7 +137,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 
 
 \[
-y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
+y(t)=Y_{max}\cdot\sen(\omega\cdot t+\theta)
 \]
 
 - $\theta$: fase (radianes o grados)
@@ -164,26 +164,26 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 *** Valor medio
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_{0}^{T}y(t)\, dt
+Y_m=\frac{1}{T}\int_{T} y(t)\, dt
 \]
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_{0}^{T}Y_{o}\cdot\sin(\omega \cdot t+\theta)\, dt=0
+Y_m=\frac{1}{T}\int_T Y_{max}\cdot\sen(\omega \cdot t+\theta)\, dt=0
 \]
 #+END_EXPORT
 *** Valor eficaz
 
 #+BEGIN_EXPORT latex
 \[
-Y = \sqrt{\frac{1}{T}\cdot\int_{0}^{T}y^{2}(t)\, dt}
+Y = \sqrt{\frac{1}{T}\cdot\int_T y^{2}(t)\, dt}
 \]
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
 \[
-Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\frac{Y_{o}}{\sqrt{2}}}
+Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\frac{Y_{max}}{\sqrt{2}}}
 \]
 #+END_EXPORT
 * Cálculo Fasorial
@@ -201,7 +201,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \begin{align*}
 \overline{Y} &= Y\cdot e^{j\theta}\\
 \overline{Y} &= Y\phase{\theta}\\
-\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sin(\theta))
+\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sen(\theta))
 \end{align*}
 #+END_EXPORT
 
@@ -290,14 +290,14 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta_I)
+    i(t) = I_{max} \cdot \sen(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= R \cdot i(t)=\\
-       &= {\color{blue}R I_o} \cdot \sin(\omega t + {\color{red!80}\theta_I + 0}) =\\
-       &= {\color{blue}U_o} \cdot \sin(\omega t + {\color{red!80} \theta_I + 0})\\
+       &= {\color{blue}R \cdot I_{max}} \cdot \sen(\omega t + {\color{red!80}\theta_I + 0}) =\\
+       &= {\color{blue}U_{max}} \cdot \sen(\omega t + {\color{red!80} \theta_U})\\
 \end{align*}
  #+END_EXPORT
 
@@ -342,14 +342,14 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta_I)
+    i(t) = I_{max} \cdot \sen(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= L \cdot \frac{d i(t)}{dt} =\\
-       &= {\color{blue}{\omega L I_o}} \cdot \sin(\omega t + {\color{red!80}{\theta_I +\pi/2}}) =\\
-       &= {\color{blue}{U_o}} \cdot \sin(\omega t +  {\color{red!80}{\theta_I +\pi/2}})\\
+       &= {\color{blue}{\omega L \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I +\pi/2}}) =\\
+       &= {\color{blue}{U_{max}}} \cdot \sen(\omega t +  {\color{red!80}{\theta_U}})\\
 \end{align*}
  #+END_EXPORT
 
@@ -398,14 +398,14 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
     #+begin_export latex
 \[
-    i(t) = I_o \cdot \sin(\omega t + \theta_I)
+    i(t) = I_{max} \cdot \sen(\omega t + \theta_I)
 \]
     #+end_export
 #+BEGIN_EXPORT latex
 \begin{align*}
   u(t) &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
-       &= {\color{blue}{\frac{1}{\omega C} I_o}} \cdot \sin(\omega t + {\color{red!80}{\theta_I -\pi/2}}) =\\
-       &= {\color{blue}{U_o}} \cdot \sin(\omega t + {\color{red!80}{\theta_I -\pi/2}})\\
+       &= {\color{blue}{\frac{1}{\omega C} \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I -\pi/2}}) =\\
+       &= {\color{blue}{U_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_U}})\\
 \end{align*}
  #+END_EXPORT
 
@@ -478,10 +478,6 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/RL.pdf]]
 
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.45
-    :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
   \overline{U}_R &= R \overline{I}\\
@@ -489,10 +485,6 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 \end{align*}
 #+END_EXPORT
 
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.55
-    :END:
     #+begin_export latex
     \begin{align*}
       \overline{U} &= \overline{U}_R + \overline{U}_L =\\
@@ -550,21 +542,12 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/RC.pdf]]
 
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.45
-    :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
   \overline{U}_R &= R \overline{I}\\
   \overline{U}_C &= -j \frac{1}{\omega C} \overline{I}
 \end{align*}
 #+END_EXPORT
-
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.55
-    :END:
 
     #+begin_export latex
 \begin{align*}
@@ -608,10 +591,6 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/RLC.pdf]]
 
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.45
-    :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
   \overline{U}_R &= R \overline{I}\\
@@ -620,10 +599,6 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 \end{align*}
 #+END_EXPORT
 
-***                                                                   :BMCOL:
-    :PROPERTIES:
-    :BEAMER_col: 0.55
-    :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
   \overline{U} &= \overline{U}_R + \overline{U}_L + \overline{U}_C =\\
@@ -666,58 +641,91 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :END:
 #+begin_export latex
 \[
-\boxed{u(t) = Z \cdot I_o \sin(\omega t + \theta_I + \theta)}
+\boxed{u(t) = Z \cdot I_{max} \sen(\omega t + \theta_I + \theta)}
 \]
 
 #+end_export
 
-** Circuito RLC paralelo
-#+ATTR_LATEX: :height 0.45\textheight
-[[file:../figs/RLCparalelo.pdf]]
+** Circuito serie general
+
+   
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+  [[../figs/serie_general.pdf]]
+
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.45
+    :BEAMER_col: 0.1
     :END:
-#+BEGIN_EXPORT latex
-\begin{align*}
-  \overline{I}_R &= 1/R \cdot \overline{U}\\
-  \overline{I}_L &= -j \frac{1}{\omega L} \cdot \overline{U}\\
-  \overline{I}_C &= j \omega C \cdot \overline{U}
-\end{align*}
-#+END_EXPORT
+ \(\LARGE \xrightarrow{\hspace*{0.5cm}}\)
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.55
+    :BEAMER_col: 0.3
     :END:
-#+BEGIN_EXPORT latex
-\begin{align*}
-  \overline{I} &= \overline{I}_R + \overline{I}_L + \overline{I}_C =\\
-               &= \left(\frac{1}{R} + j(\omega C - \frac{1}{\omega L})\right) \overline{U} 
-\end{align*}
-#+END_EXPORT
+ [[../figs/serie_general_eq.pdf]]
 
-** Circuito RLC paralelo
-#+ATTR_LATEX: :height 0.45\textheight
-[[file:../figs/RLCparalelo.pdf]]
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+    #+begin_export latex
+    \[\overline{U} = \overline{U}_1+\overline{U}_2+...+\overline{U}_n \; = \; \overline{I} \cdot(\overline{Z}_1+\overline{Z}_2+...+\overline{Z}_n) \; = \; \overline{I}\cdot\overline{Z}_{eq}\]
+    #+end_export
+
+
+    #+begin_export latex
+\[{\Large \boxed{ \overline{Z}_{eq} = \sum_{i=1}^n \overline{Z}_i} }\]
+    #+end_export
+    
+    #+begin_export latex
+ \[R_{eq}=\sum_{i=1}^n R_i\,\qquad \qquad X_{eq}=\sum_{i=1}^n X_i\]
+ 
+ \[\theta=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)\]
+    #+end_export
+
+** Circuito paralelo general
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
-    :BEAMER_col: 0.4
+    :BEAMER_col: 0.6
     :END:
+ #+begin_center
+ [[../figs/paralelo_general.pdf]]
+ #+end_center
 
-#+BEGIN_EXPORT latex
-\[
-\overline{Y} = \frac{\overline{I}}{\overline{U}} = 1/R + j(\omega C - \frac{1}{\omega L})
-\]
-\[
-  |Y| = \sqrt{1/R^2 + (\omega C - \frac{1}{\omega L})^2}
-\]
-\[
-  \theta_Y = \atan\left(R \cdot (\omega C - \frac{1}{\omega L})\right)
-\]
-#+END_EXPORT
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.1
+    :END:
+ #+begin_center
+ \(\LARGE \xrightarrow{\hspace*{0.5cm}}\)
+ #+end_center
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.2
+    :END:
+ #+begin_center
+ [[../figs/paralelo_general_eq.pdf]]
+ #+end_center
+
+ 
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+ #+begin_export latex
+ \[\overline{I} = \overline{I}_1+\overline{I}_2+...+\overline{I}_n \; = \; \overline{U} \cdot\left(\dfrac{1}{\overline{Z}_1}+\dfrac{1}{\overline{Z}_2}+...+\dfrac{1}{\overline{Z}_n}\right) \; = \; \dfrac{\overline{U}}{\overline{Z}_{eq}}\]
+ #+end_export
+
+ #+begin_export latex
+ \[\boxed{\dfrac{1}{\overline{Z}_{eq}}=\sum_{i=1}^n \dfrac{1}{\overline{Z}_i}}\]
+ #+end_export
 
 
 ** Impedancia y Admitancia
@@ -761,9 +769,9 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     \boxed{
       \overline{Y} = \frac{1}{\overline{Z}} \rightarrow \left\{%
 	\begin{array}{l}
-	  |Y| = \frac{1}{|Z|}\\
-	  \theta_Y = -\theta_Z = -\theta\\
-	  \end{array}\right.
+	|\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
+        \theta_Y = -\theta_Z = - \theta\\
+	\end{array}\right.
 	  }
     \]
     #+end_export
@@ -781,8 +789,8 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     \[
       \overline{Z} = \frac{1}{G + j B} \rightarrow \left\{%
 	  \begin{array}{l}
-	    R = \frac{G}{G^2 + B^2}\\
-	    X = - j \frac{B}{G^2 + B^2}\\
+	    R = \dfrac{G}{G^2 + B^2}\\[12pt]
+	    X = - j \dfrac{B}{G^2 + B^2}\\
 	  \end{array}\right.        
     \]
     #+end_export
@@ -798,8 +806,8 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     \[
       \overline{Y} = \frac{1}{R + j X} \rightarrow \left\{%
 	  \begin{array}{l}
-	    G = \frac{R}{R^2 + X^2}\\
-	    B = - j \frac{X}{R^2 + X^2}\\
+	    G = \dfrac{R}{R^2 + X^2}\\[12pt]
+	    B = - j \dfrac{X}{R^2 + X^2}\\
 	  \end{array}\right.        
     \]
     #+end_export
@@ -808,8 +816,8 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente está retrasada respecto de la tensión (/circuito en retraso/).
    #+begin_export latex
    \begin{align*}
-     u(t) &= U_o \cos \omega t\\
-     i(t) &= I_o \cos (\omega t {\color{red}-} \theta)\\
+     u(t) &= U_{max} \cos \omega t\\
+     i(t) &= I_{max} \cos (\omega t {\color{red}-} \theta)\\
      p(t) &= u(t) \cdot i(t)
    \end{align*}
    #+end_export
@@ -817,37 +825,37 @@ Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente es
 
    #+begin_export latex
    \begin{align*}
-     p(t) &= U_o I_o \cdot \cos(\omega t) \cdot \cos(\omega t - \theta) =\\
-	  &= \frac{1}{2} \cdot U_o I_o \cdot \left(\cos(2\omega t - \theta) + \cos(\theta)\right)\\
+     p(t) &= (\sqrt{2} \cdot U \cdot \cos(\omega t)) \cdot (\sqrt{2} \cdot I \cdot \cos(\omega t - \theta)) =\\
+	  &= 2 \cdot U \cdot I \cdot \cos(\omega t)\cdot \cos(\omega t - \theta) =\\
 	  &= U I \cdot \left( \cos(2\omega t - \theta) + \cos(\theta)\right) =\\
-	  &= U I \cdot \left(\cos(2\omega t)\cos(\theta) + \sin(2\omega t)\sin(\theta) +  \cos(\theta)\right)
+	  &= U I \cdot \left(\cos(2\omega t)\cos(\theta) + \sen(2\omega t)\sen(\theta) +  \cos(\theta)\right)
    \end{align*}
    #+end_export
 
    #+begin_export latex
    \begin{equation*}
-     \boxed{p(t) = U I \cos(\theta) + U I \cos(\theta) \cos(2\omega t) + U I \sin(\theta) \sin(2\omega t)}
+     \boxed{p(t) = U I \cos(\theta) + U I \cos(\theta) \cos(2\omega t) + U I \sen(\theta) \sen(2\omega t)}
    \end{equation*}
    #+end_export
 ** Expresión general
 
    #+begin_export latex
    \begin{equation*}
-     p(t) = {\color{blue}U I \cos(\theta)} + {\color{blue}U I \cos(\theta)} \cos(2\omega t) + {\color{red}U I \sin(\theta)} \sin(2\omega t)
+     p(t) = {\color{blue}U I \cos(\theta)} + {\color{blue}U I \cos(\theta)} \cos(2\omega t) + {\color{red}U I \sen(\theta)} \sen(2\omega t)
    \end{equation*}
    #+end_export
 
    #+begin_export latex
    \[
      \color{blue}P = UI\cos\theta \quad%
-     \color{red}Q = UI\sin\theta
+     \color{red}Q = UI\sen\theta
    \]
   
    #+end_export
 
    #+begin_export latex
    \begin{equation*}
-     \boxed{p(t) = {\color{blue}P} \cdot (1 + \cos(2\omega t)) + {\color{red}Q} \cdot \sin(2\omega t)}
+     \boxed{p(t) = {\color{blue}P} \cdot (1 + \cos(2\omega t)) + {\color{red}Q} \cdot \sen(2\omega t)}
    \end{equation*}
       #+end_export
 
@@ -856,11 +864,11 @@ Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente es
    #+begin_export latex
    \[
      P = UI\cos\theta \quad%
-     {\color{gray}Q = UI\sin\theta}
+     {\color{gray}Q = UI\sen\theta}
    \]
    
    \begin{equation*}
-p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
+p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sen(2\omega t)}
 \end{equation*}
       #+end_export
 -----
@@ -892,11 +900,11 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sin(2\omega t)}
    #+begin_export latex
    \[
      {\color{gray}P = UI\cos\theta} \quad%
-     Q = UI\sin\theta
+     Q = UI\sen\theta
    \]
    
    \begin{equation*}
-p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
+p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 \end{equation*}
       #+end_export
 -----
@@ -913,7 +921,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
      \]
 
    \[
-     p(t) = Q \cdot \sin(2 \omega t)
+     p(t) = Q \cdot \sen(2 \omega t)
    \]
    #+end_export
 
@@ -929,11 +937,11 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
    #+begin_export latex
    \[
      {\color{gray}P = UI\cos\theta} \quad%
-     Q = UI\sin\theta
+     Q = UI\sen\theta
    \]
    
    \begin{equation*}
-p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
+p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 \end{equation*}
       #+end_export
 -----
@@ -949,7 +957,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
        \right.
      \]
    \[
-     p(t) = Q \cdot \sin(2 \omega t)
+     p(t) = Q \cdot \sen(2 \omega t)
    \]
    #+end_export
 
@@ -967,7 +975,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sin(2\omega t)
 
 #+begin_export latex
 \[
-     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sin(2\omega t)
+     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sen(2\omega t)
 \]
 #+end_export
 
@@ -982,7 +990,7 @@ Valor medio positivo, $P = U I \cos \theta$
 
 #+begin_export latex
 \[
-     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sin(2\omega t)
+     p(t) = P \cdot (1 + \cos(2\omega t)) + Q \cdot \sen(2\omega t)
 \]
 #+end_export
 
@@ -1005,7 +1013,7 @@ Valor medio positivo, $P = U I \cos \theta$
 - Potencia Reactiva [$VA_r$]
 #+BEGIN_EXPORT latex
 \[
-\boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
+\boxed{Q = U\cdot I\cdot\sen(\theta) = X \cdot I^2}
 \]
 #+END_EXPORT
 
@@ -1019,7 +1027,7 @@ Valor medio positivo, $P = U I \cos \theta$
   \overline{U} &= U\phase{0}\\
   \overline{I} &= I\phase{-\theta}\\
                 \overline{U} \overline{I}^* &= U\phase{0} \cdot I\phase{\theta} = UI\phase{\theta}\\
-                &= U I (\cos\theta + j \sin\theta) = \\
+                &= U I (\cos\theta + j \sen\theta) = \\
                 &= P + j Q
 \end{align*}}
 #+END_EXPORT

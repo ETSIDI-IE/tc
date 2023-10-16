@@ -1,5 +1,6 @@
 \documentclass{standalone}
 
+\usepackage[spanish, es-noshorthands]{babel}
 \usepackage{tikz}
 
 \begin{document}
@@ -11,11 +12,11 @@
   \draw[->] (-0.2,0) -- (12.1,0) node[right] {$t$};
   \draw[->] (0,-1.2) -- (0,1.1);% node[above] {$f(t)$};
   \draw[thick, color=black] plot[id=sin0] function{sin(x)}
-  node[right] {$Y_o \sin(\omega t)$};
+  node[right] {$Y_{max} \sen(\omega t)$};
   \draw[thick, color=red] plot[id=sin+] function{sin(x + pi/3)}
-    node[right] {$Y_o  \sin(\omega t + \pi/3)$};
+    node[right] {$Y_{max}  \sen(\omega t + \pi/3)$};
   \draw[thick, color=blue] plot[id=sin-] function{sin(x - pi/3)}
-    node[right] {$Y_o \sin (\omega t - \pi/3)$};
+    node[right] {$Y_{max} \sen (\omega t - \pi/3)$};
 \end{tikzpicture}
 
 \end{document}
