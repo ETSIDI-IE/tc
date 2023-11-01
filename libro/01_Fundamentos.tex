@@ -1619,10 +1619,9 @@ Donde:
 
 \begin{figure}
   \centering
-  \includegraphics[height=0.3\textheight]{../figs/FuenteReal_PotenciaRendimiento.pdf}
-  \caption{Potencia y eficiencia de una fuente de tensión real en
-    función de la resistencia de carga}
-  \label{fig:eficiencia-fuente}
+  \subfloat[Potencia y eficiencia]{\includegraphics[height=6cm]{../figs/FuenteReal_PotenciaRendimiento.pdf}\label{fig:eficiencia-fuente}}\hspace{4cm}
+    \subfloat[Variación de la potencia y eficiencia]{\includegraphics[height=6cm]{../figs/FuenteReal_DifPotencia.pdf}\label{fig:dif-eficiencia-fuente-tension}}
+  \caption{Potencia y eficiencia de una fuente de tensión real en función de la resistencia de carga}
 \end{figure}
 
 En esta figura podemos comprobar que, suponiendo \(R_g\) constante, la
@@ -1650,14 +1649,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
   \(P_L = 0'75 \cdot P_{max}\) y \(\eta = 0'75\).
 \end{itemize}
 
-  \begin{figure}
-    \centering
-    \includegraphics[height=0.3\textheight]{../figs/FuenteReal_DifPotencia.pdf}
-    \caption{Variación de la eficiencia de una fuente real en función
-      de la carga}
-    \label{fig:dif-eficiencia-fuente-tension}
-  \end{figure}
-	
+
   \section{Asociación de elementos}
 	
   Los diferentes elementos (tanto los activos como los pasivos) se
