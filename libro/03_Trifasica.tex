@@ -1419,63 +1419,73 @@ recomendada en \textbf{triángulo}.
 		\end{example}
 
 		 
-\section{\textsubscript{TC2} Conversión de fuentes reales}
-\label{sec:conversion-fuentes-reales}
-
-{Estrella a Triángulo}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealEstrella.pdf}
 
 
-{Transformamos impedancia}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_ZTriangulo.pdf}
-
-
-{Aplicamos movilidad de fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado1.pdf}
-
-
-{Asociamos fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado2.pdf}
-
-{Triángulo a Estrella}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo.pdf}
-
-{Transformamos fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I.pdf}
-
-{Transformamos impedancias}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I_ZEstrella.pdf}
-
-
-{Aplicamos movilidad de fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado1.pdf}
-
-{Asociamos fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado2.pdf}
-
-{Transformamos fuentes}
-
-\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado3.pdf}
-
-
-\section{\textsubscript{TC2} Estudio generalizado de sistemas trifásicos}
+\section{\textsuperscript{TC2} Estudio generalizado de sistemas trifásicos}
 \label{sec:estudio-generalizado-trifasica}
 
-{Planteamiento del sistema}
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado.pdf}
 
-{Agrupamos impedancias de generador, línea y receptor}
+En las secciones anteriores se han estudiado diferentes configuraciones de sistemas trifásicos con tres simplificaciones básicas: el generador está equilibrado; las fuentes de tensión son ideales; los conductores de las líneas son ideales.
 
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado2.pdf}
+En esta sección se estudiará el funcionamiento de un sistema trifásico con generadores desequilibrados, fuentes reales y conductores reales en las líneas (figura \ref{fig:sistema-trifasico-general}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado.pdf}
+  \caption{Sistema trifásico con fuentes reales de tensión y conductores reales de línea.}
+  \label{fig:sistema-trifasico-general}
+\end{figure}
+
+Antes de acometer este estudio, es necesario aprender a convertir fuentes trifásicas reales de estrella a triángulo y viceversa.
+
+\subsection{Conversión de fuentes reales}
+\label{sec:conversion-fuentes-reales}
+
+\subsubsection{Estrella a triángulo}
+
+La figura \ref{fig:estrella-real} muestra un generador trifásico desequilibrado con fuentes reales conectadas en estrella.
+
+Para convertirlo en una conexión en triángulo debemos transformar las impedancias empleando las ecuaciones de transformación de estrella a triángulo. Obtendremos el circuito de la figura \ref{fig:estrella-Ztriangulo}. A continuación, podemos aplicar movilidad de fuentes (figura \ref{fig:estrella-transformado1}). En cada rama aparecen dos fuentes que pueden ser asociadas para dar lugar al generador transformado (figura \ref{fig:estrella-transformado2}).
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Circuito original.]{\includegraphics[height=4cm]{../figs/GeneradorRealEstrella.pdf}  \label{fig:estrella-real}}\\
+  \subfloat[Transformación de impedancias.]{\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_ZTriangulo.pdf}  \label{fig:estrella-Ztriangulo}}\hspace{4cm}
+  \subfloat[Movilidad de fuentes.]{\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado1.pdf}  \label{fig:estrella-transformado1}}\\
+    \subfloat[Circuito transformado.]{\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado2.pdf}  \label{fig:estrella-transformado2}}
+  \caption{Pasos intermedios en la transformación de estrella a triángulo.}
+\end{figure}
+
+
+\subsubsection{Triángulo a estrella}
+
+La figura \ref{fig:triangulo-real} muestra un generador trifásico desequilibrado con fuentes reales conectadas en triángulo.
+
+Para convertirlo en una conexión en estrella debemos transformar las fuentes de tensión en fuentes de corriente (figura \ref{fig:triangulo-I}) y, a continuación, aplicar transformación de impedancias (figura \ref{fig:triangulo-I-ZEstrella}). Sobre este circuito se puede aplicar movilidad de fuentes (figura \ref{fig:triangulo-transformado1}) cuya asociación produce el circuito de la figura \ref{fig:triangulo-transformado2}. Aplicando una nueva transformación de fuentes obtenemos el circuito final de la figura \ref{fig:triangulo-transformado3}.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Circuito original.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo.pdf}  \label{fig:triangulo-real}}\\
+  \subfloat[Transformación de fuentes.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I.pdf}  \label{fig:triangulo-I}}\hspace{3cm}
+  \subfloat[Transformación de impedancias.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I_ZEstrella.pdf}  \label{fig:triangulo-I-ZEstrella}}\\
+    \subfloat[Movilidad de fuentes.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado1.pdf}  \label{fig:triangulo-transformado1}}\hspace{3cm}
+    \subfloat[Asociación de fuentes.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado2.pdf}  \label{fig:triangulo-transformado2}}\\
+    \subfloat[Circuito transformado.]{\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado3.pdf}  \label{fig:triangulo-transformado3}}
+  \caption{Pasos intermedios en la transformación de triángulo a estrella.}
+\end{figure}
+
+
+
+\subsection{Desarrollo}
+
+Retomamos el análisis del circuito de la figura \ref{fig:sistema-trifasico-general}. En este circuito particular, tanto el generador como el receptor están conectados en estrella, por lo que se pueden agrupar las impedancias del generador, la línea y del receptor (figura \ref{fig:sistema-trifasico-general2}). Si hubiera que analizar un circuito con una configuración diferente, será necesario realizar una transformación previa, ya sea de impedancias, de generador o ambas.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado2.pdf}
+  \caption{Sistema trifásico general con impedancias agrupadas.}
+  \label{fig:sistema-trifasico-general2}
+\end{figure}
 
 \begin{align*}
   \overline{Z}_A &= \overline{Z}_{gA} + \overline{Z}_{lA} + \overline{Z}_{cA}\\
@@ -1483,9 +1493,14 @@ recomendada en \textbf{triángulo}.
   \overline{Z}_C &= \overline{Z}_{gC} + \overline{Z}_{lC} + \overline{Z}_{cC}
 \end{align*}
 
-{Conversión de fuentes}
+El circuito de la figura \ref{fig:sistema-trifasico-general2} se puede simplificar con una conversión de fuentes, obteniendo el circuito de la figura \ref{fig:sistema-trifasico-general3}.
 
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado3.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=6cm]{../figs/CircuitoTrifasicaGeneralizado3.pdf}
+  \caption{Sistema trifásico general con fuentes transformadas.}
+  \label{fig:sistema-trifasico-general3}
+\end{figure}
 
 \begin{align*}
   \overline{I}_{gA} &= \overline{\epsilon}_A \cdot \overline{Y}_A\\
@@ -1493,22 +1508,19 @@ recomendada en \textbf{triángulo}.
   \overline{I}_{gC} &= \overline{\epsilon}_C \cdot \overline{Y}_C
 \end{align*}
 
-\[
+Agrupando las impedancias y fuentes del circuito de la figura \ref{fig:sistema-trifasico-general3} se puede calcular la tensión de desplazamiento del neutro:
+
+\begin{equation*}
   \overline{U}_{ON} = \frac{\overline{I}_{gA} + \overline{I}_{gB} + \overline{I}_{gC}}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
-\]
+\end{equation*}
+ecuación que también puede expresarse en función de las fuentes originales:
 
-{Tensión de desplazamiento del neutro}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado3.pdf}
-
-\[
+\begin{equation}
   \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
-\]
+\label{eq:analisis-general}
+\end{equation}
 
-{Cálculo de corrientes}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado.pdf}
-
+Una vez obtenida la tensión de desplazamiento del neutro, es posible calcular las corrientes de línea en el circuito original de la figura \ref{fig:sistema-trifasico-general}:
 \begin{align*}
   \overline{I}_A &= \frac{\overline{\epsilon}_A - \overline{U}_{ON}}{\overline{Z}_{gA} + \overline{Z}_{lA} + \overline{Z}_{cA}}\\
   \overline{I}_B &= \frac{\overline{\epsilon}_B - \overline{U}_{ON}}{\overline{Z}_{gB} + \overline{Z}_{lB} + \overline{Z}_{cB}}\\
@@ -1516,94 +1528,56 @@ recomendada en \textbf{triángulo}.
   \overline{I}_N &= -\overline{I}_A -\overline{I}_B -\overline{I}_C
 \end{align*}
 
-{Aplicación a sistemas equilibrados}
-La suma de las fuerzas electromotrices es 0
+\subsection{Aplicaciones}
+\label{sec:aplicaciones-analisis-general}
+
+Esta sección recoge algunas aplicaciones del análisis general de sistemas trifásicos.
+
+\subsubsection{Sistemas equilibrados}
+
+En este caso, la suma de las fuerzas electromotrices es 0:
 \[
   \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC} = 0
 \]
-Las tres impedancias son iguales
+y las tres impedancias son iguales
 \[
   \overline{Y}_A = \overline{Y}_B = \overline{Y}_C
 \]
-Por tanto,
+Por tanto, la aplicación de la ecuación \ref{eq:analisis-general} produce el resultado esperado:
 \[
   \overline{U}_{ON} = \frac{3 \cdot \overline{Y} \cdot \left(  \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC}\right)}{3 \cdot \overline{Y} + \overline{Y}_{lN}} = 0
 \]
-Este resultado es independiente de la existencia del neutro y de su impedancia.
+Es importante destacar que este resultado es independiente de la existencia del neutro y de su impedancia.
 
-{Aplicación a sistemas desequilibrados}
-\begin{itemize}
-\item Sistemas con neutro de impedancia no nula
-\[
-  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
-\]
+\subsubsection{Sistemas desequilibrados}
 
-\item Sistemas con neutro de impedancia nula (\(\overline{Z}_{lN} = 0,  \quad \overline{Y}_{lN} \to \infty\))
+El caso general de aplicación de la ecuación \ref{eq:analisis-general} es un sistema desequilibrado cuyo neutro tiene una impedancia no nula.
+
+En el caso de que el neutro de un sistema desequilibrado tenga impedancia nula ($\overline{Z}_{lN} = 0,  \quad \overline{Y}_{lN} \to \infty$), la ecuación produce el mismo resultado que en un sistema equilibrado:
 \[
   \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}} = 0
 \]
 
-\item Sistemas sin neutro (\(\overline{Z}_{lN} \to \infty, \quad \overline{Y}_{lN} = 0\))
+
+Cuando el sistema no tiene neutro ($\overline{Z}_{lN} \to \infty, \quad \overline{Y}_{lN} = 0$), y tanto el generador como el receptor están conectados en estrella (figura \ref{fig:generadorY-receptorY}), la ecuación queda ligeramente simplificada:
 
 \[
   \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
 \]
-\end{itemize}
 
-{Sistema sin neutro}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_sinNeutro.pdf}
-
-\[
-  \begin{rcases}
-    Z_{lN} \to \infty
-  \end{rcases}
-  \longrightarrow%
-  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
-\]
-
-{Receptor en triángulo}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_RT.pdf}
-
-\[
-  \begin{rcases}
-    \text{Transformación de Receptor}\\
-    Z_{lN} \to \infty
-  \end{rcases}
-  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
-\]
+Cuando el receptor está conectado en triángulo (figura \ref{fig:generadorY-receptorD}) es necesario realizar una transformación de impedancias para aplicar la ecuación, mientras que si el generador está conectado en triángulo (figura \ref{fig:generadorD-receptorY}) es necesario realizar una transformación de fuentes (sección \ref{sec:conversion-fuentes-reales}). Evidentemente, si tanto el generador como el receptor están conectados en triángulo (figura \ref{fig:generadorD-receptorD}), será necesario transformar ambos.
 
 
+\begin{figure}[H]
+  \centering
+  \subfloat[Receptor y generador en estrella]{\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_sinNeutro.pdf}\label{fig:generadorY-receptorY}}\hspace{2cm}
+  \subfloat[Receptor en triángulo]{\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_RT.pdf}\label{fig:generadorY-receptorD}}\\
+  \subfloat[Generador en triángulo]{\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GT.pdf}\label{fig:generadorD-receptorY}}\hspace{2cm}
+  \subfloat[Receptor y generador en triángulo]{\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GTRT.pdf}\label{fig:generadorD-receptorD}}
+  \caption{Posibles configuraciones de generador y receptor de un sistema trifásico sin neutro.}
+  \label{fig:sistema-trifasico-configuraciones}
+\end{figure}
 
-
-{Generador en triángulo}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GT.pdf}
-
-\[
-  \begin{rcases}
-    \text{Transformación de Generador}\\
-    Z_{lN} \to \infty
-  \end{rcases}
-  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
-\]
-
-
-{Generador y Receptor en triángulo}
-
-\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GTRT.pdf}
-
-\[
-  \begin{rcases}
-    \text{Transformación de Generador}\\
-    \text{Transformación de Receptor}\\
-    Z_{lN} \to \infty
-  \end{rcases}
-  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
-\]
-
-	
 
 %%% Local Variables:
 %%% mode: latex
