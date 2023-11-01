@@ -1419,8 +1419,189 @@ recomendada en \textbf{triángulo}.
 		\end{example}
 
 		 
-\section{Conversión de fuentes reales}
+\section{\textsubscript{TC2} Conversión de fuentes reales}
 \label{sec:conversion-fuentes-reales}
+
+{Estrella a Triángulo}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealEstrella.pdf}
+
+
+{Transformamos impedancia}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_ZTriangulo.pdf}
+
+
+{Aplicamos movilidad de fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado1.pdf}
+
+
+{Asociamos fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealEstrella_Transformado2.pdf}
+
+{Triángulo a Estrella}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo.pdf}
+
+{Transformamos fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I.pdf}
+
+{Transformamos impedancias}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_I_ZEstrella.pdf}
+
+
+{Aplicamos movilidad de fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado1.pdf}
+
+{Asociamos fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado2.pdf}
+
+{Transformamos fuentes}
+
+\includegraphics[height=4cm]{../figs/GeneradorRealTriangulo_Transformado3.pdf}
+
+
+\section{\textsubscript{TC2} Estudio generalizado de sistemas trifásicos}
+\label{sec:estudio-generalizado-trifasica}
+
+{Planteamiento del sistema}
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado.pdf}
+
+{Agrupamos impedancias de generador, línea y receptor}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado2.pdf}
+
+\begin{align*}
+  \overline{Z}_A &= \overline{Z}_{gA} + \overline{Z}_{lA} + \overline{Z}_{cA}\\
+  \overline{Z}_B &= \overline{Z}_{gB} + \overline{Z}_{lB} + \overline{Z}_{cB}\\
+  \overline{Z}_C &= \overline{Z}_{gC} + \overline{Z}_{lC} + \overline{Z}_{cC}
+\end{align*}
+
+{Conversión de fuentes}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado3.pdf}
+
+\begin{align*}
+  \overline{I}_{gA} &= \overline{\epsilon}_A \cdot \overline{Y}_A\\
+  \overline{I}_{gB} &= \overline{\epsilon}_B \cdot \overline{Y}_B\\
+  \overline{I}_{gC} &= \overline{\epsilon}_C \cdot \overline{Y}_C
+\end{align*}
+
+\[
+  \overline{U}_{ON} = \frac{\overline{I}_{gA} + \overline{I}_{gB} + \overline{I}_{gC}}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
+\]
+
+{Tensión de desplazamiento del neutro}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado3.pdf}
+
+\[
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
+\]
+
+{Cálculo de corrientes}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado.pdf}
+
+\begin{align*}
+  \overline{I}_A &= \frac{\overline{\epsilon}_A - \overline{U}_{ON}}{\overline{Z}_{gA} + \overline{Z}_{lA} + \overline{Z}_{cA}}\\
+  \overline{I}_B &= \frac{\overline{\epsilon}_B - \overline{U}_{ON}}{\overline{Z}_{gB} + \overline{Z}_{lB} + \overline{Z}_{cB}}\\
+  \overline{I}_C &= \frac{\overline{\epsilon}_C - \overline{U}_{ON}}{\overline{Z}_{gC} + \overline{Z}_{lC} + \overline{Z}_{cC}}\\
+  \overline{I}_N &= -\overline{I}_A -\overline{I}_B -\overline{I}_C
+\end{align*}
+
+{Aplicación a sistemas equilibrados}
+La suma de las fuerzas electromotrices es 0
+\[
+  \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC} = 0
+\]
+Las tres impedancias son iguales
+\[
+  \overline{Y}_A = \overline{Y}_B = \overline{Y}_C
+\]
+Por tanto,
+\[
+  \overline{U}_{ON} = \frac{3 \cdot \overline{Y} \cdot \left(  \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC}\right)}{3 \cdot \overline{Y} + \overline{Y}_{lN}} = 0
+\]
+Este resultado es independiente de la existencia del neutro y de su impedancia.
+
+{Aplicación a sistemas desequilibrados}
+\begin{itemize}
+\item Sistemas con neutro de impedancia no nula
+\[
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}}
+\]
+
+\item Sistemas con neutro de impedancia nula (\(\overline{Z}_{lN} = 0,  \quad \overline{Y}_{lN} \to \infty\))
+\[
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C + \overline{Y}_{lN}} = 0
+\]
+
+\item Sistemas sin neutro (\(\overline{Z}_{lN} \to \infty, \quad \overline{Y}_{lN} = 0\))
+
+\[
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+\end{itemize}
+
+{Sistema sin neutro}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_sinNeutro.pdf}
+
+\[
+  \begin{rcases}
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow%
+  \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+
+{Receptor en triángulo}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_RT.pdf}
+
+\[
+  \begin{rcases}
+    \text{Transformación de Receptor}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+
+
+
+
+{Generador en triángulo}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GT.pdf}
+
+\[
+  \begin{rcases}
+    \text{Transformación de Generador}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
+
+
+{Generador y Receptor en triángulo}
+
+\includegraphics[height=4cm]{../figs/CircuitoTrifasicaGeneralizado_GTRT.pdf}
+
+\[
+  \begin{rcases}
+    \text{Transformación de Generador}\\
+    \text{Transformación de Receptor}\\
+    Z_{lN} \to \infty
+  \end{rcases}
+  \longrightarrow \overline{U}_{ON} = \frac{\overline{\epsilon}_{gA} \cdot \overline{Y}_A + \overline{\epsilon}_{gB} \cdot \overline{Y}_B + \overline{\epsilon}_{gC} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\]
 
 	
 
