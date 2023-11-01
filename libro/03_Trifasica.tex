@@ -278,65 +278,71 @@
 	    \end{figure}
 	\end{example}
 	
-	\subsubsection{Estrella desequilibrada}
-	
-	La estrella está desequilibrada cuando las tres impedancias no sean iguales en módulo o argumento. Si se trata de un sistema a cuatro hilos, como el mostrado en la Figura~\ref{fig.estrelladeseqiulibrado_4hilos}, al ser las impedancias distintas, da lugar a intensidades de línea diferentes, no formando un sistema equilibrado de fasores. Las intensidades serán: 
+	\subsubsection{Estrella desequilibrada con 4 hilos}
+	\label{ref:estrella-des-4h}
+	La estrella está desequilibrada cuando las tres impedancias no
+        sean iguales en módulo o argumento. Si se trata de un sistema
+        a cuatro hilos, como el mostrado en la
+        Figura~\ref{fig.estrelladeseqiulibrado_4hilos}, al ser las
+        impedancias distintas, da lugar a intensidades de línea
+        diferentes, no formando un sistema equilibrado de fasores. Las
+        intensidades serán:
 	\begin{align*}
-      \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A}\\
-      \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B}\\
-      \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C}
-    \end{align*}
-    y, aplicando la 1LK en $N$:
-    \begin{equation}
-        \overline{I}_A  + \overline{I}_B + \overline{I}_C + \overline{I}_N = 0
-    \end{equation}
-	pudiendo ser la corriente del neutro igual a 0 a pesar del desequilibrio de las impedancias. 
+          \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A}\\
+          \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B}\\
+          \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C}
+        \end{align*}
+        y, aplicando la 1LK en $N$:
+        \begin{equation}
+          \overline{I}_A  + \overline{I}_B + \overline{I}_C + \overline{I}_N = 0
+        \end{equation}
+	pudiendo ser la corriente del neutro igual a 0 a pesar del
+        desequilibrio de las impedancias.
 	
 	\begin{figure}[H]
-	    \centering
-	    \includegraphics{../figs/EstrellaDesequilibrado_Receptor.pdf}
-	    \caption{Receptor desequilibrado en estrella a cuatro hilos}
-	    \label{fig.estrelladeseqiulibrado_4hilos}
+          \centering
+          \includegraphics[height=4cm]{../figs/EstrellaDesequilibrado_Receptor.pdf}
+          \caption{Receptor desequilibrado en estrella a cuatro hilos}
+          \label{fig.estrelladeseqiulibrado_4hilos}
 	\end{figure}
 	
-	Si se tiene un sistema a tres hilos, no se puede seguir el procedimiento anterior, y se deberá aplicar el método de las mallas. 
-
         \vspace{4mm}
         \begin{example}\label{ej.estrella-deseq}
-Un sistema trifásico de cuatro conductores, de secuencia de fases
-directa y $\SI[parse-numbers=false]{200\sqrt{3}}{\volt}$ alimenta a
-tres impedancias:
-$\overline{Z}_{A} =
-{10\phase{\ang{60}}}\unit{\ohm}$,
-$\overline{Z}_{B} = {10\phase{\ang{0}}}\unit{\ohm}$
-y
-$\overline{Z}_{C} =
-{10\phase{\ang{-30}}}\unit{\ohm}$. Determinar las
-corrientes de línea.
+          Un sistema trifásico de cuatro conductores, de secuencia de
+          fases directa y
+          $\SI[parse-numbers=false]{200\sqrt{3}}{\volt}$ alimenta a
+          tres impedancias:
+          $\overline{Z}_{A} = {10\phase{\ang{60}}}\unit{\ohm}$,
+          $\overline{Z}_{B} = {10\phase{\ang{0}}}\unit{\ohm}$ y
+          $\overline{Z}_{C} =
+          {10\phase{\ang{-30}}}\unit{\ohm}$. Determinar las corrientes
+          de línea.
 
-\vspace{1mm}
-\hspace*{-5mm}\hrulefill
+          \vspace{1mm} \hspace*{-5mm}\hrulefill
 
-\vspace{4mm}
+          \vspace{4mm}
         
-Se trata de una conexión en estrella desequilibrada. Las tensiones de línea y fase son, respectivamente:
-\[ U_L = \SI[parse-numbers=false]{200\sqrt{3}}{\volt} \quad \rightarrow \quad U_f =
-  \SI{200}{\volt}
-\]
+          Se trata de una conexión en estrella desequilibrada. Las
+          tensiones de línea y fase son, respectivamente:
+          \[ U_L = \SI[parse-numbers=false]{200\sqrt{3}}{\volt} \quad
+            \rightarrow \quad U_f = \SI{200}{\volt}
+          \]
 
-Los fasores correspondientes, teniendo en cuenta que se trata de una secuencia de fases directa, son:
-\begin{align*}
-  \overline{U}_A &= {200\phase{\ang{90}}}\unit{\volt}\\
-  \overline{U}_B &= {200\phase{\ang{-30}}}\unit{\volt}\\
-  \overline{U}_C &= {200\phase{\ang{-150}}}\unit{\volt}\\
-\end{align*}
+          Los fasores correspondientes, teniendo en cuenta que se
+          trata de una secuencia de fases directa, son:
+          \begin{align*}
+            \overline{U}_A &= {200\phase{\ang{90}}}\unit{\volt}\\
+            \overline{U}_B &= {200\phase{\ang{-30}}}\unit{\volt}\\
+            \overline{U}_C &= {200\phase{\ang{-150}}}\unit{\volt}\\
+          \end{align*}
 
-Con estos fasores y las impedancias podemos calcular las corrientes de línea:
-\begin{align*}
-  \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A} = \frac{200}{10}\phase{\ang{90} - \ang{60}} \\
-  \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B} = \frac{200}{10}\phase{\ang{-30} - \ang{0}}\\
-  \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C} = \frac{200}{10}\phase{\ang{-150} - (\ang{-30})}
-\end{align*}
+          Con estos fasores y las impedancias podemos calcular las
+          corrientes de línea:
+          \begin{align*}
+            \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}_A} = \frac{200}{10}\phase{\ang{90} - \ang{60}} \\
+            \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}_B} = \frac{200}{10}\phase{\ang{-30} - \ang{0}}\\
+            \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}_C} = \frac{200}{10}\phase{\ang{-150} - (\ang{-30})}
+          \end{align*}
 
  \begin{align*}
    \overline{I}_A &= {20\phase{\ang{30}}}\unit{\ampere}\\
@@ -350,135 +356,222 @@ Con estos fasores y las impedancias podemos calcular las corrientes de línea:
    \overline{I}_C) = {30.12\phase{\ang{144.89}}}\unit{\ampere}
  \]
 
-
 \end{example}
+
+\subsubsection{\textsuperscript{TC2} Estrella desequilibrada con 3 hilos}
+\label{ref:estrella-des-3h}
+
+Cuando un receptor desequilibrado está conectado en estrella sin neutro (figura \ref{fig:estrella-des-3h}), no se puede aplicar el procedimiento anterior porque, en este caso, el punto común del generador (N) y el punto común del receptor (O) están a diferente potencial, $\overline{U}_N \neq \overline{U}_{O}$ y, por tanto, las tensiones del receptor son diferentes a las del generador.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=4cm]{../figs/EstrellaDesequilibrado_SinNeutro.pdf}
+  \caption{Receptor desequilibrado en estrella con 3 hilos (sin neutro).}
+  \label{fig:estrella-des-3h}
+\end{figure}
+
+En estas condiciones, las ecuaciones del receptor son:
+
+\begin{align*}
+  \overline{U}_{A'O} &= \overline{I}_A \cdot \overline{Z}_A\\
+  \overline{U}_{B'O} &= \overline{I}_B \cdot \overline{Z}_B\\
+  \overline{U}_{C'O} &= \overline{I}_C \cdot \overline{Z}_C
+\end{align*}
+teniendo en cuenta que en el nudo \(O\):
+\[
+  \overline{I}_A + \overline{I}_B + \overline{I}_C = 0
+\]
+
+Para obtener las corrientes debemos relacionar las tensiones en el receptor con las tensiones del generador:
+\begin{align*}
+  \overline{U}_{A'O} &= \overline{U}_{AN} - \overline{U}_{ON}\\
+  \overline{U}_{B'O} &= \overline{U}_{BN} - \overline{U}_{ON}\\
+  \overline{U}_{C'O} &= \overline{U}_{CN} - \overline{U}_{ON}
+\end{align*}
+
+Teniendo en cuenta estas ecuaciones se pueden despejar las corrientes:
+\begin{align*}
+  \overline{I}_A &= \frac{\overline{U}_{AN} - \overline{U}_{ON}}{\overline{Z}_A}\\
+  \overline{I}_B &= \frac{\overline{U}_{BN} - \overline{U}_{ON}}{\overline{Z}_B}\\
+  \overline{I}_C &= \frac{\overline{U}_{CN} - \overline{U}_{ON}}{\overline{Z}_C}
+\end{align*}
+
+Finalmente, usando la ecuación del nudo \(O\) despejamos la tensión \(U_{ON}\), denominada tensión de desplazamiento del neutro\footnote{Se puede llegar a este mismo resultado aplicando el teorema de Millman.}:
+
+\begin{equation}
+  \label{eq:desplazamiento-neutro}
+  \overline{U}_{ON} = \frac{\overline{U}_{AN} \cdot \overline{Y}_A + \overline{U}_{BN} \cdot \overline{Y}_B + \overline{U}_{CN} \cdot \overline{Y}_C}{\overline{Y}_A + \overline{Y}_B + \overline{Y}_C}
+\end{equation}
+
+Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las corrientes de línea:
+\begin{align*}
+  \overline{I}_A &= (\overline{U}_{AN} - \overline{U}_{ON})\cdot{\overline{Y}_A}\\
+  \overline{I}_B &= (\overline{U}_{BN} - \overline{U}_{ON})\cdot{\overline{Y}_B}\\
+  \overline{I}_C &= (\overline{U}_{CN} - \overline{U}_{ON})\cdot{\overline{Y}_C}
+\end{align*}
+
+Al procedimiento de cálculo expuesto se le denomina método de desplazamiento del neutro.
+
+\subsection{Conexión en triángulo}\label{sec.triangulo}
 	
-	\subsection{Conexión en triángulo}\label{sec.triangulo}
-	
-	Una forma alternativa de conectar las tres fases de un generador/receptor es la \textbf{conexión en triángulo}, que se consigue conectando el terminal de polaridad de referencia negativa de una fase, con el de referencia positiva de otra fase ($A'$ con $B$, $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura \ref{fig.conexion_triangulo}. En este caso, se tiene únicamente un \textbf{sistema a tres hilos}, por lo que solo se dispone de la \textbf{tensión de línea}: 
-	\begin{equation*}
-	    \overline{U}_{AB};\qquad\qquad \overline{U}_{BC};\qquad\qquad \overline{U}_{CA}\qquad\qquad
-	\end{equation*}
-	\begin{figure}[H]
-		\centering
-		{\includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}}
-		\caption{Conexión en triángulo}
-		\label{fig.conexion_triangulo}
-	\end{figure}
+Una forma alternativa de conectar las tres fases de un
+generador/receptor es la \textbf{conexión en triángulo}, que se
+consigue conectando el terminal de polaridad de referencia negativa de
+una fase, con el de referencia positiva de otra fase ($A'$ con $B$,
+$B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
+\ref{fig.conexion_triangulo}. En este caso, se tiene únicamente un
+\textbf{sistema a tres hilos}, por lo que solo se dispone de la
+\textbf{tensión de línea}:
+\begin{equation*}
+  \overline{U}_{AB};\qquad\qquad \overline{U}_{BC};\qquad\qquad \overline{U}_{CA}\qquad\qquad
+\end{equation*}
+\begin{figure}[H]
+  \centering
+  {\includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}}
+  \caption{Conexión en triángulo}
+  \label{fig.conexion_triangulo}
+\end{figure}
 	
 	\subsubsection{Triángulo equilibrado}
-	Las intensidades en cada impedancia (\textbf{intensidades de fase}) se obtienen como: 
+	Las intensidades en cada impedancia (\textbf{intensidades de
+          fase}) se obtienen como:
 	\begin{align*}
           \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}} = \frac{U}{Z}\phase{{\pm 120^\circ} - \theta} \\
           \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}} = \frac{U}{Z}\phase{0 - \theta}\\
           \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}} = \frac{U}{Z}\phase{{\mp 120^\circ} - \theta}
-    \end{align*}
-    con el signo de la fase superior para SFD e inferior para SFI. Estas corrientes tienen el mismo módulo: 
-    \begin{equation}
-        \boxed{{I_{AB}}={I_{BC}}={I_{CA}} = \dfrac{U_L}{Z}}
-    \end{equation}
-    Aplicando la 1LK en cada nudo del receptor, se obtienen las \textbf{corrientes de línea} que, al formar un sistema equilibrado: 
-    \begin{align}
-      \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\pm 90^\circ} - \theta}\\
-      \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\mp 30^\circ} - \theta}\\
-      \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\mp 150^\circ} - \theta}
-    \end{align}
-    con el mismo criterio de signos que para las corrientes de fase. Por tanto, el módulo de las corrientes de línea es: 
-    \begin{equation}
-        \boxed{{I}_A = {I}_B = {I}_C = \sqrt{3} \cdot I_f = \sqrt{3}\,\frac{U_L}{Z}}
-    \end{equation}
+        \end{align*}
+        con el signo de la fase superior para SFD e inferior para
+        SFI. Estas corrientes tienen el mismo módulo:
+        \begin{equation}
+          \boxed{{I_{AB}}={I_{BC}}={I_{CA}} = \dfrac{U_L}{Z}}
+        \end{equation}
+        Aplicando la 1LK en cada nudo del receptor, se obtienen las
+        \textbf{corrientes de línea} que, al formar un sistema
+        equilibrado:
+        \begin{align}
+          \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\pm 90^\circ} - \theta}\\
+          \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\mp 30^\circ} - \theta}\\
+          \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC} = \sqrt{3} \cdot \frac{U}{Z}\phase{{\mp 150^\circ} - \theta}
+        \end{align}
+        con el mismo criterio de signos que para las corrientes de
+        fase. Por tanto, el módulo de las corrientes de línea es:
+        \begin{equation}
+          \boxed{{I}_A = {I}_B = {I}_C = \sqrt{3} \cdot I_f = \sqrt{3}\,\frac{U_L}{Z}}
+        \end{equation}
 	
 	\vspace{4mm}
-    \begin{example}\label{ej.3-2}
-	    Un sistema trifásico de secuencia directa y tensión $\qty{200}{\volt}$ alimenta tres impedancias iguales $\overline{Z}=10\phase{30^\circ}\,\Omega$, conectadas en triángulo. Determinar las corrientes de fase y línea, y dibujar el diagrama fasorial.
+        \begin{example}\label{ej.3-2}
+          Un sistema trifásico de secuencia directa y tensión
+          $\qty{200}{\volt}$ alimenta tres impedancias iguales
+          $\overline{Z}=10\phase{30^\circ}\,\Omega$, conectadas en
+          triángulo. Determinar las corrientes de fase y línea, y
+          dibujar el diagrama fasorial.
 
-        \vspace{1mm}
-	    \hspace*{-5mm}\hrulefill
+          \vspace{1mm} \hspace*{-5mm}\hrulefill
         
-        \vspace{4mm}
+          \vspace{4mm}
     
-        Siguiendo la referencia para SFD (Figura~\ref{fig.linea-fase-SFD}), las tensiones de línea del sistema son:
-	    \begin{align*}
-	        \overline{U}_{AB}&=200\phase{120^\circ}\,\si{\volt}\\
-	        \overline{U}_{BC}&=200\phase{0^\circ}\,\si{\volt}\\
-	        \overline{U}_{CA}&=200\phase{-120^\circ}\,\si{\volt}
-	    \end{align*}
-	    Por lo que las corrientes de fase son:
-	    \begin{align*}
-	        \overline{I}_{AB} &= \frac{200\phase{120^\circ}}{10\phase{30^\circ}} =20\phase{90^\circ} \,\si{\ampere} \\[10pt]
-          \overline{I}_{BC} &= \frac{200\phase{0^\circ}}{10\phase{30^\circ}} = 20\phase{-30^\circ} \,\si{\ampere}\\[10pt]
-          \overline{I}_{CA} &=\frac{200\phase{-120^\circ}}{10\phase{30^\circ}} = 20\phase{-150^\circ} \,\si{\ampere}
-	    \end{align*}
-	    siendo las corrientes de línea, por 1LK:
-	    \begin{align*}
-	        \overline{I}_A&= \overline{I}_{AB}-\overline{I}_{CA} = \sqrt{3}\cdot 20\phase{60^\circ}\,\si{\ampere}\\
-	        \overline{I}_B&= \overline{I}_{BC}-\overline{I}_{AB} = \sqrt{3}\cdot 20\phase{-60^\circ}\,\si{\ampere}\\
-	        \overline{I}_C&= \overline{I}_{CA}-\overline{I}_{BC} = \sqrt{3}\cdot 20\phase{180^\circ}\,\si{\ampere}
-	    \end{align*}
-	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-2}. 
-	    \begin{figure}[H]
-	        \centering
-	    \includegraphics{../figs/diagrama_ejemplo3_2.pdf}
-	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-2}}
-	        \label{fig.diagrama_ejemplo_3-2}
-	    \end{figure}
+          Siguiendo la referencia para SFD
+          (Figura~\ref{fig.linea-fase-SFD}), las tensiones de línea
+          del sistema son:
+          \begin{align*}
+            \overline{U}_{AB}&=200\phase{120^\circ}\,\si{\volt}\\
+            \overline{U}_{BC}&=200\phase{0^\circ}\,\si{\volt}\\
+            \overline{U}_{CA}&=200\phase{-120^\circ}\,\si{\volt}
+          \end{align*}
+          Por lo que las corrientes de fase son:
+          \begin{align*}
+            \overline{I}_{AB} &= \frac{200\phase{120^\circ}}{10\phase{30^\circ}} =20\phase{90^\circ} \,\si{\ampere} \\[10pt]
+            \overline{I}_{BC} &= \frac{200\phase{0^\circ}}{10\phase{30^\circ}} = 20\phase{-30^\circ} \,\si{\ampere}\\[10pt]
+            \overline{I}_{CA} &=\frac{200\phase{-120^\circ}}{10\phase{30^\circ}} = 20\phase{-150^\circ} \,\si{\ampere}
+          \end{align*}
+          siendo las corrientes de línea, por 1LK:
+          \begin{align*}
+            \overline{I}_A&= \overline{I}_{AB}-\overline{I}_{CA} = \sqrt{3}\cdot 20\phase{60^\circ}\,\si{\ampere}\\
+            \overline{I}_B&= \overline{I}_{BC}-\overline{I}_{AB} = \sqrt{3}\cdot 20\phase{-60^\circ}\,\si{\ampere}\\
+            \overline{I}_C&= \overline{I}_{CA}-\overline{I}_{BC} = \sqrt{3}\cdot 20\phase{180^\circ}\,\si{\ampere}
+          \end{align*}
+          El diagrama fasorial se presenta en la
+          Figura~\ref{fig.diagrama_ejemplo_3-2}.
+          \begin{figure}[H]
+            \centering
+            \includegraphics{../figs/diagrama_ejemplo3_2.pdf}
+            \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-2}}
+            \label{fig.diagrama_ejemplo_3-2}
+          \end{figure}
 	\end{example}
 	
 	\subsubsection{Triángulo desequilibrado}
-	Se trata del receptor representado en la Figura~\ref{fig.trianguloDesequilibrado_receptor}. Supóngase que se conocen las tensiones de línea $\overline{U}_{AB}$, $\overline{U}_{BC}$ y $\overline{U}_{CA}$. En este caso, cada impedancia del triángulo es distinta de las demás, por lo que se tendrán tres corrientes de fase distintas en módulo y argumento:
+	Se trata del receptor representado en la
+        Figura~\ref{fig.trianguloDesequilibrado_receptor}. Supóngase
+        que se conocen las tensiones de línea $\overline{U}_{AB}$,
+        $\overline{U}_{BC}$ y $\overline{U}_{CA}$. En este caso, cada
+        impedancia del triángulo es distinta de las demás, por lo que
+        se tendrán tres corrientes de fase distintas en módulo y
+        argumento:
 	\begin{align*}
-      \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}_{AB}}\\
-      \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}_{BC}}\\
-      \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}_{CA}}
-    \end{align*}
-    no constituyendo, por tanto, un sistema de fasores equilibrado. Las corrientes de línea se obtienen aplicando la 1LK en cada nudo:
-    \begin{align}
-      \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} \\
-      \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB}\\
-      \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC}
-    \end{align}
-    que, en general, no forman tampoco un sistema equilibrado de fasores.
+          \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}_{AB}}\\
+          \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}_{BC}}\\
+          \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}_{CA}}
+        \end{align*}
+        no constituyendo, por tanto, un sistema de fasores
+        equilibrado. Las corrientes de línea se obtienen aplicando la
+        1LK en cada nudo:
+        \begin{align}
+          \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} \\
+          \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB}\\
+          \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC}
+        \end{align}
+        que, en general, no forman tampoco un sistema equilibrado de
+        fasores.
 	\begin{figure}[H]
-	    \centering
-	    \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
-	    \caption{Receptor en triángulo desequilibrado}
-	    \label{fig.trianguloDesequilibrado_receptor}
+          \centering
+          \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
+          \caption{Receptor en triángulo desequilibrado}
+          \label{fig.trianguloDesequilibrado_receptor}
 	\end{figure}
 	
 	\vspace{4mm}
 	\begin{example}\label{ej.3-3}
-	    Un sistema trifásico de SFI y tensión $\qty{200}{\volt}$ alimenta tres impedancias conectadas en triángulo, de valor $\overline{Z}_{AB}=10\phase{0^\circ}\,\Omega$, $\overline{Z}_{BC}=10\phase{30^\circ}\,\Omega$, $\overline{Z}_{CA}=10\phase{-45^\circ}\,\Omega$. Determinar las corrientes de fase y línea, y dibujar el diagrama fasorial.
+          Un sistema trifásico de SFI y tensión $\qty{200}{\volt}$
+          alimenta tres impedancias conectadas en triángulo, de valor
+          $\overline{Z}_{AB}=10\phase{0^\circ}\,\Omega$,
+          $\overline{Z}_{BC}=10\phase{30^\circ}\,\Omega$,
+          $\overline{Z}_{CA}=10\phase{-45^\circ}\,\Omega$. Determinar
+          las corrientes de fase y línea, y dibujar el diagrama
+          fasorial.
 
-        \vspace{1mm}
-	    \hspace*{-5mm}\hrulefill
+          \vspace{1mm} \hspace*{-5mm}\hrulefill
         
-        \vspace{4mm}
+          \vspace{4mm}
 	    
-	    Siguiendo la referencia para SFI (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea del sistema son:
-	    \begin{align*}
-	        \overline{U}_{AB}&=200\phase{-120^\circ}\,\si{\volt}\\
-	        \overline{U}_{BC}&=200\phase{0^\circ}\,\si{\volt}\\
-	        \overline{U}_{CA}&=200\phase{120^\circ}\,\si{\volt}
-	    \end{align*}
-	    Por lo que las corrientes de fase:
-	    \begin{align*}
-	        \overline{I}_{AB} &= \frac{200\phase{-120^\circ}}{10\phase{0^\circ}} =20\phase{-120^\circ}\,\si{\ampere} \\[10pt]
-          \overline{I}_{BC} &= \frac{200\phase{0^\circ}}{10\phase{30^\circ}} = 20\phase{-30^\circ}\,\si{\ampere}\\[10pt]
-          \overline{I}_{CA} &=\frac{200\phase{120^\circ}}{10\phase{-45^\circ}} = 20\phase{165^\circ}\,\si{\ampere}
-	    \end{align*}
-	    siendo las corrientes de línea, por 1LK:
-	    \begin{align*}
-         \overline{I}_A \; &= \; \overline{I}_{AB} - \overline{I}_{CA} \;=\; (20\phase{-120^\circ})-(20\phase{165^\circ}) \;=\; 24.35\phase{-67.50^\circ}\,\si{\ampere}\\	        
-         \overline{I}_B \; &= \; \overline{I}_{BC} - \overline{I}_{AB} \;=\; (20\phase{-30^\circ})-(20\phase{-120^\circ}) \;=\; 28.28\phase{15^\circ}\,\si{\ampere}\\
-        \overline{I}_C \; &= \; \overline{I}_{CA} - \overline{I}_{BC} \;=\; (20\phase{165^\circ})-(20\phase{-30^\circ}) \;=\; 39.66\phase{157.5^\circ}\,\si{\ampere}
-        \end{align*}
-	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-3}. 
-	    \begin{figure}[H]
-	        \centering
-	        \includegraphics{../figs/diagrama_3_3.pdf}
-	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-3}}
-	       \label{fig.diagrama_ejemplo_3-3}
-	    \end{figure}
+          Siguiendo la referencia para SFI
+          (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea
+          del sistema son:
+          \begin{align*}
+            \overline{U}_{AB}&=200\phase{-120^\circ}\,\si{\volt}\\
+            \overline{U}_{BC}&=200\phase{0^\circ}\,\si{\volt}\\
+            \overline{U}_{CA}&=200\phase{120^\circ}\,\si{\volt}
+          \end{align*}
+          Por lo que las corrientes de fase:
+          \begin{align*}
+            \overline{I}_{AB} &= \frac{200\phase{-120^\circ}}{10\phase{0^\circ}} =20\phase{-120^\circ}\,\si{\ampere} \\[10pt]
+            \overline{I}_{BC} &= \frac{200\phase{0^\circ}}{10\phase{30^\circ}} = 20\phase{-30^\circ}\,\si{\ampere}\\[10pt]
+            \overline{I}_{CA} &=\frac{200\phase{120^\circ}}{10\phase{-45^\circ}} = 20\phase{165^\circ}\,\si{\ampere}
+          \end{align*}
+          siendo las corrientes de línea, por 1LK:
+          \begin{align*}
+            \overline{I}_A \; &= \; \overline{I}_{AB} - \overline{I}_{CA} \;=\; (20\phase{-120^\circ})-(20\phase{165^\circ}) \;=\; 24.35\phase{-67.50^\circ}\,\si{\ampere}\\	        
+            \overline{I}_B \; &= \; \overline{I}_{BC} - \overline{I}_{AB} \;=\; (20\phase{-30^\circ})-(20\phase{-120^\circ}) \;=\; 28.28\phase{15^\circ}\,\si{\ampere}\\
+            \overline{I}_C \; &= \; \overline{I}_{CA} - \overline{I}_{BC} \;=\; (20\phase{165^\circ})-(20\phase{-30^\circ}) \;=\; 39.66\phase{157.5^\circ}\,\si{\ampere}
+          \end{align*}
+          El diagrama fasorial se presenta en la
+          Figura~\ref{fig.diagrama_ejemplo_3-3}.
+          \begin{figure}[H]
+            \centering \includegraphics{../figs/diagrama_3_3.pdf}
+            \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-3}}
+            \label{fig.diagrama_ejemplo_3-3}
+          \end{figure}
 	\end{example}
 	
 	\section{Circuito equivalente monofásico de cargas trifásicas}\label{sec.c_eq_mon}
@@ -1129,8 +1222,10 @@ SFI &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}
     Siguiendo las anotaciones realizadas para la medida de potencia activa y reactiva por el método de los dos vatímetros, las conexiones de las Figuras~\ref{fig.conexiones_reactiva1}--\ref{fig.conexiones_reactiva3} {\color{red}\textbf{sí}} se tienen en la SFD ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFI ($Q_T=-\sqrt{3}\,W$). De manera similar, las conexiones de las Figuras~\ref{fig.conexiones_reactiva4}--\ref{fig.conexiones_reactiva6} {\color{red}\textbf{sí}} se tienen en la SFI ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFD ($Q_T=-\sqrt{3}\,W$)
 \end{remark}
 
+
+
 		
-		\begin{example}\label{ex.Q_vat}
+\begin{example}\label{ex.Q_vat}
 \textbf{El sistema trifásico de la Figura~\ref{fig.Q_vat} es de 380 V, 50 Hz. Sabiendo que la carga es equilibrada y consume 24 kW
 con un factor de potencia de 0,8 (inductivo), que las tensiones de línea son equilibradas y que se tiene una SFD, se pide calcular:
 \begin{itemize}
@@ -1200,110 +1295,134 @@ por lo que la tensión del generador:
 \end{equation*}
 \end{example}
 
-		\section{Mejora del factor de potencia}
+\subsection{\textsuperscript{TC2} Medida de la potencia reactiva de un
+  receptor desequilibrado}
+\label{sec:medida-potencia-des}
+
+En el caso de un receptor desequilibrado, también es posible medir su
+potencia reactiva pero, a diferencia del receptor equilibrado, es
+necesario emplear 3 vatímetros de manera simultánea (figura
+\ref{fig:medida-potencia-des}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/Reactiva_3H_deseq.pdf}
+  \caption{Medida de la potencia reactiva de un receptor
+    desequilibrado}
+  \label{fig:medida-potencia-des}
+\end{figure}
+
+En esta conexión, las lecturas de los vatímetros se corresponden con
+las siguientes ecuaciones:
+
+\begin{align*}
+  W_A &= \Re(\overline{U}_{BC} \cdot \overline{I}^*_A)\\
+  W_B &= \Re(\overline{U}_{CA} \cdot \overline{I}^*_B)\\
+  W_C &= \Re(\overline{U}_{AB} \cdot \overline{I}^*_C)        
+\end{align*}
+
+En estas ecuaciones estamos combinando las tensiones compuestas con
+las corrientes de línea. Para poder desarrollarlas, es necesario
+expresar las tensiones compuestas en función de las tensiones simples:
+\begin{align*}
+  \overline{U}_{AB} &= \pm \sqrt{3} \cdot \overline{U}_C \cdot e^{j\pi/2}\\
+  \overline{U}_{BC} &= \pm \sqrt{3} \cdot \overline{U}_A \cdot e^{j\pi/2}\\
+  \overline{U}_{CA} &= \pm \sqrt{3} \cdot \overline{U}_B \cdot e^{j\pi/2}
+\end{align*}
+
+Sustituyendo en las ecuaciones anteriores obtenemos la siguiente
+expresión, que confirma que se puede obtener la potencia reactiva
+mediante la suma de las lecturas de los tres vatímetros:
+
+\begin{equation*}
+  W_A + W_B + W_C = \pm Q/\sqrt{3}
+\end{equation*}
+
+\section{Mejora del factor de potencia}
 		
 		
 		
-		El objetivo y procedimiento es el mismo que en las instalaciones monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la potencia reactiva del sistema, se debe instalar un \textbf{banco de condensadores} que suministren una potencia reactiva $Q_C$. Como resultado, la potencia reactiva y el factor de potencia del sistema serán $Q' = Q - Q_C$ y $\cos(\theta') > \cos (\theta)$. La única diferencia con respecto a las instalaciones monofásicas es que en este caso se puede optar por un banco de condensadores acoplados en triángulo ($C_D$) o en estrella ($C_Y$):
-		\begin{figure}[H]
-		    \centering
-		    \subfloat[Triángulo]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfil
-		    \subfloat[Estrella]{\includegraphics[width=0.42\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
-		    \caption{Compensación de reactiva}
-		\end{figure}
-		\begin{itemize}
-		    \item \textbf{Conexión en triángulo.} Si se conectan los condensadores en triángulo, como en la Figura~\ref{fig.compensacion_reactiva_triangulo_trif}, se tiene que: 
-		\begin{align*}
-          Q &= P\tan(\theta)\\
-          Q' &= P\tan(\theta') = Q - Q_C\\
-          Q_C &= 3 \cdot \omega\, C_D \cdot U_L^2
-        \end{align*}
-        \begin{equation}
-            \boxed{C_D = \frac{P(\tan (\theta) - \tan (\theta'))}{3\,\omega\, U_L^2}}
-        \end{equation}
-		    \item \textbf{Conexión en estrella.} Cuando se conectan los condensadores en estrella, como en la Figura~\ref{fig.compensacionY_reactiva_triangulo_trif}, se tiene que: 
-		\begin{align*}
-          Q &= P\tan(\theta)\\
-          Q' &= P\tan(\theta') = Q - Q_C\\
-          Q_c &= 3 \cdot \omega C_Y \cdot U_F^2 = \cancel{3} \cdot \omega \,C_Y \cdot \left(\dfrac{U_L}{\cancel{\sqrt{3}}}\right)^2=\omega C_Y \cdot U_L^2
-        \end{align*}
-        \begin{equation}
-            \boxed{C_Y = \frac{P(\tan (\theta) - \tan (\theta'))}{\omega\, U_L^2}}
-        \end{equation}
-		\end{itemize}
+El objetivo y procedimiento es el mismo que en las instalaciones
+monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la
+potencia reactiva del sistema, se debe instalar un \textbf{banco de
+  condensadores} que suministren una potencia reactiva $Q_C$. Como
+resultado, la potencia reactiva y el factor de potencia del sistema
+serán $Q' = Q - Q_C$ y $\cos(\theta') > \cos (\theta)$. La única
+diferencia con respecto a las instalaciones monofásicas es que en este
+caso se puede optar por un banco de condensadores acoplados en
+triángulo ($C_D$) o en estrella ($C_Y$):
+\begin{figure}[H]
+  \centering
+  \subfloat[Triángulo]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfil
+  \subfloat[Estrella]{\includegraphics[width=0.42\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
+  \caption{Compensación de reactiva}
+\end{figure}
+\begin{itemize}
+\item \textbf{Conexión en triángulo.} Si se conectan los condensadores
+  en triángulo, como en la
+  Figura~\ref{fig.compensacion_reactiva_triangulo_trif}, se tiene que:
+  \begin{align*}
+    Q &= P\tan(\theta)\\
+    Q' &= P\tan(\theta') = Q - Q_C\\
+    Q_C &= 3 \cdot \omega\, C_D \cdot U_L^2
+  \end{align*}
+  \begin{equation}
+    \boxed{C_D = \frac{P(\tan (\theta) - \tan (\theta'))}{3\,\omega\, U_L^2}}
+  \end{equation}
+\item \textbf{Conexión en estrella.} Cuando se conectan los
+  condensadores en estrella, como en la
+  Figura~\ref{fig.compensacionY_reactiva_triangulo_trif}, se tiene
+  que:
+  \begin{align*}
+    Q &= P\tan(\theta)\\
+    Q' &= P\tan(\theta') = Q - Q_C\\
+    Q_c &= 3 \cdot \omega C_Y \cdot U_F^2 = \cancel{3} \cdot \omega \,C_Y \cdot \left(\dfrac{U_L}{\cancel{\sqrt{3}}}\right)^2=\omega C_Y \cdot U_L^2
+  \end{align*}
+  \begin{equation}
+    \boxed{C_Y = \frac{P(\tan (\theta) - \tan (\theta'))}{\omega\, U_L^2}}
+  \end{equation}
+\end{itemize}
 		
 		
 		
-		Por tanto, y dado que $C_Y = 3 \cdot C_D$, la capacidad en triángulo es \textbf{tres veces menor} que en estrella. Así, la configuración recomendada en \textbf{triángulo}.
+Por tanto, y dado que $C_Y = 3 \cdot C_D$, la capacidad en triángulo
+es \textbf{tres veces menor} que en estrella. Así, la configuración
+recomendada en \textbf{triángulo}.
 		
 		\begin{example}\label{ex.compensacion_Q_trif}
-		    \textbf{Una red trifásica de 380 V, 50 Hz y secuencia SFD alimenta a dos cargas equilibradas: $(i)$ 30 kW y factor de potencia $0.7$ inductivo; $(ii)$ 24 kW y factor de potencia $0.6$ inductivo. Determinar la capacidad de cada uno de los condensadores a conectar a la red para que el factor de potencia global mejore hasta $0.95$.}
+                  \textbf{Una red trifásica de 380 V, 50 Hz y
+                    secuencia SFD alimenta a dos cargas equilibradas:
+                    $(i)$ 30 kW y factor de potencia $0.7$ inductivo;
+                    $(ii)$ 24 kW y factor de potencia $0.6$
+                    inductivo. Determinar la capacidad de cada uno de
+                    los condensadores a conectar a la red para que el
+                    factor de potencia global mejore hasta $0.95$.}
 		    
-		    La potencia reactiva inicial es:
-		    \begin{equation*}
-		        Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kVAr}
-		    \end{equation*}
-		    La potencia reactiva una vez se tenga la batería de condensadores será: 
-		    \begin{equation*}
-		        Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kVAr}
-		    \end{equation*}
-		    siendo la potencia aportada por los condensadores:
-		    \begin{equation*}
-		        Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kVAr}
-		    \end{equation*}
-		    por lo que la capacidad a conectar en cada fase del triángulo: 
-		    \begin{equation*}
-		     C_D=\dfrac{Q_C}{3\,\omega\,U_L^2}=\dfrac{44.80\cdot 10^3}{3\cdot 2\cdot \pi\cdot 50\cdot 380^2}=329.63\,\mu F/fase
-		    \end{equation*}
+                  La potencia reactiva inicial es:
+                  \begin{equation*}
+                    Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kVAr}
+                  \end{equation*}
+                  La potencia reactiva una vez se tenga la batería de
+                  condensadores será:
+                  \begin{equation*}
+                    Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kVAr}
+                  \end{equation*}
+                  siendo la potencia aportada por los condensadores:
+                  \begin{equation*}
+                    Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kVAr}
+                  \end{equation*}
+                  por lo que la capacidad a conectar en cada fase del
+                  triángulo:
+                  \begin{equation*}
+                    C_D=\dfrac{Q_C}{3\,\omega\,U_L^2}=\dfrac{44.80\cdot 10^3}{3\cdot 2\cdot \pi\cdot 50\cdot 380^2}=329.63\,\mu F/fase
+                  \end{equation*}
 		\end{example}
 
 		 
-	
-	% %%%%%%%%%%%%%%%%%
-	
-% 	\chapterimage{tema4.jpg} % Chapter heading image
-% 	\chapter{Teoremas generales de circuitos}
-	
-	
-% \subsection{Teorema de multiplicación por una constante}
-% Es consecuencia de la propiedad de proporcionalidad de los circuitos lineales. El teorema dice así: \textit{En un circuito compuesto por generadores (independientes y dependientes) e impedancias, si se multiplican todas las excitaciones (generadores independientes) por una constante $K$, las respuestas (corrientes de rama o tensiones de nudo), quedan multiplicadas por $K$} (Figura~\ref{fig.proporcionalidad}).
+\section{Conversión de fuentes reales}
+\label{sec:conversion-fuentes-reales}
 
-% \begin{figure}[H]
-%         \centering
-%         \subfloat[Respuesta inicial]{\includegraphics{../figs/proporcionalidad.pdf}}\hfil
-%         \subfloat[Respuestsa proporcional]{\includegraphics{../figs/proporcionalidad2.pdf}}
-%         \caption{Proporcionalidad}
-%         \label{fig.proporcionalidad}
-%     \end{figure}
-    
-%   Con este teorema, aparecen dos posibles tipos de problemas a resolver:
-%   \begin{itemize}
-%       \item ¿Qué excitación se debe aplicar a un circuito para obtener una determinada respuesta?
-%       \item ¿Qué respuesta proporciona un circuito ante una determinada excitación?
-%   \end{itemize}
-  
-%   \subsubsection{¿Qué excitación se debe aplicar a un circuito para obtener una determinada respuesta?}
-%   El procedimiento más sencillo para responder a esta pregunta es el siguiente: 
-%   \begin{itemize}
-% \item Aplicar una excitación de valor unidad.
-% \item Resolver el circuito, obteniendo la respuesta del circuito a la excitación unidad.
-% \item Hallar la constante de proporcionalidad $K$ entre la respuesta obtenida y la respuesta deseada.
-% \item La excitación que se debe aplicar es esa constante de proporcionalidad (puede ser un número complejo).
-% \end{itemize}
-  
-%   \subsubsection{¿Qué respuesta proporciona un circuito ante una determinada excitación?}
-%   El proceso para obtener dicha respuesta es:
-%   \begin{itemize}
-% \item Suponer una respuesta de valor unidad.
-% \item Resolver el circuito a la inversa, obteniendo la excitación que provoca la respuesta unidad.
-% \item Hallar la constante de proporcionalidad $K$ entre la excitación obtenida y la excitación deseada.
-% \item La respuesta que entrega el circuito es esa constante de proporcionalidad (puede ser un número complejo).
-% \end{itemize}
-
-% \section{Teorema de reciprocidad}
-
-% \section{Teorema o regla de la sustitución}
-
+	
 
 %%% Local Variables:
 %%% mode: latex
