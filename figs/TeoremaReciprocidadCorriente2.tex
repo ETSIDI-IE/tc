@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents]
+  \draw[fill=lightgray] (12,-1) rectangle (16,5) node[midway]{Circuito Pasivo};
+  % Entrada
+  \draw (10,4) to  [open, v=${V}_{oc}$, -] (10,0)
+  (10, 4) to [short, *-] (12,4)
+  (12,0) to [short, -*] (10,0);
+  % Salida
+  \draw (18,4) to [short, -] (16,4)
+  (18,0) to [I, l=${I}_g$, -] (18,4)
+  (16,0) to [short, -] (18,0);
+
+\end{circuitikz}
+\end{document}

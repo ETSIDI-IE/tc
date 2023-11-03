@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents, european resistors]
+  \draw[fill=lightgray] (12,-1) rectangle (16,5) node[midway, align = center]{Circuito Lineal \\ \textbf{sin Fuentes}};
+  \draw (18,4) to [short, -] (16,4)
+  (18,4) to [R, l=$Z + \Delta Z$, i = $\Delta I_Z$] ++(0, -2)
+  to [V, l=$\Delta Z \cdot I_Z$] (18,0)
+  (16,0) to [short, -] (18,0)
+  (12.5,-1) to [short] ++(0,-1) to [short, i = $\Delta I_k$] ++(3, 0) to [short] (15.5, -1);
+\end{circuitikz}
+\end{document}

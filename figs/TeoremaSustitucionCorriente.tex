@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage[americaninductors]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[american voltages, american currents, european resistors]
+  % Corriente
+  \draw[fill=lightgray] (12,3) rectangle (16,9) node[midway]{Circuito Lineal};
+  \draw (18,8) to [short, -] (16,8)
+  (18,8) to [I, l=$U_Z/Z$, v>= $U_Z$] (18,4)
+  (16,4) to [short, -] (18,4);
+\end{circuitikz}
+\end{document}
