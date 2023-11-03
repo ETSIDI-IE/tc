@@ -1150,27 +1150,42 @@ Este teorema también puede aplicarse a un conjunto de circuitos conectados en c
 \subsection{Diseño de redes adaptadoras}
 \label{sec:everitt-diseño}
 
-Una aplicación de este teorema es el diseño de redes adaptadoras pasivas, para lo que emplearemos configuraciones en $\Gamma$ o \reflectbox{$\Gamma$} compuestas por dos elementos reactivos (figura \ref{fig:teorema-everitt-redes}):
+Una aplicación de este teorema es el diseño de redes adaptadoras
+pasivas, para lo que emplearemos configuraciones en $\Gamma$ o
+\reflectbox{$\Gamma$} compuestas por dos elementos reactivos (figura
+\ref{fig:teorema-everitt-redes}):
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[height=5cm]{../figs/Everitt_LC.pdf}
-  \caption{Redes adaptadoras pasivas en $\Gamma$ o \reflectbox{$\Gamma$}.}
+  \centering \includegraphics[height=5cm]{../figs/Everitt_LC.pdf}
+  \caption{Redes adaptadoras pasivas en $\Gamma$ o
+    \reflectbox{$\Gamma$}.}
   \label{fig:teorema-everitt-redes}
 \end{figure}
 
-El diseño de estas redes consiste en determinar los valores adecuados de la inductancia y la capacidad para conseguir la adaptación de impedancias. Es posible demostrar que, para obtener soluciones, la red debe diseñarse con el elemento paralelo en el extremo de la impedancia que tenga la parte real mayor. Cuando $R_g > R_L$, se optará por el circuito de la figura \ref{fig:teorema-everitt-RG}, mientras que el circuito de la figura \ref{fig:teorema-everitt-RL} será el adecuado cuando $R_L > Rg$.
+El diseño de estas redes consiste en determinar los valores adecuados
+de la inductancia y la capacidad para conseguir la adaptación de
+impedancias. Es posible demostrar que, para obtener soluciones, la red
+debe diseñarse con el elemento paralelo en el extremo de la impedancia
+que tenga la parte real mayor. Cuando $R_g > R_L$, se optará por el
+circuito de la figura \ref{fig:teorema-everitt-RG}, mientras que el
+circuito de la figura \ref{fig:teorema-everitt-RL} será el adecuado
+cuando $R_L > Rg$.
 
 \begin{figure}[H]
-  \centering
-  \subfloat[Circuito adecuado para $R_g > R_L$]{\includegraphics[height=4cm]{../figs/Everitt_XY2.pdf}\label{fig:teorema-everitt-RG}}\hspace{2cm}
-  \subfloat[Circuito adecuado para $R_L > R_g$]{\includegraphics[height=4cm]{../figs/Everitt_XY1.pdf}\label{fig:teorema-everitt-RL}}
-  \caption{Elección de la red adaptadora en función de la relación entre $R_L$ y $R_g$.}
+  \centering \subfloat[Circuito adecuado para
+  $R_g >
+  R_L$]{\includegraphics[height=4cm]{../figs/Everitt_XY2.pdf}\label{fig:teorema-everitt-RG}}\hspace{2cm}
+  \subfloat[Circuito adecuado para
+  $R_L >
+  R_g$]{\includegraphics[height=4cm]{../figs/Everitt_XY1.pdf}\label{fig:teorema-everitt-RL}}
+  \caption{Elección de la red adaptadora en función de la relación
+    entre $R_L$ y $R_g$.}
   \label{fig:teorema-everitt-RLRG}
 \end{figure}
 
 
-Cuando $R_g > R_L$ la condición de adaptación se establece en la salida de la red:
+Cuando $R_g > R_L$ la condición de adaptación se establece en la
+salida de la red:
 \begin{equation}
   \overline{Z}^*_L = jX + (jY || \overline{Z}_g) 
 \end{equation}
@@ -1180,7 +1195,8 @@ Esta ecuación puede desdoblarse en otras dos:
   X_L &= -X - \Im\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)
 \end{align}
 
-Cuando $R_L > R_g$ la condición de adaptación se establece en la entrada de la red:
+Cuando $R_L > R_g$ la condición de adaptación se establece en la
+entrada de la red:
 
 \begin{equation}
   \overline{Z}^*_g = jX + (jY || \overline{Z}_L) 
@@ -1191,79 +1207,108 @@ ecuación que, nuevamente, se desdobla en otras dos:
   X_g &= -X - \Im\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)
 \end{align}
 
-La resolución de estas ecuaciones en un caso o en otro proporcionará los valores de $X$ e $Y$, que corresponden a las reactancias de los elementos circuitales que componen la red adaptadora (figura \ref{fig:teorema-everitt-redes}). Para obtener valores de inductancia y capacidad a partir de estas reactancias, será necesario recurrir a un valor de pulsación o frecuencia. Por tanto, la adaptación conseguida con la bobina y el condensador resultantes es selectiva, es decir, se produce para la pulsación o frecuencia que se ha tenido en cuenta en el cálculo. Cuando varíe la frecuencia del circuito dejará de haber adaptación.
+La resolución del sistema de ecuaciones en un caso o en otro
+proporcionará los valores de $X$ e $Y$, que corresponden a las
+reactancias de los elementos circuitales que componen la red
+adaptadora (figura \ref{fig:teorema-everitt-redes}). Para obtener los
+valores de inductancia y capacidad de los elementos a partir de estas
+reactancias, será necesario recurrir a un valor de pulsación o
+frecuencia. Por tanto, la adaptación conseguida con la bobina y el
+condensador resultantes es selectiva, es decir, se produce para la
+pulsación o frecuencia que se ha tenido en cuenta en el
+cálculo. Cuando varíe la frecuencia del circuito dejará de haber
+adaptación.
 
 \subsection{Pérdidas de transmisión e inserción}
 \label{sec:everitt-perdidas}
 
-\begin{enumerate}
-\item Decibelio: potencias
-\label{sec:org2912360}
+La inserción de una red dentro de un circuito existente modifica el
+funcionamiento de este circuito y puede ocasionar pérdida o ganancia
+en las señales de tensión, corriente y potencia en la inserción. Para
+cuantificar estas variaciones se calcula la ratio entre los dos
+niveles de la magnitud en estudio.
 
-El \textbf{decibelio} ($\si{\decibel}$) se emplea para medir la ganancia de potencia o la ratio de dos niveles de potencia:
-
-\begin{equation}
-G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
-\end{equation}
-\begin{center}
-\includegraphics[height=0.5\textheight]{../figs/Red_Ganancia.pdf}
-\end{center}
-\end{enumerate}
-
-{Pérdidas de transmisión e inserción}
-
-\begin{enumerate}
-\item Decibelio: tensiones
-\label{sec:org5945d17}
-
-Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/corriente:
+Frecuentemente el cálculo se efectúa en unidades logarítmicas. Sean
+$x_1$ y $x_2$ los dos niveles de la magnitud $x$ de interés. La
+expresión \ref{eq:decibelio} cuantifica la ganancia de $x$ (ratio de
+$x_2$ frente a $x_1$) en decibelios:
 
 \begin{equation}
-G_{dB} = 10 \log \frac{U_2^2}{U_1^2} = 20 \log \frac{U_2}{U_1}
+  \label{eq:decibelio}
+  G_X = 10 \log \frac{x_2}{x_1}
 \end{equation}
-\begin{center}
-\includegraphics[height=0.5\textheight]{../figs/Red_Ganancia.pdf}
-\end{center}
-\end{enumerate}
 
-{Pérdidas de transmisión}
+Cuando se trata de una ganancia, $x_2 > x_1$, será
+$G_X > \qty{0}{\decibel}$. Por el contrario, cuando se trate de una
+pérdida, $x_2 < x_1$, obtendremos $G_X < \qty{0}{\decibel}$. Por
+ejemplo, el valor $G_X = \qty{3}{\decibel}$ implica que
+$x_2 = 2 \cdot x_1$, mientras que si $G_X = - \qty{3}{\decibel}$, será
+$x_2 = 1/2 \cdot x_1$, y cuando $x_2 = x_1$, la ganancia es nula,
+$G_X = \qty{0}{\decibel}$,
 
-Las pérdidas de transmisión, $\alpha_T$, asociadas a una red miden la relación entre la potencia de entrada, $P_{in}$, y la potencia de salida, $P_{out}$.
+En circuitos eléctricos se emplea esta unidad para la ganancia de
+potencia (ecuación \ref{eq:ganancia-potencia}). También puede
+emplearse para la ganancia de tensión o de corriente, aunque en este
+caso la ecuación debe modificarse para tener en cuenta la relación
+cuadrática entre estas magnitudes y la potencia (ecuación
+\ref{eq:ganancia-tension}).
 
+\begin{align}
+  G_{dB} = 10 \log G &= 10 \log \frac{P_2}{P_1} \label{eq:ganancia-potencia}\\
+  G_{dB} = 10 \log \frac{U_2^2}{U_1^2} &= 20 \log \frac{U_2}{U_1}   \label{eq:ganancia-tension}
+\end{align}
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org6626f08}
-\begin{center}
-\includegraphics[height=0.6\textheight]{../figs/PerdidasTransmision.pdf}
-\end{center}
+Por tanto, una ganancia de $\qty{3}{\decibel}$ en potencia significa
+que $P_2 = 2 \cdot P_1$, mientras que $U_2 = 2 \cdot U_1$ es una
+ganancia de $\qty{6}{\decibel}$ en tensión.
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org55ef9e0}
+Aplicaremos estos conceptos al cálculo de las pérdidas de transmisión y las pérdidas de inserción que se producen al introducir redes en un circuito.
+
+\subsubsection{Pérdidas de Transmisión}
+\label{sec:perdidas-transmision}
+
+Las pérdidas de transmisión, $\alpha_T$, asociadas a una red miden la
+relación entre la potencia de entrada, $P_{in}$, y la potencia de
+salida, $P_{out}$ (figura \ref{fig:perdidas-transmision}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/PerdidasTransmision.pdf}
+  \caption{Pérdidas de transmisión.}
+  \label{fig:perdidas-transmision}
+\end{figure}
+
 \begin{equation}
   \alpha_T = 10 \log \frac{P_{in}}{P_{out}} \unit{\decibel}
 \end{equation}
 
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:orga4f9573}
-\begin{center}
-Si la red es no disipativa (LC), $P_{in} = P_{out} \rightarrow \alpha_T = \qty{0}{\decibel}$.
-\end{center}
-\end{enumerate}
+Si la red es no disipativa, $P_{in} = P_{out}$ y, por tanto, las
+pérdidas de transmisión son nulas, $\alpha_T = \qty{0}{\decibel}$. Si la red es disipativa, $P_{out} < P_{in}$ y, por tanto, $\alpha_T > \qty{0}{\decibel}$. Finalmente, si la red es activa puede ser que $P_{out} > P_{in}$ y, por tanto, $\alpha_T < \qty{0}{\decibel}$, lo que implica una \emph{ganancia} de transmisión.
 
-{Pérdidas de inserción}
+\subsubsection{Pérdidas de inserción}
+\label{sec:perdidas-insercion}
 
-Las pérdidas de inserción, $\alpha_I$, asociadas a una red miden la relación entre la potencia entregada a la carga sin la red, $P_L$, y la potencia entregada a la carga con la red insertada.
+Las pérdidas de inserción asociadas a una red, $\alpha_I$, miden la
+relación entre la potencia entregada a la carga sin la red, $P_L$, y
+la potencia entregada a la carga con la red insertada (figura
+\ref{fig:perdidas-insercion}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/PerdidasInsercion.pdf}
+  \caption{Pérdidas de inserción.}
+  \label{fig:perdidas-insercion}
+\end{figure}
 
 \begin{equation}
   \alpha_I = 10 \log \frac{P_L}{P_{out}} \unit{\decibel}
 \end{equation}
 
-\begin{center}
-\includegraphics[height=0.45\textheight]{../figs/PerdidasInsercion.pdf}
-\end{center}
-
-En el caso de una red adaptadora, $P_{out} > P_L$, por lo que $\alpha_I < 0$ (ganancia de inserción).
+Al estar definida como pérdida, se está asumiendo que la inserción de
+la red disminuye la potencia entregada a la carga. Ahora bien, en el
+caso de una red adaptadora el efecto es el contrario, $P_{out} > P_L$,
+por lo que $\alpha_I < 0$, siendo, por tanto, una \emph{ganancia} de
+inserción.
 
 %%% Local Variables:
 %%% mode: latex
