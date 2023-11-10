@@ -139,7 +139,7 @@ Se resuelve el sistema de ecuaciones para obtener los valores de $q_i$.
 
 *** 
 #+ATTR_LATEX: :height 0.95\textheight
-[[file:../figs/mallas1_corrientes.pdf]]
+[[file:../figs/mallas_alterna.pdf]]
 
 *** Ecuación General
 #+begin_export latex
