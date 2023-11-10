@@ -2346,10 +2346,10 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
         $n$ mallas, siendo esta:
 	\begin{equation*}
           \begin{bmatrix}
-            {\color{magenta}\sum R_{11}} &  {\color{teal}\pm\sum R_{12}} & {\color{teal}{\dots}} & {\color{teal}\pm\sum R_{1n}} \\
-            {\color{teal}\pm\sum R_{21}} & {\color{magenta}\sum R_{22}} & {{\dots}} & {\color{teal}\pm\sum R_{2n}} \\
+            {\color{BrickRed}\sum R_{11}} &  {\color{MidnightBlue}\pm\sum R_{12}} & {\color{MidnightBlue}{\dots}} & {\color{MidnightBlue}\pm\sum R_{1n}} \\
+            {\color{MidnightBlue}\pm\sum R_{21}} & {\color{BrickRed}\sum R_{22}} & {{\dots}} & {\color{MidnightBlue}\pm\sum R_{2n}} \\
             {\vdots} & {\vdots} &  {\ddots} & \vdots\\
-            {\color{teal}\pm\sum R_{n1}} & {\color{teal}\pm\sum R_{n2}} & \dots & {\color{magenta}\sum R_{nn}}
+            {\color{MidnightBlue}\pm\sum R_{n1}} & {\color{MidnightBlue}\pm\sum R_{n2}} & \dots & {\color{BrickRed}\sum R_{nn}}
           \end{bmatrix} \cdot 
           \begin{bmatrix}
             I_1\\
@@ -2358,19 +2358,19 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
             I_n
           \end{bmatrix} = %
           \begin{bmatrix}
-            {\color{orange}\sum\epsilon_1}\\
-            {\color{orange}\sum\epsilon_2}\\
-            {\color{orange}\vdots}\\
-            {\color{orange}\sum\epsilon_n}
+            {\color{OliveGreen}\sum\epsilon_1}\\
+            {\color{OliveGreen}\sum\epsilon_2}\\
+            {\color{OliveGreen}\vdots}\\
+            {\color{OliveGreen}\sum\epsilon_n}
           \end{bmatrix}
 	\end{equation*}
-	donde cada {\color{magenta}$R_{ii}$} se corresponde con la
+	donde cada {\color{BrickRed}$R_{ii}$} se corresponde con la
         suma de resistencias incluidas en la malla $i$; cada
-        {\color{teal}$\pm R_{ij}$} se corresponde con la suma de las
+        {\color{MidnightBlue}$\pm R_{ij}$} se corresponde con la suma de las
         resistencias incluidas en las ramas compartidas por las mallas
         $i$ y $j$, con signo positivo ($+$) si las corrientes van en
         el mismo sentido, y negativo ($-$) en caso contrario; y cada
-        {\color{orange} $\sum \epsilon_i$} es la suma algebraica de
+        {\color{OliveGreen} $\sum \epsilon_i$} es la suma algebraica de
         las fuerzas electromotrices de los generadores de la malla
         $i$, considerando un signo positivo ($+$) si contribuyen al
         giro de la corriente, y negativo ($-$) en caso contrario (es
@@ -2622,10 +2622,10 @@ método es el siguiente:
         $n$ nudos, siendo esta:
 	\begin{equation*}
           \begin{bmatrix}
-            {\color{magenta}\sum G_{1}} &  {\color{teal}-\sum G_{12}} & {\color{teal}{\dots}} & {\color{teal}-\sum G_{1n}} \\
-            {\color{teal}-\sum G_{21}} & {\color{magenta}\sum G_{2}} & {{\dots}} & {\color{teal}-\sum G_{2n}} \\
+            {\color{BrickRed}\sum G_{1}} &  {\color{MidnightBlue}-\sum G_{12}} & {\color{MidnightBlue}{\dots}} & {\color{MidnightBlue}-\sum G_{1n}} \\
+            {\color{MidnightBlue}-\sum G_{21}} & {\color{BrickRed}\sum G_{2}} & {{\dots}} & {\color{MidnightBlue}-\sum G_{2n}} \\
             {\vdots} & {\vdots} &  {\ddots} & \vdots\\
-            {\color{teal}-\sum G_{n1}} & {\color{teal}-\sum G_{n2}} & \dots & {\color{magenta}\sum G_{n}}
+            {\color{MidnightBlue}-\sum G_{n1}} & {\color{MidnightBlue}-\sum G_{n2}} & \dots & {\color{BrickRed}\sum G_{n}}
           \end{bmatrix} \cdot 
           \begin{bmatrix}
             U_1\\
@@ -2634,17 +2634,17 @@ método es el siguiente:
             U_n
           \end{bmatrix} = %
           \begin{bmatrix}
-            {\color{orange}\sum I_{g1}}\\
-            {\color{orange}\sum I_{g2}}\\
-            {\color{orange}\vdots}\\
-            {\color{orange}\sum I_{gn}}
+            {\color{OliveGreen}\sum I_{g1}}\\
+            {\color{OliveGreen}\sum I_{g2}}\\
+            {\color{OliveGreen}\vdots}\\
+            {\color{OliveGreen}\sum I_{gn}}
           \end{bmatrix}
 	\end{equation*}
-	donde cada {\color{magenta}$G_{i}$} se corresponde con la suma
+	donde cada {\color{BrickRed}$G_{i}$} se corresponde con la suma
         de conductancias conectadas al nudo $i$; cada
-        {\color{teal}$ G_{ij}$} se corresponde con la suma de las
+        {\color{MidnightBlue}$ G_{ij}$} se corresponde con la suma de las
         conductancias conectadas entre los nudos $i$ y $j$; y cada
-        {\color{orange} $\sum I_{gi}$} es la suma algebraica de las
+        {\color{OliveGreen} $\sum I_{gi}$} es la suma algebraica de las
         corrientes de los generadores conectados al nudo $i$,
         considerando un signo positivo ($+$) si el generador inyecta
         corriente en el nudo, y negativo ($-$) en caso contrario. Debe
