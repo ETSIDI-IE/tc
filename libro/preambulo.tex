@@ -96,6 +96,7 @@
 % 	\prebibhook}
 % % \renewcommand{\bbltechreport}{Informe T\'ecnico}
 
+
 \usepackage{hyperref}
 
 
@@ -129,24 +130,24 @@
 
 
 %\spanishdecimal{.} %Para que no lo sustituya automáticamente por comas
-\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
+%\def\nompreamble{\addcontentsline{toc}{chapter}{\nomname}\markboth{\nomname}{\nomname}}
 
 %Configuración de MEMOIR
 %%Pone la fecha en SMALL CAPS y hacia la derecha
 %%pagina 60 de memman.pdf
 \pretitle{
-\vfill
-\centering \bfseries \scshape \HUGE \color{BrickRed}
-\posttitle{\par}
+  \vfill
+  \centering \bfseries \scshape \HUGE \color{BrickRed}
 }
 
+\posttitle{\par}
+
 \preauthor{
-\vfill
-\centering
-\large \scshape
-\postauthor{
-\par }
+  \vfill
+  \centering
+  \large \scshape
 }
+\postauthor{\par }
 
 \predate{\vfill \begin{flushright}\large\scshape}
 \postdate{\par\end{flushright}\vfill}
