@@ -13,17 +13,17 @@
 		\item Para transportar una determinada potencia a una cierta tensión, el sistema trifásico es más económico que el monofásico, puesto que la sección de los conductores de un trifásico es la mitad que la de una instalación monofásica y, en consecuencia, la masa de conductor es un 25\% menor.
 		\item Proporcionar una potencia instantánea constante (\emph{la potencia instantánea de un sistema monofásico es pulsante}), evitando vibraciones y esfuerzos en el rotor de las máquinas eléctricas.
 	\end{itemize}
-	Ambas ventajas se demostrarán en la Sección~\ref{sec.potencia_trifasica}.
+	Ambas ventajas se demostrarán en la Sección~\ref{sec:potencia_trifasica}.
 	
 	
 % 	Las tres fases de un sistema trifásico forman un \textbf{sistema equilibrado} si sus fasores de tensión tienen igual módulo y difieren el mismo ángulo entre sí. Cuando los fasores tensión difieren en módulo
-% 	y/o en ángulo, se habla de un \textbf{sistema desequilibrado}. En el caso concreto de la Figura~\ref{fig.tensiontrifasica}, se tiene un sistema trifásico equilibrado de tensiones. 
+% 	y/o en ángulo, se habla de un \textbf{sistema desequilibrado}. En el caso concreto de la Figura~\ref{fig:tensiontrifasica}, se tiene un sistema trifásico equilibrado de tensiones. 
 % 	\begin{remark}
 % 		En el caso concreto de esta asignatura, van a estudiarse únicamente los \textbf{sistemas equilibrados}.
 % 	\end{remark}
 	
 	\section{Generadores trifásicos}
-	La Figura~\ref{fig.tensionesTrifasica} muestra un ejemplo de una tensión trifásica que, como puede verse, está formada por tres funciones de onda de tensión desfasadas 120$^\circ$ entre sí. Esto implica que se tengan \textbf{tres fasores} para la tensión (y otros tres para la corriente), mostrados en la Figura~\ref{fig.fasoresTrifasica}.  Desde el punto de vista de la Teoría de Circuitos, cada fase de un generador trifásico (\textit{alternador}) equivale a un \textbf{generador de tensión real}:
+	La Figura~\ref{fig:tensionesTrifasica} muestra un ejemplo de una tensión trifásica que, como puede verse, está formada por tres funciones de onda de tensión desfasadas 120$^\circ$ entre sí. Esto implica que se tengan \textbf{tres fasores} para la tensión (y otros tres para la corriente), mostrados en la Figura~\ref{fig:fasoresTrifasica}.  Desde el punto de vista de la Teoría de Circuitos, cada fase de un generador trifásico (\textit{alternador}) equivale a un \textbf{generador de tensión real}:
 	\begin{align*}
 		u_1(t) &= U\,\sqrt{2}\cdot \sin(\omega t) \quad\rightarrow\quad  \overline{U}_1 = U\phase{0}\\
 		u_2(t) &= U\,\sqrt{2} \cdot\sin(\omega t + 2\pi/3) \quad\rightarrow\quad  \overline{U}_2 = U\phase{120^\circ}\\
@@ -31,22 +31,22 @@
 	\end{align*}
 	\begin{figure}
 		\centering
-		\subfloat[Forma de onda]{\includegraphics[]{../figs/TensionesTrifasica.pdf}\label{fig.tensionesTrifasica}} \hfill
-		\subfloat[Fasores]{\includegraphics[]{../figs/FasoresTrifasica.pdf}\label{fig.fasoresTrifasica}}
+		\subfloat[Forma de onda]{\includegraphics[]{../figs/TensionesTrifasica.pdf}\label{fig:tensionesTrifasica}} \hfill
+		\subfloat[Fasores]{\includegraphics[]{../figs/FasoresTrifasica.pdf}\label{fig:fasoresTrifasica}}
 		\caption{Forma de onda y fasores de una tensión trifásica}
-		\label{fig.tensiontrifasica}
+		\label{fig:tensiontrifasica}
 	\end{figure}
     \begin{figure}
 		\centering
 		\includegraphics{../figs/FasoresSumaCero.pdf}
 		\caption{Suma de fasores de una tensión trifásica}
-		\label{fig.fasoressumacero}
+		\label{fig:fasoressumacero}
 	\end{figure}
 
     \newpage
 
     \vspace*{3mm}
-    Nótese que la suma de las tensiones de fase es 0, como muestra la Figura~\ref{fig.fasoressumacero}:
+    Nótese que la suma de las tensiones de fase es 0, como muestra la Figura~\ref{fig:fasoressumacero}:
 	\begin{equation*}
 		u_1(t) + u_2(t) + u_3(t) = 0 \quad\rightarrow\quad \overline{U}_1 + \overline{U}_2 + \overline{U}_3 = 0
 	\end{equation*}
@@ -55,7 +55,7 @@
 	    Aunque en este caso concreto se ha demostrado para tensiones, en general, \textbf{la suma de tres fasores equilibrados es 0}.
 	\end{remark}
 	
-	\subsection{Tensión de fase (simple) y de línea (compuesta)}\label{sec.fase_linea}
+	\subsection{Tensión de fase (simple) y de línea (compuesta)}\label{sec:fase_linea}
 	Es necesario conocer también la diferencia entre las tensiones de \textbf{fase} (o tensiones simples) y de \textbf{línea} (o compuestas):
 	\begin{itemize}
 		\item \textbf{Tensión de fase.} Es la tensión en cada una de las fases (fase--neutro) del generador o en cada una de las impedancias del receptor. Suele representarse como: 
@@ -68,7 +68,7 @@
 		\end{equation*}
 	\end{itemize}
 	La relación entre las tensiones de fase y de línea son: 
-	\begin{align}\label{eq.tensionFL}
+	\begin{align}\label{eq:tensionFL}
 		\overline{U}_{AB} &= \overline{U}_A - \overline{U}_B\\
 		\overline{U}_{BC} &= \overline{U}_B - \overline{U}_C\\
 		\overline{U}_{CA} &= \overline{U}_C - \overline{U}_A
@@ -84,18 +84,18 @@
 		\item \textbf{Intensidad de línea.} Es la intensidad que pasa por el conductor de la línea. 
 	\end{itemize}
 	
-	\subsection{Secuencia de fases}\label{sec.secuencia_fases}
+	\subsection{Secuencia de fases}\label{sec:secuencia_fases}
 	
-	El orden en el que se suceden las tensiones de cada fase de un circuito trifásico es lo que se conoce como \textit{secuencia de fases} (hace referencia a un punto concreto de la onda, por ejemplo, cuando todas ellas alcanzan el valor máximo). Existen dos tipos de secuencia de fases: $(i)$~secuencia de fases directa (\textbf{SFD}) y $(ii)$~secuencia de fases inversa (\textbf{SFI}), como se muestra en la Figura~\ref{fig.secuencia_fases}. 
+	El orden en el que se suceden las tensiones de cada fase de un circuito trifásico es lo que se conoce como \textit{secuencia de fases} (hace referencia a un punto concreto de la onda, por ejemplo, cuando todas ellas alcanzan el valor máximo). Existen dos tipos de secuencia de fases: $(i)$~secuencia de fases directa (\textbf{SFD}) y $(ii)$~secuencia de fases inversa (\textbf{SFI}), como se muestra en la Figura~\ref{fig:secuencia_fases}. 
 	\begin{figure}[H]
 		\centering
 		\subfloat[SFD]{\includegraphics[width=0.45\linewidth]{../figs/TensionesTrifasica_ABC.pdf}}\hfil
 		\subfloat[SFI]{\includegraphics[width=0.45\linewidth]{../figs/TensionesTrifasica_ACB.pdf}}
 		\caption{Secuencia de fases}
-		\label{fig.secuencia_fases}
+		\label{fig:secuencia_fases}
 	\end{figure}
 	
-	%En la Figura~\ref{fig.secuencia_fases} se han representado los fasores asociados a las funciones sinusoidales de tensión, en una posición fija correspondiente a un instante determinado, que generalmente coincide con $t=0$. Sin embargo, debe tenerse en cuenta que, en realidad, son vectores rotatorios que giran con velocidad angular constante $\omega$ a izquierdas, es decir, en sentido antihorario. El orden en que los fasores que representan las tensiones pasan sucesivamente por un eje que pase por el origen (por ejemplo, el eje real) determina la secuencia de fases. 
+	%En la Figura~\ref{fig:secuencia_fases} se han representado los fasores asociados a las funciones sinusoidales de tensión, en una posición fija correspondiente a un instante determinado, que generalmente coincide con $t=0$. Sin embargo, debe tenerse en cuenta que, en realidad, son vectores rotatorios que giran con velocidad angular constante $\omega$ a izquierdas, es decir, en sentido antihorario. El orden en que los fasores que representan las tensiones pasan sucesivamente por un eje que pase por el origen (por ejemplo, el eje real) determina la secuencia de fases. 
 	
 	Conocer la secuencia de fases es \textbf{fundamental}, ya que según sea ésta, un mismo sistema de tensiones puede originar efectos distintos. Por ejemplo, un motor trifásico gira en un sentido al aplicarle
 	una secuencia y en el contrario si se le aplica la otra. Además, para pasar de una secuencia a otra solo hay que intercambiar dos fases entre sí.
@@ -115,12 +115,12 @@
 		\\
 		\overline{U}_B &= U_f\phase{-30^\circ}=\dfrac{\sqrt{3}\,U_f}{2}-\mathrm{j}\,\dfrac{U_f}{2}
 	\end{align*}
-	Entonces, a partir de la expresión~\eqref{eq.tensionFL}, se obtiene que:
+	Entonces, a partir de la expresión~\eqref{eq:tensionFL}, se obtiene que:
 	\begin{equation*}
 		\overline{U}_{AB} \;=\; \overline{U}_{A}-\overline{U}_{B} \;=\; (0+\mathrm{j}\,U_f)-\left(\dfrac{\sqrt{3}\,U_f}{2}-\mathrm{j}\,\dfrac{U_f}{2}\right)=-\dfrac{\sqrt{3}\cdot U_f}{2}+\mathrm{j}\,\dfrac{3\,U_f}{2} \;=\; \sqrt{3}\,U_f \phase{ 120^\circ}\,
 	\end{equation*}
 	es decir, que el módulo es $\sqrt{3}$ veces mayor que $U_f$ y está 30$^\circ$ adelantado respecto a la de fase. Por tanto:  
-	\begin{equation}\label{eq.sfd_fase-linea}
+	\begin{equation}\label{eq:sfd_fase-linea}
 		\boxed{
 			\begin{array}{l}
 				U_L = \sqrt{3}\cdot U_f\\
@@ -129,13 +129,13 @@
 		} 
 	\end{equation}
 	
-	En la Figura~\ref{fig.linea-fase-SFD} se muestra el diagrama fasorial de las tensiones de fase y de línea. 
+	En la Figura~\ref{fig:linea-fase-SFD} se muestra el diagrama fasorial de las tensiones de fase y de línea. 
 	\begin{figure}[H]
 		\centering
 		\subfloat[Obtención de la tensión de línea]{\includegraphics[height=3.25cm]{../figs/tension_LF.pdf}}\hfil
 		\subfloat[Fasores de fase y línea]{\includegraphics[height=3.25cm]{../figs/FasoresTrifasica_ABC.pdf}}
 		\caption{Fasores de tensión de fase y línea en SFD}
-		\label{fig.linea-fase-SFD}
+		\label{fig:linea-fase-SFD}
 	\end{figure}
 	
 	\subsubsection{Secuencia de Fases Inversa (SFI)}
@@ -153,12 +153,12 @@
 		\\
 		\overline{U}_B &= U_f\phase{30^\circ}=\dfrac{\sqrt{3}\,U_f}{2}+\mathrm{j}\,\dfrac{U_f}{2}
 	\end{align*}
-	Entonces, a partir de la expresión~\eqref{eq.tensionFL}, se obtiene que: 
+	Entonces, a partir de la expresión~\eqref{eq:tensionFL}, se obtiene que: 
 	\begin{equation*}
 		\overline{U}_{AB} \;=\; \overline{U}_{A}-\overline{U}_{B} \;=\; (0-\mathrm{j}\,U_f)-\left(\dfrac{\sqrt{3}\,U_f}{2}+\mathrm{j}\,\dfrac{U_f}{2}\right) \;=\; -\dfrac{\sqrt{3}\cdot U_f}{2}-\mathrm{j}\,\dfrac{3\,U_f}{2} \;=\; \sqrt{3}\,U_f \phase{-120^\circ}\,
 	\end{equation*}
 	es decir, habiendo una relación entre tensiones de línea y de fase de: 
-	\begin{equation}\label{eq.sfi_fase-linea}
+	\begin{equation}\label{eq:sfi_fase-linea}
 		\boxed{
 			\begin{array}{l}
 				U_L = \sqrt{3}\cdot U_f\\
@@ -167,23 +167,23 @@
 		} 
 	\end{equation}
 	
-	En la Figura~\ref{fig.linea-fase-SFI} se muestra el diagrama fasorial de las tensiones de fase y de línea. 
+	En la Figura~\ref{fig:linea-fase-SFI} se muestra el diagrama fasorial de las tensiones de fase y de línea. 
 
 	\begin{figure}[H]
 		\centering
 		\subfloat[Obtención de la tensión de línea]{\includegraphics[height=3.25cm]{../figs/tension_LF_SFI.pdf}}\hfil
 		\subfloat[Fasores de fase y línea]{\includegraphics[height=3.25cm]{../figs/FasoresTrifasica_ACB.pdf}}
 		\caption{Fasores de tensión de fase y línea en SFI}
-		\label{fig.linea-fase-SFI}
+		\label{fig:linea-fase-SFI}
 	\end{figure}
 	
 	%Un generador se dice que está funcionando en \textbf{régimen equilibrado} si las tres intensidades de fase forman un sistema equilibrado de intensidades, de la misma secuencia que las tensiones del generador
 	
-	\section{Receptores trifásicos}\label{sec.conexiones}
+	\section{Receptores trifásicos}\label{sec:conexiones}
 	Los receptores de un sistema trifásico se pueden hacer en estrella (designada por la letra $Y$) y en triángulo (designada por la letra $D$). Se dice que el receptor está \textbf{equilibrado} cuando las tres impedancias son iguales en módulo \textbf{y} argumento, y \textbf{desequilibrado} cuando no lo son. Además, por conveniencia se considera que \textbf{las corrientes salen del generador} y recorren las tres fases y el neutro, y \textbf{entran al receptor}.
 	
 	\begin{remark}
-	    Desde el punto de vista de los receptores, no importa demasiado el tipo de conexión de los generadores, sino las \textbf{tensiones disponibles} que, como se dijo en la Sección~\ref{sec.fase_linea}, se corresponde con la de \textbf{línea}.
+	    Desde el punto de vista de los receptores, no importa demasiado el tipo de conexión de los generadores, sino las \textbf{tensiones disponibles} que, como se dijo en la Sección~\ref{sec:fase_linea}, se corresponde con la de \textbf{línea}.
 	\end{remark}
 	
 	
@@ -191,7 +191,7 @@
 	La conexión en estrella se consigue uniendo los terminales de polaridad de referencia ``negativa'' ($A'$, $B'$, $C'$), en un punto común llamado \textbf{neutro} ($N$), y quedan libres los otros tres terminales ($A$, $B$, $C$). También puede usarse como terminal de salida el punto neutro y utilizar un cuarto conductor, denominado \textbf{hilo neutro} (o, simplemente, \textbf{neutro}). Si este conductor existe, se dice que el sistema trifásico es un \textbf{sistema a cuatro hilos} y, si no existe, se dice que es un \textbf{sistema a tres hilos}. 
 	
 	\subsubsection{Estrella equilibrada}
-	La Figura~\ref{fig.conexion_estrella_4} muestra la conexión de un receptor a cuatro hilos. Para este caso, se observa que se pueden medir directamente las \textbf{tensiones de fase} (entre cada fase y el neutro) y las \textbf{tensiones de línea} (entre cada dos fases) tanto del generador como del receptor. Suponiendo un receptor equilibrado, donde cada fase tiene una impedancia de $\overline{Z}=Z\phase{\theta^\circ}$, las intensidades son:
+	La Figura~\ref{fig:conexion_estrella_4} muestra la conexión de un receptor a cuatro hilos. Para este caso, se observa que se pueden medir directamente las \textbf{tensiones de fase} (entre cada fase y el neutro) y las \textbf{tensiones de línea} (entre cada dos fases) tanto del generador como del receptor. Suponiendo un receptor equilibrado, donde cada fase tiene una impedancia de $\overline{Z}=Z\phase{\theta^\circ}$, las intensidades son:
 	\begin{align*}
       \overline{I}_A &= \dfrac{\overline{U}_A}{\overline{Z}} = \dfrac{U_f}{Z}\phase{\pm 90^\circ - \theta} \\
       \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}} = \frac{U_f}{Z}\phase{{\mp 30^\circ} - \theta}\\
@@ -210,12 +210,12 @@
 		\centering
 		{\includegraphics{../figs/EstrellaEquilibrado_Receptor.pdf}}
 		\caption{Conexión en estrella a cuatro hilos}
-		\label{fig.conexion_estrella_4}
+		\label{fig:conexion_estrella_4}
 	\end{figure}
 	
 	
 	
-	La Figura~\ref{fig.conexion_estrella_3} muestra la conexión de un generador y un receptor a tres hilos. Para este caso, se observa que únicamente se pueden medir directamente las \textbf{tensiones de línea} (entre cada dos fases) tanto del generador como del receptor. A partir del análisis del caso a cuatro hilos, donde se ha concluido que el neutro no era necesario, el estudio para la estrella equilibrada a tres hilos es idéntico. Suponiendo un receptor equilibrado, donde cada fase tiene una impedancia de $\overline{Z}=Z\phase{\theta^\circ}$, las intensidades son:
+	La Figura~\ref{fig:conexion_estrella_3} muestra la conexión de un generador y un receptor a tres hilos. Para este caso, se observa que únicamente se pueden medir directamente las \textbf{tensiones de línea} (entre cada dos fases) tanto del generador como del receptor. A partir del análisis del caso a cuatro hilos, donde se ha concluido que el neutro no era necesario, el estudio para la estrella equilibrada a tres hilos es idéntico. Suponiendo un receptor equilibrado, donde cada fase tiene una impedancia de $\overline{Z}=Z\phase{\theta^\circ}$, las intensidades son:
 	\begin{align*}
       \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}} = \frac{U_f}{Z}\phase{{\pm 90^\circ} - \theta} \\
       \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}} = \frac{U_f}{Z}\phase{{\mp 30^\circ} - \theta}\\
@@ -233,7 +233,7 @@
 		\centering
 		{\includegraphics{../figs/EstrellaEquilibrado_Receptor_SN.pdf}}
 		\caption{Conexión en estrella a tres hilos}
-		\label{fig.conexion_estrella_3}
+		\label{fig:conexion_estrella_3}
 	\end{figure}
 
 	Se observa que, en la conexión estrella, las intensidades que pasan por los conductores (corriente de línea) son \textbf{las mismas} que las cedidas por las fases del generador (corriente de fase), por lo que se cumple que:
@@ -253,7 +253,7 @@
         
         \vspace{4mm}
     
-	    Siguiendo la referencia para SFI (Figura~\ref{fig.linea-fase-SFI}), las tensiones de fase y línea del sistema son:
+	    Siguiendo la referencia para SFI (Figura~\ref{fig:linea-fase-SFI}), las tensiones de fase y línea del sistema son:
 	    \begin{align*}
 	        \overline{U}_{AB} &= 200\,\sqrt{3}\phase{-120^\circ}\,\si{\volt} \quad\rightarrow\quad \overline{U}_A = 200\phase{-90^\circ}\,\si{\volt}\\
 	        \overline{U}_{BC} &= 200\,\sqrt{3}\phase{0^\circ}\,\si{\volt} \quad\rightarrow\quad \overline{U}_B = 200\phase{30^\circ}\,\si{\volt}\\
@@ -269,12 +269,12 @@
 	    \begin{equation*}
 	        \overline{I}_N=-(\overline{I}_A+\overline{I}_B+\overline{I}_C)=-(20\phase{-150^\circ}+20\phase{-30^\circ}+20\phase{90^\circ})=0
 	    \end{equation*}
-	    El diagrama fasorial se presenta en la Figura~\ref{fig.diagrama_ejemplo_3-1}. 
+	    El diagrama fasorial se presenta en la Figura~\ref{fig:diagrama_ejemplo_3-1}. 
 	    \begin{figure}[H]
 	        \centering
 	        \includegraphics[width=0.4\linewidth]{../figs/diagrama_ejemplo3_1.pdf}
 	        \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-1}}
-	        \label{fig.diagrama_ejemplo_3-1}
+	        \label{fig:diagrama_ejemplo_3-1}
 	    \end{figure}
 	\end{example}
 	
@@ -283,7 +283,7 @@
 	La estrella está desequilibrada cuando las tres impedancias no
         sean iguales en módulo o argumento. Si se trata de un sistema
         a cuatro hilos, como el mostrado en la
-        Figura~\ref{fig.estrelladeseqiulibrado_4hilos}, al ser las
+        Figura~\ref{fig:estrelladeseqiulibrado_4hilos}, al ser las
         impedancias distintas, da lugar a intensidades de línea
         diferentes, no formando un sistema equilibrado de fasores. Las
         intensidades serán:
@@ -303,7 +303,7 @@
           \centering
           \includegraphics[height=4cm]{../figs/EstrellaDesequilibrado_Receptor.pdf}
           \caption{Receptor desequilibrado en estrella a cuatro hilos}
-          \label{fig.estrelladeseqiulibrado_4hilos}
+          \label{fig:estrelladeseqiulibrado_4hilos}
 	\end{figure}
 	
         \vspace{4mm}
@@ -412,14 +412,14 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 Al procedimiento de cálculo expuesto se le denomina método de desplazamiento del neutro.
 
-\subsection{Conexión en triángulo}\label{sec.triangulo}
+\subsection{Conexión en triángulo}\label{sec:triangulo}
 	
 Una forma alternativa de conectar las tres fases de un
 generador/receptor es la \textbf{conexión en triángulo}, que se
 consigue conectando el terminal de polaridad de referencia negativa de
 una fase, con el de referencia positiva de otra fase ($A'$ con $B$,
 $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
-\ref{fig.conexion_triangulo}. En este caso, se tiene únicamente un
+\ref{fig:conexion_triangulo}. En este caso, se tiene únicamente un
 \textbf{sistema a tres hilos}, por lo que solo se dispone de la
 \textbf{tensión de línea}:
 \begin{equation*}
@@ -429,7 +429,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
   \centering
   {\includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}}
   \caption{Conexión en triángulo}
-  \label{fig.conexion_triangulo}
+  \label{fig:conexion_triangulo}
 \end{figure}
 	
 	\subsubsection{Triángulo equilibrado}
@@ -472,7 +472,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
           \vspace{4mm}
     
           Siguiendo la referencia para SFD
-          (Figura~\ref{fig.linea-fase-SFD}), las tensiones de línea
+          (Figura~\ref{fig:linea-fase-SFD}), las tensiones de línea
           del sistema son:
           \begin{align*}
             \overline{U}_{AB}&=200\phase{120^\circ}\,\si{\volt}\\
@@ -492,18 +492,18 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
             \overline{I}_C&= \overline{I}_{CA}-\overline{I}_{BC} = \sqrt{3}\cdot 20\phase{180^\circ}\,\si{\ampere}
           \end{align*}
           El diagrama fasorial se presenta en la
-          Figura~\ref{fig.diagrama_ejemplo_3-2}.
+          Figura~\ref{fig:diagrama_ejemplo_3-2}.
           \begin{figure}[H]
             \centering
             \includegraphics{../figs/diagrama_ejemplo3_2.pdf}
             \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-2}}
-            \label{fig.diagrama_ejemplo_3-2}
+            \label{fig:diagrama_ejemplo_3-2}
           \end{figure}
 	\end{example}
 	
 	\subsubsection{Triángulo desequilibrado}
 	Se trata del receptor representado en la
-        Figura~\ref{fig.trianguloDesequilibrado_receptor}. Supóngase
+        Figura~\ref{fig:trianguloDesequilibrado_receptor}. Supóngase
         que se conocen las tensiones de línea $\overline{U}_{AB}$,
         $\overline{U}_{BC}$ y $\overline{U}_{CA}$. En este caso, cada
         impedancia del triángulo es distinta de las demás, por lo que
@@ -528,7 +528,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
           \centering
           \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
           \caption{Receptor en triángulo desequilibrado}
-          \label{fig.trianguloDesequilibrado_receptor}
+          \label{fig:trianguloDesequilibrado_receptor}
 	\end{figure}
 	
 	\vspace{4mm}
@@ -546,7 +546,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
           \vspace{4mm}
 	    
           Siguiendo la referencia para SFI
-          (Figura~\ref{fig.linea-fase-SFI}), las tensiones de línea
+          (Figura~\ref{fig:linea-fase-SFI}), las tensiones de línea
           del sistema son:
           \begin{align*}
             \overline{U}_{AB}&=200\phase{-120^\circ}\,\si{\volt}\\
@@ -566,16 +566,16 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
             \overline{I}_C \; &= \; \overline{I}_{CA} - \overline{I}_{BC} \;=\; (20\phase{165^\circ})-(20\phase{-30^\circ}) \;=\; 39.66\phase{157.5^\circ}\,\si{\ampere}
           \end{align*}
           El diagrama fasorial se presenta en la
-          Figura~\ref{fig.diagrama_ejemplo_3-3}.
+          Figura~\ref{fig:diagrama_ejemplo_3-3}.
           \begin{figure}[H]
             \centering \includegraphics{../figs/diagrama_3_3.pdf}
             \caption{Diagrama fasorial del Ejemplo~\ref{ej.3-3}}
-            \label{fig.diagrama_ejemplo_3-3}
+            \label{fig:diagrama_ejemplo_3-3}
           \end{figure}
 	\end{example}
 	
-	\section{Circuito equivalente monofásico de cargas trifásicas}\label{sec.c_eq_mon}
-	 Siempre que se tenga un sistema equilibrado, es posible utilizar un \textbf{circuito monofásico equivalente} al trifásico, en el cual se representa una fase del original. Esto permite tomar cada fase en forma independiente de las restantes, sabiendo que las magnitudes de corriente y tensión calculadas serán iguales en amplitud y frecuencia, pero desfasada $120^\circ$ entre sí. Este método puede aplicarse tanto a estrella como a triángulo, teniendo siempre en cuenta que el circuito equivalente irá por \textbf{fase} y, por tanto, los elementos deberán tener una conexión en \textbf{estrella}. Nótese que, en este caso, las corrientes que se calcularán serán las de \textbf{línea}, que coincidirán con las de fase si la conexión inicial de la carga era en estrella, pero \textbf{no} si es en triángulo (ver Sección~\ref{sec.triangulo}); en este caso, las relaciones entre fase y línea mostradas en la Sección~\ref{sec.secuencia_fases} para la tensión son válidas también para la corriente.
+	\section{Circuito equivalente monofásico de cargas trifásicas}\label{sec:c_eq_mon}
+	 Siempre que se tenga un sistema equilibrado, es posible utilizar un \textbf{circuito monofásico equivalente} al trifásico, en el cual se representa una fase del original. Esto permite tomar cada fase en forma independiente de las restantes, sabiendo que las magnitudes de corriente y tensión calculadas serán iguales en amplitud y frecuencia, pero desfasada $120^\circ$ entre sí. Este método puede aplicarse tanto a estrella como a triángulo, teniendo siempre en cuenta que el circuito equivalente irá por \textbf{fase} y, por tanto, los elementos deberán tener una conexión en \textbf{estrella}. Nótese que, en este caso, las corrientes que se calcularán serán las de \textbf{línea}, que coincidirán con las de fase si la conexión inicial de la carga era en estrella, pero \textbf{no} si es en triángulo (ver Sección~\ref{sec:triangulo}); en este caso, las relaciones entre fase y línea mostradas en la Sección~\ref{sec:secuencia_fases} para la tensión son válidas también para la corriente.
 	 
 	  \begin{example}\label{ex.eq-mono}
 	\textbf{	Un circuito trifásico de SFD presenta una línea de impedancia $1+\mathrm{j}2 \Omega$/hilo. A él se conectan dos cargas equilibradas con una tensión compuesta en sus terminales de 380V/50 Hz. La carga 1, en triángulo, presenta una impedancia $19\,\sqrt{3}\phase {60^\circ}\;\Omega$/fase; la carga 2, conectada en estrella, tiene una impedancia de $38/\sqrt{3}\phase{60^\circ}\;\Omega$/fase. Se pide:
@@ -594,7 +594,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 		\begin{align*}	    \overline{U_A'}&=\dfrac{380}{\sqrt{3}}\phase{90^\circ}V\\    \overline{U_B'}&=\dfrac{380}{\sqrt{3}}\phase{-30^\circ}V\\   \overline{U_C'}&=\dfrac{380}{\sqrt{3}}\phase{-150^\circ}V
 		\end{align*}
 		
-		Para determinar el equivalente monofásico, es necesario transformar la carga 1 en su estrella equivalente. Siguiendo la expresión~\eqref{eq.triangulo-estrella-igual}, extrapolado a una impedancia:
+		Para determinar el equivalente monofásico, es necesario transformar la carga 1 en su estrella equivalente. Siguiendo la expresión~\eqref{eq:triangulo-estrella-igual}, extrapolado a una impedancia:
 		\begin{equation*}
 		    \overline{Z_{1,D}}=3\,\overline{Z_{1,Y}}\Rightarrow \overline{Z_{1,Y}}=\dfrac{\overline{Z_{1,D}}}{3}=\dfrac{19\,\sqrt{3}\phase{60^\circ}}{3}=\dfrac{19}{\sqrt{3}}\phase{60^\circ}\Omega
 		\end{equation*}
@@ -614,7 +614,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 		    \overline{I_{1,L,B}}&=20\phase{-90^\circ}\,A\\
 		    \overline{I_{1,L,C}}&=20\phase{-210^\circ}\,A\\
 		\end{align*}
-		y, siguiendo las relaciones~\eqref{eq.sfd_fase-linea} al tratarse de una SFD, se obtiene que las corrientes de fase son: 
+		y, siguiendo las relaciones~\eqref{eq:sfd_fase-linea} al tratarse de una SFD, se obtiene que las corrientes de fase son: 
 		\begin{align*}
 		    \overline{I_{1,F,A}}&=\dfrac{20}{\sqrt{3}}\phase{0^\circ}\,A\\
 		    \overline{I_{1,F,B}}&=\dfrac{20}{\sqrt{3}}\phase{-120^\circ}\,A\\
@@ -638,7 +638,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 		\begin{equation*}
 		    \overline{U_{F,A}}=\overline{Z_L}\;\overline{I_{L,A}}+ \overline{U_A'}=(1+\mathrm{j}2)\cdot(30\phase{30^\circ})+\dfrac{380}{\sqrt{3}}\phase{90^\circ}=286.38\phase{90.8041^\circ} V
 		\end{equation*}
-		y, siguiendo las relaciones~\eqref{eq.sfd_fase-linea} al tratarse de una SFD, se obtiene que la tensión compuesta (de línea) es: 
+		y, siguiendo las relaciones~\eqref{eq:sfd_fase-linea} al tratarse de una SFD, se obtiene que la tensión compuesta (de línea) es: 
 		\begin{equation*}
 		    \overline{U_{L,A}}=\sqrt{3}\,286.38\phase{120.8041^\circ} V 
 		\end{equation*}
@@ -649,19 +649,19 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 			\end{align*}
 		\end{example}
 	
-	\section{Potencia en sistemas trifásicos}\label{sec.potencia_trifasica}
+	\section{Potencia en sistemas trifásicos}\label{sec:potencia_trifasica}
 	Se analiza el caso de sistemas desequilibrados y equilibrados.
 	
 	\subsection{Sistemas desequilibrados}
 	
 	\subsubsection{Estrella}
-	La forma de proceder es idéntica para sistemas a tres y a cuatro hilos. Supóngase un receptor desequilibrado en estrella, como el mostrado en la Figura~\ref{fig.estrellaDesequilibrado_potencia}, donde cada fase (impedancia, $\overline{Z_i}=Z_i\phase{\theta_i}$) consumirá una potencia activa dada por: 
+	La forma de proceder es idéntica para sistemas a tres y a cuatro hilos. Supóngase un receptor desequilibrado en estrella, como el mostrado en la Figura~\ref{fig:estrellaDesequilibrado_potencia}, donde cada fase (impedancia, $\overline{Z_i}=Z_i\phase{\theta_i}$) consumirá una potencia activa dada por: 
 	\begin{equation*}
 	    P_A=U_{A}\cdot I_A \cdot \cos(\theta_A);\qquad \qquad
 	    P_B=U_{B}\cdot I_B \cdot \cos(\theta_B);\qquad \qquad
 	    P_C=U_{C}\cdot I_C \cdot \cos(\theta_C)
 	\end{equation*}
-	Por tanto, aplicando el Teorema de Boucherot (Sección~\ref{sec.boucherot}), la potencia total consumida por el receptor será:
+	Por tanto, aplicando el Teorema de Boucherot (Sección~\ref{sec:boucherot}), la potencia total consumida por el receptor será:
 	\begin{equation}
 	    \boxed{P_T=P_A+P_B+P_C}
 	\end{equation}
@@ -690,7 +690,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 	    \centering
 	    \includegraphics{../figs/EstrellaDesequilibrado_Receptor_SN.pdf}
 	    \caption{Receptor en estrella desequilibrado}
-	    \label{fig.estrellaDesequilibrado_potencia}
+	    \label{fig:estrellaDesequilibrado_potencia}
 	\end{figure}
 	
 	\begin{remark}
@@ -699,7 +699,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 	
 	\subsubsection{Triángulo}
 	
-	Supóngase un receptor desequilibrado en triángulo, como el mostrado en la Figura~\ref{fig.trianguloDesequilibrado_receptor_potencia}, donde cada fase (impedancia, $\overline{Z_i}=Z_i\phase{\theta_i}$) consumirá una potencia activa dada por: 
+	Supóngase un receptor desequilibrado en triángulo, como el mostrado en la Figura~\ref{fig:trianguloDesequilibrado_receptor_potencia}, donde cada fase (impedancia, $\overline{Z_i}=Z_i\phase{\theta_i}$) consumirá una potencia activa dada por: 
 	\begin{equation*}
 	    P_{AB}=U_{AB}\cdot I_{AB} \cdot \cos(\theta_{AB});\qquad \qquad
 	    P_{BC}=U_{BC}\cdot I_{BC} \cdot \cos(\theta_{BC});\qquad \qquad
@@ -734,14 +734,14 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 	    \centering
 	    \includegraphics{../figs/trianguloDesequilibrado_receptor.pdf}
 	    \caption{Receptor en triángulo desequilibrado}
-	    \label{fig.trianguloDesequilibrado_receptor_potencia}
+	    \label{fig:trianguloDesequilibrado_receptor_potencia}
 	\end{figure}
 	
 	\subsection{Sistemas equilibrados}
 	
 	\subsubsection{Estrella}
 	
-	La forma de proceder es idéntica para sistemas a tres y a cuatro hilos. Supóngase un receptor equilibrado en estrella, como el mostrado en la Figura~\ref{fig.estrellaequilibrado_SN_potencia}, donde cada fase (impedancia, $\overline{Z}=Z\phase{\theta}$) consumirá la misma potencia activa, dada por: 
+	La forma de proceder es idéntica para sistemas a tres y a cuatro hilos. Supóngase un receptor equilibrado en estrella, como el mostrado en la Figura~\ref{fig:estrellaequilibrado_SN_potencia}, donde cada fase (impedancia, $\overline{Z}=Z\phase{\theta}$) consumirá la misma potencia activa, dada por: 
 	\begin{equation*}
 	    P_F=U_{F}\cdot I_F \cdot \cos(\theta)
 	\end{equation*}
@@ -767,12 +767,12 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 	    \centering
 	    \includegraphics{../figs/EstrellaEquilibrado_Receptor_SN.pdf}
 	    \caption{Receptor en estrella equilibrado}
-	    \label{fig.estrellaequilibrado_SN_potencia}
+	    \label{fig:estrellaequilibrado_SN_potencia}
 	\end{figure}
 	
 	\subsubsection{Triángulo}
 	
-	Supóngase un receptor equilibrado en triángulo, como el mostrado en la Figura~\ref{fig.trianguloEquilibrado_receptor_potencia}, donde cada fase (impedancia, $\overline{Z}=Z\phase{\theta}$) consumirá la misma potencia activa, dada por: 
+	Supóngase un receptor equilibrado en triángulo, como el mostrado en la Figura~\ref{fig:trianguloEquilibrado_receptor_potencia}, donde cada fase (impedancia, $\overline{Z}=Z\phase{\theta}$) consumirá la misma potencia activa, dada por: 
 	\begin{equation*}
 	    P_F=U_{F}\cdot I_F \cdot \cos(\theta)
 	\end{equation*}
@@ -798,7 +798,7 @@ $B'$ con $C$ y $C'$ con $A$), como se muestra en la Figura
 	    \centering
 	    \includegraphics{../figs/TrianguloEquilibrado_Receptor.pdf}
 	    \caption{Receptor en triángulo equilibrado}
-	    \label{fig.trianguloEquilibrado_receptor_potencia}
+	    \label{fig:trianguloEquilibrado_receptor_potencia}
 	\end{figure}
 	
 	\begin{example}
@@ -923,23 +923,23 @@ En consecuencia, un sistema trifásico equilibrado necesita un 25\% menos de mas
 	Se estudian dos casos: sistema a cuatro y a tres hilos.
 	
 	\subsection{Sistemas a cuatro hilos}
-	Para medir la potencia activa absorbida por cada fase de la carga, se necesitan tres vatímetros, indicando cada uno de ellos la potencia consumida por la fase donde está conectado, como se muestra en la Figura~\ref{fig.potencia4H}. Una vez medida la potencia en cada fase, la potencia total será:
+	Para medir la potencia activa absorbida por cada fase de la carga, se necesitan tres vatímetros, indicando cada uno de ellos la potencia consumida por la fase donde está conectado, como se muestra en la Figura~\ref{fig:potencia4H}. Una vez medida la potencia en cada fase, la potencia total será:
 	\begin{equation}
 		\boxed{P_T=W_1+W_2+W_3}
 	\end{equation}
 	
 	\begin{remark}
-	    Si se tratase de una estrella equilibrada, los tres vatímetros darán la misma lectura ($W_1=W_2=W_3$), por lo que bastaría con colocar uno y hacer $P_T=3\cdot W_1$, como en la Figura~\ref{fig.potencia4Hequilibrado}.
+	    Si se tratase de una estrella equilibrada, los tres vatímetros darán la misma lectura ($W_1=W_2=W_3$), por lo que bastaría con colocar uno y hacer $P_T=3\cdot W_1$, como en la Figura~\ref{fig:potencia4Hequilibrado}.
 	\end{remark}
 	\begin{figure}[H]
 		\centering
-		\subfloat[Estrella desequilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H.pdf}\label{fig.potencia4H}}\hfill
-		\subfloat[Estrella equilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H_Equilibrado.pdf}\label{fig.potencia4Hequilibrado}}
+		\subfloat[Estrella desequilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H.pdf}\label{fig:potencia4H}}\hfill
+		\subfloat[Estrella equilibrada]{\includegraphics[height=5cm]{../figs/Potencia4H_Equilibrado.pdf}\label{fig:potencia4Hequilibrado}}
 		\caption{Vatímetros para sistemas a cuatro hilos}
-		\label{fig.vatimetro4hilos}
+		\label{fig:vatimetro4hilos}
 	\end{figure}
 	
-	\subsection{Sistemas a tres hilos}\label{sec.potencia_3H}
+	\subsection{Sistemas a tres hilos}\label{sec:potencia_3H}
 	
 	\subsubsection{Estrella}
 	
@@ -997,29 +997,29 @@ En consecuencia, un sistema trifásico equilibrado necesita un 25\% menos de mas
 	    P_T=W_1+W_2
 	\end{equation*}
 	
-	\subsection{Método de los dos vatímetros}\label{sec.dos_vat}
+	\subsection{Método de los dos vatímetros}\label{sec:dos_vat}
 	
-	Al procedimiento mostrado en la Sección~\ref{sec.potencia_3H} se le denomina \textbf{método de los dos vatímetros} (o montaje de Aron), y se realiza del siguiente modo: 
+	Al procedimiento mostrado en la Sección~\ref{sec:potencia_3H} se le denomina \textbf{método de los dos vatímetros} (o montaje de Aron), y se realiza del siguiente modo: 
 	
-	Se eligen \textbf{dos líneas cualesquiera} a las que se conectan las \textbf{bobinas de intensidad} del vatímetro. Las \textbf{entradas de las bobinas de tensión} se conectan a las \textbf{mismas líneas} que las de intensidad y, las \textbf{salidas}, a la \textbf{línea no usada}, como se muestra en la Figura~\ref{fig.potencia3H}. Como se mencionó en la Sección~\ref{sec.medida_potencia}, si alguno de los vatímetros da una lectura negativa, en la suma se considerará con el signo $-$.   
+	Se eligen \textbf{dos líneas cualesquiera} a las que se conectan las \textbf{bobinas de intensidad} del vatímetro. Las \textbf{entradas de las bobinas de tensión} se conectan a las \textbf{mismas líneas} que las de intensidad y, las \textbf{salidas}, a la \textbf{línea no usada}, como se muestra en la Figura~\ref{fig:potencia3H}. Como se mencionó en la Sección~\ref{sec:medida_potencia}, si alguno de los vatímetros da una lectura negativa, en la suma se considerará con el signo $-$.   
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics{../figs/Potencia3H.pdf}
 	    \caption{Método de los dos vatímetros en líneas $A$ y $B$}
-	    \label{fig.potencia3H}
+	    \label{fig:potencia3H}
 	\end{figure}
 	
 	\subsubsection{Secuencia de fases directa}
 	
-	Supóngase una SFD y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$)
+	Supóngase una SFD y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig:fasores_potencia3H}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$)
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics{../figs/fasores_potencia3H.pdf}
 	    \caption{Diagrama fasorial de un receptor en estrella, inductivo y alimentado con SFD}
-	    \label{fig.fasores_potencia3H}
+	    \label{fig:fasores_potencia3H}
 	\end{figure}
 	
-	Colocando dos vatímetros en las líneas $A$ y $B$, como en la Figura~\ref{fig.Potencia3H_Equilibrado_AB}:
+	Colocando dos vatímetros en las líneas $A$ y $B$, como en la Figura~\ref{fig:Potencia3H_Equilibrado_AB}:
 	\begin{equation*}
 	    W_1=\Re\{\overline{U_{AC}} \cdot \overline{I_A}\}\qquad\qquad W_2=\Re\{\overline{U_{BC}} \cdot \overline{I_B}\}
 	\end{equation*}
@@ -1043,21 +1043,21 @@ y reemplazando en las expresiones de $W_1$ y $W_2$:
 \end{align*}
 
 Si se suman las medidas de los dos vatímetros, se obtiene que:
-\begin{align}\label{eq.P_2vat_SFD}
+\begin{align}\label{eq:P_2vat_SFD}
     W_1+W_2&=\left[ U_L\,I_L\,\left( \cos(\theta)\,\cos({30^\circ}) + \cancel{\sin(\theta)\,\sin({30^\circ})}\right) \right] + [U_L\,I_L\,\left( \cos(\theta)\,\cos({30^\circ}) - \cancel{\sin(\theta)\,\sin({30^\circ})}\right) ]=\nonumber\\
     &=2\,U_L\,I_L\,\cos(\theta)\,\cos({30^\circ}) \Rightarrow \boxed{W_1 + W_2 = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
 \end{align}
 Además, si se restan: 
-\begin{align}\label{eq.Q_2vat_SFD}
+\begin{align}\label{eq:Q_2vat_SFD}
     W_1-W_2&=\left[U_L\,I_L\,\left( \cancel{\cos(\theta)\,\cos({30^\circ})} + \sin(\theta)\sin({30^\circ})\right)\right] - [U_L\,I_L\,\left( \cancel{\cos(\theta)\,\cos({30^\circ})} - \sin(\theta)\,\sin({30^\circ})\right) ]=\nonumber\\
     &=2\,U_L\,I_L\,\sin(\theta)\,\sin({30^\circ}) \Rightarrow \boxed{W_1 - W_2 = U_L\, I_L\,\sin(\theta) = \frac{Q_T}{\sqrt{3}}}
 \end{align}
-Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq.P_2vat_SFD} y \eqref{eq.Q_2vat_SFD}, puesto que:
+Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq:P_2vat_SFD} y \eqref{eq:Q_2vat_SFD}, puesto que:
 \begin{equation}
     \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_1 - W_2}{W_1 + W_2}}
 \end{equation}
 
-Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
+Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig:Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig:Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
 \begin{align*}
     W_1&=U_L\,I_L\,\cos(\theta-30^\circ) \\
     W_2&=U_L\,I_L\,\cos(\theta+30^\circ)
@@ -1068,27 +1068,27 @@ siendo las potencias activas y reactivas totales:
     Q_T&=\sqrt{3}\,(W_1 - W_2)
 \end{align*}
 \begin{figure}[H]
-    \centering\subfloat[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_AB.pdf}\label{fig.Potencia3H_Equilibrado_AB}}\hfill
-    \subfloat[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_BC.pdf}\label{fig.Potencia3H_Equilibrado_BC}}\hfill
-    \subfloat[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_CA.pdf}\label{fig.Potencia3H_Equilibrado_CA}}
+    \centering\subfloat[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_AB.pdf}\label{fig:Potencia3H_Equilibrado_AB}}\hfill
+    \subfloat[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_BC.pdf}\label{fig:Potencia3H_Equilibrado_BC}}\hfill
+    \subfloat[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_CA.pdf}\label{fig:Potencia3H_Equilibrado_CA}}
     \caption{Método de los dos vatímetros en SFD}
-    \label{fig.potencia3H_equilibrado_SFD}
+    \label{fig:potencia3H_equilibrado_SFD}
 \end{figure}
 
 \begin{remark}
-    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFD, las fases presentan una sucesión $ABCABCABC$... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AC$, $BA$ ni $CB$, correspondientes a las conexiones de $W_1$ de la Figura~\ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de la Figura~\ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
+    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFD, las fases presentan una sucesión $ABCABCABC$... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AC$, $BA$ ni $CB$, correspondientes a las conexiones de $W_1$ de la Figura~\ref{fig:potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de la Figura~\ref{fig:potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
 \end{remark}
   
   \subsubsection{Secuencia de fases inversa}
-	Considérese ahora una SFI y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig.fasores_potencia3H_SFI}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$).
+	Considérese ahora una SFI y un receptor en estrella de carácter inductivo (el resultado es también aplicable a carácter capacitivo). El diagrama fasorial del circuito es el de la Figura~\ref{fig:fasores_potencia3H_SFI}. El ángulo de desfase entre la tensión de fase y la intensidad (de línea o fase, al ser la misma) es el correspondiente a la impedancia ($\theta$).
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics{../figs/fasores_potencia3H_SFI.pdf}
 	    \caption{Diagrama fasorial de un receptor en estrella, inductivo y alimentado con SFI}
-	    \label{fig.fasores_potencia3H_SFI}
+	    \label{fig:fasores_potencia3H_SFI}
 	\end{figure}
 	
-	Colocando dos vatímetros en las líneas $A$ y $B$, como se muestra en la Figura~\ref{fig.Potencia3H_Equilibrado_AB_SFI}:
+	Colocando dos vatímetros en las líneas $A$ y $B$, como se muestra en la Figura~\ref{fig:Potencia3H_Equilibrado_AB_SFI}:
 	\begin{equation*}
 	    W_1=\Re\{\overline{U_{BC}} \cdot \overline{I_B}\}\qquad\qquad W_2=\Re\{\overline{U_{AC}} \cdot \overline{I_A}\}
 	\end{equation*}
@@ -1102,29 +1102,29 @@ siendo las potencias activas y reactivas totales:
 	    W_1=U_L\;I_L\;\cos{(\theta-30^\circ)}\qquad W_2={U_L}\; {I_L}\;\cos{(\theta+30^\circ)}
 	\end{equation*}
 	cuyo resultado es idéntico al obtenido para la SFD: 
-\begin{align}\label{eq.P_2vat_SFI}
+\begin{align}\label{eq:P_2vat_SFI}
     W_1+W_2&=\left[ U_L\,I_L\,\left( \cos(\theta)\,\cos({30^\circ}) + \cancel{\sin(\theta)\,\sin({30^\circ})}\right) \right] + [U_L\,I_L\,\left( \cos(\theta)\,\cos({30^\circ}) - \cancel{\sin(\theta)\,\sin({30^\circ})}\right) ]=\nonumber\\
     &=2\,U_L\,I_L\,\cos(\theta)\,\cos({30^\circ}) \Rightarrow \boxed{W_1 + W_2 = \sqrt{3}\,U_L\, I_L\,\cos(\theta) = P_T}
 \end{align}
-\begin{align}\label{eq.Q_2vat_SFI}
+\begin{align}\label{eq:Q_2vat_SFI}
     W_1-W_2&=\left[U_L\,I_L\,\left( \cancel{\cos(\theta)\,\cos({30^\circ})} + \sin(\theta)\sin({30^\circ})\right)\right] - [U_L\,I_L\,\left( \cancel{\cos(\theta)\,\cos({30^\circ})} - \sin(\theta)\,\sin({30^\circ})\right) ]=\nonumber\\
     &=2\,U_L\,I_L\,\sin(\theta)\,\sin({30^\circ}) \Rightarrow \boxed{W_1 - W_2 = U_L\, I_L\,\sin(\theta) = \frac{Q_T}{\sqrt{3}}}
 \end{align}
-Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq.P_2vat_SFI} y \eqref{eq.Q_2vat_SFI}, puesto que:
+Por tanto, se puede calcular el ángulo del receptor a partir de las expresiones~\eqref{eq:P_2vat_SFI} y \eqref{eq:Q_2vat_SFI}, puesto que:
 \begin{equation}
     \tan(\theta) = \dfrac{Q_T}{P_T}\Rightarrow \boxed{\tan(\theta) = \sqrt{3} \frac{W_1 - W_2}{W_1 + W_2}}
 \end{equation}
 
 \begin{figure}[H]
     \centering
-    \centering\subfloat[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_AB_SFI.pdf}\label{fig.Potencia3H_Equilibrado_AB_SFI}}\hfill
-    \subfloat[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_BC_SFI.pdf}\label{fig.Potencia3H_Equilibrado_BC_SFI}}\hfill
-    \subfloat[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_CA_SFI.pdf}\label{fig.Potencia3H_Equilibrado_CA_SFI}}
+    \centering\subfloat[Líneas $A$ y $B$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_AB_SFI.pdf}\label{fig:Potencia3H_Equilibrado_AB_SFI}}\hfill
+    \subfloat[Líneas $B$ y $C$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_BC_SFI.pdf}\label{fig:Potencia3H_Equilibrado_BC_SFI}}\hfill
+    \subfloat[Líneas $C$ y $A$]{\includegraphics[width=0.3\linewidth]{../figs/Potencia3H_Equilibrado_CA_SFI.pdf}\label{fig:Potencia3H_Equilibrado_CA_SFI}}
     \caption{Método de los dos vatímetros en SFI}
-    \label{fig.potencia3H_equilibrado_SFI}
+    \label{fig:potencia3H_equilibrado_SFI}
 \end{figure}
 
-Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig.Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig.Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
+Estos mismos resultados se obtendrían igualmente si se conectan los vatímetros en otras líneas. Si se conectan los vatímetros en $B$ y $C$ (Figura~\ref{fig:Potencia3H_Equilibrado_BC}) o entre $C$ y $A$ (Figura~\ref{fig:Potencia3H_Equilibrado_CA}), se segurá cumpliendo que: 
 \begin{align*}
     W_1&=U_L\,I_L\,\cos(\theta-30^\circ) \\
     W_2&=U_L\,I_L\,\cos(\theta+30^\circ)
@@ -1136,16 +1136,16 @@ siendo las potencias activas y reactivas totales:
 \end{align*}
 
 \begin{remark}
-    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFI, las fases presentan una sucesión $ACBACBACB$.... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AB$, $BC$ ni $CA$, correspondientes a las conexiones de $W_1$ de las Figuras~\ref{fig.potencia3H} y \ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de las Figuras~\ref{fig.potencia3H} y \ref{fig.potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
+    Es posible recordar las conexiones de los vatímetros de la siguiente forma: al estar en una SFI, las fases presentan una sucesión $ACBACBACB$.... En esta sucesión, se observa que {\color{red}\textbf{no}} se tiene $AB$, $BC$ ni $CA$, correspondientes a las conexiones de $W_1$ de las Figuras~\ref{fig:potencia3H} y \ref{fig:potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta-30^\circ$. Sin embargo, {\color{red}\textbf{sí}} se tiene $AB$, $BC$ y $CA$, correspondientes a las conexiones de $W_2$ de las Figuras~\ref{fig:potencia3H} y \ref{fig:potencia3H_equilibrado_SFD}, que miden el coseno de un ángulo $\theta+30^\circ$.
 \end{remark}
 
 \begin{example}\label{ex.dos-vatimetros}
-\textbf{Hallar la indicación del voltímetro en el sistema trifásico equilibrado de SFD de la Figura~\ref{fig.ej_dosvat}, sabiendo que: $W_1=700$ W; $W_2=400$ W; $\overline{Z_L}=1+\mathrm{j}2\Omega$; $\overline{Z_1}=100\Omega$; $\overline{Z_2}=47\phase{37^\circ}\Omega$.}
+\textbf{Hallar la indicación del voltímetro en el sistema trifásico equilibrado de SFD de la Figura~\ref{fig:ej_dosvat}, sabiendo que: $W_1=700$ W; $W_2=400$ W; $\overline{Z_L}=1+\mathrm{j}2\Omega$; $\overline{Z_1}=100\Omega$; $\overline{Z_2}=47\phase{37^\circ}\Omega$.}
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\linewidth]{../figs/ej_dosvat.pdf}
     \caption{Ejemplo~\ref{ex.dos-vatimetros}}
-    \label{fig.ej_dosvat}
+    \label{fig:ej_dosvat}
 \end{figure}
 
 Al ser SFD, las potencias activa y reactiva totales:
@@ -1154,7 +1154,7 @@ Al ser SFD, las potencias activa y reactiva totales:
     Q_T&=\sqrt{3}(W_1-W_2)=\sqrt{3}(700-400)=519.62\,VAr
 \end{align*}
 
-Con estos valores, se empieza a trabajar mediante un equivalente monofásico (de la fase $A$) del circuito trifásico original (ver Sección~\ref{sec.c_eq_mon}). Las cargas $\overline{Z_1}$ y $\overline{Z_2}$ están en paralelo, pudiéndose calcular la impedancia equivalente por fase:
+Con estos valores, se empieza a trabajar mediante un equivalente monofásico (de la fase $A$) del circuito trifásico original (ver Sección~\ref{sec:c_eq_mon}). Las cargas $\overline{Z_1}$ y $\overline{Z_2}$ están en paralelo, pudiéndose calcular la impedancia equivalente por fase:
 \begin{equation*}
     \overline{Z_{eq,F}}=\dfrac{\overline{Z_1}\cdot\overline{Z_2}}{\overline{Z_1}+\overline{Z_2}}=\dfrac{100\cdot 47\phase{37^\circ}}{100+ 47\phase{37^\circ}}=33.47\phase{25.3787^\circ}\Omega=30.24+\mathrm{j}\,14.35\Omega
 \end{equation*}
@@ -1180,11 +1180,11 @@ Dado que el voltímetro mide la \textbf{tensión entre fases} (es decir, la tens
 
 \subsection{Medida de potencia reactiva con un vatímetro}
 
-Supóngase una SFD y un receptor en estrella de carácter inductivo, con el diagrama fasorial de la Figura~\ref{fig.fasores_potencia3H}. Si se hace el producto $\Re\{\overline{U_{BC}} \cdot \overline{I_A}^*\}$, se obtiene que:
+Supóngase una SFD y un receptor en estrella de carácter inductivo, con el diagrama fasorial de la Figura~\ref{fig:fasores_potencia3H}. Si se hace el producto $\Re\{\overline{U_{BC}} \cdot \overline{I_A}^*\}$, se obtiene que:
 \begin{equation*}
     \Re\{\overline{U_{BC}} \cdot \overline{I_A}^*\} = U_{BC}\;I_A\;\cos(\theta-90^\circ)=U_{BC}\;I_A\;\sin(\theta)
 \end{equation*}
-Por tanto, si se coloca un vatímetro que mida dicho producto escalar (como se muestra en la Figura~\ref{fig.Reactiva3H_A-BC}), se obtiene que: 
+Por tanto, si se coloca un vatímetro que mida dicho producto escalar (como se muestra en la Figura~\ref{fig:Reactiva3H_A-BC}), se obtiene que: 
 \begin{equation}
     W=\Re\{\overline{U_{BC}} \cdot \overline{I_A}^*\}=U_{L}\;I_L\;\sin(\theta)=\dfrac{Q_T}{\sqrt{3}}\Rightarrow \boxed{Q_T=\sqrt{3}\,W}
 \end{equation}
@@ -1193,15 +1193,15 @@ donde $W$ representa la lectura del vatímetro.
     \centering
     \includegraphics[height=3.7cm]{../figs/Reactiva3H_A-BC.pdf}
     \caption{Medida de reactiva con un vatímetro}
-    \label{fig.Reactiva3H_A-BC}
+    \label{fig:Reactiva3H_A-BC}
 \end{figure}
 
-A modo de resumen, se muestran a continuación las diferentes conexiones que se pueden utilizar para medir la potencia reactiva, indicando su expresión tanto para SFD como SFI. Si se hace la conexión de las Figuras~\ref{fig.conexiones_reactiva1}--\ref{fig.conexiones_reactiva3}, la potencia reactiva es:
+A modo de resumen, se muestran a continuación las diferentes conexiones que se pueden utilizar para medir la potencia reactiva, indicando su expresión tanto para SFD como SFI. Si se hace la conexión de las Figuras~\ref{fig:conexiones_reactiva1}--\ref{fig:conexiones_reactiva3}, la potencia reactiva es:
 \begin{align}
 SFD &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}\\
 SFI &\rightarrow \boxed{W =  - \frac{Q_T}{\sqrt{3}}}
 \end{align}
-Si se hace la conexión de las Figuras~\ref{fig.conexiones_reactiva4}--\ref{fig.conexiones_reactiva6}, la potencia reactiva es:
+Si se hace la conexión de las Figuras~\ref{fig:conexiones_reactiva4}--\ref{fig:conexiones_reactiva6}, la potencia reactiva es:
 \begin{align}
 SFD &\rightarrow \boxed{W = - \frac{Q_T}{\sqrt{3}}}\\
 SFI &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}
@@ -1209,24 +1209,24 @@ SFI &\rightarrow \boxed{W = \frac{Q_T}{\sqrt{3}}}
 
 \begin{figure}[H]
     \centering
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-BC.pdf}\label{fig.conexiones_reactiva1}}\hfill
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-CA.pdf}\label{fig.conexiones_reactiva2}}\hfill
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-AB.pdf}\label{fig.conexiones_reactiva3}}\hfill
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-CB.pdf}\label{fig.conexiones_reactiva4}}\hfill
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-AC.pdf}\label{fig.conexiones_reactiva5}}\hfill
-    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-BA.pdf}\label{fig.conexiones_reactiva6}}
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-BC.pdf}\label{fig:conexiones_reactiva1}}\hfill
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-CA.pdf}\label{fig:conexiones_reactiva2}}\hfill
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-AB.pdf}\label{fig:conexiones_reactiva3}}\hfill
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_A-CB.pdf}\label{fig:conexiones_reactiva4}}\hfill
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_B-AC.pdf}\label{fig:conexiones_reactiva5}}\hfill
+    \subfloat[]{\includegraphics[width=0.3\linewidth]{../figs/Reactiva3H_C-BA.pdf}\label{fig:conexiones_reactiva6}}
     \caption{Conexiones para medida de reactiva}
 \end{figure}
 
 \begin{remark}
-    Siguiendo las anotaciones realizadas para la medida de potencia activa y reactiva por el método de los dos vatímetros, las conexiones de las Figuras~\ref{fig.conexiones_reactiva1}--\ref{fig.conexiones_reactiva3} {\color{red}\textbf{sí}} se tienen en la SFD ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFI ($Q_T=-\sqrt{3}\,W$). De manera similar, las conexiones de las Figuras~\ref{fig.conexiones_reactiva4}--\ref{fig.conexiones_reactiva6} {\color{red}\textbf{sí}} se tienen en la SFI ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFD ($Q_T=-\sqrt{3}\,W$)
+    Siguiendo las anotaciones realizadas para la medida de potencia activa y reactiva por el método de los dos vatímetros, las conexiones de las Figuras~\ref{fig:conexiones_reactiva1}--\ref{fig:conexiones_reactiva3} {\color{red}\textbf{sí}} se tienen en la SFD ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFI ($Q_T=-\sqrt{3}\,W$). De manera similar, las conexiones de las Figuras~\ref{fig:conexiones_reactiva4}--\ref{fig:conexiones_reactiva6} {\color{red}\textbf{sí}} se tienen en la SFI ($Q_T=\sqrt{3}\,W$) pero {\color{red}\textbf{no}} en la SFD ($Q_T=-\sqrt{3}\,W$)
 \end{remark}
 
 
 
 		
 \begin{example}\label{ex.Q_vat}
-\textbf{El sistema trifásico de la Figura~\ref{fig.Q_vat} es de 380 V, 50 Hz. Sabiendo que la carga es equilibrada y consume 24 kW
+\textbf{El sistema trifásico de la Figura~\ref{fig:Q_vat} es de 380 V, 50 Hz. Sabiendo que la carga es equilibrada y consume 24 kW
 con un factor de potencia de 0,8 (inductivo), que las tensiones de línea son equilibradas y que se tiene una SFD, se pide calcular:
 \begin{itemize}
     \item Valor de las intensidades de línea en forma fasorial
@@ -1237,7 +1237,7 @@ con un factor de potencia de 0,8 (inductivo), que las tensiones de línea son eq
     \centering
     \includegraphics[width=\linewidth]{../figs/Q_vat.pdf}
     \caption{Ejemplo~\ref{ex.Q_vat}}
-    \label{fig.Q_vat}
+    \label{fig:Q_vat}
 \end{figure}
 
 Al tratarse de un sistema equilibrado en SFD:
@@ -1266,7 +1266,7 @@ El vatímetro $W_3$ mide la corriente $\overline{I_C}$ y la tensión $\overline{
 \end{equation*}
 cuya suma se comprueba que es igual a los 24 kW del enunciado.
 \begin{remark}
-    Los valores de $W_1$ y $W_3$ también podrían haberse obtenido directamente con lo indicado en la Sección~\ref{sec.dos_vat}:
+    Los valores de $W_1$ y $W_3$ también podrían haberse obtenido directamente con lo indicado en la Sección~\ref{sec:dos_vat}:
     \begin{align*}
         W_1&=U_L\,I_L\,\cos(\phi-30)=380\cdot 45.58\cdot \cos(36.8699-30)=17196.05\,W\\
         W_3&=U_L\,I_L\,\cos(\phi+30)=380\cdot 45.58\cdot \cos(36.8699+30)=6803.80\,W
@@ -1343,7 +1343,7 @@ mediante la suma de las lecturas de los tres vatímetros:
 		
 		
 El objetivo y procedimiento es el mismo que en las instalaciones
-monofásicas (Sección~\ref{sec.mejora_fdp_monofasica}). Para reducir la
+monofásicas (Sección~\ref{sec:mejora_fdp_monofasica}). Para reducir la
 potencia reactiva del sistema, se debe instalar un \textbf{banco de
   condensadores} que suministren una potencia reactiva $Q_C$. Como
 resultado, la potencia reactiva y el factor de potencia del sistema
@@ -1353,14 +1353,14 @@ caso se puede optar por un banco de condensadores acoplados en
 triángulo ($C_D$) o en estrella ($C_Y$):
 \begin{figure}[H]
   \centering
-  \subfloat[Triángulo]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig.compensacion_reactiva_triangulo_trif}}\hfil
-  \subfloat[Estrella]{\includegraphics[width=0.42\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig.compensacionY_reactiva_triangulo_trif}}
+  \subfloat[Triángulo]{\includegraphics[width=0.35\linewidth]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}\label{fig:compensacion_reactiva_triangulo_trif}}\hfil
+  \subfloat[Estrella]{\includegraphics[width=0.42\linewidth]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}\label{fig:compensacionY_reactiva_triangulo_trif}}
   \caption{Compensación de reactiva}
 \end{figure}
 \begin{itemize}
 \item \textbf{Conexión en triángulo.} Si se conectan los condensadores
   en triángulo, como en la
-  Figura~\ref{fig.compensacion_reactiva_triangulo_trif}, se tiene que:
+  Figura~\ref{fig:compensacion_reactiva_triangulo_trif}, se tiene que:
   \begin{align*}
     Q &= P\tan(\theta)\\
     Q' &= P\tan(\theta') = Q - Q_C\\
@@ -1371,7 +1371,7 @@ triángulo ($C_D$) o en estrella ($C_Y$):
   \end{equation}
 \item \textbf{Conexión en estrella.} Cuando se conectan los
   condensadores en estrella, como en la
-  Figura~\ref{fig.compensacionY_reactiva_triangulo_trif}, se tiene
+  Figura~\ref{fig:compensacionY_reactiva_triangulo_trif}, se tiene
   que:
   \begin{align*}
     Q &= P\tan(\theta)\\

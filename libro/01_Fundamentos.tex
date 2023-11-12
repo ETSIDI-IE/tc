@@ -1,4 +1,4 @@
-\chapter{Fundamentos. Corriente continua}\label{chap.cc}
+\chapter{Fundamentos. Corriente continua}\label{chap:cc}
 	
 \section{Introducción}
 	
@@ -29,7 +29,7 @@ la distancia que las separa, teniendo en cuenta que cargas iguales se
 repelen y distintas se atraen (ley de Coulomb). El medio en que se
 encuentren las cargas va a influir en dicha fuerza, reflejado mediante
 la constante de proporcionalidad $k$ (constante de Coulomb):
-\begin{equation*}\label{eq.coulomb}
+\begin{equation*}\label{eq:coulomb}
   \Vec{F}=k\cdot\dfrac{Q_1\cdot Q_2}{r^2}\cdot \Vec{u}
 \end{equation*}
 Esta fuerza es debida a la creación de un campo eléctrico
@@ -57,7 +57,7 @@ $q_0$ en cualquier punto está relacionada con el campo eléctrico por:
 	
 \section{Conceptos fundamentales}
 	
-\subsection{Circuito eléctrico} \label{sec.circuito_electrico}
+\subsection{Circuito eléctrico} \label{sec:circuito_electrico}
 	
 Un \textbf{circuito eléctrico} es un conjunto de componentes
 eléctricos combinados de tal forma que crean un camino cerrado por el
@@ -138,7 +138,7 @@ Este curso está dedicado al análisis de circuitos eléctricos
 El \textbf{potencial eléctrico} en un punto, $v(t)$, es la energía
 potencial que tiene una carga unitaria en ese punto debida al campo
 eléctrico. Dado que la fuerza electrostática $\vec{F}$ (definida con
-la ecuación~\eqref{eq.coulomb}) es conservativa, la variación de la
+la ecuación~\eqref{eq:coulomb}) es conservativa, la variación de la
 energía potencial $dV$ viene dada por:
 \begin{equation*}
   dV=-\Vec{F}\cdot d\vec{l}=-q_0\cdot \Vec{E}\cdot d\vec{l}
@@ -193,7 +193,7 @@ desde B hasta A.
         define como la variación de la carga eléctrica $q(t)$ que
         atraviesa la sección transversal de un conductor por unidad de
         tiempo (Figura~\ref{fig:seccion_conductor}).
-	\begin{equation*}\label{eq.intensidad}
+	\begin{equation*}\label{eq:intensidad}
           i(t)=\dfrac{dq(t)}{dt}
 	\end{equation*}
 	\begin{figure}[H]
@@ -234,7 +234,7 @@ desde B hasta A.
         ésta una unidad más manejable.
 	
 	\subsubsection{Corriente continua y corriente
-          alterna} \label{sec.cc-ca} Al estudiar la electricidad, es
+          alterna} \label{sec:cc-ca} Al estudiar la electricidad, es
         importante destacar que existen dos tipos de corriente: la
         corriente continua y la corriente alterna:
 	\begin{itemize}
@@ -311,7 +311,7 @@ desde B hasta A.
           p(t)=\frac{dW_{e}}{dt} 
 	\end{equation*}
 	que puede relacionarse con las variables anteriores:
-	\begin{equation*}\label{eq.pvi}
+	\begin{equation*}\label{eq:pvi}
           p(t) = \frac{dW_e}{dq(t)} \cdot \frac{dq(t)}{dt}= u(t)\cdot i(t)
 	\end{equation*}
 	
@@ -398,7 +398,7 @@ desde B hasta A.
 	Dado que la potencia $P$ se define como la cantidad de trabajo
         realizado (es decir, la energía $W$) por unidad de tiempo $t$
         ($P=\frac{W}{t}$), también se puede definir la energía como:
-	\begin{equation*}\label{eq.Ept}
+	\begin{equation*}\label{eq:Ept}
           W=P\cdot t
 	\end{equation*}
 	Por tanto, otra unidad muy utilizada para medir energía es el
@@ -428,7 +428,7 @@ desde B hasta A.
 	\end{equation}
         donde $R$ es la resistencia que opone el material al paso de
         la corriente eléctrica (se profundiza más en el concepto de
-        \textbf{resistencia} en la Sección~\ref{sec.resistencia}).
+        \textbf{resistencia} en la Sección~\ref{sec:resistencia}).
 	
 	\subsection{Leyes de Kirchhoff}
 	
@@ -522,7 +522,7 @@ desde B hasta A.
 
 	\section{Elementos de los circuitos}
 	Como ya se mencionó en la
-        Sección~\ref{sec.circuito_electrico}, en un circuito eléctrico
+        Sección~\ref{sec:circuito_electrico}, en un circuito eléctrico
         existen dos tipos de elementos: los elementos pasivos y los
         activos.
 	
@@ -536,7 +536,7 @@ desde B hasta A.
         eléctrico (transforma parte de la energía eléctrica en
         mecánica).
 	
-	\subsubsection{Resistencia} \label{sec.resistencia} En el
+	\subsubsection{Resistencia} \label{sec:resistencia} En el
         siglo XIX, Georg Simon Ohm descubrió la ley que lleva su
         nombre (\textbf{ley de Ohm}). Dicha ley obtiene que, \textit{a
           temperatura constante}, la relación existente entre la
@@ -572,7 +572,7 @@ desde B hasta A.
         homogéneos, de sección constante y pequeña comparada con su
         longitud, la resistencia $R$ que ofrece al paso de la
         corriente se puede determinar a partir de:
-	\begin{equation*}\label{eq.resistencia_rho}
+	\begin{equation*}\label{eq:resistencia_rho}
           R=\rho\cdot \dfrac{l}{S}
 	\end{equation*}
 	siendo $l$ la longitud del conductor y $S$ el área de la
@@ -675,7 +675,7 @@ desde B hasta A.
 		
 	\end{figure}
 	
-	\subsubsection{Bobina}\label{sec.bobina}
+	\subsubsection{Bobina}\label{sec:bobina}
 	
 	Una \textbf{bobina} es un conductor arrollado, con $N$
         vueltas, alrededor de un núcleo (generalmente, de material
@@ -685,7 +685,7 @@ desde B hasta A.
         conocido como \textbf{inductancia} o coeficiente de
         autoinducción, medido en \textbf{henrios} [H]
         (Figura~\ref{fig:bobina}):
-	\begin{equation}\label{eq.u_L}
+	\begin{equation}\label{eq:u_L}
           \boxed{u(t)=L\cdot\frac{di(t)}{dt}}\,
 	\end{equation}
 	por lo que, en circuitos de corriente continua, una bobina se
@@ -705,7 +705,7 @@ desde B hasta A.
           \label{fig:bobina}
 	\end{figure}
 	
-	La relación inversa de la expresión~\eqref{eq.u_L} se puede
+	La relación inversa de la expresión~\eqref{eq:u_L} se puede
         obtener por integración entre un tiempo inicial $t_i$ y un
         tiempo final $t_f$, resultando:
 	\begin{equation*}
@@ -744,13 +744,13 @@ desde B hasta A.
             $H$ proporcional a la longitud magnética media de las
             líneas de dicho campo $l$:
             \begin{equation*}
-              \label{eq.ampere_mod}
+              \label{eq:ampere_mod}
               H\cdot l=N\cdot i
             \end{equation*}
           \item \textbf{Densidad de flujo magnético.} La intensidad de
             campo $H$ origina, allá donde exista, una densidad de
             flujo $B$, cuyo valor es:
-            \begin{equation*}\label{eq.B}
+            \begin{equation*}\label{eq:B}
               B=\mu\cdot H,
             \end{equation*}
             siendo $\mu$ la permeabilidad del material.
@@ -758,7 +758,7 @@ desde B hasta A.
             (constante en magnitud y dirección) que atraviesa un área
             $S$, formando un ángulo $\theta$ con ésta, crea un flujo
             magnético que se puede calcular como:
-            \begin{equation*}\label{eq.flujo1}
+            \begin{equation*}\label{eq:flujo1}
               \phi=B\cdot S\cdot \cos (\theta)
             \end{equation*}
           \item \textbf{Ley de Lenz-Faraday.} Un flujo magnético
@@ -767,11 +767,11 @@ desde B hasta A.
             unidad de tiempo del flujo inducido en el circuito. Esta
             fem inducida tiene un sentido tal que sus efectos tienden
             a oponerse a las causas que lo producen, por lo que:
-            \begin{equation*}\label{eq.lenz-faraday}
+            \begin{equation*}\label{eq:lenz-faraday}
               e=-\dfrac{d\phi(t)}{dt}.
             \end{equation*}
           \end{itemize}
-          A partir de esto, y con la ecuación~\eqref{eq.u_L}, es
+          A partir de esto, y con la ecuación~\eqref{eq:u_L}, es
           sencillo concluir que, cuando un circuito está formado
           únicamente por una bobina alimentada con una intensidad
           variable (es decir, corriente alterna) el flujo magnético
@@ -790,7 +790,7 @@ desde B hasta A.
 	\end{remark}
 	
 	
-	\subsubsection{Condensador}\label{sec.condensador}
+	\subsubsection{Condensador}\label{sec:condensador}
 	
 	Un sistema de dos placas metálicas separadas por una capa
         dieléctrica constituye un \textbf{condensador}. Al aplicar
@@ -804,7 +804,7 @@ desde B hasta A.
         eléctrica. Así, la capacidad es la relación entre la carga
         $q(t)$ acumulada y la diferencia de potencial aplicada entre
         ellas $u(t)$, siendo:
-	\begin{equation}\label{eq.cqu}
+	\begin{equation}\label{eq:cqu}
           \boxed{C=\dfrac{q(t)}{u(t)}}
 	\end{equation}
 	La unidad en el SI de la capacidad es el faradio [F]. Se trata
@@ -818,8 +818,8 @@ desde B hasta A.
 	
 	Durante la carga del condensador, se produce una corriente
         eléctrica entre las dos placas (Figura~\ref{fig:condensador}):
-	\begin{equation}\label{eq.icu}
-          i(t)=\dfrac{dq(t)}{dt}\stackrel{\eqref{eq.cqu}}{=}\dfrac{d(C\cdot u(t))}{dt}=C\cdot \dfrac{du(t)}{dt} \Rightarrow \boxed{i(t)=C\cdot \dfrac{du(t)}{dt}}
+	\begin{equation}\label{eq:icu}
+          i(t)=\dfrac{dq(t)}{dt}\stackrel{\eqref{eq:cqu}}{=}\dfrac{d(C\cdot u(t))}{dt}=C\cdot \dfrac{du(t)}{dt} \Rightarrow \boxed{i(t)=C\cdot \dfrac{du(t)}{dt}}
 	\end{equation}
 	por lo que, en circuitos de corriente continua, un condensador
         se comporta como un \textbf{circuito abierto}.
@@ -833,13 +833,13 @@ desde B hasta A.
           \label{fig:condensador}
 	\end{figure}
 	
-	La relación inversa de la expresión~\eqref{eq.icu} se puede
+	La relación inversa de la expresión~\eqref{eq:icu} se puede
         obtener por integración entre un tiempo inicial $t_i$ y un
         tiempo final $t_f$, resultando:
 	\begin{equation*}
           \int_{t_i}^{t_f} \dfrac{du(t)}{dt}dt=\dfrac{1}{C}\int_{t_i}^{t_f}i(t)\cdot dt \rightarrow u(t_f)-u(t_i)=\dfrac{1}{C}\cdot\int_{t_i}^{t_f} i(t)\cdot dt
 	\end{equation*}
-	\begin{equation}\label{eq.u_C}
+	\begin{equation}\label{eq:u_C}
           \boxed{u(t_f)=u(t_i)+\dfrac{1}{C}\cdot\int_{t_i}^{t_f} i(t)\cdot dt}
 	\end{equation}
 	Se observa que el condensador también tiene un efecto de
@@ -863,7 +863,7 @@ desde B hasta A.
           \boxed{w(t)=\dfrac{1}{2}\cdot C\cdot [u(t_f)-u(t_i)]^2}
 	\end{equation}
 
-        \subsection{Elementos activos}\label{sec.elementos_activos}
+        \subsection{Elementos activos}\label{sec:elementos_activos}
 	
 	\subsubsection{Generadores de tensión}
 	Un \textbf{generador de tensión} es un dispositivo físico,
@@ -936,7 +936,7 @@ desde B hasta A.
           \label{fig:fuentecorriente}
 	\end{figure}
 	
-	\subsubsection{Dualidad de generadores}\label{sec.dualidad}
+	\subsubsection{Dualidad de generadores}\label{sec:dualidad}
 	
 	Se dice que dos fuentes son equivalentes cuando suministran el
         \textbf{mismo valor de tensión y corriente} a un circuito
@@ -965,7 +965,7 @@ desde B hasta A.
 	Por tanto, las fuentes son equivalentes cuando las ecuaciones
         coinciden para cualquier combinación de $(U_{AB}, I)$, es
         decir, si $R_g = R_{\epsilon_g} = R_{I_g}$:
-	\begin{equation}\label{eq.equivalencia_fuentes}
+	\begin{equation}\label{eq:equivalencia_fuentes}
           \boxed{\epsilon_g = R_{\epsilon_g} \cdot I_g \Leftrightarrow {I_g = \frac{\epsilon_g}{R_g}}}  
 	\end{equation}
 	
@@ -1799,7 +1799,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
           (por la LKC).
         \item \textbf{Real.} No existe ninguna restricción, llegando
           al generador equivalente mediante trasformación de fuentes
-          (ver Sección~\ref{sec.dualidad}).
+          (ver Sección~\ref{sec:dualidad}).
         \end{itemize}
 	
 	\subsection{Conexión en paralelo}
@@ -1969,7 +1969,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
                 \item \textbf{Real.} No existe \textbf{ninguna
                     restricción}, llegando al generador equivalente
                   mediante trasformación de fuentes (ver
-                  Sección~\ref{sec.dualidad}).
+                  Sección~\ref{sec:dualidad}).
 		\end{itemize}
 		
 		\subsubsection{Fuentes de corriente}
@@ -2100,7 +2100,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
         destacarse que, en caso de que las resistencias sean iguales
         ($R_a=R_b=R_c=R_Y$ para la estrella y
         $R_{ab}=R_{bc}=R_{ca}=R_D$ para el triángulo), se cumple que:
-	\begin{equation}\label{eq.triangulo-estrella-igual}
+	\begin{equation}\label{eq:triangulo-estrella-igual}
           \boxed{R_D=3\cdot R_Y}
 	\end{equation}
 	
@@ -2119,7 +2119,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
           Se calcula primero el cambio de estrella a triángulo. Puesto
           que las tres resistencias tienen un valor de 60 $\Omega$
           ($R_a=R_b=R_c=R_Y=60\Omega$), se cumple que,
-          según~\eqref{eq.triangulo-estrella-igual}:
+          según~\eqref{eq:triangulo-estrella-igual}:
           \begin{equation*}
             R_D=3\cdot R_Y=3\cdot 60=180\Omega
           \end{equation*}
@@ -2155,7 +2155,7 @@ cambios en \(R_L\) tienen un impacto pequeño en \(P_L\).  Por ejemplo:
 	\end{example}
 	
 	\section{Aplicación de las leyes de Kirchhoff: métodos de
-          análisis} \label{sec.metodos_analisis_cc} Para resolver un
+          análisis} \label{sec:metodos_analisis_cc} Para resolver un
         circuito, se debe conocer $U$ e $I$ en cada una de sus
         ramas. Por tanto, si se tiene un circuito formado por $r$
         ramas, el número de incógnitas será $2\cdot r$ (una de tensión

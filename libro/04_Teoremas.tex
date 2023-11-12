@@ -13,7 +13,7 @@ son tensiones e intensidades que varían con el tiempo:
 Estas funciones pueden representarse de forma gráfica o analítica. En
 ambos casos, esa relación funcional se conoce mediante el nombre de
 \textbf{forma de onda}. Las formas de onda pueden clasificarse según
-(de manera análoga a lo indicado en la Sección~\ref{sec.cc-ca}):
+(de manera análoga a lo indicado en la Sección~\ref{sec:cc-ca}):
 \begin{itemize}
 \item \textbf{Signo de la magnitud}:
   \begin{itemize}
@@ -39,7 +39,7 @@ formas de onda en escalón, rampa, pulsos y triangular.
 \subsection{Función escalón}
 Esta función vale 0 para tiempos negativos ($t<0$) y un valor
 constante $K$ para tiempos positivos ($t>0$), como se muestra en la
-Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es:
+Figura~\ref{fig:escalon}. Por tanto, su expresión matemática es:
 \begin{equation}
   \boxed{f(t) = %
     \begin{cases}
@@ -51,7 +51,7 @@ Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/escalon.pdf}
   \caption{Función escalón en el origen de tiempos}
-  \label{fig.escalon}
+  \label{fig:escalon}
 \end{figure}
 	
 Cuando $K = 1$, la función recibe el nombre de \textbf{escalón
@@ -64,7 +64,7 @@ y no modifica la función para $t>0$.
 \subsection{Función pulso rectangular}
 	
 Esta forma de onda es muy habitual en electrónica, y se representa en
-la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
+la Figura~\ref{fig:pulso}. Su expresión matemática viene dada por:
 \begin{equation}
   \boxed{f(t) = %
     \begin{cases}
@@ -76,13 +76,13 @@ la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/pulso.pdf}
   \caption{Función pulso rectangular}
-  \label{fig.pulso}
+  \label{fig:pulso}
 \end{figure}
 	
 El valor $W$ se conoce como \textbf{anchura/duración del pulso}.
 	
 \subsection{Función rampa}
-La forma de esta función es la indicada en la Figura~\ref{fig.rampa},
+La forma de esta función es la indicada en la Figura~\ref{fig:rampa},
 expresada de manera matemática de la siguiente forma:
 \begin{equation}
   \boxed{f(t) = %
@@ -94,13 +94,13 @@ expresada de manera matemática de la siguiente forma:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/rampa.pdf}
   \caption{Función rampa}
-  \label{fig.rampa}
+  \label{fig:rampa}
 \end{figure}
 El valor de $m$ es la pendiente de la rampa.
 	
 \subsection{Función triangular}
 La forma de esta función es la indicada en la
-Figura~\ref{fig.triangular}, expresada de manera matemática de la
+Figura~\ref{fig:triangular}, expresada de manera matemática de la
 siguiente forma:
 \begin{equation}
   \boxed{
@@ -115,12 +115,12 @@ siguiente forma:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/triangular.pdf}
   \caption{Función triangular}
-  \label{fig.triangular}
+  \label{fig:triangular}
 \end{figure}
 	
 \subsection{Retraso del origen de tiempos}
 Una forma de onda puede retrasarse en el tiempo si se desplaza el eje
-de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig.retraso}
+de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig:retraso}
 muestra diversos ejemplos de las formas de onda básicas.
 \begin{figure}[H]
   \centering \subfloat[Escalón
@@ -131,7 +131,7 @@ muestra diversos ejemplos de las formas de onda básicas.
   \subfloat[Triangular
   retrasada]{\includegraphics[height=3cm]{../figs/triangular_t0.pdf}}
   \caption{Formas de onda básicas retrasadas}
-  \label{fig.retraso}
+  \label{fig:retraso}
 \end{figure}
 	
 	
@@ -336,7 +336,7 @@ potencia disipada en la resistencia es:
 \end{equation*}
 En general, si la corriente tuviese más componentes, o alguna de ellas
 fuera continua, la potencia disipada por una resistencia es:
-\begin{equation}\label{eq.P_R_superposicion}
+\begin{equation}\label{eq:P_R_superposicion}
   \boxed{P_R=R\cdot\left(I_{cc}^2+I_1^2+I_2^2+...+I_n^2 \right)}
 \end{equation}
 \begin{remark}
@@ -385,7 +385,7 @@ potencia real (activa) entregada:
   =&\dfrac{1}{T}\int_0^T \cancel{2}\,E\,I_{1}\dfrac{\cos(-\theta_{i1})-\cos(2\,\omega_1\,t+\theta_{i1})}{\cancel{2}}dt =\dfrac{1}{T}\int_0^T E\,I_{1}\,{\cos(\theta_{i1})}\,dt-\dfrac{1}{T}\int_0^T E\,I_{1}\,\cancelto{0}{{\cos(2\,\omega_1+\theta_{i1})}}\,dt
 \end{align*}
 por lo que la potencia entregada por la fuente de tensión es:
-\begin{equation}\label{eq.P_E_superposicion}
+\begin{equation}\label{eq:P_E_superposicion}
   \boxed{P=E\,I_1\,\cos(\theta_{i1})}
 \end{equation}
 es decir, que a efectos de potencia, solo actúa la componente de la
@@ -408,7 +408,7 @@ entregada por el generador es:
 \end{equation*}
 integral que, al desarrollarla, incluye los mismos términos nulos que
 en los casos anteriores, por lo que el resultado es:
-\begin{equation}\label{eq.P_I_superposicion}
+\begin{equation}\label{eq:P_I_superposicion}
   \boxed{P=U_1\,I_g\,\cos(\theta_{u1})}
 \end{equation}
     
@@ -423,7 +423,7 @@ en los casos anteriores, por lo que el resultado es:
   diferente frecuencia, así como las funciones sinusoidales con
   funciones continuas. Por tanto, en los casos que aparecen en teoría
   de circuitos, las
-  expresiones~\eqref{eq.P_R_superposicion}--\eqref{eq.P_I_superposicion}
+  expresiones~\eqref{eq:P_R_superposicion}--\eqref{eq:P_I_superposicion}
   serán siempre válidas.
 \end{remark}
 
@@ -513,7 +513,7 @@ extremos ($Z_L \to \infty$ y $Z_L=0$):
   terminales externos $A-B$. Denominando $I_{sc}$ a la corriente que
   circula por este cortocircuito, debe obtenerse la misma $I_{sc}$ en
   el equivalente de Thévenin, resultando, por tanto:
-  \begin{equation}\label{eq.Zth}
+  \begin{equation}\label{eq:Zth}
     \overline{I}_{sc}=\dfrac{\overline{\epsilon}_{th}}{\overline{Z}_{th}}\Rightarrow
     \boxed{\overline{Z}_{th}=\dfrac{\overline{\epsilon}_{th}}{\overline{I}_{sc}}}
   \end{equation}
@@ -521,7 +521,7 @@ extremos ($Z_L \to \infty$ y $Z_L=0$):
     entre la tensión que da la red en vacío y la corriente de
     cortocircuito}. Si los generadores del circuito son todos
   independientes, el cálculo de la impedancia de Thévenin es más simple
-  que lo expresado en la fórmula~\eqref{eq.Zth}, y representa el
+  que lo expresado en la fórmula~\eqref{eq:Zth}, y representa el
   \textbf{valor de la impedancia que se observa entre los terminales
     $A-B$} de salida cuando se anulan los generadores internos del
   circuito (es decir, se cortocircuitan las fuentes de tensión y se
@@ -580,7 +580,7 @@ tensión de vacío ($Z_L \to \infty$) y la corriente de cortocircuito de la
 red (al igual que la impedancia de Thévenin).
 \begin{remark}
   Gracias a la equivalencia de fuentes
-  (expresión~\eqref{eq.equivalencia_fuentes}), una vez obtenido uno de
+  (expresión~\eqref{eq:equivalencia_fuentes}), una vez obtenido uno de
   los equivalentes se puede obtener el otro mediante una
   transformación.
 \end{remark}
@@ -738,14 +738,14 @@ $\left(\diffp{P_L}{X_L} = 0;\;\; \diffp{P_L}{R_L} = 0\right)$, se
 obtiene que:
 \begin{itemize}
 \item \textbf{Condición de la reactancia:}
-  \begin{equation}\label{eq.XL_maxpotencia}
+  \begin{equation}\label{eq:XL_maxpotencia}
     \diffp{P_L}{X_L} = \epsilon^2_{th} \cdot R_L \cdot \left[\frac{-1}{\left((R_L + R_{th})^2 + (X_L + X_{th})^2\right)^2} \cdot 2 \cdot (X_L + X_{th})\right]=0\Rightarrow \boxed{X_L = - X_{th}}
   \end{equation}
 \item \textbf{Condición de la resistencia:} simplificando la expresión
   de la potencia al tener en cuenta la
-  ecuación~\eqref{eq.XL_maxpotencia}, y calculando la derivada
+  ecuación~\eqref{eq:XL_maxpotencia}, y calculando la derivada
   parcial:
-  \begin{equation}\label{eq.R_maxpotencia}
+  \begin{equation}\label{eq:R_maxpotencia}
     \diffp{P_L}{R_L} = \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}=0\Rightarrow \boxed{R_L = R_{th}}
   \end{equation}
 \end{itemize}

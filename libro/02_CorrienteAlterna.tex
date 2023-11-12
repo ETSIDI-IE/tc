@@ -1,4 +1,4 @@
-\chapter{Corriente alterna monofásica}\label{chap.ca_mono}
+\chapter{Corriente alterna monofásica}\label{chap:ca_mono}
  	
 \section{Formas de onda periódicas}
  	
@@ -11,7 +11,7 @@ son tensiones e intensidades que varían con el tiempo:
 Estas funciones pueden representarse de forma gráfica o analítica. En
 ambos casos, esa relación funcional se conoce mediante el nombre de
 \textbf{forma de onda}. Las formas de onda pueden clasificarse según
-(de manera análoga a lo indicado en la Sección~\ref{sec.cc-ca}):
+(de manera análoga a lo indicado en la Sección~\ref{sec:cc-ca}):
 \begin{itemize}
 \item \textbf{Signo de la magnitud}:
   \begin{itemize}
@@ -75,7 +75,7 @@ periódicas:
   \end{equation*}
   En una onda periódica, se calcula para un intervalo de tiempo igual
   a un periodo:
-  \begin{equation}\label{eq.valor_medio}
+  \begin{equation}\label{eq:valor_medio}
     \boxed{Y_m=\frac{1}{T}\int_{a}^{a+T}y(t)\, dt}
   \end{equation}
   \begin{remark}
@@ -90,7 +90,7 @@ periódicas:
     Y_{ef}=\sqrt{\dfrac{1}{t_2-t_1}\cdot\int_{t_1}^{t_2}y^2(t)\, dt}
   \end{equation*}
   Si es periódica:
-  \begin{equation}\label{eq.valor_eficaz}
+  \begin{equation}\label{eq:valor_eficaz}
     \boxed{Y_{ef} = \sqrt{\frac{1}{T}\cdot\int_{a}^{a+T}y^{2}(t)\, dt}}
   \end{equation}
 \item \textbf{Factor de amplitud ($FA$)}: es el cociente entre el
@@ -111,11 +111,11 @@ periódicas:
 	
 \begin{example}\label{ex.forma_onda}
   \textbf{Hallar el valor medio y eficaz de la onda periódica de la
-    Figura~\ref{fig.forma_onda}.}
+    Figura~\ref{fig:forma_onda}.}
   \begin{figure}[H]
     \centering \includegraphics{../figs/ejemplo_forma_onda.pdf}
     \caption{Ejemplo~\ref{ex.forma_onda}}
-    \label{fig.forma_onda}
+    \label{fig:forma_onda}
   \end{figure}
 	    
   La onda es una función periódica, de periodo $T=4$ s, para la cual,
@@ -124,13 +124,13 @@ periódicas:
     u(t)=\dfrac{100}{4}\,t=25\,t\quad (0\leq t\leq 4\,\text{s})
   \end{equation*}
 	    
-  Se utiliza la expresión~\eqref{eq.valor_medio} para determinar el
+  Se utiliza la expresión~\eqref{eq:valor_medio} para determinar el
   valor medio:
   \begin{equation*}
     U_m=\dfrac{1}{T}\int_0^T u(t)\,dt=\dfrac{1}{4}\int_0^4 (25\,t)\,dt=\dfrac{1}{4}\,\left[25\,\dfrac{t^2}{2} \right]_0^4={50}
   \end{equation*}
 	    
-  Se utiliza la ecuación~\eqref{eq.valor_eficaz} para el valor eficaz:
+  Se utiliza la ecuación~\eqref{eq:valor_eficaz} para el valor eficaz:
   \begin{align*}
     U_{ef}&=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}u(t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(25\,t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(625\,t^2)\, dt}=\\
           &=\sqrt{\frac{1}{4}\, 625\,\left[\dfrac{t^3}{3}\right]_0^4}={57.74}
@@ -138,21 +138,21 @@ periódicas:
 \end{example}
 	
 
-\subsection{Función sinusoidal}\label{sec.sinusoidal}
+\subsection{Función sinusoidal}\label{sec:sinusoidal}
 Dentro de las ondas periódicas, las \textbf{ondas sinusoidales} son de
 gran importancia en el campo de la electricidad. Estas formas de onda
 vienen determinadas por:
-\begin{equation}\label{eq.y_senoidal}
+\begin{equation}\label{eq:y_senoidal}
   \boxed{y(t)=Y_{max}\cdot\sin(\omega t+\theta)} 
 \end{equation}
 siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o
 frecuencia angular [rad/s] ($\omega=2\cdot\pi\cdot f$, siendo $f$ la
 frecuencia de la onda [Hz]) y $\theta$ la fase [rad]. Un ejemplo de
-este tipo de forma de onda se muestra en la Figura~\ref{fig.sin}.
+este tipo de forma de onda se muestra en la Figura~\ref{fig:sin}.
 \begin{figure}[H]
   \centering \includegraphics[width=.9\linewidth]{../figs/sin.pdf}
   \caption{Ejemplo de forma de onda sinusoidal}
-  \label{fig.sin}
+  \label{fig:sin}
 \end{figure}
 	
 La fase representa el argumento de la onda para $t=0$. Tomando una
@@ -161,7 +161,7 @@ que la onda está \textbf{en fase} con la onda de referencia; si la
 fase es positiva ($+$) respecto a la de referencia, se dice que la
 onda está \textbf{en adelanto}; y si la fase es negativa ($-$)
 respecto a la de referencia, se dice que la onda está \textbf{en
-  retraso}. Así, en la Figura~\ref{fig.desfase}, considerando como
+  retraso}. Así, en la Figura~\ref{fig:desfase}, considerando como
 referencia la onda de color negro (que tiene una fase $\theta=0$), la
 {\color{blue} onda azul} está en retraso, mientras que la {\color{red}
   onda roja} está en adelanto. En caso de que el desfase entre dos
@@ -171,7 +171,7 @@ la otra.
 \begin{figure}[H]
   \centering \includegraphics[width=.9\linewidth]{../figs/desfase.pdf}
   \caption{Fases entre ondas sinusoidales}
-  \label{fig.desfase}
+  \label{fig:desfase}
 \end{figure}
 	
 	
@@ -250,7 +250,7 @@ entre $\sqrt{2}$ (como ya se justificó).
 La posición del fasor, conocida como argumento, se determina en
 cualquier instante de tiempo haciendo el producto $\omega t+\theta$,
 pero la de más interés es el instante inicial, es decir, para $t=0$ en
-la expresión~\eqref{eq.y_senoidal}:
+la expresión~\eqref{eq:y_senoidal}:
 \begin{equation*}
   y(t)=Y_{max}\cdot\sin(\cancelto{0}{\omega \cdot 0}+\theta)=Y_{max}\cdot\sin(\theta)
 \end{equation*}
@@ -281,10 +281,10 @@ que es conocida como la \textbf{forma polar} del fasor.
 \end{example}
 	
 % \section{Conceptos fundamentales}
-% Como ya se mencionó en el Tema~\ref{chap.cc}, la corriente alterna
+% Como ya se mencionó en el Tema~\ref{chap:cc}, la corriente alterna
 % monofásica se basa en ondas sinusoidales, que se expresan de forma
 % matemática como:
-% \begin{equation}\label{eq.y_senoidal}
+% \begin{equation}\label{eq:y_senoidal}
 % 		\boxed{y(t)=Y_{max}\cdot\sin(\omega t+\theta)}
 % \end{equation}
 % siendo $Y_{max}$ el valor máximo de la onda, $\omega$ la pulsación o
@@ -301,7 +301,7 @@ que es conocida como la \textbf{forma polar} del fasor.
 % \end{equation}
 	
 % \section{Cálculo fasorial}
-Considerando la Figura~\ref{fig.fasor}, donde el \texttt{eje X}
+Considerando la Figura~\ref{fig:fasor}, donde el \texttt{eje X}
 representa la parte real del fasor y, el \texttt{eje Y}, la parte
 imaginaria, la \textbf{forma binómica} (o rectangular) de un fasor, se
 obtiene como:
@@ -311,7 +311,7 @@ obtiene como:
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasor.pdf}
   \caption{Concepto de fasor}
-  \label{fig.fasor}
+  \label{fig:fasor}
 \end{figure}
 	
 El empleo de estas notaciones permite operar con las funciones
@@ -392,28 +392,28 @@ magnitudes respecto a la misma función, siguiendo la relación:
 \subsection{Representación fasorial: diagramas fasoriales}
 	
 Considérense las ondas de tensión $u(t)$ y corriente $i(t)$ mostradas
-en la Figura~\ref{fig.ondasTensionCorriente}, representadas en
+en la Figura~\ref{fig:ondasTensionCorriente}, representadas en
 notación fasorial como:
 \begin{equation*}
   \overline{U} = U\phase{\theta_U};\qquad\qquad   \overline{I} = I\phase{\theta_I}
 \end{equation*}
 donde $U$ e $I$ son los valores eficaces de la tensión y corriente,
 respectivamente. Su representación gráfica en el plano es la mostrada
-en la Figura~\ref{fig.fasortensioncorriente}. A estos diagramas se los
+en la Figura~\ref{fig:fasortensioncorriente}. A estos diagramas se los
 conoce como \textbf{diagramas fasoriales}, y permiten también el
 estudio y análisis de circuitos en corriente alterna como si de
 vectores en el plano se tratara. Además, este procedimiento gráfico
 ofrece la ventaja, respecto al procedimiento algebraico, de que las
 relaciones de fase y amplitud entre todas las tensiones e intensidades
 quedan expuestas de forma muy clara e intuitiva. Por tanto, a lo largo
-de este Tema~\ref{chap.ca_mono} se irán realizando y analizando los
+de este Tema~\ref{chap:ca_mono} se irán realizando y analizando los
 diagramas fasoriales correspondientes a los circuitos en estudio.
 	
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\linewidth]{../figs/ondasTensionCorriente.pdf}
   \caption{Tensión y corriente en notación fasorial}
-  \label{fig.ondasTensionCorriente}
+  \label{fig:ondasTensionCorriente}
 \end{figure}
 	
 	
@@ -421,7 +421,7 @@ diagramas fasoriales correspondientes a los circuitos en estudio.
   \centering
   \includegraphics[width=0.3\linewidth]{../figs/fasorTensionCorriente.pdf}
   \caption{Diagrama fasorial de $\overline{U}$ e $\overline{I}$}
-  \label{fig.fasortensioncorriente}
+  \label{fig:fasortensioncorriente}
 \end{figure}
 	
 \begin{remark}
@@ -434,11 +434,11 @@ diagramas fasoriales correspondientes a los circuitos en estudio.
 	
 La ley de Ohm también puede escribirse utilizando fasores, de manera
 que:
-\begin{equation}\label{eq.ohm_generalizada}
+\begin{equation}\label{eq:ohm_generalizada}
   \boxed{ \overline{U}=\overline{Z}\cdot\overline{I} }
 \end{equation}
 siendo la impedancia:
-\begin{equation}\label{eq.impedancia}
+\begin{equation}\label{eq:impedancia}
   \boxed{\overline{Z} = \frac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
     \begin{cases}
       Z = \frac{U}{I}\\
@@ -447,7 +447,7 @@ siendo la impedancia:
 \end{equation}
 Por tanto, la impedancia $\overline{Z}=Z\phase{\theta}$ es el cociente
 entre tensión y corriente [$\Omega$]. De nuevo, la expresión para la
-impedancia mostrada en la ecuación~\eqref{eq.impedancia} se presenta
+impedancia mostrada en la ecuación~\eqref{eq:impedancia} se presenta
 en forma polar, siendo en forma binómica:
 \begin{equation*}
   \overline{Z} = Z\cdot\cos(\theta)+\mathrm{j}\,Z\cdot\sin(\theta) %= R + \mathrm{j} X
@@ -458,7 +458,7 @@ cuyo resultado, según se demostrará más adelante, es igual a:
 \end{equation}
 donde $R$ es la parte resistiva de la impedancia (resistencia), y $X$
 es la parte reactiva (bobina y/o condensador), como se muestra en la
-Figura~\ref{fig.fasorimpedancia}. La parte imaginaria de
+Figura~\ref{fig:fasorimpedancia}. La parte imaginaria de
 $\overline{Z}$ (la $X$) puede ser positiva (reactancia inductiva
 $\rightarrow$ bobina) o negativa (reactancia capacitiva $\rightarrow$
 condensador). Además, una impedancia puede ser puramente resistiva
@@ -466,7 +466,7 @@ condensador). Además, una impedancia puede ser puramente resistiva
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasorImpedancia.pdf}
   \caption{Fasor de una impedancia genérica $\overline{Z}$}
-  \label{fig.fasorimpedancia}
+  \label{fig:fasorimpedancia}
 \end{figure}
 	
 \begin{remark}
@@ -478,7 +478,7 @@ condensador). Además, una impedancia puede ser puramente resistiva
 % A modo de resumen, la Tabla \ref{tab.relaciones_rlc2}
 % muestra las relaciones entre tensión y corriente en los
 % diferentes elementos pasivos simples. En las
-% Secciones~\ref{sec.R-puro}--\ref{sec.C-puro} se justifican
+% Secciones~\ref{sec:R-puro}--\ref{sec:C-puro} se justifican
 % dichas relaciones.
 % \begin{table}[H]
 %   \centering
@@ -493,7 +493,7 @@ condensador). Además, una impedancia puede ser puramente resistiva
 %   \label{tab.relaciones_rlc2}
 % \end{table}
 		
-\subsection{Circuito resistivo}\label{sec.R-puro}
+\subsection{Circuito resistivo}\label{sec:R-puro}
 	
 Considérese una resistencia $R$ por la que circula una corriente
 alterna de forma de onda:
@@ -506,7 +506,7 @@ es:
   u(t)=R\cdot i(t) ={\color{blue}R\cdot I}\,\sqrt{2}\cdot\sin(\omega t+{\color{red}\theta_I})={\color{blue}U}\,\sqrt{2}\cdot\sin(\omega t+{\color{red}\theta_U})\,,
 \end{equation*}
 función senoidal que va \textbf{en fase} con la intensidad
-(Figura~\ref{fig.resistivo}), y cuyo valor eficaz es $U=R\cdot I$. Por
+(Figura~\ref{fig:resistivo}), y cuyo valor eficaz es $U=R\cdot I$. Por
 tanto, le corresponde el fasor
 \begin{equation*}
   \overline{U}=(R\cdot I)\phase{0+\theta_I}=U\phase{\theta_U}
@@ -515,11 +515,11 @@ donde $\theta_I=\theta_U$.
 \begin{figure}[H]
   \centering \includegraphics{../figs/resistivo.pdf}
   \caption{$u(t)$ e $i(t)$ en circuitos resistivos puros}
-  \label{fig.resistivo}
+  \label{fig:resistivo}
 \end{figure}
 	
 Así, la impedancia $\overline{Z_R}$, según la
-expresión~\eqref{eq.impedancia}:
+expresión~\eqref{eq:impedancia}:
 \begin{equation*}
   \overline{Z_R}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
@@ -529,35 +529,35 @@ expresión~\eqref{eq.impedancia}:
 \end{equation*}
 Es decir, que la impedancia de una resistencia tiene de módulo el
 valor de la resistencia y un argumento nulo:
-\begin{equation}\label{eq.resistencia}
+\begin{equation}\label{eq:resistencia}
   \boxed{ \overline{Z_R}=R+\mathrm{j}\,0=R\phase{0^\circ}}
 \end{equation}
 La representación fasorial de $\overline{U}$ e $\overline{I}$, así
 como la de $\overline{Z_R}$, se muestran en la
-Figura~\ref{fig.fasorResistencia}.
+Figura~\ref{fig:fasorResistencia}.
 \begin{figure}[H]
   \centering \subfloat[$\overline{U}$ e
   $\overline{I}$]{\includegraphics[width=0.2\linewidth]{../figs/fasorResistencia_VI.pdf}}\hfil
   \subfloat[$\overline{Z_R}$]{\includegraphics[width=0.22\linewidth]{../figs/fasorResistencia.pdf}}
   \caption{Diagrama fasorial de un circuito resistivo puro}
-  \label{fig.fasorResistencia}
+  \label{fig:fasorResistencia}
 \end{figure}
 	
-\subsection{Circuito inductivo puro}\label{sec.L-puro}
+\subsection{Circuito inductivo puro}\label{sec:L-puro}
 	
 Considérese una bobina de inductancia $L$ por la que circula una
 corriente alterna de forma de onda:
 \begin{equation*}
   i(t)=I\,\sqrt{2}\cdot\sin(\omega t+\theta_I)\rightarrow\overline{I}=I\phase{\theta_I}
 \end{equation*}
-Según se indica en la expresión~\eqref{eq.u_L}, la relación entre
+Según se indica en la expresión~\eqref{eq:u_L}, la relación entre
 tensión y corriente en una bobina es:
 \begin{equation*}
   u(t)=L\cdot\dfrac{di(t)}{dt}={\color{blue}L\cdot I \cdot \omega}\,\sqrt{2}\cdot  \cos(\omega t+{\color{red}\theta_I})= {\color{blue} U} \sqrt{2}\cdot \omega\cdot  \sin \left(\omega t+{\color{red}\theta_I+\frac{\pi}{2}}\right)= {\color{blue} U} \sqrt{2}\cdot \omega\cdot  \sin \left(\omega t+{\color{red}\theta_U}\right)\,
 \end{equation*}
 Así, un circuito inductivo puro genera señales en cuadratura entre
 $u(t)$ e $i(t)$, estando la corriente \textbf{retrasada 90$^\circ$}
-respecto a la tensión (Figura~\ref{fig.inductivoPuro}). A la tensión
+respecto a la tensión (Figura~\ref{fig:inductivoPuro}). A la tensión
 le corresponde el fasor:
 \begin{equation*}
   \overline{U}=(L\cdot I\cdot\omega)\phase{\theta_I+\frac{\pi}{2}}=U\phase{\theta_U}
@@ -565,11 +565,11 @@ le corresponde el fasor:
 \begin{figure}[H]
   \centering \includegraphics{../figs/inductivoPuro.pdf}
   \caption{$u(t)$ e $i(t)$ en circuitos inductivos puros}
-  \label{fig.inductivoPuro}
+  \label{fig:inductivoPuro}
 \end{figure}
 	
 Por tanto, la impedancia $\overline{Z_L}$, según la
-expresión~\eqref{eq.impedancia}:
+expresión~\eqref{eq:impedancia}:
 \begin{equation*}
   \overline{Z_L}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
@@ -586,23 +586,23 @@ alterna) y un argumento de $+90^\circ$:
 \end{equation}
 La representación fasorial de $\overline{U}$ e $\overline{I}$, así
 como la de $\overline{Z_L}$, se muestran en la
-Figura~\ref{fig.fasorInductancia}.
+Figura~\ref{fig:fasorInductancia}.
 \begin{figure}[H]
   \centering \subfloat[$\overline{U}$ e
   $\overline{I}$]{\includegraphics[width=0.28\linewidth]{../figs/fasorInductancia_VI.pdf}}\hfil
   \subfloat[$\overline{Z_L}$]{\includegraphics[width=0.19\linewidth]{../figs/fasorInductancia.pdf}}
   \caption{Diagrama fasorial de un circuito inductivo puro}
-  \label{fig.fasorInductancia}
+  \label{fig:fasorInductancia}
 \end{figure}
 	
-\subsection{Circuito capacitivo puro}\label{sec.C-puro}
+\subsection{Circuito capacitivo puro}\label{sec:C-puro}
 	
 Considérese un condensador de capacidad $C$ por el que circula una
 corriente alterna de forma de onda:
 \begin{equation*}
   i(t)=I\,\sqrt{2}\cdot\sin(\omega t+\theta_I)\rightarrow\overline{I}=I\phase{\theta_I}
 \end{equation*}
-Según se indica en la expresión~\eqref{eq.u_C}, la relación entre
+Según se indica en la expresión~\eqref{eq:u_C}, la relación entre
 tensión y corriente en un condensador, (considerando que $t_i=-\infty$
 y que $u(-\infty)=0$) es:
 \begin{equation*}
@@ -610,7 +610,7 @@ y que $u(-\infty)=0$) es:
 \end{equation*}
 Así, un circuito capacitivo puro genera señales en cuadratura entre
 $u(t)$ e $i(t)$, estando la corriente \textbf{adelantada 90$^\circ$}
-respecto a la tensión (Figura~\ref{fig.capacitivoPuro}). A la tensión
+respecto a la tensión (Figura~\ref{fig:capacitivoPuro}). A la tensión
 le corresponde el fasor:
 \begin{equation*}
   \overline{U}=\left( \dfrac{I}{\omega C} \right)\phase{\theta_I-\frac{\pi}{2}}=U\phase{\theta_U}
@@ -618,11 +618,11 @@ le corresponde el fasor:
 \begin{figure}[H]
   \centering \includegraphics{../figs/capacitivoPuro.pdf}
   \caption{$u(t)$ e $i(t)$ en circuitos capacitivos puros}
-  \label{fig.capacitivoPuro}
+  \label{fig:capacitivoPuro}
 \end{figure}
 	
 Por tanto, la impedancia $\overline{Z_C}$, según la
-expresión~\eqref{eq.impedancia}:
+expresión~\eqref{eq:impedancia}:
 \begin{equation*}
   \overline{Z_C}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
@@ -639,26 +639,26 @@ corriente alterna) y un argumento de $-90^\circ$:
 \end{equation}
 La representación fasorial de $\overline{U}$ e $\overline{I}$, así
 como la de $\overline{Z_C}$, se muestran en la
-Figura~\ref{fig.fasorCondensador}.
+Figura~\ref{fig:fasorCondensador}.
 \begin{figure}[H]
   \centering \subfloat[$\overline{U}$ e
   $\overline{I}$]{\includegraphics[width=0.28\linewidth]{../figs/fasorCondensador_VI.pdf}}\hfil
   \subfloat[$\overline{Z_C}$]{\includegraphics[width=0.19\linewidth]{../figs/fasorCondensador.pdf}}
   \caption{Diagrama fasorial de un circuito capacitivo puro}
-  \label{fig.fasorCondensador}
+  \label{fig:fasorCondensador}
 \end{figure}
 	
 \section{Respuesta de los circuitos serie a una excitación
-  senoidal} \label{sec.respuesta_serie}
+  senoidal} \label{sec:respuesta_serie}
 	
-\subsection{Circuito $RL$}\label{sec.RL}
+\subsection{Circuito $RL$}\label{sec:RL}
 	
 Este circuito se corresponde con el mostrado en la
-Figura~\ref{fig.RL}, equivalente a un circuito inductivo con pérdidas.
+Figura~\ref{fig:RL}, equivalente a un circuito inductivo con pérdidas.
 \begin{figure}[H]
   \centering \includegraphics[width=0.3\linewidth]{../figs/RL.pdf}
   \caption{Circuito $RL$ serie}
-  \label{fig.RL}
+  \label{fig:RL}
 \end{figure}
 	
 La corriente que circula por el circuito es:
@@ -684,7 +684,7 @@ con una magnitud compleja:
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
-Figura~\ref{fig.fasorinductanciareal}, donde es inmediato comprobar
+Figura~\ref{fig:fasorinductanciareal}, donde es inmediato comprobar
 que:
 \begin{align*}
   R&=Z\cdot\cos(\theta)\\
@@ -694,7 +694,7 @@ que:
   \centering \includegraphics{../figs/fasorInductanciaReal.pdf}
   \caption{Representación gráfica de la impedancia de un circuito
     $RL$}
-  \label{fig.fasorinductanciareal}
+  \label{fig:fasorinductanciareal}
 \end{figure}
 	
 	
@@ -708,7 +708,7 @@ La tensión total del circuito, según la 2LK, es:
 \end{equation*}
 Por tanto, la intensidad $i(t)$ va \textbf{retrasada} respecto a la
 tensión total $u(t)$, pero \textbf{no en cuadratura} con ésta
-(Figura~\ref{fig.fasorInductanciaReal_VI}).
+(Figura~\ref{fig:fasorInductanciaReal_VI}).
 	
 \begin{figure}[H]
   \centering \subfloat[Evolución
@@ -717,20 +717,20 @@ tensión total $u(t)$, pero \textbf{no en cuadratura} con ésta
     \includegraphics{../figs/fasorInductanciaReal_VI.pdf}}
   \caption{Evolución temporal y diagrama fasorial de $u(t)$ e $i(t)$
     en circuitos $RL$}
-  \label{fig.fasorInductanciaReal_VI}
+  \label{fig:fasorInductanciaReal_VI}
 \end{figure}
 	
 	
 	
-\subsection{Circuito $RC$}\label{sec.RC}
+\subsection{Circuito $RC$}\label{sec:RC}
 	
 Este circuito se corresponde con el mostrado en la
-Figura~\ref{fig.RC}, equivalente a un circuito capacitivo con
+Figura~\ref{fig:RC}, equivalente a un circuito capacitivo con
 pérdidas.
 \begin{figure}[H]
   \centering \includegraphics{../figs/RC.pdf}
   \caption{Circuito $RC$ serie}
-  \label{fig.RC}
+  \label{fig:RC}
 \end{figure}
 	
 La corriente que circula por el circuito es:
@@ -756,7 +756,7 @@ con una magnitud compleja:
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
-Figura~\ref{fig.fasorcondensadorreal}, donde es inmediato comprobar
+Figura~\ref{fig:fasorcondensadorreal}, donde es inmediato comprobar
 que:
 \begin{align*}
   R&=Z\cdot\cos(\theta)\\
@@ -766,7 +766,7 @@ que:
   \centering \includegraphics{../figs/fasorCondensadorReal.pdf}
   \caption{Representación gráfica de la impedancia de un circuito
     $RC$}
-  \label{fig.fasorcondensadorreal}
+  \label{fig:fasorcondensadorreal}
 \end{figure}
 	
 La tensión total del circuito, según la 2LK, es:
@@ -779,7 +779,7 @@ La tensión total del circuito, según la 2LK, es:
 \end{equation*}
 Por tanto, la intensidad $i(t)$ va \textbf{adelantada} respecto a la
 tensión total $u(t)$, pero \textbf{no en cuadratura} con ésta
-(Figura~\ref{fig.fasorCapacitivoReal_VI}).
+(Figura~\ref{fig:fasorCapacitivoReal_VI}).
 \begin{figure}[H]
   \centering \subfloat[Evolución
   temporal]{\includegraphics[width=0.7\linewidth]{../figs/capacitivo.pdf}}\hfil
@@ -787,7 +787,7 @@ tensión total $u(t)$, pero \textbf{no en cuadratura} con ésta
     \includegraphics[width=0.28\linewidth]{../figs/fasorCondensadorReal_VI.pdf}}
   \caption{Evolución temporal y diagrama fasorial de $u(t)$ e $i(t)$
     en circuitos $RC$}
-  \label{fig.fasorCapacitivoReal_VI}
+  \label{fig:fasorCapacitivoReal_VI}
 \end{figure}
 	
 \begin{remark}
@@ -796,14 +796,14 @@ tensión total $u(t)$, pero \textbf{no en cuadratura} con ésta
   que varía en el tiempo).
 \end{remark}
 	
-\subsection{Circuito $RLC$}\label{sec.RLC}
+\subsection{Circuito $RLC$}\label{sec:RLC}
 	
 Este circuito se corresponde con el mostrado en la
-Figura~\ref{fig.RLC}.
+Figura~\ref{fig:RLC}.
 \begin{figure}[H]
   \centering \includegraphics[width=0.4\linewidth]{../figs/RLC.pdf}
   \caption{Circuito $RLC$ serie}
-  \label{fig.RLC}
+  \label{fig:RLC}
 \end{figure}
 	
 La corriente que circula por el circuito es:
@@ -832,7 +832,7 @@ corresponde con una magnitud compleja:
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
-Figura~\ref{fig.fasorRLC}, donde es inmediato comprobar que:
+Figura~\ref{fig:fasorRLC}, donde es inmediato comprobar que:
 \begin{align*}
   R&=Z\cdot\cos(\theta)\\
   X&=Z\cdot\sin(\theta)
@@ -841,7 +841,7 @@ Figura~\ref{fig.fasorRLC}, donde es inmediato comprobar que:
   \centering \includegraphics{../figs/fasorRLC.pdf}
   \caption{Representación gráfica de la impedancia de un circuito
     $RLC$}
-  \label{fig.fasorRLC}
+  \label{fig:fasorRLC}
 \end{figure}
 	
 La tensión total del circuito, según la 2LK, es:
@@ -863,15 +863,15 @@ que
 $\overline{U_L}=\overline{U_C}\Rightarrow \omega L=\frac{1}{\omega C}$
 (\textbf{carácter resistivo}), diciendo entonces que el circuito se
 encuentra \textbf{en resonancia} (ver
-Sección~\ref{sec.resonancia_serie}). En la
-Figura~\ref{fig.fasorRLC_VI} ha supuesto que la corriente va en
+Sección~\ref{sec:resonancia_serie}). En la
+Figura~\ref{fig:fasorRLC_VI} ha supuesto que la corriente va en
 retraso respecto a la tensión.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\linewidth]{../figs/fasorRLC_VI.pdf}
   \caption{Diagrama fasorial de un circuito $RLC$, suponiendo carácter
     inductivo}
-  \label{fig.fasorRLC_VI}
+  \label{fig:fasorRLC_VI}
 \end{figure}
 	
 	
@@ -879,7 +879,7 @@ retraso respecto a la tensión.
 \subsection{Circuito serie general}
 Considérese un circuito en serie formado por $n$ impedancias, donde
 cada impedancia es de la forma $\overline{Z_i}=R_i+\mathrm{j}\,X_i$,
-como se muestra en la Figura~\ref{fig.serie-general-inicio}. Este
+como se muestra en la Figura~\ref{fig:serie-general-inicio}. Este
 circuito se alimenta con una tensión $u(t)$, de valor eficaz $U$, de
 manera que circula por el mismo una intensidad $i(t)$ de valor eficaz
 $I$. Se dice que la impedancia equivalente a las $n$ impedancias en
@@ -889,13 +889,13 @@ misma intensidad $i(t)$, es decir, la que \textbf{conserva el módulo
 $\overline{I}$ del circuito serie original
 \begin{figure}[H]
   \centering
-  \subfloat[Real]{\includegraphics[height=2cm]{../figs/serie_general.pdf}\label{fig.serie-general-inicio}}\hfil
-  \subfloat[Equivalente]{\includegraphics[height=2cm]{../figs/serie_general_eq.pdf}\label{fig.serie-general-eq}}
+  \subfloat[Real]{\includegraphics[height=2cm]{../figs/serie_general.pdf}\label{fig:serie-general-inicio}}\hfil
+  \subfloat[Equivalente]{\includegraphics[height=2cm]{../figs/serie_general_eq.pdf}\label{fig:serie-general-eq}}
   \caption{Circuito serie general alimentado por corriente alterna}
-  \label{fig.serie-general}
+  \label{fig:serie-general}
 \end{figure}
 	
-En el acoplamiento de la Figura~\ref{fig.serie-general-inicio} se
+En el acoplamiento de la Figura~\ref{fig:serie-general-inicio} se
 cumple que:
 \begin{equation*}
   \overline{U}=\overline{U_1}+\overline{U_2}+\overline{U_3}+...+\overline{U_n}
@@ -954,12 +954,12 @@ siendo el ángulo de la impedancia equivalente:
     \centering
     \includegraphics[]{../figs/diagrama_fasorial_ejemplo2_3.pdf}
     \caption{Diagrama fasorial del Ejemplo~\ref{ej.2-3}}
-    \label{fig.diagrama_fasorial_ejemplo2-3}
+    \label{fig:diagrama_fasorial_ejemplo2-3}
   \end{figure}
 		
 \end{example}
 	
-\subsection{Resonancia}\label{sec.resonancia_serie}
+\subsection{Resonancia}\label{sec:resonancia_serie}
 	
 En un circuito serie $RLC$ se dice que se produce \textbf{resonancia}
 cuando la reactancia es nula:
@@ -1023,10 +1023,10 @@ y $C$ es:
   senoidal}
 \begin{figure}[bp]
   \centering
-  \subfloat[Real]{\includegraphics[height=4cm]{../figs/paralelo_general.pdf}\label{fig.paralelo-general-inicio}}\hfil
-  \subfloat[Equivalente]{\includegraphics[height=4cm]{../figs/paralelo_general_eq.pdf}\label{fig.paralelo-general-eq}}
+  \subfloat[Real]{\includegraphics[height=4cm]{../figs/paralelo_general.pdf}\label{fig:paralelo-general-inicio}}\hfil
+  \subfloat[Equivalente]{\includegraphics[height=4cm]{../figs/paralelo_general_eq.pdf}\label{fig:paralelo-general-eq}}
   \caption{Circuito paralelo general alimentado por corriente alterna}
-  \label{fig.paralelo-general}
+  \label{fig:paralelo-general}
 \end{figure}
 	
 Para el caso de circuitos en paralelo, se analiza directamente el
@@ -1035,7 +1035,7 @@ circuito general.
 % \subsection{Circuito paralelo general}
 Considérese un circuito en paralelo formado por $n$ impedancias, donde
 cada impedancia es de la forma $\overline{Z_i}=R_i+\mathrm{j}\,X_i$,
-como se muestra en la Figura~\ref{fig.paralelo-general-inicio}. Este
+como se muestra en la Figura~\ref{fig:paralelo-general-inicio}. Este
 circuito se alimenta con una tensión $u(t)$, de valor eficaz $U$, de
 manera que circula por cada impedancia una intensidad $i_i(t)$
 obtenidas según:
@@ -1099,20 +1099,20 @@ suma de los inversos de las admitancias.
   \subfloat[Impedancia]{\includegraphics{../figs/Z.pdf}}\hfil
   \subfloat[Admitancia]{\includegraphics{../figs/Y.pdf}}
   \caption{Equivalencias entre impedancia y admitancia}
-  \label{fig.equivalencias_impedancia_admitancia}
+  \label{fig:equivalencias_impedancia_admitancia}
 \end{figure}
-De la Figura~\ref{fig.equivalencias_impedancia_admitancia}, se extraen
+De la Figura~\ref{fig:equivalencias_impedancia_admitancia}, se extraen
 las siguientes relaciones para que impedancia y admitancia sean
 equivalentes (es decir, se cumpla la igualdad
 $\overline{Z}\cdot \overline{Y}=1$):
-\begin{equation}\label{eq.impedancia-admitancia}
+\begin{equation}\label{eq:impedancia-admitancia}
   R+\mathrm{j}\,X=\dfrac{1}{G+\mathrm{j}\,B}=\frac{G-\mathrm{j}\,B}{(G+\mathrm{j}\,B)(G-\mathrm{j}\,B)}=\frac{G-\mathrm{j}\,B}{G^2+B^2} \Rightarrow 
   \boxed{\begin{cases}
     R=\dfrac{G}{G^2+B^2}\\[6pt]
     X=-\dfrac{B}{G^2+B^2}
   \end{cases}}
 \end{equation}
-\begin{equation}\label{eq.admitancia-impedancia}
+\begin{equation}\label{eq:admitancia-impedancia}
   G+\mathrm{j}\,B=\dfrac{1}{R+\mathrm{j}\,X}=\dfrac{R-\mathrm{j}\,X}{(R+\mathrm{j}\,X)(R-\mathrm{j}\,X)}=\dfrac{R-\mathrm{j}\,X}{R^2+X^2} \Rightarrow 
   \boxed{\begin{cases}
     G=\dfrac{R}{R^2+X^2}\\[6pt]
@@ -1126,7 +1126,7 @@ $\overline{Z}\cdot \overline{Y}=1$):
   $\Omega$ [S].
 \end{remark}
 	
-La Figura~\ref{fig.impedancia_admitancia} muestra gráficamente una
+La Figura~\ref{fig:impedancia_admitancia} muestra gráficamente una
 impedancia $\overline{Z}=R+\mathrm{j}\,X=Z\phase{\theta}$, donde su
 admitancia correspondiente es
 $\overline{Y}=G-\mathrm{j}\,B=Y\phase{-\psi}$.
@@ -1135,7 +1135,7 @@ $\overline{Y}=G-\mathrm{j}\,B=Y\phase{-\psi}$.
   \subfloat[Impedancia]{\includegraphics{../figs/impedancia.pdf}}\hfil
   \subfloat[Admitancia]{\includegraphics{../figs/admitancia.pdf}}
   \caption{Representación gráfica de la impedancia y admitancia}
-  \label{fig.impedancia_admitancia}
+  \label{fig:impedancia_admitancia}
 \end{figure}
 A partir de este gráfico, se pueden verificar las siguientes
 relaciones:
@@ -1157,11 +1157,11 @@ relaciones:
 	
 \begin{example}\label{ex.impedancia_admitancia_eq}
   \textbf{Calcular la impedancia y admitancia compleja equivalentes
-    del circuito de la Figura~\ref{fig.impedancia_admitancia_eq}.}
+    del circuito de la Figura~\ref{fig:impedancia_admitancia_eq}.}
   \begin{figure}[H]
     \centering \includegraphics{../figs/impedancia_admitancia_eq.pdf}
     \caption{Ejemplo~\ref{ex.impedancia_admitancia_eq}}
-    \label{fig.impedancia_admitancia_eq}
+    \label{fig:impedancia_admitancia_eq}
   \end{figure}
 	    
   La impedancia equivalente de la resistencia y la bobina es:
@@ -1239,7 +1239,7 @@ manteniendo constantes $L$ y $C$ es:
 \end{example}
 	
 	
-\section{Potencia en corriente alterna}\label{sec.potencia_CA}
+\section{Potencia en corriente alterna}\label{sec:potencia_CA}
 	
 Cuando se conecta una impedancia a una tensión alterna de expresión
 $u(t) = U\sqrt{2} \cdot\cos (\omega t)$, la impedancia es recorrida
@@ -1266,7 +1266,7 @@ y considerando como $\alpha=\omega t$ y $\beta=\omega t-\theta$:
   \alpha +\beta&=2\omega t-\theta
 \end{align*}
 por lo que la potencia instantánea resulta:
-\begin{equation}\label{eq.pot_inst}
+\begin{equation}\label{eq:pot_inst}
   p(t)=2\cdot U\cdot I\cdot \overbrace{\cos(\omega t)}^{\cos(\alpha)}\cdot\overbrace{\cos(\omega t-\theta)}^{\cos(\beta)}\Rightarrow \boxed{p(t)
     =U\cdot I \cdot \cos(\theta)+U\cdot I \cdot\cos(2\omega t-\theta)}
 \end{equation}
@@ -1275,7 +1275,7 @@ Según esta ecuación, la potencia instantánea consta de un {valor
 componente sinusoidal (el segundo término,
 $U\cdot I\cdot \cos(2 \omega t-\theta)$) de frecuencia $2\omega$
 (\textbf{doble} de $u(t)$ o $i(t)$). Como puede verse en la
-Figura~\ref{fig.inductivoPuroPotencia}, $p(t)$ es negativa para los
+Figura~\ref{fig:inductivoPuroPotencia}, $p(t)$ es negativa para los
 intervalos de tiempo en los que $u(t)$ e $i(t)$ tienen signos
 opuestos. En los periodos de tiempo en que la potencia es negativa, la
 impedancia \textbf{devuelve energía} a la red, algo que solo es
@@ -1285,13 +1285,13 @@ bobinas o condensadores).
 \begin{figure}[H]
   \centering \includegraphics{../figs/inductivoPuroPotencia.pdf}
   \caption{Ondas de tensión, corriente y potencia instantáneas}
-  \label{fig.inductivoPuroPotencia}
+  \label{fig:inductivoPuroPotencia}
 \end{figure}
 	
 Por tanto, la potencia instantánea cambia con el tiempo y es difícil
 de medir. Si se hace el valor medio de la
-expresión~\eqref{eq.pot_inst} en un periodo, mediante la
-ecuación~\eqref{eq.valor_medio}:
+expresión~\eqref{eq:pot_inst} en un periodo, mediante la
+ecuación~\eqref{eq:valor_medio}:
 \begin{equation*}
   P_m=\dfrac{1}{T}\int_{0}^{T}p(t)\,dt=\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(\theta)\,dt+\cancelto{0}{\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(2\omega t-\theta)\,dt}
 \end{equation*}
@@ -1333,9 +1333,9 @@ frecuencia $2\omega$:
   \end{equation}
 \end{itemize}
 	
-\subsection{Circuito resistivo}\label{sec.potencia_R}
+\subsection{Circuito resistivo}\label{sec:potencia_R}
 Una resistencia, como ya se ha indicado en la
-Sección~\ref{sec.R-puro}, presenta una impedancia
+Sección~\ref{sec:R-puro}, presenta una impedancia
 $\overline{Z_R}=R\phase{0^\circ}\rightarrow \theta=0^\circ$. Por
 tanto, las potencias activa y reactiva:
 \begin{equation}
@@ -1346,7 +1346,7 @@ tanto, las potencias activa y reactiva:
   \end{cases}}
 \end{equation}
 puesto que $\cos(0^\circ)=1$ y $\sin(0^\circ)=0$. Dibujando las ondas
-de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig.resistivoPotencia}), se
+de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig:resistivoPotencia}), se
 observa que $p(t)$ fluctúa al doble de frecuencia que $u(t)$ e $i(t)$,
 y que \textbf{siempre es positiva}, puesto que tensión y corriente van
 en fase y, por tanto, siempre tienen el mismo signo. Además, su valor
@@ -1355,11 +1355,11 @@ medio es igual a $P=U\cdot I$.
   \centering \includegraphics{../figs/resistivoPotencia.pdf}
   \caption{Ondas de tensión, corriente y potencia instantáneas en un
     circuito resistivo}
-  \label{fig.resistivoPotencia}
+  \label{fig:resistivoPotencia}
 \end{figure}
 	
-\subsection{Circuito inductivo puro}\label{sec.potencia_L}
-Una bobina, como ya se ha indicado en la Sección~\ref{sec.L-puro},
+\subsection{Circuito inductivo puro}\label{sec:potencia_L}
+Una bobina, como ya se ha indicado en la Sección~\ref{sec:L-puro},
 presenta una impedancia
 $\overline{Z_L}=\omega\cdot L\phase{90^\circ}\rightarrow
 \theta=90^\circ$. Por tanto, las potencias activa y reactiva:
@@ -1371,7 +1371,7 @@ $\overline{Z_L}=\omega\cdot L\phase{90^\circ}\rightarrow
   \end{cases}}
 \end{equation}
 puesto que $\cos(90^\circ)=0$ y $\sin(90^\circ)=1$. Dibujando las
-ondas de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig.inductivoPotencia}),
+ondas de $u(t)$, $i(t)$ y $p(t)$ (Figura~\ref{fig:inductivoPotencia}),
 se observa que $p(t)$ fluctúa al doble de frecuencia que $u(t)$ e
 $i(t)$, y que \textbf{tiene periodos positivos y negativos}, pasando
 por los ceros de tensión y corriente. Además, su valor medio es nulo,
@@ -1380,11 +1380,11 @@ coincidiendo con $P=0$.
   \centering \includegraphics{../figs/inductivoPuroPotencia.pdf}
   \caption{Ondas de tensión, corriente y potencia instantáneas en un
     circuito inductivo puro}
-  \label{fig.inductivoPotencia}
+  \label{fig:inductivoPotencia}
 \end{figure}
 	
-\subsection{Circuito capacitivo puro}\label{sec.potencia_C}
-Un condensador, como ya se ha indicado en la Sección~\ref{sec.C-puro},
+\subsection{Circuito capacitivo puro}\label{sec:potencia_C}
+Un condensador, como ya se ha indicado en la Sección~\ref{sec:C-puro},
 presenta una impedancia
 $\overline{Z_C}=\frac{1}{\omega\cdot C}\phase{-90^\circ}\rightarrow
 \theta=-90^\circ$. Por tanto, las potencias activa y reactiva:
@@ -1397,7 +1397,7 @@ $\overline{Z_C}=\frac{1}{\omega\cdot C}\phase{-90^\circ}\rightarrow
 \end{equation}
 puesto que $\cos(-90^\circ)=0$ y $\sin(-90^\circ)=-1$. Dibujando las
 ondas de $u(t)$, $i(t)$ y $p(t)$
-(Figura~\ref{fig.capacitivoPotencia}), se observa que $p(t)$ fluctúa
+(Figura~\ref{fig:capacitivoPotencia}), se observa que $p(t)$ fluctúa
 al doble de frecuencia que $u(t)$ e $i(t)$, y que \textbf{tiene
   periodos positivos y negativos}, pasando por los ceros de tensión y
 corriente. Además, su valor medio es nulo, coincidiendo con $P=0$.
@@ -1405,7 +1405,7 @@ corriente. Además, su valor medio es nulo, coincidiendo con $P=0$.
   \centering \includegraphics{../figs/capacitivoPuroPotencia.pdf}
   \caption{Ondas de tensión, corriente y potencia instantáneas en un
     circuito capacitivo puro}
-  \label{fig.capacitivoPotencia}
+  \label{fig:capacitivoPotencia}
 \end{figure}
 	
 \subsection{Triángulo de potencias}
@@ -1424,50 +1424,50 @@ dicho triángulo por el módulo de $\overline{I}$, se llega al
 activa $P=R\cdot I^2$ y, el eje $\Im$, la potencia reactiva
 $Q=X\cdot I^2$. La hipotenusa de dicho triángulo es conocida como
 \textbf{potencia aparente}. Estos triángulos se presentan en la
-Figura~\ref{fig.triangulo_potencias}.
+Figura~\ref{fig:triangulo_potencias}.
 \begin{figure}[H]
   \centering
   \subfloat[Impedancias]{\includegraphics[height=4cm]{../figs/Z_ind_corriente.pdf}}\hfill
   \subfloat[Tensiones
   ]{\includegraphics[height=4cm]{../figs/tension_Z_ind.pdf}}\hfill
-  \subfloat[Potencias]{\includegraphics[height=4cm]{../figs/triangulo_potencias.pdf}\label{fig.triangulo_potencias_pqs}}\hfil
+  \subfloat[Potencias]{\includegraphics[height=4cm]{../figs/triangulo_potencias.pdf}\label{fig:triangulo_potencias_pqs}}\hfil
   \caption{Triángulo de potencias de un circuito inductivo $RL$}
-  \label{fig.triangulo_potencias}
+  \label{fig:triangulo_potencias}
 \end{figure}
 	
 Se detalla a continuación el significado de cada una de las potencias
 representadas en el triángulo:
 \begin{itemize}
 \item \textbf{Potencia activa.} Cateto contiguo en la
-  Figura~\ref{fig.triangulo_potencias_pqs}. Suele denominarse
+  Figura~\ref{fig:triangulo_potencias_pqs}. Suele denominarse
   únicamente como \textit{potencia}, al tratarse de la que es
   \textbf{realmente consumida} por el circuito. Su unidad es el [W]:
-  \begin{equation}\label{eq.Pactiva}
+  \begin{equation}\label{eq:Pactiva}
     \boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
   \end{equation}
 \item \textbf{Potencia reactiva.} Cateto opuesto en la
-  Figura~\ref{fig.triangulo_potencias_pqs}. Es el \textbf{valor máximo
+  Figura~\ref{fig:triangulo_potencias_pqs}. Es el \textbf{valor máximo
     de la potencia entretenida} (almacenada y cedida) por los
   elementos almacenadores de energía (bobinas y condensadores). Se
   considera positiva $+$ si el circuito es inductivo
   ($\theta>0^\circ$) y negativa $-$ si el circuito es capacitivo
   ($\theta<0^\circ$). Su unidad es el [VAr] y se calcula mediante:
-  \begin{equation}\label{eq.Qreactiva}
+  \begin{equation}\label{eq:Qreactiva}
     \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
   \end{equation}
 \item \textbf{Potencia aparente.} Hipotenusa en la
-  Figura~\ref{fig.triangulo_potencias_pqs}. No es ``potencia
+  Figura~\ref{fig:triangulo_potencias_pqs}. No es ``potencia
   consumida'' en sentido estricto (excepto cuando $\cos(\theta)=1$),
   pero representa la \textbf{potencia demandada} al generador/red; se
   denomina \textit{potencia aparente}, puesto que es la potencia que,
   ``en apariencia'', la red entrega a las cargas. Para diferenciarla
   de $P$ y $Q$, su unidad es el \textbf{voltamperio} [VA] y puede
   expresarse como:
-  \begin{equation}\label{eq.Saparente}
+  \begin{equation}\label{eq:Saparente}
     \boxed{S = U\cdot I= Z \cdot I^2=\sqrt{P^2+Q^2}}
   \end{equation}
   donde la última igualdad se obtiene al aplicar el teorema de
-  Pitágoras a la Figura~\ref{fig.triangulo_potencias_pqs}. Además, se
+  Pitágoras a la Figura~\ref{fig:triangulo_potencias_pqs}. Además, se
   observa que puede expresarse también mediante un \textbf{número
     complejo} (al igual que $\overline{Z}$ y $\overline{U}$):
   \begin{equation}
@@ -1487,12 +1487,12 @@ representadas en el triángulo:
       \theta_S = \theta_Z = \theta
     \end{equation*}
   \end{remark}
-  La Figura~\ref{fig.trianguloPotencias} muestra la potencia compleja
+  La Figura~\ref{fig:trianguloPotencias} muestra la potencia compleja
   y su descomposición en $P$ y $Q$.
   \begin{figure}[H]
     \centering \includegraphics{../figs/trianguloPotencias.pdf}
     \caption{Triángulo de potencias}
-    \label{fig.trianguloPotencias}
+    \label{fig:trianguloPotencias}
   \end{figure}
 \end{itemize}
 	
@@ -1554,7 +1554,7 @@ cada elemento pasivo básico:
 		
 \end{itemize}
 	
-\subsection{Teorema de Boucherot}\label{sec.boucherot}
+\subsection{Teorema de Boucherot}\label{sec:boucherot}
 El teorema de Boucherot es una consecuencia del principio de
 conservación de la energía y, de hecho, puede encontrarse también como
 \textit{principio de conservación de la potencia compleja}. Se
@@ -1577,7 +1577,7 @@ $\overline{I}=I\phase{0^\circ}$. Por la 2LK se cumple que:
 Multiplicando las dos expresiones anteriores por la corriente (la
 misma en todo el circuito, al tratarse de una conexión en serie), se
 obtienen las relaciones entre las potencias, que puede verse
-gráficamente en la Figura~\ref{fig.boucherot}:
+gráficamente en la Figura~\ref{fig:boucherot}:
 \begin{align*}
   U\,I\,\cos(\theta)&=P_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\cos(\theta_i)=\displaystyle\sum_{i=1}^3 P_i=\displaystyle\sum_{i=1}^3 R_i\cdot I^2\\
   U\,I\,\sin(\theta)&=Q_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\sin(\theta_i)=\displaystyle\sum_{i=1}^3 Q_i=\displaystyle\sum_{i=1}^3 X_i\cdot I^2\\
@@ -1586,7 +1586,7 @@ gráficamente en la Figura~\ref{fig.boucherot}:
   \centering
   \includegraphics[width=0.7\linewidth]{../figs/boucherot.pdf}
   \caption{Teorema de Boucherot}
-  \label{fig.boucherot}
+  \label{fig:boucherot}
 \end{figure}
 	
 Es decir, se cumple que:
@@ -1602,14 +1602,14 @@ se cumple que la potencia activa y reactiva total es la suma de las
 potencias activas y reactivas individuales (respectivamente) y, por
 tanto, que la potencia compleja total es la suma de las potencias
 aparentes individuales:
-\begin{equation}\label{eq.S_compleja_mono}
+\begin{equation}\label{eq:S_compleja_mono}
   \boxed{\overline{S} =P+\mathrm{j}\,Q= \sum^n_{i = 1} (P_i + jQ_i)=\sum_{i = 1}^{n} \overline{S}_i}
 \end{equation}
 	
 \vspace{4mm}
 \begin{example}\label{ej.2-7}
   \textbf{Sabiendo que las fuentes de tensión del circuito de la
-    Figura \ref{fig.problema9_garri} vienen definidas por las formas
+    Figura \ref{fig:problema9_garri} vienen definidas por las formas
     de onda $u_1(t)=10\sqrt{2}\cdot \cos(1000\cdot t) \,\si{\volt}$ y
     $u_2(t)=5\sqrt{2}\cdot \sin(1000\cdot t) \,\si{\volt}$, calcular
     las potencias de cada elemento, así como el balance de potencias
@@ -1618,7 +1618,7 @@ aparentes individuales:
     \centering
     \includegraphics[width=0.6\linewidth]{../figs/ej7_BT2.pdf}
     \caption{Ejemplo \ref{ej.2-7}}
-    \label{fig.problema9_garri}
+    \label{fig:problema9_garri}
   \end{figure}
 		
   Se convierte $u_1(t)$ en función senoidal, obteniéndose
@@ -1695,20 +1695,20 @@ aparentes individuales:
                         
 \end{example}
 	
-\subsection{Medida de potencia: vatímetro}\label{sec.medida_potencia}
+\subsection{Medida de potencia: vatímetro}\label{sec:medida_potencia}
 	
 La medida de potencia activa y reactiva es de gran importancia para
 determinar el comportamiento de los circuitos de corriente alterna. La
 expresión de la potencia activa $P$ se corresponde con la
 \textbf{parte real} de la potencia aparente compleja, según se indicó
-en la expresión~\eqref{eq.S_compleja_mono}. Para medir $P$, se utiliza
+en la expresión~\eqref{eq:S_compleja_mono}. Para medir $P$, se utiliza
 un instrumento de medida denominado \textbf{vatímetro}, puesto que,
 debido al $\cos(\theta)$, no es posible hacerlo únicamente con
 voltímetro y amperímetro. El vatímetro es un equipo que consta de dos
 bobinas (una de intensidad, o circuito amperimétrico; y otra de
 tensión, o circuito voltimétrico) y, por tanto, cuatro terminales (dos
 para la tensión y otros dos para la corriente, como se muestra en la
-Figura~\ref{fig.vatimetro_2}), cuya lectura da como resultado
+Figura~\ref{fig:vatimetro_2}), cuya lectura da como resultado
 directamente el valor de la potencia:
 \begin{equation*}
   W=\Re(\overline{U}_{3,4} \cdot \overline{I}_{1,2}^*)=I_{1,2}\cdot U_{3,4}\cdot \cos\widehat{(I_{1,2}, U_{3,4})}
@@ -1717,7 +1717,7 @@ directamente el valor de la potencia:
 \begin{figure}[H]
   \centering \includegraphics{../figs/vatimetro_2.pdf}
   \caption{Conexiones del vatímetro}
-  \label{fig.vatimetro_2}
+  \label{fig:vatimetro_2}
 \end{figure}
 Considerando las bornas 1 y 3 como entradas, si el ángulo formado por
 $\overline{I_{1,2}}$ y $\overline{U_{3,4}}$ es menor que $90^\circ$ o
@@ -1735,7 +1735,7 @@ total.
 	
 	
 \subsection{Factor de potencia: importancia y
-  mejora}\label{sec.mejora_fdp_monofasica}
+  mejora}\label{sec:mejora_fdp_monofasica}
 	
 El factor de potencia, $fdp$ o $\cos(\theta)$, representa la
 aportación de potencia activa dentro de la potencia aparente:
@@ -1763,7 +1763,7 @@ $\overline{I}$. Se dice que:
 Sean dos sistemas con la \textbf{misma tensión y potencia activa},
 pero con diferentes factores de potencia
 $\cos(\theta_2) < \cos(\theta_1)$, lo que implica que $Q_2 > Q_1$
-(Figura~\ref{fig.fasorescompensacionreactiva}). Se observa que el
+(Figura~\ref{fig:fasorescompensacionreactiva}). Se observa que el
 sistema 2 requiere una \textbf{mayor potencia aparente} (es decir, un
 generador mayor) para alimentar la misma potencia activa:
 \begin{equation*}
@@ -1780,7 +1780,7 @@ esto implica un coste adicional en la instalación:
   \centering \includegraphics{../figs/fasorescompensacionreactiva.pdf}
   \caption{Fasores de potencias para dos sistemas con $U$ y $P$, pero
     diferentes $\cos(\theta)$}
-  \label{fig.fasorescompensacionreactiva}
+  \label{fig:fasorescompensacionreactiva}
 \end{figure}
 	
 Todo ello hace que las compañías suministradoras penalicen a los
@@ -1807,25 +1807,25 @@ hasta el valor deseado $Q'$. Se cumple entonces que:
 \end{align*}
 donde las magnitudes con $'$ hacen referencia a la situación una vez
 introducido el condensador (ver
-Figura~\ref{fig.circuito_compensacion}). A partir del triángulo de
-potencias (Figura~\ref{fig.triangulocompensacionQ}) se deduce que:
+Figura~\ref{fig:circuito_compensacion}). A partir del triángulo de
+potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
 \begin{align*}
   Q_Z &= P_Z \tan (\theta)\\
   Q'&= P_Z \tan (\theta')
 \end{align*}
-\begin{equation}\label{eq.compensacion_Q_mono}
+\begin{equation}\label{eq:compensacion_Q_mono}
   |Q_C| = Q_Z - Q' = P_Z\cdot \left[\tan (\theta) - \tan (\theta')\right]=\dfrac{U^2}{X_C}={U^2\,\omega\,C}\rightarrow \boxed{C=\frac{P_Z \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}}
 \end{equation}
 	
 	
 \begin{figure}
   \centering
-  \subfloat[Circuito]{\includegraphics[height=3cm]{../figs/circuitocompensacionreactiva.pdf}\label{fig.circuito_compensacion}}
+  \subfloat[Circuito]{\includegraphics[height=3cm]{../figs/circuitocompensacionreactiva.pdf}\label{fig:circuito_compensacion}}
   \hfil \subfloat[Triángulo de
-  potencias]{\includegraphics{../figs/trianguloCompensacionQ.pdf}\label{fig.triangulocompensacionQ}}
+  potencias]{\includegraphics{../figs/trianguloCompensacionQ.pdf}\label{fig:triangulocompensacionQ}}
   \caption{Circuito de compensación de potencia reactiva y triángulo
     de potencias}
-  \label{fig.circuitocompensacionreactiva}
+  \label{fig:circuitocompensacionreactiva}
 \end{figure}
 	
 \begin{example}\label{ex.condensador_Q}
@@ -1834,7 +1834,7 @@ potencias (Figura~\ref{fig.triangulocompensacionQ}) se deduce que:
     la capacidad necesaria para obtener un factor de potencia de
     $0.95$.}
 	    
-  A partir de la fórmula~\eqref{eq.compensacion_Q_mono}, se obtiene
+  A partir de la fórmula~\eqref{eq:compensacion_Q_mono}, se obtiene
   que la capacidad es:
   \begin{equation*}
     C=\frac{P \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\mu F
