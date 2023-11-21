@@ -1,0 +1,87 @@
+\documentclass[a4paper,10pt]{article} % Uses article class in A4 format
+
+\include{config}
+
+\begin{document}
+
+\printtitle{Práctica 4}{Resonancia}{2024/2024}
+
+\vspace{1cm} Un circuito RLC serie está alimentado por una fuente de
+tensión alterna $U = \qty{1}{\volt}$ y frecuencia variable.
+
+En esta práctica se analiza este circuito en las cercanías de la
+frecuencia de resonancia. Para este análisis se debe emplear el modo
+de simulación AC.
+	
+\begin{enumerate}
+\item En primer lugar, analizaremos el circuito con unos elementos
+  ideales cuyos valores son $L =\qty{21.4}{\milli\henry}$,
+  $C=\qty{1.41}{\micro\farad}$ y $R=\qty{18}{\ohm}$ (en este orden de
+  conexión), tomando la tensión de salida del circuito en bornes de la
+  resistencia. En estas condiciones:
+
+  \begin{center}
+    \includegraphics[height=0.2\textheight]{../figs/circuito_P4}
+  \end{center}
+
+  \begin{enumerate}
+  \item Determina el valor de los siguientes parámetros: pulsación y
+    frecuencia de resonancia, factor de calidad en la pulsación de
+    resonancia, y ancho de banda.
+  \item Utilizando el modo de simulación \textsc{AC} simula el
+    comportamiento del circuito en las cercanías de la frecuencia de
+    resonancia empleando un rango de frecuencias que incluya el ancho
+    de banda del circuito.
+  \end{enumerate}
+	
+\item En segundo lugar analizaremos el funcionamiento de un circuito
+  RLC con elementos reales. Este circuito está compuesto por una
+  bobina con $L =\qty{21.4}{\milli\henry}$ y factor de calidad 10, un
+  condensador $C=\qty{1.41}{\micro\farad}$ y factor de calidad 10, y
+  una resistencia $R=\qty{18}{\ohm}$. El orden de conexión es
+  nuevamente $L$, $C$ y $R$, y la tensión de salida se toma en los
+  bornes de la resistencia. Con este circuito vuelve a realizar los
+  cálculos de los parámetros y la simulación del circuito, comparando
+  los resultados con los obtenidos en el circuito de elementos
+  ideales.
+  
+  \begin{center}
+    \includegraphics[height=0.2\textheight]{../figs/circuito_P4_2}
+  \end{center}
+	
+\item En tercer lugar, emplea el modo de simulación \textsc{Sweep}
+  para analizar el efecto del factor de calidad de los componentes. En
+  primer lugar, realiza un barrido del factor de calidad de la bobina
+  desde 10 hasta 100, y a continuación otro barrido del factor de
+  calidad del condensador desde 10 hasta 100. Representa los
+  resultados de cada barrido tanto en forma gráfica como en una tabla.
+	
+  % \item Finalmente, analizaremos el efecto de realizar medidas con
+  %   aparatos de medida reales. En este caso emplearemos los mismos
+  %   elementos del primer circuito pero conectados en orden $R$, $L$ y
+  %   $C$, tomando la salida de tensión en el condensador. Con este
+  %   circuito vuelve a realizar los cálculos de los parámetros y la
+  %   simulación del circuito, considerando que el voltímetro es
+  %   ideal.
+
+  %   \begin{center}
+  %     \includegraphics[height=0.2\textheight]{../figs/circuito_P4_3}
+  %   \end{center}
+
+  %   A continuación, modelaremos un voltímetro real mediante la
+  %   inclusión de una resistencia en paralelo con el
+  %   voltímetro. Considerando un valor de $R_v = \qty{50}{\kilo\ohm}$,
+  %   obtén los valores de los parámetros y compara los resultados con
+  %   el caso anterior. Realiza una simulación del circuito con un
+  %   barrido de valores para $R_v$ desde $\qty{50}{\kilo\ohm}$ hasta
+  %   $\qty{500}{\kilo\ohm}$, comparando con los resultados obtenidos
+  %   con un voltímetro ideal.
+
+  %   \begin{center}
+  %     \includegraphics[height=0.2\textheight]{../figs/circuito_P4_4}
+  %   \end{center}
+	
+  \end{enumerate}
+	
+
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \coordinate (A) at (0,3);
+  \coordinate (B) at ($(A) + (3,0)$);
+  \coordinate (C) at ($(B) + (3,0)$);
+  \coordinate (A2) at ($(A) + (0,-3)$);
+  \coordinate (B2) at ($(B) + (0,-3)$);
+  \coordinate (C2) at ($(C) + (0,-3)$);
+  \draw
+  (A) node[left] {$A$} to [R, l = $R_1$, *-*] (B)
+  (B) to [R, l = $R_2$, *-*] (C) node[right] {$C$}
+  (B) to [R, l = $R_3$, *-*] (B2)
+  % ($(A) + (0.5,0)$) to [short,*-] ++(0,1)
+  % to [R, l = $R_4$] ($(C) + (-0.5,1)$)
+  % to [short, -*] ($(C) + (-0.5, 0)$)
+  (A2) node[left] {$B$} to [short, *-*] (C2) node[right] {$D$}; 
+\end{circuitikz}
+
+\end{document}
