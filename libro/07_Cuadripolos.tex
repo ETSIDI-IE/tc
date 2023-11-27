@@ -36,7 +36,7 @@ Un cuadripolo es recíproco si, al intercambiar la posición de las excitaciones
 \subsection{Parámetros de Impedancia}
 \label{sec:impedancia}
 
-El circuito de la figura representa un cuadripolo alimentado por fuentes de corriente tanto en la entrada como en la salida. Empleando el teorema de superposición podemos calcular las tensiones en los puertos de entrada y salida, teniendo en cuenta que las variables independientes (los \emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{I}_2\). Obtenemos las ecuaciones \ref{eq:parametros-impedancia}, en las que aparecen los parámetros impedancia $\mathbf{z}_{ij}$ relacionando las tensiones con las corrientes: 
+El circuito de la figura \ref{fig:cuadripolo-impedancia} representa un cuadripolo alimentado por fuentes de corriente tanto en la entrada como en la salida. Empleando el teorema de superposición podemos calcular las tensiones en los puertos de entrada y salida, teniendo en cuenta que las variables independientes (los \emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{I}_2\). Obtenemos las ecuaciones \ref{eq:parametros-impedancia}, en las que aparecen los parámetros impedancia $\mathbf{z}_{ij}$ relacionando las tensiones con las corrientes: 
 
 \begin{figure}[H]
   \centering
@@ -119,7 +119,8 @@ A continuación, con la entrada en abierto (figura \ref{fig:medida-impedancia-sa
 
 \subsubsection{Reciprocidad}
 
-En el caso de un cuadripolo recíproco, al intercambiar la posición de una fuente de corriente manteniendo el otro puerto en circuito abierto (figura \ref{fig:impedancia-reciprocidad}), las tensiones en circuito abierto serán la misma:
+En el caso de un cuadripolo recíproco, al intercambiar la posición de una fuente de corriente manteniendo el otro puerto en circuito abierto (figura \ref{fig:impedancia-reciprocidad}), la tensión en circuito abierto será la misma:
+
 \[
 \left.\mathbf{U_1}\right\rvert_{
   \begin{array}{l}
@@ -189,7 +190,6 @@ En este circuito, si el cuadripolo es simétrico, las impedancias de entrada y s
   \label{fig:impedancia-equivalente-simétrico}
 \end{figure}
 
-
 \[
   \left[
     \begin{array}{c}
@@ -213,41 +213,33 @@ En este circuito, si el cuadripolo es simétrico, las impedancias de entrada y s
 
 En resumen, un cuadripolo queda caracterizado por cuatro parámetros impedancia, siendo necesarios tres en el caso de un cuadripolo recíproco, y únicamente dos si el cuadripolo es simétrico.
 
-\subsubsection{No siempre hay parámetros Z}
-\label{sec:orga3d8e88}
-
-¿Cuáles son los parámetros Z \ldots{} 
-
-\begin{itemize}
-\item de un transformador ideal?
-\item de una impedancia serie?
-\end{itemize}
+Cerraremos esta sección haciendo notar que no todos los circuitos pueden ser modelados mediante un cuadripolo con parámetros impedancia. Queda como propuesta para el lector interesado comprobar esta circunstancia con un transformador ideal o con una impedancia en serie entre la entrada y la salida.
 
 \subsection{Parámetros de Admitancia}
-\label{sec:orgf2edf7b}
-\subsubsection{Definición}
-\label{sec:org4be9299}
 
-\includegraphics[height=4cm]{../figs/cuadripolo_fuentes_tension.pdf}
+El circuito de la figura \ref{fig:cuadripolo-admitancia} representa un cuadripolo alimentado por fuentes de tensión tanto en la entrada como en la salida. Empleando el teorema de superposición podemos calcular las corrientes en los puertos de entrada y salida, teniendo en cuenta que las variables independientes (los \emph{generadores}) son \(\mathbf{U}_1\) e \(\mathbf{U}_2\). En este caso, obtenemos las ecuaciones \ref{eq:parametros-admitancia}, en las que aparecen los parámetros admitancia $\mathbf{y}_{ij}$ relacionando las corrientes con las tensiones: 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/cuadripolo_fuentes_tension.pdf}
+  \caption{Cuadripolo alimentado por sendas fuentes de tensión.}
+  \label{fig:cuadripolo-admitancia}
+\end{figure}
 
 
-Mediante teorema de superposición:
-\[
-\begin{array}{l}
+\begin{equation}
+  \label{eq:parametros-admitancia}
+  \begin{array}{l}
   \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{U}_1 + \mathbf{y}_{12} \mathbf{U}_2\\
   \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{U}_1 + \mathbf{y}_{22} \mathbf{U}_2\\
-\end{array}
-\]
+  \end{array}
+\end{equation}
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\mathbf{U}_2\).
-
-\subsubsection{Expresión Matricial}
-\label{sec:org3731aa9}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_fuentes_tension.pdf}
+La expresión matricial correspondiente, ecuación \ref{eq:parametros-admitancia-matriz}, contiene la matriz de parámetros admitancia:
 
 
-\[
+\begin{equation}
+  \label{eq:parametros-admitancia-matriz}
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
@@ -266,33 +258,24 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\math
       \mathbf{U}_2
     \end{array}
   \right]
-\]
+\end{equation}
 
-\subsubsection{Circuito Equivalente}
-\label{sec:orgc722f4f}
+Estas ecuaciones pueden representarse mediante un circuito equivalente, figura \ref{fig:circuito-equivalente-admitancia}, que contiene una admitancia de entrada, una admitancia de salida, y sendas fuentes de corriente dependientes.
 
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteY.pdf}
-
-
-\[
-\begin{array}{l}
-  \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{U}_1 + \mathbf{y}_{12} \mathbf{U}_2\\
-  \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{U}_1 + \mathbf{y}_{22} \mathbf{U}_2\\
-\end{array}
-\]
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteY.pdf}
+  \caption{Circuito equivalente de un cuadripolo caracterizado por parámetros impedancia.}
+  \label{fig:circuito-equivalente-admitancia}
+\end{figure}
 
 
 \subsubsection{Cálculo de parámetros}
-\label{sec:org003b72b}
 
-\begin{enumerate}
-\item Salida en cortocircuito
-\label{sec:orgb1789af}
+Para el cálculo de los parámetros recurrimos al teorema de superposición, activando y apagando las fuentes adecuadas para la obtención del parámetro deseado.
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org0edf562}
-\renewcommand{\arraystretch}{2}
+En primer lugar, con la salida del cuadripolo en cortocircuito (figura \ref{fig:medida-admitancia-entrada}), es decir, apagando la fuente de tensión $U_2$, se obtienen los parámetros $\mathbf{y_{11}}$ y $\mathbf{y_{21}}$:
+
 \[
   \begin{array}{c}
     \mathbf{y}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_1}\right\rvert_{\mathbf{U}_2 = 0} \\
@@ -300,156 +283,76 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\math
   \end{array}
 \]
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org7c2d782}
+\begin{figure}[H]
+  \centering
+  \subfloat[$\mathbf{y}_{11}$ e $\mathbf{y}_{21}$]{\includegraphics[height=4cm]{../figs/parametrosY_entrada.pdf}\label{fig:medida-admitancia-entrada}}\hspace{2cm}
+  \subfloat[$\mathbf{y}_{12}$ e $\mathbf{y}_{22}$]{\includegraphics[height=4cm]{../figs/parametrosY_salida.pdf}\label{fig:medida-admitancia-salida}}
+\caption{Circuitos de medida para la obtención de los parámetros admitancia.}
+  \label{fig:medida-admitancia}
+\end{figure}
 
-\includegraphics[height=4cm]{../figs/parametrosY_entrada.pdf}
+A continuación, con la entrada en cortocircuito (figura \ref{fig:medida-admitancia-salida}), se obtienen los parámetros $\mathbf{y}_{22}$ y $\mathbf{y}_{12}$:
 
-\end{enumerate}
-
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:orgce1c711}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \mathbf{I}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \color{blue}{\mathbf{y}_{11}} & \mathbf{y}_{12}\\
-      \color{blue}{\mathbf{y}_{21}} & \mathbf{y}_{22}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \color{blue}{\mathbf{U}_1}\\
-      \mathbf{U}_2
-    \end{array}
-  \right]
-\]
-\end{enumerate}
-
-
-\subsubsection{Cálculo de parámetros}
-\label{sec:org7676724}
-
-\begin{enumerate}
-\item Entrada en cortocircuito
-\label{sec:org1d8c65d}
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgda9e197}
-
-\includegraphics[height=4cm]{../figs/parametrosY_salida.pdf}
-
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org35720cd}
-\renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
     \mathbf{y}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
     \mathbf{y}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{U}_2}\right\rvert_{\mathbf{U}_1 = 0}
   \end{array}
 \]
-\end{enumerate}
 
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org5814116}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \mathbf{I}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \mathbf{y}_{11} & \color{blue}{\mathbf{y}_{12}}\\
-      \mathbf{y}_{21} & \color{blue}{\mathbf{y}_{22}}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \mathbf{U}_1\\
-      \color{blue}{\mathbf{U}_2}
-    \end{array}
-  \right]
-\]
-\end{enumerate}
 
 \subsubsection{Reciprocidad}
-\label{sec:orge3f94a7}
+
+En el caso de un cuadripolo recíproco, al intercambiar la posición de
+una fuente de tensión manteniendo el otro puerto en cortocircuito
+(figura \ref{fig:admitancia-reciprocidad}), la corriente de
+cortocircuito será la misma:
 
 \[
-\mathbf{I_1}\rvert_{
-  \begin{array}{l}
-\mathbf{U_1} = 0 \\ \mathbf{U_2} = \mathbf{U_x}
-  \end{array}
-} =% 
-\mathbf{I_2}\rvert_{
-  \begin{array}{l}
-\mathbf{U_2} = 0 \\ \mathbf{U_1} = \mathbf{U_x}
-  \end{array}
-}
+  \mathbf{I_1}\rvert_{
+    \begin{array}{l}
+      \mathbf{U_1} = 0 \\ \mathbf{U_2} = \mathbf{U_x}
+    \end{array}
+  } =%
+  \mathbf{I_2}\rvert_{
+    \begin{array}{l}
+      \mathbf{U_2} = 0 \\ \mathbf{U_1} = \mathbf{U_x}
+    \end{array}
+  }
 \]
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgbafb0fe}
+\begin{figure}[H]
+  \centering \subfloat[Fuente en la
+  salida]{\includegraphics[height=4cm]{../figs/reciprocidadY_entrada.pdf}}\hspace{2cm}
+  \subfloat[Fuente en la
+  entrada]{\includegraphics[height=4cm]{../figs/reciprocidadY_salida.pdf}}
+  \caption{Cuadripolo recíproco alimentado por fuentes de tensión.}
+  \label{fig:admitancia-reciprocidad}
+\end{figure}
 
-\includegraphics[height=4cm]{../figs/reciprocidadY_entrada.pdf}
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgb4d144b}
-
-\includegraphics[height=4cm]{../figs/reciprocidadY_salida.pdf}
-
-\end{enumerate}
-\subsubsection{Relación entre parámetros}
-\label{sec:org5379fea}
-Las admitancias de transferencia son idénticas
+Empleando esta relación con los parámetros admitancia, se comprueba
+que las admitancia de transferencia $\mathbf{y}_{12}$ e
+$\mathbf{y}_{21}$ son idénticas:
 \[
   \left.
     \begin{array}{l}
       \mathbf{I}_x = \mathbf{y}_{11} 0  + \mathbf{y}_{12} \mathbf{U}_x\\
       \mathbf{I}_x = \mathbf{y}_{21} \mathbf{U}_x + \mathbf{y}_{22} 0\\
-    \end{array} \right\} \rightarrow \boxed{\mathbf{y_{12}} = \mathbf{y_{21}}}
+    \end{array} \right\} \rightarrow \mathbf{y_{12}} = \mathbf{y_{21}}
 \]
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org6237778}
-
-\includegraphics[height=4cm]{../figs/reciprocidadY_entrada.pdf}
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgf1cf80d}
-
-\includegraphics[height=4cm]{../figs/reciprocidadY_salida.pdf}
-
-\end{enumerate}
-\subsubsection{Circuito Equivalente en \(\pi\)}
-\label{sec:org2f3cf9b}
+de forma que la matriz de admitancias es simétrica:
 \[
-\boxed{\mathbf{y_{12}} = \mathbf{y_{21}}}
-\rightarrow
-\left[
+  \left[
     \begin{array}{c}
       \mathbf{I}_1\\
       \mathbf{I}_2
     \end{array}
-  \right] =
-  \left[
+  \right] = \left[
     \begin{array}{cc}
       \mathbf{y}_{11} & \color{red}{\mathbf{y}_{12}}\\
       \color{red}{\mathbf{y}_{12}} & \mathbf{y}_{22}
     \end{array}
-  \right] \cdot
-  \left[
+  \right] \cdot \left[
     \begin{array}{c}
       \mathbf{U}_1\\
       \mathbf{U}_2
@@ -457,39 +360,41 @@ Las admitancias de transferencia son idénticas
   \right]
 \]
 
-\begin{enumerate}
-\item Ejercicio
-\label{sec:orgeb5b5d1}
-Demostrar que un cuadripolo recíproco es equivalente al circuito en \(\pi\) de la figura.
+Con este resultado se puede demostrar fácilmente que un cuadripolo
+recíproco es equivalente al circuito en $\pi$ de la figura
+\ref{fig:admitancia-equivalente-recíproco}:
 
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteYReciproco.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteYReciproco.pdf}
+  \caption{Circuito en $\pi$ equivalente de un cuadripolo recíproco.}
+  \label{fig:admitancia-equivalente-recíproco}
+\end{figure}
 
-\end{enumerate}
-
-\subsubsection{Cuadripolo Simétrico}
-\label{sec:orgbe5cf36}
-
-
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteYSimetrico.pdf}
-
+En este circuito, si el cuadripolo es simétrico, las admitancias de
+entrada y salida deben ser idénticas (figura
+\ref{fig:admitancia-equivalente-simétrico}). Por tanto, en un
+cuadripolo simétrico $\mathbf{y_{11}} = \mathbf{y_{22}}$.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteYSimetrico.pdf}
+  \caption{Circuito en $\pi$ equivalente de un cuadripolo simétrico.}
+  \label{fig:admitancia-equivalente-simétrico}
+\end{figure}
 
 
 \[
-\boxed{\mathbf{y_{11}} = \mathbf{y_{22}}}
-\rightarrow
-\left[
+  \left[
     \begin{array}{c}
       \mathbf{I}_1\\
       \mathbf{I}_2
     \end{array}
-  \right] =
-  \left[
+  \right] = \left[
     \begin{array}{cc}
       \color{blue}{\mathbf{y}_{11}} & \color{red}{\mathbf{y}_{12}}\\
       \color{red}{\mathbf{y}_{12}} & \color{blue}{\mathbf{y}_{11}}
     \end{array}
-  \right] \cdot
-  \left[
+  \right] \cdot \left[
     \begin{array}{c}
       \mathbf{U}_1\\
       \mathbf{U}_2
@@ -497,201 +402,141 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en \(\pi\) de 
   \right]
 \]
 
+En resumen, un cuadripolo queda caracterizado por cuatro parámetros
+admitancia, siendo necesarios tres en el caso de un cuadripolo
+recíproco, y únicamente dos si el cuadripolo es simétrico.
 
-\subsubsection{No siempre hay parámetros Y}
-\label{sec:org4af051f}
+De la misma forma que con los parámetros admitancia, cerraremos la
+sección haciendo notar que no todos los circuitos pueden ser modelados
+mediante un cuadripolo con parámetros admitancia, como puede
+comprobarse con un transformador ideal o una impedancia en paralelo
+entre la entrada y la salida.
 
-¿Cuáles son los parámetros Y \ldots{} 
-
-\begin{itemize}
-\item de un transformador ideal?
-\item de una impedancia paralelo?
-\end{itemize}
 
 \subsection{Parámetros Híbridos}
-\label{sec:org7054e38}
-\subsubsection{Definición}
-\label{sec:orgafed8ae}
 
-\includegraphics[height=4cm]{../figs/cuadripolo_hibrido.pdf}
+El circuito de la figura \ref{fig:cuadripolo-hibridos} representa un
+cuadripolo alimentado por una fuente de corriente en la entrada y una
+fuente de tensión en la salida. En este montaje se pueden obtener la
+tensión en la entrada y la corriente en la salida a partir de las
+variables independientes \(\mathbf{I}_1\) y \(\mathbf{U}_2\). En este
+caso, obtenemos las ecuaciones \ref{eq:parametros-hibridos}, en las
+que aparecen los parámetros híbridos $\mathbf{h}_{ij}$:
 
-
-Mediante teorema de superposición:
-\[
-\begin{array}{l}
-  \mathbf{U}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{U}_2\\
-  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{U}_2\\
-\end{array}
-\]
-
-Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{U}_2\).
-
-
-\subsubsection{Expresión Matricial}
-\label{sec:org249baea}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_hibrido.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/cuadripolo_hibrido.pdf}
+  \caption{Cuadripolo alimentado por una fuente de corriente en la
+    entrada y una fuente de tensión en la salida.}
+  \label{fig:cuadripolo-hibridos}
+\end{figure}
 
 
-\[
+
+\begin{equation}
+  \label{eq:parametros-hibridos}
+  \begin{array}{l}
+    \mathbf{U}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{U}_2\\
+    \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{U}_2\\
+  \end{array}
+\end{equation}
+
+La expresión matricial correspondiente, ecuación \ref{eq:parametros-hibridos-matriz}, contiene la matriz de parámetros híbridos:
+
+\begin{equation}
+  \label{eq:parametros-hibridos-matriz}
   \left[
     \begin{array}{c}
       \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
-  \right] =
-  \left[
+  \right] = \left[
     \begin{array}{cc}
       \mathbf{h}_{11} & \mathbf{h}_{12}\\
       \mathbf{h}_{21} & \mathbf{h}_{22}
     \end{array}
-  \right] \cdot
-  \left[
+  \right] \cdot \left[
     \begin{array}{c}
       \mathbf{I}_1\\
       \mathbf{U}_2
     \end{array}
   \right]
-\]
+\end{equation}
 
-\subsubsection{Circuito Equivalente}
-\label{sec:org18f3f5d}
+El circuito asociado a estas ecuaciones se representa en la figura \ref{fig:circuito-equivalente-hibridos}, que contiene una impedancia de entrada en serie con una fuente de tensión dependiente, y una admitancia de salida en paralelo con una fuente de corriente dependiente.
 
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteH.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteH.pdf}
+  \caption{Circuito equivalente de un cuadripolo caracterizado por parámetros híbridos.}
+  \label{fig:circuito-equivalente-hibridos}
+\end{figure}
 
-
-\[
-\begin{array}{l}
-  \mathbf{U}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{U}_2\\
-  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{U}_2\\
-\end{array}
-\]
 
 \subsubsection{Cálculo de parámetros}
-\label{sec:org2210706}
 
-\begin{enumerate}
-\item Salida en cortocircuito
-\label{sec:org8fc619b}
+Para el cálculo de los parámetros nuevamente recurrimos al teorema de superposición, activando y apagando las fuentes adecuadas para la obtención del parámetro deseado.
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgebc69c6}
-\renewcommand{\arraystretch}{2}
-\[
-  \begin{array}{c}
-    \mathbf{h}_{11} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0} \\
-    \mathbf{h}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0}
-  \end{array}
-\]
+En primer lugar, con la salida del cuadripolo en cortocircuito (figura \ref{fig:medida-hibridos-entrada}), es decir, apagando la fuente de tensión $U_2$, se obtienen los parámetros $\mathbf{h_{11}}$ y $\mathbf{h_{21}}$:
+    \[
+      \begin{array}{c}
+        \mathbf{h}_{11} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0} \\
+        \mathbf{h}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0}
+      \end{array}
+    \]
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org3dc9d0b}
-
-\includegraphics[height=4cm]{../figs/parametrosH_entrada.pdf}
-
-\end{enumerate}
-
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org2feac24}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{U}_1\\
-      \mathbf{I}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \color{blue}{\mathbf{h}_{11}} & \mathbf{h}_{12}\\
-      \color{blue}{\mathbf{h}_{21}} & \mathbf{h}_{22}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \color{blue}{\mathbf{I}_1}\\
-      \mathbf{U}_2
-    \end{array}
-  \right]
-\]
-\end{enumerate}
-
-\subsubsection{Cálculo de parámetros}
-\label{sec:org16f02aa}
-
-\begin{enumerate}
-\item Entrada en abierto
-\label{sec:orgc4ee659}
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org4eea1be}
-
-\includegraphics[height=4cm]{../figs/parametrosH_salida.pdf}
+\begin{figure}[H]
+  \centering
+  \subfloat[$\mathbf{h}_{11}$ y $\mathbf{h}_{21}$]{\includegraphics[height=4cm]{../figs/parametrosH_entrada.pdf}\label{fig:medida-hibridos-entrada}}\hspace{2cm}
+  \subfloat[$\mathbf{h}_{12}$ y $\mathbf{h}_{22}$]{\includegraphics[height=4cm]{../figs/parametrosH_salida.pdf}\label{fig:medida-hibridos-salida}}
+\caption{Circuitos de medida para la obtención de los parámetros híbridos.}
+  \label{fig:medida-hibridos}
+\end{figure}
 
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org3452f57}
-\renewcommand{\arraystretch}{2}
+A continuación, con la entrada en circuito abierto (figura \ref{fig:medida-hibridos-salida}), se obtienen los parámetros $\mathbf{h}_{22}$ y $\mathbf{h}_{12}$:
+
 \[
   \begin{array}{c}
     \mathbf{h}_{12} = \left.\frac{\mathbf{U}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{I}_1 = 0}\\
     \mathbf{h}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{U}_2}\right\rvert_{\mathbf{I}_1 = 0}
   \end{array}
 \]
-\end{enumerate}
-
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org9431e69}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{U}_1\\
-      \mathbf{I}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \mathbf{h}_{11} & \color{blue}{\mathbf{h}_{12}}\\
-      \mathbf{h}_{21} & \color{blue}{\mathbf{h}_{22}}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \color{blue}{\mathbf{U}_2}
-    \end{array}
-  \right]
-\]
-\end{enumerate}
 
 
 \subsection{Parámetros Híbridos Inversos}
-\label{sec:orgbbd88b6}
 
-\subsubsection{Definición}
-\label{sec:org40235ae}
+El circuito de la figura \ref{fig:cuadripolo-hibridos-inversos}
+representa un cuadripolo alimentado por una fuente de tensión en la
+entrada y una fuente de corriente en la salida. En este montaje se
+pueden obtener la corriente en la entrada y la tensión en la salida a
+partir de las variables independientes \(\mathbf{U}_1\) e
+\(\mathbf{I}_2\). En este caso, obtenemos las ecuaciones
+\ref{eq:parametros-hibridos-inversos}, en las que aparecen los
+parámetros híbridos inversos $\mathbf{g}_{ij}$:
 
-\includegraphics[height=4cm]{../figs/cuadripolo_hibrido_inverso.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/cuadripolo_hibrido_inverso.pdf}
+  \caption{Cuadripolo alimentado por una fuente de tensión en la
+    entrada y una fuente de corriente en la salida.}
+  \label{fig:cuadripolo-hibridos-inversos}
+\end{figure}
 
+\begin{equation}
+  \label{eq:parametros-hibridos-inversos}
+    \begin{array}{l}
+      \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{U}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
+      \mathbf{U}_2 = \mathbf{g}_{21} \mathbf{U}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
+    \end{array}
+\end{equation}
 
-Mediante teorema de superposición:
-\[
-\begin{array}{l}
-  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{U}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
-  \mathbf{U}_2 = \mathbf{g}_{21} \mathbf{U}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
-\end{array}
-\]
+La expresión matricial correspondiente, ecuación
+\ref{eq:parametros-hibridos-inversos-matriz}, contiene la matriz de
+parámetros híbridos inversos:
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\mathbf{I}_2\).
-
-\subsubsection{Expresión Matricial}
-\label{sec:org5bc2ad0}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_hibrido_inverso.pdf}
-
-
-\[
+\begin{equation}
+  \label{eq:parametros-hibridos-inversos-matriz}
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
@@ -710,118 +555,46 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\math
       \mathbf{I}_2
     \end{array}
   \right]
-\]
+\end{equation}
 
-\subsubsection{Circuito Equivalente}
-\label{sec:orga0eb94b}
+El circuito asociado a estas ecuaciones se representa en la figura \ref{fig:circuito-equivalente-hibridos-inversos}, que contiene una admitancia de entrada en paralelo con una fuente de corriente dependiente, y una impedancia de salida en serie con una fuente de tensión dependiente.
 
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteG.pdf}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteG.pdf}
+  \caption{Circuito equivalente de un cuadripolo caracterizado por parámetros híbridos inversos.}
+  \label{fig:circuito-equivalente-hibridos-inversos}
+\end{figure}
 
-
-\[
-\begin{array}{l}
-  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{U}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
-  \mathbf{U}_2 = \mathbf{g}_{21} \mathbf{U}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
-\end{array}
-\]
 
 \subsubsection{Cálculo de parámetros}
-\label{sec:org2365b60}
 
-\begin{enumerate}
-\item Salida en abierto
-\label{sec:org490be28}
+Para el cálculo de los parámetros nuevamente recurrimos al teorema de superposición, activando y apagando las fuentes adecuadas para la obtención del parámetro deseado.
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgb210ca2}
-\renewcommand{\arraystretch}{2}
+En primer lugar, con la salida del cuadripolo en circuito abierto (figura \ref{fig:medida-hibridos-inversos-entrada}), es decir, apagando la fuente de corriente $I_2$, se obtienen los parámetros $\mathbf{g_{11}}$ y $\mathbf{g_{21}}$:
 \[
   \begin{array}{c}
     \mathbf{g}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0} \\
     \mathbf{g}_{21} = \left.\frac{\mathbf{U}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0}
   \end{array}
 \]
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orga9cc93f}
-
-\includegraphics[height=4cm]{../figs/parametrosG_entrada.pdf}
-
-\end{enumerate}
-
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org1c0c522}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \mathbf{U}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \color{blue}{\mathbf{g}_{11}} & \mathbf{g}_{12}\\
-      \color{blue}{\mathbf{g}_{21}} & \mathbf{g}_{22}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \color{blue}{\mathbf{U}_1}\\
-      \mathbf{I}_2
-    \end{array}
-  \right]
-\]
-\end{enumerate}
-
-\subsubsection{Cálculo de parámetros}
-\label{sec:org4b6c520}
-
-\begin{enumerate}
-\item Entrada en cortocircuito
-\label{sec:org5a8ad67}
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org71212cd}
-
-\includegraphics[height=4cm]{../figs/parametrosG_salida.pdf}
+    
+\begin{figure}[H]
+  \centering
+  \subfloat[$\mathbf{g}_{11}$ y $\mathbf{g}_{21}$]{\includegraphics[height=4cm]{../figs/parametrosG_entrada.pdf}\label{fig:medida-hibridos-inversos-entrada}}\hspace{2cm}
+  \subfloat[$\mathbf{g}_{12}$ y $\mathbf{g}_{22}$]{\includegraphics[height=4cm]{../figs/parametrosG_salida.pdf}\label{fig:medida-hibridos-inversos-salida}}
+\caption{Circuitos de medida para la obtención de los parámetros híbridos inversos.}
+  \label{fig:medida-hibridos-inversos}
+\end{figure}
 
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org0f2ee52}
-\renewcommand{\arraystretch}{2}
+A continuación, con la entrada en cortocircuito (figura \ref{fig:medida-hibridos-inversos-salida}), se obtienen los parámetros $\mathbf{g}_{22}$ y $\mathbf{g}_{12}$:
 \[
   \begin{array}{c}
     \mathbf{g}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
     \mathbf{g}_{22} = \left.\frac{\mathbf{U}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{U}_1 = 0}
   \end{array}
 \]
-\end{enumerate}
-
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org5b626bc}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \mathbf{U}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \mathbf{g}_{11} & \color{blue}{\mathbf{g}_{12}}\\
-      \mathbf{g}_{21} & \color{blue}{\mathbf{g}_{22}}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \mathbf{U}_1\\
-      \color{blue}{\mathbf{I}_2}
-    \end{array}
-  \right]
-\]
-\end{enumerate}
 
 
 \subsection{Parámetros de Transmisión}
