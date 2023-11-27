@@ -1,56 +1,67 @@
 \chapter{\textsuperscript{TC3} Cuadripolos}\label{chap:cuadripolos}
-\section{Introducción}
-\label{sec:org89dadb3}
+\section{Definición}
 
-\subsubsection{Cuadripolo}
-\label{sec:org9ef7725}
-\begin{center}
-\includegraphics[height=5cm]{../figs/cuadripolo.pdf}
-\end{center}
+Un cuadripolo es un modelo circuital que permite representar un conjunto arbitrario de elementos eléctricos interconectados mediante una caja negra con cuatro bornes de acceso, agrupados en dos puertos, uno de entrada y otro de salida. Un cuadripolo se emplea para modelar equipos de transmisión, filtros, o líneas de transporte de energía eléctrica, usando un rectángulo como representación para indicar que la estructura interna no es relevante (figura \ref{fig:cuadripolo}). El comportamiento del cuadripolo se determina a través de las relaciones entre las tensiones y corrientes en los puertos. 
 
-\begin{center}
-\textbf{Atención al sentido de las corrientes}
-\end{center}
-\subsubsection{Cuadripolos Recíprocos y Simétricos}
-\label{sec:org45c7b40}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/cuadripolo.pdf}
+  \caption{Cuadripolo genérico.}
+  \label{fig:cuadripolo}
+\end{figure}
+
+Las relaciones pueden expresarse de forma diversa, dando lugar a diferentes familias de parámetros. En este capítulo distinguiremos cuatro familias:
 \begin{itemize}
-\item Un cuadripolo es \textbf{recíproco} si, al intercambiar la posición de las excitaciones, la respuesta en el puerto correspondiente no sufre cambios (teorema de reciprocidad).
-\item Un cuadripolo lineal (RLC) y \textbf{sin fuentes dependientes} es recíproco.
-\item Un \textbf{cuadripolo recíproco es simétrico} si se puede intercambiar la entrada con la salida (simetría física).
+\item Parámetros impedancia: las tensiones se expresan en función de las corrientes.
+\item Parámetros admitancia: las corrientes se expresan en función de las tensiones.
+\item Parámetros híbridos: la tensión de entrada y la corriente de salida se expresan en función de la tensión de salida y la corriente de entrada.
+\item Parámetros híbridos inversos: la corriente de entrada y la tensión de salida se expresan en función de la tensión de entrada y la corriente de salida.
+\item Parámetros de transmisión: la tensión y la corriente de entrada se expresan en función de la tensión y la corriente de salida.
+\item Parámetros de transmisión inversa: la tensión y la corriente de salida se expresan en función de la tensión y la corriente de entrada.
 \end{itemize}
+
+En estas relaciones es importante prestar atención al sentido de las corrientes. En las primeras cuatro familias las corrientes son entrantes al cuadripolo, pero en los parámetros de transmisión la corriente de salida es saliente.
+
+En el resto del capítulo se supondrá que el circuito representado por el cuadripolo puede contener elementos pasivos (resistencias, bobinas, condensadores) y fuentes dependientes, pero no fuentes independientes.
+
+Las ecuaciones que se recogen a continuación emplean una nomenclatura genérica válida tanto para Laplace como para fasores, empleando el resaltado en negrita para tensiones, corrientes e impedancias. Los parámetros del cuadripolo se muestran en minúsculas, y las impedancias del circuito en mayúsculas.
+
+\subsubsection{Cuadripolos Recíprocos y Simétricos}
+
+Un cuadripolo es recíproco si, al intercambiar la posición de las excitaciones, la respuesta en el puerto correspondiente no sufre cambios (teorema de reciprocidad). Un cuadripolo lineal sin fuentes dependientes es recíproco. Además, un cuadripolo recíproco es simétrico si se puede intercambiar la entrada con la salida (simetría física).
+
 \section{Parámetros de Cuadripolos}
-\label{sec:orgc7cab56}
+
 \subsection{Parámetros de Impedancia}
-\label{sec:org99c6d5d}
+\label{sec:impedancia}
 
-\subsubsection{Definición}
-\label{sec:orga66e998}
-\begin{center}
-\includegraphics[height=4cm]{../figs/cuadripolo_fuentes_corriente.pdf}
-\end{center}
+El circuito de la figura representa un cuadripolo alimentado por fuentes de corriente tanto en la entrada como en la salida. Empleando el teorema de superposición podemos calcular las tensiones en los puertos de entrada y salida, teniendo en cuenta que las variables independientes (los \emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{I}_2\). Obtenemos las ecuaciones \ref{eq:parametros-impedancia}, en las que aparecen los parámetros impedancia $\mathbf{z}_{ij}$ relacionando las tensiones con las corrientes: 
 
-Mediante teorema de superposición:
-\[
-\begin{array}{l}
-  \mathbf{V}_1 = \mathbf{z}_{11} \mathbf{I}_1 + \mathbf{z}_{12} \mathbf{I}_2\\
-  \mathbf{V}_2 = \mathbf{z}_{21} \mathbf{I}_1 + \mathbf{z}_{22} \mathbf{I}_2\\
-\end{array}
-\]
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/cuadripolo_fuentes_corriente.pdf}
+  \caption{Cuadripolo alimentado por sendas fuentes de corriente.}
+  \label{fig:cuadripolo-impedancia}
+\end{figure}
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{I}_2\).
 
-\subsubsection{Expresión Matricial}
-\label{sec:orgf922a0b}
-\begin{center}
-\includegraphics[height=4cm]{../figs/cuadripolo_fuentes_corriente.pdf}
-\end{center}
+\begin{equation}
+  \label{eq:parametros-impedancia}
+  \begin{array}{l}
+    \mathbf{U}_1 = \mathbf{z}_{11} \mathbf{I}_1 + \mathbf{z}_{12} \mathbf{I}_2\\
+    \mathbf{U}_2 = \mathbf{z}_{21} \mathbf{I}_1 + \mathbf{z}_{22} \mathbf{I}_2\\
+  \end{array}
+\end{equation}
 
-\[
+La expresión matricial correspondiente, ecuación \ref{eq:parametros-impedancia-matriz}, contiene la matriz de parámetros impedancia:
+
+\begin{equation}
+  \label{eq:parametros-impedancia-matriz}
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -65,180 +76,86 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
       \mathbf{I}_2
     \end{array}
   \right]
-\]
+\end{equation}
 
-\subsubsection{Circuito Equivalente}
-\label{sec:org634cc26}
-\begin{center}
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteZ.pdf}
-\end{center}
-
-\[
-\begin{array}{l}
-  \mathbf{V}_1 = \mathbf{z}_{11} \mathbf{I}_1 + \mathbf{z}_{12} \mathbf{I}_2\\
-  \mathbf{V}_2 = \mathbf{z}_{21} \mathbf{I}_1 + \mathbf{z}_{22} \mathbf{I}_2\\
-\end{array}
-\]
+Estas ecuaciones pueden representarse mediante un circuito equivalente, figura \ref{fig:circuito-equivalente-impedancia}, que contiene una impedancia de entrada, una impedancia de salida, y sendas fuentes de tensión dependientes.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteZ.pdf}
+  \caption{Circuito equivalente de un cuadripolo caracterizado por parámetros impedancia.}
+  \label{fig:circuito-equivalente-impedancia}
+\end{figure}
 
 \subsubsection{Cálculo de parámetros}
-\label{sec:org74b4bb2}
 
-\begin{enumerate}
-\item Salida en abierto
-\label{sec:org2d081df}
+Para el cálculo de los parámetros recurrimos al teorema de superposición, activando y apagando las fuentes adecuadas para la obtención del parámetro deseado.
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgb2e3e30}
-\renewcommand{\arraystretch}{2}
+En primer lugar, con la salida del cuadripolo en abierto (figura \ref{fig:medida-impedancia-entrada}), es decir, apagando la fuente de corriente $I_2$, se obtienen los parámetros $\mathbf{z_{11}}$ y $\mathbf{z_{21}}$:
 \[
   \begin{array}{c}
-    \mathbf{z}_{11} = \left.\frac{\mathbf{V}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0} \\
-    \mathbf{z}_{21} = \left.\frac{\mathbf{V}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0}
+    \mathbf{z}_{11} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0} \\
+    \mathbf{z}_{21} = \left.\frac{\mathbf{U}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0}
   \end{array}
 \]
 
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgd3d533a}
-\begin{center}
-\includegraphics[height=4cm]{../figs/parametrosZ_entrada.pdf}
-\end{center}
-\end{enumerate}
+\begin{figure}[H]
+  \centering
+  \subfloat[$\mathbf{z}_{11}$ y $\mathbf{z}_{21}$]{\includegraphics[height=4cm]{../figs/parametrosZ_entrada.pdf}\label{fig:medida-impedancia-entrada}}\hspace{2cm}
+  \subfloat[$\mathbf{z}_{12}$ y $\mathbf{z}_{22}$]{\includegraphics[height=4cm]{../figs/parametrosZ_salida.pdf}\label{fig:medida-impedancia-salida}}
+\caption{Circuitos de medida para la obtención de los parámetros impedancia.}
+  \label{fig:medida-impedancia}
+\end{figure}
 
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:orgb41b705}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \color{blue}{\mathbf{z}_{11}} & \mathbf{z}_{12}\\
-      \color{blue}{\mathbf{z}_{21}} & \mathbf{z}_{22}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \color{blue}{\mathbf{I}_1}\\
-      \mathbf{I}_2
-    \end{array}
-  \right]
-\]
-\end{enumerate}
 
-\subsubsection{Cálculo de parámetros}
-\label{sec:org4ab5ebf}
+A continuación, con la entrada en abierto (figura \ref{fig:medida-impedancia-salida}), se obtienen los parámetros $\mathbf{z}_{22}$ y $\mathbf{z}_{12}$:
 
-\begin{enumerate}
-\item Entrada en abierto
-\label{sec:org16769ae}
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org054439f}
-\begin{center}
-\includegraphics[height=4cm]{../figs/parametrosZ_salida.pdf}
-\end{center}
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orge6ceda7}
-\renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{z}_{12} = \left.\frac{\mathbf{V}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0}\\
-    \mathbf{z}_{22} = \left.\frac{\mathbf{V}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0}
+    \mathbf{z}_{12} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0}\\
+    \mathbf{z}_{22} = \left.\frac{\mathbf{U}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0}
   \end{array}
 \]
-\end{enumerate}
 
-\item \hfill{}\textsc{B\_ignoreheading}
-\label{sec:org55c3206}
-\[
-  \left[
-    \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
-    \end{array}
-  \right] =
-  \left[
-    \begin{array}{cc}
-      \mathbf{z}_{11} & \color{blue}{\mathbf{z}_{12}}\\
-      \mathbf{z}_{21} & \color{blue}{\mathbf{z}_{22}}
-    \end{array}
-  \right] \cdot
-  \left[
-    \begin{array}{c}
-      \mathbf{I}_1\\
-      \color{blue}{\mathbf{I}_2}
-    \end{array}
-  \right]
-\]
-\end{enumerate}
 
 \subsubsection{Reciprocidad}
-\label{sec:org827c391}
+
+En el caso de un cuadripolo recíproco, al intercambiar la posición de una fuente de corriente manteniendo el otro puerto en circuito abierto (figura \ref{fig:impedancia-reciprocidad}), las tensiones en circuito abierto serán la misma:
 \[
-\left.\mathbf{V_1}\right\rvert_{
+\left.\mathbf{U_1}\right\rvert_{
   \begin{array}{l}
 \mathbf{I_1} = 0\\ \mathbf{I_2} = \mathbf{I_x}
   \end{array}
 } =% 
-\left.\mathbf{V_2}\right\rvert_{
+\left.\mathbf{U_2}\right\rvert_{
   \begin{array}{l}
 \mathbf{I_2} = 0\\ \mathbf{I_1} = \mathbf{I_x}
   \end{array}
-}
+} = \mathbf{U}_x
 \]
 
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:org664d831}
-\begin{center}
-\includegraphics[height=4cm]{../figs/reciprocidadZ_entrada.pdf}
-\end{center}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orge37f911}
-\begin{center}
-\includegraphics[height=4cm]{../figs/reciprocidadZ_salida.pdf}
-\end{center}
-\end{enumerate}
-\subsubsection{Relación entre parámetros}
-\label{sec:orgaf2fabb}
-Las impedancias de transferencia son idénticas
+\begin{figure}[H]
+  \centering
+  \subfloat[Fuente en la salida]{\includegraphics[height=4cm]{../figs/reciprocidadZ_entrada.pdf}}\hspace{2cm}
+  \subfloat[Fuente en la entrada]{\includegraphics[height=4cm]{../figs/reciprocidadZ_salida.pdf}}
+  \caption{Cuadripolo recíproco alimentado por fuentes de corriente.}
+  \label{fig:impedancia-reciprocidad}
+\end{figure}
+
+
+Empleando esta relación con los parámetros impedancia, se comprueba que las impedancias de transferencia $\mathbf{z}_{12}$ y $\mathbf{z}_{21}$ son idénticas:
 \[
   \left.
     \begin{array}{l}
-      \mathbf{V}_x = \mathbf{z}_{11} 0  + \mathbf{z}_{12} \mathbf{I}_x\\
-      \mathbf{V}_x = \mathbf{z}_{21} \mathbf{I}_x + \mathbf{z}_{22} 0\\
-    \end{array} \right\} \rightarrow \boxed{\mathbf{z_{12}} = \mathbf{z_{21}}}
+      \mathbf{U}_x = \mathbf{z}_{11} 0  + \mathbf{z}_{12} \mathbf{I}_x\\
+      \mathbf{U}_x = \mathbf{z}_{21} \mathbf{I}_x + \mathbf{z}_{22} 0\\
+    \end{array} \right\} \rightarrow \mathbf{z_{12}} = \mathbf{z_{21}}
 \]
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgcc11e65}
-\begin{center}
-\includegraphics[height=4cm]{../figs/reciprocidadZ_entrada.pdf}
-\end{center}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgc53448d}
-\begin{center}
-\includegraphics[height=4cm]{../figs/reciprocidadZ_salida.pdf}
-\end{center}
-\end{enumerate}
-
-\subsubsection{Circuito Equivalente en T}
-\label{sec:orgf4a859d}
-
+de forma que la matriz de impedancias es simétrica:
 \[
-\boxed{\mathbf{z_{12}} = \mathbf{z_{21}}}
-\rightarrow
 \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -255,28 +172,29 @@ Las impedancias de transferencia son idénticas
   \right]
 \]
 
-\begin{enumerate}
-\item Ejercicio
-\label{sec:org3cfa18b}
-Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la figura.
-\begin{center}
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteZReciproco.pdf}
-\end{center}
-\end{enumerate}
+Con este resultado se puede demostrar fácilmente que un cuadripolo recíproco es equivalente al circuito en T de la figura \ref{fig:impedancia-equivalente-recíproco}:
 
-\subsubsection{Cuadripolo Simétrico}
-\label{sec:orga8e8529}
-\begin{center}
-\includegraphics[height=4cm]{../figs/circuitoEquivalenteZSimetrico.pdf}
-\end{center}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteZReciproco.pdf}
+  \caption{Circuito en T equivalente de un cuadripolo recíproco.}
+  \label{fig:impedancia-equivalente-recíproco}
+\end{figure}
+
+En este circuito, si el cuadripolo es simétrico, las impedancias de entrada y salida deben ser idénticas (figura \ref{fig:impedancia-equivalente-simétrico}). Por tanto, en un cuadripolo simétrico $\mathbf{z_{11}} = \mathbf{z_{22}}$.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/circuitoEquivalenteZSimetrico.pdf}
+  \caption{Circuito en T equivalente de un cuadripolo simétrico.}
+  \label{fig:impedancia-equivalente-simétrico}
+\end{figure}
+
 
 \[
-\boxed{\mathbf{z_{11}} = \mathbf{z_{22}}}
-\rightarrow
-\left[
+  \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -293,6 +211,7 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la fig
   \right]
 \]
 
+En resumen, un cuadripolo queda caracterizado por cuatro parámetros impedancia, siendo necesarios tres en el caso de un cuadripolo recíproco, y únicamente dos si el cuadripolo es simétrico.
 
 \subsubsection{No siempre hay parámetros Z}
 \label{sec:orga3d8e88}
@@ -308,25 +227,25 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en T de la fig
 \label{sec:orgf2edf7b}
 \subsubsection{Definición}
 \label{sec:org4be9299}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_fuentes_tension.pdf}
-\end{center}
+
 
 Mediante teorema de superposición:
 \[
 \begin{array}{l}
-  \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{V}_1 + \mathbf{y}_{12} \mathbf{V}_2\\
-  \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{V}_1 + \mathbf{y}_{22} \mathbf{V}_2\\
+  \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{U}_1 + \mathbf{y}_{12} \mathbf{U}_2\\
+  \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{U}_1 + \mathbf{y}_{22} \mathbf{U}_2\\
 \end{array}
 \]
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\mathbf{V}_2\).
+Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\mathbf{U}_2\).
 
 \subsubsection{Expresión Matricial}
 \label{sec:org3731aa9}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_fuentes_tension.pdf}
-\end{center}
+
 
 \[
   \left[
@@ -343,22 +262,22 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
 
 \subsubsection{Circuito Equivalente}
 \label{sec:orgc722f4f}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/circuitoEquivalenteY.pdf}
-\end{center}
+
 
 \[
 \begin{array}{l}
-  \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{V}_1 + \mathbf{y}_{12} \mathbf{V}_2\\
-  \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{V}_1 + \mathbf{y}_{22} \mathbf{V}_2\\
+  \mathbf{I}_1 = \mathbf{y}_{11} \mathbf{U}_1 + \mathbf{y}_{12} \mathbf{U}_2\\
+  \mathbf{I}_2 = \mathbf{y}_{21} \mathbf{U}_1 + \mathbf{y}_{22} \mathbf{U}_2\\
 \end{array}
 \]
 
@@ -376,16 +295,16 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{y}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{V}_1}\right\rvert_{\mathbf{V}_2 = 0} \\
-    \mathbf{y}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{V}_1}\right\rvert_{\mathbf{V}_2 = 0}
+    \mathbf{y}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_1}\right\rvert_{\mathbf{U}_2 = 0} \\
+    \mathbf{y}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{U}_2 = 0}
   \end{array}
 \]
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org7c2d782}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosY_entrada.pdf}
-\end{center}
+
 \end{enumerate}
 
 \item \hfill{}\textsc{B\_ignoreheading}
@@ -405,8 +324,8 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \color{blue}{\mathbf{V}_1}\\
-      \mathbf{V}_2
+      \color{blue}{\mathbf{U}_1}\\
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
@@ -423,17 +342,17 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgda9e197}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosY_salida.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org35720cd}
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{y}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{V}_2}\right\rvert_{\mathbf{V}_1 = 0}\\
-    \mathbf{y}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{V}_2}\right\rvert_{\mathbf{V}_1 = 0}
+    \mathbf{y}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
+    \mathbf{y}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{U}_2}\right\rvert_{\mathbf{U}_1 = 0}
   \end{array}
 \]
 \end{enumerate}
@@ -455,8 +374,8 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \color{blue}{\mathbf{V}_2}
+      \mathbf{U}_1\\
+      \color{blue}{\mathbf{U}_2}
     \end{array}
   \right]
 \]
@@ -468,12 +387,12 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \[
 \mathbf{I_1}\rvert_{
   \begin{array}{l}
-\mathbf{V_1} = 0 \\ \mathbf{V_2} = \mathbf{V_x}
+\mathbf{U_1} = 0 \\ \mathbf{U_2} = \mathbf{U_x}
   \end{array}
 } =% 
 \mathbf{I_2}\rvert_{
   \begin{array}{l}
-\mathbf{V_2} = 0 \\ \mathbf{V_1} = \mathbf{V_x}
+\mathbf{U_2} = 0 \\ \mathbf{U_1} = \mathbf{U_x}
   \end{array}
 }
 \]
@@ -481,14 +400,14 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgbafb0fe}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/reciprocidadY_entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgb4d144b}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/reciprocidadY_salida.pdf}
-\end{center}
+
 \end{enumerate}
 \subsubsection{Relación entre parámetros}
 \label{sec:org5379fea}
@@ -496,22 +415,22 @@ Las admitancias de transferencia son idénticas
 \[
   \left.
     \begin{array}{l}
-      \mathbf{I}_x = \mathbf{y}_{11} 0  + \mathbf{y}_{12} \mathbf{V}_x\\
-      \mathbf{I}_x = \mathbf{y}_{21} \mathbf{V}_x + \mathbf{y}_{22} 0\\
+      \mathbf{I}_x = \mathbf{y}_{11} 0  + \mathbf{y}_{12} \mathbf{U}_x\\
+      \mathbf{I}_x = \mathbf{y}_{21} \mathbf{U}_x + \mathbf{y}_{22} 0\\
     \end{array} \right\} \rightarrow \boxed{\mathbf{y_{12}} = \mathbf{y_{21}}}
 \]
 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org6237778}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/reciprocidadY_entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgf1cf80d}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/reciprocidadY_salida.pdf}
-\end{center}
+
 \end{enumerate}
 \subsubsection{Circuito Equivalente en \(\pi\)}
 \label{sec:org2f3cf9b}
@@ -532,8 +451,8 @@ Las admitancias de transferencia son idénticas
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
@@ -542,17 +461,17 @@ Las admitancias de transferencia son idénticas
 \item Ejercicio
 \label{sec:orgeb5b5d1}
 Demostrar que un cuadripolo recíproco es equivalente al circuito en \(\pi\) de la figura.
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/circuitoEquivalenteYReciproco.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsubsection{Cuadripolo Simétrico}
 \label{sec:orgbe5cf36}
 
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/circuitoEquivalenteYSimetrico.pdf}
-\end{center}
+
 
 
 \[
@@ -572,8 +491,8 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en \(\pi\) de 
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_1\\
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
@@ -593,31 +512,31 @@ Demostrar que un cuadripolo recíproco es equivalente al circuito en \(\pi\) de 
 \label{sec:org7054e38}
 \subsubsection{Definición}
 \label{sec:orgafed8ae}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_hibrido.pdf}
-\end{center}
+
 
 Mediante teorema de superposición:
 \[
 \begin{array}{l}
-  \mathbf{V}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{V}_2\\
-  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{V}_2\\
+  \mathbf{U}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{U}_2\\
+  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{U}_2\\
 \end{array}
 \]
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{V}_2\).
+Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\mathbf{U}_2\).
 
 
 \subsubsection{Expresión Matricial}
 \label{sec:org249baea}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_hibrido.pdf}
-\end{center}
+
 
 \[
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -630,21 +549,21 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
 
 \subsubsection{Circuito Equivalente}
 \label{sec:org18f3f5d}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/circuitoEquivalenteH.pdf}
-\end{center}
+
 
 \[
 \begin{array}{l}
-  \mathbf{V}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{V}_2\\
-  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{V}_2\\
+  \mathbf{U}_1 = \mathbf{h}_{11} \mathbf{I}_1 + \mathbf{h}_{12} \mathbf{U}_2\\
+  \mathbf{I}_2 = \mathbf{h}_{21} \mathbf{I}_1 + \mathbf{h}_{22} \mathbf{U}_2\\
 \end{array}
 \]
 
@@ -661,16 +580,16 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{h}_{11} = \left.\frac{\mathbf{V}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{V}_2 = 0} \\
-    \mathbf{h}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{V}_2 = 0}
+    \mathbf{h}_{11} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0} \\
+    \mathbf{h}_{21} = \left.\frac{\mathbf{I}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0}
   \end{array}
 \]
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org3dc9d0b}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosH_entrada.pdf}
-\end{center}
+
 \end{enumerate}
 
 \item \hfill{}\textsc{B\_ignoreheading}
@@ -678,7 +597,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
 \[
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -691,7 +610,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
   \left[
     \begin{array}{c}
       \color{blue}{\mathbf{I}_1}\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right]
 \]
@@ -707,17 +626,17 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org4eea1be}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosH_salida.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org3452f57}
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{h}_{12} = \left.\frac{\mathbf{V}_1}{\mathbf{V}_2}\right\rvert_{\mathbf{I}_1 = 0}\\
-    \mathbf{h}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{V}_2}\right\rvert_{\mathbf{I}_1 = 0}
+    \mathbf{h}_{12} = \left.\frac{\mathbf{U}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{I}_1 = 0}\\
+    \mathbf{h}_{22} = \left.\frac{\mathbf{I}_2}{\mathbf{U}_2}\right\rvert_{\mathbf{I}_1 = 0}
   \end{array}
 \]
 \end{enumerate}
@@ -727,7 +646,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
 \[
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -740,7 +659,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \color{blue}{\mathbf{V}_2}
+      \color{blue}{\mathbf{U}_2}
     \end{array}
   \right]
 \]
@@ -752,31 +671,31 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{I}_1\) e \(\math
 
 \subsubsection{Definición}
 \label{sec:org40235ae}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_hibrido_inverso.pdf}
-\end{center}
+
 
 Mediante teorema de superposición:
 \[
 \begin{array}{l}
-  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{V}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
-  \mathbf{V}_2 = \mathbf{g}_{21} \mathbf{V}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
+  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{U}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
+  \mathbf{U}_2 = \mathbf{g}_{21} \mathbf{U}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
 \end{array}
 \]
 
-Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\mathbf{I}_2\).
+Las variables independientes (\emph{generadores}) son \(\mathbf{U}_1\) e \(\mathbf{I}_2\).
 
 \subsubsection{Expresión Matricial}
 \label{sec:org5bc2ad0}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_hibrido_inverso.pdf}
-\end{center}
+
 
 \[
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -787,7 +706,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
   \right]
@@ -795,14 +714,14 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 
 \subsubsection{Circuito Equivalente}
 \label{sec:orga0eb94b}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/circuitoEquivalenteG.pdf}
-\end{center}
+
 
 \[
 \begin{array}{l}
-  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{V}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
-  \mathbf{V}_2 = \mathbf{g}_{21} \mathbf{V}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
+  \mathbf{I}_1 = \mathbf{g}_{11} \mathbf{U}_1 + \mathbf{g}_{12} \mathbf{I}_2\\
+  \mathbf{U}_2 = \mathbf{g}_{21} \mathbf{U}_1 + \mathbf{g}_{22} \mathbf{I}_2\\
 \end{array}
 \]
 
@@ -819,16 +738,16 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{g}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{V}_1}\right\rvert_{\mathbf{I}_2 = 0} \\
-    \mathbf{g}_{21} = \left.\frac{\mathbf{V}_2}{\mathbf{V}_1}\right\rvert_{\mathbf{I}_2 = 0}
+    \mathbf{g}_{11} = \left.\frac{\mathbf{I}_1}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0} \\
+    \mathbf{g}_{21} = \left.\frac{\mathbf{U}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0}
   \end{array}
 \]
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orga9cc93f}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosG_entrada.pdf}
-\end{center}
+
 \end{enumerate}
 
 \item \hfill{}\textsc{B\_ignoreheading}
@@ -837,7 +756,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -848,7 +767,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \color{blue}{\mathbf{V}_1}\\
+      \color{blue}{\mathbf{U}_1}\\
       \mathbf{I}_2
     \end{array}
   \right]
@@ -865,17 +784,17 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org71212cd}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/parametrosG_salida.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org0f2ee52}
 \renewcommand{\arraystretch}{2}
 \[
   \begin{array}{c}
-    \mathbf{g}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{V}_1 = 0}\\
-    \mathbf{g}_{22} = \left.\frac{\mathbf{V}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{V}_1 = 0}
+    \mathbf{g}_{12} = \left.\frac{\mathbf{I}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
+    \mathbf{g}_{22} = \left.\frac{\mathbf{U}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{U}_1 = 0}
   \end{array}
 \]
 \end{enumerate}
@@ -886,7 +805,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -897,7 +816,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \color{blue}{\mathbf{I}_2}
     \end{array}
   \right]
@@ -910,31 +829,31 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
 
 \subsubsection{Definición}
 \label{sec:orgcd755d3}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-\end{center}
+
 
 \[
 \begin{array}{l}
-  \mathbf{V}_1 = \mathbf{A} \mathbf{V}_2 + \mathbf{B}\mathbf{I'}_2\\
-  \mathbf{I}_1 = \mathbf{C} \mathbf{V}_2 + \mathbf{D} \mathbf{I'}_2\\
+  \mathbf{U}_1 = \mathbf{A} \mathbf{U}_2 + \mathbf{B}\mathbf{I'}_2\\
+  \mathbf{I}_1 = \mathbf{C} \mathbf{U}_2 + \mathbf{D} \mathbf{I'}_2\\
 \end{array}
 \]
 
-\begin{center}
+
 \textbf{Atención} al sentido de la corriente \(\mathbf{I'}_2\). (\(\mathbf{I'}_2 = - \mathbf{I}_2\)).
-\end{center}
+
 
 \subsubsection{Expresión Matricial}
 \label{sec:org104daf9}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-\end{center}
+
 
 \[
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_1
     \end{array}
   \right] =
@@ -946,7 +865,7 @@ Las variables independientes (\emph{generadores}) son \(\mathbf{V}_1\) e \(\math
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_2\\
+      \mathbf{U}_2\\
       \mathbf{I'}_2
     \end{array}
   \right]
@@ -960,27 +879,27 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 \renewcommand{\arraystretch}{3}
 \[
   \begin{array}{cc}
-    \frac{1}{\mathbf{A}} = \left.\frac{\mathbf{V}_2}{\mathbf{V}_1}\right\rvert_{\mathbf{I}_2 = 0} &
-    \frac{1}{\mathbf{B}} = \left.\frac{\mathbf{I'}_2}{\mathbf{V}_1}\right\rvert_{\mathbf{V}_2 = 0}\\
-    \frac{1}{\mathbf{C}} = \left.\frac{\mathbf{V}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0} &
-    \frac{1}{\mathbf{D}} = \left.\frac{\mathbf{I'}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{V}_2 = 0}\\
+    \frac{1}{\mathbf{A}} = \left.\frac{\mathbf{U}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0} &
+    \frac{1}{\mathbf{B}} = \left.\frac{\mathbf{I'}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{U}_2 = 0}\\
+    \frac{1}{\mathbf{C}} = \left.\frac{\mathbf{U}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{I}_2 = 0} &
+    \frac{1}{\mathbf{D}} = \left.\frac{\mathbf{I'}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0}\\
   \end{array}
 \]
 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orga42aeb3}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgb82d084}
 \renewcommand{\arraystretch}{1}
 \[
 \begin{array}{l}
-  \mathbf{V}_1 = \mathbf{A} \mathbf{V}_2 + \mathbf{B}\mathbf{I'}_2\\
-  \mathbf{I}_1 = \mathbf{C} \mathbf{V}_2 + \mathbf{D} \mathbf{I'}_2\\
+  \mathbf{U}_1 = \mathbf{A} \mathbf{U}_2 + \mathbf{B}\mathbf{I'}_2\\
+  \mathbf{I}_1 = \mathbf{C} \mathbf{U}_2 + \mathbf{D} \mathbf{I'}_2\\
 \end{array}
 \]
 \end{enumerate}
@@ -991,31 +910,31 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 
 \subsubsection{Definición}
 \label{sec:org52b179c}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision_inversa.pdf}
-\end{center}
+
 
 \[
 \begin{array}{l}
-  \mathbf{V}_2 = \mathbf{a} \mathbf{V}_1 + \mathbf{b}\mathbf{I'}_1\\
-  \mathbf{I}_2 = \mathbf{c} \mathbf{V}_1 + \mathbf{d} \mathbf{I'}_1\\
+  \mathbf{U}_2 = \mathbf{a} \mathbf{U}_1 + \mathbf{b}\mathbf{I'}_1\\
+  \mathbf{I}_2 = \mathbf{c} \mathbf{U}_1 + \mathbf{d} \mathbf{I'}_1\\
 \end{array}
 \]
 
-\begin{center}
+
 \textbf{Atención} al sentido de la corriente \(\mathbf{I'}_1\) (\(\mathbf{I'}_1 = - \mathbf{I}_1\)).
-\end{center}
+
 
 \subsubsection{Expresión Matricial}
 \label{sec:orgca7fb03}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision_inversa.pdf}
-\end{center}
+
 
 \[
   \left[
     \begin{array}{c}
-      \mathbf{V}_2\\
+      \mathbf{U}_2\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -1027,7 +946,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I'}_1
     \end{array}
   \right]
@@ -1040,27 +959,27 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 \renewcommand{\arraystretch}{3}
 \[
   \begin{array}{cc}
-    \frac{1}{\mathbf{a}} = \left.\frac{\mathbf{V}_1}{\mathbf{V}_2}\right\rvert_{\mathbf{I}_1 = 0} &
-    \frac{1}{\mathbf{b}} = \left.\frac{\mathbf{I'}_1}{\mathbf{V}_2}\right\rvert_{\mathbf{V}_1 = 0}\\
-    \frac{1}{\mathbf{c}} = \left.\frac{\mathbf{V}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0} &
-    \frac{1}{\mathbf{d}} = \left.\frac{\mathbf{I'}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{V}_1 = 0}\\
+    \frac{1}{\mathbf{a}} = \left.\frac{\mathbf{U}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{I}_1 = 0} &
+    \frac{1}{\mathbf{b}} = \left.\frac{\mathbf{I'}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
+    \frac{1}{\mathbf{c}} = \left.\frac{\mathbf{U}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{I}_1 = 0} &
+    \frac{1}{\mathbf{d}} = \left.\frac{\mathbf{I'}_1}{\mathbf{I}_2}\right\rvert_{\mathbf{U}_1 = 0}\\
   \end{array}
 \]
 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org770263e}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_transmision_inversa.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgc57f0bc}
 \renewcommand{\arraystretch}{1}
 \[
 \begin{array}{l}
-  \mathbf{V}_2 = \mathbf{a} \mathbf{V}_1 + \mathbf{b}\mathbf{I'}_1\\
-  \mathbf{I}_2 = \mathbf{c} \mathbf{V}_1 + \mathbf{d} \mathbf{I'}_1\\
+  \mathbf{U}_2 = \mathbf{a} \mathbf{U}_1 + \mathbf{b}\mathbf{I'}_1\\
+  \mathbf{I}_2 = \mathbf{c} \mathbf{U}_1 + \mathbf{d} \mathbf{I'}_1\\
 \end{array}
 \]
 \end{enumerate}
@@ -1076,8 +995,8 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
     \begin{array}{l}
       \left[
       \begin{array}{c}
-        \mathbf{V}_1\\
-        \mathbf{V}_2
+        \mathbf{U}_1\\
+        \mathbf{U}_2
       \end{array}
       \right] =
       \left[
@@ -1107,8 +1026,8 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
                           \right] \cdot
                           \left[
                           \begin{array}{c}
-                            \mathbf{V}_1\\
-                            \mathbf{V}_2
+                            \mathbf{U}_1\\
+                            \mathbf{U}_2
                           \end{array}
       \right]
     \end{array}
@@ -1125,7 +1044,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
       %% Híbridos
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -1138,7 +1057,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
       \right]
       \\ \\
@@ -1146,7 +1065,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \left[
     \begin{array}{c}
       \mathbf{I}_1\\
-      \mathbf{V}_2
+      \mathbf{U}_2
     \end{array}
   \right] =
   \left[
@@ -1157,7 +1076,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_2
     \end{array}
       \right]
@@ -1174,7 +1093,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
       %% Transmisión
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I}_1
     \end{array}
   \right] =
@@ -1186,7 +1105,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_2\\
+      \mathbf{U}_2\\
       \mathbf{I'}_2
     \end{array}
   \right]
@@ -1194,7 +1113,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
       %% Transmisión Inversa
   \left[
     \begin{array}{c}
-      \mathbf{V}_2\\
+      \mathbf{U}_2\\
       \mathbf{I}_2
     \end{array}
   \right] =
@@ -1206,7 +1125,7 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
   \right] \cdot
   \left[
     \begin{array}{c}
-      \mathbf{V}_1\\
+      \mathbf{U}_1\\
       \mathbf{I'}_1
     \end{array}
   \right]
@@ -1232,9 +1151,9 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
 \]
 \subsubsection{}
 \label{sec:orgf3da70f}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/Tabla_Parametros.pdf}
-\end{center}
+
 
 \subsubsection{Reciprocidad}
 \label{sec:org8de0a87}
@@ -1291,24 +1210,24 @@ Además:
 \label{sec:orgf52f6e2}
 \subsubsection{}
 \label{sec:org495ece7}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
-\end{center}
+
 
 \begin{align*}
-  \mathbf{V}_1 &= \mathbf{E}_g - \mathbf{Z}_g \cdot \mathbf{I}_1\\
-  \mathbf{V}_2 &= - \mathbf{Z}_L \cdot \mathbf{I}_2\\
+  \mathbf{U}_1 &= \mathbf{E}_g - \mathbf{Z}_g \cdot \mathbf{I}_1\\
+  \mathbf{U}_2 &= - \mathbf{Z}_L \cdot \mathbf{I}_2\\
 \end{align*}
 
 \subsubsection{}
 \label{sec:orgc9420fa}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_corriente.pdf}
-\end{center}
+
 
 \begin{align*}
-  \mathbf{V}_1 &= (\mathbf{I}_g - \mathbf{I}_1) \cdot \mathbf{Z}_g\\
-  \mathbf{V}_2 &= - \mathbf{Z}_L \cdot \mathbf{I}_2\\
+  \mathbf{U}_1 &= (\mathbf{I}_g - \mathbf{I}_1) \cdot \mathbf{Z}_g\\
+  \mathbf{U}_2 &= - \mathbf{Z}_L \cdot \mathbf{I}_2\\
 \end{align*}
 
 \subsubsection{Ganancia}
@@ -1317,12 +1236,12 @@ Además:
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org1a393ee}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
-\end{center}
-\begin{center}
+
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_corriente.pdf}
-\end{center}
+
 
 
 \item \hfill{}\textsc{BMCOL}
@@ -1331,7 +1250,7 @@ Además:
 \item Ganancia de Tensión
 \end{itemize}
 \[
-\mathbf{A}_V = \frac{\mathbf{V}_2}{\mathbf{E}_g}
+\mathbf{A}_V = \frac{\mathbf{U}_2}{\mathbf{E}_g}
 \]
 \begin{itemize}
 \item Ganancia de Corriente
@@ -1346,12 +1265,12 @@ Además:
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgd9d6752}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
-\end{center}
-\begin{center}
+
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_corriente.pdf}
-\end{center}
+
 
 
 \item \hfill{}\textsc{BMCOL}
@@ -1360,14 +1279,14 @@ Además:
 \item Impedancia de Entrada
 \end{itemize}
 \[
-\mathbf{Z}_i = \frac{\mathbf{V}_1}{\mathbf{I}_1}
+\mathbf{Z}_i = \frac{\mathbf{U}_1}{\mathbf{I}_1}
 \]
 
 \begin{itemize}
 \item Impedancia de Salida
 \end{itemize}
 \[
-\mathbf{Z}_o = \left.\frac{\mathbf{V}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{E}_g = 0}
+\mathbf{Z}_o = \left.\frac{\mathbf{U}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{E}_g = 0}
 \]
 \end{enumerate}
 
@@ -1376,12 +1295,12 @@ Además:
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org6258e98}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
-\end{center}
-\begin{center}
+
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_corriente.pdf}
-\end{center}
+
 
 
 \item \hfill{}\textsc{BMCOL}
@@ -1397,7 +1316,7 @@ Además:
 \item Transimpedancia directa
 \end{itemize}
 \[
-\mathbf{Z}_f = \frac{\mathbf{V}_2}{\mathbf{I}_g}
+\mathbf{Z}_f = \frac{\mathbf{U}_2}{\mathbf{I}_g}
 \]
 \end{enumerate}
 
@@ -1410,20 +1329,47 @@ Demuestra que la impedancia de entrada del circuito a la derecha de la fuente re
 \mathbf{Z}_i = \frac{\mathbf{A} \mathbf{Z}_L + \mathbf{B}}{\mathbf{C}\mathbf{Z}_L + \mathbf{D}}
 \]
 
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_cargado_impedancia_entrada.pdf}
-\end{center}
 
 
 
-\subsubsection{Ejercicio de Cálculo (2)}
-\label{sec:org2e2860e}
 
-¿Qué impedancia de carga \(\mathbf{Z}_L\) hay que conectar a la salida del cuadripolo para obtener la máxima transferencia de potencia?
+\subsection{Impedancia de carga}
 
-\begin{center}
-\includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
-\end{center}
+\begin{minipage}{0.5\textwidth}
+  
+    \includegraphics[height=4cm]{../figs/cuadripolo_cargado_fuente_tension.pdf}
+  
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \begin{align*}
+    \mathbf{U}_1 &= \mathbf{E}_g - \mathbf{Z}_g \cdot \mathbf{I}_1\\
+    \mathbf{U}_2 &= - \mathbf{Z}_L \cdot \mathbf{I}_2\\
+  \end{align*}
+\end{minipage}
+
+\vspace{1cm}
+
+Para obtener la máxima potencia en la salida del cuadripolo, la impedancia de carga $\mathbf{Z}_L$ deberá ser igual al conjugado de la impedancia de salida del cuadripolo, $\mathbf{Z}_L = \mathbf{Z}^*_o$, definida como:
+
+\[
+  \mathbf{Z}_o = \left.\dfrac{\mathbf{U}_2}{\mathbf{I}_2}\right\rvert_{\mathbf{E}_g = 0}
+\]
+
+Esta impedancia puede calcularse con cualquiera de las familias de parámetros anteriores. Por ejemplo, con los parámetros impedancia tendremos las siguientes ecuaciones:
+
+\begin{align*}
+  \mathbf{U}_1 &= - \mathbf{Z}_g \cdot \mathbf{I}_1\\
+  \mathbf{U}_1 &= \mathbf{z}_{11} \mathbf{I}_1 + \mathbf{z}_{12} \mathbf{I}_2\\
+  \mathbf{U}_2 &= \mathbf{z}_{21} \mathbf{I}_1 + \mathbf{z}_{22} \mathbf{I}_2\\
+\end{align*}
+
+Sustituyendo la primera ecuación en la segunda, y ésta a su vez en la tercera obtenemos:
+
+\begin{equation*}
+  \mathbf{Z}_o = \mathbf{z}_{22} - \dfrac{\mathbf{z}_{12} \cdot \mathbf{z}_{21}}{\mathbf{Z}_g + \mathbf{z}_{11}}
+\end{equation*}
 
 \subsection{Parámetros Imagen}
 \label{sec:org5e458cf}
@@ -1442,9 +1388,9 @@ Para un cuadripolo \textbf{recíproco} y \textbf{simétrico} se definen los par�
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org302b662}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_impedancia_caracteristica.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgc75359e}
@@ -1484,9 +1430,9 @@ Para un cuadripolo \textbf{recíproco} y \textbf{simétrico} se definen los par�
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org884522a}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_impedancia_caracteristica.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org13d5d40}
@@ -1506,9 +1452,9 @@ Para un cuadripolo \textbf{recíproco} y \textbf{simétrico} se definen los par�
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org93db8e6}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cuadripolo_impedancia_caracteristica.pdf}
-\end{center}
+
 
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org51048e6}
@@ -1670,9 +1616,9 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgfbc403e}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/serie-serie.pdf}
-\end{center}
+
 
 
 
@@ -1682,8 +1628,8 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 \item Tensiones
 \label{sec:orgbdd8729}
 \begin{align*}
-  \mathbf{V}_1 &= \mathbf{V}_{1A} + \mathbf{V}_{1B}\\
-  \mathbf{V}_2 &= \mathbf{V}_{2A} + \mathbf{V}_{2B}
+  \mathbf{U}_1 &= \mathbf{U}_{1A} + \mathbf{U}_{1B}\\
+  \mathbf{U}_2 &= \mathbf{U}_{2A} + \mathbf{U}_{2B}
 \end{align*}
 
 \item Condición de Puerto
@@ -1702,9 +1648,9 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org213121f}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/serie-serie.pdf}
-\end{center}
+
 
 
 \item \hfill{}\textsc{BMCOL}
@@ -1713,8 +1659,8 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 \item Parámetros Impedancia
 \label{sec:orgb198b8f}
 \begin{align*}
-  [\mathbf{V}_A] &= [\mathbf{Z}_A] \cdot [\mathbf{I}_A]\\
-  [\mathbf{V}_B] &= [\mathbf{Z}_B] \cdot [\mathbf{I}_B]
+  [\mathbf{U}_A] &= [\mathbf{Z}_A] \cdot [\mathbf{I}_A]\\
+  [\mathbf{U}_B] &= [\mathbf{Z}_B] \cdot [\mathbf{I}_B]
 \end{align*}
 
 \item Cuadripolo Equivalente
@@ -1730,9 +1676,9 @@ Teniendo en cuenta la expresión de la constante de atenuación, esta relación 
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgfd071da}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-serie-interaccion.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org009a6eb}
 \begin{itemize}
@@ -1762,14 +1708,14 @@ Si no hay interacción, al aplicar superposición la corriente de circulación d
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org7b3b505}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-serie-superposicion-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgfc7026f}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-serie-superposicion-salida.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsubsection{Test de Brune}
@@ -1778,28 +1724,28 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org3157d40}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-serie-brune-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org355faf6}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-serie-brune-salida.pdf}
-\end{center}
+
 \end{enumerate}
 
 
 \subsubsection{Métodos para evitar interacción}
 \label{sec:org033b270}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/serie-serie-transformador.pdf}
-\end{center}
+
 
 \subsubsection{Métodos para evitar interacción}
 \label{sec:org7265967}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/serie-serie-corto.pdf}
-\end{center}
+
 
 \subsection{Asociación Paralelo-Paralelo}
 \label{sec:org3afa958}
@@ -1808,9 +1754,9 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org8edd165}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-paralelo.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgc8c6f3c}
 \begin{enumerate}
@@ -1837,9 +1783,9 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org0d6fdf5}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-paralelo.pdf}
-\end{center}
+
 
 
 \item \hfill{}\textsc{BMCOL}
@@ -1848,8 +1794,8 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \item Parámetros Admitancia
 \label{sec:org0aeffe8}
 \begin{align*}
-  [\mathbf{I}_A] &= [\mathbf{Y}_A] \cdot [\mathbf{V}_A]\\
-  [\mathbf{I}_B] &= [\mathbf{Y}_B] \cdot [\mathbf{V}_B]
+  [\mathbf{I}_A] &= [\mathbf{Y}_A] \cdot [\mathbf{U}_A]\\
+  [\mathbf{I}_B] &= [\mathbf{Y}_B] \cdot [\mathbf{U}_B]
 \end{align*}
 
 \item Cuadripolo Equivalente
@@ -1861,23 +1807,23 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \end{enumerate}
 \subsubsection{Interacción}
 \label{sec:orgd584cd4}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-paralelo-interaccion.pdf}
-\end{center}
+
 \subsubsection{Interacción}
 \label{sec:orgf1d8a5b}
 Si no hay interacción, al aplicar superposición la corriente de circulación debe ser nula \textbf{en ambos casos}.
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgaa86e5c}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-superposicion-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org5b95701}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-superposicion-salida.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsubsection{Test de Brune}
@@ -1886,14 +1832,14 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org951e127}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-brune-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgc2f98c6}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-brune-salida.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsubsection{Test de Brune}
@@ -1902,26 +1848,26 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orge3bd0e3}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-brune-entrada2.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org745f22c}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-paralelo-brune-salida2.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsubsection{Métodos para evitar interacción}
 \label{sec:org31cbc7e}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-paralelo-transformador.pdf}
-\end{center}
+
 \subsubsection{Métodos para evitar interacción}
 \label{sec:org3abee48}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-paralelo-corto.pdf}
-\end{center}
+
 \subsection{Asociación Serie-Paralelo}
 \label{sec:orgc44bd68}
 \subsubsection{Conexión}
@@ -1929,16 +1875,16 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgb6b388b}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/serie-paralelo.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org547d1ed}
 \begin{enumerate}
 \item Relaciones
 \label{sec:org9cf9c76}
 \begin{align*}
-  \mathbf{V}_1 &= \mathbf{V}_{1A} + \mathbf{V}_{1B}\\
+  \mathbf{U}_1 &= \mathbf{U}_{1A} + \mathbf{U}_{1B}\\
   \mathbf{I}_2 &= \mathbf{I}_{2A} + \mathbf{I}_{2B}
 \end{align*}
 
@@ -1955,14 +1901,14 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orge70fe59}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-paralelo-brune-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orgfd2f144}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/serie-paralelo-brune-salida.pdf}
-\end{center}
+
 \end{enumerate}
 
 \subsection{Asociación Paralelo-Serie}
@@ -1972,9 +1918,9 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org43cb61d}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/paralelo-serie.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orge5d2f92}
 \begin{enumerate}
@@ -1982,7 +1928,7 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \label{sec:orge6945d2}
 \begin{align*}
   \mathbf{I}_1 &= \mathbf{I}_{1A} + \mathbf{I}_{1B}\\
-  \mathbf{V}_2 &= \mathbf{V}_{2A} + \mathbf{V}_{2B}
+  \mathbf{U}_2 &= \mathbf{U}_{2A} + \mathbf{U}_{2B}
 \end{align*}
 
 \item Cuadripolo Equivalente
@@ -1999,26 +1945,26 @@ Aplicando superposición desconectamos los cuadripolos: \textbf{si no hay intera
 \begin{enumerate}
 \item \hfill{}\textsc{BMCOL}
 \label{sec:orga5560fd}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-serie-brune-entrada.pdf}
-\end{center}
+
 \item \hfill{}\textsc{BMCOL}
 \label{sec:org4d90737}
-\begin{center}
+
 \includegraphics[height=5cm]{../figs/paralelo-serie-brune-salida.pdf}
-\end{center}
+
 \end{enumerate}
 \subsection{Asociación Cascada}
 \label{sec:org0d5b08b}
 
 \subsubsection{Conexión}
 \label{sec:org41e64cd}
-\begin{center}
+
 \includegraphics[height=4cm]{../figs/cascada.pdf}
-\end{center}
+
 
 \begin{align*}
-  \mathbf{V}_{2A} &= \mathbf{V}_{1B}\\
+  \mathbf{U}_{2A} &= \mathbf{U}_{1B}\\
   \mathbf{I}'_{2A} &= \mathbf{I}_{1B}
 \end{align*}
 
