@@ -598,32 +598,28 @@ A continuación, con la entrada en cortocircuito (figura \ref{fig:medida-hibrido
 
 
 \subsection{Parámetros de Transmisión}
-\label{sec:orgd5598b8}
+El circuito de la figura \ref{fig:cuadripolo-transmision} representa un cuadripolo que actúa como elemento que transfiere una señal desde su puerto de entrada a su puerto de salida. Es importante notar que en esta representación  la corriente del puerto de salida circula de izquierda a derecha, al revés que en los circuitos anteriores. En este modelo se emplean los parámetros de transmisión, que permiten obtener la tensión y la corriente en el puerto de entrada a partir de la tensión y la corriente en el puerto de salida (ecuación \ref{eq:parametros-transmision}).
 
-\subsubsection{Definición}
-\label{sec:orgcd755d3}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-
-
-\[
-\begin{array}{l}
-  \mathbf{U}_1 = \mathbf{A} \mathbf{U}_2 + \mathbf{B}\mathbf{I'}_2\\
-  \mathbf{I}_1 = \mathbf{C} \mathbf{U}_2 + \mathbf{D} \mathbf{I'}_2\\
-\end{array}
-\]
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
+  \caption{Cuadripolo como transmisor de señales.}
+  \label{fig:cuadripolo-transmision}
+\end{figure}
 
 
-\textbf{Atención} al sentido de la corriente \(\mathbf{I'}_2\). (\(\mathbf{I'}_2 = - \mathbf{I}_2\)).
+\begin{equation}
+  \label{eq:parametros-transmision}
+  \begin{array}{l}
+    \mathbf{U}_1 = \mathbf{A} \mathbf{U}_2 + \mathbf{B}\mathbf{I'}_2\\
+    \mathbf{I}_1 = \mathbf{C} \mathbf{U}_2 + \mathbf{D} \mathbf{I'}_2\\
+  \end{array}
+\end{equation}
 
+La expresión matricial correspondiente, ecuación \ref{eq:parametros-transmision-matriz}, contiene la matriz de parámetros de transmisión:
 
-\subsubsection{Expresión Matricial}
-\label{sec:org104daf9}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-
-
-\[
+\begin{equation}
+  \label{eq:parametros-transmision-matriz}
   \left[
     \begin{array}{c}
       \mathbf{U}_1\\
@@ -642,14 +638,26 @@ A continuación, con la entrada en cortocircuito (figura \ref{fig:medida-hibrido
       \mathbf{I'}_2
     \end{array}
   \right]
-\]
+\end{equation}
 
 \subsubsection{Cálculo de parámetros}
-\label{sec:org99ce061}
 
-Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la excitación pertenecen al mismo puerto.
 
-\renewcommand{\arraystretch}{3}
+En este caso, para poder calcular o medir los parámetros no se puede proceder de la misma forma que con las familias anteriores. Tomemos como ejemplo el parámetro $\mathbf{A}$. Según la ecuación \ref{eq:parametros-transmision} será:
+
+\begin{equation}
+  \mathbf{A} = \left.\frac{\mathbf{U}_1}{\mathbf{U}_2}\right\rvert_{\mathbf{I'}_2 = 0} 
+\end{equation}
+
+Por tanto, para poder obtener este parámetro se deberá medir la tensión $\mathbf{U}_1$ alimentando el cuadripolo con una tensión a la salida, $\mathbf{U}_2$, pero sin que circule corriente en ese puerto, $\mathbf{I'}_2 = 0$. Para solventar esta dificultad, se opta por obtener el inverso de cada uno de los parámetros. En el caso de este ejemplo será:
+
+\begin{equation}
+  \frac{1}{\mathbf{A}} = \left.\frac{\mathbf{U}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0} 
+\end{equation}
+
+El cálculo consiste ahora en medir la tensión a la salida, que estará en circuito abierto, alimentando el cuadripolo con una tensión a la entrada. El conjunto de cálculos a realizar es:
+
+
 \[
   \begin{array}{cc}
     \frac{1}{\mathbf{A}} = \left.\frac{\mathbf{U}_2}{\mathbf{U}_1}\right\rvert_{\mathbf{I}_2 = 0} &
@@ -658,24 +666,6 @@ Se debe medir el inverso de cada parámetro, dado que la magnitud a medir y la e
     \frac{1}{\mathbf{D}} = \left.\frac{\mathbf{I'}_2}{\mathbf{I}_1}\right\rvert_{\mathbf{U}_2 = 0}\\
   \end{array}
 \]
-
-\begin{enumerate}
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orga42aeb3}
-
-\includegraphics[height=4cm]{../figs/cuadripolo_transmision.pdf}
-
-
-\item \hfill{}\textsc{BMCOL}
-\label{sec:orgb82d084}
-\renewcommand{\arraystretch}{1}
-\[
-\begin{array}{l}
-  \mathbf{U}_1 = \mathbf{A} \mathbf{U}_2 + \mathbf{B}\mathbf{I'}_2\\
-  \mathbf{I}_1 = \mathbf{C} \mathbf{U}_2 + \mathbf{D} \mathbf{I'}_2\\
-\end{array}
-\]
-\end{enumerate}
 
 
 \subsection{Parámetros de Transmisión Inversa}
