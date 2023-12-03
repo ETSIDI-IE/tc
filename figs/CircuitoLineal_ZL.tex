@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[european resistors, american voltages]
+  \coordinate (Ac) at (0,4);
+  \coordinate (Bc) at (0,0);
+  \coordinate (Ag) at ($(Ac) + (5,0)$);
+  \coordinate (Bg) at ($(Bc) + (5,0)$);
+  \draw [rounded corners, fill= gray!10]
+  ($(Ac) + (0, .5)$) rectangle ($(Bc) + (-3,-.5)$)
+  node[midway] {Circuito Lineal};
+  \draw
+  (Ac) to [short, -*,i = $I$] ++(1,0) node[above] {A}
+  to [short] ++(1.5,0)
+  to [R, l = $Z_L$] ($(Bc) + (2.5,0)$)
+  to [short] ++(-1.5,0) node[below] {B}
+  to [short,*-] (Bc);
+\end{circuitikz}
+
+\end{document}
