@@ -8,10 +8,10 @@
 \begin{circuitikz}[european resistors, american voltages, american currents]
   \coordinate (Ac) at (0,4);
   \coordinate (Bc) at (0,0);
-  \coordinate (Ag) at ($(Ac) + (5,0)$);
-  \coordinate (Bg) at ($(Bc) + (5,0)$);
-  \coordinate (Az) at ($(Ag) + (1, 0)$);
-  \coordinate (Bz) at ($(Bg) + (1, 0)$);
+  \coordinate (Ag) at ($(Ac) + (4.25,0)$);
+  \coordinate (Bg) at ($(Bc) + (4.25,0)$);
+  \coordinate (Az) at ($(Ag) + (1.25, 0)$);
+  \coordinate (Bz) at ($(Bg) + (1.25, 0)$);
   \node[label=A] (A) at ($(Ag) + (2,0)$) {};
   \node[label=below:B] (B) at ($(Bg) + (2,0)$) {};
   \draw [rounded corners, fill= gray!10]
@@ -19,9 +19,9 @@
   node[midway] {Circuito Lineal};
   \draw
   (Ac) to [short, -*,i = $I$] ++(1,0)
-  to [short] ++(1.5,0)
-  to [R, l = $Z_L$] ($(Bc) + (2.5,0)$)
-  to [short] ++(-1.5,0)
+  to [short] ++(1.25,0)
+  to [R, l = $Z_L$] ($(Bc) + (2.25,0)$)
+  to [short] ++(-1.25,0)
   to [short,*-] (Bc);
   \draw
   ($(Ac) + (1,0)$) node[above right] {A} to [open, v^=$U_{AB}$] ($(Bc) + (1,0)$) node[below right] {B};
@@ -29,7 +29,7 @@
   \node[label=below:B] (B) at ($(Bg) + (2,0)$) {};
   \draw
   (Bg) to [isource, l= $I_N$] (Ag)
-  (Az) to [R, l = $Z_N$] (Bz)
+  (Az) to [R, l_= $Z_N$] (Bz)
   (Ag) to [short] (Az) to [short, i = $I$] (A)
   (Bg) to [short] (Bz) to [short] (B)
   (A) to [open, *-*, v^= $U_{AB}$] (B);

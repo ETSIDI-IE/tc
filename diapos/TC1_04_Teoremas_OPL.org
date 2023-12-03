@@ -510,7 +510,7 @@ Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) .
 \]
 #+end_export
 
-*** Máxima potencia disponible}
+*** Máxima potencia disponible
 
 La máxima potencia disponible en la carga es:
 #+ATTR_LATEX: :height 0.45\textheight
