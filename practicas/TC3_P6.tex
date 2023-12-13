@@ -41,7 +41,7 @@ En la figura siguiente se representan un circuito RL y un circuito RC. En esta p
     \end{center}
   \end{minipage}
 
-\item Mediante Qucs, realiza la simulación de cada uno de los cuatro circuitos y representa el módulo y fase de la función de transferencia\footnote{En Qucs están disponibles las funciones \texttt{dB} y \texttt{phase} que calculan el módulo en decibelios y la fase de una función de transferencia, respectivamente.}. La simulación se debe realizar empleando el modo AC y un barrido de tipo logarítmico para la frecuencia, y los resultados se representan en un diagrama con el eje X logarítmico. 
+\item Mediante Qucs, realiza la simulación de cada uno de los cuatro circuitos y representa el módulo y fase de la función de transferencia\footnote{En Qucs están disponibles las funciones \texttt{dB} y \texttt{phase} que calculan el módulo en decibelios y la fase de una función de transferencia, respectivamente.}. La simulación se debe realizar empleando el modo AC y un \textbf{barrido de tipo logarítmico para la frecuencia}, y los resultados se representan en un diagrama con el eje X logarítmico. 
 
 \item En Qucs es posible modelar un cuadripolo del que se conoce una familia de parámetros. Para realizarlo, en el menú \texttt{Componentes} > \texttt{Lumped Components} elegimos el componente ``\texttt{Ecuación de componente 2-port RF}'' (al final de la lista de opciones). Editamos las propiedades y elegimos ``A'' como tipo de parámetros. Rellenamos los resultados obtenidos en el primer apartado para el circuito RL, y repetimos para el circuito RC\footnote{En Qucs se debe usar la S mayúscula. Por ejemplo, \texttt{R1 + S * L1}.}. Estas cajas se pueden interconectar entre sí para conformar los circuitos del apartado 2 y simular su funcionamiento.
 
@@ -52,5 +52,51 @@ En la figura siguiente se representan un circuito RL y un circuito RC. En esta p
 \item Compara los resultados obtenidos en los puntos 2, 3 y 4.
 
 \end{enumerate}
+
+\section*{Recordatorio}
+\begin{itemize}
+\item Los parámetros transmisión de un cuadripolo en L invertida son:
+
+  
+  \begin{minipage}{0.5\linewidth}
+    \begin{center}
+      \includegraphics[height=0.1\textheight]{../figs/circuito_P6_impedancia}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.5\linewidth}
+    \[
+      [ABCD] = \left[
+        \
+        \begin{array}{cc}
+          1 + \mathbf{Z}_1/\mathbf{Z}_2 & \mathbf{Z}_1\\
+          1/\mathbf{Z}_2 & 1
+        \end{array}
+      \right]
+    \]
+  \end{minipage}
+
+\item La función de transferencia es el inverso del parámetro A:
+
+  \[
+    H(\mathbf{s}) = 1/A(\mathbf{s})
+  \]
+
+\item Los parámetros de transmisión de una asociación de cuadripolos en cascada se calculan como producto de las matrices:
+
+  \[
+    [ABCD] = [ABCD]_1 \cdot [ABCD]_2
+  \]
+
+\item   La función de transferencia de una asociación de cuadripolos \textbf{no} se puede calcular como producto de las funciones de transferencia, porque la salida del circuito 1 no está en abierto.
+
+  \[
+    H(\mathbf{s}) \neq H_1(\mathbf{s}) \cdot H_2(\mathbf{s})
+  \]
+  Se puede obtener a partir de los parámetros de transmisión de la asociación:
+  \[
+    H(\mathbf{s}) = 1/A(\mathbf{s})
+  \]
+
+\end{itemize}
 
 \end{document}
