@@ -719,19 +719,19 @@ Se pide calcular las potencias totales $P$, $Q$ y $S$, el módulo de la corrient
 Las potencias de la carga 1:
 \begin{align*}
     P_1&=S_1\,\cos(\phi_1)=300\cdot 0.85 = 255\,kW\\
-    Q_1&=S_1\,\sin(\phi_1)=300\cdot\sin(\arccos(0.85))=158.03\,kVAr\\
+    Q_1&=S_1\,\sin(\phi_1)=300\cdot\sin(\arccos(0.85))=158.03\,kvar\\
     S_1&=300\,kVA
 \end{align*}
 y las de la carga 2:
 \begin{align*}
     P_2&=S_2\,\cos(\phi_2)=100\cdot 0.95 = 95\,kW\\
-    Q_2&=S_2\,\sin(\phi_2)=100\cdot\sin(\arccos(0.95))=-31.22\,kVAr\\
+    Q_2&=S_2\,\sin(\phi_2)=100\cdot\sin(\arccos(0.95))=-31.22\,kvar\\
     S_2&=100\,kVA
 \end{align*}
 donde $Q_2$ es negativa al tratarse de un receptor capacitivo. Aplicando T. Boucherot, se tienen las potencias de la instalación:
 \begin{align*}
     P_T&=P_1+P_2=255+95=350\,kW\\
-    Q_T&=Q_1+Q_2=158.03+(-31.22)=126.81\,kVAr\\
+    Q_T&=Q_1+Q_2=158.03+(-31.22)=126.81\,kvar\\
     \overline{S_T}&=P_T+\mathrm{j}\,Q_T=350+\mathrm{j}\,126.81 \,kVA=372.26\phase{19.9162^\circ}\,kVA
 \end{align*}
 por lo que el factor de potencia del conjunto es:
@@ -1058,7 +1058,7 @@ siendo las potencias activas y reactivas totales:
 Al ser SFD, las potencias activa y reactiva totales:
 \begin{align*}
     P_T&=W_1+W_2=700+400=1100\,W\\
-    Q_T&=\sqrt{3}(W_1-W_2)=\sqrt{3}(700-400)=519.62\,VAr
+    Q_T&=\sqrt{3}(W_1-W_2)=\sqrt{3}(700-400)=519.62\,var
 \end{align*}
 
 Con estos valores, se empieza a trabajar mediante un equivalente monofásico (de la fase $A$) del circuito trifásico original (ver Sección~\ref{sec.c_eq_mon}). Las cargas $\overline{Z_1}$ y $\overline{Z_2}$ están en paralelo, pudiéndose calcular la impedancia equivalente por fase:
@@ -1180,7 +1180,7 @@ cuya suma se comprueba que es igual a los 24 kW del enunciado.
 
 El vatímetro $W_2$ mide en realidad la potencia reactiva, en este caso dividida por $\sqrt{3}$. Dado que la potencia reactiva total es:
 \begin{equation*}
-    Q_T=P_T\,\tan(\phi)=24000\cdot\tan(36.8699)=18000 \,\text{VAr}\Rightarrow W_2=\dfrac{Q_T}{\sqrt{3}}=10392.30\,W
+    Q_T=P_T\,\tan(\phi)=24000\cdot\tan(36.8699)=18000 \,\text{var}\Rightarrow W_2=\dfrac{Q_T}{\sqrt{3}}=10392.30\,W
 \end{equation*}
 
 El vatímetro $W_4$ mide la potencia de la fase $A$. Al tratarse de un sistema equilibrado:
@@ -1191,7 +1191,7 @@ El vatímetro $W_4$ mide la potencia de la fase $A$. Al tratarse de un sistema e
 Las potencias en los bornes del generador son:
 \begin{align*}
     P_T&=P_L+P_C=3\,R_L\,I_L^2+P_C=3\cdot 1\cdot 45.58^2+24000=30232.61\,W\\
-    Q_T&=Q_L+Q_C=3\,X_L\,I_L^2+P_C=3\cdot 1\cdot 45.58^2+18000=24232.61\,VAr\\
+    Q_T&=Q_L+Q_C=3\,X_L\,I_L^2+P_C=3\cdot 1\cdot 45.58^2+18000=24232.61\,var\\
     \overline{S_T}&=P_T+\mathrm{j}Q_T=30232.61+\mathrm{j}24232.61=38745.71\phase{38.7135^\circ} VA
 \end{align*}
 por lo que la tensión del generador:
@@ -1241,15 +1241,15 @@ por lo que la tensión del generador:
 		    
 		    La potencia reactiva inicial es:
 		    \begin{equation*}
-		        Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kVAr}
+		        Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kvar}
 		    \end{equation*}
 		    La potencia reactiva una vez se tenga la batería de condensadores será: 
 		    \begin{equation*}
-		        Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kVAr}
+		        Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kvar}
 		    \end{equation*}
 		    siendo la potencia aportada por los condensadores:
 		    \begin{equation*}
-		        Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kVAr}
+		        Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kvar}
 		    \end{equation*}
 		    por lo que la capacidad a conectar en cada fase del triángulo: 
 		    \begin{equation*}

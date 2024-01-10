@@ -1,35 +1,32 @@
-% Created 2020-10-28 mié 17:21
+% Created 2024-01-10 mié 19:38
 % Intended LaTeX compiler: pdflatex
-\documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
+\documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
-\usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{listings}
 \usepackage{mathpazo}
+\usepackage[spanish]{babel}
 \usepackage{gensymb}
 \usepackage{amsmath}
 \usepackage{diffcoeff}
 \usepackage{steinmetz}
 \usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage[emulate=units]{siunitx}
-\sisetup{fraction=nice, decimalsymbol=comma, retain-unity-mantissa = false}
-\newunit{\wattpeak}{Wp}
-\newunit{\watthour}{Wh}
-\newunit{\amperehour}{Ah}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage[symbol, perpage]{footmisc}
 \newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
 \newcommand{\slp}{\mathbf{s}}
 \newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
@@ -55,15 +52,15 @@
  pdftitle={Fundamentos de Electrotecnia},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.3 (Org mode 9.4)}, 
+ pdfcreator={Emacs 29.1 (Org mode 9.6.11)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Conceptos Fundamentales}
-\label{sec:org78fb718}
-\begin{frame}[label={sec:org1c31506}]{Tensión Eléctrica}
+\label{sec:org0341f48}
+\begin{frame}[label={sec:org6b7937d}]{Tensión Eléctrica}
 El \alert{potencial eléctrico en un punto}, \(v(t)\),  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. 
 
 \begin{center}
@@ -79,7 +76,7 @@ La \alert{tensión o diferencia de potencial entre dos puntos} A y B, \(u_{AB}(t
 La \alert{unidad} de la tensión eléctrica es el \alert{voltio} (V).
 \end{frame}
 
-\begin{frame}[label={sec:org91f19e2}]{La trayectoria no importa}
+\begin{frame}[label={sec:orgcb96763}]{La trayectoria no importa}
 Dado que el campo eléctrico es \alert{conservativo}, la diferencia de potencial entre A y B \alert{no depende de la trayectoria} seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos. 
 
 \begin{center}
@@ -87,7 +84,7 @@ Dado que el campo eléctrico es \alert{conservativo}, la diferencia de potencial
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org3bf395e}]{El signo depende del sentido}
+\begin{frame}[label={sec:orge415b95}]{El signo depende del sentido}
 Aunque la trayectoria no sea relevante para el cálculo de la tensión, siempre hay que tener en cuenta el \alert{sentido del desplazamiento}. 
 
 \begin{center}
@@ -101,7 +98,7 @@ Así, si el movimiento se produce desde B hasta A obtenemos el signo contrario a
 \end{equation*}
 \end{frame}
 
-\begin{frame}[label={sec:orgfa3e2ad}]{Corriente Eléctrica}
+\begin{frame}[label={sec:orgddc8056}]{Corriente Eléctrica}
 Se define la \alert{intensidad de la corriente eléctrica} como la variación de la carga \(q(t)\) que atraviesa la sección transversal de un conductor por unidad de tiempo:
 
 \begin{equation*}
@@ -117,7 +114,7 @@ La corriente eléctrica se produce por el \alert{movimiento de los electrones li
 La \alert{unidad} de la corriente es el \alert{amperio} (A).
 \end{frame}
 
-\begin{frame}[label={sec:org823ef57}]{Potencia Eléctrica}
+\begin{frame}[label={sec:orgb8f6ca9}]{Potencia Eléctrica}
 La \alert{potencia eléctrica} es la variación del trabajo del campo eléctrico por unidad de tiempo:
 
 \begin{equation*}
@@ -134,7 +131,7 @@ Esta definición genérica puede relacionarse con las anteriores variables:
 La \alert{unidad} de la potencia eléctrica es el \alert{vatio} (W).
 \end{frame}
 
-\begin{frame}[label={sec:orgc99dd4a}]{Signo de la potencia eléctrica}
+\begin{frame}[label={sec:org60d0f09}]{Signo de la potencia eléctrica}
 Para determinar el \alert{signo de la potencia eléctrica} hay que tener en consideración los signos de las variables de las que depende, la tensión y la corriente. 
 \begin{itemize}
 \item Cuando las flechas de ambas variables tienen el \alert{mismo sentido} la potencia eléctrica es \alert{positiva}
@@ -146,7 +143,7 @@ Para determinar el \alert{signo de la potencia eléctrica} hay que tener en cons
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org0765674}]{Receptores y Generadores}
+\begin{frame}[label={sec:orgb2bca22}]{Receptores y Generadores}
 Es habitual \alert{interpretar} este resultado en términos de potencia absorbida o potencia entregada. 
 \begin{itemize}
 \item Un \alert{circuito receptor absorbe potencia} y la corriente \emph{entra} por el terminal de mayor potencial,
@@ -158,7 +155,7 @@ Es habitual \alert{interpretar} este resultado en términos de potencia absorbid
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org355140f}]{Potencia y Energía}
+\begin{frame}[label={sec:orge941b08}]{Potencia y Energía}
 \begin{description}
 \item[{Energía}] es la capacidad para realizar un trabajo.
 
@@ -173,7 +170,7 @@ Unidades W, kW
 \end{description}
 \end{frame}
 
-\begin{frame}[label={sec:orgdaae666}]{Rendimiento/Eficiencia}
+\begin{frame}[label={sec:org2d43c5c}]{Rendimiento/Eficiencia}
 Cuadripolo (entrada/salida)
 \begin{equation*}
   \eta = \frac{P_{salida}}{P_{entrada}}
@@ -196,7 +193,7 @@ Cualquier máquina tiene pérdidas:
 \end{equation*}
 \end{frame}
 
-\begin{frame}[label={sec:orgcb25d7d}]{Corriente Continua y Corriente Alterna}
+\begin{frame}[label={sec:org3aaebe5}]{Corriente Continua y Corriente Alterna}
 \begin{itemize}
 \item Corriente Continua (\(\frac{d}{dt} = 0\))
 \end{itemize}
@@ -213,11 +210,11 @@ Cualquier máquina tiene pérdidas:
 \end{frame}
 
 \section{Elementos circuitales}
-\label{sec:org1f362f8}
+\label{sec:orgc7d0d3a}
 
 \subsection{Elementos Pasivos Lineales}
-\label{sec:org87bfc8f}
-\begin{frame}[label={sec:orgca7ddae}]{Resistencia}
+\label{sec:orgd10d99d}
+\begin{frame}[label={sec:org31eafd2}]{Resistencia}
 \begin{itemize}
 \item \alert{Ley de Ohm}: una resistencia provoca una \alert{diferencia de potencial} entre sus terminales \alert{directamente proporcional} a su corriente: \alert{resistencia} (Ohmios, [\(\Omega\)])
 \end{itemize}
@@ -241,7 +238,7 @@ u(t) = R \cdot i(t)
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org8a99944}]{Resistividad}
+\begin{frame}[label={sec:org80e5ad5}]{Resistividad}
 \begin{itemize}
 \item El valor de la resistencia depende de la \alert{resistividad del material} (\(\rho\)), de la \alert{sección} (\(S\)), y de la
 longitud (\(l\)):
@@ -261,7 +258,7 @@ longitud (\(l\)):
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org806c2a2}]{Cortocircuito y Circuito Abierto}
+\begin{frame}[label={sec:org2a9a652}]{Cortocircuito y Circuito Abierto}
 \begin{itemize}
 \item Cortocircuito: resistencia nula (tensión nula)
 \end{itemize}
@@ -279,7 +276,7 @@ longitud (\(l\)):
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6815a97}]{Ley de Joule}
+\begin{frame}[label={sec:org7a807b7}]{Ley de Joule}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Resistencia.pdf}
 \end{center}
@@ -293,7 +290,7 @@ p(t)=R\cdot i^{2}(t)
 \end{frame}
 
 
-\begin{frame}[label={sec:org470cc10}]{Bobina o inductancia}
+\begin{frame}[label={sec:org066614b}]{Bobina o inductancia}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Bobina.pdf}
 \end{center}
@@ -309,7 +306,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgd973078}]{Bobina o inductancia}
+\begin{frame}[label={sec:org83747d5}]{Bobina o inductancia}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Bobina.pdf}
 \end{center}
@@ -330,7 +327,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
 \end{equation*}
 \end{frame}
 
-\begin{frame}[label={sec:orga872314}]{Condensador}
+\begin{frame}[label={sec:org51868ef}]{Condensador}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Condensador.pdf}
 \end{center}
@@ -354,7 +351,7 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 \end{frame}
 
 
-\begin{frame}[label={sec:orgde662c0}]{Condensador}
+\begin{frame}[label={sec:org0ef5165}]{Condensador}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Condensador.pdf}
 \end{center}
@@ -377,9 +374,9 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 \end{frame}
 
 \subsection{Elementos Pasivos No Lineales}
-\label{sec:org3b24854}
+\label{sec:orgb309815}
 
-\begin{frame}[label={sec:org31c95e6}]{Diodo}
+\begin{frame}[label={sec:org85e483f}]{Diodo}
 \begin{center}
 \includegraphics[height=0.15\textheight]{../figs/Diodo.pdf}
 \end{center}
@@ -394,7 +391,7 @@ corriente a través de él a partir de una tensión de polarización.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgdeb0bdf}]{Diodo}
+\begin{frame}[label={sec:orgf9e56a7}]{Diodo}
 \begin{center}
 \includegraphics[height=0.15\textheight]{../figs/Diodo.pdf}
 \end{center}
@@ -412,7 +409,7 @@ del circuito en ciertas condiciones)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org451d04f}]{Transistor}
+\begin{frame}[label={sec:org6eafd80}]{Transistor}
 \begin{center}
 \includegraphics[height=0.3\textheight]{../figs/Transistor.pdf}
 \end{center}
@@ -429,7 +426,7 @@ tercer terminal está polarizado adecuadamente.
 \end{frame}
 
 
-\begin{frame}[label={sec:org789321e}]{Transistor}
+\begin{frame}[label={sec:orga92e829}]{Transistor}
 \begin{center}
 \includegraphics[height=0.3\textheight]{../figs/Transistor.pdf}
 \end{center}
@@ -447,9 +444,9 @@ control es reproducida en la salida con mayor amplitud)
 
 
 \subsection{Elementos Activos}
-\label{sec:org2b9aaf3}
+\label{sec:orga27d73d}
 
-\begin{frame}[label={sec:org6e40c78}]{Generadores de Tensión y Corriente}
+\begin{frame}[label={sec:org0d960db}]{Generadores de Tensión y Corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -467,7 +464,7 @@ Un \alert{generador de corriente ideal} impone la corriente a la salida (\emph{l
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgeaae9fb}]{Generador Real}
+\begin{frame}[label={sec:org12aeae6}]{Generador Real}
 Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
 
 \begin{columns}
@@ -486,11 +483,11 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 
 
 \section{Leyes de Kirchhoff}
-\label{sec:orgf501413}
+\label{sec:org02fac44}
 
 \subsection{Definiciones}
-\label{sec:orgd7792c1}
-\begin{frame}[label={sec:org1223f6c}]{Ley de Kirchhoff de las Corrientes (LKC)}
+\label{sec:org7e496fb}
+\begin{frame}[label={sec:org8d05324}]{Ley de Kirchhoff de las Corrientes (LKC)}
 \begin{itemize}
 \item La \alert{LKC} es el principio de conservación de la carga aplicado a los circuitos eléctricos.
 
@@ -509,7 +506,7 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgd66df3b}]{Ley de Kirchhoff de los Voltajes (LKV)}
+\begin{frame}[label={sec:org59e4ba5}]{Ley de Kirchhoff de los Voltajes (LKV)}
 \begin{itemize}
 \item La \alert{LKV} es el principio de conservación de la energía aplicado a los circuitos eléctricos.
 
@@ -528,7 +525,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org63539c8}]{Balance de Tensiones}
+\begin{frame}[label={sec:orgbca918d}]{Balance de Tensiones}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/circuito_lkv.pdf}
 \end{center}
@@ -545,7 +542,7 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{equation*}
 \end{frame}
 
-\begin{frame}[label={sec:org610792f}]{Balance de Tensiones}
+\begin{frame}[label={sec:orgd7cd151}]{Balance de Tensiones}
 \begin{center}
 \includegraphics[height=0.3\textheight]{../figs/circuito_lkv.pdf}
 \end{center}
@@ -581,9 +578,9 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{columns}
 \end{frame}
 \subsection{Asociación de Elementos}
-\label{sec:org6cfe02e}
+\label{sec:org3755d78}
 
-\begin{frame}[label={sec:orgaf905aa}]{Conexión en serie}
+\begin{frame}[label={sec:org375a167}]{Conexión en serie}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -600,7 +597,7 @@ Un conjunto de elementos están asociados en serie cuando circula la misma corri
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org199a35b}]{Conexión en serie}
+\begin{frame}[label={sec:org32decf0}]{Conexión en serie}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -627,7 +624,7 @@ Definimos la resistencia equivalente de la conexión serie:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2ca2ea9}]{Conexión en serie de inductancias}
+\begin{frame}[label={sec:org98b2ab8}]{Conexión en serie de inductancias}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -649,7 +646,7 @@ Definimos la resistencia equivalente de la conexión serie:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org8b048ce}]{Conexión en serie de condensadores}
+\begin{frame}[label={sec:orgf619ad8}]{Conexión en serie de condensadores}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -671,7 +668,7 @@ Definimos la resistencia equivalente de la conexión serie:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc1c8ee3}]{Conexión en paralelo}
+\begin{frame}[label={sec:org4f69d6d}]{Conexión en paralelo}
 Un conjunto de elementos están asociados en paralelo cuando están sometidos a la misma diferencia de potencial.
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/AsociacionParalelo.pdf}
@@ -683,7 +680,7 @@ Un conjunto de elementos están asociados en paralelo cuando están sometidos a 
   i_3(t) &= u(t)/R_3
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org4c598f7}]{Conexión en paralelo}
+\begin{frame}[label={sec:org5b86664}]{Conexión en paralelo}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -709,7 +706,7 @@ Definimos la resistencia equivalente de la conexión paralelo:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org2d06ff0}]{Dos resistencias en paralelo}
+\begin{frame}[label={sec:orgdeed21f}]{Dos resistencias en paralelo}
 En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
 \begin{equation*}
   \frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2}
@@ -720,7 +717,7 @@ En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
 \end{equation*}
 \end{frame}
 
-\begin{frame}[label={sec:org2238230}]{Conexión en paralelo de inductancias}
+\begin{frame}[label={sec:org749a8c7}]{Conexión en paralelo de inductancias}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/BobinasParalelo.pdf}
 \end{center}
@@ -742,7 +739,7 @@ En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgb665da6}]{Conexión en paralelo de condensadores}
+\begin{frame}[label={sec:orgf1406e3}]{Conexión en paralelo de condensadores}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/CondensadoresParalelo.pdf}
 \end{center}
@@ -763,10 +760,10 @@ En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
 \end{columns}
 \end{frame}
 \section{Corriente Alterna Sinusoidal}
-\label{sec:org01f9655}
+\label{sec:org1a17dbb}
 \subsection{Conceptos Fundamentales}
-\label{sec:org94bc91e}
-\begin{frame}[label={sec:org101c8b8}]{Onda sinusoidal}
+\label{sec:orgf7b7131}
+\begin{frame}[label={sec:orgf1619a3}]{Onda sinusoidal}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/sin.pdf}
 \end{center}
@@ -788,7 +785,7 @@ y(t)=Y_{o}\cdot\sin(\omega\cdot t+\theta)
 \end{frame}
 
 
-\begin{frame}[label={sec:org9bb5f64}]{Fase}
+\begin{frame}[label={sec:org06e8294}]{Fase}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/desfase.pdf}
 \end{center}
@@ -814,7 +811,7 @@ respecto a la referencia.
 \end{frame}
 
 
-\begin{frame}[label={sec:org781daef}]{Señales en Cuadratura}
+\begin{frame}[label={sec:org326fefb}]{Señales en Cuadratura}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/cuadratura.pdf}
 \end{center}
@@ -826,7 +823,7 @@ respecto a la referencia.
 \end{frame}
 
 
-\begin{frame}[label={sec:org727cc3e}]{Valor medio y valor eficaz}
+\begin{frame}[label={sec:orgc8170f7}]{Valor medio y valor eficaz}
 \begin{block}{Valor medio}
 \[
 Y_m=\frac{1}{T}\int_{0}^{T}y(t)\, dt
@@ -848,9 +845,9 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{frame}
 
 \subsection{Cálculo Fasorial}
-\label{sec:org781d5e5}
+\label{sec:orga3886a8}
 
-\begin{frame}[label={sec:org53df350}]{Representación fasorial}
+\begin{frame}[label={sec:org94de950}]{Representación fasorial}
 \begin{itemize}
 \item Un fasor es un \alert{número complejo} que representa una señal sinusoidal para simplificar cálculos.
 \item El \alert{módulo} del fasor es el \alert{valor eficaz}. El \alert{argumento} es la \alert{fase}.
@@ -874,7 +871,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org31d3190}]{Tensión y corriente en notación fasorial}
+\begin{frame}[label={sec:org262bf15}]{Tensión y corriente en notación fasorial}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/ondasTensionCorriente.pdf}
 \end{center}
@@ -896,7 +893,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{frame}
 
 
-\begin{frame}[label={sec:org20a8476}]{Impedancia: relación entre fasores de tensión y corriente}
+\begin{frame}[label={sec:org107c8b4}]{Impedancia: relación entre fasores de tensión y corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -923,7 +920,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{frame}
 
 
-\begin{frame}[label={sec:org7d6187c}]{Impedancia Genérica}
+\begin{frame}[label={sec:org810bd41}]{Impedancia Genérica}
 \[
 \overline{Z} = R + j X
 \]
@@ -934,7 +931,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}\left(Y_{o}\cdot\sin(\omega\cdot t+\theta)\r
 \end{frame}
 
 
-\begin{frame}[label={sec:org445d211}]{Circuito Resistivo}
+\begin{frame}[label={sec:org6936797}]{Circuito Resistivo}
 Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 
 \begin{center}
@@ -967,7 +964,7 @@ Un circuito resistivo no desfasa (\alert{tensión y corriente en fase}).
 
 
 
-\begin{frame}[label={sec:org9b7daba}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:org34ec9b8}]{Circuito Inductivo puro}
 Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retrasa la corriente}.
 
 \begin{center}
@@ -999,7 +996,7 @@ Un circuito inductivo puro genera \alert{señales en cuadratura} y \alert{retras
 
 
 
-\begin{frame}[label={sec:org0a727ca}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:org3de4ee3}]{Circuito Capacitivo puro}
 Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adelanta la corriente}.
 
 \begin{center}
@@ -1029,7 +1026,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgf4fe804}]{Circuito RL (inductivo con pérdidas)}
+\begin{frame}[label={sec:org94c231d}]{Circuito RL (inductivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/inductivo.pdf}
 \end{center}
@@ -1052,7 +1049,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgb232948}]{Circuito RL (inductivo con pérdidas)}
+\begin{frame}[label={sec:org0eb4a0b}]{Circuito RL (inductivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/RL.pdf}
 \end{center}
@@ -1079,7 +1076,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:orgdb40c5f}]{Circuito RC (capacitivo con pérdidas)}
+\begin{frame}[label={sec:org96560ee}]{Circuito RC (capacitivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/capacitivo.pdf}
 \end{center}
@@ -1105,7 +1102,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:orgb79c1e6}]{Circuito RC (capacitivo con pérdidas)}
+\begin{frame}[label={sec:org3174818}]{Circuito RC (capacitivo con pérdidas)}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/RC.pdf}
 \end{center}
@@ -1134,7 +1131,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 
-\begin{frame}[label={sec:org7e38840}]{Circuito RLC serie}
+\begin{frame}[label={sec:org368dd76}]{Circuito RLC serie}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/RLC.pdf}
 \end{center}
@@ -1167,8 +1164,8 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{frame}
 
 \subsection{Potencia}
-\label{sec:orge01e2dc}
-\begin{frame}[label={sec:org4667887}]{Circuito Resistivo}
+\label{sec:org4b6fd72}
+\begin{frame}[label={sec:orgff72bde}]{Circuito Resistivo}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/resistivoPotencia.pdf}
 \end{center}
@@ -1179,7 +1176,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9d06a71}]{Circuito Inductivo puro}
+\begin{frame}[label={sec:org39f8a79}]{Circuito Inductivo puro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/inductivoPuroPotencia.pdf}
 \end{center}
@@ -1191,7 +1188,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orga5a67b3}]{Circuito Capacitivo puro}
+\begin{frame}[label={sec:org2dbc6e1}]{Circuito Capacitivo puro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/capacitivoPuroPotencia.pdf}
 \end{center}
@@ -1203,7 +1200,7 @@ Un circuito capacitivo puro genera \alert{señales en cuadratura} y \alert{adela
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6517896}]{Circuito Inductivo con pérdidas}
+\begin{frame}[label={sec:orgd3fb18b}]{Circuito Inductivo con pérdidas}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/inductivoPotencia.pdf}
 \end{center}
@@ -1214,7 +1211,7 @@ Valor medio positivo, \(P = U I \cos \theta\)
 \end{frame}
 
 
-\begin{frame}[label={sec:org081a248}]{Circuito Capacitivo con pérdidas}
+\begin{frame}[label={sec:orge8736f3}]{Circuito Capacitivo con pérdidas}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/capacitivoPotencia.pdf}
 \end{center}
@@ -1224,7 +1221,7 @@ Valor medio positivo, \(P = U I \cos \theta\)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org9d04caa}]{Triángulo de Potencias}
+\begin{frame}[label={sec:orge2a7f60}]{Triángulo de Potencias}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{itemize}
@@ -1235,7 +1232,7 @@ Valor medio positivo, \(P = U I \cos \theta\)
 \]
 
 \begin{itemize}
-\item Potencia Reactiva [\(VA_r\)]
+\item Potencia Reactiva [\(var\)]
 \end{itemize}
 \[
 \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
@@ -1251,7 +1248,7 @@ Valor medio positivo, \(P = U I \cos \theta\)
 
 \begin{column}{0.6\columnwidth}
 \begin{center}
-\includegraphics[width=.9\linewidth]{/home/oscar/github/esf/../figs/trianguloPotencias.pdf}
+\includegraphics[width=.9\linewidth]{/home/oscar/github/figs/trianguloPotencias.pdf}
 \end{center}
 
 \[
@@ -1266,7 +1263,7 @@ f.d.p. \equiv \cos(\theta)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orge389e6b}]{Potencia de elementos: Resistencia}
+\begin{frame}[label={sec:org5a6edb8}]{Potencia de elementos: Resistencia}
 \[
 \theta = 0 \Rightarrow 
 \begin{cases}
@@ -1282,7 +1279,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8e76a76}]{Potencia de elementos: Inductancia}
+\begin{frame}[label={sec:org21252b7}]{Potencia de elementos: Inductancia}
 \[
 \theta = \pi/2 \Rightarrow 
 \begin{cases}
@@ -1298,7 +1295,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org3995e2f}]{Potencia de elementos: Condensador}
+\begin{frame}[label={sec:org2feb28f}]{Potencia de elementos: Condensador}
 \[
 \theta = - \pi/2 \Rightarrow 
 \begin{cases}
@@ -1314,7 +1311,7 @@ f.d.p. \equiv \cos(\theta)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org3176ba4}]{Teorema de Boucherot}
+\begin{frame}[label={sec:org1aa831a}]{Teorema de Boucherot}
 \begin{itemize}
 \item En un circuito con múltiples elementos, la potencia aparente total es la suma de las potencias aparentes individuales.
 \end{itemize}
@@ -1334,9 +1331,9 @@ Q &= \sum_{i = 1}^n Q_i
 \end{frame}
 
 \subsection{Compensación de reactiva}
-\label{sec:org8122b1c}
+\label{sec:org43de7a0}
 
-\begin{frame}[label={sec:orge317a0b}]{Factor de potencia}
+\begin{frame}[label={sec:org2cf088c}]{Factor de potencia}
 El factor de potencia, \(\cos(\theta)\), representa la aportación de potencia activa dentro de la potencia aparente.
 \[
 P = S \cos \theta
@@ -1349,7 +1346,7 @@ Sean dos sistemas con \alert{misma tensión y potencia activa}, y factores de po
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgbedfa4d}]{Potencia Aparente}
+\begin{frame}[label={sec:org603bbe8}]{Potencia Aparente}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/Fasores_CompensacionReactiva.pdf}
 \end{center}
@@ -1361,7 +1358,7 @@ El sistema 2 requiere \alert{mayor potencia aparente} (generador mayor) para ali
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org3d9669c}]{Sección de Conductores}
+\begin{frame}[label={sec:org9d7e2ab}]{Sección de Conductores}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/Fasores_CompensacionReactiva.pdf}
 \end{center}
@@ -1372,7 +1369,7 @@ El sistema 2 requiere \alert{mayor sección} de cable para transportar la misma 
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org8945528}]{Generación Local de Reactiva}
+\begin{frame}[label={sec:org5cc29ef}]{Generación Local de Reactiva}
 \begin{itemize}
 \item Comúnmente, el factor de potencia es \alert{inductivo} (máquinas eléctricas
 industriales).
@@ -1385,7 +1382,7 @@ potencia reactiva.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgbfef1e5}]{Compensación de Reactiva con Condensadores}
+\begin{frame}[label={sec:org3faf99b}]{Compensación de Reactiva con Condensadores}
 Sea una carga de potencia activa \(P_z\), potencia reactiva \(Q_z\), factor de potencia \(\cos\theta\). Se desea \alert{mejorar el factor de potencia} a \(\cos \theta' > \cos \theta\).
 
 \begin{center}
@@ -1399,7 +1396,7 @@ Sea una carga de potencia activa \(P_z\), potencia reactiva \(Q_z\), factor de p
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org088f894}]{Cálculo de la Capacidad}
+\begin{frame}[label={sec:orgb201faa}]{Cálculo de la Capacidad}
 \begin{center}
 \includegraphics[height=0.3\textheight]{../figs/Circuito_CompensacionReactiva.pdf}
 \end{center}
@@ -1418,10 +1415,10 @@ Q'&= P_z \tan \theta'\\
 
 
 \section{Corriente Alterna Trifásica}
-\label{sec:org12ea55a}
+\label{sec:org09a3be1}
 \subsection{Introducción}
-\label{sec:org9334fd9}
-\begin{frame}[label={sec:org8786525}]{Motivación de los sistemas trifásicos}
+\label{sec:org087c2b3}
+\begin{frame}[label={sec:org630c2e4}]{Motivación de los sistemas trifásicos}
 \begin{itemize}
 \item En un sistema trifásico la potencia instantánea es constante, evitando vibraciones y esfuerzos en las máquinas. (\emph{La potencia instantánea de un sistema monofásico es pulsante.})
 
@@ -1429,7 +1426,7 @@ Q'&= P_z \tan \theta'\\
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2999e34}]{Ondas Trifásicas}
+\begin{frame}[label={sec:org9a68bc2}]{Ondas Trifásicas}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TensionesTrifasica.pdf}
 \end{center}
@@ -1441,7 +1438,7 @@ Q'&= P_z \tan \theta'\\
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org5bbc727}]{Generadores}
+\begin{frame}[label={sec:orgdeaac5f}]{Generadores}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/GeneradoresTrifasica.pdf}
 \end{center}
@@ -1465,7 +1462,7 @@ Q'&= P_z \tan \theta'\\
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgde4de01}]{Las tensiones suman 0}
+\begin{frame}[label={sec:orgcf5752b}]{Las tensiones suman 0}
 \begin{center}
 \includegraphics[height=0.6\textheight]{../figs/FasoresSumaCero.pdf}
 \end{center}
@@ -1475,7 +1472,7 @@ Q'&= P_z \tan \theta'\\
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org41700ab}]{Las tensiones suman 0}
+\begin{frame}[label={sec:org1a53ab9}]{Las tensiones suman 0}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TensionesTrifasica.pdf}
 \end{center}
@@ -1486,7 +1483,7 @@ Q'&= P_z \tan \theta'\\
 \end{frame}
 
 
-\begin{frame}[label={sec:orge92e61c}]{Tensiones de Fase y Línea}
+\begin{frame}[label={sec:org9705acc}]{Tensiones de Fase y Línea}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1520,7 +1517,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org8d43a38}]{Secuencia de Fases}
+\begin{frame}[label={sec:org1a3b36f}]{Secuencia de Fases}
 \begin{itemize}
 \item Sentido en el que ocurren los máximos de cada fase.
 \item Secuencia de Fases Directa (\alert{SFD}): ABC
@@ -1537,8 +1534,8 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 \subsection{Receptores}
-\label{sec:org546f9b1}
-\begin{frame}[label={sec:org4249eb3}]{Tipos de Receptores}
+\label{sec:orga6fffd5}
+\begin{frame}[label={sec:org978c0c6}]{Tipos de Receptores}
 \begin{block}{Conexión}
 \begin{itemize}
 \item \alert{Estrella} (punto común) Y
@@ -1555,13 +1552,13 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgef277c0}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orgf01a603}]{Receptor en Estrella Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/EstrellaEquilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org46bb63f}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:org65d3717}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1583,19 +1580,19 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org8cf819a}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:org6c50189}]{Receptor en Estrella Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/EstrellaEquilibrado_SinNeutro.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb6498f7}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:orgbc8d5a5}]{Receptor en Triángulo Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrianguloEquilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6163f25}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:orgbb89421}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1622,13 +1619,13 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org6ac1273}]{Receptor en Estrella Desequilibrado con Neutro}
+\begin{frame}[label={sec:org1fdf8a8}]{Receptor en Estrella Desequilibrado con Neutro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/EstrellaDesequilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgd128510}]{Receptor en Estrella Desequilibrado con Neutro}
+\begin{frame}[label={sec:org6b980a8}]{Receptor en Estrella Desequilibrado con Neutro}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1653,7 +1650,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org6a8bc52}]{Receptor en Estrella Desequilibrado sin Neutro}
+\begin{frame}[label={sec:orgf5413ab}]{Receptor en Estrella Desequilibrado sin Neutro}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/EstrellaDesequilibrado_SinNeutro.pdf}
 \end{center}
@@ -1662,18 +1659,18 @@ Corriente de Línea:
 \overline{U}_N \neq \overline{U}_{N'}
 \]
 \end{frame}
-\begin{frame}[label={sec:orga859baa}]{Receptor en Estrella con Carga Monofásica}
+\begin{frame}[label={sec:org1530100}]{Receptor en Estrella con Carga Monofásica}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/Estrella_CargaMonofasica.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org47555e0}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:orga5454f3}]{Receptor en Triángulo Desequilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/TrianguloDesequilibrado.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org0265388}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:orgef38a2c}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -1698,9 +1695,9 @@ Corriente de Línea:
 \end{frame}
 
 \subsection{Potencia en Sistemas Trifásicos}
-\label{sec:org5f366f6}
+\label{sec:orgdcf097e}
 
-\begin{frame}[label={sec:org3043c5a}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orgc1fcbd5}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1730,7 +1727,7 @@ Corriente de Línea:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgb1ca30c}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:org4dde852}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1759,7 +1756,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc1dff09}]{Receptor en Estrella Desequilibrado}
+\begin{frame}[label={sec:orga576b9f}]{Receptor en Estrella Desequilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1777,7 +1774,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc96d6fe}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:orgb3be01e}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -1797,9 +1794,9 @@ Corriente de Línea:
 
 
 \subsection{Compensación de Reactiva}
-\label{sec:orgd8d2538}
+\label{sec:org2c70a4e}
 
-\begin{frame}[label={sec:org1a33aa1}]{Objetivo}
+\begin{frame}[label={sec:orgc24ce48}]{Objetivo}
 \begin{itemize}
 \item Sea un receptor \alert{equilibrado} \alert{inductivo} del que conocemos \(P\), \(Q\) y, por tanto, su factor de potencia \(\cos \theta\).
 
@@ -1815,7 +1812,7 @@ Corriente de Línea:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9bebf71}]{Conexión en Triángulo}
+\begin{frame}[label={sec:org87b63b4}]{Conexión en Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1837,7 +1834,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgee6e24c}]{Conexión en Estrella}
+\begin{frame}[label={sec:org3232995}]{Conexión en Estrella}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1857,7 +1854,7 @@ Corriente de Línea:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgfde4090}]{Comparación Estrella-Triángulo}
+\begin{frame}[label={sec:orgfe742a3}]{Comparación Estrella-Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
