@@ -1152,7 +1152,7 @@ Valor medio positivo, $P = U I \cos \theta$
 \]
 #+END_EXPORT
 
-- Potencia Reactiva [$VA_r$]
+- Potencia Reactiva [$var$]
 #+BEGIN_EXPORT latex
 \[
 \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}

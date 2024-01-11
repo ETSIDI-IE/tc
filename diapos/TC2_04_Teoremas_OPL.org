@@ -354,20 +354,61 @@ Por tanto:
 
 Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de tensión* (generador de Thévenin, $\epsilon_{th}$) en *serie* con una impedancia (impedancia de Thévenin, $Z_{th}$).
 
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
  #+ATTR_LATEX: :height 0.6\textheight
-[[file:../figs/EquivalenteThevenin0.pdf]]
+[[file:../figs/CircuitoLineal_ZL.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+ #+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
 
 ** Teoremas de Thévenin/Norton
 #+BEAMER: \framesubtitle{Norton}
+
 Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituirse, desde el punto de vista de sus terminales externos AB, por una *fuente de corriente* (generador de Norton, $I_N$) en *paralelo* con una impedancia (impedancia de Norton, $Z_N$).
 
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+ #+ATTR_LATEX: :height 0.6\textheight
+[[file:../figs/CircuitoLineal_ZL.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+ATTR_LATEX: :height 0.6\textheight
 [[file:../figs/EquivalenteNorton.pdf]]
 
 ** Teoremas de Thévenin/Norton
 #+BEAMER: \framesubtitle{Cálculo del equivalente de Thévenin}
-#+ATTR_LATEX: :height 0.38\textheight
-[[file:../figs/EquivalenteThevenin0.pdf]]
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+ #+ATTR_LATEX: :height 0.38\textheight
+[[file:../figs/CircuitoLineal_ZL.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+ #+ATTR_LATEX: :height 0.38\textheight
+[[file:../figs/EquivalenteThevenin.pdf]]
+
+ 
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 
 - Circuito Abierto ($Z_L \to \infty, \quad U_{AB} = U_{oc}$)
 #+BEGIN_EXPORT latex
@@ -384,8 +425,24 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 
 ** Teoremas de Thévenin/Norton
 #+BEAMER: \framesubtitle{Cálculo del equivalente de Norton}
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+ #+ATTR_LATEX: :height 0.38\textheight
+[[file:../figs/CircuitoLineal_ZL.pdf]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+ATTR_LATEX: :height 0.38\textheight
 [[file:../figs/EquivalenteNorton.pdf]]
+
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 
 - Cortocircuito ($Z_L = 0, \quad I = I_{sc}$)
 #+BEGIN_EXPORT latex
@@ -415,7 +472,7 @@ Cualquier *red lineal* compuesta por elementos activos y pasivos puede sustituir
 Sea el circuito lineal de la figura. ¿Qué impedancia $Z_L$ hay que conectar en los terminales AB para que el circuito entregue la máxima potencia disponible?
 
 #+ATTR_LATEX: :height 0.55\textheight
-[[file:../figs/EquivalenteThevenin.pdf]]
+[[file:../figs/CircuitoLineal_ZL.pdf]]
 
 Resolvemos esta pregunta mediante el generador equivalente de Thévenin.
 
@@ -429,7 +486,7 @@ Calculamos la potencia activa en la impedancia de carga $Z_L$:
     :BEAMER_col: 0.3
     :END:
     #+ATTR_LATEX: :height 0.45\textheight
-    [[file:../figs/EquivalenteThevenin0.pdf]]
+    [[file:../figs/EquivalenteThevenin.pdf]]
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -519,7 +576,7 @@ Nuevamente, aplicamos la condición de máximo y obtenemos la resistencia:
 
 Dado un circuito lineal (del que podemos calcular su equivalente de Thévenin) ...
 #+ATTR_LATEX: :height 0.45\textheight
-[[file:../figs/EquivalenteThevenin.pdf]]
+[[file:../figs/CircuitoLineal_ZL.pdf]]
 
 ... la impedancia de carga que hay que conectar entre sus terminales AB para obtener la máxima potencia disponible es:
 #+begin_export latex
@@ -563,7 +620,7 @@ Aplicando $\diff{P_L}{R_L} = 0$ obtenemos:
 :BEAMER_col: 0.5
 :END:
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:../figs/EquivalenteThevenin0_RL.pdf]]
+[[file:../figs/EquivalenteThevenin_RL.pdf]]
 
 ***                                                                 :BMCOL:
 :PROPERTIES:

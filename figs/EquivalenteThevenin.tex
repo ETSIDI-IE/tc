@@ -6,27 +6,14 @@
 \begin{document}
 
 \begin{circuitikz}[european resistors, american voltages]
-  \coordinate (Ac) at (0,4);
-  \coordinate (Bc) at (0,0);
-  \coordinate (Ag) at ($(Ac) + (5,0)$);
-  \coordinate (Bg) at ($(Bc) + (5,0)$);
-  \draw [rounded corners, fill= gray!10]
-  ($(Ac) + (0, .5)$) rectangle ($(Bc) + (-3,-.5)$)
-  node[midway] {Circuito Lineal};
+  \coordinate (Ag) at (0,4);
+  \coordinate (Bg) at (0,0);
+  \coordinate (A) at ($(Ag) + (2,0)$) {};
+  \coordinate (B) at ($(Bg) + (2,0)$) {};
   \draw
-  (Ac) to [short, -*,i = $I$] ++(1,0)
-  to [short] ++(1.5,0)
-  to [R, l = $Z_L$] ($(Bc) + (2.5,0)$)
-  to [short] ++(-1.5,0)
-  to [short,*-] (Bc);
-  \draw
-  ($(Ac) + (1,0)$) node[above right] {A} to [open, v^=$U_{AB}$] ($(Bc) + (1,0)$) node[below right] {B};
-  \node[label=above right:A] (A) at ($(Ag) + (2,0)$) {};
-  \node[label=below right:B] (B) at ($(Bg) + (2,0)$) {};
-  \draw
-  (Ag) to [R, l_= $Z_{th}$, i^>= $I$] (A)
+  (Ag) to [R, l_= $Z_{th}$, i_>= $I$] (A) node[above]{A}
   (Ag) to [esource, v_= $\epsilon_{th}$] (Bg)
-  (Bg) to [short] (B)
+  (Bg) to [short] (B) node[below]{B}
   (A) to [open, *-*, v^= $U_{AB}$] (B);
   \draw
   (A) to [short] ++(1.5,0)
