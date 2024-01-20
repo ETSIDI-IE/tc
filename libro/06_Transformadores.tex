@@ -8,13 +8,18 @@ En la sección \ref{sec:bobina} se analizó el funcionamiento de la bobina, un d
 \subsection{Fundamentos Físicos}
 \label{sec:fisica-bobina}
 
-Según la ley de Ampere, una corriente eléctrica circulando por un conductor crea un campo magnético en torno al conductor (\emph{regla de la mano derecha}).
+Según la ley de Ampere, una corriente eléctrica circulando por un conductor crea un campo magnético en torno al conductor (figura \ref{fig:ampere}). El sentido de giro de este campo magnético se obtiene mediante la regla de la mano derecha: situando el pulgar apuntando en el sentido de la corriente (línea azul), la mano derecha abraza el conductor como si fuera el campo magnético (líneas rojas).
 
-\begin{center}
-\includegraphics[height=4cm]{../figs/Electromagnetism.png}
-\end{center}
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \includegraphics[height=4cm]{../figs/Electromagnetism.png}
+  \end{center}
+  \caption{Campo magnético creado por la corriente eléctrica que circula por un conductor.}
+  \label{fig:ampere}
+\end{figure}
 
-Por otra parte, la ley de Faraday establece que cuando un \emph{campo magnético variable}, $\vec{B}$, atraviesa una espira \emph{estática} aparece una \emph{tensión inducida} \emph{proporcional al flujo} y opuesta a su variación.
+Por otra parte, la ley de Faraday establece que cuando un \emph{campo magnético variable}, $\vec{B}$, atraviesa una espira estática aparece una tensión inducida proporcional al flujo y opuesta a su variación (figura \ref{fig:flujo-magnetico}).
 
 \[
 u(t) = \frac{\mathrm{d}\phi}{\mathrm{d}t} 
@@ -25,29 +30,35 @@ donde $\phi$ es el flujo magnético o cantidad de líneas de fuerza magnética q
 \phi = \vec{B} \cdot \vec{A} \ [\mathrm{Wb}]
 \]
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[height=4cm]{../figs/flujo_magnetico.pdf}
   \caption{Flujo magnético atravesando una superficie.}
   \label{fig:flujo-magnetico}
 \end{figure}
 
-Combinando ambas leyes podemos comprender el funcionamiento de la bobina. Una bobina es un arrollamiento de un conductor (\emph{conjunto de $N$ espiras conectadas en serie}) alrededor de un material ferromagnético:
-\begin{itemize}
-\item Al circular corriente se produce un campo magnético (\emph{ley de Ampere}).
-\item Este campo magnético atraviesa la propia bobina y produce una tensión (auto)inducida (\emph{ley de Faraday}).
-\end{itemize}
-
-Por tanto, en una bobina de $N$ espiras la tensión autoinducida es:
+Combinando ambas leyes podemos comprender el funcionamiento de la
+bobina. Una bobina es un arrollamiento de un conductor (en forma de
+conjunto de $N$ espiras conectadas en serie) alrededor de un material
+ferromagnético (figura \ref{fig:solenoide}). Al circular corriente por
+el conductor (líneas amarillas) se produce un campo magnético
+(\emph{ley de Ampere}), y este campo magnético (líneas azules)
+atraviesa la propia bobina y produce una tensión (auto)inducida
+(\emph{ley de Faraday}). Por tanto, en una bobina de $N$ espiras la
+tensión autoinducida es:
 \[
 u(t) = N \cdot \frac{\mathrm{d}\phi(t)}{\mathrm{d} t}
 \]
 
-\begin{center}
-\includegraphics[height=4cm]{../figs/Solenoide.jpg}
-\end{center}
-
-Teniendo en cuenta que en circuito magnético lineal el flujo magnético es proporcional a la corriente:
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \includegraphics[height=4cm]{../figs/Solenoide.jpg}
+  \end{center}
+  \caption{Un conductor arrollado alrededor de un material ferromagnético es una bobina.}
+  \label{fig:solenoide}
+\end{figure}
+Teniendo en cuenta que en un circuito magnético lineal el flujo magnético es proporcional a la corriente:
 \[
   \phi(t) = A \cdot i(t) \rightarrow   \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)}
 \]
@@ -65,26 +76,32 @@ y la ecuación de la bobina que utilizamos en los circuitos:
   \boxed{u(t) = L \cdot \frac{\mathrm{d}i(t)}{\mathrm{d} t}}
 \end{equation}
 
-\begin{center}
-\includegraphics[height=0.1\textheight]{../figs/Bobina.pdf}
-\end{center}
+La representación circuital de la bobina es la mostrada en la figura \ref{fig:bobina-circuito}.
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \includegraphics[height=0.1\textheight]{../figs/Bobina.pdf}
+  \end{center}
+  \caption{Representación circuital de una bobina.}
+  \label{fig:bobina-circuito}
+\end{figure}
 
 \subsection{Acoplamiento magnético}
 \label{sec:acoplamiento}
 
 Cuando dos bobinas comparten el núcleo ferromagnético, el flujo magnético producido por cada una de ellas atraviesa a la otra bobina, lo que se conoce como acoplamiento magnético (figura \ref{fig:acoplamiento}).
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[height=4cm]{../figs/acoplamientoTikz.pdf}
     \caption{Acoplamiento magnético de dos bobinas. Definición de flujos.}
   \label{fig:acoplamiento}
 \end{figure}
 
-En la figura \ref{fig:acoplamiento} se indican los siguientes flujos:
+A partir de esta figura \ref{fig:acoplamiento} se pueden definir los siguientes flujos:
 \begin{itemize}
 \item   $\phi_{ii}$: flujo producido por la bobina $i$
-\item   $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+\item   $\phi_{ij}$: flujo recibido en la bobina $i$ producido por la bobina $j$
 \item   $\phi_{i}$: flujo total que atraviesa la bobina $i$
 \item   $\phi_{di}$: flujo de dispersión de la bobina $i$, o flujo que escapa del núcleo y no contribuye al acoplamiento.
 \end{itemize}
@@ -147,7 +164,6 @@ Los coeficientes de acoplamiento y los coeficientes de inducción mutua son igua
   \end{equation}
 
   \subsection{Representación Circuital}
-  \label{sec:org1754ad3}
   Para representar un acoplamiento magnético en un circuito eléctrico
   se emplea la convención del punto, señalando con un punto los
   terminales de las bobinas por los que hay que introducir corrientes
@@ -155,34 +171,39 @@ Los coeficientes de acoplamiento y los coeficientes de inducción mutua son igua
   un terminal con punto induce una tensión positiva en el otro
   terminal con punto.
 
-  En la siguiente figura, las dos bobinas están arrolladas de forma
-  que introduciendo corrientes por los terminales superiores se
-  obtienen flujos que circulan en el mismo sentido:
-  \begin{center}
-    \includegraphics[height=4cm]{../figs/acoplamientoTikz.pdf}
-  \end{center}
-
-\begin{center}
-  \includegraphics[height=4cm]{../figs/acoplamiento_circuito.pdf}
-\end{center}
-
+  En figura \ref{fig:acoplamiento-flujo-mismo_sentido}, las dos
+  bobinas están arrolladas de forma que introduciendo corrientes por
+  los terminales superiores se obtienen flujos que circulan en el
+  mismo sentido:
+  \begin{figure}[H]
+    \centering
+    \subfloat[Acoplamiento]{\includegraphics[height=4cm]{../figs/acoplamientoTikz.pdf}}
+    \hspace{1cm}
+    \subfloat[Representación circuital]{\includegraphics[height=4cm]{../figs/acoplamiento_circuito.pdf}}
+    \caption{Acoplamiento magnético con flujos circulando en el mismo sentido.}
+    \label{fig:acoplamiento-flujo-mismo_sentido}
+  \end{figure}
+  
 Las ecuaciones circuitales de este acoplamiento son:
 \begin{align*}
   u_1(t) &= L_1 \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + M \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}\\
   u_2(t) &= M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}
 \end{align*}
 
-Por el contrario, la siguiente figura representa un acoplamiento en el
-que las bobinas están arrolladas de forma que los flujos tienen
-sentidos contrapuestos si se introduce corriente por los terminales
-superiores.
+Por el contrario, la figura
+\ref{fig:acoplamiento-flujo-sentido_opuesto} representa un
+acoplamiento en el que las bobinas están arrolladas de forma que los
+flujos tienen sentidos contrapuestos si se introduce corriente por los
+terminales superiores.
 
-\begin{center}
-  \includegraphics[height=4cm]{../figs/acoplamientoTikz_opuesto.pdf}
-\end{center}
-\begin{center}
-  \includegraphics[height=4cm]{../figs/acoplamiento_circuito_opuesto.pdf}
-\end{center}
+\begin{figure}[H]
+  \centering
+  \subfloat[Acoplamiento]{\includegraphics[height=4cm]{../figs/acoplamientoTikz_opuesto.pdf}}
+  \hspace{1cm}
+  \subfloat[Representación circuital]{\includegraphics[height=4cm]{../figs/acoplamiento_circuito_opuesto.pdf}}
+  \caption{Acoplamiento magnético con flujos circulando en sentidos opuestos.}
+  \label{fig:acoplamiento-flujo-sentido_opuesto}
+\end{figure}
 
 Las ecuaciones circuitales de este acoplamiento son:
 
@@ -640,21 +661,24 @@ En esta ecuación aplicamos un signo negativo a la corriente $I_2$ dado su senti
   \subsubsection{Transferencia de Circuitos}
 \label{sec:transferencia-circuitos}
 
-El modelo de transformador ideal permite transferir circuitos de primario a secundario y viceversa de forma sencilla. A continuación, las figuras de la izquierda representan los circuitos con transformador ideal, y las de la derecha el circuito equivalente sin transformador una vez realizada la transferencia. Todos los transformadores de estos circuitos tienen los puntos en concordancia y las corrientes en el mismo sentido. En consecuencia, los signos de todas las ecuaciones son positivos. En caso contrario, habrá que adaptar los signos como corresponda.  
+El modelo de transformador ideal permite transferir circuitos de primario a secundario y viceversa de forma sencilla. A continuación, las figuras de la izquierda representan los circuitos con transformador ideal, y las de la derecha el circuito equivalente sin transformador una vez realizada la transferencia.
+
+Todos los transformadores de estos circuitos tienen los puntos en concordancia y las corrientes en el mismo sentido. En consecuencia, los signos de todas las ecuaciones son positivos. En caso contrario, habrá que adaptar los signos como corresponda.  
+
+\pagebreak[4]
 
 \begin{itemize}
 \item Fuente de tensión ideal de secundario a primario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_VSec.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_VSec.pdf}
   \end{center}
-
   \[
     \overline{U}_1 = a \cdot \overline{U}_2 \rightarrow
     \boxed{\overline{\epsilon}_{g1} = a \cdot \overline{\epsilon}_g}
   \]
 \item Fuente de Tensión de primario a secundario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_VPrim.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_VPrim.pdf}
   \end{center}
 
   \[
@@ -663,7 +687,7 @@ El modelo de transformador ideal permite transferir circuitos de primario a secu
   \]
 \item Fuente de corriente de secundario a primario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_ISec.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_ISec.pdf}
   \end{center}
 
   \[
@@ -672,7 +696,7 @@ El modelo de transformador ideal permite transferir circuitos de primario a secu
   \]
 \item Fuente de corriente de primario a secundario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_IPrim.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_IPrim.pdf}
   \end{center}
   \[
     \overline{I}_2 = a \cdot \overline{I}_1 \rightarrow
@@ -680,7 +704,7 @@ El modelo de transformador ideal permite transferir circuitos de primario a secu
   \]
 \item Impedancia de secundario a primario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_ZSec.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_ZSec.pdf}
   \end{center}
   \[
     \left.
@@ -693,7 +717,7 @@ El modelo de transformador ideal permite transferir circuitos de primario a secu
   \]
 \item Impedancia de primario a secundario
   \begin{center}
-    \includegraphics[height=.2\textheight]{../figs/TrafoIdeal_ZPrim.pdf}
+    \includegraphics[height=.15\textheight]{../figs/TrafoIdeal_ZPrim.pdf}
   \end{center}
   \[
     \left.
