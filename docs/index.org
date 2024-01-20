@@ -32,11 +32,11 @@ bajo una licencia [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative 
   :PROPERTIES:
   :CUSTOM_ID: TC1
   :END:
-- Fundamentos: [[file:diapos/TC1_01_Fundamentos_OPL.pdf][OPL]] [[file:diapos/TC1_01_Fundamentos_LBB.pdf][LBB]] [[file:diapos/TC1_01_Fundamentos_AFG.pdf][AFG]]
-- Corriente alterna monofásica: [[file:diapos/TC1_02_Corriente_Alterna_OPL.pdf][OPL]] [[file:diapos/TC1_02_Corriente_Alterna_LBB.pdf][LBB]] [[file:diapos/TC1_02_Corriente_Alterna_AFG.pdf][AFG]]
-- Corriente alterna trifásica: [[file:diapos/TC1_03_Trifasica_OPL.pdf][OPL]] [[file:diapos/TC1_03_Trifasica_LBB.pdf][LBB]] [[file:diapos/TC1_03_Trifasica_AFG.pdf][AFG]]
-- Teoremas Generales:  [[file:diapos/TC1_04_Teoremas_OPL.pdf][OPL]] [[file:diapos/TC1_04_Teoremas_LBB.pdf][LBB]] [[file:diapos/TC1_04_Teoremas_AFG.pdf][AFG]] 
-- Régimen Transitorio: [[file:diapos/TC1_05_Transitorio_OPL.pdf][OPL]] [[file:diapos/TC1_05_Transitorio_LBB.pdf][LBB]] [[file:diapos/TC1_05_Transitorio_AFG.pdf][AFG]] 
+- Fundamentos: [[file:diapos/TC1_01_Fundamentos_OPL.pdf][OPL]] [[file:diapos/TC1_01_Fundamentos_LBB.pdf][LBB]] 
+- Corriente alterna monofásica: [[file:diapos/TC1_02_Corriente_Alterna_OPL.pdf][OPL]] [[file:diapos/TC1_02_Corriente_Alterna_LBB.pdf][LBB]] 
+- Corriente alterna trifásica: [[file:diapos/TC1_03_Trifasica_OPL.pdf][OPL]] [[file:diapos/TC1_03_Trifasica_LBB.pdf][LBB]]
+- Teoremas Generales:  [[file:diapos/TC1_04_Teoremas_OPL.pdf][OPL]] [[file:diapos/TC1_04_Teoremas_LBB.pdf][LBB]]
+- Régimen Transitorio: [[file:diapos/TC1_05_Transitorio_OPL.pdf][OPL]] [[file:diapos/TC1_05_Transitorio_LBB.pdf][LBB]]
 
 ** Teoría de Circuitos II
   :PROPERTIES:
