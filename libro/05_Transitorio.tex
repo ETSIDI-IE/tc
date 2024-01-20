@@ -64,7 +64,7 @@ o paralelo:
 
 % \begin{remark}
 %   Es importante recordar aquí el operador $D$, ya presentado en la
-%   Sección~\ref{sec.operador_D}, puesto que permite escribir las
+%   Sección~\ref{sec:operador_D}, puesto que permite escribir las
 %   ecuaciones integro-diferenciales de los circuitos de una forma más
 %   compacta (en el caso de los elementos pasivos, da lugar al
 %   concepto de impedancia operacional):
@@ -76,7 +76,7 @@ o paralelo:
 % \end{remark}
 		
 \subsection{Impedancia operacional: el operador $D$
-}\label{sec.operador_D}
+}\label{sec:operador_D}
 Las relaciones entre tensión y corriente de resistencias, bobinas y
 condensadores, pueden escribirse mediante el empleo del operador
 $D$. Este operador es equivalente a:
@@ -117,7 +117,7 @@ pasivos son:
   Y_C(D)&=\dfrac{i(t)}{u_C(t)}=CD
 \end{align*} 
 
-\section{Condiciones iniciales}\label{sec.condiciones_iniciales}
+\section{Condiciones iniciales}\label{sec:condiciones_iniciales}
 	
 El instante del cambio en el circuito se representa habitualmente con
 $t = 0$, siendo:
@@ -168,23 +168,23 @@ el instante $t=0^+$, resulta:
   i_L(0^+)=i_L(0^-)+ \dfrac{1}{L}\cancelto{0}{\int_{0^-}^{0^+} u_L(t)\, dt}
 \end{equation*}
 siempre y cuando $u_L(t)$ sea finita. Por tanto, se deduce que:
-\begin{equation}\label{eq.continuidad-bobina}
+\begin{equation}\label{eq:continuidad-bobina}
   \boxed{i_L(0^+)=i_L(0^-)}
 \end{equation}
 que representa la continuidad física de la corriente en la bobina en
 el momento de la conmutación. De la
-ecuación~\eqref{eq.continuidad-bobina} se deduce que, para el cálculo
+ecuación~\eqref{eq:continuidad-bobina} se deduce que, para el cálculo
 de los valores iniciales en un circuito, \textbf{una bobina
   inicialmente cargada (IC) se puede sustituir por una fuente ideal de
   corriente de valor $i_g=i_L(0^+)=i_L(0^-)$ en paralelo con una
   bobina descargada (ID)}, como en la
-Figura~\ref{fig.condiciones_iniciales_L}. Si la bobina está descargada
+Figura~\ref{fig:condiciones_iniciales_L}. Si la bobina está descargada
 ($i_L(0^-)=0$), se comporta inicialmente como un \textbf{circuito
   abierto}, independientemente de la tensión en sus terminales.
 \begin{figure}[H]
   \centering \includegraphics{../figs/condiciones_iniciales_L.pdf}
   \caption{Circuito equivalente de una bobina inicialmente cargada}
-  \label{fig.condiciones_iniciales_L}
+  \label{fig:condiciones_iniciales_L}
 \end{figure}
 	
 % Otra conclusión es que pueden deducirse de es el comportamiento de
@@ -212,17 +212,17 @@ instante $t=0^+$, resulta:
   u_C(0^+)=u_C(0^-)+ \dfrac{1}{C}\cancelto{0}{\int_{0^-}^{0^+} i_C(t)\, dt}
 \end{equation*}
 siempre y cuando $i_C(t)$ sea finita. Por tanto, se deduce que:
-\begin{equation}\label{eq.continuidad-condensador}
+\begin{equation}\label{eq:continuidad-condensador}
   \boxed{u_C(0^+)=u_C(0^-)}
 \end{equation}
 que representa la continuidad física de la tensión en el condensador
 en el momento de la conmutación. De la
-ecuación~\eqref{eq.continuidad-condensador} se deduce que, para el
+ecuación~\eqref{eq:continuidad-condensador} se deduce que, para el
 cálculo de los valores iniciales en un circuito, \textbf{un
   condensador inicialmente cargado (IC) se puede sustituir por una
   fuente ideal de tensión de valor $u_g=u_C(0^+)=u_C(0^-)$ en serie
   con un condensador descargado (ID)}, como en la
-Figura~\ref{fig.condiciones_iniciales_C}. Si el condensador está
+Figura~\ref{fig:condiciones_iniciales_C}. Si el condensador está
 descargado ($u_C(0^-)=0$), se comporta inicialmente como un
 \textbf{cortocircuito}, independientemente de la corriente que circule
 por el mismo.
@@ -230,12 +230,12 @@ por el mismo.
   \centering \includegraphics{../figs/condiciones_iniciales_C.pdf}
   \caption{Circuito equivalente de un condensador inicialmente
     cargado}
-  \label{fig.condiciones_iniciales_C}
+  \label{fig:condiciones_iniciales_C}
 \end{figure}
 	
 	
 \subsection{Procedimiento general para obtener las condiciones
-  iniciales} \label{sec.proc_general_ci} Cuando se desean determinar
+  iniciales} \label{sec:proc_general_ci} Cuando se desean determinar
 las condiciones iniciales de una red, deben seguirse los siguientes
 pasos:
 \begin{enumerate}
@@ -258,7 +258,7 @@ pasos:
 \end{enumerate}
 	
 \begin{example}\label{ex.condiciones_iniciales}
-  \textbf{En la red de la Figura~\ref{fig.ej_condiciones_iniciales},
+  \textbf{En la red de la Figura~\ref{fig:ej_condiciones_iniciales},
     la corriente del generador de intensidad es
     $i_g(t) = 10\,\mathrm{e}^{-2t}$ A. El interruptor se abre en
     $t = 0$, siendo los valores iniciales $i_L(0^-) = 0$ A;
@@ -267,11 +267,11 @@ pasos:
   \begin{figure}[H]
     \centering \includegraphics{../figs/ej_condiciones_iniciales.pdf}
     \caption{Ejemplo~\ref{ex.condiciones_iniciales}}
-    \label{fig.ej_condiciones_iniciales}
+    \label{fig:ej_condiciones_iniciales}
   \end{figure}
 
   Siguiendo el procedimiento general de la
-  Sección~\ref{sec.proc_general_ci}:
+  Sección~\ref{sec:proc_general_ci}:
   \begin{enumerate}
   \item Sustituir los generadores de tensión del circuito
     $\epsilon_g(t)$ por fuentes de tensión continua de valor
@@ -293,7 +293,7 @@ pasos:
     serie con una fuente de tensión de valor $-5$ V
   \end{enumerate}
   Con estas consideraciones, la red quedaría como se muestra en la
-  Figura~\ref{fig.ej_cond_iniciales_0+}. Debe destacarse que este
+  Figura~\ref{fig:ej_cond_iniciales_0+}. Debe destacarse que este
   circuito es \textbf{únicamente válido para este instante de tiempo},
   $t=0^+$. Al tratarse, además, de un circuito de corriente continua
   en este instante, el condensador descargado quedaría como un
@@ -301,7 +301,7 @@ pasos:
   \begin{figure}[H]
     \centering \includegraphics{../figs/ej_cond_iniciales_0+.pdf}
     \caption{Circuito equivalente para condiciones iniciales}
-    \label{fig.ej_cond_iniciales_0+}
+    \label{fig:ej_cond_iniciales_0+}
   \end{figure}
 	
   Con estas consideraciones, y aplicando la ley de Ohm y las leyes de
@@ -315,7 +315,7 @@ pasos:
 \end{example}
 
 	
-\section{Circuitos de primer orden}\label{sec.primer_orden}
+\section{Circuitos de primer orden}\label{sec:primer_orden}
 	
 Se estudian los circuitos cuyo modelo matemático es una ecuación
 diferencial lineal de primer orden. Físicamente, estos circuitos están
@@ -338,7 +338,7 @@ conocidas. %Así, el polinomio característico asociado a la expresión anterior
 %  \textbf{constante de tiempo} del
 %  circuito. %, que representa el tiempo que tardaría la función en alcanzar su valor final, si siguiera creciendo al mismo ritmo que en el origen.
 La solución de la ecuación homogénea ({respuesta natural}) es:
-\begin{equation}\label{eq.respuesta_natural_1}
+\begin{equation}\label{eq:respuesta_natural_1}
   \boxed{y_n(t)=K\,\mathrm{e}^{-\frac{a_0\,t}{a_1}}}
 \end{equation}
 siendo $K$ una constante de integración cuyo valor se obtiene a partir
@@ -348,17 +348,17 @@ particular, $y_{\infty}(t)$. Puesto que se tiene que:
   y(t)=y_n(t)+y_\infty(t)=K\,\mathrm{e}^{-\frac{a_0\,t}{a_1}}+y_\infty(t)
 \end{equation*}
 en el instante de tiempo $t=0^+$:
-\begin{equation}\label{eq.ecuacion_1orden}
+\begin{equation}\label{eq:ecuacion_1orden}
   y(0^+)=K+y_\infty(0^+)\Rightarrow K=y(0^+)-y_\infty(0^+)\Rightarrow \boxed{y(t)=\underbrace{\left[y(0^+)-y_\infty(0^+) \right]}_{K}\,\mathrm{e}^{-\frac{a_0\,t}{a_1}}+y_\infty(t)}
 \end{equation}
 % Según el elemento reactivo que se tenga, el valor de $\tau$ es:
 % \begin{itemize}
 % \item \textbf{Bobinas:}
-%   \begin{equation}\label{eq.tau_L}
+%   \begin{equation}\label{eq:tau_L}
 % 	        \boxed{\tau=\dfrac{L}{R_{th}}}
 % 	    \end{equation}
 %    \item \textbf{Condensadores:}
-% 	    \begin{equation}\label{eq.tau_C}
+% 	    \begin{equation}\label{eq:tau_C}
 % 	        \boxed{\tau=C\cdot R_{th}}
 % 	    \end{equation}
 %    \end{itemize}
@@ -367,13 +367,13 @@ en el instante de tiempo $t=0^+$:
 %    independientes (es decir, la resistencia de Thévenin).
 	
 \subsection{Circuito RC paralelo}
-Sea el circuito RC mostrado en la Figura~\ref{fig.transitorio_RC},
+Sea el circuito RC mostrado en la Figura~\ref{fig:transitorio_RC},
 donde se cumple que en $t = 0$ se cierra el interruptor, alimentando
 al condensador, que está descargado inicialmente.
 \begin{figure}[H]
   \centering \includegraphics{../figs/transitorio_circuitoRC.pdf}
   \caption{Análisis transitorio de un circuito RC paralelo}
-  \label{fig.transitorio_RC}
+  \label{fig:transitorio_RC}
 \end{figure}
 	
 Una vez se cierra el interruptor, por la 1LK, se cumple que:
@@ -386,19 +386,19 @@ donde, por definición:
 \end{equation*}
 Por tanto, se obtiene la ecuación de primer orden que caracteriza a
 este tipo de circuitos:
-\begin{equation}\label{eq.1orden_C}
+\begin{equation}\label{eq:1orden_C}
   \dfrac{u_C(t)}{R}+C\, u_C'(t)=\dfrac{u_C(t)}{R\,C}+u_C'(t)=\dfrac{I_0}{C}\Rightarrow \boxed{\dfrac{I_0}{C}=u_C'(t)+\dfrac{1}{R\, C}\,u_C(t)}
 \end{equation}
 	
 La solución homogénea (\textbf{respuesta natural}) de esta ecuación,
-siguiendo la expresión~\eqref{eq.respuesta_natural_1} es:
+siguiendo la expresión~\eqref{eq:respuesta_natural_1} es:
 \begin{equation}
   \boxed{u_{C,n}(t)=K\,\mathrm{e}^{-\frac{t}{R\,C}}}
 \end{equation}
 Para determinar la solución particular (\textbf{respuesta forzada}),
 se analiza el circuito con la fuente de alimentación. Al tratarse de
 corriente continua, el condensador se comporta como un circuito
-abierto (ver Sección~\ref{sec.condensador}), por lo que:
+abierto (ver Sección~\ref{sec:condensador}), por lo que:
 \begin{equation}
   \boxed{u_{C,\infty}(t)=R\cdot I_0}
 \end{equation}
@@ -414,18 +414,18 @@ de $t$ por $t=0^+$, se obtiene que:
   u_C(0^+)=0=K\,\cancelto{1}{\mathrm{e}^{-\frac{0^+}{R\,C}}}+R\cdot I_0\Rightarrow K=-R\cdot I_0
 \end{equation*}
 siendo la solución completa:
-\begin{equation}\label{eq.uc-completa-1}
+\begin{equation}\label{eq:uc-completa-1}
   u_C(t)=-R\cdot I_0\,\mathrm{e}^{-\frac{t}{R\,C}}+R\cdot I_0\Rightarrow \boxed{u_C(t) =R\cdot I_0\left(1- \mathrm{e}^{-\frac{t}{R\,C}}\right)}
 \end{equation}
 	
-Si en la expresión~\eqref{eq.uc-completa-1} se hace $t=\infty$,
+Si en la expresión~\eqref{eq:uc-completa-1} se hace $t=\infty$,
 resulta:
 \begin{equation*}
   u_C(\infty)=R\cdot I_0\left(1- \cancelto{0}{\mathrm{e}^{-\frac{\infty}{R\,C}}}\right)=R\cdot I_0
 \end{equation*}
 que es la tensión en \textbf{régimen permanente} en el
 condensador. Por tanto, la respuesta de $u_C(t)$ dada por la
-ecuación~\eqref{eq.uc-completa-1} puede considerarse como la suma de
+ecuación~\eqref{eq:uc-completa-1} puede considerarse como la suma de
 la respuesta en régimen permanente más una respuesta transitoria que
 se amortigua con el tiempo y cuya contribución a la respuesta total
 será despreciable a partir de un cierto instante (cuando haya
@@ -444,14 +444,14 @@ condensador está completamente cargado:
 
 \subsection{Circuito RL serie}
 	
-Sea el circuito RL mostrado en la Figura~\ref{fig.transitorio_RL},
+Sea el circuito RL mostrado en la Figura~\ref{fig:transitorio_RL},
 donde se cumple que en $t = 0$ se cierra el interruptor, alimentando a
 la bobina, que está descargada inicialmente. Lógicamente, una vez
 cerrado el interruptor, se cumple que $i_R(t)=i_L(t)$.
 \begin{figure}[H]
   \centering \includegraphics{../figs/transitorio_circuitoRL.pdf}
   \caption{Análisis transitorio de un circuito RL serie}
-  \label{fig.transitorio_RL}
+  \label{fig:transitorio_RL}
 \end{figure}
 	
 Una vez se cierra el interruptor, por la 2LK, se cumple que:
@@ -464,25 +464,25 @@ donde, por definición:
 \end{equation*}
 Por tanto, se obtiene la ecuación de primer orden que caracteriza a
 este tipo de circuitos:
-\begin{equation}\label{eq.1orden_L}
+\begin{equation}\label{eq:1orden_L}
   R\,i_L(t)+L\, i_L'(t)=\dfrac{R}{L}\,i_L+i_L'(t)=\dfrac{U_0}{L}\Rightarrow \boxed{\dfrac{U_0}{L}=i_L'(t)+\dfrac{R}{L}\,i_L(t)}
 \end{equation}
 	
 La solución homogénea (\textbf{respuesta natural}) de esta ecuación,
-siguiendo la expresión~\eqref{eq.respuesta_natural_1} es:
+siguiendo la expresión~\eqref{eq:respuesta_natural_1} es:
 \begin{equation}
   \boxed{i_{L,n}(t)=K\,\mathrm{e}^{-\frac{R\,t}{L}}}
 \end{equation}
 Para determinar la solución particular (\textbf{respuesta forzada}),
 se analiza el circuito con la fuente de alimentación. Al tratarse de
 corriente continua, la bobina se comporta como un cortocircuito (ver
-Sección~\ref{sec.bobina}), por lo que:
+Sección~\ref{sec:bobina}), por lo que:
 \begin{equation}
   \boxed{i_{L,\infty}(t)=\dfrac{U_0}{R}}
 \end{equation}
 Por tanto, la solución completa de la ecuación diferencial es, a falta
 de determinar $K$, es:
-\begin{equation}\label{eq.il-completa-1-sinK}
+\begin{equation}\label{eq:il-completa-1-sinK}
   i_L(t)=K\,\mathrm{e}^{-\frac{R\,t}{L}}+\dfrac{U_0}{R}
 \end{equation}
 Puesto que la bobina estaba inicialmente descargada, $i_L(0^-)=0$, por
@@ -492,7 +492,7 @@ en la solución completa el valor de $t$ por $t=0^+$, se obtiene que:
   i_L(0^+)=0=K\,\cancelto{1}{\mathrm{e}^{-\frac{R\,0^+}{L}}}+\dfrac{U_0}{R}\Rightarrow K=-\dfrac{U_0}{R}
 \end{equation*}
 siendo la solución completa:
-\begin{equation}\label{eq.il-completa-1}
+\begin{equation}\label{eq:il-completa-1}
   i_L(t)=-\dfrac{U_0}{R}\,\mathrm{e}^{-\frac{R\,t}{L}}+\dfrac{U_0}{R} \Rightarrow \boxed{i_L(t) =\dfrac{U_0}{R}\left(1- \mathrm{e}^{-\frac{R\,t}{L}}\right)}
 \end{equation}
 Al cociente $\frac{R}{L}$ se le denomina \textbf{constante de tiempo}
@@ -501,14 +501,14 @@ $\tau$:
   \boxed{\tau=\dfrac{L}{R}}
 \end{equation}
 	
-Si en la expresión~\eqref{eq.il-completa-1} se hace $t=\infty$,
+Si en la expresión~\eqref{eq:il-completa-1} se hace $t=\infty$,
 resulta:
 \begin{equation*}
   i_L(\infty) =\dfrac{U_0}{R}\left(1- \cancelto{0}{\mathrm{e}^{-\frac{R\,\infty}{L}}}\right)=\dfrac{U_0}{R}
 \end{equation*}
 que es la corriente en \textbf{régimen permanente} en la bobina. Por
 tanto, la respuesta de $i_L(t)$ dada por la
-ecuación~\eqref{eq.il-completa-1} puede considerarse como la suma de
+ecuación~\eqref{eq:il-completa-1} puede considerarse como la suma de
 la respuesta en régimen permanente más una respuesta transitoria que
 se amortigua con el tiempo y cuya contribución a la respuesta total
 será despreciable a partir de un cierto instante (cuando haya
@@ -532,21 +532,21 @@ desaparecido el régimen transitorio).
 \subsection{Procedimiento general}
 	
 Supóngase un circuito eléctrico cualquiera como se muestra en la
-Figura~\ref{fig.CE_primerorden} (C.E. es un circuito eléctrico que no
+Figura~\ref{fig:CE_primerorden} (C.E. es un circuito eléctrico que no
 contiene ningún elemento almacenador de energía), en el que se
 conectan entre los terminales $A-B$ un elemento almacenador de energía
 (condensador o bobina). Si las variables a estudiar son la tensión en
 el condensador $u_C(t)$ o la intensidad en la bobina $i_L(t)$,
 respectivamente, dicho circuito eléctrico de primer orden se puede
 convertir en los circuitos eléctricos mostrados en las Figuras
-\ref{fig.transitorio_RC} y \ref{fig.transitorio_RL}, calculando el
+\ref{fig:transitorio_RC} y \ref{fig:transitorio_RL}, calculando el
 equivalente de Norton o Thévenin de los dipolos, como se muestra en la
-Figura~\ref{fig.thevenin_1orden}.
+Figura~\ref{fig:thevenin_1orden}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\linewidth]{../figs/CE_primerorden.pdf}
   \caption{Circuito eléctrico de primer
-    orden} \label{fig.CE_primerorden}
+    orden} \label{fig:CE_primerorden}
 \end{figure}
 	
 \begin{figure}[H]
@@ -556,11 +556,11 @@ Figura~\ref{fig.thevenin_1orden}.
   Thévenin]{\includegraphics{../figs/thevenin_1orden_L.pdf}}
   \caption{Equivalentes de Norton y Thévenin para un circuito de
     primer orden}
-  \label{fig.thevenin_1orden}
+  \label{fig:thevenin_1orden}
 \end{figure}
 Por tanto, las ecuaciones diferenciales de las variables $u_C(t)$ e
-$i_L(t)$ son las dadas por las expresiones \eqref{eq.1orden_C} y
-\eqref{eq.1orden_L}, sustituyendo $I_0$ por $i_{CC}(t)$, $U_0$ por
+$i_L(t)$ son las dadas por las expresiones \eqref{eq:1orden_C} y
+\eqref{eq:1orden_L}, sustituyendo $I_0$ por $i_{CC}(t)$, $U_0$ por
 $\epsilon_{th}(t)$ y $R$ por $R_{th}$.
 	
 \begin{remark}
@@ -576,7 +576,7 @@ una red de primer orden sigue los siguientes pasos:
   \item Obtener el valor de $i_L(0^-)$ o $u_C(0^-)$
   \item Aplicar el principio de continuidad para determinar $i_L(0^+)$
     o $u_C(0^+)$ según lo indicado en la
-    Sección~\ref{sec.condiciones_iniciales}
+    Sección~\ref{sec:condiciones_iniciales}
   \end{itemize}
 \item Dibujar el circuito para \(t > 0\):
   \begin{itemize}
@@ -608,13 +608,13 @@ una red de primer orden sigue los siguientes pasos:
 \end{enumerate}
 	
 \begin{example}\label{ex.primer_orden}
-  \textbf{En el circuito de la Figura~\ref{fig.ej_transitorio_1orden},
+  \textbf{En el circuito de la Figura~\ref{fig:ej_transitorio_1orden},
     calcular la corriente $i(t)$ al cerrar el interruptor en $t = 0$
     s.}
   \begin{figure}[H]
     \centering \includegraphics{../figs/ej_transitorio_1orden.pdf}
     \caption{Ejemplo~\ref{ex.primer_orden}}
-    \label{fig.ej_transitorio_1orden}
+    \label{fig:ej_transitorio_1orden}
   \end{figure}
 	    
   \underline{Condiciones iniciales $t<0$}
@@ -674,14 +674,14 @@ una red de primer orden sigue los siguientes pasos:
 \begin{example}\label{ex.ejemplo_1orden_AC}
 	
   \textbf{El conmutador del circuito de la
-    Figura~\ref{fig.ej_transitorio_1orden_AC} pasa de la posición a 1
+    Figura~\ref{fig:ej_transitorio_1orden_AC} pasa de la posición a 1
     a la 2 en $t = 0$ s. Calcular la tensión en bornes de la bobina
     $t > 0$ s.}
 	
   \begin{figure}[H]
     \centering \includegraphics{../figs/ej_transitorio_1orden_AC.pdf}
     \caption{Ejemplo~\ref{ex.ejemplo_1orden_AC}}
-    \label{fig.ej_transitorio_1orden_AC}
+    \label{fig:ej_transitorio_1orden_AC}
   \end{figure}
 	    
   \underline{Condiciones iniciales $t<0$}
@@ -770,18 +770,18 @@ particular, obtenida al resolver la ecuación completa).
 \subsection{Circuito RLC serie}
 
 Sea el circuito RLC serie mostrado en la
-Figura~\ref{fig.transitorio_circuito_RLC_serie}, donde se cumple que
+Figura~\ref{fig:transitorio_circuito_RLC_serie}, donde se cumple que
 en $t = 0$ el interruptor cambia de posición, dejando al circuito sin
 alimentación externa.
 \begin{figure}[H]
   \centering
   \includegraphics{../figs/transitorio_circuitoRLC_serie.pdf}
   \caption{Circuito RLC serie}
-  \label{fig.transitorio_circuito_RLC_serie}
+  \label{fig:transitorio_circuito_RLC_serie}
 \end{figure}
 
 Una vez el interruptor cambia de posición, se tiene el circuito de la
-Figura~\ref{fig.transitorio_serie_t0+}, por la 2LK, se cumple que:
+Figura~\ref{fig:transitorio_serie_t0+}, por la 2LK, se cumple que:
 \[
   Ri(t) + L\diff{i(t)}{t} + \frac{1}{C}\int_{-\infty}^t i(t')
   \mathrm{d}t' = 0
@@ -801,7 +801,7 @@ A partir del polinomio característico:
   \centering
   \includegraphics{../figs/transitorio_circuitoRLC_serie_t0+.pdf}
   \caption{Circuito RLC serie en $t>0$ (respuesta natural)}
-  \label{fig.transitorio_serie_t0+}
+  \label{fig:transitorio_serie_t0+}
 \end{figure}
 
 Haciendo los cambios de variable:
@@ -845,11 +845,11 @@ circuito diferente comportamiento.
     i_n(t)=K_1\,\mathrm{e}^{\lambda_1\,t}+K_2\,\mathrm{e}^{\lambda_2\,t}   
   \end{equation*}
   con $K_1$ y $K_2$ constantes reales
-  (Figura~\ref{fig.sobreamortiguado_HKD}).
+  (Figura~\ref{fig:sobreamortiguado_HKD}).
   \begin{figure}[H]
     \centering \includegraphics{../figs/Sobreamortiguado_HKD.pdf}
     \caption{Respuesta en un circuito sobreamortiguado}
-    \label{fig.sobreamortiguado_HKD}
+    \label{fig:sobreamortiguado_HKD}
   \end{figure}
 \item \textbf{Sistema críticamente amortiguado.} Cuando $\xi=1$ (o
   $\alpha=\omega_n$), el polinomio característico tiene \textbf{una
@@ -859,12 +859,12 @@ circuito diferente comportamiento.
     i_n(t)=\mathrm{e}^{\lambda\,t}(K_1\,+K_2\,t)   
   \end{equation*}
   siendo $K_1$ y $K_2$ constantes
-  reales(Figura~\ref{fig.criticamenteamortiguado_HKD}).
+  reales(Figura~\ref{fig:criticamenteamortiguado_HKD}).
   \begin{figure}[H]
     \centering
     \includegraphics{../figs/AmortiguamientoCritico_HKD.pdf}
     \caption{Respuesta en un circuito críticamente amortiguado}
-    \label{fig.criticamenteamortiguado_HKD}
+    \label{fig:criticamenteamortiguado_HKD}
   \end{figure}
 \item \textbf{Sistema subamortiguado.} Cuando $0<\xi<1$ (o
   $\alpha<\omega_n$), el polinomio característico tiene \textbf{una
@@ -878,12 +878,12 @@ circuito diferente comportamiento.
     i_n(t)=\mathrm{e}^{-\alpha \,t}\left[K_1\,\cos(\omega_d \,t)+K_2\,\sin(\omega_d\,t) \right]
   \end{equation*}
   siendo $K_1$ y $K_2$ constantes reales
-  (Figura~\ref{fig.subamortiguado}).
+  (Figura~\ref{fig:subamortiguado}).
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{../figs/Subamortiguado_AS.pdf}
     \caption{Respuesta en un circuito subamortiguado}
-    \label{fig.subamortiguado}
+    \label{fig:subamortiguado}
   \end{figure}
 \end{itemize}
 	
@@ -897,7 +897,7 @@ condiciones iniciales:
 Para obtener valores de las derivadas en el origen, hay que resolver
 el circuito en \(t = 0^+\) empleando las condiciones de
 continuidad. Analizando el circuito de la
-Figura~\ref{fig.transitorio_serie_t0+}, se observa que las derivadas
+Figura~\ref{fig:transitorio_serie_t0+}, se observa que las derivadas
 en $t=0^+$:
 \[
   \diff{i_L(t)}{t}[t = 0^+] = \frac{1}{L} u_L(0^+)
@@ -928,18 +928,18 @@ caso concreto de este caso, no existe al no haber fuentes en $t>0$).
 \subsection{Circuito RLC paralelo}
 
 Sea el circuito RLC paralelo mostrado en la
-Figura~\ref{fig.transitorio_circuito_RLC_paralelo}, donde se cumple
+Figura~\ref{fig:transitorio_circuito_RLC_paralelo}, donde se cumple
 que en $t = 0$ el interruptor cambia de posición, dejando al circuito
 sin alimentación externa.
 \begin{figure}[H]
   \centering
   \includegraphics{../figs/transitorio_circuitoRLC_paralelo.pdf}
   \caption{Circuito RLC paralelo}
-  \label{fig.transitorio_circuito_RLC_paralelo}
+  \label{fig:transitorio_circuito_RLC_paralelo}
 \end{figure}
 
 Una vez el interruptor cambia de posición, se tiene el circuito de la
-Figura~\ref{fig.transitorio_paralelo_t0+}, por la 1LK, se cumple que:
+Figura~\ref{fig:transitorio_paralelo_t0+}, por la 1LK, se cumple que:
 \[
   \dfrac{u(t)}{R} + C\diff{u(t)}{t} + \frac{1}{L}\int_{-\infty}^t
   u(t') \mathrm{d}t' = 0
@@ -961,7 +961,7 @@ A partir del polinomio característico:
   \centering
   \includegraphics{../figs/transitorio_circuitoRLC_paralelo_t0+.pdf}
   \caption{Circuito RLC paralelo en $t>0$ (respuesta natural)}
-  \label{fig.transitorio_paralelo_t0+}
+  \label{fig:transitorio_paralelo_t0+}
 \end{figure}
 
 Haciendo los cambios de variable:
@@ -1037,7 +1037,7 @@ condiciones iniciales:
 Para obtener valores de las derivadas en el origen, hay que resolver
 el circuito en \(t = 0^+\) empleando las condiciones de
 continuidad. Analizando el circuito de la
-Figura~\ref{fig.transitorio_paralelo_t0+}, se observa que las
+Figura~\ref{fig:transitorio_paralelo_t0+}, se observa que las
 derivadas en $t=0^+$:
 \[
   \diff{u_C(t)}{t}[t = 0^+] = \frac{1}{C} i_C(0^+)
@@ -1074,11 +1074,11 @@ segundo orden sigue los siguientes pasos:
   \begin{itemize}
   \item Obtener los valores de $i_L(0^-)$ y $u_C(0^-)$
   \item Aplicar el principio de continuidad para determinar $i_L(0^+)$
-    y $u_C(0^+)$ (según Sección~\ref{sec.condiciones_iniciales})
+    y $u_C(0^+)$ (según Sección~\ref{sec:condiciones_iniciales})
   \end{itemize}
 \item Dibujar el circuito para \(t > 0\), caracterizando los elementos
   pasivos por su impedancia operacional
-  (Sección~\ref{sec.operador_D}):
+  (Sección~\ref{sec:operador_D}):
   \begin{itemize}
   \item Obtener la ecuación diferencial del sistema aplicando métodos
     de análisis generales
@@ -1089,7 +1089,7 @@ segundo orden sigue los siguientes pasos:
       a_2\,y''(t)+a_1\,y'(t)+a_0\,y(t)=0\Rightarrow {y''(t)+\dfrac{a_1}{a_2}\,y'(t)+\dfrac{a_0}{a_2}y(t)=0}
     \end{equation*}
     Haciendo los cambios de variable:
-    \begin{equation}\label{eq.xi-omega_n}
+    \begin{equation}\label{eq:xi-omega_n}
       {\dfrac{a_1}{a_0}=2\,\xi\,\omega_n}\qquad \qquad
       {\dfrac{a_0}{a_2}=\omega_n^2}
     \end{equation}
@@ -1147,7 +1147,7 @@ segundo orden sigue los siguientes pasos:
     % ($\lambda=\pm \omega_n\,\mathrm{i}$), y se dice que el sistema
     % es \textbf{no amortiguado} (u oscilante). La solución general
     % (respuesta natural), haciendo los mismos cambios que en la
-    % Sección~\ref{sec.subamortiguado}, es:
+    % Sección~\ref{sec:subamortiguado}, es:
     % \begin{equation*}
     % 	 y_g(t)=M\,\sin\left(\omega_n\,t + \theta \right)
     % \end{equation*}
@@ -1180,7 +1180,7 @@ segundo orden sigue los siguientes pasos:
 \end{enumerate}
 	
 \begin{example}\label{ex.2o_orden}
-  \textbf{El circuito de la Figura~\ref{fig.ejemplo_2orden} lleva en
+  \textbf{El circuito de la Figura~\ref{fig:ejemplo_2orden} lleva en
     la situación indicada un tiempo suficientemente grande, de forma
     que se encuentra en régimen permanente. En el instante $t=0$, se
     cierra el interruptor. Determinar la intensidad $i(t)$ para
@@ -1188,7 +1188,7 @@ segundo orden sigue los siguientes pasos:
   \begin{figure}[H]
     \centering \includegraphics{../figs/ejemplo_2orden.pdf}
     \caption{Ejemplo~\ref{ex.2o_orden}}
-    \label{fig.ejemplo_2orden}
+    \label{fig:ejemplo_2orden}
   \end{figure}
 	        
   \textbf{Cálculo de condiciones iniciales}
@@ -1205,11 +1205,11 @@ segundo orden sigue los siguientes pasos:
 	    
   Una vez se cierra el interruptor, y caracterizando los elementos
   pasivos por su impedancia operacional, se tiene el circuito de la
-  Figura~\ref{fig.ejemplo_2orden1}.
+  Figura~\ref{fig:ejemplo_2orden1}.
   \begin{figure}[H]
     \centering \includegraphics{../figs/ejemplo_2orden1.pdf}
     \caption{Circuito tras cerrar el interruptor}
-    \label{fig.ejemplo_2orden1}
+    \label{fig:ejemplo_2orden1}
   \end{figure}
 	    
   \textbf{Obtención de la ecuación diferencial}
@@ -1239,7 +1239,7 @@ segundo orden sigue los siguientes pasos:
   \begin{equation*}
     \left(4\,D^2+4\,D+1\right) i(t)=4\diff[2]{i(t)}{t}+4\diff{i(t)}{t}+1=0
   \end{equation*}
-  y considerando las expresiones de~\eqref{eq.xi-omega_n}:
+  y considerando las expresiones de~\eqref{eq:xi-omega_n}:
   \begin{align*}
     \dfrac{1}{4}&=\omega_n^2\Rightarrow \omega_n=\dfrac{1}{2}\\
     1&=2\,\xi\,\omega_n=2\,\xi\,\dfrac{1}{2}\Rightarrow \xi = 1
@@ -1269,12 +1269,12 @@ segundo orden sigue los siguientes pasos:
 	    
   Se sustituye la bobina por una fuente de intensidad de valor 0 A y
   el condensador por una fuente de tensión de 4 V, como en la
-  Figura~\ref{fig.ejemplo_2orden1}.
+  Figura~\ref{fig:ejemplo_2orden1}.
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{../figs/ejemplo_2orden2.pdf}
     \caption{Determinar las constantes de integración}
-    \label{fig.ejemplo_2orden2}
+    \label{fig:ejemplo_2orden2}
   \end{figure}
 	    
   Por tanto, la corriente en la resistencia queda determinada por las

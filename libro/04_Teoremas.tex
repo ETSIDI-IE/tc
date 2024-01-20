@@ -13,7 +13,7 @@ son tensiones e intensidades que varían con el tiempo:
 Estas funciones pueden representarse de forma gráfica o analítica. En
 ambos casos, esa relación funcional se conoce mediante el nombre de
 \textbf{forma de onda}. Las formas de onda pueden clasificarse según
-(de manera análoga a lo indicado en la Sección~\ref{sec.cc-ca}):
+(de manera análoga a lo indicado en la Sección~\ref{sec:cc-ca}):
 \begin{itemize}
 \item \textbf{Signo de la magnitud}:
   \begin{itemize}
@@ -39,7 +39,7 @@ formas de onda en escalón, rampa, pulsos y triangular.
 \subsection{Función escalón}
 Esta función vale 0 para tiempos negativos ($t<0$) y un valor
 constante $K$ para tiempos positivos ($t>0$), como se muestra en la
-Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es:
+Figura~\ref{fig:escalon}. Por tanto, su expresión matemática es:
 \begin{equation}
   \boxed{f(t) = %
     \begin{cases}
@@ -51,7 +51,7 @@ Figura~\ref{fig.escalon}. Por tanto, su expresión matemática es:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/escalon.pdf}
   \caption{Función escalón en el origen de tiempos}
-  \label{fig.escalon}
+  \label{fig:escalon}
 \end{figure}
 	
 Cuando $K = 1$, la función recibe el nombre de \textbf{escalón
@@ -64,7 +64,7 @@ y no modifica la función para $t>0$.
 \subsection{Función pulso rectangular}
 	
 Esta forma de onda es muy habitual en electrónica, y se representa en
-la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
+la Figura~\ref{fig:pulso}. Su expresión matemática viene dada por:
 \begin{equation}
   \boxed{f(t) = %
     \begin{cases}
@@ -76,13 +76,13 @@ la Figura~\ref{fig.pulso}. Su expresión matemática viene dada por:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/pulso.pdf}
   \caption{Función pulso rectangular}
-  \label{fig.pulso}
+  \label{fig:pulso}
 \end{figure}
 	
 El valor $W$ se conoce como \textbf{anchura/duración del pulso}.
 	
 \subsection{Función rampa}
-La forma de esta función es la indicada en la Figura~\ref{fig.rampa},
+La forma de esta función es la indicada en la Figura~\ref{fig:rampa},
 expresada de manera matemática de la siguiente forma:
 \begin{equation}
   \boxed{f(t) = %
@@ -94,13 +94,13 @@ expresada de manera matemática de la siguiente forma:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/rampa.pdf}
   \caption{Función rampa}
-  \label{fig.rampa}
+  \label{fig:rampa}
 \end{figure}
 El valor de $m$ es la pendiente de la rampa.
 	
 \subsection{Función triangular}
 La forma de esta función es la indicada en la
-Figura~\ref{fig.triangular}, expresada de manera matemática de la
+Figura~\ref{fig:triangular}, expresada de manera matemática de la
 siguiente forma:
 \begin{equation}
   \boxed{
@@ -115,12 +115,12 @@ siguiente forma:
 \begin{figure}[H]
   \centering \includegraphics[height=3cm]{../figs/triangular.pdf}
   \caption{Función triangular}
-  \label{fig.triangular}
+  \label{fig:triangular}
 \end{figure}
 	
 \subsection{Retraso del origen de tiempos}
 Una forma de onda puede retrasarse en el tiempo si se desplaza el eje
-de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig.retraso}
+de ordenadas en una cantidad $-t_0$. La Figura~\ref{fig:retraso}
 muestra diversos ejemplos de las formas de onda básicas.
 \begin{figure}[H]
   \centering \subfloat[Escalón
@@ -131,7 +131,7 @@ muestra diversos ejemplos de las formas de onda básicas.
   \subfloat[Triangular
   retrasada]{\includegraphics[height=3cm]{../figs/triangular_t0.pdf}}
   \caption{Formas de onda básicas retrasadas}
-  \label{fig.retraso}
+  \label{fig:retraso}
 \end{figure}
 	
 	
@@ -336,7 +336,7 @@ potencia disipada en la resistencia es:
 \end{equation*}
 En general, si la corriente tuviese más componentes, o alguna de ellas
 fuera continua, la potencia disipada por una resistencia es:
-\begin{equation}\label{eq.P_R_superposicion}
+\begin{equation}\label{eq:P_R_superposicion}
   \boxed{P_R=R\cdot\left(I_{cc}^2+I_1^2+I_2^2+...+I_n^2 \right)}
 \end{equation}
 \begin{remark}
@@ -385,7 +385,7 @@ potencia real (activa) entregada:
   =&\dfrac{1}{T}\int_0^T \cancel{2}\,E\,I_{1}\dfrac{\cos(-\theta_{i1})-\cos(2\,\omega_1\,t+\theta_{i1})}{\cancel{2}}dt =\dfrac{1}{T}\int_0^T E\,I_{1}\,{\cos(\theta_{i1})}\,dt-\dfrac{1}{T}\int_0^T E\,I_{1}\,\cancelto{0}{{\cos(2\,\omega_1+\theta_{i1})}}\,dt
 \end{align*}
 por lo que la potencia entregada por la fuente de tensión es:
-\begin{equation}\label{eq.P_E_superposicion}
+\begin{equation}\label{eq:P_E_superposicion}
   \boxed{P=E\,I_1\,\cos(\theta_{i1})}
 \end{equation}
 es decir, que a efectos de potencia, solo actúa la componente de la
@@ -408,7 +408,7 @@ entregada por el generador es:
 \end{equation*}
 integral que, al desarrollarla, incluye los mismos términos nulos que
 en los casos anteriores, por lo que el resultado es:
-\begin{equation}\label{eq.P_I_superposicion}
+\begin{equation}\label{eq:P_I_superposicion}
   \boxed{P=U_1\,I_g\,\cos(\theta_{u1})}
 \end{equation}
     
@@ -423,7 +423,7 @@ en los casos anteriores, por lo que el resultado es:
   diferente frecuencia, así como las funciones sinusoidales con
   funciones continuas. Por tanto, en los casos que aparecen en teoría
   de circuitos, las
-  expresiones~\eqref{eq.P_R_superposicion}--\eqref{eq.P_I_superposicion}
+  expresiones~\eqref{eq:P_R_superposicion}--\eqref{eq:P_I_superposicion}
   serán siempre válidas.
 \end{remark}
 
@@ -473,7 +473,7 @@ modo específico. Por tanto, resuelve el problema de sustituir una red
 compleja por un circuito equivalente más simple, evitando así cálculos
 repetitivos innecesarios.
 
-\subsubsection{Teorema de Thévenin}
+\subsection{Teorema de Thévenin}
 Enunciado por León Charles Thévenin en 1883, un ingeniero de
 telégrafos francés, este teorema dice lo siguiente: \textit{cualquier
   \textbf{red lineal} compuesta por elementos pasivos y activos
@@ -513,7 +513,7 @@ extremos ($Z_L \to \infty$ y $Z_L=0$):
   terminales externos $A-B$. Denominando $I_{sc}$ a la corriente que
   circula por este cortocircuito, debe obtenerse la misma $I_{sc}$ en
   el equivalente de Thévenin, resultando, por tanto:
-  \begin{equation}\label{eq.Zth}
+  \begin{equation}\label{eq:Zth}
     \overline{I}_{sc}=\dfrac{\overline{\epsilon}_{th}}{\overline{Z}_{th}}\Rightarrow
     \boxed{\overline{Z}_{th}=\dfrac{\overline{\epsilon}_{th}}{\overline{I}_{sc}}}
   \end{equation}
@@ -521,7 +521,7 @@ extremos ($Z_L \to \infty$ y $Z_L=0$):
     entre la tensión que da la red en vacío y la corriente de
     cortocircuito}. Si los generadores del circuito son todos
   independientes, el cálculo de la impedancia de Thévenin es más simple
-  que lo expresado en la fórmula~\eqref{eq.Zth}, y representa el
+  que lo expresado en la fórmula~\eqref{eq:Zth}, y representa el
   \textbf{valor de la impedancia que se observa entre los terminales
     $A-B$} de salida cuando se anulan los generadores internos del
   circuito (es decir, se cortocircuitan las fuentes de tensión y se
@@ -544,7 +544,7 @@ extremos ($Z_L \to \infty$ y $Z_L=0$):
 \end{itemize}
      
      
-\subsubsection{Teorema de Norton}
+\subsection{Teorema de Norton}
 Enunciado por el ingeniero estadounidense Edward Lawry Norton, de los
 Laboratorios Bell, que lo publicó en un informe interno en el año
 1926, se trata de la versión dual del teorema de Thévenin, diciendo lo
@@ -580,7 +580,7 @@ tensión de vacío ($Z_L \to \infty$) y la corriente de cortocircuito de la
 red (al igual que la impedancia de Thévenin).
 \begin{remark}
   Gracias a la equivalencia de fuentes
-  (expresión~\eqref{eq.equivalencia_fuentes}), una vez obtenido uno de
+  (expresión~\eqref{eq:equivalencia_fuentes}), una vez obtenido uno de
   los equivalentes se puede obtener el otro mediante una
   transformación.
 \end{remark}
@@ -738,14 +738,14 @@ $\left(\diffp{P_L}{X_L} = 0;\;\; \diffp{P_L}{R_L} = 0\right)$, se
 obtiene que:
 \begin{itemize}
 \item \textbf{Condición de la reactancia:}
-  \begin{equation}\label{eq.XL_maxpotencia}
+  \begin{equation}\label{eq:XL_maxpotencia}
     \diffp{P_L}{X_L} = \epsilon^2_{th} \cdot R_L \cdot \left[\frac{-1}{\left((R_L + R_{th})^2 + (X_L + X_{th})^2\right)^2} \cdot 2 \cdot (X_L + X_{th})\right]=0\Rightarrow \boxed{X_L = - X_{th}}
   \end{equation}
 \item \textbf{Condición de la resistencia:} simplificando la expresión
   de la potencia al tener en cuenta la
-  ecuación~\eqref{eq.XL_maxpotencia}, y calculando la derivada
+  ecuación~\eqref{eq:XL_maxpotencia}, y calculando la derivada
   parcial:
-  \begin{equation}\label{eq.R_maxpotencia}
+  \begin{equation}\label{eq:R_maxpotencia}
     \diffp{P_L}{R_L} = \epsilon^2_{th} \cdot \left[\frac{1}{(R_L + R_{th})^2} - 2 \cdot \frac{R_L}{(R_L + R_{th})^3}\right]= \frac{\epsilon^2_{th} \cdot (R_{th} - R_L)}{(R_L + R_{th})^3}=0\Rightarrow \boxed{R_L = R_{th}}
   \end{equation}
 \end{itemize}
@@ -765,6 +765,25 @@ siendo la máxima potencia disponible en la carga:
   \boxed{P_L = \frac{\epsilon^2_{th}}{4 R_{th}}}
 \end{equation}
 
+
+Si la impedancia de carga es resistiva pura (figura \ref{fig:thevenin-resistencia}), la potencia en la carga es:
+\begin{equation}
+  P_L = \frac{\epsilon^2_{th}}{(R_{th} + R_L)^2 + X_{th}^2} \cdot R_L
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/EquivalenteThevenin_RL.pdf}
+  \caption{Circuito equivalente de Thévenin alimentando una carga resistiva.}
+  \label{fig:thevenin-resistencia}
+\end{figure}
+
+En esta ecuación únicamente se puede aplicar la condición $\diff{P_L}{R_L} = 0$, de la que obtenemos:
+\begin{align*}
+      R_L &= |\overline{Z}_{th}| = \sqrt{R_{th}^2 + X_{th}^2}\\
+      P_L &= \frac{\epsilon^2_{th}}{2(R_L + R_{th})}
+\end{align*}
+
 \begin{remark}
   Los generadores equivalentes de Thévenin, Norton y los resultados
   del teorema de la máxima transferencia de potencia solo son válidos
@@ -775,9 +794,9 @@ siendo la máxima potencia disponible en la carga:
   \textbf{En el circuito de la Figura~\ref{fig:thevenin6}, calcular:
     \begin{itemize}
     \item La fuerza electromotriz del generador equivalente de
-      Thévenin respecto de A y B, \(\overline{\epsilon}_{th}\)
+      Thévenin respecto de A y B, $\overline{\epsilon}_{th}$
     \item La impedancia del generador equivalente de Thévenin respecto
-      de A y B, \(\overline{Z}_{th}\)
+      de A y B, $\overline{Z}_{th}$
     \item La impedancia de carga que se debe conectar entre A y B para
       conseguir la máxima potencia disponible
     \item La potencia activa entregada entre A y B cuando se conecta
@@ -866,6 +885,430 @@ impedancia de Thévenin conjugada.
 
 \end{example}
 	
+\section{\textsuperscript{TC2} Teoremas de reciprocidad y sustitución}
+\label{sec:orgaf3c617}
+
+\subsection{Teorema de reciprocidad}
+\label{sec:teorema-reciprocidad}
+
+Sea un circuito pasivo alimentado por una fuente de tensión en su entrada, y con un cortocircuito en la salida (figura \ref{fig:teorema-reciprocidad-tension1}). La corriente de cortocircuito que circula por esta rama en la salida es idéntica a la corriente que circularía si se intercambian las posiciones de la fuente y el cortocircuito (figura \ref{fig:teorema-reciprocidad-tension2}). Este resultado es consecuencia de la simetría de la matriz de impedancias de un circuito pasivo.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Fuente de tensión en la entrada]{\includegraphics[height=4cm]{../figs/TeoremaReciprocidadTension1.pdf}\label{fig:teorema-reciprocidad-tension1}}\hspace{2cm}
+  \subfloat[Fuente de tensión en la salida]{\includegraphics[height=4cm]{../figs/TeoremaReciprocidadTension2.pdf}\label{fig:teorema-reciprocidad-tension2}}
+  \caption{Teorema de reciprocidad aplicado a un circuito alimentado por una fuente de tensión.}
+  \label{fig:teorema-reciprocidad-tension}
+\end{figure}
+
+Este teorema se puede aplicar también a un circuito pasivo alimentado por una fuente de corriente en la entrada con un circuito abierto en la salida (figura \ref{fig:teorema-reciprocidad-corriente1}). En este caso, la tensión del circuito abierto será la misma si se aplica la fuente en la salida y la entrada se deja en circuito abierto (figura \ref{fig:teorema-reciprocidad-corriente2}). De forma análoga al caso anterior, el resultado es debido a la simetría de la matriz de admitancias de un circuito pasivo.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Fuente de corriente en la entrada]{\includegraphics[height=4cm]{../figs/TeoremaReciprocidadCorriente1.pdf}\label{fig:teorema-reciprocidad-corriente1}}\hspace{2cm}
+  \subfloat[Fuente de corriente en la salida]{\includegraphics[height=4cm]{../figs/TeoremaReciprocidadCorriente2.pdf}\label{fig:teorema-reciprocidad-corriente2}}
+  \caption{Teorema de reciprocidad aplicado a un circuito alimentado por una fuente de corriente.}
+  \label{fig:teorema-reciprocidad-corriente}
+\end{figure}
+
+\subsection{Teorema de sustitución}
+\label{sec:teorema-sustitucion}
+
+Sea un circuito lineal (no necesariamente pasivo) en el que una rama cualquiera tiene una impedancia $Z$ (figura \ref{fig:teorema-sustitucion0}). Esta impedancia es recorrida por una corriente $I_Z$ y tiene una tensión $U_Z$, siendo $\overline{U}_Z = \overline{Z} \cdot \overline{I}_Z$. El teorema de sustitución indica que esta impedancia puede ser sustituida por una fuente de tensión cuya fuerza electromotriz sea $\overline{Z} \cdot \overline{I}_Z$ (figura \ref{fig:teorema-sustitucion-tension}), o por una fuente de corriente cuya corriente sea $\overline{U}_Z / \overline{Z}$ (figura figura \ref{fig:teorema-sustitucion-corriente}).
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Circuito original]{\includegraphics[height=4cm]{../figs/TeoremaSustitucion0.pdf}\label{fig:teorema-sustitucion0}}\\
+  \subfloat[Sustitución con fuente de tensión]{\includegraphics[height=4cm]{../figs/TeoremaSustitucionTension.pdf}\label{fig:teorema-sustitucion-tension}}\hspace{2cm}
+  \subfloat[Sustitución con fuente de corriente]{\includegraphics[height=4cm]{../figs/TeoremaSustitucionCorriente.pdf}\label{fig:teorema-sustitucion-corriente}}
+  \caption{Teorema de sustitución.}
+  \label{fig:teorema-sustitucion}
+\end{figure}
+
+
+
+\section{\textsuperscript{TC2} Teorema de compensación}
+\label{sec:orgea27890}
+
+El teorema de compensación permite calcular la variación que se produce en la respuesta de un circuito lineal cuando se modifica una de las impedancias que lo componen. Vamos a ilustrar este teorema mediante el circuito de la figura \ref{fig:teorema-compensacion0}, en el que se analizará la variación en la corriente $I_k$ (respuesta del circuito), $\Delta I_k$, ante la modificación de la impedancia $Z$, $\Delta Z$.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/TeoremaCompensacion0.pdf}
+  \caption{Teorema de la compensación: ¿cómo varía $I_k$ ante cambios en $Z$?}
+  \label{fig:teorema-compensacion0}
+\end{figure}
+
+
+En primer lugar, separamos la impedancia modificada en dos impedancias en serie, la original, $Z$, y la modificación, $\Delta Z$. A esta última impedancia le aplicamos el teorema de sustitución, sustituyéndola por una fuente de tensión (figura \ref{fig:teorema-compensacion1}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/TeoremaCompensacion1.pdf}
+  \caption{Teorema de compensación: aplicación del teorema de sustitución.}
+  \label{fig:teorema-compensacion1}
+\end{figure}
+
+A continuación, podemos aplicar el teorema de superposición separando por una parte las fuentes presentes en el circuito y, por otra parte, la fuente resultante del teorema de sustitución, que estará conectada a un circuito pasivo (figura \ref{fig:teorema-compensacion2}). 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/TeoremaCompensacion2.pdf}
+  \caption{Teorema de compensación: aplicación del teorema de superposición.}
+  \label{fig:teorema-compensacion2}
+\end{figure}
+
+En el último circuito, se puede expresar la fuente como:
+
+\begin{equation}
+  \Delta Z \cdot (I_Z + \Delta I_Z) = \Delta Z \cdot I_Z + \Delta Z \cdot \Delta I_Z
+\end{equation}
+
+El último sumando representa la tensión en la impedancia $\Delta Z$  recorrida por la corriente de la rama, $\Delta I_z$. Esta observación nos permite volver a utilizar el teorema de sustitución (figura \ref{fig:teorema-compensacion3}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/TeoremaCompensacion3.pdf}
+  \caption{Teorema de compensación: nuevamente aplicación del teorema de sustitución.}
+  \label{fig:teorema-compensacion3}
+\end{figure}
+
+
+Este resultado nos permite establecer el siguiente procedimiento de cálculo:
+
+\begin{enumerate}
+\item Se calcula la corriente $I_z$ en el circuito original (figura \ref{fig:teorema-compensacion-paso1}).
+\item Se apagan las fuentes independientes y se sustituye la impedancia $Z$ por una impedancia de valor $Z + \Delta Z$ en serie con una fuente de tensión de valor $\Delta Z \cdot I_z$ (figura \ref{fig:teorema-compensacion-paso2}).
+\item En el circuito resultante se calcula la respuesta, $\Delta I_k$. Esta corriente es la variación de la respuesta del circuito a la modificación de la impedancia (figura \ref{fig:teorema-compensacion-paso3}).
+\end{enumerate}
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Circuito original]{\includegraphics[height=4cm]{../figs/TeoremaCompensacion_Paso1.pdf}\label{fig:teorema-compensacion-paso1}}\hspace{1cm}
+  \subfloat[Circuito de cálculo]{\includegraphics[height=4cm]{../figs/TeoremaCompensacion_Paso2.pdf}\label{fig:teorema-compensacion-paso2}}\hspace{1cm}
+  \subfloat[Circuito modificado]{\includegraphics[height=4cm]{../figs/TeoremaCompensacion_Paso3.pdf}\label{fig:teorema-compensacion-paso3}}
+  \caption{Procedimiento de cálculo del teorema de compensación.}
+  \label{fig:teorema-compensacion-procedimiento}
+\end{figure}
+
+
+
+\section{\textsuperscript{TC2} Teorema de Millman}
+\label{sec:teorema-millman}
+
+
+El Teorema de Millman permite resolver la tensión entre dos puntos A y O de una red, siendo O un punto común de un conjunto de impedancias, y siendo conocidas las tensiones entre el punto A y las impedancias (figura \ref{fig:teorema-millman})
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/Millman.pdf}
+  \caption{Teorema de Millman.}
+  \label{fig:teorema-millman}
+\end{figure}
+
+En este circuito, la tensión $u_{AO}$ es:
+\begin{equation}
+  u_{AO} = u_{Aj} + i_j/Y_j
+\end{equation}
+
+Despejando $i_j$:
+
+\begin{equation}
+  i_j = Y_j \cdot (u_{AO} - u_{Aj})
+\end{equation}
+
+En el nudo O se puede plantear la LKC:
+
+\begin{equation}
+  \sum_{j = 1}^n i_j = 0
+\end{equation}
+
+Por tanto:
+\begin{equation}
+  \sum_{j = 1}^n Y_j \cdot (u_{AO} - u_{Aj}) = 0 \rightarrow \boxed{u_{AO} = \frac{\sum_{j = 1}^n Y_j u_{Aj}}{\sum_{i = 1}^n Y_j}}
+\end{equation}
+
+Este teorema permite resolver rápidamente circuitos como el de la figura \ref{fig:teorema-millman-aplicacion}, en el que una de las impedancias no tiene un generador asociado, actuando como carga del resto del circuito:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/Millman_aplicacion.pdf}
+  \caption{Aplicación del teorema de Millman}
+  \label{fig:teorema-millman-aplicacion}
+\end{figure}
+
+En este caso, la tensión $u_{AO}$ es:
+
+\begin{equation}
+  u_{AO} = \frac{\sum_{j = 1}^5 u_{Aj}/Z_j}{{\color{red} 1/Z_L} + \sum_{i = 1}^5 1/Z_j}
+\end{equation}
+
+\section{\textsuperscript{TC2}  Teorema de Rosen}
+\label{sec:teorema-rosen}
+
+El teorema de Rosen permite transformar circuitos conectados en estrella (figura \ref{fig:teorema-rosen-estrella}) en circuitos poligonales (figura \ref{fig:teorema-rosen-poligono}):
+\begin{figure}[H]
+  \centering
+  \subfloat[Conexión en estrella]{\includegraphics[height=5cm]{../figs/Rosen_Y.pdf}\label{fig:teorema-rosen-estrella}}\hspace{2cm}
+  \subfloat[Conexión en polígono]{\includegraphics[height=5cm]{../figs/Rosen_D.pdf}\label{fig:teorema-rosen-poligono}}
+  \caption{Teorema de Rosen}
+  \label{fig:teorema-rosen}
+\end{figure}
+
+Para realizar la transformación debemos calcular las corrientes que salen por cada terminal en cada circuito. En el caso de la estrella, la corriente en cada rama es:
+\begin{equation}
+  i_j = Y_j \cdot u_{jN}
+\end{equation}
+Por su parte, la corriente de salida en conexión poligonal es:
+\begin{equation}
+  i_j = \sum_{\substack{k = 1\\k \neq j}}^n i_{kj} = \sum_{\substack{k = 1\\k \neq j}}^n u_{kj} \cdot Y_{kj} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\end{equation}
+teniendo en cuenta que $u_{kk} = 0$.
+
+Para que los dos circuitos sean equivalentes, las ecuaciones de las corrientes deben dar el mismo resultado:
+
+\begin{equation}
+  Y_j \cdot u_{jN} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\end{equation}
+
+La tensión $u_{jN}$ de la estrella se puede relacionar con las tensiones entre terminales $u_{kj}$ a través del Teorema de Millman:
+
+\begin{equation}
+  u_{jN} = \frac{\sum_{k = 1}^n u_{kj} Y_k}{\sum_{k  = 1}^n Y_k}
+\end{equation}
+
+De esta forma, la relación entre estrella y polígono queda:
+\begin{equation}
+  \frac{\sum_{k = 1}^n u_{kj} Y_k Y_j}{\sum_{k  = 1}^n Y_k} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\end{equation}
+
+Podemos simplificar esta expresión denominando $Y_Y = \sum_{k  = 1}^n Y_k$ y agrupando dentro del sumatorio:
+\begin{equation}
+  \sum_{k = 1}^n u_{kj} \frac{Y_k Y_j}{Y_Y} = \sum_{k = 1}^n u_{kj} \cdot Y_{kj}  
+\end{equation}
+
+Por tanto, las admitancias de la conexión poligonal se pueden calcular a partir de las admitancias de la estrella con la ecuación \ref{eq:teorema-rosen}:
+
+\begin{equation}
+  Y_{kj} = \frac{Y_k Y_j}{Y_Y}
+  \label{eq:teorema-rosen}
+\end{equation}
+
+Apliquemos este resultado a un ejemplo conocido, la transformación de una estrella ($n = 3$, figura \ref{fig:teorema-rosen-estrella3}) a un triángulo (figura \ref{fig:teorema-rosen-triangulo}). Sustituyendo en la ecuación anterior con las impedancias de la figura \ref{fig:teorema-rosen-aplicacion} obtenemos:
+
+\begin{align*}
+  Y_{ab} &= \frac{Y_a Y_b}{Y_a + Y_b + Y_c}\\
+  \\
+  Y_{bc} &= \frac{Y_b Y_c}{Y_a + Y_b + Y_c}\\
+  \\
+  Y_{ca} &= \frac{Y_c Y_a}{Y_a + Y_b + Y_c}\\
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Conexión en estrella ($n = 3$)]{\includegraphics[height=4cm]{../figs/Impedancia_Estrella.pdf}\label{fig:teorema-rosen-estrella3}}\hspace{2cm}
+  \subfloat[Conexión en triángulo]{\includegraphics[height=4cm]{../figs/Impedancia_Triangulo.pdf}\label{fig:teorema-rosen-triangulo}}
+  \caption{Aplicación del teorema de Rosen a una transformación estrella-triángulo.}
+  \label{fig:teorema-rosen-aplicacion}
+\end{figure}
+
+\section{\textsuperscript{TC2} Teorema de Everitt}
+\label{sec:org68c10d8}
+
+El teorema de Everitt indica que si a la entrada de un circuito no disipativo (LC) existe adaptación de impedancias (la impedancia de entrada del circuito es $\overline{Z}_g^*$), a la salida de este circuito también se produce adaptación (la impedancia de salida es $\overline{Z}_L^*$) (figura \ref{fig:teorema-everitt}). Dado que, en general, el generador y la carga no están adaptados, $\overline{Z}_L \neq \overline{Z}^*_g$, el circuito no disipativo es una red adaptadora.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/Everitt.pdf}
+  \caption{Teorema de Everitt}
+  \label{fig:teorema-everitt}
+\end{figure}
+
+
+Dado que un circuito LC no consume potencia activa, la potencia a la entrada es la potencia consumida por la carga $Z_L$ (figura \ref{fig:teorema-everitt-potencia}). Por tanto, si la potencia a la entrada es máxima (adaptación en la entrada), también lo será a la salida (adaptación a la salida).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/Everitt_potencia.pdf}
+  \caption{Teorema de Everitt: potencia a la entrada y salida.}
+  \label{fig:teorema-everitt-potencia}
+\end{figure}
+
+Este teorema también puede aplicarse a un conjunto de circuitos conectados en cascada (figura \ref{fig:teorema-everitt-cascada}). Si en una cascada de circuitos LC existe adaptación de impedancias en un punto de la cadena, existirá adaptación en cualquier punto de la misma.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=5cm]{../figs/Everitt_cascada.pdf}
+  \caption{Teorema de Everitt aplicado a una conexión en cascada.}
+  \label{fig:teorema-everitt-cascada}
+\end{figure}
+
+
+\subsection{Diseño de redes adaptadoras}
+\label{sec:everitt-diseño}
+
+Una aplicación de este teorema es el diseño de redes adaptadoras
+pasivas, para lo que emplearemos configuraciones en $\Gamma$ o
+\reflectbox{$\Gamma$} compuestas por dos elementos reactivos (figura
+\ref{fig:teorema-everitt-redes}):
+
+\begin{figure}[H]
+  \centering \includegraphics[height=5cm]{../figs/Everitt_LC.pdf}
+  \caption{Redes adaptadoras pasivas en $\Gamma$ o
+    \reflectbox{$\Gamma$}.}
+  \label{fig:teorema-everitt-redes}
+\end{figure}
+
+El diseño de estas redes consiste en determinar los valores adecuados
+de la inductancia y la capacidad para conseguir la adaptación de
+impedancias. Es posible demostrar que, para obtener soluciones, la red
+debe diseñarse con el elemento paralelo en el extremo de la impedancia
+que tenga la parte real mayor. Cuando $R_g > R_L$, se optará por el
+circuito de la figura \ref{fig:teorema-everitt-RG}, mientras que el
+circuito de la figura \ref{fig:teorema-everitt-RL} será el adecuado
+cuando $R_L > Rg$.
+
+\begin{figure}[H]
+  \centering \subfloat[Circuito adecuado para
+  $R_g >
+  R_L$]{\includegraphics[height=4cm]{../figs/Everitt_XY2.pdf}\label{fig:teorema-everitt-RG}}\hspace{2cm}
+  \subfloat[Circuito adecuado para
+  $R_L >
+  R_g$]{\includegraphics[height=4cm]{../figs/Everitt_XY1.pdf}\label{fig:teorema-everitt-RL}}
+  \caption{Elección de la red adaptadora en función de la relación
+    entre $R_L$ y $R_g$.}
+  \label{fig:teorema-everitt-RLRG}
+\end{figure}
+
+
+Cuando $R_g > R_L$ la condición de adaptación se establece en la
+salida de la red:
+\begin{equation}
+  \overline{Z}^*_L = jX + (jY || \overline{Z}_g) 
+\end{equation}
+Esta ecuación puede desdoblarse en otras dos:
+\begin{align}
+  R_L &= \Re\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)\\
+  X_L &= -X - \Im\left(\frac{jY \cdot \overline{Z}_g}{jY + \overline{Z}_g}\right)
+\end{align}
+
+Cuando $R_L > R_g$ la condición de adaptación se establece en la
+entrada de la red:
+
+\begin{equation}
+  \overline{Z}^*_g = jX + (jY || \overline{Z}_L) 
+\end{equation}
+ecuación que, nuevamente, se desdobla en otras dos:
+\begin{align}
+  R_g &= \Re\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)\\
+  X_g &= -X - \Im\left(\frac{jY \cdot \overline{Z}_L}{jY + \overline{Z}_L}\right)
+\end{align}
+
+La resolución del sistema de ecuaciones en un caso o en otro
+proporcionará los valores de $X$ e $Y$, que corresponden a las
+reactancias de los elementos circuitales que componen la red
+adaptadora (figura \ref{fig:teorema-everitt-redes}). Para obtener los
+valores de inductancia y capacidad de los elementos a partir de estas
+reactancias, será necesario recurrir a un valor de pulsación o
+frecuencia. Por tanto, la adaptación conseguida con la bobina y el
+condensador resultantes es selectiva, es decir, se produce para la
+pulsación o frecuencia que se ha tenido en cuenta en el
+cálculo. Cuando varíe la frecuencia del circuito dejará de haber
+adaptación.
+
+\subsection{Pérdidas de transmisión e inserción}
+\label{sec:everitt-perdidas}
+
+La inserción de una red dentro de un circuito existente modifica el
+funcionamiento de este circuito y puede ocasionar pérdida o ganancia
+en las señales de tensión, corriente y potencia en la inserción. Para
+cuantificar estas variaciones se calcula la ratio entre los dos
+niveles de la magnitud en estudio.
+
+Frecuentemente el cálculo se efectúa en unidades logarítmicas. Sean
+$x_1$ y $x_2$ los dos niveles de la magnitud $x$ de interés. La
+expresión \ref{eq:decibelio} cuantifica la ganancia de $x$ (ratio de
+$x_2$ frente a $x_1$) en decibelios:
+
+\begin{equation}
+  \label{eq:decibelio}
+  G_X = 10 \log \frac{x_2}{x_1}
+\end{equation}
+
+Cuando se trata de una ganancia, $x_2 > x_1$, será
+$G_X > \qty{0}{\decibel}$. Por el contrario, cuando se trate de una
+pérdida, $x_2 < x_1$, obtendremos $G_X < \qty{0}{\decibel}$. Por
+ejemplo, el valor $G_X = \qty{3}{\decibel}$ implica que
+$x_2 = 2 \cdot x_1$, mientras que si $G_X = - \qty{3}{\decibel}$, será
+$x_2 = 1/2 \cdot x_1$, y cuando $x_2 = x_1$, la ganancia es nula,
+$G_X = \qty{0}{\decibel}$,
+
+En circuitos eléctricos se emplea esta unidad para la ganancia de
+potencia (ecuación \ref{eq:ganancia-potencia}). También puede
+emplearse para la ganancia de tensión o de corriente, aunque en este
+caso la ecuación debe modificarse para tener en cuenta la relación
+cuadrática entre estas magnitudes y la potencia (ecuación
+\ref{eq:ganancia-tension}).
+
+\begin{align}
+  G_{dB} = 10 \log G &= 10 \log \frac{P_2}{P_1} \label{eq:ganancia-potencia}\\
+  G_{dB} = 10 \log \frac{U_2^2}{U_1^2} &= 20 \log \frac{U_2}{U_1}   \label{eq:ganancia-tension}
+\end{align}
+
+Por tanto, una ganancia de $\qty{3}{\decibel}$ en potencia significa
+que $P_2 = 2 \cdot P_1$, mientras que $U_2 = 2 \cdot U_1$ es una
+ganancia de $\qty{6}{\decibel}$ en tensión.
+
+Aplicaremos estos conceptos al cálculo de las pérdidas de transmisión y las pérdidas de inserción que se producen al introducir redes en un circuito.
+
+\subsubsection{Pérdidas de Transmisión}
+\label{sec:perdidas-transmision}
+
+Las pérdidas de transmisión, $\alpha_T$, asociadas a una red miden la
+relación entre la potencia de entrada, $P_{in}$, y la potencia de
+salida, $P_{out}$ (figura \ref{fig:perdidas-transmision}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/PerdidasTransmision.pdf}
+  \caption{Pérdidas de transmisión.}
+  \label{fig:perdidas-transmision}
+\end{figure}
+
+\begin{equation}
+  \alpha_T = 10 \log \frac{P_{in}}{P_{out}} \unit{\decibel}
+\end{equation}
+
+Si la red es no disipativa, $P_{in} = P_{out}$ y, por tanto, las
+pérdidas de transmisión son nulas, $\alpha_T = \qty{0}{\decibel}$. Si la red es disipativa, $P_{out} < P_{in}$ y, por tanto, $\alpha_T > \qty{0}{\decibel}$. Finalmente, si la red es activa puede ser que $P_{out} > P_{in}$ y, por tanto, $\alpha_T < \qty{0}{\decibel}$, lo que implica una \emph{ganancia} de transmisión.
+
+\subsubsection{Pérdidas de inserción}
+\label{sec:perdidas-insercion}
+
+Las pérdidas de inserción asociadas a una red, $\alpha_I$, miden la
+relación entre la potencia entregada a la carga sin la red, $P_L$, y
+la potencia entregada a la carga con la red insertada (figura
+\ref{fig:perdidas-insercion}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=4cm]{../figs/PerdidasInsercion.pdf}
+  \caption{Pérdidas de inserción.}
+  \label{fig:perdidas-insercion}
+\end{figure}
+
+\begin{equation}
+  \alpha_I = 10 \log \frac{P_L}{P_{out}} \unit{\decibel}
+\end{equation}
+
+Al estar definida como pérdida, se está asumiendo que la inserción de
+la red disminuye la potencia entregada a la carga. Ahora bien, en el
+caso de una red adaptadora el efecto es el contrario, $P_{out} > P_L$,
+por lo que $\alpha_I < 0$, siendo, por tanto, una \emph{ganancia} de
+inserción.
 
 %%% Local Variables:
 %%% mode: latex
