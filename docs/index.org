@@ -44,11 +44,11 @@ bajo una licencia [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative 
   :END:
 
 - [[file:diapos/TC2_01_ElementosActivos_OPL.pdf][Elementos activos]]
-- [[file:diapos/TC2_06_Trifasica_OPL.pdf][Trifásica]]
-- [[file:diapos/TC2_02_TecnicasAnalisis_OPL.pdf][Técnicas de análisis]]
+- [[file:diapos/TC2_02_Trifasica_OPL.pdf][Trifásica]]
+- [[file:diapos/TC2_03_TecnicasAnalisis_OPL.pdf][Técnicas de análisis]]
 - [[file:diapos/TC2_04_Teoremas_OPL.pdf][Teoremas generales]]
-- [[file:diapos/TC2_03_AcoplamientosMagneticos_OPL.pdf][Acoplamientos magnéticos]]
-- [[file:diapos/TC2_05_Transformadores_OPL.pdf][Transformadores]]
+- [[file:diapos/TC2_05_AcoplamientosMagneticos_OPL.pdf][Acoplamientos magnéticos]]
+- [[file:diapos/TC2_06_Transformadores_OPL.pdf][Transformadores]]
   
 ** Teoría de Circuitos III
   :PROPERTIES:
