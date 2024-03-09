@@ -805,21 +805,21 @@ Se pide calcular las potencias totales $P$, $Q$ y $S$, el módulo de la corrient
 
 Las potencias de la carga 1:
 \begin{align*}
-    P_1&=S_1\,\cos(\phi_1)=300\cdot 0.85 = 255\,kW\\
-    Q_1&=S_1\,\sin(\phi_1)=300\cdot\sin(\arccos(0.85))=158.03\,kvar\\
-    S_1&=300\,kVA
+    P_1&=S_1\,\cos(\phi_1)=300\cdot 0.85 = 255\,\si{\kilo\watt}\\
+    Q_1&=S_1\,\sin(\phi_1)=300\cdot\sin(\arccos(0.85))=158.03\,\si{\kilo\var}\\
+    S_1&=300\,\si{\kilo\voltampere}
 \end{align*}
 y las de la carga 2:
 \begin{align*}
-    P_2&=S_2\,\cos(\phi_2)=100\cdot 0.95 = 95\,kW\\
-    Q_2&=S_2\,\sin(\phi_2)=100\cdot\sin(\arccos(0.95))=-31.22\,kvar\\
-    S_2&=100\,kVA
+    P_2&=S_2\,\cos(\phi_2)=100\cdot 0.95 = 95\,\si{\kilo\watt}\\
+    Q_2&=S_2\,\sin(\phi_2)=100\cdot\sin(\arccos(0.95))=-31.22\,\si{\kilo\var}\\
+    S_2&=100\,\si{\kilo\voltampere}
 \end{align*}
 donde $Q_2$ es negativa al tratarse de un receptor capacitivo. Aplicando T. Boucherot, se tienen las potencias de la instalación:
 \begin{align*}
-    P_T&=P_1+P_2=255+95=350\,kW\\
-    Q_T&=Q_1+Q_2=158.03+(-31.22)=126.81\,kvar\\
-    \overline{S_T}&=P_T+\mathrm{j}\,Q_T=350+\mathrm{j}\,126.81 \,kVA=372.26\phase{19.9162^\circ}\,kVA
+    P_T&=P_1+P_2=255+95=350\,\si{\kilo\watt}\\
+    Q_T&=Q_1+Q_2=158.03+(-31.22)=126.81\,\si{\kilo\var}\\
+    \overline{S_T}&=P_T+\mathrm{j}\,Q_T=350+\mathrm{j}\,126.81 \,\si{\kilo\voltampere}=372.26\phase{19.9162^\circ}\,\si{\kilo\voltampere}
 \end{align*}
 por lo que el factor de potencia del conjunto es:
 \begin{equation*}
@@ -829,7 +829,7 @@ de carácter inductivo ($\phi_T>0$).
 
 Con las potencias se puede determinar el módulo de la corriente de línea:
 \begin{equation*}
-    I_L=\dfrac{S_T}{\sqrt{3}\,U_L}=\dfrac{372.26\cdot 10^3}{\sqrt{3}\cdot 20000}=10.75\,A
+    I_L=\dfrac{S_T}{\sqrt{3}\,U_L}=\dfrac{372.26\cdot 10^3}{\sqrt{3}\cdot 20000}=10.75\,\si{\ampere}
 \end{equation*}
 	\end{example}
 
@@ -1269,7 +1269,7 @@ cuya suma se comprueba que es igual a los 24 kW del enunciado.
 
 El vatímetro $W_2$ mide en realidad la potencia reactiva, en este caso dividida por $\sqrt{3}$. Dado que la potencia reactiva total es:
 \begin{equation*}
-    Q_T=P_T\,\tan(\phi)=24000\cdot\tan(36.8699)=18000 \,\text{var}\Rightarrow W_2=\dfrac{Q_T}{\sqrt{3}}=10392.30\,W
+    Q_T=P_T\,\tan(\phi)=24000\cdot\tan(36.8699)=18000 \,\si{\var}\Rightarrow W_2=\dfrac{Q_T}{\sqrt{3}}=10392.30\,W
 \end{equation*}
 
 El vatímetro $W_4$ mide la potencia de la fase $A$. Al tratarse de un sistema equilibrado:
@@ -1393,16 +1393,16 @@ recomendada en \textbf{triángulo}.
 		    
   La potencia reactiva inicial es:
   \begin{equation*}
-    Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\text{kvar}
+    Q_T=Q_1+Q_2=30\cdot \tan(\arccos(0.7))+24\cdot \tan(\arccos(0.6))=62.61\,\si{\kilo\var}
   \end{equation*}
   La potencia reactiva una vez se tenga la batería de condensadores
   será:
   \begin{equation*}
-    Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\text{kvar}
+    Q_T'=P_T\,\tan(\phi_T')=(30+24)\cdot \tan(\arccos(0.95))=17.75\,\si{\kilo\var}
   \end{equation*}
   siendo la potencia aportada por los condensadores:
   \begin{equation*}
-    Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\text{kvar}
+    Q_C=Q_T'-Q_T=17.75-62.61=-44.86\,\si{\kilo\var}
   \end{equation*}
   por lo que la capacidad a conectar en cada fase del triángulo:
   \begin{equation*}
