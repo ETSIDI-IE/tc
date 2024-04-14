@@ -1,3 +1,5 @@
+
+
 \chapter{Corriente alterna monofásica}\label{chap:ca_mono}
  	
 \section{Formas de onda periódicas}
@@ -121,19 +123,19 @@ periódicas:
   La onda es una función periódica, de periodo $T=4$ s, para la cual,
   en el intervalo $[0,4]$ s, la función se expresa como:
   \begin{equation*}
-    u(t)=\dfrac{100}{4}\,t=25\,t\quad (0\leq t\leq 4\,\text{s})
+    u(t)=\dfrac{100}{4}\,t=25\,t\;\si{\volt} \quad (0\leq t\leq 4\,\text{s})
   \end{equation*}
 	    
   Se utiliza la expresión~\eqref{eq:valor_medio} para determinar el
   valor medio:
   \begin{equation*}
-    U_m=\dfrac{1}{T}\int_0^T u(t)\,dt=\dfrac{1}{4}\int_0^4 (25\,t)\,dt=\dfrac{1}{4}\,\left[25\,\dfrac{t^2}{2} \right]_0^4={50}
+    U_m=\dfrac{1}{T}\int_0^T u(t)\,dt=\dfrac{1}{4}\int_0^4 (25\,t)\,dt=\dfrac{1}{4}\,\left[25\,\dfrac{t^2}{2} \right]_0^4={50}\;\si{\volt}
   \end{equation*}
 	    
   Se utiliza la ecuación~\eqref{eq:valor_eficaz} para el valor eficaz:
   \begin{align*}
     U_{ef}&=\sqrt{\frac{1}{T}\cdot\int_{0}^{T}u(t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(25\,t)^{2}\, dt}=\sqrt{\frac{1}{4}\cdot\int_{0}^{4}(625\,t^2)\, dt}=\\
-          &=\sqrt{\frac{1}{4}\, 625\,\left[\dfrac{t^3}{3}\right]_0^4}={57.74}
+          &=\sqrt{\frac{1}{4}\, 625\,\left[\dfrac{t^3}{3}\right]_0^4}={57.74}\;\si{\volt}
   \end{align*}
 \end{example}
 	
@@ -268,8 +270,8 @@ que es conocida como la \textbf{forma polar} del fasor.
   ($\frac{\pi}{4}=45^\circ$ para la $u(t)$ y $\frac{\pi}{6}=60^\circ$
   para la $i(t)$). Así:
   \begin{align*}
-    \overline{U}&=150\phase{45^\circ} V\\
-    \overline{I}&=3\phase{30^\circ}\,A
+    \overline{U}&=150\phase{45^\circ} \,\si{\volt}\\
+    \overline{I}&=3\phase{30^\circ}\,\si{\ampere}
   \end{align*}
 \end{example}
 	
@@ -328,13 +330,13 @@ magnitudes respecto a la misma función, siguiendo la relación:
 		
   Para hacer la suma, es necesario usar la forma binómica:
   \begin{align*}
-    \overline{U_1}&=25\phase{145^\circ}=-20.48+\mathrm{j} 14.34 V\\
-    \overline{U_2}&=11\phase{30^\circ}=9.52+\mathrm{j} 5.5 V
+    \overline{U_1}&=25\phase{145^\circ}=-20.48+\mathrm{j} 14.34 \si{\volt}\\
+    \overline{U_2}&=11\phase{30^\circ}=9.52+\mathrm{j} 5.5 \si{\volt}
   \end{align*}
 		
   La suma de ambas tensiones es:
   \begin{equation*}
-    \overline{U_1}+\overline{U_2}=(-20.48+\mathrm{j}14.34)+(9.52+\mathrm{j}5.5)=-10.96+\mathrm{j}19.84
+    \overline{U_1}+\overline{U_2}=(-20.48+\mathrm{j}14.34)+(9.52+\mathrm{j}5.5)=-10.96+\mathrm{j}19.84\;\si{\volt}
   \end{equation*}
 \end{example}
 	
@@ -349,15 +351,15 @@ magnitudes respecto a la misma función, siguiendo la relación:
 		
   En primer lugar, se expresa todo en funciones seno:
   \begin{align*}
-    i_1(t)&=2\cdot\sqrt{2}\cdot \sin(600\cdot t)\rightarrow \overline{I_1}=2\phase{0^\circ}\;\text{A}\\
-    i_2(t)&=4\cdot\sqrt{2}\cdot \sin\left(600\cdot t+\frac{\pi}{2}\right)\rightarrow \overline{I_2}=4\phase{90^\circ}\;\text{A}\\
-    i_3(t)&=10\cdot\sqrt{2}\cdot \cos(600\cdot t-\pi)=10\cdot\sqrt{2}\cdot \sin\left(600\cdot t-\frac{\pi}{2}\right)\rightarrow \overline{I_3}=10\phase{-90^\circ}\;\text{A}\
+    i_1(t)&=2\cdot\sqrt{2}\cdot \sin(600\cdot t)\rightarrow \overline{I_1}=2\phase{0^\circ}\;\si{\ampere}\\
+    i_2(t)&=4\cdot\sqrt{2}\cdot \sin\left(600\cdot t+\frac{\pi}{2}\right)\rightarrow \overline{I_2}=4\phase{90^\circ}\;\si{\ampere}\\
+    i_3(t)&=10\cdot\sqrt{2}\cdot \cos(600\cdot t-\pi)=10\cdot\sqrt{2}\cdot \sin\left(600\cdot t-\frac{\pi}{2}\right)\rightarrow \overline{I_3}=10\phase{-90^\circ}\;\si{\ampere}\
   \end{align*}
 		
   Así, la suma de $i_1(t)+i_2(t)+i_3(t)$ es:
   \begin{align*}
-    \overline{I_1}&+\overline{I_2}+\overline{I_3}=(2\phase{0^\circ})+(4\phase{90^\circ})+(10\phase {-90^\circ})=6.32\phase{-71.5651^\circ}\;\text{A} \\
-                  &i_1(t)+i_2(t)+i_3(t)=6.32\cdot\sqrt{2}\cdot \sin(600\cdot t-1.249)\;\text{A}
+    \overline{I_1}&+\overline{I_2}+\overline{I_3}=(2\phase{0^\circ})+(4\phase{90^\circ})+(10\phase {-90^\circ})=6.32\phase{-71.5651^\circ}\;\si{\ampere} \\
+                  &i_1(t)+i_2(t)+i_3(t)=6.32\cdot\sqrt{2}\cdot \sin(600\cdot t-1.249)\;\si{\ampere}
   \end{align*}
 \end{example}
 	
@@ -1168,9 +1170,9 @@ manteniendo constantes $L$ y $C$ es:
   En primer lugar, se calculan la conductancia de la resistencia y las
   susceptacias de bobina y condensador:
   \begin{align*}
-    \overline{G}&=\dfrac{1}{R}=\dfrac{1}{1}=1\;\text{S}\\
-    \overline{B_L}&=-\dfrac{\mathrm{j}}{X_L}=-\dfrac{\mathrm{j}}{0.01}=-\mathrm{j}\,100\;\text{S}\\
-    \overline{B_C}&=\mathrm{j}\,X_C=\mathrm{j}\,100\;\text{S}
+    \overline{G}&=\dfrac{1}{R}=\dfrac{1}{1}=1\;\si{\siemens}\\
+    \overline{B_L}&=-\dfrac{\mathrm{j}}{X_L}=-\dfrac{\mathrm{j}}{0.01}=-\mathrm{j}\,100\;\si{\siemens}\\
+    \overline{B_C}&=\mathrm{j}\,X_C=\mathrm{j}\,100\;\si{\siemens}
   \end{align*}
 		
   La susceptancia total se calcula como:
@@ -1181,14 +1183,14 @@ manteniendo constantes $L$ y $C$ es:
   Se trata de un circuito antirresonante, siendo la admitancia
   equivalente:
   \begin{equation*}
-    \overline{Y}=G+\mathrm{j}\,B=1+\mathrm{j}\,0=1\;\text{S}
+    \overline{Y}=G+\mathrm{j}\,B=1+\mathrm{j}\,0=1\;\si{\siemens}
   \end{equation*}
 		
   La corriente en cada elemento es:
   \begin{align*}
-    \overline{I_R}&=\overline{G}\cdot \overline{U}={1\phase{0^\circ}}\cdot {100\phase{0^\circ}}=100\phase{0^\circ}\;\text{A}\\
-    \overline{I_L}&=\overline{B_L}\cdot\overline{U}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\text{A}\\
-    \overline{I_C}&=\overline{B_C}\cdot\overline{U}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\text{A}
+    \overline{I_R}&=\overline{G}\cdot \overline{U}={1\phase{0^\circ}}\cdot {100\phase{0^\circ}}=100\phase{0^\circ}\,\si{\ampere}\\
+    \overline{I_L}&=\overline{B_L}\cdot\overline{U}=100\phase{-90^\circ}\cdot 100\phase{0^\circ}=10000\phase{-90^\circ}\,\si{\ampere}\\
+    \overline{I_C}&=\overline{B_C}\cdot\overline{U}=100\phase{90^\circ}\cdot 100\phase{0^\circ}=10000\phase{90^\circ}\,\si{\ampere}
   \end{align*}
 \end{example}
 	
@@ -1811,7 +1813,7 @@ potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
   A partir de la fórmula~\eqref{eq:compensacion_Q_mono}, se obtiene
   que la capacidad es:
   \begin{equation*}
-    C=\frac{P \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\mu F
+    C=\frac{P \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\,\si{\micro\farad}
   \end{equation*}
 	    
   A este mismo resultado se puede llegar sin necesiadad de aprenderse
@@ -1819,21 +1821,21 @@ potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
   potencias. La potencia activa inicial y final connsumida por la
   carga es:
   \begin{equation*}
-    P=P'=5200\,W
+    P=P'=5200\,\si{\watt}
   \end{equation*}
   La potencia reactiva inicial y final:
   \begin{align*}
-    Q&=P\,\tan(\theta)=5200\cdot\tan(\arccos(0.8))=3900\,var\\
-    Q'&=P'\,\tan(\theta')=5200\cdot\tan(\arccos(0.95))=1709.16\,var
+    Q&=P\,\tan(\theta)=5200\cdot\tan(\arccos(0.8))=3900\,\si{\var}\\
+    Q'&=P'\,\tan(\theta')=5200\cdot\tan(\arccos(0.95))=1709.16\,\si{\var}
   \end{align*}
   por lo que la potencia reactiva que genera el condensador es:
   \begin{equation*}
-    Q_c=Q'-Q=1709.16-3900=-2190.84\,var
+    Q_c=Q'-Q=1709.16-3900=-2190.84\,\si{\var}
   \end{equation*}
   a partir de la cual se determina que la capacidad de dicho
   condensador es:
   \begin{equation*}
-    Q_c=X_c\,I^2=\dfrac{U^2}{X_c}=\dfrac{U^2}{\frac{1}{\omega\,C}}\Rightarrow C=\dfrac{Q_c}{\omega\,U^2}=\dfrac{2190.84}{2\cdot\pi\cdot 50\cdot 230^2}=131.83\,\mu F
+    Q_c=X_c\,I^2=\dfrac{U^2}{X_c}=\dfrac{U^2}{\frac{1}{\omega\,C}}\Rightarrow C=\dfrac{Q_c}{\omega\,U^2}=\dfrac{2190.84}{2\cdot\pi\cdot 50\cdot 230^2}=131.83\,\si{\micro\farad}
   \end{equation*}
 \end{example}
 	
