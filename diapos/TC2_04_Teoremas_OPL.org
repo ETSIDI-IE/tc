@@ -747,25 +747,25 @@ El *decibelio* ($\si{\decibel}$) se emplea para medir la ganancia de potencia o 
 
 #+BEGIN_EXPORT latex
 \[
-G_{dB} = 10 \log G = 10 \log \frac{P_2}{P_1}
+G_{dB} = 10 \log G = 10 \log \frac{P_{out}}{P_{in}}
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:../figs/Red_Ganancia.pdf]]
+[[file:../figs/cuadripolo_cargado_resistencia.pdf]]
 
 ** Pérdidas de transmisión e inserción
 
 *** Decibelio: tensiones
 
-Suponiendo $R_1 = R_2$, también se emplea para medir la ganancia de tensión/corriente:
+Suponiendo $R_{in} = R_{out}$, también se emplea para medir la ganancia de tensión/corriente:
 
 #+BEGIN_EXPORT latex
 \[
-G_{dB} = 10 \log \frac{U_2^2}{U_1^2} = 20 \log \frac{U_2}{U_1}
+G_{dB} = 10 \log \frac{U_{out}^2}{U_{in}^2} = 20 \log \frac{U_{out}}{U_{in}}
 \]
 #+END_EXPORT
 #+ATTR_LATEX: :height 0.5\textheight
-[[file:../figs/Red_Ganancia.pdf]]
+[[file:../figs/cuadripolo_cargado_resistencia.pdf]]
 
 ** Pérdidas de transmisión
 
