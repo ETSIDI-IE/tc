@@ -175,41 +175,29 @@ $\phi_{i}$: flujo total que atraviesa la bobina $i$
 #+begin_center
 $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 #+end_center
-** 
-:PROPERTIES:
-:beamer_opt: plain
-:END: 
+** Coeficientes de autoinducción e inducción mutua
+
 ***                                                                 :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.5
+:BEAMER_col: 0.4
 :END:
 #+begin_export latex
-\[
-  L_1 = N_1 \frac{\phi_{11}}{i_1}
-\]
-\[
-  M_{12} = N_1 \frac{\phi_{12}}{i_2}
-\]
+Coeficiente de autoinducción:
+\begin{align*}
+  L_1 &= N_1 \frac{\phi_{11}}{i_1}\\
+  L_2 &= N_2 \frac{\phi_{22}}{i_2}
+\end{align*}
+Coeficiente de inducción mutua:
+\begin{align*}
+  M_{12} &= N_1 \frac{\phi_{12}}{i_2}\\
+  M_{21} &= N_2 \frac{\phi_{21}}{i_1}
+\end{align*}
 #+end_export
 ***                                                                 :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.5
+:BEAMER_col: 0.6
 :END:
-
-#+begin_export latex
-\[
-  L_2 = N_2 \frac{\phi_{22}}{i_2}
-\]
-\[
-  M_{21} = N_2 \frac{\phi_{21}}{i_1}
-\]
-#+end_export
-
-***                                                       :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-#+ATTR_LATEX: :height 0.45\textheight
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:../figs/acoplamientoTikz.pdf]]
 
 #+begin_center
@@ -217,9 +205,11 @@ $\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
 #+end_center
 
 ** Coeficiente de acoplamiento magnético
-#+ATTR_LATEX: :height 0.4\textheight
-[[file:../figs/acoplamientoTikz.pdf]]
 
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
 Coeficiente de acoplamiento de la bobina 1:
 #+BEGIN_EXPORT latex
 \[
@@ -233,6 +223,16 @@ Coeficiente de acoplamiento de la bobina 2:
   k_2 = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
 \]
 #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/acoplamientoTikz.pdf]]
+
+#+begin_center
+$\phi_{ij}$: flujo recibido en bobina $i$ producido por bobina $j$
+#+end_center
 
 ** Coeficiente de inducción mutua
 
@@ -262,36 +262,14 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.3
+:BEAMER_col: 0.4
 :END:
 #+begin_export latex
-\[
-  L_1 = N_1 \frac{\phi_{11}}{i_1}
-\]
-#+end_export
+\begin{align*}
+  L_1 &= N_1 \frac{\phi_{11}}{i_1}\\
+  L_2 &= N_2 \frac{\phi_{22}}{i_2}
+\end{align*}
 
-***                                                                 :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.3
-:END:
-#+ATTR_LATEX: :height 0.4\textheight
-[[file:../figs/acoplamientoTikz.pdf]]
-
-***                                                                 :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.3
-:END:
-#+begin_export latex
-\[
-  L_2 = N_2 \frac{\phi_{22}}{i_2}
-\]
-#+end_export
-
-***                                                       :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-#+begin_export latex
 \begin{align*}
   M &= N_1 \frac{\phi_{12}}{i_2}\\
     &= N_2 \frac{\phi_{21}}{i_1}
@@ -300,10 +278,29 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 \[
   M = k \sqrt{L_1 \cdot L_2}
 \]
+
 #+end_export
+
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:../figs/acoplamientoTikz.pdf]]
+
+
 
 * Representación Circuital
 ** Flujos del mismo sentido
+#+ATTR_LATEX: :height 0.75\textheight
+[[file:../figs/acoplamientoTikz.pdf]]
+
+#+begin_center
+Las corrientes $i_1$ e $i_2$ producen flujos del mismo sentido.
+#+end_center
+
+
+** Flujos del mismo sentido: representación circuital
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -325,7 +322,7 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
-** Flujos del mismo sentido
+** Flujos del mismo sentido: representación circuital
 
 ***                                                                 :BMCOL:
 :PROPERTIES:
@@ -353,13 +350,17 @@ induce una tensión positiva en el otro terminal con punto.
 #+ATTR_LATEX: :height 0.75\textheight
 [[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
+#+begin_center
 Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
-** Representación Circuital
+#+end_center
+
+
+** Flujos contrapuestos: representación Circuital
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-#+ATTR_LATEX: :height 0.45\textheight
+
 [[file:../figs/acoplamientoTikz_opuesto.pdf]]
 
 
@@ -367,7 +368,7 @@ Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-#+ATTR_LATEX: :height 0.45\textheight
+
 [[file:../figs/acoplamiento_circuito_opuesto.pdf]]
 ***                                                       :B_ignoreheading:
 :PROPERTIES:
@@ -377,7 +378,8 @@ Las corrientes $i_1$ e $i_2$ producen flujos de sentido contrario.
 bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
-** Representación Circuital
+
+** Flujos contrapuestos: representación Circuital
 ***                                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5

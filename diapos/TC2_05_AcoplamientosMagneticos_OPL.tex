@@ -1,14 +1,16 @@
-% Created 2024-02-16 vie 11:16
+% Created 2024-04-16 mar 13:48
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
+\usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
@@ -53,16 +55,16 @@
  pdftitle={Acoplamientos Magnéticos},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 29.1 (Org mode 9.6.11)}, 
+ pdfcreator={Emacs 29.1 (Org mode 9.4.6)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Bobina}
-\label{sec:org9225d62}
+\label{sec:orgf91a5a9}
 
-\begin{frame}[label={sec:orgdcd4578}]{Ley de Ampere}
+\begin{frame}[label={sec:org6d3b15a}]{Ley de Ampere}
 Una corriente eléctrica circulando por un conductor crea un campo magnético en torno al conductor (\emph{regla de la mano derecha})
 
 \begin{center}
@@ -71,7 +73,7 @@ Una corriente eléctrica circulando por un conductor crea un campo magnético en
 \end{frame}
 
 
-\begin{frame}[label={sec:orga5481ae}]{Ley de Faraday}
+\begin{frame}[label={sec:orgbedffa2}]{Ley de Faraday}
 Cuando un \alert{campo magnético variable} atraviesa una espira \alert{estática} aparece una \alert{tensión inducida} \alert{proporcional al flujo} y opuesta a su variación.
 
 \[
@@ -95,7 +97,7 @@ El flujo magnético es la cantidad de líneas de fuerza magnética que atraviesa
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org577621f}]{Bobina}
+\begin{frame}[label={sec:orgaebf7b2}]{Bobina}
 Una bobina es un arrollamiento de un conductor (\emph{conjunto de \(N\) espiras conectadas en serie}) alrededor de un material ferromagnético:
 \begin{itemize}
 \item Al circular corriente se produce un campo magnético.
@@ -106,7 +108,7 @@ Una bobina es un arrollamiento de un conductor (\emph{conjunto de \(N\) espiras 
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org3b2b40a}]{Bobina}
+\begin{frame}[label={sec:org234519d}]{Bobina}
 En un circuito magnético lineal el flujo es proporcional a la corriente:
 \[
   \phi(t) = A \cdot i(t) \rightarrow   \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)}
@@ -140,14 +142,14 @@ Por tanto, la ecuación de la bobina (autoinductancia \(L\), [H]):
 
 
 \section{Acoplamiento magnético}
-\label{sec:org5035bbb}
-\begin{frame}[label={sec:orgddd1324},plain]{}
+\label{sec:org5982956}
+\begin{frame}[label={sec:orgb8abf9f},plain]{}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org676b0da},plain]{}
+\begin{frame}[label={sec:org5b204a1},plain]{}
 \begin{center}
 \includegraphics[height=0.55\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
@@ -174,7 +176,7 @@ Por tanto, la ecuación de la bobina (autoinductancia \(L\), [H]):
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org5491361},plain]{}
+\begin{frame}[label={sec:org447890a},plain]{}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -199,40 +201,35 @@ Por tanto, la ecuación de la bobina (autoinductancia \(L\), [H]):
 \(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org82afbff},plain]{}
+\begin{frame}[label={sec:orgdb82d34}]{Coeficientes de autoinducción e inducción mutua}
 \begin{columns}
-\begin{column}{0.5\columnwidth}
-\[
-  L_1 = N_1 \frac{\phi_{11}}{i_1}
-\]
-\[
-  M_{12} = N_1 \frac{\phi_{12}}{i_2}
-\]
+\begin{column}{0.4\columnwidth}
+Coeficiente de autoinducción:
+\begin{align*}
+  L_1 &= N_1 \frac{\phi_{11}}{i_1}\\
+  L_2 &= N_2 \frac{\phi_{22}}{i_2}
+\end{align*}
+Coeficiente de inducción mutua:
+\begin{align*}
+  M_{12} &= N_1 \frac{\phi_{12}}{i_2}\\
+  M_{21} &= N_2 \frac{\phi_{21}}{i_1}
+\end{align*}
 \end{column}
-\begin{column}{0.5\columnwidth}
-\[
-  L_2 = N_2 \frac{\phi_{22}}{i_2}
-\]
-\[
-  M_{21} = N_2 \frac{\phi_{21}}{i_1}
-\]
-\end{column}
-\end{columns}
-
+\begin{column}{0.6\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz.pdf}
+\includegraphics[height=0.7\textheight]{../figs/acoplamientoTikz.pdf}
 \end{center}
 
 \begin{center}
 \(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
 \end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org3a0c317}]{Coeficiente de acoplamiento magnético}
-\begin{center}
-\includegraphics[height=0.4\textheight]{../figs/acoplamientoTikz.pdf}
-\end{center}
-
+\begin{frame}[label={sec:org69bd0a7}]{Coeficiente de acoplamiento magnético}
+\begin{columns}
+\begin{column}{0.4\columnwidth}
 Coeficiente de acoplamiento de la bobina 1:
 \[
   k_1 = \frac{\phi_{21}}{\phi_{11}} = 1 - \frac{\phi_{d1}}{\phi_{11}} \leq 1
@@ -242,9 +239,20 @@ Coeficiente de acoplamiento de la bobina 2:
 \[
   k_2 = \frac{\phi_{12}}{\phi_{22}} = 1 - \frac{\phi_{d2}}{\phi_{22}} \leq 1
 \]
+\end{column}
+\begin{column}{0.6\columnwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight]{../figs/acoplamientoTikz.pdf}
+\end{center}
+
+\begin{center}
+\(\phi_{ij}\): flujo recibido en bobina \(i\) producido por bobina \(j\)
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org7ee28ea}]{Coeficiente de inducción mutua}
+\begin{frame}[label={sec:orgd716e9f}]{Coeficiente de inducción mutua}
 Cuando el circuito magnético es \alert{lineal}:
 \[
   \begin{rcases}
@@ -263,26 +271,13 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orga182bd5}]{Resumen}
+\begin{frame}[label={sec:org16c4b1e}]{Resumen}
 \begin{columns}
-\begin{column}{0.3\columnwidth}
-\[
-  L_1 = N_1 \frac{\phi_{11}}{i_1}
-\]
-\end{column}
-
-\begin{column}{0.3\columnwidth}
-\begin{center}
-\includegraphics[height=0.4\textheight]{../figs/acoplamientoTikz.pdf}
-\end{center}
-\end{column}
-
-\begin{column}{0.3\columnwidth}
-\[
-  L_2 = N_2 \frac{\phi_{22}}{i_2}
-\]
-\end{column}
-\end{columns}
+\begin{column}{0.4\columnwidth}
+\begin{align*}
+  L_1 &= N_1 \frac{\phi_{11}}{i_1}\\
+  L_2 &= N_2 \frac{\phi_{22}}{i_2}
+\end{align*}
 
 \begin{align*}
   M &= N_1 \frac{\phi_{12}}{i_2}\\
@@ -292,11 +287,32 @@ Cuando el acoplamiento entre las dos bobinas es perfecto:
 \[
   M = k \sqrt{L_1 \cdot L_2}
 \]
+\end{column}
+
+\begin{column}{0.6\columnwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight]{../figs/acoplamientoTikz.pdf}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
+
+
 \section{Representación Circuital}
-\label{sec:org00130f2}
-\begin{frame}[label={sec:org1ae6df6}]{Flujos del mismo sentido}
+\label{sec:orgd3089c2}
+\begin{frame}[label={sec:org73b8c88}]{Flujos del mismo sentido}
+\begin{center}
+\includegraphics[height=0.75\textheight]{../figs/acoplamientoTikz.pdf}
+\end{center}
+
+\begin{center}
+Las corrientes \(i_1\) e \(i_2\) producen flujos del mismo sentido.
+\end{center}
+\end{frame}
+
+
+\begin{frame}[label={sec:org38ed6c9}]{Flujos del mismo sentido: representación circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -316,7 +332,7 @@ bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
 \end{frame}
-\begin{frame}[label={sec:org9a09e53}]{Flujos del mismo sentido}
+\begin{frame}[label={sec:orgda2d962}]{Flujos del mismo sentido: representación circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -336,25 +352,29 @@ induce una tensión positiva en el otro terminal con punto.
   u_2(t) &= M \frac{\mathrm{d}i_1(t)}{\mathrm{d}t} + L_2 \frac{\mathrm{d}i_2(t)}{\mathrm{d}t}
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgbb9bbd6}]{Flujos contrapuestos}
+\begin{frame}[label={sec:org8f9a2cc}]{Flujos contrapuestos}
 \begin{center}
 \includegraphics[height=0.75\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 
+\begin{center}
 Las corrientes \(i_1\) e \(i_2\) producen flujos de sentido contrario.
+\end{center}
 \end{frame}
-\begin{frame}[label={sec:orgb8bdc8a}]{Representación Circuital}
+
+
+\begin{frame}[label={sec:org889f0d8}]{Flujos contrapuestos: representación Circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/acoplamientoTikz_opuesto.pdf}
+\includegraphics[width=.9\linewidth]{../figs/acoplamientoTikz_opuesto.pdf}
 \end{center}
 \end{column}
 
 
 \begin{column}{0.5\columnwidth}
 \begin{center}
-\includegraphics[height=0.45\textheight]{../figs/acoplamiento_circuito_opuesto.pdf}
+\includegraphics[width=.9\linewidth]{../figs/acoplamiento_circuito_opuesto.pdf}
 \end{center}
 \end{column}
 \end{columns}
@@ -363,7 +383,8 @@ bobinas por los que hay que introducir corrientes que producen flujos
 del mismo sentido. Una corriente que entra por un terminal con punto
 induce una tensión positiva en el otro terminal con punto.
 \end{frame}
-\begin{frame}[label={sec:org8f50e77}]{Representación Circuital}
+
+\begin{frame}[label={sec:org3b2f21e}]{Flujos contrapuestos: representación Circuital}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -383,7 +404,7 @@ induce una tensión positiva en el otro terminal con punto.
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org4d63d8a}]{Corriente Alterna Sinusoidal}
+\begin{frame}[label={sec:org51f53cd}]{Corriente Alterna Sinusoidal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -402,7 +423,7 @@ induce una tensión positiva en el otro terminal con punto.
   \overline{U}_2 &= j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgb6deb33}]{Corriente Alterna Sinusoidal}
+\begin{frame}[label={sec:org9e3d24e}]{Corriente Alterna Sinusoidal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -421,7 +442,7 @@ induce una tensión positiva en el otro terminal con punto.
   \overline{U}_2 &= - j \omega M \overline{I}_1 + j \omega L_2 \overline{I}_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgd21d1fc}]{Ejemplo: acoplamiento de bobinas en serie}
+\begin{frame}[label={sec:org232228a}]{Ejemplo: acoplamiento de bobinas en serie}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/bobinas_serie.pdf}
 \end{center}
@@ -437,7 +458,7 @@ induce una tensión positiva en el otro terminal con punto.
  \overline{U} = \overline{U}_1 + \overline{U}_2 \rightarrow \boxed{L = L_1 + L_2 + 2M}
 \]
 \end{frame}
-\begin{frame}[label={sec:org4978a64}]{Ejemplo: acoplamiento de bobinas en serie}
+\begin{frame}[label={sec:orga886bb0}]{Ejemplo: acoplamiento de bobinas en serie}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/bobinas_serie_opuesto.pdf}
 \end{center}
