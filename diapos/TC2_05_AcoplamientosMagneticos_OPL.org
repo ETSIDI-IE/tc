@@ -57,7 +57,7 @@ Una bobina es un arrollamiento de un conductor (/conjunto de $N$ espiras conecta
 En un circuito magnético lineal el flujo es proporcional a la corriente:
   #+begin_export latex
   \[
-    \phi(t) = A \cdot i(t) \rightarrow   \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)}
+    \phi(t) = k \cdot i(t) \rightarrow   \frac{\mathrm{d}\phi(t)}{\mathrm{d} i(t)} = \frac{\phi(t)}{i(t)} = k
   \]
   #+end_export
 En una bobina de $N$ espiras la tensión autoinducida es:
