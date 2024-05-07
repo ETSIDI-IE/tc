@@ -548,7 +548,10 @@ Y con la relación entre ambas obtenemos[fn:1]:
 \]
 #+end_export
 ** Un transformador ideal no consume potencia
-
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 #+begin_export latex
 \[
   \overline{S}_1 = \overline{U}_1 \cdot \overline{I}_1^*
@@ -576,6 +579,15 @@ Y con la relación entre ambas obtenemos[fn:1]:
   \boxed{Q_1 = Q_2}
 \]
 #+end_export
+***                                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+ATTR_LATEX: :height 0.35\textheight
+[[file:../figs/Trafo_Ideal.pdf]]
+
+
 * Transferencia de Circuitos
 ** Fuente de Tensión de Secundario a Primario
 [[file:../figs/TrafoIdeal_VSec.pdf]]
