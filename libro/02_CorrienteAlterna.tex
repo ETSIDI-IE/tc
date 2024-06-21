@@ -416,15 +416,15 @@ siendo la impedancia:
   \boxed{\overline{Z} = \frac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
     \begin{cases}
       Z = \frac{U}{I}\\
-      \theta = \theta_U - \theta_I
+      \varphi = \theta_U - \theta_I
     \end{cases}}
 \end{equation}
-Por tanto, la impedancia $\overline{Z}=Z\phase{\theta}$ es el cociente
+Por tanto, la impedancia $\overline{Z}=Z\phase{\varphi}$ es el cociente
 entre tensión y corriente [$\Omega$]. De nuevo, la expresión para la
 impedancia mostrada en la ecuación~\eqref{eq:impedancia} se presenta
 en forma polar, siendo en forma binómica:
 \begin{equation*}
-  \overline{Z} = Z\cdot\cos(\theta)+\mathrm{j}\,Z\cdot\sin(\theta) %= R + \mathrm{j} X
+  \overline{Z} = Z\cdot\cos(\varphi)+\mathrm{j}\,Z\cdot\sin(\varphi) %= R + \mathrm{j} X
 \end{equation*}
 cuyo resultado, según se demostrará más adelante, es igual a:
 \begin{equation}
@@ -480,7 +480,7 @@ expresión~\eqref{eq:impedancia}:
   \overline{Z_R}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
     Z_R=\dfrac{U}{I}=R\\
-    \theta=\theta_U-\theta_I=0
+    \varphi=\theta_U-\theta_I=0
   \end{cases}
 \end{equation*}
 Es decir, que la impedancia de una resistencia tiene de módulo el
@@ -530,7 +530,7 @@ expresión~\eqref{eq:impedancia}:
   \overline{Z_L}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
     Z_L=\dfrac{U}{I}=\omega\cdot L\\
-    \theta=\theta_U-\theta_I=90^\circ
+    \varphi=\theta_U-\theta_I=90^\circ
   \end{cases}
 \end{equation*}
 Es decir, que la impedancia de una bobina tiene de módulo el valor
@@ -583,7 +583,7 @@ expresión~\eqref{eq:impedancia}:
   \overline{Z_C}=\dfrac{\overline{U}}{\overline{I}}\Rightarrow
   \begin{cases}
     Z_C=\dfrac{U}{I}=\dfrac{1}{\omega C}\\
-    \theta=\theta_U-\theta_I=-90^\circ
+    \varphi=\theta_U-\theta_I=-90^\circ
   \end{cases}
 \end{equation*}
 Es decir, que la impedancia de un condensador tiene de módulo el valor
@@ -636,15 +636,15 @@ con una magnitud compleja:
   \boxed{ \overline{Z} = R + \mathrm{j}\,X_L = R+ \mathrm{j}\,\omega L \Rightarrow 
     \begin{cases}
       Z=\sqrt{R^2+(\omega L)^2}\\
-      \theta=\arctan\left(\dfrac{\omega\,L}{R} \right)
+      \varphi=\arctan\left(\dfrac{\omega\,L}{R} \right)
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
 Figura~\ref{fig:fasorinductanciareal}, donde es inmediato comprobar
 que:
 \begin{align*}
-  R&=Z\cdot\cos(\theta)\\
-  X_L&=Z\cdot\sin(\theta)
+  R&=Z\cdot\cos(\varphi)\\
+  X_L&=Z\cdot\sin(\varphi)
 \end{align*} 
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasorInductanciaReal.pdf}
@@ -708,15 +708,15 @@ con una magnitud compleja:
   \boxed{ \overline{Z} = R + \mathrm{j}\,X_C = R- \mathrm{j}\dfrac{1}{\omega C} \Rightarrow 
     \begin{cases}
       Z=\sqrt{R^2-\left(\dfrac{1}{\omega C} \right)^2}\\
-      \theta=-\arctan\left(\dfrac{\frac{1}{\omega\,C}}{R} \right)
+      \varphi=-\arctan\left(\dfrac{\frac{1}{\omega\,C}}{R} \right)
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
 Figura~\ref{fig:fasorcondensadorreal}, donde es inmediato comprobar
 que:
 \begin{align*}
-  R&=Z\cdot\cos(\theta)\\
-  X_C&=Z\cdot\sin(\theta)
+  R&=Z\cdot\cos(\varphi)\\
+  X_C&=Z\cdot\sin(\varphi)
 \end{align*} 
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasorCondensadorReal.pdf}
@@ -784,14 +784,14 @@ corresponde con una magnitud compleja:
   \boxed{ \overline{Z} = R + \mathrm{j}\,(X_L-X_C) = R+ \mathrm{j}\left(\omega\,L-\dfrac{1}{\omega C}\right) \Rightarrow 
     \begin{cases}
       Z=\sqrt{R^2+\left(\omega L -\frac{1}{\omega C} \right)^2}\\
-      \theta=\arctan\left(\dfrac{\omega L-\frac{1}{\omega\,C}}{R} \right)
+      \varphi=\arctan\left(\dfrac{\omega L-\frac{1}{\omega\,C}}{R} \right)
     \end{cases}}
 \end{equation}
 que puede representarse en el plano complejo como se muestra en la
 Figura~\ref{fig:fasorRLC}, donde es inmediato comprobar que:
 \begin{align*}
-  R&=Z\cdot\cos(\theta)\\
-  X&=Z\cdot\sin(\theta)
+  R&=Z\cdot\cos(\varphi)\\
+  X&=Z\cdot\sin(\varphi)
 \end{align*} 
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasorRLC.pdf}
@@ -875,7 +875,7 @@ que equivale a decir que:
 \end{equation*}
 siendo el ángulo de la impedancia equivalente:
 \begin{equation*}
-  \theta=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)
+  \varphi=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)
 \end{equation*}
 	
 \vspace{4mm}
@@ -1029,7 +1029,7 @@ admitancia representa la \textit{facilidad} que ofrece el circuito al
 paso de la corriente alterna, y es el recíproco (inversa) de la
 impedancia:
 \begin{equation*}
-  \overline{Y}=\dfrac{1}{\overline{Z}}=\dfrac{1\phase{0^\circ}}{Z\phase{\theta^\circ}}=\dfrac{1}{Z}\phase{-\theta^\circ}=Y\phase\psi^\circ=G+\mathrm{j}\,B
+  \overline{Y}=\dfrac{1}{\overline{Z}}=\dfrac{1\phase{0^\circ}}{Z\phase{\varphi^\circ}}=\dfrac{1}{Z}\phase{-\varphi^\circ}=Y\phase\psi^\circ=G+\mathrm{j}\,B
 \end{equation*}
 donde $G$ es la conductancia y $B$ es la susceptancia. En función del
 valor de $B$, se tienen tres casos (al igual que con las impedancias):
@@ -1083,7 +1083,7 @@ $\overline{Z}\cdot \overline{Y}=1$):
 \end{remark}
 	
 La Figura~\ref{fig:impedancia_admitancia} muestra gráficamente una
-impedancia $\overline{Z}=R+\mathrm{j}\,X=Z\phase{\theta}$, donde su
+impedancia $\overline{Z}=R+\mathrm{j}\,X=Z\phase{\varphi}$, donde su
 admitancia correspondiente es
 $\overline{Y}=G-\mathrm{j}\,B=Y\phase{-\psi}$.
 \begin{figure}[H]
@@ -1097,9 +1097,9 @@ A partir de este gráfico, se pueden verificar las siguientes
 relaciones:
 \begin{align*}
   Z=\sqrt{R^2+X^2}\qquad & \qquad Y=\sqrt{G^2+B^2}\\
-  \theta=\arctan\left(\dfrac{X}{R}\right)\qquad &  \qquad \psi=\arctan\left(\dfrac{B}{G}\right)\\
-  R=Z\cdot \cos(\theta)\qquad & \qquad G=Y\cdot \cos(\psi)\\
-  X=Z\cdot \sin(\theta)\qquad & \qquad B=Y\cdot \sin(\psi)
+  \varphi=\arctan\left(\dfrac{X}{R}\right)\qquad &  \qquad \psi=\arctan\left(\dfrac{B}{G}\right)\\
+  R=Z\cdot \cos(\varphi)\qquad & \qquad G=Y\cdot \cos(\psi)\\
+  X=Z\cdot \sin(\varphi)\qquad & \qquad B=Y\cdot \sin(\psi)
 \end{align*}
 	
 \begin{remark}
@@ -1202,13 +1202,13 @@ Cuando se conecta una impedancia a una tensión alterna de expresión
 $u(t) = U\sqrt{2} \cdot\cos (\omega t)$, la impedancia es recorrida
 por una corriente:
 \begin{equation*}
-  i(t) = I\sqrt{2} \cdot \cos (\omega t -\theta)
+  i(t) = I\sqrt{2} \cdot \cos (\omega t -\varphi)
 \end{equation*}
-siendo $\theta>0$ si la impedancia es inductiva y $\theta<0$ si es
+siendo $\varphi>0$ si la impedancia es inductiva y $\varphi<0$ si es
 capacitiva. La \textbf{potencia instantánea} entregada al circuito
 está definida por:
 \begin{equation*}
-  p(t)=u(t)\cdot i(t)=\left(U\sqrt{2}\cdot \cos (\omega t) \right)\cdot \left(I\sqrt{2} \cdot \cos (\omega t -\theta)\right)=2\cdot U\cdot I\cdot \cos(\omega t)\cdot\cos(\omega t-\theta)
+  p(t)=u(t)\cdot i(t)=\left(U\sqrt{2}\cdot \cos (\omega t) \right)\cdot \left(I\sqrt{2} \cdot \cos (\omega t -\varphi)\right)=2\cdot U\cdot I\cdot \cos(\omega t)\cdot\cos(\omega t-\varphi)
 \end{equation*}
 donde, teniendo en cuenta:
 \begin{align*}
@@ -1217,20 +1217,20 @@ donde, teniendo en cuenta:
   \cline{1-2}
   \cos(\alpha-\beta)+\cos(\alpha+\beta)&=2\cdot\cos(\alpha)\cdot\cos(\beta)%\rightarrow \sin(\alpha)\cdot\sin(\beta)=\dfrac{1}{2}\cdot \left[ \cos(\alpha-\beta)-\cos(\alpha+\beta)\right]
 \end{align*}
-y considerando como $\alpha=\omega t$ y $\beta=\omega t-\theta$:
+y considerando como $\alpha=\omega t$ y $\beta=\omega t-\varphi$:
 \begin{align*}
-  \alpha-\beta&=\theta\\
-  \alpha +\beta&=2\omega t-\theta
+  \alpha-\beta&=\varphi\\
+  \alpha +\beta&=2\omega t-\varphi
 \end{align*}
 por lo que la potencia instantánea resulta:
 \begin{equation}\label{eq:pot_inst}
-  p(t)=2\cdot U\cdot I\cdot \overbrace{\cos(\omega t)}^{\cos(\alpha)}\cdot\overbrace{\cos(\omega t-\theta)}^{\cos(\beta)}\Rightarrow \boxed{p(t)
-    =U\cdot I \cdot \cos(\theta)+U\cdot I \cdot\cos(2\omega t-\theta)}
+  p(t)=2\cdot U\cdot I\cdot \overbrace{\cos(\omega t)}^{\cos(\alpha)}\cdot\overbrace{\cos(\omega t-\varphi)}^{\cos(\beta)}\Rightarrow \boxed{p(t)
+    =U\cdot I \cdot \cos(\varphi)+U\cdot I \cdot\cos(2\omega t-\varphi)}
 \end{equation}
 Según esta ecuación, la potencia instantánea consta de un {valor
-  constante} (el primer término, $U\cdot I\cdot \cos(\theta)$) y una
+  constante} (el primer término, $U\cdot I\cdot \cos(\varphi)$) y una
 componente sinusoidal (el segundo término,
-$U\cdot I\cdot \cos(2 \omega t-\theta)$) de frecuencia $2\omega$
+$U\cdot I\cdot \cos(2 \omega t-\varphi)$) de frecuencia $2\omega$
 (\textbf{doble} de $u(t)$ o $i(t)$). Como puede verse en la
 Figura~\ref{fig.inductivoPuroPotencia}, $p(t)$ es negativa para los
 intervalos de tiempo en los que $u(t)$ e $i(t)$ tienen signos
@@ -1252,7 +1252,7 @@ bobinas o condensadores).
         expresión~\eqref{eq:pot_inst} en un periodo, mediante la
         ecuación~\eqref{eq:valor_medio}:
 	\begin{equation*}
-          P_m=\dfrac{1}{T}\int_{0}^{T}p(t)\,dt=\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(\theta)\,dt+\cancelto{0}{\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(2\omega t-\theta)\,dt}
+          P_m=\dfrac{1}{T}\int_{0}^{T}p(t)\,dt=\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(\varphi)\,dt+\cancelto{0}{\dfrac{1}{T}\int_{0}^{T}U\,I\,\cos(2\omega t-\varphi)\,dt}
 	\end{equation*}
 	siendo el primer integrando constante y el segundo integrando
         una sinusoide. Dado que el promedio de una sinusoide a lo
@@ -1260,28 +1260,28 @@ bobinas o condensadores).
         medio ciclo positivo es cancelada por el área bajo ella
         durante el siguiente medio ciclo negativo), este término se
         anula y la potencia promedio se convierte en
-        $P=U\,I\,\cos(\theta)$, que coincide con el término fijo de
+        $P=U\,I\,\cos(\varphi)$, que coincide con el término fijo de
         $p(t)$ y es la \textbf{potencia real} consumida en los
         elementos disipativos de la impedancia. El término
-        $-U\,I\,\cos(2\omega t-\theta)$ es el responsable de que
+        $-U\,I\,\cos(2\omega t-\varphi)$ es el responsable de que
         $p(t)$ fluctúe (oscile) en torno a su valor medio ($P$); de
         ahí que se conozca como \textbf{potencia fluctuante}. Si se
         desarrolla $p(t)$ teniendo en cuenta la relación para el
         coseno de una resta, resulta:
 	\begin{align*}
-          p(t)&=U\,I\,\cos(\theta)+U\,I\,\cos(\overbrace{2\omega\,t}^{\alpha}-\overbrace{\theta}^{\beta})=U\,I\,\cos(\theta)+\left[ U\,I\,\cos(\theta)\,\cos(2\omega t) + U\,I\sin(\theta)\,\sin(2\omega t)\right]=\\
-              &=\underbrace{{\color{blue}U\,I\,\cos(\theta)}\left[1+\cos(2\omega t)\right]}_{p_1(t)} + \underbrace{{\color{red}U\,I\sin(\theta)}\,\sin(2\omega t)}_{p_2(t)}={\color{blue}P}\left[1+\cos(2\omega t)\right] + {\color{red}Q}\,\sin(2\omega t)
+          p(t)&=U\,I\,\cos(\varphi)+U\,I\,\cos(\overbrace{2\omega\,t}^{\alpha}-\overbrace{\varphi}^{\beta})=U\,I\,\cos(\varphi)+\left[ U\,I\,\cos(\varphi)\,\cos(2\omega t) + U\,I\sin(\varphi)\,\sin(2\omega t)\right]=\\
+              &=\underbrace{{\color{blue}U\,I\,\cos(\varphi)}\left[1+\cos(2\omega t)\right]}_{p_1(t)} + \underbrace{{\color{red}U\,I\sin(\varphi)}\,\sin(2\omega t)}_{p_2(t)}={\color{blue}P}\left[1+\cos(2\omega t)\right] + {\color{red}Q}\,\sin(2\omega t)
 	\end{align*}
 	Por tanto, la potencia eléctrica instantánea absorbida por una
         impedancia consta de dos términos variables en el tiempo con
         frecuencia $2\omega$:
 	\begin{itemize}
         \item $p_1(t)$, positivo y oscilante en torno al valor medio
-          $P=U\,I\,\cos(\theta)$. Es la potencia instantánea que
+          $P=U\,I\,\cos(\varphi)$. Es la potencia instantánea que
           consumen los elementos resistivos, y se denomina
           \textbf{potencia activa} [W]:
           \begin{equation}
-            \boxed{P=U\,I\,\cos(\theta)}
+            \boxed{P=U\,I\,\cos(\varphi)}
           \end{equation}
         \item $p_2(t)$, es la potencia instantánea que almacena o
           devuelve el circuito (no implica transformación en trabajo
@@ -1292,7 +1292,7 @@ bobinas o condensadores).
           consumida'', para diferenciarla de $P$, su unidad se
           denomina \textbf{voltamperio reactivo} [var]:
           \begin{equation}
-            \boxed{Q=U\,I\,\sin(\theta)}
+            \boxed{Q=U\,I\,\sin(\varphi)}
           \end{equation}
 	\end{itemize}
 	
@@ -1300,9 +1300,9 @@ bobinas o condensadores).
 	Una resistencia, como ya se ha indicado en la
         Sección~\ref{sec:R-puro}, presenta una impedancia
         $\overline{Z_R}=R\phase{0^\circ}\rightarrow
-        \theta=0^\circ$. Por tanto, las potencias activa y reactiva:
+        \varphi=0^\circ$. Por tanto, las potencias activa y reactiva:
 	\begin{equation}
-          \theta = 0 \rightarrow
+          \varphi = 0 \rightarrow
           \boxed{\begin{cases}
             P = U\cdot I = \dfrac{U^2}{R} = I^2\cdot R\\
             Q = 0
@@ -1326,9 +1326,9 @@ bobinas o condensadores).
 	Una bobina, como ya se ha indicado en la
         Sección~\ref{sec:L-puro}, presenta una impedancia
         $\overline{Z_L}=\omega\cdot L\phase{90^\circ}\rightarrow
-        \theta=90^\circ$. Por tanto, las potencias activa y reactiva:
+        \varphi=90^\circ$. Por tanto, las potencias activa y reactiva:
 	\begin{equation}
-          \theta = 90^\circ \rightarrow
+          \varphi = 90^\circ \rightarrow
           \boxed{\begin{cases}
             P = 0\\
             Q = U\cdot I = \dfrac{U^2}{\omega L} = I^2\cdot  \omega L
@@ -1352,10 +1352,10 @@ bobinas o condensadores).
 	Un condensador, como ya se ha indicado en la
         Sección~\ref{sec:C-puro}, presenta una impedancia
         $\overline{Z_C}=\frac{1}{\omega\cdot
-          C}\phase{-90^\circ}\rightarrow \theta=-90^\circ$. Por tanto,
+          C}\phase{-90^\circ}\rightarrow \varphi=-90^\circ$. Por tanto,
         las potencias activa y reactiva:
 	\begin{equation}
-          \theta = -90^\circ \rightarrow
+          \varphi = -90^\circ \rightarrow
           \boxed{\begin{cases}
             P = 0\\
             Q = -U\cdot I = -U^2\cdot \omega C = -\dfrac{I^2}{\omega C}
@@ -1415,23 +1415,23 @@ bobinas o condensadores).
           \textbf{realmente consumida} por el circuito. Su unidad es
           el [W]:
           \begin{equation}\label{eq.Pactiva}
-            \boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
+            \boxed{P = U\cdot I\cdot\cos(\varphi) = R \cdot I^2}
           \end{equation}
         \item \textbf{Potencia reactiva.} Cateto opuesto en la
           Figura~\ref{fig.triangulo_potencias_pqs}. Es el
           \textbf{valor máximo de la potencia entretenida} (almacenada
           y cedida) por los elementos almacenadores de energía
           (bobinas y condensadores). Se considera positiva $+$ si el
-          circuito es inductivo ($\theta>0^\circ$) y negativa $-$ si
-          el circuito es capacitivo ($\theta<0^\circ$). Su unidad es
+          circuito es inductivo ($\varphi>0^\circ$) y negativa $-$ si
+          el circuito es capacitivo ($\varphi<0^\circ$). Su unidad es
           el [var] y se calcula mediante:
           \begin{equation}\label{eq.Qreactiva}
-            \boxed{Q = U\cdot I\cdot\sin(\theta) = X \cdot I^2}
+            \boxed{Q = U\cdot I\cdot\sin(\varphi) = X \cdot I^2}
           \end{equation}
         \item \textbf{Potencia aparente.} Hipotenusa en la
           Figura~\ref{fig.triangulo_potencias_pqs}. No es ``potencia
           consumida'' en sentido estricto (excepto cuando
-          $\cos(\theta)=1$), pero representa la \textbf{potencia
+          $\cos(\varphi)=1$), pero representa la \textbf{potencia
             demandada} al generador/red; se denomina \textit{potencia
             aparente}, puesto que es la potencia que, ``en
           apariencia'', la red entrega a las cargas. Para
@@ -1446,20 +1446,20 @@ bobinas o condensadores).
           que puede expresarse también mediante un \textbf{número
             complejo} (al igual que $\overline{Z}$ y $\overline{U}$):
           \begin{equation}
-            \boxed{\overline{S}=P+\mathrm{j}\,Q=\overline{U}\cdot \overline{I^*}=S\phase{\theta}}
+            \boxed{\overline{S}=P+\mathrm{j}\,Q=\overline{U}\cdot \overline{I^*}=S\phase{\varphi}}
           \end{equation}
           conociéndose entonces como \textbf{potencia compleja}. La
           igualdad $\overline{S}=\overline{U}\cdot \overline{I^*}$ se
           obtiene, considerando que $\overline{U} = U\phase{0}$ y
-          $\overline{I} = I\phase{-\theta}$, de la siguiente forma:
+          $\overline{I} = I\phase{-\varphi}$, de la siguiente forma:
           \begin{equation*}
-            \overline{U} \overline{I}^* = U\phase{0} \cdot I\phase{\theta} = UI\phase{\theta}= U I (\cos\theta + \mathrm{j} \sin\theta) = P + \mathrm{j} Q
+            \overline{U} \overline{I}^* = U\phase{0} \cdot I\phase{\varphi} = UI\phase{\varphi}= U I (\cos\varphi + \mathrm{j} \sin\varphi) = P + \mathrm{j} Q
           \end{equation*}
           \begin{remark}
             Nótese que la fase de $\overline{S}$ es \textbf{igual} a
             la fase de la impedancia $\overline{Z}$:
             \begin{equation*}
-              \theta_S = \theta_Z = \theta
+              \varphi_S = \varphi_Z = \varphi
             \end{equation*}
           \end{remark}
           La Figura~\ref{fig.trianguloPotencias} muestra la potencia
@@ -1480,7 +1480,7 @@ bobinas o condensadores).
         \begin{itemize}
         \item \textbf{Resistencia:}
           \begin{equation*}
-            \theta = 0^\circ \Rightarrow 
+            \varphi = 0^\circ \Rightarrow 
             \begin{cases}
               P_R = R I^2\\
               Q_R = 0\\
@@ -1497,7 +1497,7 @@ bobinas o condensadores).
 		
         \item \textbf{Inductancia:}
           \begin{equation*}
-            \theta = 90^\circ \Rightarrow 
+            \varphi = 90^\circ \Rightarrow 
             \begin{cases}
               P_L = 0\\
               Q_L = \omega L I^2\\
@@ -1513,7 +1513,7 @@ bobinas o condensadores).
 		
         \item \textbf{Condensador:}
           \begin{equation*}
-            \theta = - 90^\circ \Rightarrow 
+            \varphi = - 90^\circ \Rightarrow 
             \begin{cases}
               P_L = 0\\
               Q_C = - \omega C U^2\\
@@ -1546,8 +1546,8 @@ $\overline{I}=I\phase{0^\circ}$. Por la 2LK se cumple que:
 \begin{equation*}
   \overline{U}=\sum_{i=1}^3 \overline{U_i}\Rightarrow
   \begin{cases}
-    U\,\cos(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\cos(\theta_i)\\
-    U\,\sin(\theta)=\displaystyle\sum_{i=1}^3 U_i\,\sin(\theta_i)
+    U\,\cos(\varphi)=\displaystyle\sum_{i=1}^3 U_i\,\cos(\varphi_i)\\
+    U\,\sin(\varphi)=\displaystyle\sum_{i=1}^3 U_i\,\sin(\varphi_i)
   \end{cases}
 \end{equation*}
 Multiplicando las dos expresiones anteriores por la corriente (la
@@ -1555,8 +1555,8 @@ misma en todo el circuito, al tratarse de una conexión en serie), se
 obtienen las relaciones entre las potencias, que puede verse
 gráficamente en la Figura~\ref{fig:boucherot}:
 \begin{align*}
-  U\,I\,\cos(\theta)&=P_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\cos(\theta_i)=\displaystyle\sum_{i=1}^3 P_i=\displaystyle\sum_{i=1}^3 R_i\cdot I^2\\
-  U\,I\,\sin(\theta)&=Q_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\sin(\theta_i)=\displaystyle\sum_{i=1}^3 Q_i=\displaystyle\sum_{i=1}^3 X_i\cdot I^2\\
+  U\,I\,\cos(\varphi)&=P_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\cos(\varphi_i)=\displaystyle\sum_{i=1}^3 P_i=\displaystyle\sum_{i=1}^3 R_i\cdot I^2\\
+  U\,I\,\sin(\varphi)&=Q_T=\displaystyle\sum_{i=1}^3 U_i\,I\,\sin(\varphi_i)=\displaystyle\sum_{i=1}^3 Q_i=\displaystyle\sum_{i=1}^3 X_i\cdot I^2\\
 \end{align*}
 \begin{figure}[H]
   \centering
@@ -1679,7 +1679,7 @@ expresión de la potencia activa $P$ se corresponde con la
 \textbf{parte real} de la potencia aparente compleja, según se indicó
 en la expresión~\eqref{eq:S_compleja_mono}. Para medir $P$, se utiliza
 un instrumento de medida denominado \textbf{vatímetro}, puesto que,
-debido al $\cos(\theta)$, no es posible hacerlo únicamente con
+debido al $\cos(\varphi)$, no es posible hacerlo únicamente con
 voltímetro y amperímetro. El vatímetro es un equipo que consta de dos
 bobinas (una de intensidad, o circuito amperimétrico; y otra de
 tensión, o circuito voltimétrico) y, por tanto, cuatro terminales (dos
@@ -1713,49 +1713,49 @@ total.
 \subsection{Factor de potencia: importancia y
   mejora}\label{sec:mejora_fdp_monofasica}
 	
-El factor de potencia, $fdp$ o $\cos(\theta)$, representa la
+El factor de potencia, $fdp$ o $\cos(\varphi)$, representa la
 aportación de potencia activa dentro de la potencia aparente:
 \begin{equation}
-  \boxed{\cos(\theta)=\dfrac{P}{S}}
+  \boxed{\cos(\varphi)=\dfrac{P}{S}}
 \end{equation}
 y es igual al coseno del ángulo entre $\overline{U}$ e
 $\overline{I}$. Se dice que:
 \begin{itemize}
-\item $\cos(\theta)$ es \textbf{en retraso} cuando el circuito tiene
+\item $\cos(\varphi)$ es \textbf{en retraso} cuando el circuito tiene
   carácter inductivo (la intensidad va retrasada respecto a la
   tensión)
-\item $\cos(\theta)$ es \textbf{en adelanto} cuando el circuito tiene
+\item $\cos(\varphi)$ es \textbf{en adelanto} cuando el circuito tiene
   carácter capacitivo (la intensidad va adelantada respecto a la
   tensión)
 \end{itemize}
 \begin{remark}
-  Como $\cos(\theta)\leq 1$, su valor supone un límite a la potencia
+  Como $\cos(\varphi)\leq 1$, su valor supone un límite a la potencia
   activa que se puede consumir en una instalación: ésta será máxima
-  para $\cos(\theta)=1\Rightarrow \theta=0^\circ$ pero, para cualquier
-  otro valor de $\theta$, aún con los mismos valores de $U$ e $I$, la
+  para $\cos(\varphi)=1\Rightarrow \varphi=0^\circ$ pero, para cualquier
+  otro valor de $\varphi$, aún con los mismos valores de $U$ e $I$, la
   potencia activa consumida será inferior.
 \end{remark}
 	
 Sean dos sistemas con la \textbf{misma tensión y potencia activa},
 pero con diferentes factores de potencia
-$\cos(\theta_2) < \cos(\theta_1)$, lo que implica que $Q_2 > Q_1$
+$\cos(\varphi_2) < \cos(\varphi_1)$, lo que implica que $Q_2 > Q_1$
 (Figura~\ref{fig:fasorescompensacionreactiva}). Se observa que el
 sistema 2 requiere una \textbf{mayor potencia aparente} (es decir, un
 generador mayor) para alimentar la misma potencia activa:
 \begin{equation*}
-  \left(\dfrac{P}{\cos(\theta_1)} = S_1 \right) < \left( S_2 = \dfrac{P}{\cos (\theta_2)}\right) 
+  \left(\dfrac{P}{\cos(\varphi_1)} = S_1 \right) < \left( S_2 = \dfrac{P}{\cos (\varphi_2)}\right) 
 \end{equation*}
 Además, el sistema 2 requiere también una \textbf{mayor sección} de
 cable para transportar la misma potencia activa, dado que la sección
 del conductor está relacionada con la intensidad que circula por él;
 esto implica un coste adicional en la instalación:
 \begin{equation*}
-  \left(\frac{P}{U \cos (\theta_1)} = I_1 \right) < \left( I_2 = \frac{P}{U \cos (\theta_2)}\right) 
+  \left(\frac{P}{U \cos (\varphi_1)} = I_1 \right) < \left( I_2 = \frac{P}{U \cos (\varphi_2)}\right) 
 \end{equation*}
 \begin{figure}[H]
   \centering \includegraphics{../figs/fasorescompensacionreactiva.pdf}
   \caption{Fasores de potencias para dos sistemas con $U$ y $P$, pero
-    diferentes $\cos(\theta)$}
+    diferentes $\cos(\varphi)$}
   \label{fig:fasorescompensacionreactiva}
 \end{figure}
 	
@@ -1763,16 +1763,16 @@ Todo ello hace que las compañías suministradoras penalicen a los
 consumidores que tienen factores de potencia bajos, haciéndoles pagar
 una tasa adicional. De hecho, en determinados casos, se obliga a
 instalar elementos que mejoren dicho factor de potencia (aumenten a
-$\cos(\theta)\approx 1$). Dado que la mayoría de los receptores tienen
+$\cos(\varphi)\approx 1$). Dado que la mayoría de los receptores tienen
 un \textbf{carácter inductivo} (máquinas eléctricas industriales),
-para mejorar el $\cos(\theta)$ se conectan \textbf{bancos de
+para mejorar el $\cos(\varphi)$ se conectan \textbf{bancos de
   condensadores} en paralelo con los receptores hasta lograr el factor
 de potencia deseado.
 	
 Sea una carga de potencia activa $P_Z$, potencia reactiva $Q_Z$ y
-factor de potencia $\cos(\theta)$, a la que se le quiere
+factor de potencia $\cos(\varphi)$, a la que se le quiere
 \textbf{mejorar el factor de potencia} de manera que
-$\cos (\theta') > \cos (\theta)$, pero manteniendo el valor de
+$\cos (\varphi') > \cos (\varphi)$, pero manteniendo el valor de
 $P_Z$. Así, hay que introducir \textbf{en paralelo} una capacidad $C$
 capaz de generar un valor $Q_C$ que compense la reactiva inicial $Q_Z$
 hasta el valor deseado $Q'$. Se cumple entonces que:
@@ -1786,11 +1786,11 @@ introducido el condensador (ver
 Figura~\ref{fig:circuito_compensacion}). A partir del triángulo de
 potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
 \begin{align*}
-  Q_Z &= P_Z \tan (\theta)\\
-  Q'&= P_Z \tan (\theta')
+  Q_Z &= P_Z \tan (\varphi)\\
+  Q'&= P_Z \tan (\varphi')
 \end{align*}
 \begin{equation}\label{eq:compensacion_Q_mono}
-  |Q_C| = Q_Z - Q' = P_Z\cdot \left[\tan (\theta) - \tan (\theta')\right]=\dfrac{U^2}{X_C}={U^2\,\omega\,C}\rightarrow \boxed{C=\frac{P_Z \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}}
+  |Q_C| = Q_Z - Q' = P_Z\cdot \left[\tan (\varphi) - \tan (\varphi')\right]=\dfrac{U^2}{X_C}={U^2\,\omega\,C}\rightarrow \boxed{C=\frac{P_Z \left[\tan (\varphi) - \tan (\varphi')\right]}{\omega U^2}}
 \end{equation}
 	
 	
@@ -1813,7 +1813,7 @@ potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
   A partir de la fórmula~\eqref{eq:compensacion_Q_mono}, se obtiene
   que la capacidad es:
   \begin{equation*}
-    C=\frac{P \left[\tan (\theta) - \tan (\theta')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\,\si{\micro\farad}
+    C=\frac{P \left[\tan (\varphi) - \tan (\varphi')\right]}{\omega U^2}=\dfrac{5200\cdot(\tan(\arccos(0.8))-\tan(\arccos(0.95))}{2\cdot\pi\cdot 50\cdot 230^2}=131.82\,\si{\micro\farad}
   \end{equation*}
 	    
   A este mismo resultado se puede llegar sin necesiadad de aprenderse
@@ -1825,8 +1825,8 @@ potencias (Figura~\ref{fig:triangulocompensacionQ}) se deduce que:
   \end{equation*}
   La potencia reactiva inicial y final:
   \begin{align*}
-    Q&=P\,\tan(\theta)=5200\cdot\tan(\arccos(0.8))=3900\,\si{\var}\\
-    Q'&=P'\,\tan(\theta')=5200\cdot\tan(\arccos(0.95))=1709.16\,\si{\var}
+    Q&=P\,\tan(\varphi)=5200\cdot\tan(\arccos(0.8))=3900\,\si{\var}\\
+    Q'&=P'\,\tan(\varphi')=5200\cdot\tan(\arccos(0.95))=1709.16\,\si{\var}
   \end{align*}
   por lo que la potencia reactiva que genera el condensador es:
   \begin{equation*}

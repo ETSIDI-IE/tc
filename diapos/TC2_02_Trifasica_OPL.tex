@@ -1,4 +1,4 @@
-% Created 2024-02-16 vie 11:16
+% Created 2024-06-21 vie 08:30
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -53,15 +53,15 @@
  pdftitle={Sistemas Trifásicos},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 29.1 (Org mode 9.6.11)}, 
+ pdfcreator={Emacs 29.2 (Org mode 9.6.28)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Generadores}
-\label{sec:org99e8f62}
-\begin{frame}[label={sec:org8415167}]{Tensiones de Fase y Línea}
+\label{sec:org8ca81fd}
+\begin{frame}[label={sec:orgb71646f}]{Tensiones de Fase y Línea}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -84,7 +84,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
        \overline{U}_{AB} + \overline{U}_{BC} + \overline{U}_{CA} &= 0     \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgda81523}]{Tensiones de Fase y Línea}
+\begin{frame}[label={sec:org7c070f3}]{Tensiones de Fase y Línea}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -117,7 +117,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org56b1a4b}]{Secuencia de Fases}
+\begin{frame}[label={sec:org90f5730}]{Secuencia de Fases}
 \begin{itemize}
 \item Sentido en el que ocurren los máximos de cada fase.
 \item Secuencia de Fases Directa (\alert{SFD}): ABC
@@ -133,7 +133,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org1a74eb4}]{Secuencia de Fases Directa (SFD)}
+\begin{frame}[label={sec:org7787e74}]{Secuencia de Fases Directa (SFD)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/FasoresTrifasica_ABC.pdf}
 \end{center}
@@ -163,7 +163,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 
-\begin{frame}[label={sec:org2813971}]{Secuencia de Fases Inversa (SFI)}
+\begin{frame}[label={sec:org7b8d5ab}]{Secuencia de Fases Inversa (SFI)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/FasoresTrifasica_ACB.pdf}
 \end{center}
@@ -191,8 +191,8 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{columns}
 \end{frame}
 \section{Receptores}
-\label{sec:orgff91199}
-\begin{frame}[label={sec:org0640e45}]{Tipos de Receptores}
+\label{sec:orge273846}
+\begin{frame}[label={sec:org919fda1}]{Tipos de Receptores}
 \begin{block}{Conexión}
 \begin{itemize}
 \item \alert{Estrella} (punto común) Y
@@ -209,7 +209,7 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{frame}
 
 
-\begin{frame}[label={sec:org62206c2}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:org2299dec}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -219,9 +219,9 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\pm 90} - \theta} \\
-  \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 30} - \theta}\\
-  \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 150} - \theta}
+  \overline{I}_A &= \frac{\overline{U}_A}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\pm 90} - \varphi} \\
+  \overline{I}_B &= \frac{\overline{U}_B}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 30} - \varphi}\\
+  \overline{I}_C &= \frac{\overline{U}_C}{\overline{Z}} = \frac{U_f}{Z}\phase{\ang{\mp 150} - \varphi}
 \end{align*}
 
 
@@ -238,19 +238,19 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org9137be6}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:orga2490dd}]{Receptor en Estrella Equilibrado}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/EstrellaEquilibrado_SinNeutro.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgf9b86f9}]{Receptor en Estrella con Carga Monofásica}
+\begin{frame}[label={sec:org37615ef}]{Receptor en Estrella con Carga Monofásica}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/Estrella_CargaMonofasica.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org2ae66ec}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:orgf3930a6}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -260,9 +260,9 @@ Tensiones de \alert{Línea}: \(U_{AB}\), \(U_{BC}\), \(U_{CA}\)
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\pm 120} - \theta} \\
-  \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}} = \frac{U}{Z}\phase{0 - \theta}\\
-  \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\mp 120} - \theta}
+  \overline{I}_{AB} &= \frac{\overline{U}_{AB}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\pm 120} - \varphi} \\
+  \overline{I}_{BC} &= \frac{\overline{U}_{BC}}{\overline{Z}} = \frac{U}{Z}\phase{0 - \varphi}\\
+  \overline{I}_{CA} &= \frac{\overline{U}_{CA}}{\overline{Z}} = \frac{U}{Z}\phase{\ang{\mp 120} - \varphi}
 \end{align*}
 
 \[
@@ -278,7 +278,7 @@ Corriente de Fase:
 \end{frame}
 
 
-\begin{frame}[label={sec:org8ab5f81}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:orgef51050}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -288,9 +288,9 @@ Corriente de Fase:
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\pm 90} - \theta}\\
-  \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 30} - \theta}\\
-  \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 150} - \theta}\\
+  \overline{I}_A &= \overline{I}_{AB} - \overline{I}_{CA} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\pm 90} - \varphi}\\
+  \overline{I}_B &= \overline{I}_{BC} - \overline{I}_{AB} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 30} - \varphi}\\
+  \overline{I}_C &= \overline{I}_{CA} - \overline{I}_{BC} = \sqrt{3} \cdot \frac{U}{Z}\phase{\ang{\mp 150} - \varphi}\\
 \end{align*}
 
 Corriente de Línea:
@@ -305,7 +305,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org81a1d8d}]{Receptor en Estrella Desequilibrado con Neutro}
+\begin{frame}[label={sec:org796809c}]{Receptor en Estrella Desequilibrado con Neutro}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -330,7 +330,7 @@ Corriente de Línea:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orga165484}]{Receptor en Estrella Desequilibrado sin Neutro}
+\begin{frame}[label={sec:orge3dd80e}]{Receptor en Estrella Desequilibrado sin Neutro}
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/EstrellaDesequilibrado_SinNeutro.pdf}
 \end{center}
@@ -340,7 +340,7 @@ Corriente de Línea:
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org2ac729b}]{Método del desplazamiento del neutro}
+\begin{frame}[label={sec:org74ad709}]{Método del desplazamiento del neutro}
 Ecuaciones del receptor:
 \begin{align*}
   \overline{U}_{A'O} &= \overline{I}_A \cdot \overline{Z}_A\\
@@ -353,7 +353,7 @@ Ecuación del nudo \(O\):
 \]
 \end{frame}
 
-\begin{frame}[label={sec:orgf763d20}]{Método del desplazamiento del neutro}
+\begin{frame}[label={sec:org4e85775}]{Método del desplazamiento del neutro}
 Relacionamos las tensiones en el receptor con las tensiones del generador:
 \begin{align*}
   \overline{U}_{A'O} &= \overline{U}_{AN} - \overline{U}_{ON}\\
@@ -369,7 +369,7 @@ Despejamos las corrientes teniendo en cuenta estas relaciones:
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgab16c6b}]{Método del desplazamiento del neutro}
+\begin{frame}[label={sec:org9119947}]{Método del desplazamiento del neutro}
 Finalmente, usando la ecuación del nudo \(O\) despejamos la tensión \(U_{ON}\) (tensión de desplazamiento del neutro)\footnote{Se puede llegar a este mismo resultado aplicando el teorema de Millman.}:
 
 \[
@@ -384,7 +384,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:org1c34099}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:orgeb429e1}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -408,7 +408,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org23f985e}]{Transformación de receptores}
+\begin{frame}[label={sec:org2df140d}]{Transformación de receptores}
 \framesubtitle{Triángulo a Estrella}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
@@ -435,7 +435,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org02cbd9e}]{Transformación de receptores}
+\begin{frame}[label={sec:orgf555c81}]{Transformación de receptores}
 \framesubtitle{Estrella a Triángulo}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
@@ -463,9 +463,9 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 
 \section{Potencia en Sistemas Trifásicos}
-\label{sec:orgef682e9}
+\label{sec:org920afc7}
 
-\begin{frame}[label={sec:org22a6d97}]{Receptor en Estrella Equilibrado}
+\begin{frame}[label={sec:org5fde7aa}]{Receptor en Estrella Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -475,8 +475,8 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\theta)\\
-  Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\theta)
+  P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\varphi)\\
+  Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\varphi)
 \end{align*}
 
 \begin{align*}
@@ -486,8 +486,8 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 
 \begin{align*}
-  P &= 3 U_F I \cos(\theta) = \sqrt{3} U I \cos(\theta)\\
-  Q &= 3 U_F I \sin(\theta) = \sqrt{3} U I \sin(\theta)\\
+  P &= 3 U_F I \cos(\varphi) = \sqrt{3} U I \cos(\varphi)\\
+  Q &= 3 U_F I \sin(\varphi) = \sqrt{3} U I \sin(\varphi)\\
   S &= \sqrt{P^2 + Q^2} =  \sqrt{3} U I
 \end{align*}
 \end{column}
@@ -495,7 +495,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{frame}
 
 
-\begin{frame}[label={sec:org11190b2}]{Receptor en Triángulo Equilibrado}
+\begin{frame}[label={sec:org0b9212b}]{Receptor en Triángulo Equilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -505,8 +505,8 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\theta)\\
-  Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\theta)
+  P = 3 \cdot P_Z &= 3 \cdot U_Z I_Z \cos(\varphi)\\
+  Q = 3 \cdot Q_Z &= 3 \cdot U_Z I_Z \sin(\varphi)
 \end{align*}
 
 \begin{align*}
@@ -516,15 +516,15 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 
 \begin{align*}
-  P &= 3 U I_F \cos(\theta) = \sqrt{3} U I \cos(\theta)\\
-  Q &= 3 U I_F \sin(\theta) = \sqrt{3} U I \sin(\theta)\\
+  P &= 3 U I_F \cos(\varphi) = \sqrt{3} U I \cos(\varphi)\\
+  Q &= 3 U I_F \sin(\varphi) = \sqrt{3} U I \sin(\varphi)\\
   S &= \sqrt{P^2 + Q^2} =  \sqrt{3} U I
 \end{align*}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org04dffab}]{Receptor en Estrella Desequilibrado}
+\begin{frame}[label={sec:orgd3b43e5}]{Receptor en Estrella Desequilibrado}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -542,7 +542,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org3f89ae6}]{Receptor en Triángulo Desequilibrado}
+\begin{frame}[label={sec:org989fea2}]{Receptor en Triángulo Desequilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -561,9 +561,9 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{frame}
 
 \section{Compensación de Reactiva}
-\label{sec:orgd4a7002}
+\label{sec:org9ddc592}
 
-\begin{frame}[label={sec:orga4baf10}]{Conexión en Triángulo}
+\begin{frame}[label={sec:orgbbf5e6d}]{Conexión en Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -573,19 +573,19 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  Q &= P\tan\theta\\
-  Q' &= P\tan\theta' =\\
+  Q &= P\tan\varphi\\
+  Q' &= P\tan\varphi' =\\
     &= Q - Q_c\\
   Q_c &= 3 \cdot \omega C_\triangle \cdot U^2
 \end{align*}
 \[
-  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3\omega U^2}}
+  \boxed{C_\triangle = \frac{P(\tan \varphi - \tan \varphi')}{3\omega U^2}}
 \]
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgc0e22ba}]{Conexión en Estrella}
+\begin{frame}[label={sec:org9718ab4}]{Conexión en Estrella}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -594,25 +594,25 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \end{column}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
-  Q &= P\tan\theta\\
-  Q' &= P\tan\theta' =\\
+  Q &= P\tan\varphi\\
+  Q' &= P\tan\varphi' =\\
     &= Q - Q_c\\
   Q_c &= 3 \cdot \omega C_Y \cdot U_f^2
 \end{align*}
 \[
-  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+  \boxed{C_Y = \frac{P(\tan \varphi - \tan \varphi')}{\omega U^2}}
 \]
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org16efe75}]{Comparación Estrella-Triángulo}
+\begin{frame}[label={sec:org9b44b45}]{Comparación Estrella-Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
 \includegraphics[height=0.55\textheight]{../figs/CircuitoTrifasica_CompensacionReactiva.pdf}
 \end{center}
 \[
-  \boxed{C_\triangle = \frac{P(\tan \theta - \tan \theta')}{3 \omega U^2}}
+  \boxed{C_\triangle = \frac{P(\tan \varphi - \tan \varphi')}{3 \omega U^2}}
 \]
 \end{column}
 
@@ -621,7 +621,7 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 \includegraphics[height=0.55\textheight]{../figs/CircuitoTrifasicaY_CompensacionReactiva.pdf}
 \end{center}
 \[
-  \boxed{C_Y = \frac{P(\tan \theta - \tan \theta')}{\omega U^2}}
+  \boxed{C_Y = \frac{P(\tan \varphi - \tan \varphi')}{\omega U^2}}
 \]
 
 \medskip
@@ -631,8 +631,8 @@ Una vez calculada esta tensión \(\overline{U}_{ON}\) se pueden calcular las cor
 Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es \alert{triángulo}.
 \end{frame}
 \section{Medida de Potencia en Sistemas Trifásicos}
-\label{sec:orgbfc6455}
-\begin{frame}[label={sec:orgc87df61}]{Recordatorio: vatímetro}
+\label{sec:org72038a1}
+\begin{frame}[label={sec:org86680c8}]{Recordatorio: vatímetro}
 \begin{center}
 \includegraphics[height=0.6\textheight]{../figs/vatimetro.pdf}
 \end{center}
@@ -643,7 +643,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
   \boxed{W = \Re(\overline{U} \cdot \overline{I}^*)}
 \]
 \end{frame}
-\begin{frame}[label={sec:org696a8a4}]{Sistema de 4 Hilos}
+\begin{frame}[label={sec:org0b33d77}]{Sistema de 4 Hilos}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -665,7 +665,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orge861f63}]{Sistema de 4 Hilos Equilibrado}
+\begin{frame}[label={sec:orgfeed65b}]{Sistema de 4 Hilos Equilibrado}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -685,13 +685,13 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org208d41b},plain]{Sistema de 3 Hilos Equilibrado (SFD)}
+\begin{frame}[label={sec:org3bd21b7},plain]{Sistema de 3 Hilos Equilibrado (SFD)}
 \[
   \boxed{(ABC) :: A \triangleright B \triangleright C \Longrightarrow \{AB, BC, CA\}}
 \]
 \begin{align*}
-  W_1 &= UI\cos(\theta - \ang{30}) & P &= W_1 + W_2\\
-  W_2 &= UI\cos(\theta + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
+  W_1 &= UI\cos(\varphi - \ang{30}) & P &= W_1 + W_2\\
+  W_2 &= UI\cos(\varphi + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
 \end{align*}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
@@ -725,13 +725,13 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgaf4bc3b},plain]{Sistema de 3 Hilos Equilibrado (SFI)}
+\begin{frame}[label={sec:org9d0dd9c},plain]{Sistema de 3 Hilos Equilibrado (SFI)}
 \[
   \boxed{(ACB) :: A \triangleright C \triangleright B \Longrightarrow \{AC, CB, BA\}}
 \]
 \begin{align*}
-  W_1 &= UI\cos(\theta - \ang{30}) & P &= W_1 + W_2\\
-  W_2 &= UI\cos(\theta + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
+  W_1 &= UI\cos(\varphi - \ang{30}) & P &= W_1 + W_2\\
+  W_2 &= UI\cos(\varphi + \ang{30}) & Q &= \sqrt{3}(W_1 - W_2)
 \end{align*}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
@@ -766,7 +766,7 @@ Dado que \(C_Y = 3 \cdot C_\triangle\) la \alert{configuración recomendada} es 
 \end{frame}
 
 
-\begin{frame}[label={sec:org072131a}]{Conexiones para medida de reactiva}
+\begin{frame}[label={sec:org1f18088}]{Conexiones para medida de reactiva}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
 \begin{center}
@@ -811,7 +811,7 @@ SFI &\rightarrow \boxed{W =  - \frac{Q}{\sqrt{3}}}
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orgde71c72}]{Conexiones para medida de reactiva}
+\begin{frame}[label={sec:org877e9ee}]{Conexiones para medida de reactiva}
 \begin{columns}
 \begin{column}{0.33\columnwidth}
 \begin{center}
@@ -856,7 +856,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{align*}
 \end{frame}
 
-\begin{frame}[label={sec:orga6eff0b}]{Medida de la reactiva con receptor desequilibrado}
+\begin{frame}[label={sec:org21a5f92}]{Medida de la reactiva con receptor desequilibrado}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/Reactiva_3H_deseq.pdf}
 \end{center}
@@ -884,15 +884,15 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 \section{Conversión de Fuentes Reales}
-\label{sec:org317f15c}
+\label{sec:orga26180e}
 
-\begin{frame}[label={sec:orgedf3c26}]{Estrella a Triángulo}
+\begin{frame}[label={sec:orgedd06b4}]{Estrella a Triángulo}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/GeneradorRealEstrella.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org5c486a2}]{Transformamos impedancia}
+\begin{frame}[label={sec:orgd1ad22e}]{Transformamos impedancia}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -908,7 +908,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org14cd6c4}]{Aplicamos movilidad de fuentes}
+\begin{frame}[label={sec:orgb39f55d}]{Aplicamos movilidad de fuentes}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -923,7 +923,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org77d66d7}]{Asociamos fuentes}
+\begin{frame}[label={sec:org1a8c5ca}]{Asociamos fuentes}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -939,13 +939,13 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{frame}
 
 
-\begin{frame}[label={sec:org07b4756}]{Triángulo a Estrella}
+\begin{frame}[label={sec:org8f2ca0a}]{Triángulo a Estrella}
 \begin{center}
 \includegraphics[height=0.9\textheight]{../figs/GeneradorRealTriangulo.pdf}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org5d925b7}]{Transformamos fuentes}
+\begin{frame}[label={sec:org7efb820}]{Transformamos fuentes}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -960,7 +960,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgd0ce029}]{Transformamos impedancias}
+\begin{frame}[label={sec:org10a8534}]{Transformamos impedancias}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -976,7 +976,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org0c96a77}]{Aplicamos movilidad de fuentes}
+\begin{frame}[label={sec:org78290b7}]{Aplicamos movilidad de fuentes}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -992,7 +992,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org54af742}]{Asociamos fuentes}
+\begin{frame}[label={sec:orge60c377}]{Asociamos fuentes}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1009,7 +1009,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org956d358}]{Transformamos fuentes}
+\begin{frame}[label={sec:org9f4d19e}]{Transformamos fuentes}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1027,15 +1027,15 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{frame}
 
 \section{Estudio generalizado de los sistemas trifásicos}
-\label{sec:org0ee8c5b}
-\begin{frame}[label={sec:orgbb411ea}]{Planteamiento del sistema}
+\label{sec:org2114402}
+\begin{frame}[label={sec:org645c9d8}]{Planteamiento del sistema}
 \begin{center}
 \includegraphics[width=\textwidth]{../figs/CircuitoTrifasicaGeneralizado.pdf}
 \end{center}
 \end{frame}
 
 
-\begin{frame}[label={sec:org63909d1}]{Agrupamos impedancias de generador, línea y receptor}
+\begin{frame}[label={sec:orgb2f53a2}]{Agrupamos impedancias de generador, línea y receptor}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -1053,7 +1053,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org7e83ba5}]{Conversión de fuentes}
+\begin{frame}[label={sec:orgcc7d6a1}]{Conversión de fuentes}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -1074,7 +1074,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orge61b9b7}]{Tensión de desplazamiento del neutro}
+\begin{frame}[label={sec:orgb40c869}]{Tensión de desplazamiento del neutro}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -1090,7 +1090,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org2904616}]{Cálculo de corrientes}
+\begin{frame}[label={sec:org0577fae}]{Cálculo de corrientes}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -1109,7 +1109,7 @@ SFI &\rightarrow \boxed{W = \frac{Q}{\sqrt{3}}}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgbeb0aaf}]{Aplicación a sistemas equilibrados}
+\begin{frame}[label={sec:org28560c0}]{Aplicación a sistemas equilibrados}
 La suma de las fuerzas electromotrices es 0
 \[
   \overline{\epsilon}_{gA} + \overline{\epsilon}_{gB} + \overline{\epsilon}_{gC} = 0
@@ -1125,7 +1125,7 @@ Por tanto,
 Este resultado es independiente de la existencia del neutro y de su impedancia.
 \end{frame}
 
-\begin{frame}[label={sec:org0a6430f}]{Aplicación a sistemas desequilibrados}
+\begin{frame}[label={sec:org91a5a13}]{Aplicación a sistemas desequilibrados}
 \begin{itemize}
 \item Sistemas con neutro de impedancia no nula
 \[
@@ -1145,7 +1145,7 @@ Este resultado es independiente de la existencia del neutro y de su impedancia.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org540f2ce}]{Sistema sin neutro}
+\begin{frame}[label={sec:orge611b3b}]{Sistema sin neutro}
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/CircuitoTrifasicaGeneralizado_sinNeutro.pdf}
 \end{center}
@@ -1159,7 +1159,7 @@ Este resultado es independiente de la existencia del neutro y de su impedancia.
 \end{frame}
 
 
-\begin{frame}[label={sec:org7f3b9a0}]{Receptor en triángulo}
+\begin{frame}[label={sec:org56f3c39}]{Receptor en triángulo}
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/CircuitoTrifasicaGeneralizado_RT.pdf}
 \end{center}
@@ -1174,7 +1174,7 @@ Este resultado es independiente de la existencia del neutro y de su impedancia.
 
 
 
-\begin{frame}[label={sec:orgfc19dea}]{Generador en triángulo}
+\begin{frame}[label={sec:org2c799a2}]{Generador en triángulo}
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/CircuitoTrifasicaGeneralizado_GT.pdf}
 \end{center}
@@ -1187,7 +1187,7 @@ Este resultado es independiente de la existencia del neutro y de su impedancia.
 \]
 \end{frame}
 
-\begin{frame}[label={sec:org8390963}]{Generador y Receptor en triángulo}
+\begin{frame}[label={sec:orgcc2c18a}]{Generador y Receptor en triángulo}
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/CircuitoTrifasicaGeneralizado_GTRT.pdf}
 \end{center}

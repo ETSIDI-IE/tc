@@ -265,7 +265,7 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
 \boxed{\overline{Z} = \frac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
     \begin{cases}
       Z = \frac{U}{I}\\
-      \theta = \theta_U - \theta_I
+      \varphi = \theta_U - \theta_I
     \end{cases}}
 \]
 #+END_EXPORT
@@ -313,7 +313,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 #+BEGIN_EXPORT latex
 \begin{align*}
   Z &= \frac{U}{I} = R\\
-  \theta &= \theta_U - \theta_I = 0\\
+  \varphi &= \theta_U - \theta_I = 0\\
   \Aboxed{\overline{Z}_R &= R \phase{0}}
 \end{align*}
 #+END_EXPORT
@@ -368,7 +368,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 #+BEGIN_EXPORT latex
 \begin{align*}
   Z &= \frac{U}{I} = \omega L\\
-  \theta &= \theta_U - \theta_I = \pi/2\\
+  \varphi &= \theta_U - \theta_I = \pi/2\\
   \Aboxed{\overline{Z}_L &= j\omega L = \omega L \phase{\ang{90}}}
 \end{align*}
 #+END_EXPORT
@@ -423,7 +423,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 #+BEGIN_EXPORT latex
 \begin{align*}
   Z &= \frac{U}{I} = \frac{1}{\omega C}\\
-  \theta &= \theta_U - \theta_I = - \pi/2\\
+  \varphi &= \theta_U - \theta_I = - \pi/2\\
   \Aboxed{\overline{Z}_C &= \frac{1}{j\omega C} = \frac{1}{\omega C}\phase{\ang{-90}}}
 \end{align*}
 #+END_EXPORT
@@ -501,13 +501,13 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :END:
 #+BEGIN_EXPORT latex
 \[
-\overline{Z} = R + j\omega L \Rightarrow \boxed{\theta > 0}
+\overline{Z} = R + j\omega L \Rightarrow \boxed{\varphi > 0}
 \]
 \[
   |Z| = \sqrt{R^2 + (\omega L)^2}
 \]
 \[
-  \theta = \atan{\frac{\omega L}{R}}
+  \varphi = \atan{\frac{\omega L}{R}}
 \]
 #+END_EXPORT
 
@@ -566,7 +566,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 #+BEGIN_EXPORT latex
 \[
-\overline{Z} = R - \frac{j}{\omega C} \Rightarrow \boxed{\theta < 0}
+\overline{Z} = R - \frac{j}{\omega C} \Rightarrow \boxed{\varphi < 0}
 \]
 
 \[
@@ -574,7 +574,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 \]
 
 \[
-  \theta = - \atan{\frac{1}{\omega R C}}
+  \varphi = - \atan{\frac{1}{\omega R C}}
 \]
 
 #+END_EXPORT
@@ -623,7 +623,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
   |Z| = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}
 \]
 \[
-  \theta = \atan{\frac{\omega L - \frac{1}{\omega C}}{R}}
+  \varphi = \atan{\frac{\omega L - \frac{1}{\omega C}}{R}}
 \]
 #+END_EXPORT
 
@@ -631,9 +631,9 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.6
     :END:
-- $\theta > 0 \Rightarrow \omega L > \frac{1}{\omega C}$: inductivo
-- $\theta < 0 \Rightarrow \omega L < \frac{1}{\omega C}$: capacitivo
-- $\theta = 0 \Rightarrow \omega L = \frac{1}{\omega C}$: resistivo (resonancia)
+- $\varphi > 0 \Rightarrow \omega L > \frac{1}{\omega C}$: inductivo
+- $\varphi < 0 \Rightarrow \omega L < \frac{1}{\omega C}$: capacitivo
+- $\varphi = 0 \Rightarrow \omega L = \frac{1}{\omega C}$: resistivo (resonancia)
 
 ***                                                         :B_ignoreheading:
     :PROPERTIES:
@@ -641,7 +641,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :END:
 #+begin_export latex
 \[
-\boxed{u(t) = Z \cdot I_{max} \sen(\omega t + \theta_I + \theta)}
+\boxed{u(t) = Z \cdot I_{max} \sen(\omega t + \theta_I + \varphi)}
 \]
 
 #+end_export
@@ -685,7 +685,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     #+begin_export latex
  \[R_{eq}=\sum_{i=1}^n R_i\,\qquad \qquad X_{eq}=\sum_{i=1}^n X_i\]
  
- \[\theta=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)\]
+ \[\varphi=\arctan\left(\dfrac{X_{eq}}{R_{eq}}\right)\]
     #+end_export
 
 ** Circuito paralelo general
@@ -770,7 +770,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
       \overline{Y} = \frac{1}{\overline{Z}} \rightarrow \left\{%
 	\begin{array}{l}
 	|\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
-        \theta_Y = -\theta_Z = - \theta\\
+        \varphi_Y = -\varphi_Z = - \varphi\\
 	\end{array}\right.
 	  }
     \]
@@ -813,11 +813,11 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     #+end_export
 * Potencia
 ** Expresión general
-Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente está retrasada respecto de la tensión (/circuito en retraso/).
+Sea la tensión referencia de fases. Si $\varphi > 0$ (inductivo) la corriente está retrasada respecto de la tensión (/circuito en retraso/).
    #+begin_export latex
    \begin{align*}
      u(t) &= U_{max} \cos \omega t\\
-     i(t) &= I_{max} \cos (\omega t {\color{red}-} \theta)\\
+     i(t) &= I_{max} \cos (\omega t {\color{red}-} \varphi)\\
      p(t) &= u(t) \cdot i(t)
    \end{align*}
    #+end_export
@@ -825,30 +825,30 @@ Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente es
 
    #+begin_export latex
    \begin{align*}
-     p(t) &= (\sqrt{2} \cdot U \cdot \cos(\omega t)) \cdot (\sqrt{2} \cdot I \cdot \cos(\omega t - \theta)) =\\
-	  &= 2 \cdot U \cdot I \cdot \cos(\omega t)\cdot \cos(\omega t - \theta) =\\
-	  &= U I \cdot \left( \cos(2\omega t - \theta) + \cos(\theta)\right) =\\
-	  &= U I \cdot \left(\cos(2\omega t)\cos(\theta) + \sen(2\omega t)\sen(\theta) +  \cos(\theta)\right)
+     p(t) &= (\sqrt{2} \cdot U \cdot \cos(\omega t)) \cdot (\sqrt{2} \cdot I \cdot \cos(\omega t - \varphi)) =\\
+	  &= 2 \cdot U \cdot I \cdot \cos(\omega t)\cdot \cos(\omega t - \varphi) =\\
+	  &= U I \cdot \left( \cos(2\omega t - \varphi) + \cos(\varphi)\right) =\\
+	  &= U I \cdot \left(\cos(2\omega t)\cos(\varphi) + \sen(2\omega t)\sen(\varphi) +  \cos(\varphi)\right)
    \end{align*}
    #+end_export
 
    #+begin_export latex
    \begin{equation*}
-     \boxed{p(t) = U I \cos(\theta) + U I \cos(\theta) \cos(2\omega t) + U I \sen(\theta) \sen(2\omega t)}
+     \boxed{p(t) = U I \cos(\varphi) + U I \cos(\varphi) \cos(2\omega t) + U I \sen(\varphi) \sen(2\omega t)}
    \end{equation*}
    #+end_export
 ** Expresión general
 
    #+begin_export latex
    \begin{equation*}
-     p(t) = {\color{blue}U I \cos(\theta)} + {\color{blue}U I \cos(\theta)} \cos(2\omega t) + {\color{red}U I \sen(\theta)} \sen(2\omega t)
+     p(t) = {\color{blue}U I \cos(\varphi)} + {\color{blue}U I \cos(\varphi)} \cos(2\omega t) + {\color{red}U I \sen(\varphi)} \sen(2\omega t)
    \end{equation*}
    #+end_export
 
    #+begin_export latex
    \[
-     \color{blue}P = UI\cos\theta \quad%
-     \color{red}Q = UI\sen\theta
+     \color{blue}P = UI\cos\varphi \quad%
+     \color{red}Q = UI\sen\varphi
    \]
   
    #+end_export
@@ -863,8 +863,8 @@ Sea la tensión referencia de fases. Si $\theta > 0$ (inductivo) la corriente es
 ** Circuito Resistivo
    #+begin_export latex
    \[
-     P = UI\cos\theta \quad%
-     {\color{gray}Q = UI\sen\theta}
+     P = UI\cos\varphi \quad%
+     {\color{gray}Q = UI\sen\varphi}
    \]
    
    \begin{equation*}
@@ -874,7 +874,7 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sen(2\omega t)}
 -----
    #+begin_export latex
    \[
-     \theta = 0 \rightarrow%
+     \varphi = 0 \rightarrow%
      \left\{% 
        \begin{array}{l}
 	 P = UI = U^2/R = I^2 R\\
@@ -899,8 +899,8 @@ p(t) = P \cdot (1 + \cos(2\omega t)) + {\color{gray}Q \cdot \sen(2\omega t)}
 ** Circuito Inductivo puro
    #+begin_export latex
    \[
-     {\color{gray}P = UI\cos\theta} \quad%
-     Q = UI\sen\theta
+     {\color{gray}P = UI\cos\varphi} \quad%
+     Q = UI\sen\varphi
    \]
    
    \begin{equation*}
@@ -911,7 +911,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 
    #+begin_export latex
    \[
-     \theta = \pi/2 \rightarrow%
+     \varphi = \pi/2 \rightarrow%
      \left\{% 
        \begin{array}{l}
 	 P = 0\\
@@ -936,8 +936,8 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 ** Circuito Capacitivo puro
    #+begin_export latex
    \[
-     {\color{gray}P = UI\cos\theta} \quad%
-     Q = UI\sen\theta
+     {\color{gray}P = UI\cos\varphi} \quad%
+     Q = UI\sen\varphi
    \]
    
    \begin{equation*}
@@ -948,7 +948,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 
    #+begin_export latex
    \[
-     \theta = -\pi/2 \rightarrow%
+     \varphi = -\pi/2 \rightarrow%
      \left\{% 
        \begin{array}{l}
 	 P = 0\\
@@ -980,7 +980,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
 #+end_export
 
 #+begin_center
-Valor medio positivo, $P = U I \cos \theta$
+Valor medio positivo, $P = U I \cos \varphi$
 #+end_center
 
 
@@ -995,7 +995,7 @@ Valor medio positivo, $P = U I \cos \theta$
 #+end_export
 
 #+begin_center
-Valor medio positivo, $P = U I \cos \theta$
+Valor medio positivo, $P = U I \cos \varphi$
 #+end_center
 
 ** Triángulo de Potencias
@@ -1006,14 +1006,14 @@ Valor medio positivo, $P = U I \cos \theta$
 - Potencia Activa [$W$]
 #+BEGIN_EXPORT latex
 \[  
-\boxed{P = U\cdot I\cdot\cos(\theta) = R \cdot I^2}
+\boxed{P = U\cdot I\cdot\cos(\varphi) = R \cdot I^2}
 \]
 #+END_EXPORT
 
 - Potencia Reactiva [$var$]
 #+BEGIN_EXPORT latex
 \[
-\boxed{Q = U\cdot I\cdot\sen(\theta) = X \cdot I^2}
+\boxed{Q = U\cdot I\cdot\sen(\varphi) = X \cdot I^2}
 \]
 #+END_EXPORT
 
@@ -1025,9 +1025,9 @@ Valor medio positivo, $P = U I \cos \theta$
 
 {\footnotesize\begin{align*}
   \overline{U} &= U\phase{0}\\
-  \overline{I} &= I\phase{-\theta}\\
-                \overline{U} \overline{I}^* &= U\phase{0} \cdot I\phase{\theta} = UI\phase{\theta}\\
-                &= U I (\cos\theta + j \sen\theta) = \\
+  \overline{I} &= I\phase{-\varphi}\\
+                \overline{U} \overline{I}^* &= U\phase{0} \cdot I\phase{\varphi} = UI\phase{\varphi}\\
+                &= U I (\cos\varphi + j \sen\varphi) = \\
                 &= P + j Q
 \end{align*}}
 #+END_EXPORT
@@ -1043,17 +1043,17 @@ Valor medio positivo, $P = U I \cos \theta$
 |S| = U \cdot I
 \]
 \[
-\theta_S = \theta_Z = \theta
+\varphi_S = \varphi_Z = \varphi
 \]
 \[
-f.d.p. \equiv \cos(\theta)
+f.d.p. \equiv \cos(\varphi)
 \]
 #+end_export
 ** Potencia de elementos: Resistencia
 
 #+BEGIN_EXPORT latex
 \[
-\theta = 0 \Rightarrow 
+\varphi = 0 \Rightarrow 
 \begin{cases}
   P_R = R I^2\\
   Q_R = 0\\
@@ -1069,7 +1069,7 @@ f.d.p. \equiv \cos(\theta)
 
 #+BEGIN_EXPORT latex
 \[
-\theta = \pi/2 \Rightarrow 
+\varphi = \pi/2 \Rightarrow 
 \begin{cases}
   P_L = 0\\
   Q_L = \omega L I^2\\
@@ -1084,7 +1084,7 @@ f.d.p. \equiv \cos(\theta)
 ** Potencia de elementos: Condensador
 #+BEGIN_EXPORT latex
 \[
-\theta = - \pi/2 \Rightarrow 
+\varphi = - \pi/2 \Rightarrow 
 \begin{cases}
   P_L = 0\\
   Q_C = - \omega C U^2\\
@@ -1128,21 +1128,21 @@ Q &= \sum_{i = 1}^n Q_i
 Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
     #+begin_export latex
     \[
-      \boxed{W = |V| |I| \cos(\theta_V - \theta_I) = P_Z}
+      \boxed{W = |V| |I| \cos(\varphi_V - \varphi_I) = P_Z}
     \]
     #+end_export
 
 * Compensación de reactiva
 
 ** Factor de potencia
- El factor de potencia, $\cos(\theta)$, representa la aportación de potencia activa dentro de la potencia aparente.
+ El factor de potencia, $\cos(\varphi)$, representa la aportación de potencia activa dentro de la potencia aparente.
  #+BEGIN_EXPORT latex
  \[
- P = S \cos \theta
+ P = S \cos \varphi
  \]
  #+END_EXPORT
 
- Sean dos sistemas con *misma tensión y potencia activa*, y factores de potencia $\cos \theta_2 < \cos \theta_1$ ($Q_2 > Q_1$)
+ Sean dos sistemas con *misma tensión y potencia activa*, y factores de potencia $\cos \varphi_2 < \cos \varphi_1$ ($Q_2 > Q_1$)
 
  #+ATTR_LATEX: :height 0.5\textheight
  [[file:../figs/Fasores_CompensacionReactiva.pdf]]
@@ -1155,7 +1155,7 @@ Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
 El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar la misma potencia activa.
 #+BEGIN_EXPORT latex
 \[
-  \left(\frac{P}{\cos \theta_1} = S_1 \right) < \left( S_2 = \frac{P}{\cos \theta_2}\right) 
+  \left(\frac{P}{\cos \varphi_1} = S_1 \right) < \left( S_2 = \frac{P}{\cos \varphi_2}\right) 
 \]
 #+END_EXPORT
 
@@ -1166,7 +1166,7 @@ El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar
 El sistema 2 requiere *mayor sección* de cable para transportar la misma potencia activa.
 #+BEGIN_EXPORT latex
 \[
-  \left(\frac{P}{U \cos \theta_1} = I_1 \right) < \left( I_2 = \frac{P}{U \cos \theta_2}\right) 
+  \left(\frac{P}{U \cos \varphi_1} = I_1 \right) < \left( I_2 = \frac{P}{U \cos \varphi_2}\right) 
 \]
 #+END_EXPORT
 
@@ -1183,7 +1183,7 @@ El sistema 2 requiere *mayor sección* de cable para transportar la misma potenc
 
 ** Compensación de Reactiva con Condensadores
 
-Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de potencia $\cos\theta$. Se desea *mejorar el factor de potencia* a $\cos \theta' > \cos \theta$.
+Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de potencia $\cos\varphi$. Se desea *mejorar el factor de potencia* a $\cos \varphi' > \cos \varphi$.
 
 #+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/Circuito_CompensacionReactiva.pdf]]
@@ -1202,12 +1202,12 @@ Sea una carga de potencia activa $P_z$, potencia reactiva $Q_z$, factor de poten
 
 #+BEGIN_EXPORT latex
 \begin{align*}
-Q_z &= P_z \tan \theta\\
-Q'&= P_z \tan \theta'\\
-|Q_c| &= Q_z - Q' = P_z (\tan \theta - \tan \theta')
+Q_z &= P_z \tan \varphi\\
+Q'&= P_z \tan \varphi'\\
+|Q_c| &= Q_z - Q' = P_z (\tan \varphi - \tan \varphi')
 \end{align*}
 \[
-|Q_c| = \omega C U^2 \rightarrow \boxed{C = \frac{P_z (\tan \theta - \tan \theta')}{\omega U^2}}
+|Q_c| = \omega C U^2 \rightarrow \boxed{C = \frac{P_z (\tan \varphi - \tan \varphi')}{\omega U^2}}
 \]
 #+END_EXPORT
 
