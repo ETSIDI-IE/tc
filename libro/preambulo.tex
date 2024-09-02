@@ -21,6 +21,9 @@
 % \providecommand{\makenomenclature}{\makeglossary}
 \makenomenclature
 
+\usepackage{float}
+\usepackage{tikz}
+
 \usepackage{subfig}
 %Configuración de los caption
 \PassOptionsToPackage{caption=false}{subfig}%Evita que el paquete subfig lo descabale todo
@@ -33,69 +36,8 @@
 \usepackage{diffcoeff}
 \usepackage{mathtools}
 
-\newtheorem{exerciseT}{Ejemplo}[chapter]
-
 \usepackage[spanish]{babel}
 \addto\shorthandsspanish{\spanishdeactivate{~<>}}
-
-
-\usepackage{siunitx}
-\DeclareSIUnit\kWh{kWh}
-\DeclareSIUnit{\watthour}{Wh}
-\DeclareSIUnit\Wh{Wh}
-\DeclareSIUnit{\voltampere}{VA}
-\DeclareSIUnit{\var}{var}
-
-\sisetup{per-mode=symbol-or-fraction}
-%\usepackage{lscape}
-\usepackage{mathpazo}%Letra palatino con fuentes para matemáticas
-\usepackage{flafter}%obliga a que los flotantes aparezcan después de su referencia
-\usepackage{memhfixc}
-
-\usepackage{xparse} % For "overbrace/underbrace but with an arrow instead", from https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
-
-% Para poner flechas sobre los signos de igual, de aquí: https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
-\NewDocumentCommand{\overarrow}{O{=} O{\uparrow} m}{%
-  \overset{\makebox[0pt]{\begin{tabular}{@{}c@{}}#3\\[0pt]\ensuremath{#2}\end{tabular}}}{#1}
-}
-\NewDocumentCommand{\underarrow}{O{=} O{\downarrow} m}{%
-  \underset{\makebox[0pt]{\begin{tabular}{@{}c@{}}\ensuremath{#2}\\[0pt]#3\end{tabular}}}{#1}
-}
-
-\usepackage{rotating,stackengine,scalerel}
-\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
-  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
-  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
-  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}} % https://tex.stackexchange.com/questions/481532/star-wye-electrical-connection-math-symbol
-  
-\raggedbottom
-\sloppybottom
-\clubpenalty=10000
-\widowpenalty=10000
-
-%\raggedbottomsection
-\feetbelowfloat
-
-
-% \usepackage[citestyle=alphabetic, bibstyle=alphabetic, maxbibnames=5,minbibnames=3,
-% backend=bibtex, doi=true, url=true]{biblatex}
-
-% \DefineBibliographyStrings{spanish}{%
-%   andothers        = {et\addabbrvspace al\adddot},
-%   andmore          = {et\addabbrvspace al\adddot},
-%   in               = {},
-% }
-
-% \let\cite\parencite
-
-% \renewcommand{\bibsection}{%
-% 	\chapter*{\bibname}
-% 	\bibmark
-% 	\phantomsection
-% 	\addcontentsline{toc}{chapter}{\bibname}
-% 	\prebibhook}
-% % \renewcommand{\bbltechreport}{Informe T\'ecnico}
-
 
 \usepackage{hyperref}
 
@@ -123,6 +65,28 @@
     filecolor=black,      % color of file links
     urlcolor=Blue           % color of external links 
 }
+
+\usepackage{siunitx}
+\DeclareSIUnit\kWh{kWh}
+\DeclareSIUnit{\watthour}{Wh}
+\DeclareSIUnit\Wh{Wh}
+\DeclareSIUnit{\voltampere}{VA}
+\DeclareSIUnit{\var}{var}
+
+\sisetup{per-mode=symbol-or-fraction}
+%\usepackage{lscape}
+\usepackage{mathpazo}%Letra palatino con fuentes para matemáticas
+\usepackage{flafter}%obliga a que los flotantes aparezcan después de su referencia
+\usepackage{memhfixc}
+
+\raggedbottom
+\sloppybottom
+\clubpenalty=10000
+\widowpenalty=10000
+
+%\raggedbottomsection
+\feetbelowfloat
+
 
 \addto\captionsspanish{%
 \def\tablename{Tabla}%
@@ -174,9 +138,11 @@
 \renewcommand{\floatpagefraction}{0.7}
 
 
-\usepackage{float}
+\renewcommand{\textfloatsep}{10pt}%Espacio entre el flotante y el texto
 
-\RequirePackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+
+\usepackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
 
 % Exercise box	  
 \newmdenv[skipabove=7pt,
@@ -195,12 +161,26 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt]{eBox}
 
+\newtheorem{exerciseT}{Ejemplo}[chapter]
+
 \newenvironment{example}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{MidnightBlue}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}	
 
+\usepackage{xparse} % For "overbrace/underbrace but with an arrow instead", from https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
 
-\renewcommand{\textfloatsep}{10pt}%Espacio entre el flotante y el texto
+% Para poner flechas sobre los signos de igual, de aquí: https://tex.stackexchange.com/questions/8720/overbrace-underbrace-but-with-an-arrow-instead
+\NewDocumentCommand{\overarrow}{O{=} O{\uparrow} m}{%
+  \overset{\makebox[0pt]{\begin{tabular}{@{}c@{}}#3\\[0pt]\ensuremath{#2}\end{tabular}}}{#1}
+}
+\NewDocumentCommand{\underarrow}{O{=} O{\downarrow} m}{%
+  \underset{\makebox[0pt]{\begin{tabular}{@{}c@{}}\ensuremath{#2}\\[0pt]#3\end{tabular}}}{#1}
+}
 
-\usepackage{tikz}
+\usepackage{rotating,stackengine,scalerel}
+\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
+  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
+  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
+  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}} % https://tex.stackexchange.com/questions/481532/star-wye-electrical-connection-math-symbol
+  
 \newenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
 \begin{list}{}{
 \leftmargin=35pt % Indentation on the left
@@ -208,3 +188,5 @@ linewidth=4pt]{eBox}
 \makebox[-2.5pt]{\begin{tikzpicture}[overlay]
 \node[draw=MidnightBlue!60,line width=1pt,circle,fill=MidnightBlue!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{MidnightBlue}{N}};\end{tikzpicture}} % Orange R in a circle
 \advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
+
+
