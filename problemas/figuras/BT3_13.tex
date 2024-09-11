@@ -1,0 +1,41 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+
+  \draw
+  (-0.5,0) node[left] {A} to [rmeter, n=wattmeter1, t=$W_a$] (2,0)
+  to [short, -] (10,0)
+ 
+  (-0.5,-2) node[left] {B} to [short, -] (2,-2)
+  to [rmeter, n=wattmeter2, t=$W_b$] (4,-2)
+  to [short, -] (10,-2)
+  
+  (-0.5,-4) node[left] {C} to[short, -] (10,-4)
+ 
+  (0,-2) to [short, *-]++(0,3) -| (wattmeter1.north)
+  (wattmeter1.south) to [short, -*] (0.75,-4)
+
+  (2,-2) to [short, *-]++(0,1) -| (wattmeter2.north)
+  (wattmeter2.south) to [short, -*] (3,-4)
+   
+  (4.5,-6) rectangle (6.5,-7)
+  node[midway] {Motor 1}
+  (5,0) to [short, *-] (5,-6)
+  (5.5,-2) to [short, *-] (5.5,-6)
+  (6,-4) to [short, *-] (6,-6)
+  
+  (7.5,-6) rectangle (9.5,-7)
+  node[midway] {Motor 2}
+  (8,0) to [short, *-] (8,-6)
+  (8.5,-2) to [short, *-] (8.5,-6)
+  (9,-4) to [short, *-] (9,-6);
+  \end{circuitikz}
+\end{document}

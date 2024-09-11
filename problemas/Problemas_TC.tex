@@ -1,0 +1,69 @@
+\documentclass[oldfontcommands,a4paper]{memoir}
+
+\input{preambulo.tex} 
+
+\setcounter{tocdepth}{0}
+
+\begin{document}
+
+
+%\pagestyle{empty}
+\begin{titlingpage}
+
+\title{Problemas Resueltos\\ de\\ Teoría de Circuitos}
+
+\author{
+  Luis Badesa Bernardo\\
+  Carmelo Carrero López\\
+  Ana Fernández Guillamón\\
+  Ricardo Granizo Arrabé\\
+  Oscar Perpiñán Lamigueiro}
+ 
+\date{
+  Universidad Politécnica de Madrid}
+
+\maketitle
+
+
+\end{titlingpage}
+
+\frontmatter
+
+\include{Licencia}
+
+\tableofcontents*
+% \clearpage
+% \listoffigures*
+% \clearpage
+% \listoftables*
+
+\cleardoublepage
+
+\mainmatter
+
+\include{1-CC}
+
+\include{2-CA-mono}
+
+\include{3-CA-tri}
+
+\include{4-Teoremas}
+
+\include{5-Transitorio}
+
+% \include{6-Tecnicas-generales}
+
+% \include{7-trafos}
+
+% \include{8-Elementos-Activos}
+
+\backmatter
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% ispell-local-dictionary: "castellano"
+%%% End:

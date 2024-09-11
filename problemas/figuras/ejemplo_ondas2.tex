@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[domain = 0:6.5, samples = 1000]
+  \draw[->] (-0.2,0) -- (7,0) node[right] {$t$};
+  \draw[->] (0,-2.2) -- (0,2.8) node[above] {$i(t)$};
+  \draw[thick, color=blue] plot[id=pulse] function{(x > 0 & x <1) * (1) + (x > 1 & x < 3) * (2*x -4) + (x>3 & x< 4) * 2 + (x>4 & x<6)*(-x+6)};
+  \draw (1,0) node[below left] {1};
+  \draw (2.2,0) node[below left] {2};
+  \draw (3.2,0) node[below left] {3};
+  \draw (4.2,0) node[below left] {4};
+  \draw (5.2,0) node[below left] {5};
+  \draw (6.2,0) node[below left] {6};
+  \draw [very thin, color = gray] (0,2) node[left, color = black] {2} -- (3,2);
+  \draw [very thin, color = gray] (3,0) node[left, color = black] {} -- (3,2);
+  \draw [very thin, color = gray] (4,0) node[left, color = black] {} -- (4,2);
+  \draw [very thin, color = gray] (0,-2) node[left, color = black] {-2} -- (1,-2);
+  \draw [very thin, color = gray] (0,1) node[left, color = black] {1} -- (0,1);
+\end{tikzpicture}
+
+\end{document}

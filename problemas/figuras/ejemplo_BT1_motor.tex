@@ -1,0 +1,50 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages]
+  \draw
+  (0,4) to [esource, v_= $500\,{V}$] (0,2)
+  (0,4) to [R, l= $0.75\Omega$] (0,6)
+  (0,6) to [short, -, i = $I$] (2,6)
+  (2,6) to [R, l= $R_l$] (6,6)
+  (6,6) to [R, l= $R_m$] (6,4)
+  (6,4) to [esource, v= $fcem$] (6,2)
+%   (6,6) to [R, l= $6\Omega$] (6,0)
+%   (6,6) to [R, l= $6\Omega$, ] (9,6)
+%   (9,6) to [short, -] (9,0)
+  (6,2) to [short, -] (0,2);
+%   \draw[thin, <-] (7.5,2)node{$I_3$}  ++(-60:0.5) arc (-60:170:0.5);
+\end{circuitikz}
+
+\end{document}
+
+% \documentclass{standalone}
+% \usepackage{mathpazo}
+% \usepackage{circuitikz}
+% \usetikzlibrary{calc}
+
+% \begin{document}
+
+% \begin{circuitikz}[european resistors, american voltages]
+%   \coordinate (Ag) at (0,4);
+%   \coordinate (Bg) at (0,0);
+%   \node[label=above right:A] (A) at ($(Ag) + (2,0)$) {};
+%   \node[label=below right:B] (B) at ($(Bg) + (2,0)$) {};
+%   \draw
+%   (Ag) to [R, l_= $Z_{th}$, i^>= $I$] (A)
+%   (Ag) to [esource, v_= $\epsilon_{th}$] (Bg)
+%   (Bg) to [short] (B)
+%   (A) to [open, *-*, v^= $U_{AB}$] (B);
+%   \draw
+%   (A) to [short] ++(1.5,0)
+%   to [R, l = $Z_L$] ($(B) + (1.5,0)$)
+%   to [short] ++(-1.5,0)
+%   to [short,*-] (B);
+% \end{circuitikz}
+
+% \end{document}

@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+\coordinate(A) at (8,6);
+  \coordinate(B) at (8,0);
+  \coordinate(C) at (8,2.5);
+  \draw
+  (-6,3) to [sV, v_= $e(t)$] (-6,-3)
+  (-6,3) to [cogsw] (-3,3)
+  (-3,3) to [L, l= $L$, v=$u_L$, i=$i_1$] (-3,0)
+  (-3,0) to [R, l=$R_1$] (-3,-3)
+  (0,3) to [R, l=$R_2$, i=$i_2$] (0,-3)
+  (-3,3) to [short,-] (0,3)
+  (-6,-3) to [short,-] (0,-3);
+%   \draw[thin, <-] (7.5,2)node{$I_3$}  ++(-60:0.5) arc (-60:170:0.5);
+\end{circuitikz}
+
+\end{document}

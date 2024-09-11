@@ -1,0 +1,35 @@
+
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \coordinate(A) at (11,4);
+  \coordinate(B) at (13,4);
+  \draw
+  (3,0) to [cI, l=$3\,U_x$] (3,4)
+  (3,4) to [R, l=$1\Omega$] (6,4) 
+  (6,4) to [R, l=$2\Omega$, v=$U_x$] (6,2)
+  (6,2) to [esource, v=$10$ V] (6,0)
+  (6,0) to [R, l=$1\Omega$] (11,0)
+  (11,4) to [esource, v=$\epsilon_0$, i=$I_0$] (13,4)
+  (6,4) to [cV, v=$2\,I_x$] (9,4) 
+  (9,4) to [R, l=$1\Omega$] (11,4)
+  (11,4) to [R, l=$2\Omega$, i=$I_x$] (11,0)
+  %(6,4) to [short,-*] (7,4)
+  %(6,1) to [short,-*] (7,1)
+  (3,0) to [short,-] (6,0)
+  (11,0) to [short,-] (14,0)
+  (14,4) to [R, l=$1\Omega$] (14,2)
+  (14,0) to [esource, v=$5$ V] (14,2)
+  (13,4) to [short,-] (14,4);
+  \node[label=above:A] (A) at ($(A)$) {};
+   \node[label=above:B] (B) at ($(B)$) {};
+%  \draw[thin, <-] (1.5,2)node{$I_a$}  ++(-60:0.5) arc (-60:170:0.5);
+%  \draw[thin, <-] (4.5,2)node{$I_b$}  ++(-60:0.5) arc (-60:170:0.5);
+\end{circuitikz}
+
+\end{document}

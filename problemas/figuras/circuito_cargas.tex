@@ -1,0 +1,23 @@
+\documentclass{standalone}
+
+\usepackage[american voltages]{circuitikz}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw
+  (0,0) to[short, *-] (1,0)
+  to [R, -, l = $R_l$, i=$I$] (3,0)
+  to [short, -*] (4,0)
+  to [european resistor, l=$M$, i=$I_M$] (4,-2)
+  (4,0) to [short, -*] (6,0)
+  to [european resistor, l=$F$, i=$I_F$] (6,-2)
+  to [short, *-*] (4,-2)
+  to [short, -] (3,-2)
+  to [R, -, l = $R_l$] (1,-2)
+  to [short, -*] (0,-2);
+  \draw
+  (0,0) to [short, -] (-1,0)
+  to [sV, v_=$\epsilon_g$] (-1,-2)
+  to [short, -] (0,-2);
+\end{tikzpicture}
+\end{document}

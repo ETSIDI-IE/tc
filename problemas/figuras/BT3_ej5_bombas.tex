@@ -1,0 +1,55 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at ($(A) + (0, -1.25)$) ;
+  \coordinate (C) at ($(A) + (0, -2.5)$) ;
+  \coordinate (A') at ($(A) + (4, 0)$) ;
+  \coordinate (B') at ($(B) + (4, 0)$) ;
+  \coordinate (C') at ($(C) + (4, 0)$) ;
+  \coordinate (A'') at ($(A') + (3, 0)$) ;
+  \coordinate (B'') at ($(B') + (3, 0)$) ;
+  \coordinate (C'') at ($(C') + (3, 0)$) ;  
+
+  % Líneas:
+  \draw
+  [rounded corners]
+  (A) node[left] {A} to [R, l = $R_L$] ++(3,0)
+  to [short, i = $I$] ++(0.25,0) 
+  to [short]($(A'')+(2,0)$)
+  (B) node[left] {B} to [R, l = $R_L$] ++(3,0)
+  to [short, -] ($(B'')+(2,0)$)
+  (C) node[left] {C} to [R, l = $R_L$] ++(3,0)
+  to [short, -] ($(C'')+(2,0)$);
+
+  % Motores (bombas):
+  \draw [rounded corners, fill= gray!10] 
+  (C') ++(-0.5,-2) rectangle ++(2,1)
+  node[midway] {Bomba 1};
+
+  \draw 
+  (A') to [short, i_ = $I_1$, *-] ++(0,-1.25)
+  to [short] ($(C')+(0,-1)$)
+  (B') ++(0.5,0) to [short, *-] ($(C')+(0.5,-1)$)
+  (C') ++(1,0) to [short, *-] ($(C')+(1,-1)$);
+  
+  \draw [rounded corners, fill= gray!10] 
+  (C'') ++(-0.5,-2) rectangle ++(2,1)
+  node[midway] {Bomba 2};
+  
+  \draw 
+  (A'') to [short, i_ = $I_2$, *-] ++(0,-1.25)
+  to [short] ($(C'')+(0,-1)$)
+  (B'') ++(0.5,0) to [short, *-] ($(C'')+(0.5,-1)$)
+  (C'') ++(1,0) to [short, *-] ($(C'')+(1,-1)$);
+  
+  \end{circuitikz}
+\end{document}

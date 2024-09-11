@@ -1,0 +1,32 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at ($(A) + (3, 0)$) ;
+  \coordinate (C) at ($(B) + (3, 0)$) ;
+  \coordinate (D) at ($(C) + (3, 0)$) ;
+  \coordinate (A') at ($(A) + (0, -4)$) ;
+  \coordinate (B') at ($(A') + (3, 0)$) ;
+  \coordinate (C') at ($(B') + (3, 0)$) ;
+  \coordinate (D') at ($(C') + (3, 0)$) ;
+  \draw
+  (B) node[above] {A} to [R, l = $R_4$, i = $I_5$, -] (C) node[above] {B}
+  (B') node[below] {D}
+  to [short, -, i = $I_4$] (C') node[ground] {}
+  (B) to [R, l = $R_3$, i = $I_2$] (B')
+  (B) ++(-1.5,0) to [isource, l= $I_{\epsilon_2}$, invert] ++(0,-4) to [short, -*] (B')
+  (C) ++(1.5, 0) to [isource, l= $I_{\epsilon_3}$, invert] ++(0,-4) to [short, -*] (C')
+  (C) to [R, l = $R_5$] (C')
+  (C) to [short, *-] ++(1.5,0)
+  (B) to [short, *-] ++(-1.5,0);
+\end{circuitikz}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american]
+  \draw
+  (-5,3) to [isource, l_= $i_g$] (-5,0)
+  %(-6,3) to [ccgsw] (-4,3)
+  (-3,3) to [L, l=$L$, i^<=$i_L$] (-3,0)
+  (-3,3) to [R, l=$R_1$, v=$u$] (0,3)
+  (0,3) to [ccgsw] (0,1.75)
+  (0,1.75) to [C, l=$C$, v=$u_C$] (0,0)
+  (2,3) to [R, l=$R_2$] (2,0)
+  (-5,3) to [short,-] (-3,3)
+  (0,3) to [short,-] (2,3)
+  (-5,0) to [short,-] (2,0);
+\end{circuitikz}
+
+\end{document}

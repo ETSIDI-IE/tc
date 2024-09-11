@@ -1,0 +1,38 @@
+\documentclass{standalone}
+
+\usepackage{siunitx}
+
+\usepackage{mathpazo}
+
+\usepackage[american, straightlabels]{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}
+
+  \draw
+  (0,0) to [R, l=$R$] (2,0)
+  (2,0) to [short, -] (7,0)
+  (0,-2) to [R, l=$R$] (2,-2)
+  (2,-2) to [rmeter, n=wattmeter1, t=$W_B$] (4,-2)
+  (4,-2) to [short, -] (7,-2)
+  (0,-4) to [R, l=$R$] (2,-4)
+  to [short, -] (3, -4)
+  (3,-4) to [rmeter, n=wattmeter2, t=$W_C$] (5,-4)
+  to [short, -] (7,-4)
+  [rounded corners]
+  (7,1) rectangle (10,-5)
+  node[midway] {CARGA}
+  (0,0) to[open, v=$U_1$, voltage=straight] (0,-2)
+  (6,0) to[open, v=$U$, voltage=straight] (6,-2)
+  (2,-2) to [short, *-]++(0,1) -| (wattmeter1.north)
+  (wattmeter1.south) to [short, -*] (3,-4)
+  (4,-2) to [short, *-] (wattmeter2.north)
+  (5,-4) to [short, -]++(0,-1) -| (wattmeter2.south)
+  (5,0) to [short, *-] (5,-4)
+  (-0.5,0) node[left] {A} to [short,-] (0,0) 
+  (-0.5,-2) node[left] {B} to [short,-] (0,-2) 
+  (-0.5,-4) node[left] {C} to [short,-] (0,-4);
+   \end{circuitikz}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages, american currents]
+  \draw
+  (-5,3) to [isource, l_= $10\cos(2\,t)$ A] (-5,0)
+  %(-6,3) to [ccgsw] (-4,3)
+  (-3,3) to [L, l=$2$ H, i^<=$i_L$] (-3,0)
+  (-3,3) to [R, l=$3\Omega$, v=$u$] (0,3)
+  (0,3) to [ccgsw] (0,1.75)
+%  (0,1.75) to [C, l=$0.5$ F, v=$u_C$] (0,0)
+  (2,3) to [R, l=$2\Omega$] (2,0)
+  (-5,3) to [short,-] (-3,3)
+  (0,3) to [short,-] (2,3)
+  (-5,0) to [short,-] (2,0);
+\end{circuitikz}
+
+\end{document}

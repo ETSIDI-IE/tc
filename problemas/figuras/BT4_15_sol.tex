@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{amsmath}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages, american currents]
+\coordinate(A) at (-3,3);
+  \coordinate(B) at (0,3);
+  \draw
+  (-5,3) to [isource, l_= $i_s$] (-5,0)
+  %(-6,3) to [ccgsw] (-4,3)
+  (-3,3) to [L, l=$2D$, i^<=$i_L$] (-3,0)
+  (-3,3) to [R, l=$3$, v=$u$] (0,3)
+  (0,3) to [C, l=$\dfrac{1}{0.5\,D}$, v=$u_C$] (0,0)
+  (2,3) to [R, l=$2$] (2,0)
+  (-5,3) to [short,-] (-3,3)
+  (0,3) to [short,-] (2,3)
+  (-5,0) to [short,-] (2,0)
+  (-3,0) to [short, -] (-3,0) node[ground] {};
+\node[label=above:A] (A) at ($(A)$) {};
+\node[label=above:B] (B) at ($(B)$) {};
+\end{circuitikz}
+
+\end{document}
