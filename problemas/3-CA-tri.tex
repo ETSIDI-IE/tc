@@ -218,23 +218,23 @@ El sistema trifásico de la figura es de 380 V a 50 Hz y secuencia de fases inve
 \subsection*{Solución}
 El motor tiene una potencia útil de 1.8 CV que, en W:
 \begin{equation*}
-  P_u=1.8\cdot 746=1342.8\;\text{W}    
+  P_u=1.8\cdot 736= \qty{1324.8}{\watt}
 \end{equation*}
 Su potencia activa, considerando el rendimiento, es:
 \begin{equation*}
-  P_M=\dfrac{P_u}{\eta}=\dfrac{1342.8}{0.9}=1492\;\text{W}
+  P_M=\dfrac{P_u}{\eta}=\dfrac{1324.8}{0.9}=\qty{1472}{\watt}
 \end{equation*} 
 
 
 Al ser secuencia de fases inversa, se tiene que al principio de la
 línea:
 \begin{align*}
-  &\overline{U}_{AC}=380\phase{-120^\circ}\;\text{V} \\
-  &\overline{U}_{BC}=380\phase{0^\circ}\;\text{V} \\
-  &\overline{U}_{CA}=380\phase{120^\circ}\;\text{V}  \\
-  &\overline{U}_A=220\phase{-90^\circ}\;\text{V}\\
-  &\overline{U}_B=220\phase{30^\circ}\;\text{V}\\
-  &\overline{U}_C=220\phase{150^\circ}\;\text{V}
+  &\overline{U}_{AC}=\complexqty{380:-120}{\volt}\\
+  &\overline{U}_{BC}=\complexqty{380:0}{\volt}\\
+  &\overline{U}_{CA}=\complexqty{380:120}{\volt}\\
+  &\overline{U}_A=\complexqty{220:-90}{\volt}\\
+  &\overline{U}_B=\complexqty{220:30}{\volt}\\
+  &\overline{U}_C=\complexqty{220:150}{\volt}
 \end{align*}
 
 Se sabe que el factor de potencia global es 1. Dado que el motor tiene
@@ -243,26 +243,26 @@ impedancia $\overline{Z}$ es un elemento pasivo ideal, {esta debe ser
   una batería de condensadores} conectados en estrella que mejoren el
 factor de potencia a 1. La potencia reactiva del motor $Q_M$ es:
 \begin{equation*}
-  Q_M=P_M\cdot \tan(\phi_M)=1492\cdot \tan(36.8699^\circ)=1119\;\text{var}
+  Q_M=P_M\cdot \tan(\phi_M)=1472\cdot \tan(36.8699^\circ)=\qty{1104}{\var}
 \end{equation*}
 El factor de potencia global es $\cos{\phi}=1\rightarrow\phi=0^\circ$,
 siendo la potencia reactiva $Q_T$:
 \begin{equation*}
-  Q_T=P_M\cdot \tan(\phi)=1492\cdot \tan(0)=0\;\text{var}
+  Q_T=P_M\cdot \tan(\phi)=1472\cdot \tan(0)=\qty{0}{\var}
 \end{equation*}
 Por tanto, la potencia reactiva que genera la batería de condensadores
 (impedancia $\overline{Z}$) es:
 \begin{equation*}
-  Q_Z=Q_T-Q_M=0-1119=-1119\;\text{var}
+  Q_Z=Q_T-Q_M=0-1104=\qty{-1104}{\var}
 \end{equation*}
 que, al estar conectados en estrella, tienen una impedancia de:
 \begin{equation*}
-  Q_Z=3\cdot \dfrac{U_f^2}{Z} \quad\rightarrow\quad Z=3\cdot \dfrac{U_f^2}{Q_Z}=3\cdot \dfrac{220^2}{-1119}=-129.76\;\Omega \quad\rightarrow\quad \overline{Z}={-\mathrm{j}\,129.76}\;\Omega\text{/fase}
+  |Q_Z|=3\cdot \dfrac{U_f^2}{Z} \quad\rightarrow\quad Z=3\cdot \dfrac{U_f^2}{|Q_Z|}=3\cdot \dfrac{220^2}{1104}=\qty{131.52}{\ohm} \quad\rightarrow\quad \overline{Z}=\complexqty{-131.52j}{\ohm}
 \end{equation*}
 
 La intensidad en el motor es:
 \begin{equation*}
-  I_M=\dfrac{P_M}{\sqrt{3}\,U_L\,\cos(\phi_M)}=\dfrac{1492}{\sqrt{3}\cdot 380\cdot 0.8}= \qty{2.83}{\ampere}
+  I_M=\dfrac{P_M}{\sqrt{3}\,U_L\,\cos(\phi_M)}=\dfrac{1472}{\sqrt{3}\cdot 380\cdot 0.8}= \qty{2.8}{\ampere}
 \end{equation*}
 
 Dado que los condensadores no consumen potencia activa, las
@@ -270,59 +270,30 @@ intensidades de línea se pueden calcular a partir de la potencia
 activa consumida por el motor, y el factor de potencia global de la
 instalación:
 \begin{equation*}
-  I_L=\dfrac{P_T}{\sqrt{3}\cdot U_L\cdot \cos{(\phi})}=\dfrac{1492}{\sqrt{3}\cdot 380\cdot 1}=2.27\;\text{A}
+  I_L=\dfrac{P_T}{\sqrt{3}\cdot U_L\cdot \cos{(\phi})}=\dfrac{1472}{\sqrt{3}\cdot 380\cdot 1}=\qty{2.24}{\ampere}
 \end{equation*}
 que, en forma fasorial, teniendo en cuenta que $\phi'=0^\circ$:
 \begin{align*}
-  \overline{I}_{A}&={2.27\phase{-90^\circ}\;\text{A}}\\
-  \overline{I}_{B}&={2.27\phase{30^\circ}\;\text{A}}\\
-  \overline{I}_{C}&={2.27\phase{150^\circ}\;\text{A}}
+  \overline{I}_{A}&=\complexqty{2.24:-90}{\ampere}\\
+  \overline{I}_{B}&=\complexqty{2.24:30}{\ampere}\\
+  \overline{I}_{C}&=\complexqty{2.24:150}{\ampere}\\
 \end{align*}
 
 El voltímetro $V$ mide el módulo de la tensión
 $\overline{U}_{AB}\rightarrow V={380}$ {V}. El amperímetro $A$ mide el
-módulo de la corriente $\overline{I}_C\rightarrow A={2.27}$ {A}. El
-vatímetro $W_1$ mide la corriente $\overline{I}_A$ y la tensión
-$\overline{U}_{BC}$, por lo que:
-\begin{equation*}
-  W_1=U_{BC}\cdot I_A\cdot \cos{(\theta_{{U}_{BC}}-\theta_{{I}_A})}= 380\cdot 2.27\cdot \cos(0-(-90^\circ))={0\;\text{W}}
-\end{equation*}
+módulo de la corriente $\overline{I}_C\rightarrow A={2.24}$ {A}. 
 
-También podemos obtener este valor teniendo en cuenta que, por la
-conexión que tiene, y al tratarse de SFI, está midiendo
-$-Q_T/\sqrt{3}$. Al tener la instalación en su conjunto un
+El vatímetro $W_1$ está midiendo la corriente total en A y la tensión entre B y C. Por tanto, al tratarse de una SFI es $W_1 = -Q_T/\sqrt{3}$. Al tener la instalación en su conjunto un
 $\cos(\phi)=0$, la potencia reactiva total es $Q_T=0$, por lo que
 $W_1=0$ W.
 
 \vspace{3mm}
-El vatímetro $W_2$ mide la corriente $\overline{I}_{A,M}$ y la tensión
-$\overline{U}_{BC}$. El ángulo de $\overline{I}_{A,M}$, considerando
-que el motor está conectado en estrella, es
-$\theta_{{I}_{A,M}}=\theta_{{U}_{A,M}}-\phi_M=-90^\circ-(-36.8699^\circ)=126.8699^\circ$,
-por lo que:
-\begin{equation*}
-  W_2=U_{BC}\cdot I_{A,M}\cdot \cos{(\theta_{{U}_{BC}}-\theta_{{I}_{A,M}})}= 380\cdot 2.83\cdot \cos(0-126.8699^\circ)={-645.24\;\text{W}}
-\end{equation*}
-Como alternativa, viendo la conexión que tiene, y al tratarse de SFI,
-se sabe que está midiendo $-Q_M/\sqrt{3}$. Al tener el motor una
-$Q_M=1119$ var, $W_2=-1119/\sqrt{3}=-646.05$ W.
+
+El vatímetro $W_2$ está midiendo la corriente del motor en A y la tensión entre B y C. Por tanto, $W_2 = -Q_M/\sqrt{3} =-1104/\sqrt{3}=\qty{-637.4}{\watt}$.
 
   \vspace{3mm}
-Por último, el vatímetro $W_3$ mide el módulo de la corriente
-$\overline{I}_{B,M}$ y de la tensión $\overline{U}_{AC}$. El ángulo de
-$\overline{I}_{B,M}$, considerando que el motor está conectado en
-estrella, es
-$\theta_{I_{B,M}}=\theta_{U_{B,M}}-\phi_M=30^\circ-(-36.8699^\circ)=66.8699^\circ$;
-y el ángulo de
-$\overline{U}_{AC}=-\overline{U}_{CA}=380\phase{-60^\circ}$\,\si{\volt}, por lo
-que:
-\begin{equation*}
-  W_3=U_{AC}\cdot I_{B,M}\cdot \cos{(\theta_{{U}_{AC}}-\theta_{{I}_{B,M}})}= 380\cdot 2.83\cdot \cos(-60^\circ-66.8699^\circ)={645.24\;\text{W}}
-\end{equation*}
 
-De otra forma, por la conexión que tiene, y al tratarse de SFI, se
-sabe que está midiendo $Q_M/\sqrt{3}$, por lo que
-$W_3=1119/\sqrt{3}=646.05$ W.
+Finalmente, el vatímetro $W_3$  está midiendo la corriente del motor en B y la tensión entre A y C. Por tanto, $W_3 = Q_M/\sqrt{3} = 1104/\sqrt{3}= \qty{637.4}{\watt}$.
 
 
  \section{Enunciado}
