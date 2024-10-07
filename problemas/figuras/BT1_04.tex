@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{circuitikz}[american resistors, american voltages]
+  \draw
+  (0,4) to [esource, v_= $E_1$] (0,2)
+  (0,4) to [R, l= $R_1$] (0,6)
+  (3,6) to [short, -, i = $I$] (0,6)
+  (3,6) to [R, l= $R_2$, *-] (3,4)
+  (3,4) to [esource, v_= $E_2$, -*] (3,2)
+  (3,6) to [short, -] (6,6)
+  (6,6) to [R, l= $R_3$] (6,2)
+  (6,2) to [short, -] (0,2);
+\end{circuitikz}
+
+\end{document}
