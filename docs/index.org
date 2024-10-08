@@ -22,7 +22,8 @@ bajo una licencia [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative 
 
 - [[file:TC.pdf][Teoría de Circuitos]]
 - [[file:enunciados_ejercicios_TC.pdf][Enunciados de problemas]]
-  
+- [[file:Problemas_TC.pdf][Problemas resueltos]]
+    
 * Diapositivas
   :PROPERTIES:
   :CUSTOM_ID: diapositivas
