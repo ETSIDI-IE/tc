@@ -84,8 +84,32 @@ xyplot(Cuadrada0 ~ x, type = 'l',
 dev.off()
 
 
+trellis.device(pdf, file = "sin_periodica.pdf")
+xyplot(sin(10*x) ~ x, type = 'l',
+       xlab = "t", ylab = "f(t)",
+       col.line = "black",
+       grid = TRUE,
+       scales=list(
+           x = list(
+               at = seq(0,1,.1)
+              )),
+       panel = function(x, y, ...)
+       {
+           panel.xyplot(x, y, ...)
+           panel.abline(h = 0, col.line = "red")
+       })
+dev.off()
 
+## No periódica
 
-
+x <- seq(0, 8, by = .1)
+trellis.device(pdf, file = "no_periodica.pdf")
+xyplot(dweibull(x, shape = 1.5, scale = 2) ~ x,
+       type = "l",
+       xlab = "t", ylab = "f(t)",
+       col.line = "black",
+       grid = TRUE
+       )
+dev.off()
 
 

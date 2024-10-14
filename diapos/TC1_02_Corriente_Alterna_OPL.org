@@ -10,6 +10,25 @@
 
 - La salida de los generadores (de tensión o de corriente) son funciones que pueden variar con el tiempo.
 - La dependencia funcional $u = u(t)$ o $i = i(t)$ se denomina forma de onda.
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+ [[file:../figs/triangular_periodica.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+ [[file:../figs/cuadrada_periodica.pdf]]
+  
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+ [[file:../figs/sin_periodica.pdf]]
+
 ** Clasificación
 *** Signo de la magnitud
  - Unidireccionales
@@ -17,6 +36,27 @@
    - El valor puede ser constante (corriente continua) o variable.
  - Bidireccionales
    - Signo variable con el tiempo.
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+ATTR_LATEX: :height 0.52\textheight
+ [[file:../figs/cuadrada0_periodica.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ #+ATTR_LATEX: :height 0.52\textheight
+ [[file:../figs/cuadrada_periodica.pdf]]
+
+** Clasificación
 *** Repetición del valor de la magnitud
  - Periódicas
 
@@ -25,12 +65,54 @@
  - No periódicas
 
    El valor de la magnitud varía de forma arbitraria con el tiempo.
-    
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+
+ #+ATTR_LATEX: :height 0.52\textheight
+ [[file:../figs/triangular_periodica.pdf]]
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+ #+ATTR_LATEX: :height 0.52\textheight
+ [[file:../figs/no_periodica.pdf]]
+
+
 ** Valores que definen una onda periódica
 *** Período y frecuencia
 - Período ($T$): tiempo que tarda en repetirse la función.
 - Frecuencia ($f$): número de repeticiones por unidad de tiempo.
 - $f = \frac{1}{T}$
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+    [[file:../figs/Senoidal_parametros.pdf]]
+    
+** Valores que definen una onda periódica
+- Valores de pico: $Y_{max} = \max(y(t)) \qquad Y_{min} = \min(y(t))$
+    
+- Valor pico a pico: $Y_{pp} = |Y_{max} - Y_{min}|$
+
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+
+    [[file:../figs/Senoidal_parametros.pdf]]
+    
+
+** Valores que definen una onda periódica
+
+
 *** Valor medio
 
 #+BEGIN_EXPORT latex
@@ -48,35 +130,6 @@ U = \sqrt{\frac{1}{T}\cdot\int_{T} u^{2}(t)\, dt} \qquad \qquad%
 I = \sqrt{\frac{1}{T}\cdot\int_{T} i^{2}(t)\, dt}
 \]
 #+END_EXPORT
-
-** Valores que definen una onda periódica
-- Valores de pico
-
-    #+begin_export latex
-  \[
-  Y_{max} = \max(y(t)) \qquad Y_{min} = \min(y(t))
-  \]
-  #+end_export
-    
-- Amplitud o valor pico a pico
-
-#+begin_export latex
-  \[
-   |Y_{max} - Y_{min}|
-  \]
-#+end_export
-
-- Factor de amplitud
-
-#+begin_export latex
-    \[FA = \frac{Y_{max}}{Y}\]
-#+end_export
-
-- Factor de forma
-
-#+begin_export latex
-  \[FF = \frac{Y}{Y_{m}}\]
-#+end_export
 
 
 ** Formas de Onda Periódicas
@@ -186,12 +239,13 @@ Y = \sqrt{\frac{1}{T}\cdot\int_T y^{2}(t)\, dt}
 Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\frac{Y_{max}}{\sqrt{2}}}
 \]
 #+END_EXPORT
+
 * Cálculo Fasorial
 
 ** Representación fasorial
 - Un fasor es un *número complejo* que representa una señal sinusoidal para simplificar cálculos.
 - El *módulo* del fasor es el *valor eficaz*. El *argumento* es la *fase*.
-- Descartamos pulsación: No se puede emplear cuando hay frecuencias diferentes en un mismo circuito.
+- Descartamos pulsación: *no* se puede emplear cuando hay frecuencias diferentes en un mismo circuito.
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -199,9 +253,9 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
     :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
-\overline{Y} &= Y\cdot e^{j\theta}\\
-\overline{Y} &= Y\phase{\theta}\\
-\overline{Y} &= Y\cdot(\cos(\theta)+\mathrm{j}\cdot\sen(\theta))
+\text{Euler}: \quad \overline{Y} &= Y\cdot e^{j\varphi}\\
+\text{Polar}: \quad \overline{Y} &= Y\phase{\varphi}\\
+\text{Binómica}: \quad \overline{Y} &= Y\cdot(\cos(\varphi)+\mathrm{j}\cdot\sen(\varphi))
 \end{align*}
 #+END_EXPORT
 
@@ -209,8 +263,27 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
     :PROPERTIES:
     :BEAMER_col: 0.5
     :END:
-#+ATTR_LATEX: :height 0.45\textheight
+#+ATTR_LATEX: :height 0.55\textheight
 [[file:../figs/fasor.pdf]]
+
+** Operaciones con fasores
+#+begin_export latex
+    \begin{align*}
+        \overline{Y}_1 & \; = \;         \overbrace{Y_{1}\,\cos(\varphi_1)}^{a_1}+\,\mathrm{j}\,\overbrace{Y_{1}\;\sin(\varphi_1)}^{b_1} 
+        \; = \; 
+        Y_{1}\phase{\varphi_1}\\
+        \overline{Y}_2 & \; = \; \underbrace{Y_{2}\,\cos(\varphi_2)}_{a_2}+\;\mathrm{j}\,\underbrace{Y_{2}\,\sin(\varphi_2)}_{b_2}
+        \; = \; 
+        Y_2\phase{\varphi_2}
+    \end{align*}
+#+end_export
+   
+*** Forma binómica:
+    - Suma: $\quad \overline{Y}_1+\overline{Y}_2 = (a_1+a_2)+\mathrm{j}\,(b_1+b_2)$
+    - Resta: $\quad \overline{Y}_1-\overline{Y}_2 = (a_1-a_2)+\mathrm{j}\,(b_1-b_2)$
+*** Forma polar:
+    - Multiplicación: $\quad \overline{Y}_1\cdot \overline{Y}_2 = (Y_1\cdot Y_2)\phase{\varphi_1+\varphi_2}$
+    - División: $\quad \dfrac{\overline{Y}_1}{\overline{Y}_2} = \dfrac{Y_{1}}{Y_{2}}\phase{\varphi_1-\varphi_2}$
 
 ** Tensión y corriente en notación fasorial
 
