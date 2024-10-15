@@ -89,7 +89,7 @@
 *** Período y frecuencia
 - Período ($T$): tiempo que tarda en repetirse la función.
 - Frecuencia ($f$): número de repeticiones por unidad de tiempo.
-- $f = \frac{1}{T}$
+- $f = \dfrac{1}{T}$
 ***                                                         :B_ignoreheading:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
@@ -117,8 +117,8 @@
 
 #+BEGIN_EXPORT latex
 \[
-U_m=\frac{1}{T}\int_T u(t)\, dt \qquad \qquad%
-I_m=\frac{1}{T}\int_T i(t)\, dt
+U_m=\dfrac{1}{T}\int_T u(t)\, dt \qquad \qquad%
+I_m=\dfrac{1}{T}\int_T i(t)\, dt
 \]
 #+END_EXPORT
 
@@ -126,8 +126,8 @@ I_m=\frac{1}{T}\int_T i(t)\, dt
 
 #+BEGIN_EXPORT latex
 \[
-U = \sqrt{\frac{1}{T}\cdot\int_{T} u^{2}(t)\, dt} \qquad \qquad%
-I = \sqrt{\frac{1}{T}\cdot\int_{T} i^{2}(t)\, dt}
+U = \sqrt{\dfrac{1}{T}\cdot\int_{T} u^{2}(t)\, dt} \qquad \qquad%
+I = \sqrt{\dfrac{1}{T}\cdot\int_{T} i^{2}(t)\, dt}
 \]
 #+END_EXPORT
 
@@ -177,9 +177,9 @@ y(t)=Y_{max}\cdot\sen(\omega\cdot t+\theta)
 
 - T: periodo de la onda (segundos)
 
-- $\omega=\frac{2\cdot\pi}{T}$: pulsación (radianes/segundo)
+- $\omega=\dfrac{2\cdot\pi}{T}$: pulsación (radianes/segundo)
 
-- $f=\frac{\omega}{2\cdot\pi}=\frac{1}{T}$: frecuencia (Hz)
+- $f=\dfrac{\omega}{2\cdot\pi}=\dfrac{1}{T}$: frecuencia (Hz)
   
 - $\theta$: fase (radianes o grados)
 
@@ -217,26 +217,26 @@ y(t)=Y_{max}\cdot\sen(\omega\cdot t+\theta)
 *** Valor medio
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_{T} y(t)\, dt
+Y_m=\dfrac{1}{T}\int_{T} y(t)\, dt
 \]
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
 \[
-Y_m=\frac{1}{T}\int_T Y_{max}\cdot\sen(\omega \cdot t+\theta)\, dt=0
+Y_m=\dfrac{1}{T}\int_T Y_{max}\cdot\sen(\omega \cdot t+\theta)\, dt=0
 \]
 #+END_EXPORT
 *** Valor eficaz
 
 #+BEGIN_EXPORT latex
 \[
-Y = \sqrt{\frac{1}{T}\cdot\int_T y^{2}(t)\, dt}
+Y = \sqrt{\dfrac{1}{T}\cdot\int_T y^{2}(t)\, dt}
 \]
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
 \[
-Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\frac{Y_{max}}{\sqrt{2}}}
+Y=\sqrt{\dfrac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\right)^{2}dt}=\boxed{\dfrac{Y_{max}}{\sqrt{2}}}
 \]
 #+END_EXPORT
 
@@ -269,10 +269,10 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
 ** Operaciones con fasores
 #+begin_export latex
     \begin{align*}
-        \overline{Y}_1 & \; = \;         \overbrace{Y_{1}\,\cos(\varphi_1)}^{a_1}+\,\mathrm{j}\,\overbrace{Y_{1}\;\sin(\varphi_1)}^{b_1} 
+        \overline{Y}_1 & \; = \;         \overbrace{Y_{1}\,\cos(\varphi_1)}^{a_1}+\,\mathrm{j}\,\overbrace{Y_{1}\;\sen(\varphi_1)}^{b_1} 
         \; = \; 
         Y_{1}\phase{\varphi_1}\\
-        \overline{Y}_2 & \; = \; \underbrace{Y_{2}\,\cos(\varphi_2)}_{a_2}+\;\mathrm{j}\,\underbrace{Y_{2}\,\sin(\varphi_2)}_{b_2}
+        \overline{Y}_2 & \; = \; \underbrace{Y_{2}\,\cos(\varphi_2)}_{a_2}+\;\mathrm{j}\,\underbrace{Y_{2}\,\sen(\varphi_2)}_{b_2}
         \; = \; 
         Y_2\phase{\varphi_2}
     \end{align*}
@@ -296,8 +296,8 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
 
 #+BEGIN_EXPORT latex
 \begin{align*}
-  \overline{U} &= U\phase{\theta_U}\\
-  \overline{I} &= I\phase{\theta_I}
+  u(t) = U_{max} \cdot \sen(\omega t + \theta_U) &\rightarrow \overline{U} = U\phase{\theta_U}\\
+  i(t) = I_{max} \cdot \sen(\omega t + \theta_I) &\rightarrow \overline{I} = I\phase{\theta_I}
 \end{align*}
 #+END_EXPORT
 
@@ -318,8 +318,18 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
 #+BEGIN_EXPORT latex
 \begin{align*}
   \overline{U} &= \overline{Z} \cdot \overline{I}\\                 
-  \overline{Z} &= \frac{\overline{U}}{\overline{I}}
+  \overline{Z} &= \dfrac{\overline{U}}{\overline{I}}
 \end{align*}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\[
+\boxed{\overline{Z} = \dfrac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
+    \begin{cases}
+      Z = \dfrac{U}{I}\\
+      \varphi = \theta_U - \theta_I
+    \end{cases}}
+\]
 #+END_EXPORT
 
 ***                                                                   :BMCOL:
@@ -329,31 +339,26 @@ Y=\sqrt{\frac{1}{T}\cdot\int_T \left(Y_{max}\cdot\sen(\omega\cdot t+\theta)\righ
 #+ATTR_LATEX: :height 0.5\textheight
 [[file:../figs/fasorTensionCorriente.pdf]]
 
-*** 
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
-#+BEGIN_EXPORT latex
-\[
-\boxed{\overline{Z} = \frac{U}{I}\phase{\theta_U - \theta_I} \Rightarrow 
-    \begin{cases}
-      Z = \frac{U}{I}\\
-      \varphi = \theta_U - \theta_I
-    \end{cases}}
-\]
-#+END_EXPORT
-
-
-
 ** Impedancia Genérica
-#+BEGIN_EXPORT latex
-\[
-\overline{Z} = R + j X
-\]
-#+END_EXPORT
+   
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+ #+BEGIN_EXPORT latex
+ \begin{align*}
+   \overline{Z} &= Z\phase{\varphi}\\[10pt]
+		&= Z \cdot (\cos(\varphi) + j\sen(\varphi))\\[10pt]
+		& = R + j X
+ \end{align*}
+ #+END_EXPORT
 
-#+ATTR_LATEX: :height 0.75\textheight
-[[file:../figs/fasorImpedancia.pdf]]
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+ #+ATTR_LATEX: :height 0.6\textheight
+ [[file:../figs/fasorImpedancia.pdf]]
 
 ** Circuito Resistivo
 Un circuito resistivo no desfasa (*tensión y corriente en fase*).
@@ -367,11 +372,17 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 \]
     #+end_export
 #+BEGIN_EXPORT latex
-\begin{align*}
-  u(t) &= R \cdot i(t)=\\
-       &= {\color{blue}R \cdot I_{max}} \cdot \sen(\omega t + {\color{red!80}\theta_I + 0}) =\\
-       &= {\color{blue}U_{max}} \cdot \sen(\omega t + {\color{red!80} \theta_U})\\
-\end{align*}
+\[
+  \begin{rcases}
+    u(t) &= R \cdot i(t)=\\
+         &= {\color{blue}R \cdot I_{max}} \cdot \sen(\omega t + {\color{red!80}\theta_I + 0}) =\\
+         &= {\color{blue}U_{max}} \cdot \sen(\omega t + {\color{red!80} \theta_U})\\
+  \end{rcases} \rightarrow
+\begin{cases}
+  {\color{blue}U_{max}} &= {\color{blue}R \cdot I_{max}}\\
+  {\color{red!80}\theta_U} &= {\color{red!80}\theta_I}
+\end{cases}
+\]
  #+END_EXPORT
 
 ** Circuito Resistivo
@@ -385,7 +396,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
     :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
-  Z &= \frac{U}{I} = R\\
+  Z &= \dfrac{U}{I} = R\\
   \varphi &= \theta_U - \theta_I = 0\\
   \Aboxed{\overline{Z}_R &= R \phase{0}}
 \end{align*}
@@ -419,11 +430,17 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 \]
     #+end_export
 #+BEGIN_EXPORT latex
-\begin{align*}
-  u(t) &= L \cdot \frac{d i(t)}{dt} =\\
-       &= {\color{blue}{\omega L \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I +\pi/2}}) =\\
-       &= {\color{blue}{U_{max}}} \cdot \sen(\omega t +  {\color{red!80}{\theta_U}})\\
-\end{align*}
+\[
+  \begin{rcases}
+    u(t) &= L \cdot \dfrac{d i(t)}{dt} =\\
+         &= {\color{blue}{\omega L \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I +\pi/2}}) =\\
+         &= {\color{blue}{U_{max}}} \cdot \sen(\omega t +  {\color{red!80}{\theta_U}})\\
+  \end{rcases} \rightarrow
+\begin{cases}
+  {\color{blue}U_{max}} &= {\color{blue}\omega L \cdot I_{max}}\\
+  {\color{red!80}\theta_U} &= {\color{red!80}\theta_I + \pi/2}
+\end{cases}
+\]
  #+END_EXPORT
 
 
@@ -440,7 +457,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 
 #+BEGIN_EXPORT latex
 \begin{align*}
-  Z &= \frac{U}{I} = \omega L\\
+  Z &= \dfrac{U}{I} = \omega L\\
   \varphi &= \theta_U - \theta_I = \pi/2\\
   \Aboxed{\overline{Z}_L &= j\omega L = \omega L \phase{\ang{90}}}
 \end{align*}
@@ -475,11 +492,17 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 \]
     #+end_export
 #+BEGIN_EXPORT latex
-\begin{align*}
+\[
+\begin{rcases}
   u(t) &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
-       &= {\color{blue}{\frac{1}{\omega C} \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I -\pi/2}}) =\\
+       &= {\color{blue}{\dfrac{1}{\omega C} \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I -\pi/2}}) =\\
        &= {\color{blue}{U_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_U}})\\
-\end{align*}
+\end{rcases} \rightarrow
+\begin{cases}
+  {\color{blue}U_{max}} &= {\color{blue}\dfrac{1}{\omega C} \cdot I_{max}}\\
+  {\color{red!80}\theta_U} &= {\color{red!80}\theta_I - \pi/2}
+\end{cases}
+\]
  #+END_EXPORT
 
 
@@ -495,9 +518,9 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :END:
 #+BEGIN_EXPORT latex
 \begin{align*}
-  Z &= \frac{U}{I} = \frac{1}{\omega C}\\
+  Z &= \dfrac{U}{I} = \dfrac{1}{\omega C}\\
   \varphi &= \theta_U - \theta_I = - \pi/2\\
-  \Aboxed{\overline{Z}_C &= \frac{1}{j\omega C} = \frac{1}{\omega C}\phase{\ang{-90}}}
+  \Aboxed{\overline{Z}_C &= \dfrac{1}{j\omega C} = \dfrac{1}{\omega C}\phase{\ang{-90}}}
 \end{align*}
 #+END_EXPORT
 
@@ -552,17 +575,16 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 [[file:../figs/RL.pdf]]
 
 #+BEGIN_EXPORT latex
-\begin{align*}
+\[
+\begin{rcases}
   \overline{U}_R &= R \overline{I}\\
   \overline{U}_L &= j\omega L \overline{I}
-\end{align*}
-#+END_EXPORT
-
-    #+begin_export latex
-    \begin{align*}
+\end{rcases} \rightarrow \quad
+    \begin{aligned}
       \overline{U} &= \overline{U}_R + \overline{U}_L =\\
 		   &=(R + j\omega L) \overline{I}
-    \end{align*}
+    \end{aligned}
+\]
     #+end_export
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
@@ -580,7 +602,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
   |Z| = \sqrt{R^2 + (\omega L)^2}
 \]
 \[
-  \varphi = \atan{\frac{\omega L}{R}}
+  \varphi = \atan{\dfrac{\omega L}{R}}
 \]
 #+END_EXPORT
 
@@ -616,17 +638,16 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 [[file:../figs/RC.pdf]]
 
 #+BEGIN_EXPORT latex
-\begin{align*}
+\[
+\begin{rcases}
   \overline{U}_R &= R \overline{I}\\
-  \overline{U}_C &= -j \frac{1}{\omega C} \overline{I}
-\end{align*}
-#+END_EXPORT
-
-    #+begin_export latex
-\begin{align*}
+  \overline{U}_C &= -j \dfrac{1}{\omega C} \overline{I}
+\end{rcases} \rightarrow \quad
+\begin{aligned}
   \overline{U} &= \overline{U}_R + \overline{U}_C =\\
-               &= (R - j \frac{1}{\omega C}) \overline{I} 
-\end{align*}
+               &= (R - j \dfrac{1}{\omega C}) \overline{I} 
+\end{aligned}
+\]
     #+end_export
 ** Circuito RC (capacitivo con pérdidas)
 #+ATTR_LATEX: :height 0.2\textheight
@@ -639,15 +660,15 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 #+BEGIN_EXPORT latex
 \[
-\overline{Z} = R - \frac{j}{\omega C} \Rightarrow \boxed{\varphi < 0}
+\overline{Z} = R - \dfrac{j}{\omega C} \Rightarrow \boxed{\varphi < 0}
 \]
 
 \[
-  |Z| = \sqrt{R^2 + \frac{1}{(\omega C)^2}}
+  |Z| = \sqrt{R^2 + \dfrac{1}{(\omega C)^2}}
 \]
 
 \[
-  \varphi = - \atan{\frac{1}{\omega R C}}
+  \varphi = - \atan{\dfrac{1}{\omega R C}}
 \]
 
 #+END_EXPORT
@@ -665,18 +686,17 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 [[file:../figs/RLC.pdf]]
 
 #+BEGIN_EXPORT latex
-\begin{align*}
+\[
+\begin{rcases}
   \overline{U}_R &= R \overline{I}\\
   \overline{U}_L &= j\omega L \overline{I}\\
-  \overline{U}_C &= -j \frac{1}{\omega C} \overline{I}
-\end{align*}
-#+END_EXPORT
-
-#+BEGIN_EXPORT latex
-\begin{align*}
+  \overline{U}_C &= -j \dfrac{1}{\omega C} \overline{I}
+\end{rcases} \rightarrow \quad
+\begin{aligned}
   \overline{U} &= \overline{U}_R + \overline{U}_L + \overline{U}_C =\\
-               &= \left(R + j(\omega L - \frac{1}{\omega C})\right) \overline{I} 
-\end{align*}
+               &= \left(R + j(\omega L - \dfrac{1}{\omega C})\right) \overline{I} 
+\end{aligned}
+\]
 #+END_EXPORT
 
 ** Circuito RLC serie
@@ -690,13 +710,13 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
 #+BEGIN_EXPORT latex
 \[
-\overline{Z} = R + j(\omega L - \frac{1}{\omega C})
+\overline{Z} = R + j(\omega L - \dfrac{1}{\omega C})
 \]
 \[
-  |Z| = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}
+  |Z| = \sqrt{R^2 + (\omega L - \dfrac{1}{\omega C})^2}
 \]
 \[
-  \varphi = \atan{\frac{\omega L - \frac{1}{\omega C}}{R}}
+  \varphi = \atan{\dfrac{\omega L - \dfrac{1}{\omega C}}{R}}
 \]
 #+END_EXPORT
 
@@ -704,9 +724,9 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     :PROPERTIES:
     :BEAMER_col: 0.6
     :END:
-- $\varphi > 0 \Rightarrow \omega L > \frac{1}{\omega C}$: inductivo
-- $\varphi < 0 \Rightarrow \omega L < \frac{1}{\omega C}$: capacitivo
-- $\varphi = 0 \Rightarrow \omega L = \frac{1}{\omega C}$: resistivo (resonancia)
+- $\varphi > 0 \Rightarrow \omega L > \dfrac{1}{\omega C}$: inductivo
+- $\varphi < 0 \Rightarrow \omega L < \dfrac{1}{\omega C}$: capacitivo
+- $\varphi = 0 \Rightarrow \omega L = \dfrac{1}{\omega C}$: resistivo (resonancia)
 
 ***                                                         :B_ignoreheading:
     :PROPERTIES:
@@ -840,7 +860,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     #+begin_export latex
     \[
     \boxed{
-      \overline{Y} = \frac{1}{\overline{Z}} \rightarrow \left\{%
+      \overline{Y} = \dfrac{1}{\overline{Z}} \rightarrow \left\{%
 	\begin{array}{l}
 	|\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
         \varphi_Y = -\varphi_Z = - \varphi\\
@@ -860,7 +880,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
     #+begin_export latex
     \[
-      \overline{Z} = \frac{1}{G + j B} \rightarrow \left\{%
+      \overline{Z} = \dfrac{1}{G + j B} \rightarrow \left\{%
 	  \begin{array}{l}
 	    R = \dfrac{G}{G^2 + B^2}\\[12pt]
 	    X = - j \dfrac{B}{G^2 + B^2}\\
@@ -877,7 +897,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 
     #+begin_export latex
     \[
-      \overline{Y} = \frac{1}{R + j X} \rightarrow \left\{%
+      \overline{Y} = \dfrac{1}{R + j X} \rightarrow \left\{%
 	  \begin{array}{l}
 	    G = \dfrac{R}{R^2 + X^2}\\[12pt]
 	    B = - j \dfrac{X}{R^2 + X^2}\\
@@ -988,7 +1008,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
      \left\{% 
        \begin{array}{l}
 	 P = 0\\
-	 Q = UI = \frac{U^2}{\omega L} = I^2 \omega L\\
+	 Q = UI = \dfrac{U^2}{\omega L} = I^2 \omega L\\
        \end{array}
        \right.
      \]
@@ -1025,7 +1045,7 @@ p(t) = {\color{gray}P \cdot (1 + \cos(2\omega t))} + Q \cdot \sen(2\omega t)
      \left\{% 
        \begin{array}{l}
 	 P = 0\\
-	 Q = -UI = -U^2 \omega C = - \frac{I^2}{\omega C}\\
+	 Q = -UI = -U^2 \omega C = - \dfrac{I^2}{\omega C}\\
        \end{array}
        \right.
      \]
@@ -1228,7 +1248,7 @@ Habitualmente se emplea con 3 terminales cortocircuitando terminales con *.
 El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar la misma potencia activa.
 #+BEGIN_EXPORT latex
 \[
-  \left(\frac{P}{\cos \varphi_1} = S_1 \right) < \left( S_2 = \frac{P}{\cos \varphi_2}\right) 
+  \left(\dfrac{P}{\cos \varphi_1} = S_1 \right) < \left( S_2 = \dfrac{P}{\cos \varphi_2}\right) 
 \]
 #+END_EXPORT
 
@@ -1239,7 +1259,7 @@ El sistema 2 requiere *mayor potencia aparente* (generador mayor) para alimentar
 El sistema 2 requiere *mayor sección* de cable para transportar la misma potencia activa.
 #+BEGIN_EXPORT latex
 \[
-  \left(\frac{P}{U \cos \varphi_1} = I_1 \right) < \left( I_2 = \frac{P}{U \cos \varphi_2}\right) 
+  \left(\dfrac{P}{U \cos \varphi_1} = I_1 \right) < \left( I_2 = \dfrac{P}{U \cos \varphi_2}\right) 
 \]
 #+END_EXPORT
 
@@ -1280,7 +1300,7 @@ Q'&= P_z \tan \varphi'\\
 |Q_c| &= Q_z - Q' = P_z (\tan \varphi - \tan \varphi')
 \end{align*}
 \[
-|Q_c| = \omega C U^2 \rightarrow \boxed{C = \frac{P_z (\tan \varphi - \tan \varphi')}{\omega U^2}}
+|Q_c| = \omega C U^2 \rightarrow \boxed{C = \dfrac{P_z (\tan \varphi - \tan \varphi')}{\omega U^2}}
 \]
 #+END_EXPORT
 
