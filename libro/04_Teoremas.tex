@@ -863,13 +863,19 @@ Combinando las ecuaciones, se llega a que:
   \overline{Z}_{th} = \dfrac{\overline{\epsilon}_0}{\overline{I}_0} = \dfrac{\overline{Z}_1\,(\beta + \overline{Z}_2)}{\overline{Z}_1+\overline{Z}_2}=\dfrac{(3+\mathrm{j}4)\cdot (5+1+\mathrm{j})}{3+\mathrm{j}4+1+\mathrm{j}} = \boxed{\vphantom{\frac{a}{a}} 5\phase{16.2602^\circ}\,\Omega}
 \end{equation*}
 
-Finalmente, para calcular la potencia en la carga A-B, esta depende de
-la carga conectada:
+Finalmente, para calcular la potencia en la carga A-B, obtenemos la corriente que circula por el circuito:
 
+  \[
+    \overline{I} = \dfrac{\overline{\epsilon}_{th}}{\overline{Z}_{th} + \overline{Z}_L}
+  \]
+
+A continuación, calculamos la potencia en la impedancia $Z_L$:
+  
 \begin{equation*}
-  P_{AB} = \dfrac{\epsilon_{th}^2}{{(R_L+R_{th})^2+(X_L+X_{th})^2}} \cdot R_L
+  P_{AB} = I^2 \cdot \Re\{\overline{Z}_L\}
 \end{equation*}
 
+Sustituyendo valores:
 \begin{itemize}
 \item Para $\overline{Z}_L = \overline{Z}_{th}$,
   $\;P_{AB} = \qty{17.15}{\watt}$
