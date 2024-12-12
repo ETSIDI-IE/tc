@@ -235,8 +235,8 @@ El circuito de la figura lleva en esa posición un tiempo que se
     \item El circuito para $t<0$ tiene el interruptor de la izquierda cerrado y el de la derecha abierto. Por tanto, el condensador está alimentado por CC, comportándose como un circuito abierto:
     \begin{align*}
         &I=\dfrac{E_{CC}}{R_{eq}}=\dfrac{40}{20+60}=0.5\,\si{\ampere}\\
-        &U_{R60}=I\,R_{60}=0.5\cdot 60=30\,\si{\volt}\\
-        &u(0^-)=U_{R60}=30\,\si{\volt}
+        &U_{R2}=I\,R_2=0.5\cdot 60=30\,\si{\volt}\\
+        &u(0^-)=U_{R2}=30\,\si{\volt}
     \end{align*}
     Por continuidad, se deduce que $u(0^-)=u(0^+)=30\,\si{\volt}$ 
     \item Para $t>0$, el interruptor de la izquierda se abre y se cierra el de la derecha, quedando el condensador alimentado por la fuente de CA. 
@@ -285,14 +285,14 @@ En el circuito de la figura se abre el interruptor después de un
         &\overline{X}_L=\mathrm{j}\,\omega\,L=\mathrm{j}\,2\cdot\pi\cdot 50\cdot 0.2=\mathrm{j}\,20\pi\,\Omega\\
         &\overline{I}_1=\dfrac{\overline{E}}{R_{25}+\overline{X}_L}=\dfrac{220\phase{0}}{25+\mathrm{j}\,20\pi}=3.25\phase{-68.303^\circ}\,A \quad\rightarrow\quad i_1(t)=3.25\sqrt{2}\,\cos(100\pi\,t-1.192)\,\si{\ampere}
     \end{align*}
-    Por tanto, en $t=0^-$ la corriente en la bobina es $i_1(0^-)=1.7\,\si{\volt}=i_1(0^+)$, por continuidad.
+    Por tanto, en $t=0^-$ la corriente en la bobina es $i_1(0^-)=\qty{1.7}{\ampere}=i_1(0^+)$, por continuidad.
     \item Para $t>0$, el interruptor se abre, quedando el circuito sin alimentación externa. La resistencia de Thévenin vista desde los extremos de la bobina es:
     \begin{equation*}
         R_{th}=275+25=300\,\Omega
     \end{equation*}
     siendo la constante de tiempo:
     \begin{equation*}
-        \tau=\dfrac{L}{R_{th}}=\dfrac{0.2}{300}=0.00067\,\si{\second}
+      \tau=\dfrac{L}{R_{th}}=\dfrac{0.2}{300}=\qty{0.67}{\milli\second}
     \end{equation*}
     Para la respuesta en régimen permanente, al no haber fuente de alimentación:
     \begin{equation*}
