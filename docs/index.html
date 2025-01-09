@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-09-20 vie 11:33 -->
+<!-- 2025-01-09 jue 12:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Teoría de Circuitos</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Luis Badesa Bernardo (LBB), Ana Fernández Guillamón (AFG), Oscar Perpiñán Lamigueiro (OPL)" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -42,21 +41,21 @@
   pre.src {
     position: relative;
     overflow: auto;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,14 +190,37 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <style type="text/css">
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'Libre Baskerville',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d0d0d0;margin:1em}body{background-color:#ffffff;margin:0 auto;max-width:23cm;border:1pt solid #586e75;padding:1em}code{background-color:#073642;padding:2px}a{color:#792500}a:visited{color:#792500}a:hover{color:#cb4b16}h1{color:#B6321C}h2,h3,h4,h5,h6{color:#B6321C}pre{background-color:#002b36;color:#839496;border:1pt solid #586e75;padding:1em;box-shadow:5pt 5pt 8pt #073642}pre code{background-color:#002b36}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}
 </style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">Teoría de Circuitos</h1>
 <p>
 Este repositorio recoge parte del material docente que se emplea en las asignaturas de Teoría de Circuitos impartidas en los grados de la <a href="http://www.etsidi.upm.es/">ETSIDI</a> - <a href="http://www.upm.es/">UPM</a>. Estas asignaturas impartidas en la ETSIDI cubren el contenido de la Teoría de Circuitos en tres bloques diferenciados:
@@ -214,6 +236,7 @@ Este repositorio recoge parte del material docente que se emplea en las asignatu
 <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="88x31.png" /> Este material está
 bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons CC-BY-NC-SA 4.0</a>.
 </p>
+
 <div id="outline-container-libro" class="outline-2">
 <h2 id="libro">Libro</h2>
 <div class="outline-text-2" id="text-libro">
@@ -224,10 +247,12 @@ bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Cr
 </ul>
 </div>
 </div>
+
 <div id="outline-container-diapositivas" class="outline-2">
 <h2 id="diapositivas">Diapositivas</h2>
 <div class="outline-text-2" id="text-diapositivas">
 </div>
+
 <div id="outline-container-TC1" class="outline-3">
 <h3 id="TC1">Teoría de Circuitos</h3>
 <div class="outline-text-3" id="text-TC1">
@@ -240,19 +265,21 @@ bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Cr
 </ul>
 </div>
 </div>
+
 <div id="outline-container-TC2" class="outline-3">
 <h3 id="TC2">Teoría de Circuitos II</h3>
 <div class="outline-text-3" id="text-TC2">
 <ul class="org-ul">
-<li><a href="diapos/TC2_01_ElementosActivos_OPL.pdf">Elementos activos</a></li>
-<li><a href="diapos/TC2_02_Trifasica_OPL.pdf">Trifásica</a></li>
-<li><a href="diapos/TC2_03_TecnicasAnalisis_OPL.pdf">Técnicas de análisis</a></li>
-<li><a href="diapos/TC2_04_Teoremas_OPL.pdf">Teoremas generales</a></li>
-<li><a href="diapos/TC2_05_AcoplamientosMagneticos_OPL.pdf">Acoplamientos magnéticos</a></li>
-<li><a href="diapos/TC2_06_Transformadores_OPL.pdf">Transformadores</a></li>
+<li>Elementos activos: <a href="diapos/TC2_01_ElementosActivos_OPL.pdf">OPL</a> <a href="diapos/TC2_01_ElementosActivos_LBB.pdf">LBB</a></li>
+<li>Trifásica: <a href="diapos/TC2_02_Trifasica_OPL.pdf">OPL</a> <a href="diapos/TC2_02_Trifasica_LBB.pdf">LBB</a></li>
+<li>Técnicas de análisis: <a href="diapos/TC2_03_TecnicasAnalisis_OPL.pdf">OPL</a> <a href="diapos/TC2_03_TecnicasAnalisis_LBB.pdf">LBB</a></li>
+<li>Teoremas generales: <a href="diapos/TC2_04_Teoremas_OPL.pdf">OPL</a> <a href="diapos/TC2_04_Teoremas_LBB.pdf">LBB</a></li>
+<li>Acoplamientos magnéticos: <a href="diapos/TC2_05_AcoplamientosMagneticos_OPL.pdf">OPL</a> <a href="diapos/TC2_05_AcoplamientosMagneticos_LBB.pdf">LBB</a></li>
+<li>Transformadores: <a href="diapos/TC2_06_Transformadores_OPL.pdf">OPL</a> <a href="diapos/TC2_06_Transformadores_LBB.pdf">LBB</a></li>
 </ul>
 </div>
 </div>
+
 <div id="outline-container-TC3" class="outline-3">
 <h3 id="TC3">Teoría de Circuitos III</h3>
 <div class="outline-text-3" id="text-TC3">
@@ -272,7 +299,7 @@ bajo una licencia <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Cr
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: Luis Badesa Bernardo (LBB), Ana Fernández Guillamón (AFG), Oscar Perpiñán Lamigueiro (OPL)</p>
-<p class="date">Created: 2024-09-20 vie 11:33</p>
+<p class="date">Created: 2025-01-09 jue 12:28</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
