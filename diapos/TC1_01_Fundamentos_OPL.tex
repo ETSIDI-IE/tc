@@ -1,4 +1,4 @@
-% Created 2023-07-18 mar 19:05
+% Created 2025-02-07 vie 11:36
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -15,13 +15,14 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{mathpazo}
+\usepackage[spanish]{babel}
 \usepackage{gensymb}
 \usepackage{amsmath}
 \usepackage{diffcoeff}
 \usepackage{steinmetz}
 \usepackage{mathtools}
 \bibliographystyle{plain}
-\usepackage{siunitx}
+\usepackage[output-complex-root = j]{siunitx}
 \sisetup{output-decimal-marker={,}}
 \DeclareSIUnit{\watthour}{Wh}
 \hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
@@ -52,20 +53,19 @@
  pdftitle={Fundamentos. Circuitos de Corriente Continua.},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 28.2 (Org mode 9.6.7)}, 
+ pdfcreator={Emacs 29.4 (Org mode 9.7.19)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
-
 \section{Conceptos Fundamentales}
-\label{sec:org8ae903c}
+\label{sec:orgf4061e5}
 \subsection{Teoría de Circuitos}
-\label{sec:org786bc99}
-\begin{frame}[label={sec:org529cdf2}]{}
+\label{sec:orge83dcf6}
+\begin{frame}[label={sec:org266a77e}]{}
 Este curso está dedicado al \alert{análisis} de \alert{circuitos eléctricos} \alert{lineales} de \alert{parámetros concentrados}.
 \end{frame}
-\begin{frame}[label={sec:org2c7e08c}]{Circuito Eléctrico}
+\begin{frame}[label={sec:orgfcf99a2}]{Circuito Eléctrico}
 Un \alert{circuito eléctrico} es un conjunto de componentes eléctricos interconectados mediante conductores que crean un camino cerrado por el que puede circular corriente eléctrica. 
 
 Un circuito eléctrico puede incluir:
@@ -74,8 +74,7 @@ Un circuito eléctrico puede incluir:
 \item \alert{elementos pasivos} (receptores), que consumen o almacenan la potencia que circula.
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org51421d8}]{Análisis y Diseño}
+\begin{frame}[label={sec:org4cd3ebb}]{Análisis y Diseño}
 El \alert{análisis} (o resolución) de un circuito eléctrico existente persigue determinar sus condiciones de funcionamiento:
 \begin{enumerate}
 \item Definir las ecuaciones correspondientes al circuito,
@@ -84,7 +83,7 @@ El \alert{análisis} (o resolución) de un circuito eléctrico existente persigu
 
 El \alert{diseño} (o síntesis) de un circuito eléctrico tiene como objetivo definir el circuito eléctrico, es decir, determinar los componentes necesarios y su interconexión, para obtener unas condiciones de funcionamiento.
 \end{frame}
-\begin{frame}[label={sec:orge4f0f99}]{Sistemas lineales}
+\begin{frame}[label={sec:org4f73981}]{Sistemas lineales}
 Todos los circuitos eléctricos que se estudian en este curso se comportan como \alert{sistemas lineales}: 
 
 \begin{itemize}
@@ -96,23 +95,21 @@ La respuesta \(f\) a la suma de dos entradas \(x\) e \(y\) es igual a la suma de
 La respuesta a una entrada que está multiplicada por un factor de escala \(k\) es igual a multiplicar por este factor a la respuesta a la entrada.
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org91d7b43}]{La linealidad es una aproximación de la realidad}
+\begin{frame}[label={sec:orgf61008a}]{La linealidad es una aproximación de la realidad}
 \begin{itemize}
 \item Estas propiedades simplifican el tratamiento de los circuitos, y \alert{permiten aplicar técnicas de resolución de ecuaciones lineales}.
 \item La linealidad es una \alert{aproximación de la realidad} que no puede aplicarse de manera indiscriminada a cualquier componente y en cualquier condición.
 \item En particular, los \alert{dispositivos electrónicos} como diodos o transistores tienen un \alert{comportamiento} marcadamente \alert{no lineal}, de forma que los circuitos que los contienen no pueden analizarse directamente con las técnicas que aquí se exponen sin realizar previamente aproximaciones de su funcionamiento.
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:orgb72b205}]{Parámetros concentrados}
+\begin{frame}[label={sec:orga635519}]{Parámetros concentrados}
 \begin{itemize}
 \item Los circuitos eléctricos reales ocupan espacio, las máquinas generadoras y los receptores tienen grandes dimensiones, y los cables conductores se extienden a lo largo de longitudes variopintas.
 \item Sin embargo, el análisis de circuitos no toma en consideración las propiedades espaciales de los circuitos ni de sus componentes, sino que los confina a elementos puntuales con un modelo de \alert{parámetros concentrados}.
 \item Por ejemplo, un conductor real de \(\SI{100}{\meter}\) se representará habitualmente como un conductor ideal con una resistencia en su punto medio.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orge5d384c}]{Simplificación de las ecuaciones de Maxwell}
+\begin{frame}[label={sec:org65c8c5e}]{Simplificación de las ecuaciones de Maxwell}
 \begin{itemize}
 \item Este tratamiento es una simplificación de las ecuaciones del electromagnetismo de Maxwell
 \item Es aplicable únicamente cuando las dimensiones del circuito real son inferiores a la longitud de onda de la señal que circula por el circuito.
@@ -123,11 +120,9 @@ La respuesta a una entrada que está multiplicada por un factor de escala \(k\) 
 \end{itemize}
 \end{itemize}
 \end{frame}
-
-
 \subsection{Variables}
-\label{sec:orgbceb295}
-\begin{frame}[label={sec:org0d789d1}]{Tensión Eléctrica}
+\label{sec:orgd39f2c0}
+\begin{frame}[label={sec:org78770b2}]{Tensión Eléctrica}
 El \alert{potencial eléctrico en un punto}, \(v(t)\),  es la energía potencial que tiene una carga unitaria en ese punto debida al campo eléctrico. 
 
 \begin{center}
@@ -142,16 +137,14 @@ La \alert{tensión o diferencia de potencial entre dos puntos} A y B, \(u_{AB}(t
 
 La \alert{unidad} de la tensión eléctrica es el \alert{voltio} (V).
 \end{frame}
-
-\begin{frame}[label={sec:org8c186fa}]{La trayectoria no importa}
+\begin{frame}[label={sec:orgc283148}]{La trayectoria no importa}
 Dado que el campo eléctrico es \alert{conservativo}, la diferencia de potencial entre A y B \alert{no depende de la trayectoria} seguida para realizar el desplazamiento, sino únicamente del potencial existente en cada uno de los puntos. 
 
 \begin{center}
 \includegraphics[height=0.6\textheight]{../figs/diagrama_tension.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org7fbc419}]{El signo depende del sentido}
+\begin{frame}[label={sec:orgf76ee25}]{El signo depende del sentido}
 Aunque la trayectoria no sea relevante para el cálculo de la tensión, siempre hay que tener en cuenta el \alert{sentido del desplazamiento}. 
 
 \begin{center}
@@ -164,8 +157,7 @@ Así, si el movimiento se produce desde B hasta A obtenemos el signo contrario a
   u_{BA} = v_B - v_A = - u_{AB} 
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org986f2aa}]{Corriente Eléctrica}
+\begin{frame}[label={sec:org4ad1f3a}]{Corriente Eléctrica}
 Se define la \alert{intensidad de la corriente eléctrica} como la variación de la carga \(q(t)\) que atraviesa la sección transversal de un conductor por unidad de tiempo:
 
 \begin{equation*}
@@ -180,8 +172,7 @@ La corriente eléctrica se produce por el \alert{movimiento de los electrones li
 
 La \alert{unidad} de la corriente es el \alert{amperio} (A).
 \end{frame}
-
-\begin{frame}[label={sec:orgaa74861}]{Potencia Eléctrica}
+\begin{frame}[label={sec:org53bec88}]{Potencia Eléctrica}
 La \alert{potencia eléctrica} es la variación del trabajo del campo eléctrico por unidad de tiempo:
 
 \begin{equation*}
@@ -197,8 +188,7 @@ Esta definición genérica puede relacionarse con las anteriores variables:
 
 La \alert{unidad} de la potencia eléctrica es el \alert{vatio} (W).
 \end{frame}
-
-\begin{frame}[label={sec:org9742ab2}]{Signo de la potencia eléctrica}
+\begin{frame}[label={sec:org92d3a8c}]{Signo de la potencia eléctrica}
 Para determinar el \alert{signo de la potencia eléctrica} hay que tener en consideración los signos de las variables de las que depende, la tensión y la corriente. 
 \begin{itemize}
 \item Cuando las flechas de ambas variables tienen el \alert{mismo sentido} la potencia eléctrica es \alert{positiva}
@@ -209,8 +199,7 @@ Para determinar el \alert{signo de la potencia eléctrica} hay que tener en cons
 \includegraphics[height=0.2\textheight]{../figs/signo_potencia.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org21df76e}]{Receptores y Generadores}
+\begin{frame}[label={sec:orgacaeb23}]{Receptores y Generadores}
 Es habitual \alert{interpretar} este resultado en términos de potencia absorbida o potencia entregada. 
 \begin{itemize}
 \item Un \alert{circuito receptor absorbe potencia} y la corriente \emph{entra} por el terminal de mayor potencial,
@@ -221,8 +210,7 @@ Es habitual \alert{interpretar} este resultado en términos de potencia absorbid
 \includegraphics[height=0.5\textheight]{../figs/receptor_generador.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org03a4b3c}]{Potencia y Energía}
+\begin{frame}[label={sec:org2adea24}]{Potencia y Energía}
 \begin{description}
 \item[{Energía}] es la capacidad para realizar un trabajo.
 
@@ -236,8 +224,7 @@ tiempo}.
 Unidades W, kW
 \end{description}
 \end{frame}
-
-\begin{frame}[label={sec:org874186e}]{Rendimiento/Eficiencia}
+\begin{frame}[label={sec:org7499e58}]{Rendimiento/Eficiencia}
 Cuadripolo (entrada/salida)
 \begin{equation*}
   \eta = \frac{P_{salida}}{P_{entrada}}
@@ -259,8 +246,7 @@ Cualquier máquina tiene pérdidas:
   \boxed{\eta < 1}
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:orgb05cd16}]{Corriente Continua y Corriente Alterna}
+\begin{frame}[label={sec:orgaef56ed}]{Corriente Continua y Corriente Alterna}
 \begin{itemize}
 \item Corriente Continua (\(\frac{d}{dt} = 0\))
 \end{itemize}
@@ -275,13 +261,12 @@ Cualquier máquina tiene pérdidas:
 \includegraphics[height=0.25\textheight]{../figs/sin.pdf}
 \end{center}
 \end{frame}
-
 \section{Elementos circuitales}
-\label{sec:orgea1d226}
+\label{sec:org0eaf171}
 
 \subsection{Elementos Pasivos}
-\label{sec:org9b027fd}
-\begin{frame}[label={sec:org96aaef7}]{Resistencia}
+\label{sec:orgaee24f0}
+\begin{frame}[label={sec:org79787e8}]{Resistencia}
 \begin{itemize}
 \item \alert{Ley de Ohm}: una resistencia provoca una \alert{diferencia de potencial} entre sus terminales \alert{directamente proporcional} a su corriente: \alert{resistencia} (Ohmios, [\(\Omega\)])
 \end{itemize}
@@ -304,8 +289,19 @@ u(t) = R \cdot i(t)
 \end{column}
 \end{columns}
 \end{frame}
+\begin{frame}[label={sec:orgc6aa37e}]{Ley de Joule}
+\begin{center}
+\includegraphics[height=0.2\textheight]{../figs/Resistencia.pdf}
+\end{center}
 
-\begin{frame}[label={sec:org92c3a4c}]{Resistividad}
+\begin{itemize}
+\item \alert{Ley de Joule}: una resistencia disipa energía eléctrica produciendo \alert{calor}.
+\end{itemize}
+\[
+p(t)=R\cdot i^{2}(t)
+\]
+\end{frame}
+\begin{frame}[label={sec:orgf9f0669}]{Resistividad}
 \begin{itemize}
 \item El valor de la resistencia depende de la \alert{resistividad del material} (\(\rho\)), de la \alert{sección} (\(S\)), y de la
 longitud (\(l\)):
@@ -324,8 +320,7 @@ longitud (\(l\)):
 \end{itemize}
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org225c5c1}]{Cortocircuito y Circuito Abierto}
+\begin{frame}[label={sec:orga742ee8}]{Cortocircuito y Circuito Abierto}
 \begin{itemize}
 \item Cortocircuito: resistencia nula (tensión nula)
 \end{itemize}
@@ -342,22 +337,7 @@ longitud (\(l\)):
 \includegraphics[height=0.2\textheight]{../figs/CircuitoAbierto.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org192e71f}]{Ley de Joule}
-\begin{center}
-\includegraphics[height=0.2\textheight]{../figs/Resistencia.pdf}
-\end{center}
-
-\begin{itemize}
-\item \alert{Ley de Joule}: una resistencia disipa energía eléctrica produciendo \alert{calor}.
-\end{itemize}
-\[
-p(t)=R\cdot i^{2}(t)
-\]
-\end{frame}
-
-
-\begin{frame}[label={sec:org746840f}]{Bobina o inductancia}
+\begin{frame}[label={sec:org9dba6db}]{Bobina o inductancia}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Bobina.pdf}
 \end{center}
@@ -372,8 +352,7 @@ p(t)=R\cdot i^{2}(t)
 u_L(t)=L\cdot\frac{di(t)}{dt}
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org0d8544d}]{Bobina o inductancia}
+\begin{frame}[label={sec:orgf0ded08}]{Bobina o inductancia}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Bobina.pdf}
 \end{center}
@@ -393,8 +372,7 @@ u_L(t)=L\cdot\frac{di(t)}{dt}
   \frac{di(t)}{dt} = 0 \Rightarrow U_L = 0
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:orgb6829fe}]{Condensador}
+\begin{frame}[label={sec:org61b1387}]{Condensador}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Condensador.pdf}
 \end{center}
@@ -416,9 +394,7 @@ q(t) = C \cdot u(t)
 i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 \]
 \end{frame}
-
-
-\begin{frame}[label={sec:org3cf80ca}]{Condensador}
+\begin{frame}[label={sec:org77a8db5}]{Condensador}
 \begin{center}
 \includegraphics[height=0.2\textheight]{../figs/Condensador.pdf}
 \end{center}
@@ -439,12 +415,11 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
   \frac{du(t)}{dt} = 0 \Rightarrow I_c = 0
 \end{equation*}
 \end{frame}
-
 \subsection{Generadores Independientes}
-\label{sec:orgad238d2}
+\label{sec:org8abf8c4}
 
 
-\begin{frame}[label={sec:org6497271}]{Generador Ideal}
+\begin{frame}[label={sec:orga7913fc}]{Generador Ideal}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -452,7 +427,6 @@ i_C(t)=\frac{dq(t)}{d(t)}=C\frac{du(t)}{dt}
 \end{center}
 Un \alert{generador de tensión ideal} impone la tensión a la salida (\emph{la corriente depende del circuito}). Se caracteriza por su \alert{fuerza electromotriz} (voltios [V]).
 \end{column}
-
 \begin{column}{0.5\columnwidth}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/FuenteCorrienteIdeal.pdf}
@@ -461,10 +435,8 @@ Un \alert{generador de corriente ideal} impone la corriente a la salida (\emph{l
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:orgc874263}]{Generador Real}
+\begin{frame}[label={sec:org09b9068}]{Generador Real}
 Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
-
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -478,12 +450,10 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{column}
 \end{columns}
 \end{frame}
-
-
 \subsection{Generadores Dependientes}
-\label{sec:orge069ce0}
+\label{sec:org194eb28}
 
-\begin{frame}[label={sec:org021cc14}]{Generadores de Tensión}
+\begin{frame}[label={sec:org0953216}]{Generadores de Tensión}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
   \begin{center}
@@ -499,7 +469,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgf2bf1d1}]{Generadores de Corriente}
+\begin{frame}[label={sec:org2799292}]{Generadores de Corriente}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
  \begin{center}
@@ -515,15 +485,12 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{column}
 \end{columns}
 \end{frame}
-
-
-
 \section{Leyes de Kirchhoff}
-\label{sec:orgb4d53ee}
+\label{sec:org17efe36}
 
 \subsection{Definiciones}
-\label{sec:org4bc4b1a}
-\begin{frame}[label={sec:org15620ae}]{Nudo, rama, malla}
+\label{sec:org5463ce4}
+\begin{frame}[label={sec:org21aa3e6}]{Nudo, rama, malla}
 \begin{description}
 \item[{Nudo}] unión de \alert{3} o más conductores.
 \item[{Rama}] elementos conectados entre dos nudos consecutivos.
@@ -535,8 +502,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \includegraphics[height=0.5\textheight]{../figs/mallas.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org183c28a}]{Ley de Kirchhoff de las Corrientes (LKC)}
+\begin{frame}[label={sec:org0b7f4f6}]{Ley de Kirchhoff de las Corrientes (LKC)}
 \begin{itemize}
 \item La \alert{LKC} es el principio de conservación de la carga aplicado a los circuitos eléctricos.
 
@@ -554,8 +520,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
 \]
 \end{frame}
-
-\begin{frame}[label={sec:orgc7f9258}]{Ley de Kirchhoff de los Voltajes (LKV)}
+\begin{frame}[label={sec:orge13a778}]{Ley de Kirchhoff de los Voltajes (LKV)}
 \begin{itemize}
 \item La \alert{LKV} es el principio de conservación de la energía aplicado a los circuitos eléctricos.
 
@@ -573,8 +538,7 @@ i_1(t) - i_2(t) + i_3(t) - i_4(t) + i_5(t) = 0
 u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org6cb5e5e}]{Balance de Tensiones}
+\begin{frame}[label={sec:orgb9af985}]{Balance de Tensiones}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/circuito_lkv.pdf}
 \end{center}
@@ -588,15 +552,13 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
   U_{CD} &= U_{CC'} + U_{C'D'} + U_{D'D}
 \end{align*}
 \end{frame}
-
-\begin{frame}[label={sec:org8e4852f}]{Balance de Tensiones}
+\begin{frame}[label={sec:org0779901}]{Balance de Tensiones}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/circuito_lkv.pdf}
 \end{center}
 \begin{equation*}
   U_{A'A} + U_{AC} + U_{CC'} + U_{C'D'} + U_{D'D} + U_{DB} + U_{BB'} + U_{B'A'} = 0
 \end{equation*}
-
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{align*}
@@ -616,11 +578,10 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgb15de23}]{Generador y Receptor}
+\begin{frame}[label={sec:org552d6ef}]{Generador y Receptor}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/circuito_lkv.pdf}
 \end{center}
-
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{align*}
@@ -647,11 +608,10 @@ u_3(t) + u_4 (t) - u_5 (t) - u_1 (t) - u_2 (t)  = 0
 \end{columns}
 \end{frame}
 \subsection{Generadores}
-\label{sec:org012b014}
+\label{sec:orgad7310b}
 
-\begin{frame}[label={sec:org4ba15cb}]{Ecuación del generador}
+\begin{frame}[label={sec:org1646e8e}]{Ecuación del generador}
 Los generadores reales tienen pérdidas que se modelan con una resistencia en \alert{serie} (generador de tensión) o en \alert{paralelo} (generador de corriente)
-
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -671,16 +631,13 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{column}
 \end{columns}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgafe5ff9}]{Equivalencia de Fuentes}
+\begin{frame}[label={sec:orge2af816}]{Equivalencia de Fuentes}
 \begin{columns}
 \begin{column}{0.25\columnwidth}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/FuenteTensionRealDC.pdf}
 \end{center}
 \end{column}
-
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
 \item Dos fuentes son equivalentes cuando suministran el mismo valor de tensión y corriente a un \alert{circuito externo}, para cualquier circuito.
@@ -688,7 +645,6 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \item Sólo es posible establecer equivalencia entre \alert{fuentes reales}.
 \end{itemize}
 \end{column}
-
 \begin{column}{0.25\columnwidth}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/FuenteCorrienteRealDC.pdf}
@@ -696,9 +652,7 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \end{column}
 \end{columns}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgad143f9}]{Equivalencia de Fuentes}
+\begin{frame}[label={sec:org5205e20}]{Equivalencia de Fuentes}
 \begin{columns}
 \begin{column}{0.25\columnwidth}
 \begin{center}
@@ -709,7 +663,6 @@ Los generadores reales tienen pérdidas que se modelan con una resistencia en \a
 \includegraphics[height=0.43\textheight]{../figs/FuenteCorrienteRealDC.pdf}
 \end{center}
 \end{column}
-
 \begin{column}{0.75\columnwidth}
 La salida de tensión de una fuente de tensión es:
 \[
@@ -729,11 +682,10 @@ Las fuentes son equivalentes cuando las ecuaciones coinciden para cualquier comb
 \end{column}
 \end{columns}
 \end{frame}
-
 \subsection{Asociación de Elementos}
-\label{sec:org827c642}
+\label{sec:org63f02d1}
 
-\begin{frame}[label={sec:org61d59cb}]{Conexión en serie}
+\begin{frame}[label={sec:orge978aad}]{Conexión en serie}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -750,7 +702,7 @@ Un conjunto de elementos están asociados en serie cuando circula la misma corri
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org5189355}]{Conexión en serie}
+\begin{frame}[label={sec:orgbd7a99c}]{Conexión en serie}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -776,8 +728,7 @@ Definimos la resistencia equivalente de la conexión serie:
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:orgda99ad1}]{Divisor de Tensión}
+\begin{frame}[label={sec:orgf42a650}]{Divisor de Tensión}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -803,7 +754,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org383668c}]{Conexión en serie de inductancias}
+\begin{frame}[label={sec:org4aa49f7}]{Conexión en serie de inductancias}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -824,8 +775,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:orge55e1a6}]{Conexión en serie de condensadores}
+\begin{frame}[label={sec:org03a53f5}]{Conexión en serie de condensadores}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -846,7 +796,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org12d394a}]{Conexión en serie de generadores}
+\begin{frame}[label={sec:orgac0e291}]{Conexión en serie de generadores}
 \begin{block}{Generadores de Tensión}
 \begin{itemize}
 \item Pueden conectarse en serie sin restricción.
@@ -857,7 +807,6 @@ En general:
 \end{align*}
 \end{itemize}
 \end{block}
-
 \begin{block}{Generadores de Corriente}
 \begin{itemize}
 \item Ideal: todas las fuentes deben ser idénticas (valor y sentido).
@@ -865,9 +814,7 @@ En general:
 \end{itemize}
 \end{block}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgc06e3a8}]{Conexión en paralelo}
+\begin{frame}[label={sec:orgaa1c768}]{Conexión en paralelo}
 Un conjunto de elementos están asociados en paralelo cuando están sometidos a la misma diferencia de potencial.
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/AsociacionParalelo.pdf}
@@ -879,7 +826,7 @@ Un conjunto de elementos están asociados en paralelo cuando están sometidos a 
   i_3(t) &= u(t)/R_3
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgcbb456f}]{Conexión en paralelo}
+\begin{frame}[label={sec:org6395df7}]{Conexión en paralelo}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -905,7 +852,7 @@ Definimos la resistencia equivalente de la conexión paralelo:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orge7a99ec}]{Dos resistencias en paralelo}
+\begin{frame}[label={sec:orgd12aa70}]{Dos resistencias en paralelo}
 En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
 \begin{equation*}
   \frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2}
@@ -915,8 +862,7 @@ En el caso concreto de \alert{dos} resistencias en paralelo \ldots{}
   \boxed{R_p = \frac{R_1 \cdot R_2}{R_1 + R_2}}
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:orge28b4c0}]{Conductancia}
+\begin{frame}[label={sec:org874da6d}]{Conductancia}
 Para facilitar las operaciones es conveniente utilizar el inverso de la resistencia:
 
 \begin{equation*}
@@ -935,8 +881,7 @@ Así, en lugar de\ldots{}
   i(t) &= G_p \cdot u(t)
 \end{align*}
 \end{frame}
-
-\begin{frame}[label={sec:org9d6720e}]{Divisor de corriente}
+\begin{frame}[label={sec:org7c1b901}]{Divisor de corriente}
 \begin{columns}
 \begin{column}{0.4\columnwidth}
 \begin{center}
@@ -962,12 +907,10 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:orge26ef5c}]{Conexión en paralelo de inductancias}
+\begin{frame}[label={sec:orgf12da70}]{Conexión en paralelo de inductancias}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/BobinasParalelo.pdf}
 \end{center}
-
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{align*}
@@ -984,8 +927,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:org2c06388}]{Conexión en paralelo de condensadores}
+\begin{frame}[label={sec:org78efa2b}]{Conexión en paralelo de condensadores}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/CondensadoresParalelo.pdf}
 \end{center}
@@ -1005,16 +947,13 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:org4012bec}]{Conexión en paralelo de generadores}
+\begin{frame}[label={sec:org2bdcc80}]{Conexión en paralelo de generadores}
 \begin{block}{Generadores de Tensión}
 \begin{itemize}
 \item Ideal: todas las fuentes deben ser idénticas (valor y polaridad).
 \item Real:  sin restricción, transformación de fuentes para fuente equivalente.
 \end{itemize}
 \end{block}
-
-
 \begin{block}{Generadores de Corriente}
 \begin{itemize}
 \item Pueden conectarse en paralelo sin restricción.
@@ -1026,8 +965,7 @@ En general:
 \end{itemize}
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:org7a84239}]{Conexión Estrella - Triángulo}
+\begin{frame}[label={sec:org20cb24b}]{Conexión Estrella - Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1041,7 +979,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgbf4db58}]{Conexión Estrella - Triángulo}
+\begin{frame}[label={sec:orga469546}]{Conexión Estrella - Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1059,7 +997,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org4c157b0}]{Conexión Estrella - Triángulo}
+\begin{frame}[label={sec:org87e68d9}]{Conexión Estrella - Triángulo}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -1077,7 +1015,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org4b8e34d}]{Conexión Estrella - Triángulo}
+\begin{frame}[label={sec:org5af207b}]{Conexión Estrella - Triángulo}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -1095,7 +1033,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgf0fc1be}]{Conexión Estrella - Triángulo}
+\begin{frame}[label={sec:org624f465}]{Conexión Estrella - Triángulo}
 \begin{align*}
   \frac{R_{a{\color{red}b}} \cdot R_{{\color{red}b}c}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{blue}a} + R_{\color{red}b}\\
   \\
@@ -1104,7 +1042,7 @@ En general:
   \frac{R_{{\color{blue}a}b} \cdot R_{c{\color{blue}a}}}{R_{ab} + R_{bc} + R_{ca}} + \frac{R_{b{\color{green}c}} \cdot R_{{\color{green}c}a}}{R_{ab} + R_{bc} + R_{ca}} &= R_{\color{green}c} + R_{\color{blue}a}
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgb36b0ff}]{Conversión de Triángulo a Estrella}
+\begin{frame}[label={sec:org2ba67cd}]{Conversión de Triángulo a Estrella}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -1120,7 +1058,6 @@ En general:
   R_c &= \frac{R_{bc} \cdot R_{ca}}{R_{ab} + R_{bc} + R_{ca}}
 \end{align*}
 \end{column}
-
 \begin{column}{0.3\columnwidth}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/Conexion_Estrella.pdf}
@@ -1128,7 +1065,7 @@ En general:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgb64ffbe}]{Conversión de Estrella a Triángulo}
+\begin{frame}[label={sec:org0504ca8}]{Conversión de Estrella a Triángulo}
 \begin{columns}
 \begin{column}{0.3\columnwidth}
 \begin{center}
@@ -1152,25 +1089,23 @@ En general:
 \end{columns}
 \end{frame}
 \section{Métodos de Análisis}
-\label{sec:org6e6d7ef}
+\label{sec:org0f4079d}
 
 \subsection{Método de las mallas}
-\label{sec:org4f3d6df}
+\label{sec:orgb8831ef}
 
-\begin{frame}[label={sec:orgee92433}]{}
+\begin{frame}[label={sec:orgf304212}]{}
 \begin{center}
 \includegraphics[height=0.95\textheight]{../figs/mallas1.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org964d48c}]{Aplicamos LKC}
+\begin{frame}[label={sec:org5807d1f}]{Aplicamos LKC}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/mallas1.pdf}
 \end{center}
 \end{column}
-
 \begin{column}{0.5\columnwidth}
 Nudo A:
 \begin{equation*}
@@ -1193,7 +1128,6 @@ Nudo D:
 \end{equation*}
 \end{column}
 \end{columns}
-
 \vspace{5pt}
 
 
@@ -1202,15 +1136,13 @@ No son ecuaciones linealmente independientes:
   C = A + B + D
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org336c4a3}]{Aplicamos LKV}
+\begin{frame}[label={sec:orgbdb1217}]{Aplicamos LKV}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/mallas1.pdf}
 \end{center}
 \end{column}
-
 \begin{column}{0.5\columnwidth}
 Malla ABCA
 \begin{equation*}
@@ -1229,15 +1161,13 @@ Malla ACDA
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}[label={sec:org7764ca9}]{Combinamos las ecuaciones}
+\begin{frame}[label={sec:orgd61cb0e}]{Combinamos las ecuaciones}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/mallas1.pdf}
 \end{center}
 \end{column}
-
 \begin{column}{0.5\columnwidth}
 \begin{align*}
   - I_1 -  I_2 + I_6  &= 0\\
@@ -1250,7 +1180,7 @@ Malla ACDA
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:orgaaa4dc2}]{Y las expresamos en forma matricial}
+\begin{frame}[label={sec:org51be9fa}]{Y las expresamos en forma matricial}
 \begin{equation*}
   \begin{bmatrix}
     -1 & -1 & 0 & 0 & 0 & 1\\
@@ -1280,14 +1210,14 @@ Malla ACDA
 
 Resolver el circuito implica resolver un sistema lineal de 6 ecuaciones, en el que las incógnitas son las corrientes de cada rama.
 \end{frame}
-\begin{frame}[label={sec:org09179f6}]{Método de las mallas}
+\begin{frame}[label={sec:orgf917397}]{Método de las mallas}
 El método de las mallas simplifica el sistema de ecuaciones necesario mediante unas corrientes \emph{virtuales} denominadas \alert{corrientes de malla}, aprovechando las relaciones entre corrientes de la LKC.
 
 \begin{center}
 \includegraphics[height=0.7\textheight]{../figs/mallas1_corrientes.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org14acbb2}]{Relaciones entre las corrientes de rama y malla}
+\begin{frame}[label={sec:org8e47d0c}]{Relaciones entre las corrientes de rama y malla}
 \begin{columns}
 \begin{column}{0.6\columnwidth}
 \begin{center}
@@ -1310,7 +1240,7 @@ Ramas internas:
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org2bbeeea}]{Ecuaciones de malla}
+\begin{frame}[label={sec:orgb8a3902}]{Ecuaciones de malla}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/mallas1_corrientes.pdf}
 \end{center}
@@ -1328,7 +1258,7 @@ Malla ACDA
   (I_c - I_a) \cdot R_2 + (I_c - I_b) \cdot R_4 + I_c \cdot R_6 - \epsilon_3 = 0
 \end{equation*}
 \end{frame}
-\begin{frame}[label={sec:orgeda1dae}]{Reagrupamos corrientes en las ecuaciones}
+\begin{frame}[label={sec:org3a6008a}]{Reagrupamos corrientes en las ecuaciones}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/mallas1_corrientes.pdf}
 \end{center}
@@ -1339,7 +1269,7 @@ Malla ACDA
   - I_a \cdot R_2 - I_b \cdot R_4 + I_c \cdot (R_2 + R_4 + R_6) &= \epsilon_3
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:org40dd854}]{Y lo expresamos en forma matricial}
+\begin{frame}[label={sec:org5617642}]{Y lo expresamos en forma matricial}
 \begin{center}
 \includegraphics[height=0.5\textheight]{../figs/mallas1_corrientes.pdf}
 \end{center}
@@ -1362,7 +1292,7 @@ Malla ACDA
   \end{bmatrix}
 \end{equation*}
 \end{frame}
-\begin{frame}[label={sec:org293a508}]{Ecuación General}
+\begin{frame}[label={sec:orgd1de007}]{Ecuación General}
 \begin{equation*}
   \begin{bmatrix}
     {\color{BrickRed}\sum R_{aa}} &  - {\color{MidnightBlue}\sum R_{ab}} & - {\color{MidnightBlue}\sum R_{ca}} \\
@@ -1386,7 +1316,7 @@ Malla ACDA
 \item[{\({\color{OliveGreen}\sum \epsilon_a}\)}] suma algebraica de las fuerzas electromotrices de los generadores de la malla de \(I_a\). Su signo es positivo si contribuyen al giro de la corriente.
 \end{description}
 \end{frame}
-\begin{frame}[label={sec:orgece1ed0}]{Procedimiento}
+\begin{frame}[label={sec:org5a720a3}]{Procedimiento}
 \begin{enumerate}
 \item Identificar las corrientes de rama.
 \item Asignar un sentido a las corrientes de malla.
@@ -1398,16 +1328,14 @@ Malla ACDA
 
 \alert{Importante}: todos los generadores deben ser fuentes de tensión.
 \end{frame}
-
 \subsection{Método de los nudos}
-\label{sec:org0b39b2f}
-\begin{frame}[label={sec:org7605cfd}]{}
+\label{sec:org67bb4e8}
+\begin{frame}[label={sec:orge1fc86a}]{}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org918bb54}]{Aplicamos LKC}
+\begin{frame}[label={sec:org235e385}]{Aplicamos LKC}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1422,7 +1350,7 @@ Nudo B
   I_{ab} - I_{g2} - I_b = 0
 \end{equation*}
 \end{frame}
-\begin{frame}[label={sec:org9ef9289}]{Tensiones en las resistencias}
+\begin{frame}[label={sec:org5477822}]{Tensiones en las resistencias}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1433,7 +1361,7 @@ Nudo B
   V_{AB} &= I_{ab} \cdot R_2
 \end{align*}
 \end{frame}
-\begin{frame}[label={sec:orgfb5bc26}]{Despejamos las corrientes}
+\begin{frame}[label={sec:orgbdfedda}]{Despejamos las corrientes}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1444,9 +1372,7 @@ Nudo B
   I_{ab} &= (V_A - V_B) \cdot G_2
 \end{align*}
 \end{frame}
-
-
-\begin{frame}[label={sec:org45f1cf2}]{Combinamos las ecuaciones}
+\begin{frame}[label={sec:orgeee0c90}]{Combinamos las ecuaciones}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1461,9 +1387,7 @@ Nudo B
   (V_A - V_B) \cdot G_2 - I_{g2} - V_B \cdot G_3 = 0
 \end{equation*}
 \end{frame}
-
-
-\begin{frame}[label={sec:org0676bb4}]{Reorganizamos las ecuaciones}
+\begin{frame}[label={sec:org67d7837}]{Reorganizamos las ecuaciones}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1478,8 +1402,7 @@ Nudo B
   - I_{g2} = - V_A \cdot G_2 + V_B \cdot (G_2 + G_3)
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org579a09c}]{Expresión matricial}
+\begin{frame}[label={sec:org7c32df2}]{Expresión matricial}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/nudos.pdf}
 \end{center}
@@ -1498,8 +1421,7 @@ Nudo B
   \end{bmatrix}
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org1c2b5cc}]{Ecuación general}
+\begin{frame}[label={sec:org245909a}]{Ecuación general}
 \begin{equation*}
   \begin{bmatrix}
     {\color{BrickRed}\sum G_A} & - {\color{MidnightBlue}\sum G_{AB}} & - {\color{MidnightBlue}\sum G_{AC}}\\

@@ -217,6 +217,19 @@ u(t) = R \cdot i(t)
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/Resistencia_Flecha.pdf]]
 
+*** Ley de Joule
+
+#+ATTR_LATEX: :height 0.2\textheight
+[[file:../figs/Resistencia.pdf]]
+
+- *Ley de Joule*: una resistencia disipa energía eléctrica produciendo *calor*.
+#+BEGIN_EXPORT latex
+\[
+p(t)=R\cdot i^{2}(t)
+\]
+#+END_EXPORT
+
+
 *** Resistividad
 -  El valor de la resistencia depende de la *resistividad del material* (\rho), de la *sección* ($S$), y de la
    longitud ($l$):
@@ -242,19 +255,6 @@ u(t) = R \cdot i(t)
 
 #+ATTR_LATEX: :height 0.2\textheight
 [[file:../figs/CircuitoAbierto.pdf]]
-
-*** Ley de Joule
-
-#+ATTR_LATEX: :height 0.2\textheight
-[[file:../figs/Resistencia.pdf]]
-
-- *Ley de Joule*: una resistencia disipa energía eléctrica produciendo *calor*.
-#+BEGIN_EXPORT latex
-\[
-p(t)=R\cdot i^{2}(t)
-\]
-#+END_EXPORT
-
 
 *** Bobina o inductancia
 
