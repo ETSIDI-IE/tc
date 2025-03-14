@@ -374,9 +374,9 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 #+BEGIN_EXPORT latex
 \[
   \begin{rcases}
-    u(t) &= R \cdot i(t)=\\
-         &= {\color{blue}R \cdot I_{max}} \cdot \sen(\omega t + {\color{red!80}\theta_I + 0}) =\\
-         &= {\color{blue}U_{max}} \cdot \sen(\omega t + {\color{red!80} \theta_U})\\
+  u(t) &= {\color{blue}U_{max}} \cdot \sen(\omega t + {\color{red!80} \theta_U}) = \\
+  &= R \cdot i(t)=\\
+  &= {\color{blue}R \cdot I_{max}} \cdot \sen(\omega t + {\color{red!80}\theta_I + 0})
   \end{rcases} \rightarrow
 \begin{cases}
   {\color{blue}U_{max}} &= {\color{blue}R \cdot I_{max}}\\
@@ -421,7 +421,7 @@ Un circuito resistivo no desfasa (*tensión y corriente en fase*).
 
 ** Circuito Inductivo puro                                            :BMCOL:
 Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corriente*.
-#+ATTR_LATEX: :height 0.3\textheight
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/inductivoPuro.pdf]]
 
     #+begin_export latex
@@ -432,9 +432,9 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 #+BEGIN_EXPORT latex
 \[
   \begin{rcases}
-    u(t) &= L \cdot \dfrac{d i(t)}{dt} =\\
-         &= {\color{blue}{\omega L \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I +\pi/2}}) =\\
-         &= {\color{blue}{U_{max}}} \cdot \sen(\omega t +  {\color{red!80}{\theta_U}})\\
+    u(t) &= {\color{blue}{U_{max}}} \cdot \sen(\omega t +  {\color{red!80}{\theta_U}}) = \\
+    &= L \cdot \dfrac{d i(t)}{dt} =\\
+    &= {\color{blue}{\omega L \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I +\pi/2}})
   \end{rcases} \rightarrow
 \begin{cases}
   {\color{blue}U_{max}} &= {\color{blue}\omega L \cdot I_{max}}\\
@@ -483,7 +483,7 @@ Un circuito inductivo puro genera *señales en cuadratura* y *retrasa la corrien
 ** Circuito Capacitivo puro
 Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corriente*.
 
-#+ATTR_LATEX: :height 0.3\textheight
+#+ATTR_LATEX: :height 0.4\textheight
 [[file:../figs/capacitivoPuro.pdf]]
 
     #+begin_export latex
@@ -494,9 +494,9 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
 #+BEGIN_EXPORT latex
 \[
 \begin{rcases}
-  u(t) &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
-       &= {\color{blue}{\dfrac{1}{\omega C} \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I -\pi/2}}) =\\
-       &= {\color{blue}{U_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_U}})\\
+  u(t) &= {\color{blue}{U_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_U}}) = \\
+  &= 1/C \cdot \int_{-\infty}^ t i(\tau)d\tau =\\
+  &= {\color{blue}{\dfrac{1}{\omega C} \cdot I_{max}}} \cdot \sen(\omega t + {\color{red!80}{\theta_I -\pi/2}})
 \end{rcases} \rightarrow
 \begin{cases}
   {\color{blue}U_{max}} &= {\color{blue}\dfrac{1}{\omega C} \cdot I_{max}}\\
@@ -541,17 +541,30 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     [[file:../figs/fasorCondensador.pdf]]
 
 ** Resumen
-   #+begin_export latex
-   \[
-     \begin{array}{lccc}
-       \text{Elemento} & \text{Impedancia} & \text{Módulo} & \text{Ángulo}\\
-       \hline\\
-       \text{Resistencia} & R & R & 0\\
-       \text{Bobina} & j \omega L & \omega L & \ang{90}\\
-        \text{Condensador} & 1/(j \omega C) & 1/(\omega C) & \ang{-90}\\
-     \end{array}
-   \]
-   #+end_export
+   
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.6
+    :END:
+    #+begin_export latex
+    \[
+      \begin{array}{lccc}
+	\text{Elemento} & \text{Impedancia} & \text{Módulo} & \text{Ángulo}\\
+	\hline\\
+	\text{\color{darkolivegreen}Resistencia} & \color{darkolivegreen}R & \color{darkolivegreen}R & \color{darkolivegreen}0\\
+	\text{\color{frenchblue}Bobina} & \color{frenchblue}j \omega L & \color{frenchblue} \omega L & \color{frenchblue} \ang{90}\\
+         \text{\color{burgundy}Condensador} & \color{burgundy} 1/(j \omega C) & \color{burgundy} 1/(\omega C) & \color{burgundy} \ang{-90}\\
+      \end{array}
+    \]
+    #+end_export
+
+***                                                                   :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+    #+ATTR_LATEX: :height 0.8\textheight
+    [[file:../figs/ResumenImpedancias.pdf]]
+
 ** Circuito RL (inductivo con pérdidas)
 #+ATTR_LATEX: :height 0.25\textheight
 [[file:../figs/inductivo.pdf]]

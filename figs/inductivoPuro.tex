@@ -2,18 +2,23 @@
 
 \usepackage{tikz}
 
+% https://latexcolor.com/
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+\definecolor{burntumber}{rgb}{0.54, 0.2, 0.14}
+
 \begin{document}
 
-
-
-\begin{tikzpicture}[domain = 0:9, samples = 1000]
-  % \draw[very thin,color=gray] (-0.1,-1.1) grid (10,1.1);
-  \draw[->] (-0.2,0) -- (10.1,0) node[right] {$t$};
+\begin{tikzpicture}[domain = 0:2*pi, samples = 1000]
+  \draw[->] (-0.2,0) -- (7.1,0) node[right] {$t$};
   \draw[->] (0,-1.2) -- (0,1.1);% node[above] {$f(t)$};
-  \draw[thick, color=black] plot[id=sin0] function{1.3*sin(x)}
+  \draw[thick, color=burntumber] plot[id=sin0] function{1.3*sin(x + 2*pi/3)}
   node[right] {$u(t)$};
-  \draw[thick, color=red] plot[id=sin+] function{sin(x - pi/2)}
+  \draw[thick, color=darkolivegreen] plot[id=sin+] function{sin(x + pi/6)}
     node[right] {$i(t)$};
+  \draw[very thin, color = gray, dashed] (pi/3, -1.4) -- (pi/3, 1.2);
+  \draw[very thin, color = gray, dashed] (pi/3 + pi/2, -1.4) -- (pi/3 + pi/2, 1.2);
+  \draw[very thin, color = gray, dashed] (pi/3 + pi, -1.4) -- (pi/3 + pi, 1.2);
+  \draw[very thin, color = gray, dashed] (pi/3 + 3*pi/2, -1.4) -- (pi/3 + 3*pi/2, 1.4);
 \end{tikzpicture}
 
 \end{document}

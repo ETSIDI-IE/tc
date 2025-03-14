@@ -5,16 +5,19 @@
 
 \begin{document}
 
+% https://latexcolor.com/
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+\definecolor{burntumber}{rgb}{0.54, 0.2, 0.14}
 
 \begin{tikzpicture}
   \draw[->, thin, color=gray] (-0.2,0) -- (2.5,0) node[above] {$\Re$};
   \draw[->, thin, color=gray] (0,-0.2) -- (0,2.5) node[left] {$\Im$};
 
-  \draw [->, thin, color=red!70](1.5,0)  arc[radius = 1.5, start angle= 0, end angle= 45] node [pos=0.5, right] {$\theta_I$};
-  \draw [->, thin, color=black!70](1.2,0)  arc[radius = 1.2, start angle= 0, end angle= 75] node [pos=0.2, left] {$\theta_V$};
-  \draw [->, thin, color=blue!70](45:1.4)  arc[radius = 1.4, start angle= 45, end angle= 75] node [pos=0.5, above] {$\varphi$};
-  \draw[->, >=stealth, thick, color = black] (0, 0) -- (75:2.5) node[above] {$\overline{U}$};
-  \draw[->, >=stealth, thick, color = red] (0, 0) -- (45:2) node[above] {$\overline{I}$};
+  \draw [->, thin, color=darkolivegreen](1.5,0)  arc[radius = 1.5, start angle= 0, end angle= 30] node [pos=0.5, right] {$\theta_I$};
+  \draw [->, thin, color=burntumber](1.2,0)  arc[radius = 1.2, start angle= 0, end angle= 60] node [pos=0.2, left] {$\theta_U$};
+  \draw [->, thin, color=black](30:1.4)  arc[radius = 1.4, start angle= 30, end angle= 60] node [pos=0.5, above] {$\varphi$};
+  \draw[->, >=stealth, thick, color = burntumber] (0, 0) -- (60:2.5) node[above] {$\overline{U}$};
+  \draw[->, >=stealth, thick, color = darkolivegreen] (0, 0) -- (30:2) node[above] {$\overline{I}$};
 \end{tikzpicture}
 
 \end{document}

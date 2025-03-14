@@ -2,17 +2,19 @@
 
 \usepackage{tikz}
 
+% https://latexcolor.com/
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+\definecolor{burntumber}{rgb}{0.54, 0.2, 0.14}
+
 \begin{document}
 
-
-
-\begin{tikzpicture}[domain = 0:9, samples = 1000]
+\begin{tikzpicture}[domain = 0:8.4, samples = 1000]
   % \draw[very thin,color=gray] (-0.1,-1.1) grid (10,1.1);
-  \draw[->] (-0.2,0) -- (10.1,0) node[right] {$t$};
+  \draw[->] (-0.2,0) -- (9.1,0) node[right] {$t$};
   \draw[->] (0,-1.2) -- (0,1.1);% node[above] {$f(t)$};
-  \draw[thick, color=black] plot[id=sin0] function{1.5*sin(x)}
+  \draw[thick, color=burntumber] plot[id=sin0] function{1.5*sin(x + pi/6)}
   node[right] {$u(t)$};
-  \draw[thick, color=red] plot[id=sin+] function{sin(x + pi/3)}
+  \draw[thick, color=darkolivegreen] plot[id=sin+] function{sin(x + 5*pi/12)}
     node[right] {$i(t)$};
 \end{tikzpicture}
 
