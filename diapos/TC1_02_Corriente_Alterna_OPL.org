@@ -830,11 +830,27 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
  #+end_export
 
  #+begin_export latex
- \[\boxed{\dfrac{1}{\overline{Z}_{eq}}=\sum_{i=1}^n \dfrac{1}{\overline{Z}_i}}\]
+ \[
+   \boxed{\dfrac{1}{\overline{Z}_{eq}}=\sum_{i=1}^n \dfrac{1}{\overline{Z}_i}}%
+   \Rightarrow%
+   \boxed{\overline{Y}_{eq}=\sum_{i=1}^n \overline{Y}_i}
+ \]
  #+end_export
 
 
 ** Impedancia y Admitancia
+
+    #+begin_export latex
+    \[
+    \boxed{
+      \overline{Y} = \dfrac{1}{\overline{Z}} \rightarrow \left\{%
+	\begin{array}{l}
+	|\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
+        \varphi_Y = -\varphi_Z = - \varphi\\
+	\end{array}\right.
+	  }
+    \]
+    #+end_export
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
@@ -866,23 +882,7 @@ Un circuito capacitivo puro genera *señales en cuadratura* y *adelanta la corri
     \]
     #+end_export
 
-***                                                         :B_ignoreheading:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :END:
-    #+begin_export latex
-    \[
-    \boxed{
-      \overline{Y} = \dfrac{1}{\overline{Z}} \rightarrow \left\{%
-	\begin{array}{l}
-	|\overline{Y}| = \dfrac{1}{|\overline{Z}|}\\[12pt]
-        \varphi_Y = -\varphi_Z = - \varphi\\
-	\end{array}\right.
-	  }
-    \]
-    #+end_export
-
-** Impedancia y Admitancia
+** COMMENT Impedancia y Admitancia
 
 ***                                                                   :BMCOL:
     :PROPERTIES:
