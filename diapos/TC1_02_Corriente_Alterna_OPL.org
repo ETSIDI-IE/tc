@@ -1155,52 +1155,19 @@ Valor medio positivo, $P = U I \cos \varphi$
 f.d.p. \equiv \cos(\varphi)
 \]
 #+end_export
-** Potencia de elementos: Resistencia
+** Potencia de elementos
+#+ATTR_LATEX: :booktabs t :align lccccl
+| \large *Elemento* | \large *$\varphi$* | \large *$P$* | \large *$Q$*     | \large *$\overline{S}$*        | \large *Comentarios*           |
+|-------------------+--------------------+--------------+------------------+--------------------------------+--------------------------------|
+| Resistencia       | 0                  |      $R I^2$ | 0                | $(R I^2) \phase{0}$            | - Consume potencia activa      |
+|                   |                    |              |                  |                                | - No consume potencia reactiva |
+|-------------------+--------------------+--------------+------------------+--------------------------------+--------------------------------|
+| Inductancia       | \pi/2              |            0 | $\omega L I^2$   | $(\omega L I^2) \phase{\pi/2}$ | - No consume potencia activa   |
+|                   |                    |              |                  |                                | - Consume potencia reactiva    |
+|-------------------+--------------------+--------------+------------------+--------------------------------+--------------------------------|
+| Condensador       | -\pi/2             |            0 | $- \omega C U^2$ | $\omega C U^2 \phase{-\pi/2}$  | - No consume potencia activa   |
+|                   |                    |              |                  |                                | - Genera potencia reactiva     |
 
-#+BEGIN_EXPORT latex
-\[
-\varphi = 0 \Rightarrow 
-\begin{cases}
-  P_R = R I^2\\
-  Q_R = 0\\
-  S_R = P_R
-\end{cases}
-\]
-#+END_EXPORT
-
-- Consume potencia activa
-- No consume potencia reactiva
-
-** Potencia de elementos: Inductancia
-
-#+BEGIN_EXPORT latex
-\[
-\varphi = \pi/2 \Rightarrow 
-\begin{cases}
-  P_L = 0\\
-  Q_L = \omega L I^2\\
-  \overline{S}_L = \omega L I^2 \phase{\pi/2}
-\end{cases}
-\]
-#+END_EXPORT
-
-- No consume potencia activa
-- Consume potencia reactiva ($Q > 0$)
-
-** Potencia de elementos: Condensador
-#+BEGIN_EXPORT latex
-\[
-\varphi = - \pi/2 \Rightarrow 
-\begin{cases}
-  P_L = 0\\
-  Q_C = - \omega C U^2\\
-  \overline{S}_C = \omega C U^2 \phase{-\pi/2}
-\end{cases}
-\]
-#+END_EXPORT
-
-- No consume potencia activa
-- Genera potencia reactiva ($Q < 0$)
 
 ** Teorema de Boucherot
 - En un circuito con múltiples elementos, la potencia aparente total es la suma de las potencias aparentes individuales.
