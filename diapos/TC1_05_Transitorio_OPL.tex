@@ -1,4 +1,4 @@
-% Created 2023-12-10 dom 21:51
+% Created 2025-05-17 sáb 18:06
 % Intended LaTeX compiler: pdflatex
 \documentclass[aspectratio=169, usenames,svgnames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
@@ -14,66 +14,35 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{listings}
-\usepackage{mathpazo}
-\usepackage[spanish]{babel}
-\usepackage{gensymb}
-\usepackage{amsmath}
-\usepackage{diffcoeff}
-\usepackage{steinmetz}
-\usepackage{mathtools}
-\bibliographystyle{plain}
-\usepackage{siunitx}
-\sisetup{output-decimal-marker={,}}
-\DeclareSIUnit{\watthour}{Wh}
-\hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
-\usepackage[symbol, perpage]{footmisc}
-\newcommand{\laplace}[1]{\mathbf{#1}(\mathbf{s})}
-\newcommand{\slp}{\mathbf{s}}
-\newcommand{\fasor}[1]{\mathbf{#1}(\omega)}
-\newcommand{\atan}{\mathrm{atan}}
-\parskip=5pt
-\usetheme{Boadilla}
-\usecolortheme{rose}
-\usefonttheme{serif}
+\include{diaposPreamble.tex}
+\usetheme{default}
 \author{Oscar Perpiñán Lamigueiro}
 \date{}
 \title{Introducción al Régimen Transitorio}
 \subtitle{Teoría de Circuitos}
-\setbeamercolor{alerted text}{fg=blue!50!black} \setbeamerfont{alerted text}{series=\bfseries}
-\AtBeginSubsection[]{\begin{frame}[plain]\tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]\end{frame}}
-\AtBeginSection[]{\begin{frame}[plain]\tableofcontents[currentsection,hideallsubsections]\end{frame}}
-\beamertemplatenavigationsymbolsempty
-\setbeamertemplate{footline}[frame number]
-\setbeamertemplate{itemize items}[triangle]
-\setbeamertemplate{enumerate items}[circle]
-\setbeamertemplate{section in toc}[circle]
-\setbeamertemplate{subsection in toc}[circle]
 \hypersetup{
  pdfauthor={Oscar Perpiñán Lamigueiro},
  pdftitle={Introducción al Régimen Transitorio},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 29.1 (Org mode 9.6.11)}, 
+ pdfcreator={Emacs 30.1 (Org mode 9.7.28)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
-
-
 \section{Conceptos Fundamentales}
-\label{sec:org6c87e3e}
+\label{sec:org7a48a79}
 
 \subsection{¿Qué es el régimen transitorio?}
-\label{sec:org3980cc9}
-\begin{frame}[label={sec:org4842b9f}]{Régimen Permanente o Estacionario}
+\label{sec:orga27f895}
+\begin{frame}[label={sec:org4c4778d}]{Régimen Permanente o Estacionario}
 Un circuito en régimen permanente o estacionario está en equilibrio:
 \begin{itemize}
 \item Las tensiones y corrientes en los elementos son constantes en amplitud y fase.
 \item La energía almacenada en las bobinas y condensadores no varía.
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org79632f9}]{Régimen transitorio}
+\begin{frame}[label={sec:org452a5b8}]{Régimen transitorio}
 \begin{itemize}
 \item El equilibrio se rompe cuando se produce algún cambio en el circuito (apertura o cierre de interruptores, activación o apagado de fuentes, modificación de elementos pasivos).
 \item El circuito entra en régimen transitorio hasta que se alcanza un nuevo equilibrio:
@@ -87,8 +56,7 @@ Un circuito en régimen permanente o estacionario está en equilibrio:
 \includegraphics[height=0.55\textheight]{../figs/ej_transitorio_DC.png}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orgc7ca302}]{Régimen transitorio}
+\begin{frame}[label={sec:orga3570de}]{Régimen transitorio}
 \begin{itemize}
 \item La redistribución de energía \alert{no} se puede realizar de forma \alert{inmediata}:
 \begin{itemize}
@@ -101,12 +69,10 @@ Un circuito en régimen permanente o estacionario está en equilibrio:
 \includegraphics[height=0.55\textheight]{../figs/ej_transitorio_DC.png}
 \end{center}
 \end{frame}
-
-
 \subsection{Respuesta de una red lineal}
-\label{sec:org84c735e}
+\label{sec:org5a89937}
 
-\begin{frame}[label={sec:orgf67c950}]{Ecuaciones integro-diferenciales}
+\begin{frame}[label={sec:orgb818ff7}]{Ecuaciones integro-diferenciales}
 Al aplicar Kirchhoff a un circuito lineal obtenemos ecuaciones integro-diferenciales. 
 
 \[
@@ -126,8 +92,7 @@ Por ejemplo, la ecuación de un circuito RLC será de la forma:
   a \cdot \diff[2]{f(t)}{t} + b \cdot \diff{f(t)}{t} + c \cdot f(t) = g(t)
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org9033323}]{Respuesta completa de una red lineal}
+\begin{frame}[label={sec:org66c19da}]{Respuesta completa de una red lineal}
 La solución de esta ecuación para \(t > 0\) (respuesta completa del circuito lineal al transitorio) tiene dos componentes:
 
 \[
@@ -148,8 +113,7 @@ La solución de esta ecuación para \(t > 0\) (respuesta completa del circuito l
 \end{itemize}
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org67c03a7}]{Condiciones iniciales}
+\begin{frame}[label={sec:org72a3516}]{Condiciones iniciales}
 \begin{itemize}
 \item El instante del cambio se representa habitualmente con \(t = 0\):
 \begin{itemize}
@@ -159,25 +123,23 @@ La solución de esta ecuación para \(t > 0\) (respuesta completa del circuito l
 
 \item Las \alert{condiciones iniciales} son el estado del circuito en el instante temporal en el que se produce el cambio.
 
-\item Determinan las \alert{constantes de integración} de la respuesta natural.
-
+\begin{itemize}
 \item \alert{Se calculan} con las energías almacenadas en bobinas y condensadores en \(t = 0^-\).
 
 \item \alert{Se aplican} a la topología del circuito en \(t = 0^+\).
 \end{itemize}
-\end{frame}
 
-\begin{frame}[label={sec:orgc658983}]{Resistencia}
+\item Determinan las \alert{constantes de integración} de la respuesta natural.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:orgb137aab}]{Resistencia}
 No acumula energía: sigue los cambios de forma instantánea.
 
 \[
 u(t) = R i(t)
 \]
 \end{frame}
-
-
-
-\begin{frame}[label={sec:orgffd922a}]{Inductancia}
+\begin{frame}[label={sec:org7f08093}]{Inductancia}
 La corriente en una bobina no puede variar de forma abrupta (implica tensión infinita).
 
 \[
@@ -190,8 +152,7 @@ i_L(t) = \frac{1}{L} \int^t_{-\infty}u_L(t') \mathrm{d}t'
 \boxed{i_L(0^-) = i_L(0^+)}
 \]
 \end{frame}
-
-\begin{frame}[label={sec:orgac3c710}]{Capacidad}
+\begin{frame}[label={sec:orgc9eb7cd}]{Capacidad}
 La tensión en un condensador no puede variar de forma abrupta (implica corriente infinita).
 
 \[
@@ -204,14 +165,18 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 \boxed{u_C(0^-) = u_C(0^+)}
 \]
 \end{frame}
-
-
 \section{Circuitos de Primer Orden}
-\label{sec:org93ef179}
-\begin{frame}[label={sec:orge521183}]{Definición}
+\label{sec:org6e7f591}
+\begin{frame}[label={sec:orgaf29885}]{Definición}
 \begin{itemize}
 \item Circuitos que tienen un \alert{único elemento de acumulación} (o \emph{varios elementos que pueden ser simplificados a un elemento equivalente}) y parte resistiva.
+\end{itemize}
+\vfill
+\begin{itemize}
 \item \alert{Ecuación diferencial de primer orden}: la respuesta natural es siempre una \alert{exponencial decreciente}.
+\end{itemize}
+\vfill
+\begin{itemize}
 \item Circuitos típicos:
 \begin{itemize}
 \item RL serie
@@ -219,24 +184,28 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org932886a}]{Respuesta natural y forzada}
+\begin{frame}[label={sec:org79f9a79}]{Respuesta natural y forzada}
+El método de resolución analiza el circuito en tres etapas:
+  \vfill
 \begin{itemize}
-\item El método de resolución analiza el circuito en tres etapas:
-\begin{enumerate}
 \item Cálculo de las \alert{condiciones iniciales}, analizando el circuito en \(t < 0\).
+\end{itemize}
+\vfill   
+\begin{itemize}
 \item \alert{Respuesta natural}: análisis del circuito \emph{sin fuentes} en \(t > 0\) (la energía acumulada en \(t < 0\) se disipa en la resistencia).
+\end{itemize}
+\vfill   
+\begin{itemize}
 \item \alert{Respuesta forzada}: análisis del circuito \emph{con fuentes} en \(t > 0\) (la respuesta está determinada por la forma de onda de las fuentes).
-\end{enumerate}
 \end{itemize}
 \end{frame}
-
 \subsection{Circuito RL serie}
-\label{sec:orgcf61860}
+\label{sec:org81bde12}
 
-\begin{frame}[label={sec:orge00d5c6}]{Circuito básico}
+\begin{frame}[label={sec:org330700f}]{Circuito básico}
 \begin{itemize}
 \item En \(t < 0\) la fuente está desconectada.
-\item En \(t = 0\) la fuente se conecta.
+\item En \(t = 0\) se cierra el interruptor.
 \item En \(t > 0\) la fuente alimenta el circuito RL (la bobina almacena energía).
 \end{itemize}
 
@@ -244,16 +213,14 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 \includegraphics[height=0.55\textheight]{../figs/transitorio_circuitoRL.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org7b70855}]{Condiciones Iniciales}
+\begin{frame}[label={sec:org58beae4}]{Condiciones Iniciales}
 Analizando circuito para \(t < 0\) \ldots{}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/transitorio_circuitoRL_t0-.pdf}
 \end{center}
 \ldots{}obtenemos  \(i(0^-) = 0\) (\emph{resultado particular de este circuito.})
 \end{frame}
-
-\begin{frame}[label={sec:org4ceb94b}]{Circuito en \(t > 0\)}
+\begin{frame}[label={sec:org77e2173}]{Circuito en \(t > 0\)}
 \begin{center}
 \includegraphics[height=0.55\textheight]{../figs/transitorio_circuitoRL_t0+.pdf}
 \end{center}
@@ -262,8 +229,7 @@ Analizando circuito para \(t < 0\) \ldots{}
   R i + L\diff{i}{t} &= U_0
 \end{align*}
 \end{frame}
-
-\begin{frame}[label={sec:orga1d9bb6}]{Respuesta Natural}
+\begin{frame}[label={sec:org921a270}]{Respuesta Natural}
 Apagamos la fuente:
 \begin{columns}
 \begin{column}{0.5\columnwidth}
@@ -287,8 +253,7 @@ Ecuación Característica
   s + \frac{R}{L} = 0 \Rightarrow \boxed{s = -\frac{R}{L}}
 \]
 \end{frame}
-
-\begin{frame}[label={sec:orga6a8e3c}]{Constante de tiempo}
+\begin{frame}[label={sec:org9776a05}]{Constante de tiempo}
 \[
   \boxed{i_n(t) = A e^{-t/\tau}}
 \]
@@ -303,8 +268,7 @@ Ecuación Característica
 \includegraphics[height=0.5\textheight]{../figs/constante_tiempo.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orgbdb2b75}]{Respuesta forzada}
+\begin{frame}[label={sec:org0b48120}]{Respuesta forzada}
 Volvemos a activar la fuente:
 \begin{center}
 \includegraphics[height=0.33\textheight]{../figs/transitorio_circuitoRL_t0+.pdf}
@@ -313,8 +277,7 @@ Volvemos a activar la fuente:
   u_R(t) + u_L(t) = u(t) \rightarrow R i + L\diff{i}{t} = U_0
 \]
 \end{frame}
-
-\begin{frame}[label={sec:orgd44b1ae}]{Respuesta forzada}
+\begin{frame}[label={sec:org26b5a44}]{Respuesta forzada}
 Para la solución particular, \(i_\infty\), se propone una función análoga a la excitación (analizando circuito para \(t \rightarrow \infty\)):
 
 \begin{center}
@@ -325,8 +288,7 @@ Para la solución particular, \(i_\infty\), se propone una función análoga a l
   i_\infty(t) = U_0/R
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org62a4316}]{Respuesta completa}
+\begin{frame}[label={sec:org34f5d15}]{Respuesta completa}
 \begin{equation*}
   i(t) = i_n(t) + i_\infty(t) \rightarrow
   \begin{cases}
@@ -346,8 +308,7 @@ La solución completa es (\emph{en este circuito de ejemplo}):
   \boxed{i(t) = \frac{U_0}{R}(1 - e^{-\frac{t}{\tau}})  }
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org3de5ee4}]{Respuesta completa}
+\begin{frame}[label={sec:org133f13d}]{Respuesta completa}
 \[
   \boxed{i(t) = \frac{U_0}{R}(1 - e^{-\frac{t}{\tau}})  }
 \]
@@ -356,9 +317,7 @@ La solución completa es (\emph{en este circuito de ejemplo}):
 \includegraphics[height=0.45\textheight]{../figs/RespuestaCompleta_RL.pdf}
 \end{center}
 \end{frame}
-
-
-\begin{frame}[label={sec:org0840550}]{Expresión general de la respuesta completa}
+\begin{frame}[label={sec:orgb8c87bf}]{Expresión general de la respuesta completa}
 \[
 \boxed{i(t) = \left[i(0^+) - i_\infty(0^+)\right] e^{-t/\tau} + i_\infty(t)}
 \]
@@ -369,17 +328,15 @@ La solución completa es (\emph{en este circuito de ejemplo}):
 \item \(i_\infty(0^+)\): corriente en la bobina en régimen permanente particularizada en \(t = 0\).
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:orgf8ba204}]{Equivalente de Thévenin}
+\begin{frame}[label={sec:orgd6576f9}]{Equivalente de Thévenin}
 \begin{center}
 \includegraphics[height=0.85\textheight]{../figs/Thevenin_PrimerOrden.pdf}
 \end{center}
 \end{frame}
-
 \subsection{Circuito RC paralelo}
-\label{sec:org01d1d16}
+\label{sec:org424c6c9}
 
-\begin{frame}[label={sec:orga3359fd}]{Circuito básico}
+\begin{frame}[label={sec:org89b09b8}]{Circuito básico}
 \begin{itemize}
 \item En \(t <0\) la fuente alimenta el circuito RC (el condensador se carga).
 \item En \(t = 0\) se desconecta la fuente
@@ -390,8 +347,7 @@ La solución completa es (\emph{en este circuito de ejemplo}):
 \includegraphics[height=0.45\textheight]{../figs/transitorio_circuitoRC.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orga23badd}]{Condiciones iniciales}
+\begin{frame}[label={sec:orge17b8f4}]{Condiciones iniciales}
 Analizamos el circuito en \(t < 0\):
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/transitorio_circuitoRC_t0-.pdf}
@@ -401,8 +357,7 @@ Analizamos el circuito en \(t < 0\):
   u_c(0^-) = R \cdot I_0 
 \end{equation*}
 \end{frame}
-
-\begin{frame}[label={sec:org1166260}]{Respuesta natural}
+\begin{frame}[label={sec:orgcd561b7}]{Respuesta natural}
 \begin{center}
 \includegraphics[height=0.3\textheight]{../figs/transitorio_circuitoRC_t0+.pdf}
 \end{center}
@@ -423,10 +378,7 @@ Respuesta natural
   \boxed{u_n(t) = U_0 e^{-G/C t}}
 \]
 \end{frame}
-
-
-
-\begin{frame}[label={sec:org647356d}]{Constante de tiempo}
+\begin{frame}[label={sec:org4c56488}]{Constante de tiempo}
 \begin{itemize}
 \item \(\tau = \frac{C}{G}\) es la constante de tiempo (unidades [s]).
 \item Ratio entre almacenamiento (\(C\)) y disipación (\(G\)).
@@ -440,8 +392,7 @@ Respuesta natural
 \includegraphics[height=0.55\textheight]{../figs/constante_tiempo.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orge0aab18}]{Expresión general de la respuesta completa}
+\begin{frame}[label={sec:orgc295eb8}]{Expresión general de la respuesta completa}
 \[
 \boxed{u(t) = \left[u(0^+) - u_\infty(0^+)\right] e^{-t/\tau} + u_\infty(t)}
 \]
@@ -452,23 +403,20 @@ Respuesta natural
 \item \(u_\infty(0^+)\): tensión en el condensador en régimen permanente particularizada en \(t = 0\).
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org7b959af}]{Equivalente de Norton}
+\begin{frame}[label={sec:org1bada6b}]{Equivalente de Norton}
 \begin{center}
 \includegraphics[height=0.85\textheight]{../figs/Thevenin_PrimerOrden.pdf}
 \end{center}
 \end{frame}
-
 \subsection{Análisis Sistemático}
-\label{sec:org76ff80d}
+\label{sec:org2547de8}
 
-\begin{frame}[label={sec:org7dad4b0}]{Equivalente de Thévenin/Norton}
+\begin{frame}[label={sec:org4f02c8b}]{Equivalente de Thévenin/Norton}
 \begin{center}
 \includegraphics[height=0.85\textheight]{../figs/Thevenin_PrimerOrden.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org024b089}]{Procedimiento General}
+\begin{frame}[label={sec:orge997171}]{Procedimiento General}
 \begin{itemize}
 \item Dibujar el circuito para \(t < 0\).
 \begin{itemize}
@@ -489,11 +437,9 @@ i_L(t) &= \left(i_L(0^+) - i_\infty(0^+)\right) e^{-t/\tau} + i_\infty(t)\\
 u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 \end{align*}
 \end{frame}
-
-
 \section{Circuitos de Segundo Orden}
-\label{sec:orgfd86fac}
-\begin{frame}[label={sec:org48b5fd3}]{Introducción}
+\label{sec:org95a60d6}
+\begin{frame}[label={sec:orgd4d1142}]{Introducción}
 \begin{itemize}
 \item Circuitos que tienen \alert{dos elementos de acumulación} que intercambian energía, y parte resistiva que disipa energía.
 \item \alert{Ecuación diferencial de segundo orden}: la respuesta natural incluye exponenciales decrecientes y quizás señal sinusoidal.
@@ -504,7 +450,7 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org6ccc4bc}]{Respuesta natural y forzada}
+\begin{frame}[label={sec:orgd5cbd6c}]{Respuesta natural y forzada}
 \begin{itemize}
 \item El método de resolución analiza el circuito en dos etapas:
 \begin{itemize}
@@ -513,17 +459,14 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 \end{itemize}
 \end{itemize}
 \end{frame}
-
 \subsection{Circuito RLC serie}
-\label{sec:orgf64403f}
-\begin{frame}[label={sec:orgdf2a91b}]{Circuito básico}
+\label{sec:org1c61c74}
+\begin{frame}[label={sec:org37ed748}]{Circuito básico}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/transitorio_circuitoRLC_serie.pdf}
 \end{center}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgc40abae}]{Respuesta natural (t > 0)}
+\begin{frame}[label={sec:orgbf980bf}]{Respuesta natural (t > 0)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/transitorio_circuitoRLC_serie_t0+.pdf}
 \end{center}
@@ -537,8 +480,7 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
   \boxed{\diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0}
 \]
 \end{frame}
-
-\begin{frame}[label={sec:orga624a90}]{Solución}
+\begin{frame}[label={sec:org0b53ad9}]{Solución}
 \begin{block}{Ecuación diferencial}
 \[
 \diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0
@@ -547,7 +489,6 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
     i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 \end{block}
-
 \begin{block}{Ecuación característica}
 \[
 s^2 + \frac{R}{L} s + \frac{1}{LC} = 0  
@@ -557,9 +498,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \]
 \end{block}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgafe999c}]{Parámetros}
+\begin{frame}[label={sec:org7ce83fc}]{Parámetros}
 \begin{columns}
 \begin{column}{.5\columnwidth}
 \begin{align*}
@@ -574,7 +513,6 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
   i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 \end{column}
-
 \begin{column}{.5\columnwidth}
 \begin{align*}
   \alpha &= \frac{R}{2L}\\
@@ -592,25 +530,22 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \item \(\xi\): factor de amortiguamiento
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org6146d9f}]{Posibles soluciones}
+\begin{frame}[label={sec:org79dcdeb}]{Posibles soluciones}
 \[
   \boxed{s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}}
 \]
-
 \begin{block}{\(\alpha > \omega_0\), \(\xi > 1\)}
 \begin{itemize}
 \item \(s_{1,2}\): dos soluciones reales (negativas) distintas
 \item Circuito \alert{sobreamortiguado}.
 \end{itemize}
 \end{block}
-
 \begin{block}{\(\alpha = \omega_0\), \(\xi = 1\)}
 \begin{itemize}
 \item \(s_{1,2}\): solución real doble.
 \item Circuito con \alert{amortiguamiento crítico}.
 \end{itemize}
 \end{block}
-
 \begin{block}{\(\alpha < \omega_0\), \(\xi < 1\)}
 \begin{itemize}
 \item \(s_{1,2}\): dos soluciones complejas conjugadas
@@ -618,8 +553,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \end{itemize}
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:orgb1b4d27}]{Tipos de Respuesta}
+\begin{frame}[label={sec:org9b53b6f}]{Tipos de Respuesta}
 \begin{itemize}
 \item Tipo de respuesta determinado por relación entre \(R\) y \(L\), \(C\) (disipación y almacenamiento).
 \item Resistencia crítica (\(\alpha = \omega_0\), \(\xi = 1\)):
@@ -628,7 +562,6 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \[
   R_{cr} = 2\sqrt{\frac{L}{C}}
 \]
-
 \begin{block}{Tipos}
 \begin{itemize}
 \item \(R > R_{cr}\), \(\alpha > \omega_0\), \(\xi > 1\): \alert{sobreamortiguado}
@@ -637,8 +570,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \end{itemize}
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:orge2f0903}]{Circuito Sobreamortiguado (\(\alpha > \omega_0\))}
+\begin{frame}[label={sec:orgb505c86}]{Circuito Sobreamortiguado (\(\alpha > \omega_0\))}
 \[
   \boxed{i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}}
 \]
@@ -646,8 +578,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \includegraphics[height=0.65\textheight]{../figs/Sobreamortiguado_HKD.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orgf1fb30f}]{Amortiguamiento Crítico (\(\alpha = \omega_0\))}
+\begin{frame}[label={sec:org54c813f}]{Amortiguamiento Crítico (\(\alpha = \omega_0\))}
 \[
   \boxed{i_n(t) = (A_1 + A_2 t) e^{s t} }
 \]
@@ -655,9 +586,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \includegraphics[height=0.65\textheight]{../figs/AmortiguamientoCritico_HKD.pdf}
 \end{center}
 \end{frame}
-
-
-\begin{frame}[label={sec:org6c66214}]{Circuito Subamortiguado (\(\alpha < \omega\))}
+\begin{frame}[label={sec:org1b40efe}]{Circuito Subamortiguado (\(\alpha < \omega\))}
 \[
   \boxed{i_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}}
 \]
@@ -665,8 +594,7 @@ s^2 + \frac{R}{L} s + \frac{1}{LC} = 0
 \includegraphics[height=0.65\textheight]{../figs/Subamortiguado_AS.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:org3002158}]{Condiciones Iniciales}
+\begin{frame}[label={sec:orgc1c7e0a}]{Condiciones Iniciales}
 \begin{block}{Dos constantes a determinar}
 Son necesarias dos tipos de condiciones iniciales:
 
@@ -675,13 +603,11 @@ Son necesarias dos tipos de condiciones iniciales:
   u_L(t) = L \cdot \diff{i_L(t)}{t} \longrightarrow   \diff{i_L(t)}{t}[t = 0^+] &= \frac{1}{L} u_L(0^+)
 \end{align*}
 \end{block}
-
 \begin{block}{Derivadas en el origen}
 Para obtener valores de las derivadas en el origen hay que resolver el circuito en \(t = 0^+\) empleando las condiciones de continuidad.
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:org51015f3}]{Derivadas en \(t = 0^+\)}
+\begin{frame}[label={sec:orgc012504}]{Derivadas en \(t = 0^+\)}
 \begin{center}
 \includegraphics[height=0.35\textheight]{../figs/transitorio_circuitoRLC_serie_t0+.pdf}
 \end{center}
@@ -697,24 +623,20 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
 \boxed{\diff{i_L(t)}{t}[t = 0^+] = - \frac{1}{L}\left(R i_L(0^+) + u_c(0^+)\right)}
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org2ea5b80}]{Respuesta Completa}
+\begin{frame}[label={sec:org01ad143}]{Respuesta Completa}
 Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzada (si existe).
 \begin{align*}
   i_L(0^+) &= i_n(0^+) + i_{\infty}(0^+)\\
   \diff{i_L}{t}[t = 0^+] &= \diff{i_n}{t}[t = 0^+] + \diff{i_{\infty}}{t}[t = 0^+]  
 \end{align*}
 \end{frame}
-
-\begin{frame}[label={sec:org20d109d}]{Ejemplo de Respuesta Completa}
+\begin{frame}[label={sec:org94587fc}]{Ejemplo de Respuesta Completa}
 Circuito RLC serie sobreamortiguado con generador de tensión DC funcionando en \(t > 0\). 
-
 \begin{block}{Respuesta Completa}
 \[
   i_L(t) = I_{\infty} + A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 \end{block}
-
 \begin{block}{Condiciones Iniciales}
 \begin{align*}
 i_L(0^+) &= I_\infty + A_1 + A_2\\
@@ -722,17 +644,14 @@ i_L(0^+) &= I_\infty + A_1 + A_2\\
 \end{align*}
 \end{block}
 \end{frame}
-
-
 \subsection{Circuito RLC paralelo}
-\label{sec:org19006b5}
-\begin{frame}[label={sec:org36f57be}]{Circuito básico}
+\label{sec:orgfe24e02}
+\begin{frame}[label={sec:orgc5528d5}]{Circuito básico}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../figs/transitorio_circuitoRLC_paralelo.pdf}
 \end{center}
 \end{frame}
-
-\begin{frame}[label={sec:orgb87defa}]{Respuesta natural (t > 0)}
+\begin{frame}[label={sec:org9707b43}]{Respuesta natural (t > 0)}
 \begin{center}
 \includegraphics[height=0.45\textheight]{../figs/transitorio_circuitoRLC_paralelo_t0+.pdf}
 \end{center}
@@ -745,8 +664,7 @@ i_L(0^+) &= I_\infty + A_1 + A_2\\
   \diff[2]{u}{t} + \frac{G}{C} \diff{u}{t} + \frac{1}{LC} u = 0
 \]
 \end{frame}
-
-\begin{frame}[label={sec:org2585b59}]{Solución}
+\begin{frame}[label={sec:orgc27cdf8}]{Solución}
 \begin{block}{Ecuación diferencial}
 \[
   \diff[2]{u}{t} + \frac{G}{C} \diff{u}{t} + \frac{1}{LC} u = 0
@@ -755,7 +673,6 @@ i_L(0^+) &= I_\infty + A_1 + A_2\\
   u_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 \end{block}
-
 \begin{block}{Ecuación característica}
 \[
 s^2 + \frac{G}{C} s + \frac{1}{LC} = 0  
@@ -765,9 +682,7 @@ s^2 + \frac{G}{C} s + \frac{1}{LC} = 0
 \]
 \end{block}
 \end{frame}
-
-
-\begin{frame}[label={sec:orgd6e8945}]{Parámetros}
+\begin{frame}[label={sec:org3dbf6a4}]{Parámetros}
 \begin{block}{Ecuación característica}
 \begin{columns}
 \begin{column}{.5\columnwidth}
@@ -795,8 +710,7 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 \end{columns}
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:orgd3b1d67}]{Tipos de Respuesta}
+\begin{frame}[label={sec:orgfdfb5b3}]{Tipos de Respuesta}
 \begin{itemize}
 \item Tipo de respuesta determinado por relación entre \(G\) y \(L\), \(C\) (disipación y almacenamiento).
 \item Conductancia crítica (\(\alpha = \omega_0\), \(\xi = 1\)):
@@ -805,7 +719,6 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 \[
   G_{cr} = 2\sqrt{\frac{C}{L}}
 \]
-
 \begin{block}{Tipos}
 \begin{itemize}
 \item \(G > G_{cr}\), \(\alpha > \omega_0\), \(\xi > 1\): \alert{sobreamortiguado}
@@ -814,8 +727,7 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
 \end{itemize}
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:org462e8a7}]{Tipos de Respuesta}
+\begin{frame}[label={sec:orgf101695}]{Tipos de Respuesta}
 \begin{itemize}
 \item Circuito Sobreamortiguado (\(\alpha > \omega_0\))
 \end{itemize}
@@ -836,9 +748,7 @@ s^2 + 2\alpha s + \omega_0^2 &= 0
   \boxed{u_n(t) = (B_1\cos(\omega_d t) + B_2\sin(\omega_d t)) e^{-\alpha t}}
 \]
 \end{frame}
-
-
-\begin{frame}[label={sec:org974baec}]{Condiciones Iniciales}
+\begin{frame}[label={sec:org48b3298}]{Condiciones Iniciales}
 \begin{block}{Dos constantes a determinar}
 Son necesarias dos tipos de condiciones iniciales:
 
@@ -848,13 +758,11 @@ Son necesarias dos tipos de condiciones iniciales:
   i_c(t) = C \cdot \diff{u_c(t)}{t} \longrightarrow \diff{u_c(t)}{t}[t = 0^+] &= \frac{1}{C}i_C(0^+)
 \end{align*}
 \end{block}
-
 \begin{block}{Derivadas en el origen}
 Para obtener valores de las derivadas en el origen hay que resolver el circuito en \(t = 0^+\) empleando las condiciones de continuidad.
 \end{block}
 \end{frame}
-
-\begin{frame}[label={sec:org3a7cb94}]{Derivadas en \(t = 0^+\): ejemplo RLC paralelo}
+\begin{frame}[label={sec:org3650164}]{Derivadas en \(t = 0^+\): ejemplo RLC paralelo}
 \begin{center}
 \includegraphics[height=0.25\textheight]{../figs/transitorio_circuitoRLC_paralelo_t0+.pdf}
 \end{center}
@@ -871,25 +779,20 @@ Para obtener valores de las derivadas en el origen hay que resolver el circuito 
   \boxed{\diff{u_c(t)}{t}[t = 0^+] = - \frac{1}{C} \left( \frac{1}{R} u_C(0^+) +  i_L(0^+)\right)}
 \]
 \end{frame}
-
-
-\begin{frame}[label={sec:org58e7cde}]{Respuesta Completa}
+\begin{frame}[label={sec:org07889ef}]{Respuesta Completa}
 Las condiciones iniciales deben evaluarse teniendo en cuenta la respuesta forzada (si existe).
 \begin{align*}
   u_C(0^+) &= u_n(0^+) + u_{\infty}(0^+)\\
   \diff{u_C(t)}{t}[t = 0^+] &= \diff{u_n(t)}{t}[t = 0^+] + \diff{u_{\infty}(t)}{t}[t = 0^+]  
 \end{align*}
 \end{frame}
-
-\begin{frame}[label={sec:org7d2beac}]{Ejemplo de Respuesta Completa}
+\begin{frame}[label={sec:org063f7c6}]{Ejemplo de Respuesta Completa}
 Circuito RLC paralelo sobreamortiguado con generador de corriente DC funcionando en \(t > 0\). 
-
 \begin{block}{Respuesta Completa}
 \[
   u_c(t) = U_{\infty} + A_1 e^{s_1 t} + A_2 e^{s_2 t}
 \]
 \end{block}
-
 \begin{block}{Condiciones Iniciales}
 \begin{align*}
 u_c(0^+) &= U_\infty + A_1 + A_2\\

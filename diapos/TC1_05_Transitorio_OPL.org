@@ -89,11 +89,11 @@ La solución de esta ecuación para $t > 0$ (respuesta completa del circuito lin
 
 - Las *condiciones iniciales* son el estado del circuito en el instante temporal en el que se produce el cambio.
 
+  - *Se calculan* con las energías almacenadas en bobinas y condensadores en $t = 0^-$.
+
+  - *Se aplican* a la topología del circuito en $t = 0^+$.
+
 - Determinan las *constantes de integración* de la respuesta natural.
-
-- *Se calculan* con las energías almacenadas en bobinas y condensadores en $t = 0^-$.
-
-- *Se aplican* a la topología del circuito en $t = 0^+$.
 
 *** Resistencia
 No acumula energía: sigue los cambios de forma instantánea.
@@ -144,28 +144,33 @@ u_C(t) = \frac{1}{C} \int^t_{-\infty}i_C(t') \mathrm{d}t'
 * Circuitos de Primer Orden
 *** Definición
 - Circuitos que tienen un *único elemento de acumulación* (o /varios elementos que pueden ser simplificados a un elemento equivalente/) y parte resistiva.
+\vfill
 - *Ecuación diferencial de primer orden*: la respuesta natural es siempre una *exponencial decreciente*.
+\vfill
 - Circuitos típicos:
   - RL serie
   - RC paralelo
 *** Respuesta natural y forzada
-- El método de resolución analiza el circuito en tres etapas:
-  1. Cálculo de las *condiciones iniciales*, analizando el circuito en $t < 0$.
-  2. *Respuesta natural*: análisis del circuito /sin fuentes/ en $t > 0$ (la energía acumulada en $t < 0$ se disipa en la resistencia).
-  3. *Respuesta forzada*: análisis del circuito /con fuentes/ en $t > 0$ (la respuesta está determinada por la forma de onda de las fuentes).
+El método de resolución analiza el circuito en tres etapas:
+  \vfill
+  - Cálculo de las *condiciones iniciales*, analizando el circuito en $t < 0$.
+  \vfill   
+  - *Respuesta natural*: análisis del circuito /sin fuentes/ en $t > 0$ (la energía acumulada en $t < 0$ se disipa en la resistencia).
+  \vfill   
+  - *Respuesta forzada*: análisis del circuito /con fuentes/ en $t > 0$ (la respuesta está determinada por la forma de onda de las fuentes).
 
 ** Circuito RL serie
 
 *** Circuito básico
 - En $t < 0$ la fuente está desconectada.
-- En $t = 0$ la fuente se conecta.
+- En $t = 0$ se cierra el interruptor.
 - En $t > 0$ la fuente alimenta el circuito RL (la bobina almacena energía).
   
 #+ATTR_LATEX: :height 0.55\textheight
 [[file:../figs/transitorio_circuitoRL.pdf]]
 
 *** Condiciones Iniciales
-Analizando circuito para $t < 0$ ...
+Analizando el circuito para $t < 0$ ...
 #+ATTR_LATEX: :height 0.45\textheight
 file:../figs/transitorio_circuitoRL_t0-.pdf
 ...obtenemos  $i(0^-) = 0$ (/resultado particular de este circuito./)
