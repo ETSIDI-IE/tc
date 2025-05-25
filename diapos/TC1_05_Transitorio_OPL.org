@@ -466,14 +466,20 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 * Circuitos de Segundo Orden
 *** Introducción
 - Circuitos que tienen *dos elementos de acumulación* que intercambian energía, y parte resistiva que disipa energía.
+  \vfill
 - *Ecuación diferencial de segundo orden*: la respuesta natural incluye exponenciales decrecientes y quizás señal sinusoidal.
+  \vfill
 - Circuitos típicos:
   - RLC serie
   - RLC paralelo
 *** Respuesta natural y forzada
-- El método de resolución analiza el circuito en dos etapas:
-  - Sin fuentes: *respuesta natural* (la energía acumulada en $t < 0$ se redistribuye).
-  - Con fuentes: *respuesta forzada* (determinada por la forma de onda de las fuentes).
+El método de resolución analiza el circuito en tres etapas:
+  \vfill
+  - Cálculo de las *condiciones iniciales*, analizando el circuito en $t < 0$.
+  \vfill   
+  - *Respuesta natural*: análisis del circuito /sin fuentes/ en $t > 0$ (la energía acumulada en $t < 0$ se redistribuye/disipa).
+  \vfill   
+  - *Respuesta forzada*: análisis del circuito /con fuentes/ en $t > 0$ (la respuesta está determinada por la forma de onda de las fuentes).
 
 ** Circuito RLC serie
 *** Circuito básico
@@ -507,7 +513,7 @@ u_C(t) &= \left(u_C(0^+) - u_\infty(0^+)\right) e^{-t/\tau} + u_\infty(t)\\
 \diff[2]{i}{t} + \frac{R}{L} \diff{i}{t} + \frac{1}{LC} i = 0
 \]
 \[
-    i_n(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+    i_n(t) = A \cdot e^{s t}
 \]
 #+END_EXPORT
 
